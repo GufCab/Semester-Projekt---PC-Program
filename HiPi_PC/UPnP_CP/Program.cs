@@ -39,10 +39,8 @@ namespace UPnP_CP
             SinkDisco.Start();
             //SourceDisco.Start();
 
-            while (i == false)
-            {
-                
-            }
+            //while (i == false)
+            
 
             while (true)
             {
