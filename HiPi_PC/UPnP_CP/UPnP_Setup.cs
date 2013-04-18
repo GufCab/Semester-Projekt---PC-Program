@@ -40,13 +40,13 @@ namespace UPnP_CP
             _SinkDisco.OnAddedDevice += new MediaRendererDiscovery.DiscoveryHandler(AddSink);
             _SinkDisco.OnRemovedDevice += new MediaRendererDiscovery.DiscoveryHandler(RemoveSink);
             _SinkDisco.Start();
-
         }
 
         //removed "static"
         private void AddSink(MediaRendererDiscovery sender, UPnPDevice d)
         {
             Console.WriteLine("Added Device: " + d.FriendlyName);
+            
 
             UPnP_SinkFunctions func = new UPnP_SinkFunctions(
                 new SinkStack.CpAVTransport(d.GetServices(SinkStack.CpAVTransport.SERVICE_NAME)[0]),
