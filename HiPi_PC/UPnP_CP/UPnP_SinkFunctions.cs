@@ -13,7 +13,7 @@ namespace UPnP_CP
         void Stop();
         void Next();
         void Previous();
-        //void SetTransportURI();
+        void SetTransportURI(string path, string metaData);
         void SetVolume(ushort desiredVolume);
     }
 
@@ -55,17 +55,15 @@ namespace UPnP_CP
             _AVTransport.Previous(0);
         }
 
-        public void SetTransportURI()
-        {
-            //_AVTransport
-        }
-
         public void SetVolume(ushort desiredVolume)
         {
-            _RenderingControl.SetVolume(0,CpRenderingControl.Enum_A_ARG_TYPE_Channel.MASTER, desiredVolume);
+            _RenderingControl.SetVolume(0, CpRenderingControl.Enum_A_ARG_TYPE_Channel.MASTER, desiredVolume);
         }
 
-        //public void 
+        public void SetTransportURI(string path, string metaData)
+        {
+            _AVTransport.SetAVTransportURI(0, path, metaData);
+        }
 
     }
 }

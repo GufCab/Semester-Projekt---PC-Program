@@ -20,12 +20,6 @@ namespace UPnP_CP
 
         public event AddSinkHandler AddSinkEvent;
 
-        /*
-        public static SinkStack.CpAVTransport _AVTransport;
-        public static SinkStack.CpConnectionManager _ConnectionManager;
-        public static SinkStack.CpRenderingControl _RenderingControl;
-        */
-
         public void StartSourceDisco()
         {
             _SourceDisco = new MediaServerDiscovery();

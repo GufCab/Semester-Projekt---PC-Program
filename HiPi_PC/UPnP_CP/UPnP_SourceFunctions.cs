@@ -6,7 +6,12 @@ using SourceStack;
 
 namespace UPnP_CP
 {
-    public class UPnP_SourceFunctions
+    public interface ISourceFunctions
+    {
+        string Browse(string id);
+    }
+
+    public class UPnP_SourceFunctions : ISourceFunctions
     {
         private SourceStack.CpConnectionManager _ConnectionManager;
         private SourceStack.CpContentDirectory _ContentDirectory;
@@ -15,6 +20,12 @@ namespace UPnP_CP
         {
             _ConnectionManager = CM;
             _ContentDirectory = CD;
+        }
+
+        public string Browse(string s)
+        {
+            //_ContentDirectory.Browse();
+            return s;
         }
     }
 }
