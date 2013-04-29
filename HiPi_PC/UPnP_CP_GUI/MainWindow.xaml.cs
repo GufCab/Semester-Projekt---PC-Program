@@ -21,24 +21,38 @@ namespace UPnP_CP_GUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        private UPnP_Functions _UPnPFunctions;
+        private UPnP_SinkFunctions _UPnPSink = null;
+
+        private UPnP_Setup setup = new UPnP_Setup();
 
         public MainWindow()
         {
             InitializeComponent();
-            
-            UPnP_Setup.StartSinkDisco();
-            _UPnPFunctions = new UPnP_Functions();
+            subscribe();
+            setup.StartSinkDisco();
+        }
+
+        public void subscribe()
+        {
+            setup.AddSinkEvent += getUPnPSink;
         }
       
+        public void getUPnPSink(UPnP_SinkFunctions e, EventArgs s)
+        {
+            _UPnPSink = e;
+            MessageBox.Show("Sink added");
+        }
+
         private void btnPlayInvoke_Click(object sender, RoutedEventArgs e)
         {
-            _UPnPFunctions.Play();
+            if(_UPnPSink != null)
+                _UPnPSink.Play();
         }
 
         private void btnPauseInvoke_Click(object sender, RoutedEventArgs e)
         {
-           
+            if (_UPnPSink != null)
+                _UPnPSink.Pause();
         }
 
         private void btnStopInvoke_Click(object sender, RoutedEventArgs e)
@@ -68,7 +82,7 @@ namespace UPnP_CP_GUI
 
         private void btnSubscribe_Click(object sender, RoutedEventArgs e)
         {
-           
+           _UPnPSink.SetVolume(6);
         }
     }
 }

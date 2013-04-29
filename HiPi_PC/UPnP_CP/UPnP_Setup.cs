@@ -12,15 +12,15 @@ namespace UPnP_CP
     {
         private static MediaRendererDiscovery _SinkDisco;
         private static MediaServerDiscovery _SourceDisco;
-        /*
-        public static SinkStack.CpAVTransport _AVTransport;
-        public static SinkStack.CpConnectionManager _ConnectionManager;
-        public static SinkStack.CpRenderingControl _RenderingControl;
-        */
+
+        private UPnP_SinkFunctions Sink;
 
 
+        public delegate void AddSinkHandler(UPnP_SinkFunctions e, EventArgs s);
 
-        public static void StartSourceDisco()
+        public event AddSinkHandler AddSinkEvent;
+
+        public void StartSourceDisco()
         {
             _SourceDisco = new MediaServerDiscovery();
             _SourceDisco.OnAddedDevice += new MediaServerDiscovery.DiscoveryHandler(AddSource);
@@ -28,22 +28,26 @@ namespace UPnP_CP
             _SourceDisco.Start();
         }
 
-        public static void StartSinkDisco()
+        public void StartSinkDisco()
         {
             _SinkDisco = new MediaRendererDiscovery();
             _SinkDisco.OnAddedDevice += new MediaRendererDiscovery.DiscoveryHandler(AddSink);
             _SinkDisco.OnRemovedDevice += new MediaRendererDiscovery.DiscoveryHandler(RemoveSink);
             _SinkDisco.Start();
-
         }
 
-        private static void AddSink(MediaRendererDiscovery sender, UPnPDevice d)
+        //removed "static"
+        private void AddSink(MediaRendererDiscovery sender, UPnPDevice d)
         {
             Console.WriteLine("Added Device: " + d.FriendlyName);
+            
 
-                UPnP_Functions._AVTransport = new SinkStack.CpAVTransport(d.GetServices(SinkStack.CpAVTransport.SERVICE_NAME)[0]);
-                UPnP_Functions._ConnectionManager = new SinkStack.CpConnectionManager(d.GetServices(SinkStack.CpConnectionManager.SERVICE_NAME)[0]);
-                UPnP_Functions._RenderingControl = new SinkStack.CpRenderingControl(d.GetServices(SinkStack.CpRenderingControl.SERVICE_NAME)[0]);
+            UPnP_SinkFunctions func = new UPnP_SinkFunctions(
+                new SinkStack.CpAVTransport(d.GetServices(SinkStack.CpAVTransport.SERVICE_NAME)[0]),
+                new SinkStack.CpConnectionManager(d.GetServices(SinkStack.CpConnectionManager.SERVICE_NAME)[0]),
+                new SinkStack.CpRenderingControl(d.GetServices(SinkStack.CpRenderingControl.SERVICE_NAME)[0]));
+
+            AddSinkEvent(func, null);
         }
 
         private static void RemoveSink(MediaRendererDiscovery sender, UPnPDevice d)
