@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="musikindexModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="musikindexModelStoreContainer">
+          <EntitySet Name="filesti" EntityType="musikindexModel.Store.filesti" store:Type="Tables" Schema="musikindex" />
+          <EntitySet Name="ip" EntityType="musikindexModel.Store.ip" store:Type="Tables" Schema="musikindex" />
+          <EntitySet Name="musikdata" EntityType="musikindexModel.Store.musikdata" store:Type="Tables" Schema="musikindex" />
+          <AssociationSet Name="fk_Filesti_IP1" Association="musikindexModel.Store.fk_Filesti_IP1">
+            <End Role="ip" EntitySet="ip" />
+            <End Role="filesti" EntitySet="filesti" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MusikData_Filesti1" Association="musikindexModel.Store.fk_MusikData_Filesti1">
+            <End Role="filesti" EntitySet="filesti" />
+            <End Role="musikdata" EntitySet="musikdata" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="filesti">
+          <Key>
+            <PropertyRef Name="idFilesti" />
+          </Key>
+          <Property Name="idFilesti" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Filesti" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="IP_idIP" Type="varchar" Nullable="false" MaxLength="11" />
+        </EntityType>
+        <EntityType Name="ip">
+          <Key>
+            <PropertyRef Name="idIP" />
+          </Key>
+          <Property Name="idIP" Type="varchar" Nullable="false" MaxLength="11" />
+          <Property Name="ejer" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="musikdata">
+          <Key>
+            <PropertyRef Name="idMusikData" />
+          </Key>
+          <Property Name="idMusikData" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Titel" Type="varchar" MaxLength="45" />
+          <Property Name="Kunstner" Type="varchar" MaxLength="45" />
+          <Property Name="Album" Type="varchar" MaxLength="45" />
+          <Property Name="Genre" Type="varchar" MaxLength="45" />
+          <Property Name="nrLenth" Type="int" />
+          <Property Name="Filesti_idFilesti" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_Filesti_IP1">
+          <End Role="ip" Type="musikindexModel.Store.ip" Multiplicity="1" />
+          <End Role="filesti" Type="musikindexModel.Store.filesti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ip">
+              <PropertyRef Name="idIP" />
+            </Principal>
+            <Dependent Role="filesti">
+              <PropertyRef Name="IP_idIP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MusikData_Filesti1">
+          <End Role="filesti" Type="musikindexModel.Store.filesti" Multiplicity="1" />
+          <End Role="musikdata" Type="musikindexModel.Store.musikdata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filesti">
+              <PropertyRef Name="idFilesti" />
+            </Principal>
+            <Dependent Role="musikdata">
+              <PropertyRef Name="Filesti_idFilesti" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="musikindexModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="musikindexEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="filestis" EntityType="musikindexModel.filesti" />
+          <EntitySet Name="ips" EntityType="musikindexModel.ip" />
+          <EntitySet Name="musikdatas" EntityType="musikindexModel.musikdata" />
+          <AssociationSet Name="fk_Filesti_IP1" Association="musikindexModel.fk_Filesti_IP1">
+            <End Role="ip" EntitySet="ips" />
+            <End Role="filesti" EntitySet="filestis" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MusikData_Filesti1" Association="musikindexModel.fk_MusikData_Filesti1">
+            <End Role="filesti" EntitySet="filestis" />
+            <End Role="musikdata" EntitySet="musikdatas" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="filesti">
+          <Key>
+            <PropertyRef Name="idFilesti" />
+          </Key>
+          <Property Name="idFilesti" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Filesti1" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="IP_idIP" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ip" Relationship="musikindexModel.fk_Filesti_IP1" FromRole="filesti" ToRole="ip" />
+          <NavigationProperty Name="musikdatas" Relationship="musikindexModel.fk_MusikData_Filesti1" FromRole="filesti" ToRole="musikdata" />
+        </EntityType>
+        <EntityType Name="ip">
+          <Key>
+            <PropertyRef Name="idIP" />
+          </Key>
+          <Property Name="idIP" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="false" />
+          <Property Name="ejer" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="filestis" Relationship="musikindexModel.fk_Filesti_IP1" FromRole="ip" ToRole="filesti" />
+        </EntityType>
+        <EntityType Name="musikdata">
+          <Key>
+            <PropertyRef Name="idMusikData" />
+          </Key>
+          <Property Name="idMusikData" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Titel" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Kunstner" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Album" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Genre" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="nrLenth" Type="Int32" />
+          <Property Name="Filesti_idFilesti" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="filesti" Relationship="musikindexModel.fk_MusikData_Filesti1" FromRole="musikdata" ToRole="filesti" />
+        </EntityType>
+        <Association Name="fk_Filesti_IP1">
+          <End Role="ip" Type="musikindexModel.ip" Multiplicity="1" />
+          <End Role="filesti" Type="musikindexModel.filesti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ip">
+              <PropertyRef Name="idIP" />
+            </Principal>
+            <Dependent Role="filesti">
+              <PropertyRef Name="IP_idIP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MusikData_Filesti1">
+          <End Role="filesti" Type="musikindexModel.filesti" Multiplicity="1" />
+          <End Role="musikdata" Type="musikindexModel.musikdata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filesti">
+              <PropertyRef Name="idFilesti" />
+            </Principal>
+            <Dependent Role="musikdata">
+              <PropertyRef Name="Filesti_idFilesti" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="musikindexModelStoreContainer" CdmEntityContainer="musikindexEntities">
+          <EntitySetMapping Name="filestis">
+            <EntityTypeMapping TypeName="musikindexModel.filesti">
+              <MappingFragment StoreEntitySet="filesti">
+                <ScalarProperty Name="idFilesti" ColumnName="idFilesti" />
+                <ScalarProperty Name="Filesti1" ColumnName="Filesti" />
+                <ScalarProperty Name="IP_idIP" ColumnName="IP_idIP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ips">
+            <EntityTypeMapping TypeName="musikindexModel.ip">
+              <MappingFragment StoreEntitySet="ip">
+                <ScalarProperty Name="idIP" ColumnName="idIP" />
+                <ScalarProperty Name="ejer" ColumnName="ejer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="musikdatas">
+            <EntityTypeMapping TypeName="musikindexModel.musikdata">
+              <MappingFragment StoreEntitySet="musikdata">
+                <ScalarProperty Name="idMusikData" ColumnName="idMusikData" />
+                <ScalarProperty Name="Titel" ColumnName="Titel" />
+                <ScalarProperty Name="Kunstner" ColumnName="Kunstner" />
+                <ScalarProperty Name="Album" ColumnName="Album" />
+                <ScalarProperty Name="Genre" ColumnName="Genre" />
+                <ScalarProperty Name="nrLenth" ColumnName="nrLenth" />
+                <ScalarProperty Name="Filesti_idFilesti" ColumnName="Filesti_idFilesti" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

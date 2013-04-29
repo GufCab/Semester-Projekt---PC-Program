@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="musikindexModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="musikindexModelStoreContainer">
+          <EntitySet Name="filepathtabel" EntityType="musikindexModel.Store.filepathtabel" store:Type="Tables" Schema="musikindex" />
+          <EntitySet Name="ip" EntityType="musikindexModel.Store.ip" store:Type="Tables" Schema="musikindex" />
+          <EntitySet Name="musikdata" EntityType="musikindexModel.Store.musikdata" store:Type="Tables" Schema="musikindex" />
+          <AssociationSet Name="fk_MusikData_FilepathTabel" Association="musikindexModel.Store.fk_MusikData_FilepathTabel">
+            <End Role="filepathtabel" EntitySet="filepathtabel" />
+            <End Role="musikdata" EntitySet="musikdata" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="filepathtabel">
+          <Key>
+            <PropertyRef Name="idFilesti" />
+          </Key>
+          <Property Name="idFilesti" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FilePath" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ip">
+          <Key>
+            <PropertyRef Name="idIP" />
+          </Key>
+          <Property Name="idIP" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ejer" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="musikdata">
+          <Key>
+            <PropertyRef Name="idMusikData" />
+          </Key>
+          <Property Name="idMusikData" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Titel" Type="varchar" MaxLength="45" />
+          <Property Name="Kunstner" Type="varchar" MaxLength="45" />
+          <Property Name="Album" Type="varchar" MaxLength="45" />
+          <Property Name="Genre" Type="varchar" MaxLength="45" />
+          <Property Name="nrLenth" Type="int" />
+          <Property Name="FilepathTabel_idFilesti" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_MusikData_FilepathTabel">
+          <End Role="filepathtabel" Type="musikindexModel.Store.filepathtabel" Multiplicity="1" />
+          <End Role="musikdata" Type="musikindexModel.Store.musikdata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filepathtabel">
+              <PropertyRef Name="idFilesti" />
+            </Principal>
+            <Dependent Role="musikdata">
+              <PropertyRef Name="FilepathTabel_idFilesti" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="musikindexModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="musikindexEntities2" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="filepathtabel" EntityType="musikindexModel.filepathtabel" />
+          <EntitySet Name="ip" EntityType="musikindexModel.ip" />
+          <EntitySet Name="musikdata" EntityType="musikindexModel.musikdata" />
+          <AssociationSet Name="fk_MusikData_FilepathTabel" Association="musikindexModel.fk_MusikData_FilepathTabel">
+            <End Role="filepathtabel" EntitySet="filepathtabel" />
+            <End Role="musikdata" EntitySet="musikdata" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="filepathtabel">
+          <Key>
+            <PropertyRef Name="idFilesti" />
+          </Key>
+          <Property Name="idFilesti" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="FilePath" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="musikdata" Relationship="musikindexModel.fk_MusikData_FilepathTabel" FromRole="filepathtabel" ToRole="musikdata" />
+        </EntityType>
+        <EntityType Name="ip">
+          <Key>
+            <PropertyRef Name="idIP" />
+          </Key>
+          <Property Name="idIP" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ejer" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="musikdata">
+          <Key>
+            <PropertyRef Name="idMusikData" />
+          </Key>
+          <Property Name="idMusikData" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Titel" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Kunstner" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Album" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Genre" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="nrLenth" Type="Int32" />
+          <Property Name="FilepathTabel_idFilesti" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="filepathtabel" Relationship="musikindexModel.fk_MusikData_FilepathTabel" FromRole="musikdata" ToRole="filepathtabel" />
+        </EntityType>
+        <Association Name="fk_MusikData_FilepathTabel">
+          <End Role="filepathtabel" Type="musikindexModel.filepathtabel" Multiplicity="1" />
+          <End Role="musikdata" Type="musikindexModel.musikdata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filepathtabel">
+              <PropertyRef Name="idFilesti" />
+            </Principal>
+            <Dependent Role="musikdata">
+              <PropertyRef Name="FilepathTabel_idFilesti" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="musikindexModelStoreContainer" CdmEntityContainer="musikindexEntities2">
+          <EntitySetMapping Name="filepathtabel">
+            <EntityTypeMapping TypeName="musikindexModel.filepathtabel">
+              <MappingFragment StoreEntitySet="filepathtabel">
+                <ScalarProperty Name="idFilesti" ColumnName="idFilesti" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ip">
+            <EntityTypeMapping TypeName="musikindexModel.ip">
+              <MappingFragment StoreEntitySet="ip">
+                <ScalarProperty Name="idIP" ColumnName="idIP" />
+                <ScalarProperty Name="ejer" ColumnName="ejer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="musikdata">
+            <EntityTypeMapping TypeName="musikindexModel.musikdata">
+              <MappingFragment StoreEntitySet="musikdata">
+                <ScalarProperty Name="idMusikData" ColumnName="idMusikData" />
+                <ScalarProperty Name="Titel" ColumnName="Titel" />
+                <ScalarProperty Name="Kunstner" ColumnName="Kunstner" />
+                <ScalarProperty Name="Album" ColumnName="Album" />
+                <ScalarProperty Name="Genre" ColumnName="Genre" />
+                <ScalarProperty Name="nrLenth" ColumnName="nrLenth" />
+                <ScalarProperty Name="FilepathTabel_idFilesti" ColumnName="FilepathTabel_idFilesti" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

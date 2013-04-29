@@ -17,3 +17,6 @@ C:\Users\Malmos\Documents\Visual Studio 2012\Projects\playerlayout\playerlayout\
 C:\Users\Malmos\Documents\Visual Studio 2012\Projects\playerlayout\playerlayout\obj\Debug\Styles\NormalSkin.baml
 C:\Users\Malmos\Documents\Visual Studio 2012\Projects\playerlayout\playerlayout\obj\Debug\Styles\ProtossSkin.baml
 C:\Users\Malmos\Documents\Visual Studio 2012\Projects\playerlayout\playerlayout\obj\Debug\Styles\TerranSkin.baml
+C:\Users\Malmos\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\bin\Debug\playerlayout.exe.config
+C:\Users\Malmos\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\obj\Debug\playerlayout.exe
+C:\Users\Malmos\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\obj\Debug\playerlayout.pdb

@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TemplateSync
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var sync = new SyncTemplate(@"C:\Users\Public\Music");
+
+        }
+    }
+}

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityMusikindex", "EntityMusikindex\EntityMusikindex.csproj", "{A9B8C1F3-EFBC-4FF6-853E-42CD5B06C781}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateSync", "TemplateSync\TemplateSync.csproj", "{DB36984E-DC7B-4304-8E11-D875B7C8A121}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lårt", "lårt\lårt.csproj", "{BE0E9F34-5527-41DD-8DCE-1483EFA5D747}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9B8C1F3-EFBC-4FF6-853E-42CD5B06C781}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9B8C1F3-EFBC-4FF6-853E-42CD5B06C781}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9B8C1F3-EFBC-4FF6-853E-42CD5B06C781}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9B8C1F3-EFBC-4FF6-853E-42CD5B06C781}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB36984E-DC7B-4304-8E11-D875B7C8A121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB36984E-DC7B-4304-8E11-D875B7C8A121}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB36984E-DC7B-4304-8E11-D875B7C8A121}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB36984E-DC7B-4304-8E11-D875B7C8A121}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE0E9F34-5527-41DD-8DCE-1483EFA5D747}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE0E9F34-5527-41DD-8DCE-1483EFA5D747}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE0E9F34-5527-41DD-8DCE-1483EFA5D747}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE0E9F34-5527-41DD-8DCE-1483EFA5D747}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
