@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TemplateSync
+namespace EntityMusikindex
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class musikindexEntities1 : DbContext
+    public partial class musikindexEntities : DbContext
     {
-        public musikindexEntities1()
-            : base("name=musikindexEntities1")
+        public musikindexEntities()
+            : base("name=musikindexEntities")
         {
         }
     

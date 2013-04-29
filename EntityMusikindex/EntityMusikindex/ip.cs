@@ -14,7 +14,15 @@ namespace EntityMusikindex
     
     public partial class ip
     {
-        public int idIP { get; set; }
-        public string ejer { get; set; }
+        public ip()
+        {
+            this.filepaths = new HashSet<filepath>();
+        }
+    
+        public string idIP { get; set; }
+        public string Owner { get; set; }
+        public string Protocol { get; set; }
+    
+        public virtual ICollection<filepath> filepaths { get; set; }
     }
 }

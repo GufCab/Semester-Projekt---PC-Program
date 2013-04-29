@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateSync", "TemplateSyn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lårt", "lårt\lårt.csproj", "{BE0E9F34-5527-41DD-8DCE-1483EFA5D747}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{56B100A5-1455-431C-86C4-EF6BE036BBF4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{BE0E9F34-5527-41DD-8DCE-1483EFA5D747}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE0E9F34-5527-41DD-8DCE-1483EFA5D747}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE0E9F34-5527-41DD-8DCE-1483EFA5D747}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56B100A5-1455-431C-86C4-EF6BE036BBF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56B100A5-1455-431C-86C4-EF6BE036BBF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56B100A5-1455-431C-86C4-EF6BE036BBF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56B100A5-1455-431C-86C4-EF6BE036BBF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

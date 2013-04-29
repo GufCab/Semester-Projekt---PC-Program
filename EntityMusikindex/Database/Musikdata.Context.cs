@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EntityMusikindex
+namespace Database
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class musikindexEntities2 : DbContext
+    public partial class musikindexEntities : DbContext
     {
-        public musikindexEntities2()
-            : base("name=musikindexEntities2")
+        public musikindexEntities()
+            : base("name=musikindexEntities")
         {
         }
     
@@ -25,8 +25,8 @@ namespace EntityMusikindex
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<filepathtabel> filepathtabel { get; set; }
-        public DbSet<ip> ip { get; set; }
-        public DbSet<musikdata> musikdata { get; set; }
+        public DbSet<filepath> filepaths { get; set; }
+        public DbSet<ip> ips { get; set; }
+        public DbSet<musikdata> musikdatas { get; set; }
     }
 }

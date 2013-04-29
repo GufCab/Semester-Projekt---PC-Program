@@ -19,7 +19,7 @@ using System.Data.SqlClient;
 namespace EntityMusikindex
 {
     /// <summary>
-    /// Interaction logic fo    r MainWindow.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -31,13 +31,13 @@ namespace EntityMusikindex
 
         private void ButtonUpdata_OnClick(object sender, RoutedEventArgs e)
         {
-            using (var musik = new musikindexEntities2())
+            using (var musik = new musikindexEntities())
             {
-                
-                INDEX.ItemsSource = (from p in musik.musikdata select new {Title = p.Titel , Kunstner = p.Kunstner , Album = p.Album , Genre = p.Genre }).ToList();
+           
+                INDEX.ItemsSource = (from p in musik.musikdatas select new {Title = p.Title , Artist = p.Artist , Album = p.Album , Genre = p.Genre }).ToList();
 
 
-                List<filepathtabel> allPath = (from o in musik.filepathtabel select o).ToList();
+                List<filepath> allPath = (from o in musik.filepaths select o).ToList();
                 Path.ItemsSource = allPath;
             }
         }
@@ -66,27 +66,22 @@ namespace EntityMusikindex
         {
             
             var nummer = new musikdata();
-            nummer.Titel = "haha";
+            nummer.Title = "haha";
             nummer.Album = "dans";
             nummer.Genre = "heavy";
-            nummer.Kunstner = "Den glade";
-            nummer.FilepathTabel_idFilesti = 1;
+            nummer.Artist = "Den glade";
+            nummer.FilePath_idFilePath = "Hans";
+            nummer.FileName = "Jump.mp3";
 
-            var sti = new filepathtabel();
-            sti.FilePath = "hehe";
 
 
             
             
 
-            using (var musik = new musikindexEntities2())
-            {
-                  
-               
-           
-
-               
-                musik.musikdata.Add(nummer);
+            using (var musik = new musikindexEntities())
+            {   
+             
+             musik.musikdatas.Add(nummer);
 
                 musik.SaveChanges();
 
@@ -95,7 +90,7 @@ namespace EntityMusikindex
 
         private void Buttonremoveall_OnClick(object sender, RoutedEventArgs e)
         {
-            using (var musik = new musikindexEntities2())
+            using (var musik = new musikindexEntities())
             {
                 musik.Database.Delete();
 

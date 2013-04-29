@@ -7,22 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EntityMusikindex
+namespace TemplateSync
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class musikdata
+    public partial class filepath
     {
-        public long idMusikData { get; set; }
-        public string Title { get; set; }
-        public string Artist { get; set; }
-        public string Album { get; set; }
-        public string Genre { get; set; }
-        public Nullable<int> NrLenth { get; set; }
-        public string FilePath_idFilePath { get; set; }
-        public string FileName { get; set; }
+        public filepath()
+        {
+            this.musikdatas = new HashSet<musikdata>();
+        }
     
-        public virtual filepath filepath { get; set; }
+        public string idFilePath { get; set; }
+        public int FilePath1 { get; set; }
+        public string IP_idIP { get; set; }
+    
+        public virtual ip ip { get; set; }
+        public virtual ICollection<musikdata> musikdatas { get; set; }
     }
 }

@@ -76,7 +76,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="musikindexModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="musikindexEntities1" p1:LazyLoadingEnabled="true">
+        <EntityContainer Name="musikindexEntities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="filepaths" EntityType="musikindexModel.filepath" />
           <EntitySet Name="ips" EntityType="musikindexModel.ip" />
           <EntitySet Name="musikdatas" EntityType="musikindexModel.musikdata" />
@@ -151,7 +151,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="musikindexModelStoreContainer" CdmEntityContainer="musikindexEntities1">
+        <EntityContainerMapping StorageEntityContainer="musikindexModelStoreContainer" CdmEntityContainer="musikindexEntities">
           <EntitySetMapping Name="filepaths">
             <EntityTypeMapping TypeName="musikindexModel.filepath">
               <MappingFragment StoreEntitySet="filepath">

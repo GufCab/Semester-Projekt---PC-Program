@@ -15,13 +15,14 @@ namespace TemplateSync
     public partial class musikdata
     {
         public long idMusikData { get; set; }
-        public string Titel { get; set; }
-        public string Kunstner { get; set; }
+        public string Title { get; set; }
+        public string Artist { get; set; }
         public string Album { get; set; }
         public string Genre { get; set; }
-        public Nullable<int> nrLenth { get; set; }
-        public int Filesti_idFilesti { get; set; }
+        public Nullable<int> NrLenth { get; set; }
+        public string FilePath_idFilePath { get; set; }
+        public string FileName { get; set; }
     
-        public virtual filesti filesti { get; set; }
+        public virtual filepath filepath { get; set; }
     }
 }

@@ -7,21 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EntityMusikindex
+namespace Database
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class filepathtabel
+    public partial class filepath
     {
-        public filepathtabel()
+        public filepath()
         {
-            this.musikdata = new HashSet<musikdata>();
+            this.musikdatas = new HashSet<musikdata>();
         }
     
-        public int idFilesti { get; set; }
-        public string FilePath { get; set; }
+        public string idFilePath { get; set; }
+        public int FilePath1 { get; set; }
+        public string IP_idIP { get; set; }
     
-        public virtual ICollection<musikdata> musikdata { get; set; }
+        public virtual ip ip { get; set; }
+        public virtual ICollection<musikdata> musikdatas { get; set; }
     }
 }

@@ -7,22 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EntityMusikindex
+namespace Database
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class musikdata
+    public partial class ip
     {
-        public long idMusikData { get; set; }
-        public string Title { get; set; }
-        public string Artist { get; set; }
-        public string Album { get; set; }
-        public string Genre { get; set; }
-        public Nullable<int> NrLenth { get; set; }
-        public string FilePath_idFilePath { get; set; }
-        public string FileName { get; set; }
+        public ip()
+        {
+            this.filepaths = new HashSet<filepath>();
+        }
     
-        public virtual filepath filepath { get; set; }
+        public string idIP { get; set; }
+        public string Owner { get; set; }
+        public string Protocol { get; set; }
+    
+        public virtual ICollection<filepath> filepaths { get; set; }
     }
 }

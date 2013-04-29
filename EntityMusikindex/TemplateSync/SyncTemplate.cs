@@ -23,11 +23,11 @@ namespace TemplateSync
 
            _RelPath = MakeRelpathFromAbspath(absPath);
 
-           FillIP();
+           //FillIP();
 
-           FillPath();
+           //FillPath();
           
-            FillDatabase();
+           FillDatabase();
 
             CreateStream();// RelPath is path from Live555 to Musicfolder
         }
@@ -55,7 +55,7 @@ namespace TemplateSync
 
            // List<IMetadata> metalist;
 
-            using (var musik = new musikindexEntities())
+            using (var musik = new musikindexEntities1())
             {
 
                 //metalist = getmetadata();
@@ -80,13 +80,14 @@ namespace TemplateSync
                     //nummer.Genre = metadata.Genre;
                     //nummer.nrLenth = metadata.Nrlenth;
 
-                    nummer.Titel = "jump";
-                    nummer.Kunstner = "Van Halen";
+                    nummer.Title = "jump";
+                    nummer.Artist = "Van Halen";
                     nummer.Album = "Blackbox";
                     nummer.Genre = "babyrock";
-                    nummer.nrLenth = 334;
+                    nummer.NrLenth = 334;
+                    nummer.FileName = "jump.mp3";
 
-                    nummer.Filesti_idFilesti = 2;//ref til den rigtige absPath
+                    nummer.FilePath_idFilePath = _RelPath;//ref til den rigtige absPath
 
 
 
@@ -105,16 +106,20 @@ namespace TemplateSync
 
         public void FillIP()
         {
-            using (var musik = new musikindexEntities())
+            using (var musik = new musikindexEntities1())
             {
+                
                 string host = Dns.GetHostName();
-                IPHostEntry ip = Dns.GetHostEntry(host);
+                IPHostEntry IPHost = Dns.GetHostEntry(Dns.GetHostName());
 
                 var myIP = new ip();
 
-                myIP.idIP = ip.AddressList[0].ToString();
+                //myIP.idIP = IPHost.AddressList[0].ToString();
+                myIP.idIP = "192.168.001.090";
 
-                myIP.ejer = Environment.UserName;
+                myIP.Owner = Environment.UserName;
+
+                myIP.Protocol = "rtsp://";
 
                 musik.ips.Add(myIP);
 
@@ -126,13 +131,15 @@ namespace TemplateSync
         public void FillPath()
         {
 
-            var sti = new filesti();
-            sti.Filesti1 = _RelPath;
+            var sti = new filepath();
+
+            sti.IP_idIP = "192.168.001.090";//egen ip getter skal laves som funktion
+            sti.idFilePath = _RelPath;
             //_index = sti.idFilesti;
 
-            using (var musik = new musikindexEntities())
+            using (var musik = new musikindexEntities1())
             {  
-                musik.filestis.Add(sti);
+                musik.filepaths.Add(sti);
                                
                 musik.SaveChanges();
                 
@@ -146,11 +153,6 @@ namespace TemplateSync
 
         }
 
-       public void MetadataGetter()
-       {
-           
 
-
-       }
     }
 }

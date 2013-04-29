@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DB36984E-DC7B-4304-8E11-D875B7C8A121}</ProjectGuid>
+    <ProjectGuid>{56B100A5-1455-431C-86C4-EF6BE036BBF4}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TemplateSync</RootNamespace>
-    <AssemblyName>TemplateSync</AssemblyName>
+    <RootNamespace>Database</RootNamespace>
+    <AssemblyName>Database</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -49,52 +49,50 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="filepath.cs">
-      <DependentUpon>musikdb.tt</DependentUpon>
+      <DependentUpon>Musikdata.tt</DependentUpon>
     </Compile>
-    <Compile Include="IMetadata.cs" />
     <Compile Include="ip.cs">
-      <DependentUpon>musikdb.tt</DependentUpon>
+      <DependentUpon>Musikdata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Musikdata.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Musikdata.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="musikdata.cs">
-      <DependentUpon>musikdb.tt</DependentUpon>
+      <DependentUpon>Musikdata.tt</DependentUpon>
     </Compile>
-    <Compile Include="musikdb.Context.cs">
+    <Compile Include="Musikdata.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>musikdb.Context.tt</DependentUpon>
+      <DependentUpon>Musikdata.edmx</DependentUpon>
     </Compile>
-    <Compile Include="musikdb.cs">
+    <Compile Include="Musikdata1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>musikdb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="musikdb.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>musikdb.edmx</DependentUpon>
+      <DependentUpon>Musikdata.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SyncTemplate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="musikdb.edmx">
+    <EntityDeploy Include="Musikdata.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>musikdb.Designer.cs</LastGenOutput>
+      <LastGenOutput>Musikdata.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="musikdb.Context.tt">
+    <None Include="Musikdata.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>musikdb.edmx</DependentUpon>
-      <LastGenOutput>musikdb.Context.cs</LastGenOutput>
+      <DependentUpon>Musikdata.edmx</DependentUpon>
+      <LastGenOutput>Musikdata.Context.cs</LastGenOutput>
     </None>
-    <None Include="musikdb.edmx.diagram">
-      <DependentUpon>musikdb.edmx</DependentUpon>
+    <None Include="Musikdata.edmx.diagram">
+      <DependentUpon>Musikdata.edmx</DependentUpon>
     </None>
-    <None Include="musikdb.tt">
+    <None Include="Musikdata.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>musikdb.edmx</DependentUpon>
-      <LastGenOutput>musikdb.cs</LastGenOutput>
+      <DependentUpon>Musikdata.edmx</DependentUpon>
+      <LastGenOutput>Musikdata1.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
