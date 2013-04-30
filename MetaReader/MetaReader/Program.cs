@@ -118,15 +118,15 @@ namespace MetaReader
             
             folderAndFileReader.SetIndexPath(musikFolder);
 
-            folderAndFileReader.foldersVers_One();
-            /*
+            //folderAndFileReader.foldersVers_One();
+            
             foreach (string foldersAndFile in folderAndFileReader.FoldersAndFiles)
             {
                 Console.WriteLine(foldersAndFile);
             }
 
-            folderAndFileReader.TempPrint();
-             */
+            //folderAndFileReader.TempPrint();
+            
         }
 
         private static void testTre()

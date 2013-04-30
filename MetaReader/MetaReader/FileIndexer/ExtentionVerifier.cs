@@ -21,6 +21,10 @@ namespace MetaReader.FileIndexer
         {
             AddExtension(".wma");
             AddExtension(".mp3");
+            AddExtension(".mp4");
+            AddExtension(".wav");
+            AddExtension(".flac");
+            AddExtension(".ra");
         }
 
         public void AddExtension(string dotExtention)
