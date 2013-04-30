@@ -42,8 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FileIndexer\ExtentionVerifier.cs" />
-    <Compile Include="FileIndexer\FileIndexer.cs" />
-    <Compile Include="FileIndexer\FilesFolders.cs" />
+    <Compile Include="FileIndexer\FilesFolders.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="FileIndexer\FolderAndFileReader.cs" />
     <Compile Include="FileIndexer\IFileIndexer.cs" />
     <Compile Include="FileIndexer\IOitem.cs" />

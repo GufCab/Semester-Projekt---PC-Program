@@ -15,6 +15,7 @@ namespace MetaReader.MetadataReader
         string Nr { get; }
         string Genre { get; }
         int LengthS { get; }
+        string Lengthstring { get; }
         string Filepath { get; }
 
     }

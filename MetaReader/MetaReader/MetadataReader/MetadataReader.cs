@@ -23,6 +23,7 @@ namespace MetaReader.MetadataReader
         public string Nr { get; private set; }
         public string Genre { get; private set; }
         public int LengthS { get; private set; }
+        public string Lengthstring { get; private set; } 
         public string Filepath { get; private set; }
 
         //shell32 magic
@@ -44,44 +45,15 @@ namespace MetaReader.MetadataReader
 
         private void findItem()
         {
-            //select folder
-            //select item
-            //int i = 0;
             foreach (Shell32.FolderItem2 folderItem2 in _objFolder.Items())
             {
-                //Get file name from last find sidste . i filnavn
-                string tempItemName = folderItem2.Name + Path.GetExtension(_objFolder.GetDetailsOf(folderItem2, 180)); //_objFolder.GetDetailsOf(folderItem2, 180);
+                string tempItemName = folderItem2.Name + Path.GetExtension(_objFolder.GetDetailsOf(folderItem2, 180)); //_objFolder.GetDetailsOf(folderItem2, 180); 180: file with path and extension
                 if (tempItemName == _musikNumber)
                     _item2 = folderItem2;
             }
 
         }
 
-        /*
-        public MetadataReader(int objectnumber, string folder)
-        {
-            _objectnumber = objectnumber;
-            _folder = folder;
-            Setup();
-            Setter();
-        }
-
-        private void Setup()
-        {
-            //select folder
-            _objFolder = _shell.NameSpace(_folder);
-            //select item
-            int i = 0;
-            foreach (Shell32.FolderItem2 folderItem2 in _objFolder.Items())
-            {
-                if (i == _objectnumber)
-                    _item2 = folderItem2;
-                i++;
-            }
-            
-        }
-        */
-        
         private void Setter()
         {
             ItemName = ArrHeader(0);
@@ -90,8 +62,16 @@ namespace MetaReader.MetadataReader
             Artist = ArrHeader(20);
             Nr = ArrHeader(26);
             Genre = ArrHeader(16);
-            //LengthS = Convert.ToInt16(ArrHeader(27));
+            LengthS = ConvertLength(ArrHeader(27));
+            Lengthstring = ArrHeader(27);
             Filepath = _folder;
+        }
+
+        private int ConvertLength(string lenght)
+        {
+            double tempTime = TimeSpan.Parse(lenght).TotalSeconds;
+
+            return Convert.ToInt32(tempTime);
         }
 
         private string ArrHeader(int Column)

@@ -94,8 +94,8 @@ namespace MetaReader
             //=============
             // Test the FileIndexer and MDataReader
             //=============
-            var indexer = new FileIndexer.FileIndexer(musikFolder);
-            indexer.GetItems();
+            var indexer = new FileIndexer.FolderAndFileReader();
+            indexer.GetMetaData();
 
             foreach (var VARIABLE in indexer.FolderItemList)
             {
@@ -171,8 +171,7 @@ namespace MetaReader
 
             folderAndFileReader.SetIndexPath(musikFolder);
 
-            List<MetadataReader.IMetadataReader> metadata;
-            metadata = folderAndFileReader.GetMetaData();
+            List<IMetadataReader> metadata = folderAndFileReader.GetMetaData();
 
             
             EntryText(" Testing MetaData ");
@@ -182,7 +181,8 @@ namespace MetaReader
                 Console.WriteLine(data.Title);
                 Console.WriteLine(data.Artist);
                 Console.WriteLine(data.Filepath);
-
+                Console.WriteLine(data.Lengthstring);
+                Console.WriteLine(data.LengthS);
             }
         }
         private static void testFire()
