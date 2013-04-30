@@ -49,7 +49,6 @@ namespace MetaReader.FileIndexer
 
         private void Runner()
         {
-            getMetaDataFromFile();
             foldersVers_One();
             GetAllMetaData(MusikList);
         }
@@ -57,26 +56,13 @@ namespace MetaReader.FileIndexer
         //============================
         // I don't know what it does
         //============================
-        
-
-        private void getMetaDataFromFile()
-        {
-            FilesFolders folder = new FilesFolders(Folderpath);
-            foreach (IOitem ioitem in _folder.IndexContainer)
-            {                
-                if (extentionVerifier.TestExtention(ioitem.Extention))
-                {
-
-                }
-            }
-        }
 
         //============================
         // Find all folders in folder
         //============================
 
         //List<string> subfolders = new List<string>();
-        private List<string> MusikList = new List<string>();
+        private List<IOitem> MusikList = new List<IOitem>();
         private FilesFolders Container;
         private string testsubfolder;
 
@@ -88,16 +74,14 @@ namespace MetaReader.FileIndexer
             {
                 if (extentionVerifier.TestExtention(ioitem.Extention))
                 {
-                    MusikList.Add(ioitem.FullName);
-                    Console.WriteLine(ioitem.FullName);
+                    MusikList.Add(ioitem);
+                    Console.WriteLine("added " + ioitem.FullName);
                 }
 
                 if (ioitem.Tag == "folder")
                 {
-                    //subfolders.Add(ioitem.FullName);
                     Console.WriteLine(ioitem.FullName);
                     SubFoldersLookup(ioitem.FullName);
-
                 }
             }
             testsubfolder = null;
@@ -116,8 +100,8 @@ namespace MetaReader.FileIndexer
             {
                 if (extentionVerifier.TestExtention(ioitem.Extention))
                 {
-                    MusikList.Add(ioitem.FullName);
-                    Console.WriteLine(ioitem.FullName);
+                    MusikList.Add(ioitem);
+                    Console.WriteLine("subfolder added " + ioitem.FullName);
                 }
 
                 if (ioitem.Tag == "folder")
@@ -155,22 +139,19 @@ namespace MetaReader.FileIndexer
         private IMetadataReader metadata;
         private List<IMetadataReader> _metaList;
 
-        private void GetAllMetaData(IEnumerable<string> musikList)
+        private void GetAllMetaData(IEnumerable<IOitem> musikList)
         {
             if (musikList == null) throw new ArgumentNullException("musikList");
 
-            var i = 0;
-
-            foreach (string musiknumber in musikList)
+            foreach (IOitem musiknumber in musikList)
             {
-                GetFileMetaData(i, musiknumber);
-                i++;
+                GetFileMetaData(musiknumber.FilePath, musiknumber.Name);
             }
         }
 
-        private void GetFileMetaData(int indexNumber, string musiknumber)
+        private void GetFileMetaData(string folderPath, string musiknumber)
         {
-            metadata = new MetadataReader.MetadataReader(indexNumber, musiknumber);
+            metadata = new MetadataReader.MetadataReader(folderPath, musiknumber);
             _metaList.Add(metadata);
         }
 

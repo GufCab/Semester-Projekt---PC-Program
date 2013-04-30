@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace MetaReader.MetadataReader
     class MetadataReader : IMetadataReader
     {
         //other variables
-        private int _objectnumber;
+        //private int _objectnumber;
         private string _folder;
 
 
@@ -26,9 +27,37 @@ namespace MetaReader.MetadataReader
 
         //shell32 magic
         private readonly Shell32.Shell _shell = new Shell32.Shell();
+
         private Shell32.Folder _objFolder;
         private Shell32.FolderItem2 _item2;
 
+        private string _musikNumber;
+
+        public MetadataReader(string folderpath, string musikNumber)
+        {
+            _musikNumber = musikNumber;
+            _folder = folderpath;
+            _objFolder = _shell.NameSpace(_folder);
+            findItem();
+            Setter();
+        }
+
+        private void findItem()
+        {
+            //select folder
+            //select item
+            //int i = 0;
+            foreach (Shell32.FolderItem2 folderItem2 in _objFolder.Items())
+            {
+                //Get file name from last find sidste . i filnavn
+                string tempItemName = folderItem2.Name + Path.GetExtension(_objFolder.GetDetailsOf(folderItem2, 180)); //_objFolder.GetDetailsOf(folderItem2, 180);
+                if (tempItemName == _musikNumber)
+                    _item2 = folderItem2;
+            }
+
+        }
+
+        /*
         public MetadataReader(int objectnumber, string folder)
         {
             _objectnumber = objectnumber;
@@ -51,6 +80,7 @@ namespace MetaReader.MetadataReader
             }
             
         }
+        */
         
         private void Setter()
         {
@@ -67,6 +97,7 @@ namespace MetaReader.MetadataReader
         private string ArrHeader(int Column)
         {
             return _objFolder.GetDetailsOf(_item2, Column);
+            //return _item2
         }
     }
 }

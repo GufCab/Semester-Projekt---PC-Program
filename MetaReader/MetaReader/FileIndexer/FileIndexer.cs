@@ -62,7 +62,7 @@ namespace MetaReader.FileIndexer
 
             foreach (Shell32.FolderItem2 item2 in _objFolder.Items())
             {
-                metadata = new MetadataReader.MetadataReader(i, Folderpath);
+                //metadata = new MetadataReader.MetadataReader(i, Folderpath);
                 _metaList.Add(metadata);
                 i++;
             }

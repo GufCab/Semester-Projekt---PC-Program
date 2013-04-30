@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using MetaReader.FileIndexer;
 using MetaReader.IOReader;
 using MetaReader.MDataReader;
+using MetaReader.MetadataReader;
+using Shell32;
 
 
 namespace MetaReader
@@ -26,11 +28,12 @@ namespace MetaReader
             //=================
             // Next Test
             //=================
-            
+            testTre(musikFolder);
+
             //=================
             // Test FoldersAndFileReader
             //=================
-            FolderAndFileIndexerTest(musikFolder);
+            //FolderAndFileIndexerTest(musikFolder);
             
             //=================
             // Test stop
@@ -49,12 +52,42 @@ namespace MetaReader
             // print all metadata:
             //==============
 
-            //WriteMetaData();
+            //printMetaData(musikFolder);
 
             //dataContainer.PrintItem();
             //dataContainer.Print();
             //dataContainer.PrintTitle();
         }
+
+        private static void printMetaData(string musikFolder)
+        {
+            List<string> arrHeaders = new List<string>();
+
+            EntryText("Writing MetaData");
+
+            Shell32.Shell _shell = new Shell();
+            Shell32.Folder _objFolder = _shell.NameSpace(musikFolder);
+
+            for (int i = 0; i < short.MaxValue; i++)
+            {
+                string header = _objFolder.GetDetailsOf(null, i);
+                if (String.IsNullOrEmpty(header))
+                    break;
+                arrHeaders.Add(header);
+            }
+
+
+            foreach (var items in _objFolder.Items())
+            {
+                for (int i = 0; i < arrHeaders.Count; i++)
+                {
+                    Console.WriteLine("{0}\t{1}: {2}", i, arrHeaders[i], _objFolder.GetDetailsOf(items, i));
+                }
+                break;
+            }
+        }
+
+
 
         private static void testEt(string musikFolder)
         {
@@ -113,6 +146,7 @@ namespace MetaReader
 
         private static void FolderAndFileIndexerTest(string musikFolder)
         {
+            
             EntryText("Test FoldersAndFileReader");
             FileIndexer.FolderAndFileReader folderAndFileReader = new FolderAndFileReader();
             
@@ -129,8 +163,28 @@ namespace MetaReader
             
         }
 
-        private static void testTre()
-        { }
+        private static void testTre(string musikFolder)
+        {
+            EntryText(" Test FolderIndexer and MetaData");
+
+            FileIndexer.IFileIndexer folderAndFileReader = new FolderAndFileReader();
+
+            folderAndFileReader.SetIndexPath(musikFolder);
+
+            List<MetadataReader.IMetadataReader> metadata;
+            metadata = folderAndFileReader.GetMetaData();
+
+            
+            EntryText(" Testing MetaData ");
+            foreach (IMetadataReader data in metadata)
+            {
+                Console.WriteLine(data.ItemName);
+                Console.WriteLine(data.Title);
+                Console.WriteLine(data.Artist);
+                Console.WriteLine(data.Filepath);
+
+            }
+        }
         private static void testFire()
         { }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace MetaReader.FileIndexer
         public string Name { get; private set; }
         public string FullName { get; private set; }
         public string Extention { get; private set; }
+        public string FilePath { get; private set; }
 
         public IOitem(System.IO.FileInfo fileInfo)
         {
@@ -19,6 +21,7 @@ namespace MetaReader.FileIndexer
             FullName = fileInfo.FullName;
             Tag = "file";
             Extention = fileInfo.Extension;
+            FilePath = fileInfo.DirectoryName;
         }
 
         public IOitem(System.IO.DirectoryInfo directoryInfo)
