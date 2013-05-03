@@ -36,7 +36,6 @@ namespace EntityMusikindex
            
                 INDEX.ItemsSource = (from p in musik.musikdatas select new {Title = p.Title , Artist = p.Artist , Album = p.Album , Genre = p.Genre }).ToList();
 
-
                 List<filepath> allPath = (from o in musik.filepaths select o).ToList();
                 Path.ItemsSource = allPath;
             }

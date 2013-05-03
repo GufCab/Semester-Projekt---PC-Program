@@ -5,6 +5,9 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using MetaReader.FileIndexer;
+using MetaReader.MetadataReader;
+
 
 namespace TemplateSync
 {
@@ -23,9 +26,9 @@ namespace TemplateSync
 
            _RelPath = MakeRelpathFromAbspath(absPath);
 
-           //FillIP();
+           FillIP(); 
 
-           //FillPath();
+           FillPath();
           
            FillDatabase();
 
@@ -36,7 +39,7 @@ namespace TemplateSync
         {
 
 
-            Uri to = new Uri(@""+a);
+            Uri to = new Uri(a);
             // Must end in a slash to indicate folder
             Uri from = new Uri(Environment.CurrentDirectory);
             string relativePath =
@@ -52,53 +55,34 @@ namespace TemplateSync
 
         public void FillDatabase()
         {
+            var index = new FileIndexer(_AbsPath);
 
-           // List<IMetadata> metalist;
+            List<IMetadataReader> mdata = index.GetMetaData();
+
+            var nummer = new musikdata();
+           
 
             using (var musik = new musikindexEntities1())
             {
 
-                //metalist = getmetadata();
-                var nummer = new musikdata();
-                //foreach (var metadata in metalist)
-                //{
-                //    nummer.Titel = metadata.Title;
-                //    nummer.Kunstner = metadata.Kunstner;
-                //    nummer.Album = metadata.Album;
-                //    nummer.Genre = metadata.Genre;
-                //    nummer.nrLenth = metadata.Nrlenth;
-                //    //nummer.FilepathTabel_idFilesti = metadata.FilePath;
 
-                //}
-
-                
-                //foreach (var metadata in _datalist)
+                foreach (var metadata in mdata)
                 {
-                    //nummer.Titel = metadata.Title;
-                    //nummer.Kunstner = metadata.Kunstner;
-                    //nummer.Album = metadata.Album;
-                    //nummer.Genre = metadata.Genre;
-                    //nummer.nrLenth = metadata.Nrlenth;
-
-                    nummer.Title = "jump";
-                    nummer.Artist = "Van Halen";
-                    nummer.Album = "Blackbox";
-                    nummer.Genre = "babyrock";
-                    nummer.NrLenth = 334;
-                    nummer.FileName = "jump.mp3";
-
-                    nummer.FilePath_idFilePath = _RelPath;//ref til den rigtige absPath
-
-
-
-
+                    nummer.Title = metadata.Title;
+                    nummer.Artist = metadata.Artist;
+                    nummer.Album = metadata.Album;
+                    nummer.Genre = metadata.Genre;
+                    nummer.NrLenth = metadata.LengthS;
+                    nummer.FileName = metadata.ItemName;
+                    nummer.FilePath_idFilePath = _RelPath;
 
                     musik.musikdatas.Add(nummer);
+
+                    musik.SaveChanges();
                 }
+                
 
-               
-
-                musik.SaveChanges();
+            
 
             }
 
@@ -109,6 +93,7 @@ namespace TemplateSync
             using (var musik = new musikindexEntities1())
             {
                 
+
                 string host = Dns.GetHostName();
                 IPHostEntry IPHost = Dns.GetHostEntry(Dns.GetHostName());
 
@@ -117,13 +102,27 @@ namespace TemplateSync
                 //myIP.idIP = IPHost.AddressList[0].ToString();
                 myIP.idIP = "192.168.001.090";
 
-                myIP.Owner = Environment.UserName;
+                var ip = (from p in musik.ips select p.idIP);
 
-                myIP.Protocol = "rtsp://";
+                bool chek =false;
 
-                musik.ips.Add(myIP);
+                foreach (var i in ip)
+                {
+                    chek = i.ToString() == myIP.idIP ? true : false;                    
+                }
+ 
 
-                musik.SaveChanges();
+                if(!chek)
+                {
+                    myIP.Owner = Environment.UserName;
+
+                    myIP.Protocol = "rtsp://";
+
+                    musik.ips.Add(myIP);
+
+                    musik.SaveChanges();
+                }
+               
             }
 
         }

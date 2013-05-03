@@ -10,7 +10,7 @@ namespace TemplateSync
     {
         static void Main(string[] args)
         {
-            var sync = new SyncTemplate(@"C:\Users\Public\Music");
+            var sync = new SyncTemplate(@"C:\Users\Public\Music\Sample Music");
 
         }
     }

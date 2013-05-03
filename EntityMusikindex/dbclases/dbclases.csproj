@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DB36984E-DC7B-4304-8E11-D875B7C8A121}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{D16CE8E0-B4FC-4152-BBA1-14170D833736}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TemplateSync</RootNamespace>
-    <AssemblyName>TemplateSync</AssemblyName>
+    <RootNamespace>dbclases</RootNamespace>
+    <AssemblyName>dbclases</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -48,62 +46,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FileIndexer.cs" />
+    <Compile Include="album.cs">
+      <DependentUpon>MusicIndex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="artist.cs">
+      <DependentUpon>MusicIndex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="catagory.cs">
+      <DependentUpon>MusicIndex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBHandel.cs" />
+    <Compile Include="device.cs">
+      <DependentUpon>MusicIndex.tt</DependentUpon>
+    </Compile>
     <Compile Include="filepath.cs">
-      <DependentUpon>musikdb.tt</DependentUpon>
+      <DependentUpon>MusicIndex.tt</DependentUpon>
     </Compile>
-    <Compile Include="IFileIndexer.cs" />
-    <Compile Include="IMetadata.cs" />
-    <Compile Include="IMetadataReader.cs" />
-    <Compile Include="ip.cs">
-      <DependentUpon>musikdb.tt</DependentUpon>
+    <Compile Include="genre.cs">
+      <DependentUpon>MusicIndex.tt</DependentUpon>
     </Compile>
-    <Compile Include="MetadataReader.cs" />
+    <Compile Include="MusicIndex.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MusicIndex.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MusicIndex.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MusicIndex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MusicIndex.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MusicIndex.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="musik.cs">
+      <DependentUpon>MusicIndex.tt</DependentUpon>
+    </Compile>
     <Compile Include="musikdata.cs">
-      <DependentUpon>musikdb.tt</DependentUpon>
+      <DependentUpon>MusicIndex.tt</DependentUpon>
     </Compile>
-    <Compile Include="musikdb.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>musikdb.Context.tt</DependentUpon>
+    <Compile Include="playqueue.cs">
+      <DependentUpon>MusicIndex.tt</DependentUpon>
     </Compile>
-    <Compile Include="musikdb.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>musikdb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="musikdb.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>musikdb.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SyncTemplate.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <EntityDeploy Include="musikdb.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>musikdb.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="musikdb.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>musikdb.edmx</DependentUpon>
-      <LastGenOutput>musikdb.Context.cs</LastGenOutput>
-    </None>
-    <None Include="musikdb.edmx.diagram">
-      <DependentUpon>musikdb.edmx</DependentUpon>
-    </None>
-    <None Include="musikdb.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>musikdb.edmx</DependentUpon>
-      <LastGenOutput>musikdb.cs</LastGenOutput>
-    </None>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MetadataReader\MetadataReader.csproj">
@@ -112,15 +98,30 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <COMReference Include="Shell32">
-      <Guid>{50A7E9B0-70EF-11D1-B75A-00A0C90564FE}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
+    <EntityDeploy Include="MusicIndex.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MusicIndex.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="MusicIndex.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MusicIndex.edmx</DependentUpon>
+      <LastGenOutput>MusicIndex.Context.cs</LastGenOutput>
+    </None>
+    <None Include="MusicIndex.edmx.diagram">
+      <DependentUpon>MusicIndex.edmx</DependentUpon>
+    </None>
+    <None Include="MusicIndex.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MusicIndex.edmx</DependentUpon>
+      <LastGenOutput>MusicIndex.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
