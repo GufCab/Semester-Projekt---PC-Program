@@ -15,7 +15,7 @@ namespace dbclases
 
         public void FillIP(String myip)
         {
-            _ip = @""+myip;
+            _ip = myip;
             // Check if id exist
 
             using (var musik = new musikindexEntities())

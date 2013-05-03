@@ -20,13 +20,9 @@ namespace TemplateSync
         //private int _index;
 
 
-       public SyncTemplate(string absPath)
+       public SyncTemplate()
        {
            var db = new Dbhandel();
-           //Creating Path's
-            _AbsPath = absPath;
-
-           _RelPath = MakeRelpathFromAbspath(absPath);
 
            CreateStream();// RelPath is path from Live555 to Musicfolder
 
