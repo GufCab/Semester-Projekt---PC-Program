@@ -34,9 +34,6 @@ namespace Live555
                         }
                 };
             //Console.SetOut(SW);
-            //string arguments = "-idle -quiet -slave ";
-            //startInfo.Arguments = arguments;
-
             
             //startInfo.RedirectStandardError = true;
             //startInfo.UseShellExecute = false;
@@ -49,7 +46,10 @@ namespace Live555
 
             _liveServer.Start();
             _liveServer.BeginOutputReadLine();
-            
+            //_liveServer.Kill();
+
+            //_liveServer.Start();
+
 
             //string[] stringSeperators = new string[] { "/" };
             //while (!_liveServer.StandardOutput.EndOfStream)

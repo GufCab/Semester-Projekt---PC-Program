@@ -11,6 +11,7 @@ namespace Live555
         static void Main(string[] args)
         {
             var myLiveServer = new Live555Wrapper();
+            Console.ReadLine();
             Console.WriteLine(myLiveServer.GetIP());
         }
     }
