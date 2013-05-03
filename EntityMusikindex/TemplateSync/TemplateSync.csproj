@@ -48,17 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FileIndexer.cs" />
     <Compile Include="filepath.cs">
       <DependentUpon>musikdb.tt</DependentUpon>
     </Compile>
-    <Compile Include="IFileIndexer.cs" />
-    <Compile Include="IMetadata.cs" />
-    <Compile Include="IMetadataReader.cs" />
     <Compile Include="ip.cs">
       <DependentUpon>musikdb.tt</DependentUpon>
     </Compile>
-    <Compile Include="MetadataReader.cs" />
     <Compile Include="musikdata.cs">
       <DependentUpon>musikdb.tt</DependentUpon>
     </Compile>
@@ -106,6 +101,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\dbclases\dbclases.csproj">
+      <Project>{d16ce8e0-b4fc-4152-bba1-14170d833736}</Project>
+      <Name>dbclases</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MetadataReader\MetadataReader.csproj">
       <Project>{97f9252f-f30d-41cf-bb96-050068fd1948}</Project>
       <Name>MetadataReader</Name>
