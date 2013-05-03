@@ -13,30 +13,74 @@ namespace Live555
         private Process _liveServer;
         private StreamReader _outStream;
         private StreamWriter _inStream;
+        private string IP= "If you're reading this, something went wrong";
+
+        public Live555Wrapper()
+        {
+            Live555Setup();
+        }
 
         private void Live555Setup()
         {
-            _liveServer = new Process();
-            var startInfo = new ProcessStartInfo();
+            //var SW = new StringWriter();
+            _liveServer = new Process
+                {
+                    StartInfo = new ProcessStartInfo
+                        {
+                            FileName = "live555MediaServer",
+                            UseShellExecute = false,
+                            RedirectStandardOutput = true//,
+                            //CreateNoWindow = true
+                        }
+                };
+            //Console.SetOut(SW);
+            //string arguments = "-idle -quiet -slave ";
+            //startInfo.Arguments = arguments;
 
-            string arguments = "-idle -quiet -slave ";
+            
+            //startInfo.RedirectStandardError = true;
+            //startInfo.UseShellExecute = false;
+            //startInfo.RedirectStandardInput = true;
+            //startInfo.RedirectStandardOutput = true;
 
-            startInfo.FileName = "live555MediaServer.exe";
-            startInfo.Arguments = arguments;
+            _liveServer.OutputDataReceived += new DataReceivedEventHandler(SortOutputHandler);
 
-            startInfo.RedirectStandardError = true;
-            startInfo.RedirectStandardInput = true;
-            startInfo.RedirectStandardOutput = true;
+            //_liveServer.StartInfo = startInfo;
 
-            startInfo.UseShellExecute = false;
-
-            _liveServer.StartInfo = startInfo;
-
-            //begin mplayer in idle
             _liveServer.Start();
+            _liveServer.BeginOutputReadLine();
+            
 
-            _outStream = _liveServer.StandardOutput;
-            _inStream = _liveServer.StandardInput;
+            //string[] stringSeperators = new string[] { "/" };
+            //while (!_liveServer.StandardOutput.EndOfStream)
+            //{
+            //    string line = _liveServer.StandardOutput.ReadLine();
+            //    if (line.Contains("rtsp"))
+            //    {
+            //        string[] phrase = line.Split(stringSeperators, StringSplitOptions.RemoveEmptyEntries);
+            //        IP = phrase[2];
+            //    }
+            //}
+            //Console.WriteLine(SW.ToString());
+
+        }
+
+        public string GetIP()
+        {
+            return IP;
+        }
+
+        private void SortOutputHandler(object senderObject, DataReceivedEventArgs outLine)
+        {
+            if (!String.IsNullOrEmpty(outLine.Data))
+            {
+                if (outLine.Data.Contains("rtsp"))
+                {
+                    string[] stringSeperators = new string[] { "/" };
+                    string[] phrase = outLine.Data.Split(stringSeperators, StringSplitOptions.RemoveEmptyEntries);
+                    IP = phrase[2];
+                }
+            }
         }
     }
 }
