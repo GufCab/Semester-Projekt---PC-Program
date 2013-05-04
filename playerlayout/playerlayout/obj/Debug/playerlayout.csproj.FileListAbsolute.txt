@@ -20,3 +20,6 @@ C:\Users\Malmos\Documents\Visual Studio 2012\Projects\playerlayout\playerlayout\
 C:\Users\Malmos\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\bin\Debug\playerlayout.exe.config
 C:\Users\Malmos\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\obj\Debug\playerlayout.exe
 C:\Users\Malmos\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\obj\Debug\playerlayout.pdb
+C:\Users\Michael O\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\bin\Debug\playerlayout.exe.config
+C:\Users\Michael O\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\obj\Debug\playerlayout.exe
+C:\Users\Michael O\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\obj\Debug\playerlayout.pdb

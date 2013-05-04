@@ -22,7 +22,18 @@ namespace tcp
 		/// </param>
 		public static String extractFileName(String fileName)
     	{
-    		return (fileName.LastIndexOf('/')==0 ? fileName : fileName.Substring(fileName.LastIndexOf('/')+1));
+		    if (fileName.Contains("/"))
+		    {
+		        return (fileName.LastIndexOf('/') == 0
+		                    ? fileName
+		                    : fileName.Substring(fileName.LastIndexOf('/') + 1));
+		    }
+		    else
+		    {
+                return (fileName.LastIndexOf('\\') == 0
+                            ? fileName
+                            : fileName.Substring(fileName.LastIndexOf('\\') + 1));
+		    }
     	}
 
 		/// <summary>

@@ -6,14 +6,14 @@ using tcp;
 
 namespace Server
 {
-    public class Server
+    public class Server : IDisposable
     {
-        private static IPAddress _IP;
-        private static TcpListener _serverSocket;
-        private static TcpClient _clientSocket;
-        private static NetworkStream _serverStream;
-        private static string _fileName;
-        private static string _fileSize;
+        public IPAddress _IP { get; private set; }
+        public TcpListener _serverSocket { get; private set; }
+        public TcpClient _clientSocket { get; private set; }
+        public NetworkStream _serverStream { get; private set; }
+        public string _fileName { get; private set; }
+        public string _fileSize { get; private set; }
 
         private string LocalIpAddress()
         {
@@ -29,19 +29,26 @@ namespace Server
             return localIp;
         }
 
-        private void SetUp()
+        public void SetUp()
         {
             try
             {
-                _IP = IPAddress.Parse(LocalIpAddress());							                //Convert tempIP to IP
-                _serverSocket = new TcpListener(_IP, PORT); 										//Create and initialize TCPlistener
+                _IP = IPAddress.Parse(LocalIpAddress());                                            //Convert tempIP to IP
+                _serverSocket = new TcpListener(_IP, PORT);                                         //Create and initialize TCPlistener
                 _clientSocket = new TcpClient();
                 _clientSocket = default(TcpClient);
-                _serverSocket.Start(); 																//Start listening on serverSocket
-                Console.WriteLine(" >> TCP server started - Listening on port {0}...", PORT);		//Write which port we're listening to
-                Console.WriteLine(" >> The IP:Port is: {0}:{1}", LocalIpAddress(), PORT);			//Write local end point
-                Console.WriteLine(" >> Waiting for connection.....");								//Indicate server is waiting for connection
-                _clientSocket = _serverSocket.AcceptTcpClient();									//Set server to accept connections
+                _serverSocket.Start();                                                              //Start listening on serverSocket
+                Console.WriteLine(" >> TCP server started - Listening on port {0}...", PORT);       //Write which port we're listening to
+                Console.WriteLine(" >> The IP:Port is: {0}:{1}", LocalIpAddress(), PORT);           //Write local end point
+                Console.WriteLine(" >> Waiting for connection.....");                               //Indicate server is waiting for connection
+                Console.WriteLine();
+                _clientSocket = _serverSocket.AcceptTcpClient();                                    //Set server to accept connections
+                _serverStream = _clientSocket.GetStream();                                          //Prepare to receive file name
+                if (_clientSocket != null)
+                {
+                    Console.WriteLine(" >> TCP server connected to {0} on port {1}...",
+                                        _clientSocket.Client.LocalEndPoint, PORT);                    //Tell user that client is started on chosen port
+                }
             }
             catch (Exception e)
             {
@@ -50,6 +57,18 @@ namespace Server
             }
         }
         
+        public void ReadFileName()
+        {
+            _fileName = Path.GetFileName(LIB.readTextTCP(_serverStream)); //Read file name
+            Console.WriteLine("File name is: '{0}'", Path.GetFileName(_fileName)); //Tell the user the file name
+        }
+
+        public void ReadFileSize()
+        {
+            _fileSize = LIB.readTextTCP(_serverStream); //Read file size
+            Console.WriteLine("File size is: {0} bytes.", _fileSize); //Output file size to console
+        }
+
         /// <summary>
         /// The PORT
         /// </summary>
@@ -59,24 +78,12 @@ namespace Server
         /// </summary>
         public const int BUFSIZE = 10000;
 
-        public Server()
-        {
-            SetUp();
-            _serverStream = _clientSocket.GetStream(); //Prepare to receive file name
-            _fileName = LIB.readTextTCP(_serverStream); //Read file name
-            Console.WriteLine("File name is: '{0}'", _fileName); //Tell the user the file name
-            _fileSize = LIB.readTextTCP(_serverStream); //Read file size
-            Console.WriteLine("File size is: {0} Kbytes.", _fileSize); //Output file size to console
-            ReceiveFile(_fileName, _serverStream);
-            CloseSocketConnection();
-        }
-
-        private void ReceiveFile(String fileName, NetworkStream io)
+        public void ReceiveFile(String fileName, NetworkStream io)
         {
             // TO DO Din egen kode
             byte[] fileData = new byte[BUFSIZE];
 
-            FileStream writeFileStream = new FileStream(fileName, FileMode.Create);
+            FileStream writeFileStream = new FileStream(LIB.extractFileName(fileName), FileMode.Create);
             BinaryWriter bWrite = new BinaryWriter(writeFileStream);
 
             int bytesRead = 0;
@@ -91,12 +98,19 @@ namespace Server
             }
             while (remainingSize > 0);
 
-
+            writeFileStream.Flush();
+            writeFileStream.Close();
             bWrite.Close();
         }
 
-        private void CloseSocketConnection()
+        public void CloseSocketConnection()
         {
+            _clientSocket.Close();
+        }
+
+        public void Dispose()
+        {
+            _serverSocket.Stop();
             _clientSocket.Close();
         }
     }
