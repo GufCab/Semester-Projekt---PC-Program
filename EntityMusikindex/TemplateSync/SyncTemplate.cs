@@ -26,7 +26,7 @@ namespace TemplateSync
 
            CreateStream();// RelPath is path from Live555 to Musicfolder
 
-           db.FillIP("192.168.001.190"); // denne skal hentes fra live555
+           db.FillIP("192.168.001.120"); // denne skal hentes fra live555
           
          
         }
