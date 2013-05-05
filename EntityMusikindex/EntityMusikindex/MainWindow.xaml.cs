@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
+using dbclases;
 
 
 namespace EntityMusikindex
@@ -34,7 +35,7 @@ namespace EntityMusikindex
             using (var musik = new musikindexEntities())
             {
            
-                INDEX.ItemsSource = (from p in musik.musikdatas select new {Title = p.Title , Artist = p.Artist , Album = p.Album , Genre = p.Genre }).ToList();
+               INDEX.ItemsSource = (from p in musik.musikdatas select new {Title = p.Title , Artist = p.Artist_idArtist , Album = p.Album_idAlbum , Genre = p.Genre_Genre }).ToList();
 
                 List<filepath> allPath = (from o in musik.filepaths select o).ToList();
                 Path.ItemsSource = allPath;
@@ -63,29 +64,9 @@ namespace EntityMusikindex
 
         private void ButtonAdd_OnClick(object sender, RoutedEventArgs e)
         {
-            
-            var nummer = new musikdata();
-            nummer.Title = "haha";
-            nummer.Album = "dans";
-            nummer.Genre = "heavy";
-            nummer.Artist = "Den glade";
-            nummer.FilePath_idFilePath = "Hans";
-            nummer.FileName = "Jump.mp3";
-
-
-
-            
-            
-
-            using (var musik = new musikindexEntities())
-            {   
-             
-             musik.musikdatas.Add(nummer);
-
-                musik.SaveChanges();
-
-            }
         }
+
+
 
         private void Buttonremoveall_OnClick(object sender, RoutedEventArgs e)
         {

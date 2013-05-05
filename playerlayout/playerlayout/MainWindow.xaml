@@ -38,34 +38,7 @@
                 <RowDefinition Height="Auto" MinHeight="20"/>
             </Grid.RowDefinitions>
             <Label Grid.Row="0" Content="Musikindex"/>
-            <Grid Grid.Row="1" Background="Transparent" >
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <Label Content="Titel" Grid.Column="0" Grid.Row="0"  />
-                <GridSplitter Grid.Row="0" Grid.ColumnSpan="1" Grid.Column="1" Width="2" HorizontalAlignment="Center" Opacity=".1"/>
-                <Label Content="Kunstner" Grid.Column="2" Grid.Row="0" />
-                <GridSplitter  Grid.Row="0" Grid.Column="3" Width="2"  HorizontalAlignment="Center"  Opacity=".1"/>
-                <Label Grid.Column="4" Grid.Row="0" Content="Album"/>
-                <GridSplitter Grid.Row="0" Grid.Column="5" Width="2" HorizontalAlignment="Center" Opacity=".1"/>
-                <Label Grid.Row="0" Grid.Column="6" Content="Genre"></Label>
-                <ListBox Grid.Row="1" Grid.Column="0"/>
-                <ListBox Grid.Row="1" Grid.Column="2"/>
-                <ListBox Grid.Row="1" Grid.Column="4"/>
-                <ListBox Grid.Row="1" Grid.Column="6"/>
-            
-        </Grid>
+            <DataGrid Grid.Row="1">her skal være</DataGrid>
 
         </Grid>
         <GridSplitter Grid.Column="2" Width="5" HorizontalAlignment ="Center" Background="Gray" Opacity=".1"/>
@@ -90,30 +63,7 @@
                 <Button Grid.Column="3" Margin="2" MinWidth="15" Background="Gold" Click="ButtonM_OnClick" Content="Open"/>
                 <Button Grid.Column="4" Margin="2" MinWidth="15" Background="Red" Click="ButtonX_OnClick " Content="Slet"/>
             </Grid>
-            <Grid Grid.Row="1" Background="SteelBlue" >
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <Label Content="Titel" Grid.Column="0" Grid.Row="0" />
-                <GridSplitter Grid.Row="0" Grid.Column="1"  Width="2" HorizontalAlignment="Center"/>
-                <Label Content="Kunstner" Grid.Column="2" Grid.Row="0" />
-                <GridSplitter  Grid.Row="0" Grid.Column="3" Width="2"  HorizontalAlignment="Center" />
-                <Label Grid.Column="4" Grid.Row="0" Content="Længde"/>
-                <ListBox Grid.Row="1" Grid.Column="0"/>
-                <ListBox Grid.Row="1" Grid.Column="2"/>
-                <ListBox Grid.Row="1" Grid.Column="4"/>
-
-            </Grid>
-            
+            <DataGrid Grid.Row="1"></DataGrid>
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"></ColumnDefinition>

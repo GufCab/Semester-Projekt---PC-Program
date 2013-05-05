@@ -69,36 +69,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="filepath.cs">
-      <DependentUpon>musikdb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ip.cs">
-      <DependentUpon>musikdb.tt</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="musikdata.cs">
-      <DependentUpon>musikdb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="musikdb.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>musikdb.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="musikdb.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>musikdb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="musikdb.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>musikdb.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -116,23 +92,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="musikdb.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>musikdb.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="musikdb.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>musikdb.edmx</DependentUpon>
-      <LastGenOutput>musikdb.Context.cs</LastGenOutput>
-    </None>
-    <None Include="musikdb.edmx.diagram">
-      <DependentUpon>musikdb.edmx</DependentUpon>
-    </None>
-    <None Include="musikdb.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>musikdb.edmx</DependentUpon>
-      <LastGenOutput>musikdb.cs</LastGenOutput>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -147,6 +106,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dbclases\dbclases.csproj">
+      <Project>{D16CE8E0-B4FC-4152-BBA1-14170D833736}</Project>
+      <Name>dbclases</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

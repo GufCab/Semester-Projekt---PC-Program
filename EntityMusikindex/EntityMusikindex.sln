@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dbclases", "dbclases\dbclas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dbtester", "Dbtester\Dbtester.csproj", "{87B638E2-6FC8-4632-82CB-506B4F516F2E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Live555", "Live555\Live555.csproj", "{CC85FBE0-C95D-4C5F-A03E-98ACAF9FD486}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{87B638E2-6FC8-4632-82CB-506B4F516F2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87B638E2-6FC8-4632-82CB-506B4F516F2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87B638E2-6FC8-4632-82CB-506B4F516F2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC85FBE0-C95D-4C5F-A03E-98ACAF9FD486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC85FBE0-C95D-4C5F-A03E-98ACAF9FD486}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC85FBE0-C95D-4C5F-A03E-98ACAF9FD486}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC85FBE0-C95D-4C5F-A03E-98ACAF9FD486}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

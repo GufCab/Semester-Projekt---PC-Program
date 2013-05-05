@@ -64,6 +64,10 @@
       <Project>{d16ce8e0-b4fc-4152-bba1-14170d833736}</Project>
       <Name>dbclases</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Live555\Live555.csproj">
+      <Project>{cc85fbe0-c95d-4c5f-a03e-98acaf9fd486}</Project>
+      <Name>Live555</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MetadataReader\MetadataReader.csproj">
       <Project>{97f9252f-f30d-41cf-bb96-050068fd1948}</Project>
       <Name>MetadataReader</Name>

@@ -149,7 +149,7 @@ namespace dbclases
                     nummer.Genre_Genre = metadata.Genre;
                     nummer.NrLenth = metadata.LengthS;
                     nummer.FileName = metadata.ItemName;
-                    nummer.FilePath_idFilePath = "chomefuck";
+                    nummer.FilePath_idFilePath = "chomefuck";//
 
                     musik.musikdatas.Add(nummer);
 
@@ -161,7 +161,7 @@ namespace dbclases
 
         }
 
-        public void Addgenre( List<string> liste)
+        private void Addgenre( List<string> liste)
         {
             //se if Genre exists if not add genre
             using (var musik = new musikindexEntities())
@@ -196,7 +196,7 @@ namespace dbclases
             }
         }
 
-        public void addArtist(List<string> liste)
+        private void addArtist(List<string> liste)
         {
             // make artist list
 
@@ -236,7 +236,7 @@ namespace dbclases
 
         }
 
-        public void addAlbum(List<string> liste)
+        private void addAlbum(List<string> liste)
         {
             using (var musik = new musikindexEntities())
             {
@@ -271,7 +271,21 @@ namespace dbclases
 
         }
 
+        public void addNumtoplayquque(int num)
+        {
+            var mummer = new playqueue();
 
+            mummer.Catagory_idCatagory = 3;
+            mummer.MusikData_idMusikData = num;
+
+            using (var musik = new musikindexEntities())
+            {
+                musik.playqueues.Add(mummer);
+                musik.SaveChanges();
+
+            }   
+
+        }
 
 
     }

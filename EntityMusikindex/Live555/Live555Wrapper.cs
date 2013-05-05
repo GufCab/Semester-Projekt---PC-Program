@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Live555
 {
-    class Live555Wrapper
+   public class Live555Wrapper
     {
         private Process _liveServer;
         private StreamReader _outStream;
