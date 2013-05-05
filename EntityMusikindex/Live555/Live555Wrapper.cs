@@ -54,5 +54,10 @@ namespace Live555
         {
             return IP;
         }
+        public string GetIPandPort()
+        {
+            string tempIP = IP + ":8554";
+            return tempIP;
+        }
     }
 }

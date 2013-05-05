@@ -13,6 +13,7 @@ namespace Live555
             var myLiveServer = new Live555Wrapper();
             Console.ReadLine();
             Console.WriteLine(myLiveServer.GetIP());
+            Console.WriteLine(myLiveServer.GetIPandPort());
         }
     }
 }
