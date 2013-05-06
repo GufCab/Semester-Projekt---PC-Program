@@ -7,7 +7,7 @@ using tcp;
 
 namespace Client
 {
-    class Client : IDisposable
+    public class Client : IClient, IDisposable
     {
         /// <summary>
         /// The BUFSIZE.
