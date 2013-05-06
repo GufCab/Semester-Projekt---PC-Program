@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,7 +24,18 @@ namespace Live555
 
         private void Live555Setup()
         {
-            //var SW = new StringWriter();
+            IPHostEntry host;
+            string localIP = "?";
+            host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    localIP = ip.ToString();
+                    IP = localIP;
+                }
+            }
+            
             _liveServer = new Process
                 {
                     StartInfo = new ProcessStartInfo
@@ -33,54 +46,18 @@ namespace Live555
                             //CreateNoWindow = true
                         }
                 };
-            //Console.SetOut(SW);
             
-            //startInfo.RedirectStandardError = true;
-            //startInfo.UseShellExecute = false;
-            //startInfo.RedirectStandardInput = true;
-            //startInfo.RedirectStandardOutput = true;
-
-            _liveServer.OutputDataReceived += new DataReceivedEventHandler(SortOutputHandler);
-
-            //_liveServer.StartInfo = startInfo;
-
             _liveServer.Start();
-            _liveServer.BeginOutputReadLine();
-            //_liveServer.Kill();
-
-            //_liveServer.Start();
-
-
-            //string[] stringSeperators = new string[] { "/" };
-            //while (!_liveServer.StandardOutput.EndOfStream)
-            //{
-            //    string line = _liveServer.StandardOutput.ReadLine();
-            //    if (line.Contains("rtsp"))
-            //    {
-            //        string[] phrase = line.Split(stringSeperators, StringSplitOptions.RemoveEmptyEntries);
-            //        IP = phrase[2];
-            //    }
-            //}
-            //Console.WriteLine(SW.ToString());
-
         }
 
         public string GetIP()
         {
             return IP;
         }
-
-        private void SortOutputHandler(object senderObject, DataReceivedEventArgs outLine)
+        public string GetIPandPort()
         {
-            if (!String.IsNullOrEmpty(outLine.Data))
-            {
-                if (outLine.Data.Contains("rtsp"))
-                {
-                    string[] stringSeperators = new string[] { "/" };
-                    string[] phrase = outLine.Data.Split(stringSeperators, StringSplitOptions.RemoveEmptyEntries);
-                    IP = phrase[2];
-                }
-            }
+            string tempIP = IP + ":8554";
+            return tempIP;
         }
     }
 }

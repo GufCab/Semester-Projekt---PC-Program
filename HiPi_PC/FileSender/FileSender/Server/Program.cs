@@ -4,16 +4,30 @@ namespace Server
 {
     public class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            try
+            do
             {
-                var server = new Server();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
+                try
+                {
+
+                    using (var server = new Server())
+                    {
+                        server.SetUp();
+                        server.ReadFileName();
+                        server.ReadFileSize();
+                        server.ReceiveFile(server._fileName, server._serverStream);
+                        server.CloseSocketConnection();
+                        Console.WriteLine();
+                    }
+                }
+
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+
+            } while (true);
         }
     }
 }

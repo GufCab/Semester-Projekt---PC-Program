@@ -21,13 +21,16 @@ namespace playerlayout
     /// </summary>
     public partial class MainWindow : Window
     {
+        private IObservable<> Musicnumbers;
+        private IObservable<> _play; 
+
         bool play = new bool();
         Settings settingsw = new Settings();
         public MainWindow()
         {
             InitializeComponent();
             
-            
+            var db = new 
         }
 
         private void ButtonX_OnClick(object sender, RoutedEventArgs e)

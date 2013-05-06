@@ -20,6 +20,7 @@ C:\Users\Malmos\Documents\Visual Studio 2012\Projects\playerlayout\playerlayout\
 C:\Users\Malmos\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\bin\Debug\playerlayout.exe.config
 C:\Users\Malmos\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\obj\Debug\playerlayout.exe
 C:\Users\Malmos\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\obj\Debug\playerlayout.pdb
+<<<<<<< HEAD
 C:\Users\Malmos\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\bin\Debug\playerlayout.exe
 C:\Users\Malmos\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\bin\Debug\playerlayout.pdb
 C:\Users\Malmos\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\obj\Debug\playerlayout.csprojResolveAssemblyReference.cache
@@ -36,3 +37,8 @@ C:\Users\Malmos\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\play
 C:\Users\Malmos\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\obj\Debug\playerlayout.g.resources
 C:\Users\Malmos\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\obj\Debug\playerlayout.Properties.Resources.resources
 C:\Users\Malmos\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\obj\Debug\playerlayout.csproj.GenerateResource.Cache
+=======
+C:\Users\Michael O\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\bin\Debug\playerlayout.exe.config
+C:\Users\Michael O\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\obj\Debug\playerlayout.exe
+C:\Users\Michael O\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\obj\Debug\playerlayout.pdb
+>>>>>>> 30df84ef4dd5ade1bfdf7227627aabf90b4b5b67

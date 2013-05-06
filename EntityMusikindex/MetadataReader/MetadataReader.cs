@@ -7,7 +7,7 @@ using Shell32;
 
 namespace MetaReader.MetadataReader
 {
-    class MetadataReader : IMetadataReader
+    public class MetadataReader : IMetadataReader
     {
         //other variables
         private int _objectnumber;

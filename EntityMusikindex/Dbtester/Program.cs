@@ -15,6 +15,13 @@ namespace Dbtester
         {
             var dbh = new dbclases.Dbhandel();
 
+            dbh.FillIP("212.212.224.124");
+
+            List<string>ha = new List<string>();
+            ha.Add(@"C:\Users\Public\Music\Sample Music");
+
+            dbh.FillPath(ha);
+
             var stop = new Stopwatch();
 
             stop.Start();

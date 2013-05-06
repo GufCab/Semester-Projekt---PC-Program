@@ -12,6 +12,11 @@ namespace TemplateSync
         {
             var sync = new SyncTemplate();
 
+            List<string> ha = new List<string>();
+            ha.Add(@"C:\Users\Public\Music\Sample Music");
+
+            sync.Sync(ha);
+
         }
     }
 }

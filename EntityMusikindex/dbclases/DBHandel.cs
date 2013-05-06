@@ -11,7 +11,6 @@ namespace dbclases
     public class Dbhandel
     {
         private string _ip;
-        private List<string> _pathes; 
 
         public void FillIP(String myip)
         {
@@ -84,7 +83,11 @@ namespace dbclases
 
                                         ).ToList();
 
+
+
                 PathOndevice = listcompair(PathOndevice, pathlist);
+
+                
 
                 if (PathOndevice.Count >= 1)
                 {
@@ -286,6 +289,20 @@ namespace dbclases
             }   
 
         }
+
+        //public void setdiviceasofline()
+        //{
+            
+
+        //}
+
+        //public ~Dbhandel()
+        //{
+
+        //    setdiviceasofline();
+
+        //}
+
 
 
     }

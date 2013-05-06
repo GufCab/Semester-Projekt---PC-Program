@@ -25,20 +25,28 @@ namespace TemplateSync
        public SyncTemplate()
        {
            
-           live555 = new Live555Wrapper();
-           string ip = live555.GetIP();
+           //live555 = new Live555Wrapper();
+           //string ip = live555.GetIP();
 
-           db.FillIP(ip); // denne skal hentes fra live555
+           db.FillIP("100.199.100.199"); // denne skal hentes fra live555
           
          
         }
 
         public void Sync(List<string> pathlist )
         {
-            db.FillPath(pathlist);
+            List<string> rellist = new List<string>();
+            foreach (string s in pathlist)
+            {
+                rellist.Add(MakeRelpathFromAbspath(s));                
+            }
+
+
+
+            db.FillPath(rellist);
             // live555.addpathes(pathlist)
 
-            foreach (var path in pathlist)
+            foreach (var path in rellist)
             {
                 var indexer = new FileIndexer(path);
 
@@ -77,6 +85,8 @@ namespace TemplateSync
             //setup af live555 stream
 
         }
+
+        
 
 
     }

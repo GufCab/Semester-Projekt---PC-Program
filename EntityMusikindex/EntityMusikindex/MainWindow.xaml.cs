@@ -28,18 +28,33 @@ namespace EntityMusikindex
         {
             InitializeComponent();
             folderBrowserDialogButton.Click += new RoutedEventHandler(folderBrowserDialogButton_Click);
+
+
+
+
         }
+        DBshow db = new DBshow();
+
+        public void fillliste()
+        {
+
+        }
+
 
         private void ButtonUpdata_OnClick(object sender, RoutedEventArgs e)
         {
-            using (var musik = new musikindexEntities())
-            {
-           
-               INDEX.ItemsSource = (from p in musik.musikdatas select new {Title = p.Title , Artist = p.Artist_idArtist , Album = p.Album_idAlbum , Genre = p.Genre_Genre }).ToList();
 
-                List<filepath> allPath = (from o in musik.filepaths select o).ToList();
-                Path.ItemsSource = allPath;
-            }
+            db.Showallmusic();
+
+            INDEX.ItemsSource = db;
+            //using (var musik = new musikindexEntities())
+            //{
+           
+            //   INDEX.ItemsSource = (from p in musik.musikdatas select new {Title = p.Title , Artist = p.Artist_idArtist , Album = p.Album_idAlbum , Genre = p.Genre_Genre }).ToList();
+
+            //    List<filepath> allPath = (from o in musik.filepaths select o).ToList();
+            //    Path.ItemsSource = allPath;
+            //}
         }
 
         void folderBrowserDialogButton_Click(object sender, RoutedEventArgs e)

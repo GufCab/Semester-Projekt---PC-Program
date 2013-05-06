@@ -2,76 +2,98 @@
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
+using System.Security.AccessControl;
 using tcp;
 
 namespace Client
 {
-    class Client
+    class Client : IDisposable
     {
-        /// <summary>
-        /// The PORT.
-        /// </summary>
-        const int PORT = 9000;
         /// <summary>
         /// The BUFSIZE.
         /// </summary>
         const int BUFSIZE = 10000;
 
-        private TcpClient _clientSocket;
-        private NetworkStream _serverStream;
-		private long _fileSize;
-        private string _fileName;
+        public TcpClient _clientSocket { get; private set; }
+        public NetworkStream _serverStream { get; private set; }
+        public long _fileSize { get; private set; }
+        public string _fileName { get; private set; }
         private FileInfo fileInfo;
-        private string[] allArgs;
+        public string _ip { get; private set; }
+        public int _port { get; private set; }
+        private string serverFileName;
 
-        private void SetUp()
+        public void SetUp()
         {
+
+            _clientSocket = new TcpClient(); //Create and initialize TCPClient
+            
             try
             {
-                _clientSocket = new TcpClient();															            //Create and initialize TCPClient
-                _clientSocket.Connect(allArgs[0], PORT);													           //Connect to server
+                _clientSocket.Connect(_ip, _port); //Connect to server
+                _serverStream = _clientSocket.GetStream(); //Get the stream path to the server
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                Console.WriteLine("{0}, {1}", e.Source, e);
-                throw;
+                throw new ArgumentException("Ip or port is not accessible so no connection to server is possible!");
             }
 
-        }
-        public Client(string[] args)
-        {
-            try
+            if (_clientSocket != null)
             {
-                allArgs = args;
-                SetUp();
-                Console.WriteLine(" >> TCP client started - connected to {0} on port {1}...", args[0], PORT);	    //Tell user that client is started on chosen port
-                _serverStream = _clientSocket.GetStream();															//Get the stream path to the server
-                _fileName = args[1];
-                fileInfo = new FileInfo(_fileName);
-                LIB.writeTextTCP(_serverStream, (args != null) ? _fileName : "No file-path found!");                  //Write file name to server
-                _fileSize = fileInfo.Length;
-                LIB.writeTextTCP(_serverStream, _fileSize.ToString());                                              //Write file size to server
-                SendFile(_fileName, Convert.ToInt32(_fileSize), _serverStream);
-                _clientSocket.Close();
+                Console.WriteLine(" >> TCP client started - connected to {0} on port {1}...", _ip, _port);  //Tell user that client is started on chosen port
             }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
+            
+
         }
 
-        private void SendFile(String fileName, long fileSize, NetworkStream io)
+        public void SetIp(string ip)
         {
+            _ip = ip;
+        }
+
+        public void SetPort(int port)
+        {
+            _port = port;
+        }
+
+        public void SetFileName(string fileName)
+        {
+            _fileName = fileName;
+            serverFileName = Path.GetFileName(_fileName);
+            Console.WriteLine(Path.GetFullPath(_fileName));
+        }
+
+        private void SendFileNameToServer()
+        {
+            fileInfo = new FileInfo(_fileName);
+            LIB.writeTextTCP(_serverStream, serverFileName ?? "No file-path found!");                //Write file name to server
+        }
+
+        private void SendFileSizeToServer()
+        {
+            _fileSize = fileInfo.Length;
+            LIB.writeTextTCP(_serverStream, _fileSize.ToString());                              //Write file size to server
+        }
+
+        public void CloseSocket()
+        {
+            _clientSocket.Close();
+        }
+
+        public void SendFile(String fileName, long fileSize, NetworkStream io)
+        {
+            SendFileNameToServer();
+            SendFileSizeToServer();
+
             byte[] fileData;
-            // To do your code
 
-            //Åben en fileStream
-            //Sæt variabler
-            //Send 1000 bytes indtil
             try
             {
-                FileStream openFileStream = new FileStream(fileName, FileMode.OpenOrCreate);
+                if (!File.Exists(fileName))
+                {
+                    throw new FileNotFoundException("File does not exist!");
+                }
+                FileStream openFileStream = File.OpenRead(fileName);
                 BinaryReader bReader = new BinaryReader(openFileStream);
 
                 Int32 remainingSize = Convert.ToInt32(_fileSize);
@@ -91,12 +113,28 @@ namespace Client
                     remainingSize -= remainingSize;
                 } while (remainingSize > 0);
 
+                openFileStream.Flush();
                 bReader.Close();
                 openFileStream.Close();
+                io.Flush();
+                io.Close();
             }
             catch (Exception)
             {
-                throw new FileNotFoundException("File {0} not found!", fileName);
+                throw new Exception();
+            }
+        }
+
+        public void Dispose()
+        {
+            try
+            {
+                _clientSocket.Close();
+                _serverStream.Close();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Cannot close connections as they do not exist!");
             }
         }
     }
