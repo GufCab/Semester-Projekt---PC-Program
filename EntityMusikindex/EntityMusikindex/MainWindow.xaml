@@ -18,5 +18,6 @@
         <Expander Grid.Row="5" x:Name="expand" Header="{Binding ElementName=Path, Path=SelectedItem}">
             <DataGrid x:Name="Path"></DataGrid>
         </Expander>
+        <ComboBox HorizontalAlignment="Left" Height="3" Margin="560,-79,0,0" VerticalAlignment="Top" Width="2"/>
     </Grid>
 </Window>

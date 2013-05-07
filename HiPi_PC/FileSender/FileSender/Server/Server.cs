@@ -6,7 +6,11 @@ using tcp;
 
 namespace Server
 {
+<<<<<<< HEAD
     public class Server : IDisposable
+=======
+    public class Server : IServer, IDisposable
+>>>>>>> 1c53e626a0f85abbb20dc48e47e380b75bf29278
     {
         public IPAddress _IP { get; private set; }
         public TcpListener _serverSocket { get; private set; }

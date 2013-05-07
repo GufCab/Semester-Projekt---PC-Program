@@ -41,15 +41,16 @@ namespace EntityMusikindex
         }
 
 
-        private void ButtonUpdata_OnClick(object sender, RoutedEventArgs e)
+        private async void ButtonUpdata_OnClick(object sender, RoutedEventArgs e)
         {
-
-            db.Showallmusic();
-
+            var slowtast = Task.Factory.StartNew(()=> db.Showallmusic());
+            await slowtast;
             INDEX.ItemsSource = db;
+
+
             //using (var musik = new musikindexEntities())
             //{
-           
+
             //   INDEX.ItemsSource = (from p in musik.musikdatas select new {Title = p.Title , Artist = p.Artist_idArtist , Album = p.Album_idAlbum , Genre = p.Genre_Genre }).ToList();
 
             //    List<filepath> allPath = (from o in musik.filepaths select o).ToList();

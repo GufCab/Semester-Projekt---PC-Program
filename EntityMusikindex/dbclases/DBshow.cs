@@ -12,12 +12,12 @@ namespace dbclases
     public class DBshow : ObservableCollection<IMetadataReader>
     {
 
-        public async void Showallmusic()
+        public void Showallmusic()
         {
             using (var musik = new musikindexEntities())
             {
 
-               var hans = (from p in musik.musikdatas select new {Title = p.Title, Artist = p.Artist_idArtist, Album = p.Album_idAlbum, Genre = p.Genre_Genre}).ToList();
+               var hans =  (from p in musik.musikdatas select new {Title = p.Title, Artist = p.Artist_idArtist, Album = p.Album_idAlbum, Genre = p.Genre_Genre}).ToList();
 
 
 
@@ -32,7 +32,7 @@ namespace dbclases
                     Add(sang);
                 }
                 
-
+              
             }
         }
         

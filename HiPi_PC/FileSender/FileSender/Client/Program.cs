@@ -3,7 +3,7 @@ using Client;
 
 namespace Client
 {
-    class Program
+    public class Program
     {
         private static string ip;
         private static int port;

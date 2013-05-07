@@ -28,12 +28,14 @@ namespace TemplateSync
            //live555 = new Live555Wrapper();
            //string ip = live555.GetIP();
 
-           db.FillIP("100.199.100.199"); // denne skal hentes fra live555
+            db.FillIP("100.199.100.199");
+       
+           // denne skal hentes fra live555
           
          
         }
 
-        public void Sync(List<string> pathlist )
+        public async void Sync(List<string> pathlist )
         {
             List<string> rellist = new List<string>();
             foreach (string s in pathlist)
@@ -41,12 +43,24 @@ namespace TemplateSync
                 rellist.Add(MakeRelpathFromAbspath(s));                
             }
 
+            var slowtast = Task.Factory.StartNew(() => db.FillPath(rellist));
+            
+            await slowtast;
+            slowtast = Task.Factory.StartNew(() => hs(rellist));
 
+            await slowtast;
+            
 
-            db.FillPath(rellist);
             // live555.addpathes(pathlist)
 
-            foreach (var path in rellist)
+            
+
+
+        }
+        public void hs(List<string> ha)
+        {
+
+            foreach (var path in ha)
             {
                 var indexer = new FileIndexer(path);
 
@@ -57,10 +71,8 @@ namespace TemplateSync
                 db.fillMusicdata(mdata);
             }
 
-
         }
-
-  
+            
         private string MakeRelpathFromAbspath(string a)
         {
 
