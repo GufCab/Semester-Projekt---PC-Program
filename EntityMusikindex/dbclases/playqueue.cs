@@ -16,6 +16,7 @@ namespace dbclases
     {
         public Nullable<long> MusikData_idMusikData { get; set; }
         public int Catagory_idCatagory { get; set; }
+        public int Idnummer { get; set; }
     
         public virtual catagory catagory { get; set; }
         public virtual musikdata musikdata { get; set; }
