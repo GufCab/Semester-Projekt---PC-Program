@@ -14,7 +14,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Microsoft.Win32;
 
+namespace constant
+{
+    public static class Constants
+    {
+        public const double Size = 5;
+    }
 
+}
 namespace playerlayout
 {
     /// <summary>
@@ -26,7 +33,7 @@ namespace playerlayout
         {
             InitializeComponent();
 
-            openFileDialogButton.Click += new RoutedEventHandler(openFileDialogButton_Click);
+            addButton.Click += new RoutedEventHandler(openFileDialogButton_Click);
 
             EnsureSkins();
             ApplySkin(NormalSkin);
@@ -103,15 +110,15 @@ namespace playerlayout
         {
             OpenFileDialog dlg = new OpenFileDialog();
             string prefix = "Open File Dialog: ";
-            if (((string)openFileDialogButton.Content).Length > prefix.Length)
+            if (((string)addButton.Content).Length > prefix.Length)
             {
-                dlg.FileName = ((string)openFileDialogButton.Content).Substring(prefix.Length);
+                dlg.FileName = ((string)addButton.Content).Substring(prefix.Length);
             }
 
             if (dlg.ShowDialog() == true)
             {
-                openFileDialogButton.Content = prefix + dlg.FileName;
-                PathFolderTextBox.Text = dlg.FileName;
+                addButton.Content = prefix + dlg.FileName;
+                //PathFolderTextBox.Text = dlg.FileName;
             }
         }
    }
