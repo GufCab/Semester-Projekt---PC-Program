@@ -8,10 +8,14 @@ namespace Server
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public class Server : IDisposable
 =======
     public class Server : IServer, IDisposable
 >>>>>>> 1c53e626a0f85abbb20dc48e47e380b75bf29278
+=======
+    public class Server : IServer, IDisposable
+>>>>>>> 095316f42b7332c79035998705605e2e130bec1f
 =======
     public class Server : IServer, IDisposable
 >>>>>>> 095316f42b7332c79035998705605e2e130bec1f

@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 using System.Net.Sockets;
 >>>>>>> 1c53e626a0f85abbb20dc48e47e380b75bf29278
+=======
+using System.Net.Sockets;
+>>>>>>> 095316f42b7332c79035998705605e2e130bec1f
 =======
 using System.Net.Sockets;
 >>>>>>> 095316f42b7332c79035998705605e2e130bec1f
@@ -15,10 +19,15 @@ using NUnit.Framework;
 using Rhino.Mocks;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 using Server;
 using Client;
 >>>>>>> 1c53e626a0f85abbb20dc48e47e380b75bf29278
+=======
+using Server;
+using Client;
+>>>>>>> 095316f42b7332c79035998705605e2e130bec1f
 =======
 using Server;
 using Client;
@@ -32,11 +41,14 @@ namespace FileSender.Tests
         [Test]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         public void Client_Constructor_SetUpIsCalled()
         {
             
         }
 =======
+=======
+>>>>>>> 095316f42b7332c79035998705605e2e130bec1f
 =======
 >>>>>>> 095316f42b7332c79035998705605e2e130bec1f
         public void Client_SetIp_SetIpIsCalled()
@@ -185,7 +197,10 @@ namespace FileSender.Tests
     {
         //Tests need to be written
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 1c53e626a0f85abbb20dc48e47e380b75bf29278
+=======
+>>>>>>> 095316f42b7332c79035998705605e2e130bec1f
 =======
 >>>>>>> 095316f42b7332c79035998705605e2e130bec1f
     }

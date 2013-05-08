@@ -9,10 +9,14 @@ namespace Client
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     class Client : IDisposable
 =======
     public class Client : IClient, IDisposable
 >>>>>>> 1c53e626a0f85abbb20dc48e47e380b75bf29278
+=======
+    public class Client : IClient, IDisposable
+>>>>>>> 095316f42b7332c79035998705605e2e130bec1f
 =======
     public class Client : IClient, IDisposable
 >>>>>>> 095316f42b7332c79035998705605e2e130bec1f
