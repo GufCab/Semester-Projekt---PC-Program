@@ -46,6 +46,12 @@ namespace Client
 
         }
 
+        public Client(string ip)
+        {
+            SetIp(ip);
+            SetPort(9003);
+        }
+
         public void SetIp(string ip)
         {
             _ip = ip;
@@ -60,13 +66,12 @@ namespace Client
         {
             _fileName = fileName;
             serverFileName = Path.GetFileName(_fileName);
-            Console.WriteLine(Path.GetFullPath(_fileName));
         }
 
         private void SendFileNameToServer()
         {
             fileInfo = new FileInfo(_fileName);
-            LIB.writeTextTCP(_serverStream, serverFileName ?? "No file-path found!");                //Write file name to server
+            LIB.writeTextTCP(_serverStream, serverFileName ?? "Given file not found!");                //Write file name to server
         }
 
         private void SendFileSizeToServer()
@@ -82,6 +87,7 @@ namespace Client
 
         public void SendFile(String fileName, long fileSize, NetworkStream io)
         {
+            SetFileName(fileName);
             SendFileNameToServer();
             SendFileSizeToServer();
 

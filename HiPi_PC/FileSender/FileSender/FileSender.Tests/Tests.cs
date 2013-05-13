@@ -31,7 +31,7 @@ namespace FileSender.Tests
         public void Client_SetIp_IpIsSetTo_10_192_7_239()
         {
             //Arrange
-            var client = new Client.Client();
+            var client = new Client.Client("10.193.7.239");
             const string expected = "10.193.7.239";
 
             //Act
@@ -58,7 +58,7 @@ namespace FileSender.Tests
         public void Client_SetPort_PortIsSetTo9000()
         {
             //Arrange
-            var client = new Client.Client();
+            var client = new Client.Client("10.193.7.239");
             const int expected = 9000;
 
             //Act
@@ -85,7 +85,7 @@ namespace FileSender.Tests
         public void Client_SetFileName_FileNameIsSetTo_Jump_mp3()
         {
             //Arrange
-            var client = new Client.Client();
+            var client = new Client.Client("10.193.7.239");
             const string expected = "Jump.mp3";
 
             //Act

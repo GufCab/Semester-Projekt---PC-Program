@@ -72,7 +72,7 @@ namespace Server
         /// <summary>
         /// The PORT
         /// </summary>
-        public const int PORT = 9000;
+        public const int PORT = 9003;
         /// <summary>
         /// The BUFSIZE
         /// </summary>
