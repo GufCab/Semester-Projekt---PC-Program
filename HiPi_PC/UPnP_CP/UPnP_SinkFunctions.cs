@@ -23,31 +23,38 @@ namespace UPnP_CP
         private SinkStack.CpConnectionManager _ConnectionManager;
         private SinkStack.CpRenderingControl _RenderingControl;
 
-        public UPnP_SinkFunctions(CpAVTransport AV, CpConnectionManager CM, CpRenderingControl RC)
+        public uint InstanceID { get; private set; }
+
+        public UPnP_SinkFunctions(CpAVTransport av, CpConnectionManager cm, CpRenderingControl rc)
         {
-            _AVTransport = AV;
-            _ConnectionManager = CM;
-            _RenderingControl = RC;
+            InstanceID = 0;
+            _AVTransport = av;
+            _ConnectionManager = cm;
+            _RenderingControl = rc;
         }
         
+        /// <summary>
+        /// Invoke play on device. Always uses PlaySpeed '1'
+        /// </summary>
+        /// <param name="instanceID"></param>
         public void Play()
         {
-            _AVTransport.Play(0, CpAVTransport.Enum_TransportPlaySpeed._1);   
+            _AVTransport.Play(InstanceID, CpAVTransport.Enum_TransportPlaySpeed._1);   
         }
 
         public void Pause()
         {
-            _AVTransport.Pause(0);
+            _AVTransport.Pause(InstanceID);
         }
 
         public void Stop()
         {
-            _AVTransport.Stop(0);
+            _AVTransport.Stop(InstanceID);
         }
 
         public void Next()
         {
-            _AVTransport.Next(0);
+            _AVTransport.Next(InstanceID);
         }
 
         public void Previous()
