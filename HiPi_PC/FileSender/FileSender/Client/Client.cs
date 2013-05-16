@@ -7,7 +7,7 @@ using tcp;
 
 namespace Client
 {
-<<<<<<< HEAD
+    public class Client : IClient, IDisposable
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -68,16 +68,15 @@ namespace Client
             }
             
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+        }
+
+        public Client(string ip)
         }
 
         public Client(string ip)
         {
             SetIp(ip);
             SetPort(9003);
->>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
         }
 
         public void SetIp(string ip)
@@ -94,8 +93,9 @@ namespace Client
         {
             _fileName = fileName;
             serverFileName = Path.GetFileName(_fileName);
-<<<<<<< HEAD
-            Console.WriteLine(Path.GetFullPath(_fileName));
+        }
+
+        private void SendFileNameToServer()
 =======
 >>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
         }
@@ -103,11 +103,11 @@ namespace Client
         private void SendFileNameToServer()
         {
             fileInfo = new FileInfo(_fileName);
-<<<<<<< HEAD
-            LIB.writeTextTCP(_serverStream, serverFileName ?? "No file-path found!");                //Write file name to server
-=======
             LIB.writeTextTCP(_serverStream, serverFileName ?? "Given file not found!");                //Write file name to server
->>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
+        }
+
+        private void SendFileSizeToServer()
+        {
         }
 
         private void SendFileSizeToServer()
@@ -160,14 +160,7 @@ namespace Client
 
         public void SendFile(String fileName, long fileSize, NetworkStream io)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
             SetFileName(fileName);
->>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
-=======
-            SetFileName(fileName);
->>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
             SendFileNameToServer();
             SendFileSizeToServer();
 
