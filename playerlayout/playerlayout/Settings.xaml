@@ -1,9 +1,12 @@
-﻿<Window x:Class="playerlayout.Settings"
+﻿<?Mapping XmlNamespace="CodeMapNS" clr-namespace="constant" ?>
+    <Window x:Class="playerlayout.Settings"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Settings" Height="350" Width="350"
         Background="{DynamicResource appBackground}"
-        >
+        
+        xmlns:c="CodeMapNS" 
+        xmlns:constant="clr-namespace:constant">
     <Grid>
         
         <Grid.ColumnDefinitions>
@@ -27,16 +30,32 @@
             </ListView>
             
         </Grid>
+     
+        <!-- Consider making the following vertical placed in a stackpannel -->
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto">
+                    <RowDefinition.MinHeight>
+                        <!--<x:Static Member="constant:Constants.Size" />-->
+                        5px
+                    </RowDefinition.MinHeight>
+                </RowDefinition>
+                <RowDefinition Height="Auto" MinHeight="5px" />
+                <RowDefinition Height="Auto" MinHeight="5px" />
+                <RowDefinition Height="Auto" MinHeight="5px" />
+                <RowDefinition Height="Auto" MinHeight="5px" />
+                <RowDefinition Height="Auto" MinHeight="5px" />
+                <RowDefinition Height="Auto" MinHeight="5px" />
             </Grid.RowDefinitions>
             <Label Grid.Row="0" Background="SteelBlue" Opacity=".6" Content="Select Music Folder" Target="{Binding ElementName=pathfolderTextBox}"></Label>
-            <TextBox Grid.Row="1" x:Name="PathFolderTextBox" Text="{Binding  dlg.FileName}"></TextBox>
-            <Button Grid.Row="2" x:Name="openFileDialogButton">Settings Dialog...</Button>
+             
+            <!--Text="{Binding  dlg.FileName}"-->
+            <!-- <Button Grid.Row="1" x:Name="openFileDialogButton">Settings Dialog...</Button> -->
+            <Button Grid.Row="2" x:Name="AddButton" Content="Add folder" />
+            <Button Grid.Row="3" x:Name="RemoveButton" Content="Remove folder" />
+            <Button Grid.Row="4" x:Name="SyncronizeButton" Content="Syncronize" />
+            
+            <ListBox Grid.Row="5" x:Name="PathFolderListBox" MinHeight="20px"></ListBox>
             
         </Grid>
     </Grid>

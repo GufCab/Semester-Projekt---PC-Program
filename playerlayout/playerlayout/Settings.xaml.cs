@@ -8,26 +8,62 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Microsoft.Win32;
+using Application = System.Windows.Application;
 
+namespace constant
+{
+    public static class Constants
+    {
+        public const double Size = 5;
+    }
 
+}
 namespace playerlayout
 {
     /// <summary>
     /// Interaction logic for Settings.xaml
     /// </summary>
+
     public partial class Settings : Window
     {
+        class DialogData
+        {
+            private string reportFolder;
+            
+            public string ReportFolder
+            {
+                get { return reportFolder; }
+                set { reportFolder = value; }
+            }
+        }
+
+        DialogData data = new DialogData();
+
+        public string ReportFolder
+        {
+            get { return data.ReportFolder; }
+            set { data.ReportFolder = value; }
+        }
+
         public Settings()
         {
             InitializeComponent();
 
-            openFileDialogButton.Click += new RoutedEventHandler(openFileDialogButton_Click);
+            //AddButton.Click += new RoutedEventHandler(openFileDialogButton_Click);
 
+            AddButton.Click += AddButton_Click;
+
+            skins_initialize();
+        }
+
+        private void skins_initialize()
+        {
             EnsureSkins();
             ApplySkin(NormalSkin);
             ChooseNormalSkin.Click += SkinChanged;
@@ -36,8 +72,6 @@ namespace playerlayout
             ChooseProtossSkin.Click += SkinChanged;
 
         }
-
-       
 
         private static ResourceDictionary ZurgSkin;
         private static ResourceDictionary NormalSkin;
@@ -99,23 +133,38 @@ namespace playerlayout
             appMergedDictionaries.Add(newSkin);
         }
 
+        void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.FolderBrowserDialog dlg = new FolderBrowserDialog();
+            dlg.SelectedPath = ReportFolder;
+            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                ReportFolder = dlg.SelectedPath;
+                PathFolderListBox.Items.Add(ReportFolder);
+            }
+
+            //string prefix = "Open File Dialog: ";
+        }
+        
+        /*
         void openFileDialogButton_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
             string prefix = "Open File Dialog: ";
-            if (((string)openFileDialogButton.Content).Length > prefix.Length)
+            if (((string)AddButton.Content).Length > prefix.Length)
             {
-                dlg.FileName = ((string)openFileDialogButton.Content).Substring(prefix.Length);
+                dlg.FileName = ((string)AddButton.Content).Substring(prefix.Length);
             }
 
             if (dlg.ShowDialog() == true)
             {
-                openFileDialogButton.Content = prefix + dlg.FileName;
-                PathFolderTextBox.Text = dlg.FileName;
+                AddButton.Content = prefix + dlg.FileName;
+                //PathFolderTextBox.Text = dlg.FileName;
+                PathFolderListBox.Items.Add(dlg.FileName);
             }
         }
-   }
-    
+         */
+    }
 }
         
 

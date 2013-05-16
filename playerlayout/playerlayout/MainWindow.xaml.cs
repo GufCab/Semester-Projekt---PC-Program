@@ -25,10 +25,11 @@ namespace playerlayout
         private IObservable<> _play; 
 
         bool play = new bool();
-        Settings settingsw = new Settings();
+        private Settings settingsw;
         public MainWindow()
         {
             InitializeComponent();
+            settingsw = new Settings();
             
             var db = new 
         }
@@ -69,7 +70,7 @@ namespace playerlayout
 
         private void Settings_OnClick(object sender, RoutedEventArgs e)
         {
-            
+            settingsw = new Settings();
             settingsw.Show();
 
         }

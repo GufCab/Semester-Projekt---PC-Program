@@ -11,6 +11,7 @@ namespace Client
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     class Client : IDisposable
 =======
     public class Client : IClient, IDisposable
@@ -24,6 +25,9 @@ namespace Client
 =======
     public class Client : IClient, IDisposable
 >>>>>>> 095316f42b7332c79035998705605e2e130bec1f
+=======
+    public class Client : IClient, IDisposable
+>>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
     {
         /// <summary>
         /// The BUFSIZE.
@@ -60,6 +64,7 @@ namespace Client
             }
             
 
+<<<<<<< HEAD
         }
 
         public void SetIp(string ip)
@@ -87,6 +92,40 @@ namespace Client
 
         private void SendFileSizeToServer()
         {
+=======
+        }
+
+        public Client(string ip)
+        {
+            SetIp(ip);
+            SetPort(9003);
+        }
+
+        public void SetIp(string ip)
+        {
+            _ip = ip;
+        }
+
+        public void SetPort(int port)
+        {
+            _port = port;
+        }
+
+        public void SetFileName(string fileName)
+        {
+            _fileName = fileName;
+            serverFileName = Path.GetFileName(_fileName);
+        }
+
+        private void SendFileNameToServer()
+        {
+            fileInfo = new FileInfo(_fileName);
+            LIB.writeTextTCP(_serverStream, serverFileName ?? "Given file not found!");                //Write file name to server
+        }
+
+        private void SendFileSizeToServer()
+        {
+>>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
             _fileSize = fileInfo.Length;
             LIB.writeTextTCP(_serverStream, _fileSize.ToString());                              //Write file size to server
         }
@@ -98,6 +137,10 @@ namespace Client
 
         public void SendFile(String fileName, long fileSize, NetworkStream io)
         {
+<<<<<<< HEAD
+=======
+            SetFileName(fileName);
+>>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
             SendFileNameToServer();
             SendFileSizeToServer();
 

@@ -22,25 +22,39 @@ namespace UPnP_CP_GUI
     public partial class MainWindow : Window
     {
         private UPnP_SinkFunctions _UPnPSink = null;
+        private UPnP_SourceFunctions _UPnPSource = null;
 
-        private UPnP_Setup setup = new UPnP_Setup();
+        private UPnP_Setup setup;
 
         public MainWindow()
         {
+            setup = new UPnP_Setup();
+
             InitializeComponent();
+
             subscribe();
             setup.StartSinkDisco();
+            setup.StartSourceDisco();
+
+            btnSubscribe.IsEnabled = false;
         }
 
         public void subscribe()
         {
             setup.AddSinkEvent += getUPnPSink;
+            setup.AddSourceEvent += getUPnPSource;
         }
-      
+
         public void getUPnPSink(UPnP_SinkFunctions e, EventArgs s)
         {
             _UPnPSink = e;
             MessageBox.Show("Sink added");
+        }
+
+        public void getUPnPSource(UPnP_SourceFunctions e, EventArgs s)
+        {
+            _UPnPSource = e;
+            MessageBox.Show("Source added");
         }
 
         private void btnPlayInvoke_Click(object sender, RoutedEventArgs e)
@@ -57,32 +71,33 @@ namespace UPnP_CP_GUI
 
         private void btnStopInvoke_Click(object sender, RoutedEventArgs e)
         {
-          
+            if (_UPnPSink != null)
+                _UPnPSink.Stop();
         }
 
         private void btnNextInvoke_Click(object sender, RoutedEventArgs e)
         {
-         
+            if (_UPnPSink != null)
+                _UPnPSink.Next();
         }
 
         private void btnPreviousInvoke_Click(object sender, RoutedEventArgs e)
         {
-         
-        }
-
-        private void btnVolume_Click(object sender, RoutedEventArgs e)
-        {
-         
+            if (_UPnPSink != null)
+                _UPnPSink.Previous();
         }
 
         private void btnSetTransportURI_Click(object sender, RoutedEventArgs e)
         {
-          
+            if (_UPnPSink != null)
+            {
+                _UPnPSink.SetTransportURI(TransPath.Text, "");
+            }
         }
 
         private void btnSubscribe_Click(object sender, RoutedEventArgs e)
         {
-           _UPnPSink.SetVolume(6);
+           //Probably not needed
         }
     }
 }

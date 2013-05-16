@@ -13,13 +13,18 @@ namespace UPnP_CP
         private static MediaRendererDiscovery _SinkDisco;
         private static MediaServerDiscovery _SourceDisco;
 
-        private UPnP_SinkFunctions Sink;
-
+        //private UPnP_SinkFunctions Sink;
 
         public delegate void AddSinkHandler(UPnP_SinkFunctions e, EventArgs s);
-
         public event AddSinkHandler AddSinkEvent;
 
+        public delegate void AddSourceHandler(UPnP_SourceFunctions e, EventArgs s);
+        public event AddSourceHandler AddSourceEvent;
+
+        public delegate void RemoveSourceHandler(object e, EventArgs s);
+        public event RemoveSourceHandler RemoveSourceEvent;
+
+        
         public void StartSourceDisco()
         {
             _SourceDisco = new MediaServerDiscovery();
@@ -39,33 +44,43 @@ namespace UPnP_CP
         //removed "static"
         private void AddSink(MediaRendererDiscovery sender, UPnPDevice d)
         {
-            Console.WriteLine("Added Device: " + d.FriendlyName);
-            
+            Console.WriteLine("Added Sink Device: " + d.FriendlyName);
+            if (d.FriendlyName == "HiPi")
+            {
+                UPnP_SinkFunctions func = new UPnP_SinkFunctions(
+                    new SinkStack.CpAVTransport(d.GetServices(SinkStack.CpAVTransport.SERVICE_NAME)[0]), null, null);
+                    //new SinkStack.CpConnectionManager(d.GetServices(SinkStack.CpConnectionManager.SERVICE_NAME)[0]),
+                    //new SinkStack.CpRenderingControl(d.GetServices(SinkStack.CpRenderingControl.SERVICE_NAME)[0]));
 
-            UPnP_SinkFunctions func = new UPnP_SinkFunctions(
-                new SinkStack.CpAVTransport(d.GetServices(SinkStack.CpAVTransport.SERVICE_NAME)[0]),
-                new SinkStack.CpConnectionManager(d.GetServices(SinkStack.CpConnectionManager.SERVICE_NAME)[0]),
-                new SinkStack.CpRenderingControl(d.GetServices(SinkStack.CpRenderingControl.SERVICE_NAME)[0]));
-
-            AddSinkEvent(func, null);
+                AddSinkEvent(func, null);
+            }
         }
 
         private static void RemoveSink(MediaRendererDiscovery sender, UPnPDevice d)
         {
             Console.WriteLine("Removed Device: " + d.FriendlyName);
+            //Todo: Remove device somehow
         }
 
-
-        private static void AddSource(MediaServerDiscovery sender, UPnPDevice dev)
+        //removed "static"
+        private void AddSource(MediaServerDiscovery sender, UPnPDevice d)
         {
-            //Todo: Implement Stack reception with wrappers
-            throw new NotImplementedException();
+            Console.WriteLine("Added Source Device: " + d.FriendlyName);
+
+            if (d.FriendlyName == "HiPi")
+            {
+                UPnP_SourceFunctions func = new UPnP_SourceFunctions(
+                    new SourceStack.CpConnectionManager(d.GetServices(SourceStack.CpConnectionManager.SERVICE_NAME)[0]),
+                    new SourceStack.CpContentDirectory(d.GetServices(SourceStack.CpContentDirectory.SERVICE_NAME)[0]));
+
+                AddSourceEvent(func, null);
+            }
         }
 
-        private static void RemoveSource(MediaServerDiscovery sender, UPnPDevice dev)
+        private void RemoveSource(MediaServerDiscovery sender, UPnPDevice d)
         {
-            //Todo: Remove device in some way
-            throw new NotImplementedException();
+            Console.WriteLine("Device removed");
+            RemoveSourceEvent(null, null);
         }
 
 

@@ -4,16 +4,24 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\Malmos\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\obj\Debug\
+=======
+C:\Users\Jakob\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\obj\Debug\
+>>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
 playerlayout
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\Malmos\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\App.xaml
+=======
+C:\Users\Jakob\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\App.xaml
+>>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
 61419772562
 
 6505743467
-12-1401562060
+13-1868018694
 MainWindow.xaml;Settings.xaml;Styles\NormalSkin.xaml;Styles\ProtossSkin.xaml;Styles\TerranSkin.xaml;Styles\ZurgSkin.xaml;
 
 False
