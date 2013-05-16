@@ -31,6 +31,8 @@ namespace TemplateSync
            // denne skal hentes fra live555
           
        }
+      
+        //jeg stener
 
        public void SyncLocalDb(List<string> pahts)
        {
