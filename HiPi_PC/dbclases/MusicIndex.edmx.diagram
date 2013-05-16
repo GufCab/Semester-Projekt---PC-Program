@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="25a3a7137de840a8a4b84d562d7c2646" Name="Diagram1">
+        <EntityTypeShape EntityType="musikindexModel.album" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="musikindexModel.artist" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="musikindexModel.catagory" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="musikindexModel.device" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="musikindexModel.filepath" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="musikindexModel.genre" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="musikindexModel.musik" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="musikindexModel.musikdata" Width="1.5" PointX="7.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="musikindexModel.playqueue" Width="1.5" PointX="9.75" PointY="6.125" IsExpanded="true" />
+        <AssociationConnector Association="musikindexModel.fk_Album_Musik1" ManuallyRouted="false" />
+        <AssociationConnector Association="musikindexModel.fk_MusikData_Album1" ManuallyRouted="false" />
+        <AssociationConnector Association="musikindexModel.fk_Artist_Musik1" ManuallyRouted="false" />
+        <AssociationConnector Association="musikindexModel.fk_MusikData_Artist1" ManuallyRouted="false" />
+        <AssociationConnector Association="musikindexModel.fk_Device_Catagory1" ManuallyRouted="false" />
+        <AssociationConnector Association="musikindexModel.fk_Musik_Catagory1" ManuallyRouted="false" />
+        <AssociationConnector Association="musikindexModel.fk_PlayQueue_Catagory1" ManuallyRouted="false" />
+        <AssociationConnector Association="musikindexModel.fk_Filesti_IP1" ManuallyRouted="false" />
+        <AssociationConnector Association="musikindexModel.fk_MusikData_FilePath1" ManuallyRouted="false" />
+        <AssociationConnector Association="musikindexModel.fk_Genre_Musik1" ManuallyRouted="false" />
+        <AssociationConnector Association="musikindexModel.fk_MusikData_Genre1" ManuallyRouted="false" />
+        <AssociationConnector Association="musikindexModel.fk_PlayQueue_MusikData1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
