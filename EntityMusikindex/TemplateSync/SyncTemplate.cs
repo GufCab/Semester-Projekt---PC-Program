@@ -15,8 +15,6 @@ namespace TemplateSync
 {
     class SyncTemplate
     {
-        private string _AbsPath;
-        private string _RelPath;
         private Dbhandel db = new Dbhandel();
         private Live555Wrapper live555;
         //private int _index;
@@ -28,7 +26,7 @@ namespace TemplateSync
            //live555 = new Live555Wrapper();
            //string ip = live555.GetIP();
 
-            db.FillIP("100.199.100.199");
+           db.FillIP("100.199.100.199");
        
            // denne skal hentes fra live555
           
