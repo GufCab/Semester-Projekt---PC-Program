@@ -6,7 +6,7 @@ using tcp;
 
 namespace Server
 {
-<<<<<<< HEAD
+    public class Server : IServer, IDisposable
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -130,6 +130,11 @@ namespace Server
         public void CloseSocketConnection()
         {
             _clientSocket.Close();
+        }
+
+        public void Dispose()
+        {
+            _serverSocket.Stop();
         }
 
         public void Dispose()
