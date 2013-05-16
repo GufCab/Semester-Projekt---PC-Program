@@ -13,25 +13,34 @@ using Live555;
 
 namespace TemplateSync
 {
-    class SyncTemplate
+    class SyncTemplate : ISynchronizer
     {
         private Dbhandel db = new Dbhandel();
         private Live555Wrapper live555;
         //private int _index;
 
 
-       public SyncTemplate()
+      
+       public void Startup()
        {
-           
            //live555 = new Live555Wrapper();
            //string ip = live555.GetIP();
 
            db.FillIP("100.199.100.199");
-       
+
            // denne skal hentes fra live555
           
-         
-        }
+       }
+
+       public void SyncLocalDb(List<string> pahts)
+       {
+           throw new NotImplementedException();
+       }
+
+       public void SyncPiDb()
+       {
+           throw new NotImplementedException();
+       }
 
         public async void Sync(List<string> pathlist )
         {
@@ -96,8 +105,7 @@ namespace TemplateSync
 
         }
 
+
         
-
-
     }
 }
