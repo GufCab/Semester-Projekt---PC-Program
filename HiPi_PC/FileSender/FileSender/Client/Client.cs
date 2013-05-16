@@ -12,6 +12,7 @@ namespace Client
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     class Client : IDisposable
 =======
     public class Client : IClient, IDisposable
@@ -25,6 +26,9 @@ namespace Client
 =======
     public class Client : IClient, IDisposable
 >>>>>>> 095316f42b7332c79035998705605e2e130bec1f
+=======
+    public class Client : IClient, IDisposable
+>>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
 =======
     public class Client : IClient, IDisposable
 >>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
@@ -65,6 +69,15 @@ namespace Client
             
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        }
+
+        public Client(string ip)
+        {
+            SetIp(ip);
+            SetPort(9003);
+>>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
         }
 
         public void SetIp(string ip)
@@ -81,17 +94,25 @@ namespace Client
         {
             _fileName = fileName;
             serverFileName = Path.GetFileName(_fileName);
+<<<<<<< HEAD
             Console.WriteLine(Path.GetFullPath(_fileName));
+=======
+>>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
         }
 
         private void SendFileNameToServer()
         {
             fileInfo = new FileInfo(_fileName);
+<<<<<<< HEAD
             LIB.writeTextTCP(_serverStream, serverFileName ?? "No file-path found!");                //Write file name to server
+=======
+            LIB.writeTextTCP(_serverStream, serverFileName ?? "Given file not found!");                //Write file name to server
+>>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
         }
 
         private void SendFileSizeToServer()
         {
+<<<<<<< HEAD
 =======
         }
 
@@ -126,6 +147,8 @@ namespace Client
         private void SendFileSizeToServer()
         {
 >>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
+=======
+>>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
             _fileSize = fileInfo.Length;
             LIB.writeTextTCP(_serverStream, _fileSize.ToString());                              //Write file size to server
         }
@@ -138,6 +161,10 @@ namespace Client
         public void SendFile(String fileName, long fileSize, NetworkStream io)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            SetFileName(fileName);
+>>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
 =======
             SetFileName(fileName);
 >>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded

@@ -16,6 +16,7 @@ namespace Client
                 do
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     using (var client = new Client())
                     {
                         Console.WriteLine("Client started...");
@@ -25,6 +26,11 @@ namespace Client
                         Console.Write("Write in PORT: ");
                         port = Convert.ToInt32(Console.ReadLine());
                         client.SetPort(port);
+=======
+                    using (var client = new Client("10.193.7.239"))
+                    {
+                        Console.WriteLine("Client started...");
+>>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
 =======
                     using (var client = new Client("10.193.7.239"))
                     {

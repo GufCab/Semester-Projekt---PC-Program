@@ -6,6 +6,7 @@ using System.Linq;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 using System.Net.Sockets;
 >>>>>>> 1c53e626a0f85abbb20dc48e47e380b75bf29278
@@ -21,10 +22,14 @@ using System.Net.Sockets;
 =======
 using System.Net.Sockets;
 >>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
+=======
+using System.Net.Sockets;
+>>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using Rhino.Mocks;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -46,6 +51,10 @@ using Client;
 using Server;
 using Client;
 >>>>>>> 095316f42b7332c79035998705605e2e130bec1f
+=======
+using Server;
+using Client;
+>>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
 =======
 using Server;
 using Client;
@@ -62,6 +71,7 @@ namespace FileSender.Tests
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         public void Client_Constructor_SetUpIsCalled()
         {
             
@@ -73,6 +83,8 @@ namespace FileSender.Tests
 >>>>>>> 095316f42b7332c79035998705605e2e130bec1f
 =======
 >>>>>>> 095316f42b7332c79035998705605e2e130bec1f
+=======
+>>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
 =======
 >>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
         public void Client_SetIp_SetIpIsCalled()
@@ -92,7 +104,11 @@ namespace FileSender.Tests
         {
             //Arrange
 <<<<<<< HEAD
+<<<<<<< HEAD
             var client = new Client.Client();
+=======
+            var client = new Client.Client("10.193.7.239");
+>>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
 =======
             var client = new Client.Client("10.193.7.239");
 >>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
@@ -123,7 +139,11 @@ namespace FileSender.Tests
         {
             //Arrange
 <<<<<<< HEAD
+<<<<<<< HEAD
             var client = new Client.Client();
+=======
+            var client = new Client.Client("10.193.7.239");
+>>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
 =======
             var client = new Client.Client("10.193.7.239");
 >>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
@@ -154,7 +174,11 @@ namespace FileSender.Tests
         {
             //Arrange
 <<<<<<< HEAD
+<<<<<<< HEAD
             var client = new Client.Client();
+=======
+            var client = new Client.Client("10.193.7.239");
+>>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
 =======
             var client = new Client.Client("10.193.7.239");
 >>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
@@ -236,6 +260,7 @@ namespace FileSender.Tests
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 1c53e626a0f85abbb20dc48e47e380b75bf29278
 =======
 >>>>>>> 095316f42b7332c79035998705605e2e130bec1f
@@ -243,6 +268,8 @@ namespace FileSender.Tests
 >>>>>>> 095316f42b7332c79035998705605e2e130bec1f
 =======
 >>>>>>> 095316f42b7332c79035998705605e2e130bec1f
+=======
+>>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
 =======
 >>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
     }

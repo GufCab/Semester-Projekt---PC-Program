@@ -26,6 +26,7 @@ C:\Users\Malmos\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\play
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 C:\Users\Malmos\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\bin\Debug\playerlayout.exe
 C:\Users\Malmos\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\bin\Debug\playerlayout.pdb
 C:\Users\Malmos\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\obj\Debug\playerlayout.csprojResolveAssemblyReference.cache
@@ -68,6 +69,8 @@ C:\Users\Michael O\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\p
 C:\Users\Michael O\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\obj\Debug\playerlayout.pdb
 >>>>>>> 095316f42b7332c79035998705605e2e130bec1f
 =======
+=======
+>>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
 C:\Users\Michael O\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\bin\Debug\playerlayout.exe.config
 C:\Users\Michael O\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\obj\Debug\playerlayout.exe
 C:\Users\Michael O\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\obj\Debug\playerlayout.pdb
@@ -91,4 +94,7 @@ C:\Users\Jakob\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playe
 C:\Users\Jakob\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\obj\Debug\playerlayout.g.resources
 C:\Users\Jakob\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\obj\Debug\playerlayout.Properties.Resources.resources
 C:\Users\Jakob\Documents\GitHub\Semester-Projekt---PC-Program\playerlayout\playerlayout\obj\Debug\playerlayout.csproj.GenerateResource.Cache
+<<<<<<< HEAD
+>>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
+=======
 >>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
