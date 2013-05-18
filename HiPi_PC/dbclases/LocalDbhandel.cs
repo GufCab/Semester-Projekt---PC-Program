@@ -3,44 +3,69 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Database;
 using MetaReader.MetadataReader;
 
 
 namespace dbclases
 {
-    public class Dbhandel
+    public class LocalDbhandel
     {
+        private string _GUIDDevice;
+        
+        private void GetGUID()
+        {
+            using (var musik = new pcindexEntities())
+            {
+                List<string> GUIDDevice = (from p in musik.devices select p.UUIDDevise).ToList();
+
+                _GUIDDevice = GUIDDevice.ElementAt(0);
+            }
+        }
+
         private string _ip;
 
         public void FillIP(String myip)
         {
+            GetGUID();
             _ip = myip;
             // Check if id exist
 
-            using (var musik = new musikindexEntities())
+            using (var musik = new pcindexEntities())
             {
-                List<string> ips = (from p in musik.devices select p.idIP).ToList();
+                List<device> dd = (from p in musik.devices select p).ToList();
 
-                bool check = false;
-                foreach (var oldip in ips)
+                device mydevice = dd.ElementAt(0);
+                if (_GUIDDevice == mydevice.UUIDDevise)
                 {
-                    if (oldip == myip)
-                        check = true;
-
+                    Console.WriteLine("de er ikke ens");
                 }
-                var mynewip = new device();
-                mynewip.idIP = myip;
-                mynewip.Owner = Environment.UserName;
-                mynewip.Protocol = "rtsp://";
-                mynewip.Catagory_idCatagory = 1;
-
-                if (!check)
+                else
                 {
-                  
-                    musik.devices.Add(mynewip);
-                    musik.SaveChanges();
-
+                    Console.WriteLine("de er ikke ens");
                 }
+                
+
+                //bool check = false;
+                //foreach (var oldip in ips)
+                //{
+                //    if (oldip == myip)
+                //        check = true;
+
+                //}
+                //var mynewip = new device();
+                //mynewip.idIP = myip;
+                //mynewip.Owner = Environment.UserName;
+                //mynewip.Protocol = "rtsp://";
+                //mynewip.Catagory_idCatagory = 1;
+
+                //if (!check)
+                //{
+
+                //    musik.devices.Add(mynewip);
+                //    musik.SaveChanges();
+
+                //}
 
             }
 
@@ -72,45 +97,45 @@ namespace dbclases
 
         }
 
-        public void FillPath(List<string> PathOndevice)
-        {
-            using (var musik = new musikindexEntities())
-            {
-                List<string> pathlist = (from p in musik.filepaths
-                                         //where p.IP_idIP == "192.168.001.090"
-                                         where p.IP_idIP == _ip
-                                         select p.idFilePath
+        //public void FillPath(List<string> PathOndevice)
+        //{
+        //    using (var musik = new pcindexEntities())
+        //    {
+        //        List<string> pathlist = (from p in musik.filepaths
+        //                                 //where p.IP_idIP == "192.168.001.090"
+        //                                 where p.Device_UUIDDevise == _ip
+        //                                 select p.idFilePath
 
-                                        ).ToList();
+        //                                ).ToList();
 
 
 
-                PathOndevice = listcompair(PathOndevice, pathlist);
+        //        PathOndevice = listcompair(PathOndevice, pathlist);
 
                 
 
-                if (PathOndevice.Count >= 1)
-                {
+        //        if (PathOndevice.Count >= 1)
+        //        {
                     
-                    foreach (var onpath in PathOndevice)
-                    {
-                        var path = new filepath();
-                        path.idFilePath = onpath;
-                        path.IP_idIP = _ip;
+        //            foreach (var onpath in PathOndevice)
+        //            {
+        //                var path = new filepath();
+        //                path.idFilePath = onpath;
+        //                path.IP_idIP = _ip;
 
-                        musik.filepaths.Add(path);
-                        musik.SaveChanges();
+        //                musik.filepaths.Add(path);
+        //                musik.SaveChanges();
                         
-                    }
+        //            }
                    
                     
-                }
+        //        }
 
-            }
-            //see if pathes is allready is assigned to ip
-            // if not add pathes
+        //    }
+        //    //see if pathes is allready is assigned to ip
+        //    // if not add pathes
 
-        }
+        //}
 
         private List<string> listcompair(List<string> list1, List<string> list2)
         {
@@ -137,24 +162,25 @@ namespace dbclases
 
         public void fillMusicdata(List<IMetadataReader> datalist)
         {
-            var nummer = new musikdata();
+            var nummer = new musicdata();
 
 
-            using (var musik = new musikindexEntities())
+            using (var musik = new pcindexEntities())
             {
 
 
                 foreach (var metadata in datalist)
                 {
                     nummer.Title = metadata.Title;
-                    nummer.Artist_idArtist = metadata.Artist;
-                    nummer.Album_idAlbum = metadata.Album;
+                    nummer.Artist_Artist = metadata.Artist;
+                    nummer.Album_Album = metadata.Album;
                     nummer.Genre_Genre = metadata.Genre;
                     nummer.NrLenth = metadata.LengthS;
                     nummer.FileName = metadata.ItemName;
-                    nummer.FilePath_idFilePath = "chomefuck";//
+                    //der mangler noget med noget filepaht
+                    nummer.FilePath_UUIDPath = "112";
 
-                    musik.musikdatas.Add(nummer);
+                    musik.musicdatas.Add(nummer);
 
                     musik.SaveChanges();
                 }
@@ -167,7 +193,7 @@ namespace dbclases
         private void Addgenre( List<string> liste)
         {
             //se if Genre exists if not add genre
-            using (var musik = new musikindexEntities())
+            using (var musik = new pcindexEntities())
             {
                 List<string> list2 = (from p in musik.genres
 
@@ -186,7 +212,6 @@ namespace dbclases
                     {
                         var _genre = new genre();
                         _genre.Genre1 = onpath;
-                        _genre.Musik_Catagory_idCatagory = 3;
                         
 
                         musik.genres.Add(_genre);
@@ -203,11 +228,11 @@ namespace dbclases
         {
             // make artist list
 
-            using (var musik = new musikindexEntities())
+            using (var musik = new pcindexEntities())
             {
                 List<string> list2 = (from p in musik.artists
 
-                                      select p.idArtist
+                                      select p.Artist1
 
                                         ).ToList();
 
@@ -221,8 +246,7 @@ namespace dbclases
                     foreach (var onpath in liste)
                     {
                         var entity = new artist();
-                        entity.idArtist = onpath;
-                        entity.Musik_Catagory_idCatagory = 1;
+                        entity.Artist1 = onpath;
 
 
                         musik.artists.Add(entity);
@@ -241,11 +265,11 @@ namespace dbclases
 
         private void addAlbum(List<string> liste)
         {
-            using (var musik = new musikindexEntities())
+            using (var musik = new pcindexEntities())
             {
                 List<string> list2 = (from p in musik.albums
 
-                                      select p.idAlbum
+                                      select p.Album1
 
                                         ).ToList();
 
@@ -259,8 +283,7 @@ namespace dbclases
                     foreach (var onpath in liste)
                     {
                         var entity = new album();
-                        entity.idAlbum = onpath;
-                        entity.Musik_Catagory_idCatagory = 2;
+                        entity.Album1 = onpath;
 
 
                         musik.albums.Add(entity);
@@ -274,36 +297,7 @@ namespace dbclases
 
         }
 
-        public void addNumtoplayquque(int num)
-        {
-            var mummer = new playqueue();
-
-            mummer.Catagory_idCatagory = 3;
-            mummer.MusikData_idMusikData = num;
-
-            using (var musik = new musikindexEntities())
-            {
-                musik.playqueues.Add(mummer);
-                musik.SaveChanges();
-
-            }   
-
-        }
-
-        //public void setdiviceasofline()
-        //{
-            
-
-        //}
-
-        //public ~Dbhandel()
-        //{
-
-        //    setdiviceasofline();
-
-        //}
-
-
-
+       
+       
     }
 }

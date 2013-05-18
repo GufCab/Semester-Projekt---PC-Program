@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="pcindexModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="pcindexModelStoreContainer">
+          <EntitySet Name="album" EntityType="pcindexModel.Store.album" store:Type="Tables" Schema="pcindex" />
+          <EntitySet Name="artist" EntityType="pcindexModel.Store.artist" store:Type="Tables" Schema="pcindex" />
+          <EntitySet Name="device" EntityType="pcindexModel.Store.device" store:Type="Tables" Schema="pcindex" />
+          <EntitySet Name="filepath" EntityType="pcindexModel.Store.filepath" store:Type="Tables" Schema="pcindex" />
+          <EntitySet Name="genre" EntityType="pcindexModel.Store.genre" store:Type="Tables" Schema="pcindex" />
+          <EntitySet Name="musicdata" EntityType="pcindexModel.Store.musicdata" store:Type="Tables" Schema="pcindex" />
+          <AssociationSet Name="fk_FilePath_Device1" Association="pcindexModel.Store.fk_FilePath_Device1">
+            <End Role="device" EntitySet="device" />
+            <End Role="filepath" EntitySet="filepath" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MusicData_Album1" Association="pcindexModel.Store.fk_MusicData_Album1">
+            <End Role="album" EntitySet="album" />
+            <End Role="musicdata" EntitySet="musicdata" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MusicData_Artist1" Association="pcindexModel.Store.fk_MusicData_Artist1">
+            <End Role="artist" EntitySet="artist" />
+            <End Role="musicdata" EntitySet="musicdata" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MusicData_FilePath1" Association="pcindexModel.Store.fk_MusicData_FilePath1">
+            <End Role="filepath" EntitySet="filepath" />
+            <End Role="musicdata" EntitySet="musicdata" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MusicData_Genre" Association="pcindexModel.Store.fk_MusicData_Genre">
+            <End Role="genre" EntitySet="genre" />
+            <End Role="musicdata" EntitySet="musicdata" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="album">
+          <Key>
+            <PropertyRef Name="Album" />
+          </Key>
+          <Property Name="Album" Type="varchar" Nullable="false" MaxLength="36" />
+        </EntityType>
+        <EntityType Name="artist">
+          <Key>
+            <PropertyRef Name="Artist" />
+          </Key>
+          <Property Name="Artist" Type="varchar" Nullable="false" MaxLength="36" />
+        </EntityType>
+        <EntityType Name="device">
+          <Key>
+            <PropertyRef Name="UUIDDevise" />
+          </Key>
+          <Property Name="UUIDDevise" Type="varchar" Nullable="false" MaxLength="36" />
+          <Property Name="IP" Type="varchar" MaxLength="19" />
+          <Property Name="Owner" Type="varchar" MaxLength="45" />
+          <Property Name="Protocol" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="filepath">
+          <Key>
+            <PropertyRef Name="UUIDPath" />
+          </Key>
+          <Property Name="UUIDPath" Type="varchar" Nullable="false" MaxLength="36" />
+          <Property Name="Device_UUIDDevise" Type="varchar" Nullable="false" MaxLength="36" />
+        </EntityType>
+        <EntityType Name="genre">
+          <Key>
+            <PropertyRef Name="Genre" />
+          </Key>
+          <Property Name="Genre" Type="varchar" Nullable="false" MaxLength="36" />
+        </EntityType>
+        <EntityType Name="musicdata">
+          <Key>
+            <PropertyRef Name="UUIDMusikData" />
+          </Key>
+          <Property Name="UUIDMusikData" Type="varchar" Nullable="false" MaxLength="36" />
+          <Property Name="Title" Type="varchar" MaxLength="45" />
+          <Property Name="FileName" Type="varchar" Nullable="false" MaxLength="45" />
+          <Property Name="Genre_Genre" Type="varchar" MaxLength="36" />
+          <Property Name="Album_Album" Type="varchar" MaxLength="36" />
+          <Property Name="Artist_Artist" Type="varchar" MaxLength="36" />
+          <Property Name="FilePath_UUIDPath" Type="varchar" Nullable="false" MaxLength="36" />
+          <Property Name="NrLenth" Type="int" />
+        </EntityType>
+        <Association Name="fk_FilePath_Device1">
+          <End Role="device" Type="pcindexModel.Store.device" Multiplicity="1" />
+          <End Role="filepath" Type="pcindexModel.Store.filepath" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="device">
+              <PropertyRef Name="UUIDDevise" />
+            </Principal>
+            <Dependent Role="filepath">
+              <PropertyRef Name="Device_UUIDDevise" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MusicData_Album1">
+          <End Role="album" Type="pcindexModel.Store.album" Multiplicity="0..1" />
+          <End Role="musicdata" Type="pcindexModel.Store.musicdata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="album">
+              <PropertyRef Name="Album" />
+            </Principal>
+            <Dependent Role="musicdata">
+              <PropertyRef Name="Album_Album" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MusicData_Artist1">
+          <End Role="artist" Type="pcindexModel.Store.artist" Multiplicity="0..1" />
+          <End Role="musicdata" Type="pcindexModel.Store.musicdata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="artist">
+              <PropertyRef Name="Artist" />
+            </Principal>
+            <Dependent Role="musicdata">
+              <PropertyRef Name="Artist_Artist" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MusicData_FilePath1">
+          <End Role="filepath" Type="pcindexModel.Store.filepath" Multiplicity="1" />
+          <End Role="musicdata" Type="pcindexModel.Store.musicdata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filepath">
+              <PropertyRef Name="UUIDPath" />
+            </Principal>
+            <Dependent Role="musicdata">
+              <PropertyRef Name="FilePath_UUIDPath" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MusicData_Genre">
+          <End Role="genre" Type="pcindexModel.Store.genre" Multiplicity="0..1" />
+          <End Role="musicdata" Type="pcindexModel.Store.musicdata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="genre">
+              <PropertyRef Name="Genre" />
+            </Principal>
+            <Dependent Role="musicdata">
+              <PropertyRef Name="Genre_Genre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="pcindexModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="pcindexEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="albums" EntityType="pcindexModel.album" />
+          <EntitySet Name="artists" EntityType="pcindexModel.artist" />
+          <EntitySet Name="devices" EntityType="pcindexModel.device" />
+          <EntitySet Name="filepaths" EntityType="pcindexModel.filepath" />
+          <EntitySet Name="genres" EntityType="pcindexModel.genre" />
+          <EntitySet Name="musicdatas" EntityType="pcindexModel.musicdata" />
+          <AssociationSet Name="fk_MusicData_Album1" Association="pcindexModel.fk_MusicData_Album1">
+            <End Role="album" EntitySet="albums" />
+            <End Role="musicdata" EntitySet="musicdatas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MusicData_Artist1" Association="pcindexModel.fk_MusicData_Artist1">
+            <End Role="artist" EntitySet="artists" />
+            <End Role="musicdata" EntitySet="musicdatas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_FilePath_Device1" Association="pcindexModel.fk_FilePath_Device1">
+            <End Role="device" EntitySet="devices" />
+            <End Role="filepath" EntitySet="filepaths" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MusicData_FilePath1" Association="pcindexModel.fk_MusicData_FilePath1">
+            <End Role="filepath" EntitySet="filepaths" />
+            <End Role="musicdata" EntitySet="musicdatas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MusicData_Genre" Association="pcindexModel.fk_MusicData_Genre">
+            <End Role="genre" EntitySet="genres" />
+            <End Role="musicdata" EntitySet="musicdatas" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="album">
+          <Key>
+            <PropertyRef Name="Album1" />
+          </Key>
+          <Property Name="Album1" Type="String" Nullable="false" MaxLength="36" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="musicdatas" Relationship="pcindexModel.fk_MusicData_Album1" FromRole="album" ToRole="musicdata" />
+        </EntityType>
+        <EntityType Name="artist">
+          <Key>
+            <PropertyRef Name="Artist1" />
+          </Key>
+          <Property Name="Artist1" Type="String" Nullable="false" MaxLength="36" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="musicdatas" Relationship="pcindexModel.fk_MusicData_Artist1" FromRole="artist" ToRole="musicdata" />
+        </EntityType>
+        <EntityType Name="device">
+          <Key>
+            <PropertyRef Name="UUIDDevise" />
+          </Key>
+          <Property Name="UUIDDevise" Type="String" Nullable="false" MaxLength="36" Unicode="false" FixedLength="false" />
+          <Property Name="IP" Type="String" MaxLength="19" Unicode="false" FixedLength="false" />
+          <Property Name="Owner" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Protocol" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="filepaths" Relationship="pcindexModel.fk_FilePath_Device1" FromRole="device" ToRole="filepath" />
+        </EntityType>
+        <EntityType Name="filepath">
+          <Key>
+            <PropertyRef Name="UUIDPath" />
+          </Key>
+          <Property Name="UUIDPath" Type="String" Nullable="false" MaxLength="36" Unicode="false" FixedLength="false" />
+          <Property Name="Device_UUIDDevise" Type="String" Nullable="false" MaxLength="36" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="device" Relationship="pcindexModel.fk_FilePath_Device1" FromRole="filepath" ToRole="device" />
+          <NavigationProperty Name="musicdatas" Relationship="pcindexModel.fk_MusicData_FilePath1" FromRole="filepath" ToRole="musicdata" />
+        </EntityType>
+        <EntityType Name="genre">
+          <Key>
+            <PropertyRef Name="Genre1" />
+          </Key>
+          <Property Name="Genre1" Type="String" Nullable="false" MaxLength="36" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="musicdatas" Relationship="pcindexModel.fk_MusicData_Genre" FromRole="genre" ToRole="musicdata" />
+        </EntityType>
+        <EntityType Name="musicdata">
+          <Key>
+            <PropertyRef Name="UUIDMusikData" />
+          </Key>
+          <Property Name="UUIDMusikData" Type="String" Nullable="false" MaxLength="36" Unicode="false" FixedLength="false" />
+          <Property Name="Title" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="FileName" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Genre_Genre" Type="String" MaxLength="36" Unicode="false" FixedLength="false" />
+          <Property Name="Album_Album" Type="String" MaxLength="36" Unicode="false" FixedLength="false" />
+          <Property Name="Artist_Artist" Type="String" MaxLength="36" Unicode="false" FixedLength="false" />
+          <Property Name="FilePath_UUIDPath" Type="String" Nullable="false" MaxLength="36" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="album" Relationship="pcindexModel.fk_MusicData_Album1" FromRole="musicdata" ToRole="album" />
+          <NavigationProperty Name="artist" Relationship="pcindexModel.fk_MusicData_Artist1" FromRole="musicdata" ToRole="artist" />
+          <NavigationProperty Name="filepath" Relationship="pcindexModel.fk_MusicData_FilePath1" FromRole="musicdata" ToRole="filepath" />
+          <NavigationProperty Name="genre" Relationship="pcindexModel.fk_MusicData_Genre" FromRole="musicdata" ToRole="genre" />
+          <Property Type="Int32" Name="NrLenth" />
+        </EntityType>
+        <Association Name="fk_MusicData_Album1">
+          <End Role="album" Type="pcindexModel.album" Multiplicity="0..1" />
+          <End Role="musicdata" Type="pcindexModel.musicdata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="album">
+              <PropertyRef Name="Album1" />
+            </Principal>
+            <Dependent Role="musicdata">
+              <PropertyRef Name="Album_Album" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MusicData_Artist1">
+          <End Role="artist" Type="pcindexModel.artist" Multiplicity="0..1" />
+          <End Role="musicdata" Type="pcindexModel.musicdata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="artist">
+              <PropertyRef Name="Artist1" />
+            </Principal>
+            <Dependent Role="musicdata">
+              <PropertyRef Name="Artist_Artist" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_FilePath_Device1">
+          <End Role="device" Type="pcindexModel.device" Multiplicity="1" />
+          <End Role="filepath" Type="pcindexModel.filepath" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="device">
+              <PropertyRef Name="UUIDDevise" />
+            </Principal>
+            <Dependent Role="filepath">
+              <PropertyRef Name="Device_UUIDDevise" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MusicData_FilePath1">
+          <End Role="filepath" Type="pcindexModel.filepath" Multiplicity="1" />
+          <End Role="musicdata" Type="pcindexModel.musicdata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filepath">
+              <PropertyRef Name="UUIDPath" />
+            </Principal>
+            <Dependent Role="musicdata">
+              <PropertyRef Name="FilePath_UUIDPath" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MusicData_Genre">
+          <End Role="genre" Type="pcindexModel.genre" Multiplicity="0..1" />
+          <End Role="musicdata" Type="pcindexModel.musicdata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="genre">
+              <PropertyRef Name="Genre1" />
+            </Principal>
+            <Dependent Role="musicdata">
+              <PropertyRef Name="Genre_Genre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="pcindexModelStoreContainer" CdmEntityContainer="pcindexEntities">
+          <EntitySetMapping Name="albums">
+            <EntityTypeMapping TypeName="pcindexModel.album">
+              <MappingFragment StoreEntitySet="album">
+                <ScalarProperty Name="Album1" ColumnName="Album" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="artists">
+            <EntityTypeMapping TypeName="pcindexModel.artist">
+              <MappingFragment StoreEntitySet="artist">
+                <ScalarProperty Name="Artist1" ColumnName="Artist" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="devices">
+            <EntityTypeMapping TypeName="pcindexModel.device">
+              <MappingFragment StoreEntitySet="device">
+                <ScalarProperty Name="UUIDDevise" ColumnName="UUIDDevise" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="Protocol" ColumnName="Protocol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="filepaths">
+            <EntityTypeMapping TypeName="pcindexModel.filepath">
+              <MappingFragment StoreEntitySet="filepath">
+                <ScalarProperty Name="UUIDPath" ColumnName="UUIDPath" />
+                <ScalarProperty Name="Device_UUIDDevise" ColumnName="Device_UUIDDevise" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="genres">
+            <EntityTypeMapping TypeName="pcindexModel.genre">
+              <MappingFragment StoreEntitySet="genre">
+                <ScalarProperty Name="Genre1" ColumnName="Genre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="musicdatas">
+            <EntityTypeMapping TypeName="pcindexModel.musicdata">
+              <MappingFragment StoreEntitySet="musicdata">
+                <ScalarProperty Name="NrLenth" ColumnName="NrLenth" />
+                <ScalarProperty Name="UUIDMusikData" ColumnName="UUIDMusikData" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="Genre_Genre" ColumnName="Genre_Genre" />
+                <ScalarProperty Name="Album_Album" ColumnName="Album_Album" />
+                <ScalarProperty Name="Artist_Artist" ColumnName="Artist_Artist" />
+                <ScalarProperty Name="FilePath_UUIDPath" ColumnName="FilePath_UUIDPath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

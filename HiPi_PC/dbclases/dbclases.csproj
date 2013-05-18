@@ -46,80 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="album.cs">
-      <DependentUpon>MusicIndex.tt</DependentUpon>
-    </Compile>
-    <Compile Include="artist.cs">
-      <DependentUpon>MusicIndex.tt</DependentUpon>
-    </Compile>
-    <Compile Include="catagory.cs">
-      <DependentUpon>MusicIndex.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBHandel.cs" />
+    <Compile Include="LocalDbhandel.cs" />
     <Compile Include="DBshow.cs" />
-    <Compile Include="device.cs">
-      <DependentUpon>MusicIndex.tt</DependentUpon>
-    </Compile>
-    <Compile Include="filepath.cs">
-      <DependentUpon>MusicIndex.tt</DependentUpon>
-    </Compile>
-    <Compile Include="genre.cs">
-      <DependentUpon>MusicIndex.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MusicIndex.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MusicIndex.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MusicIndex.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MusicIndex.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MusicIndex.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MusicIndex.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="musik.cs">
-      <DependentUpon>MusicIndex.tt</DependentUpon>
-    </Compile>
-    <Compile Include="musikdata.cs">
-      <DependentUpon>MusicIndex.tt</DependentUpon>
-    </Compile>
-    <Compile Include="playqueue.cs">
-      <DependentUpon>MusicIndex.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Database\Database.csproj">
+      <Project>{56b100a5-1455-431c-86c4-ef6be036bbf4}</Project>
+      <Name>Database</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MetadataReader\MetadataReader.csproj">
       <Project>{97f9252f-f30d-41cf-bb96-050068fd1948}</Project>
       <Name>MetadataReader</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="MusicIndex.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>MusicIndex.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.Config">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="MusicIndex.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MusicIndex.edmx</DependentUpon>
-      <LastGenOutput>MusicIndex.Context.cs</LastGenOutput>
-    </None>
-    <None Include="MusicIndex.edmx.diagram">
-      <DependentUpon>MusicIndex.edmx</DependentUpon>
-    </None>
-    <None Include="MusicIndex.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MusicIndex.edmx</DependentUpon>
-      <LastGenOutput>MusicIndex.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

@@ -48,53 +48,62 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="album.cs">
+      <DependentUpon>PCDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="artist.cs">
+      <DependentUpon>PCDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="device.cs">
+      <DependentUpon>PCDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="filepath.cs">
-      <DependentUpon>Musikdata.tt</DependentUpon>
+      <DependentUpon>PCDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ip.cs">
-      <DependentUpon>Musikdata.tt</DependentUpon>
+    <Compile Include="genre.cs">
+      <DependentUpon>PCDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Musikdata.Context.cs">
+    <Compile Include="musicdata.cs">
+      <DependentUpon>PCDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCDBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Musikdata.Context.tt</DependentUpon>
+      <DependentUpon>PCDBModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="musikdata.cs">
-      <DependentUpon>Musikdata.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Musikdata.Designer.cs">
+    <Compile Include="PCDBModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Musikdata.edmx</DependentUpon>
+      <DependentUpon>PCDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Musikdata1.cs">
+    <Compile Include="PCDBModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Musikdata.tt</DependentUpon>
+      <DependentUpon>PCDBModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="Musikdata.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Musikdata.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Musikdata.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Musikdata.edmx</DependentUpon>
-      <LastGenOutput>Musikdata.Context.cs</LastGenOutput>
-    </None>
-    <None Include="Musikdata.edmx.diagram">
-      <DependentUpon>Musikdata.edmx</DependentUpon>
-    </None>
-    <None Include="Musikdata.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Musikdata.edmx</DependentUpon>
-      <LastGenOutput>Musikdata1.cs</LastGenOutput>
-    </None>
     <None Include="packages.config" />
+    <EntityDeploy Include="PCDBModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PCDBModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="PCDBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PCDBModel.edmx</DependentUpon>
+      <LastGenOutput>PCDBModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="PCDBModel.edmx.diagram">
+      <DependentUpon>PCDBModel.edmx</DependentUpon>
+    </None>
+    <None Include="PCDBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PCDBModel.edmx</DependentUpon>
+      <LastGenOutput>PCDBModel.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

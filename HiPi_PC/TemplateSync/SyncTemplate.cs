@@ -15,7 +15,7 @@ namespace TemplateSync
 {
     class SyncTemplate : ISynchronizer
     {
-        private Dbhandel db = new Dbhandel();
+        private LocalDbhandel db = new LocalDbhandel();
         private Live555Wrapper live555;
         //private int _index;
 

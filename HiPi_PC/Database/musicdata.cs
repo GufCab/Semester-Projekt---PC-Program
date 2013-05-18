@@ -12,17 +12,20 @@ namespace Database
     using System;
     using System.Collections.Generic;
     
-    public partial class musikdata
+    public partial class musicdata
     {
-        public long idMusikData { get; set; }
+        public string UUIDMusikData { get; set; }
         public string Title { get; set; }
-        public string Artist { get; set; }
-        public string Album { get; set; }
-        public string Genre { get; set; }
-        public Nullable<int> NrLenth { get; set; }
-        public string FilePath_idFilePath { get; set; }
         public string FileName { get; set; }
+        public string Genre_Genre { get; set; }
+        public string Album_Album { get; set; }
+        public string Artist_Artist { get; set; }
+        public string FilePath_UUIDPath { get; set; }
+        public Nullable<int> NrLenth { get; set; }
     
+        public virtual album album { get; set; }
+        public virtual artist artist { get; set; }
         public virtual filepath filepath { get; set; }
+        public virtual genre genre { get; set; }
     }
 }

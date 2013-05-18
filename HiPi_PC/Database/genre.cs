@@ -7,22 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace dbclases
+namespace Database
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class artist
+    public partial class genre
     {
-        public artist()
+        public genre()
         {
-            this.musikdatas = new HashSet<musikdata>();
+            this.musicdatas = new HashSet<musicdata>();
         }
     
-        public string idArtist { get; set; }
-        public int Musik_Catagory_idCatagory { get; set; }
+        public string Genre1 { get; set; }
     
-        public virtual musik musik { get; set; }
-        public virtual ICollection<musikdata> musikdatas { get; set; }
+        public virtual ICollection<musicdata> musicdatas { get; set; }
     }
 }

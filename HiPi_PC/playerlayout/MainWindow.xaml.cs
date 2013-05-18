@@ -21,8 +21,7 @@ namespace playerlayout
     /// </summary>
     public partial class MainWindow : Window
     {
-        private IObservable<> Musicnumbers;
-        private IObservable<> _play; 
+
 
         bool play = new bool();
         private Settings settingsw;
@@ -31,7 +30,6 @@ namespace playerlayout
             InitializeComponent();
             settingsw = new Settings();
             
-            var db = new 
         }
 
         private void ButtonX_OnClick(object sender, RoutedEventArgs e)

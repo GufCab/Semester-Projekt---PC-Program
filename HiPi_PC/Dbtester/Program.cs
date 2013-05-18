@@ -13,7 +13,7 @@ namespace Dbtester
     {
         static void Main(string[] args)
         {
-            var dbh = new dbclases.Dbhandel();
+            var dbh = new dbclases.LocalDbhandel();
 
             dbh.FillIP("212.212.224.124");
 

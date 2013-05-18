@@ -7,25 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace dbclases
+namespace Database
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class musik
+    public partial class device
     {
-        public musik()
+        public device()
         {
-            this.albums = new HashSet<album>();
-            this.artists = new HashSet<artist>();
-            this.genres = new HashSet<genre>();
+            this.filepaths = new HashSet<filepath>();
         }
     
-        public int Catagory_idCatagory { get; set; }
+        public string UUIDDevise { get; set; }
+        public string IP { get; set; }
+        public string Owner { get; set; }
+        public string Protocol { get; set; }
     
-        public virtual ICollection<album> albums { get; set; }
-        public virtual ICollection<artist> artists { get; set; }
-        public virtual catagory catagory { get; set; }
-        public virtual ICollection<genre> genres { get; set; }
+        public virtual ICollection<filepath> filepaths { get; set; }
     }
 }

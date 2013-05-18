@@ -13,10 +13,10 @@ namespace Database
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class musikindexEntities : DbContext
+    public partial class pcindexEntities : DbContext
     {
-        public musikindexEntities()
-            : base("name=musikindexEntities")
+        public pcindexEntities()
+            : base("name=pcindexEntities")
         {
         }
     
@@ -25,8 +25,11 @@ namespace Database
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<album> albums { get; set; }
+        public DbSet<artist> artists { get; set; }
+        public DbSet<device> devices { get; set; }
         public DbSet<filepath> filepaths { get; set; }
-        public DbSet<ip> ips { get; set; }
-        public DbSet<musikdata> musikdatas { get; set; }
+        public DbSet<genre> genres { get; set; }
+        public DbSet<musicdata> musicdatas { get; set; }
     }
 }

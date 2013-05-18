@@ -7,18 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace dbclases
+namespace Database
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class playqueue
+    public partial class album
     {
-        public Nullable<long> MusikData_idMusikData { get; set; }
-        public int Catagory_idCatagory { get; set; }
-        public int Idnummer { get; set; }
+        public album()
+        {
+            this.musicdatas = new HashSet<musicdata>();
+        }
     
-        public virtual catagory catagory { get; set; }
-        public virtual musikdata musikdata { get; set; }
+        public string Album1 { get; set; }
+    
+        public virtual ICollection<musicdata> musicdatas { get; set; }
     }
 }

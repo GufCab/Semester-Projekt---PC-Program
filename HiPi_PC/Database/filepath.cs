@@ -16,14 +16,13 @@ namespace Database
     {
         public filepath()
         {
-            this.musikdatas = new HashSet<musikdata>();
+            this.musicdatas = new HashSet<musicdata>();
         }
     
-        public string idFilePath { get; set; }
-        public int FilePath1 { get; set; }
-        public string IP_idIP { get; set; }
+        public string UUIDPath { get; set; }
+        public string Device_UUIDDevise { get; set; }
     
-        public virtual ip ip { get; set; }
-        public virtual ICollection<musikdata> musikdatas { get; set; }
+        public virtual device device { get; set; }
+        public virtual ICollection<musicdata> musicdatas { get; set; }
     }
 }
