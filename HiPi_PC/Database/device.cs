@@ -21,7 +21,7 @@ namespace Database
     
         public string UUIDDevise { get; set; }
         public string IP { get; set; }
-        public string Owner { get; set; }
+        public string PCOwner { get; set; }
         public string Protocol { get; set; }
     
         public virtual ICollection<filepath> filepaths { get; set; }

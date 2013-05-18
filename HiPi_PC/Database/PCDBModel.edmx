@@ -51,7 +51,7 @@
           </Key>
           <Property Name="UUIDDevise" Type="varchar" Nullable="false" MaxLength="36" />
           <Property Name="IP" Type="varchar" MaxLength="19" />
-          <Property Name="Owner" Type="varchar" MaxLength="45" />
+          <Property Name="PCOwner" Type="varchar" MaxLength="45" />
           <Property Name="Protocol" Type="varchar" MaxLength="45" />
         </EntityType>
         <EntityType Name="filepath">
@@ -59,6 +59,7 @@
             <PropertyRef Name="UUIDPath" />
           </Key>
           <Property Name="UUIDPath" Type="varchar" Nullable="false" MaxLength="36" />
+          <Property Name="FilePath" Type="varchar" Nullable="false" MaxLength="100" />
           <Property Name="Device_UUIDDevise" Type="varchar" Nullable="false" MaxLength="36" />
         </EntityType>
         <EntityType Name="genre">
@@ -192,7 +193,7 @@
           </Key>
           <Property Name="UUIDDevise" Type="String" Nullable="false" MaxLength="36" Unicode="false" FixedLength="false" />
           <Property Name="IP" Type="String" MaxLength="19" Unicode="false" FixedLength="false" />
-          <Property Name="Owner" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="PCOwner" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
           <Property Name="Protocol" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="filepaths" Relationship="pcindexModel.fk_FilePath_Device1" FromRole="device" ToRole="filepath" />
         </EntityType>
@@ -204,6 +205,7 @@
           <Property Name="Device_UUIDDevise" Type="String" Nullable="false" MaxLength="36" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="device" Relationship="pcindexModel.fk_FilePath_Device1" FromRole="filepath" ToRole="device" />
           <NavigationProperty Name="musicdatas" Relationship="pcindexModel.fk_MusicData_FilePath1" FromRole="filepath" ToRole="musicdata" />
+          <Property Type="String" Name="FilePath1" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="genre">
           <Key>
@@ -223,11 +225,11 @@
           <Property Name="Album_Album" Type="String" MaxLength="36" Unicode="false" FixedLength="false" />
           <Property Name="Artist_Artist" Type="String" MaxLength="36" Unicode="false" FixedLength="false" />
           <Property Name="FilePath_UUIDPath" Type="String" Nullable="false" MaxLength="36" Unicode="false" FixedLength="false" />
+          <Property Name="NrLenth" Type="Int32" />
           <NavigationProperty Name="album" Relationship="pcindexModel.fk_MusicData_Album1" FromRole="musicdata" ToRole="album" />
           <NavigationProperty Name="artist" Relationship="pcindexModel.fk_MusicData_Artist1" FromRole="musicdata" ToRole="artist" />
           <NavigationProperty Name="filepath" Relationship="pcindexModel.fk_MusicData_FilePath1" FromRole="musicdata" ToRole="filepath" />
           <NavigationProperty Name="genre" Relationship="pcindexModel.fk_MusicData_Genre" FromRole="musicdata" ToRole="genre" />
-          <Property Type="Int32" Name="NrLenth" />
         </EntityType>
         <Association Name="fk_MusicData_Album1">
           <End Role="album" Type="pcindexModel.album" Multiplicity="0..1" />
@@ -314,7 +316,7 @@
               <MappingFragment StoreEntitySet="device">
                 <ScalarProperty Name="UUIDDevise" ColumnName="UUIDDevise" />
                 <ScalarProperty Name="IP" ColumnName="IP" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="PCOwner" ColumnName="PCOwner" />
                 <ScalarProperty Name="Protocol" ColumnName="Protocol" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -322,6 +324,7 @@
           <EntitySetMapping Name="filepaths">
             <EntityTypeMapping TypeName="pcindexModel.filepath">
               <MappingFragment StoreEntitySet="filepath">
+                <ScalarProperty Name="FilePath1" ColumnName="FilePath" />
                 <ScalarProperty Name="UUIDPath" ColumnName="UUIDPath" />
                 <ScalarProperty Name="Device_UUIDDevise" ColumnName="Device_UUIDDevise" />
               </MappingFragment>
@@ -337,7 +340,6 @@
           <EntitySetMapping Name="musicdatas">
             <EntityTypeMapping TypeName="pcindexModel.musicdata">
               <MappingFragment StoreEntitySet="musicdata">
-                <ScalarProperty Name="NrLenth" ColumnName="NrLenth" />
                 <ScalarProperty Name="UUIDMusikData" ColumnName="UUIDMusikData" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="FileName" ColumnName="FileName" />
@@ -345,6 +347,7 @@
                 <ScalarProperty Name="Album_Album" ColumnName="Album_Album" />
                 <ScalarProperty Name="Artist_Artist" ColumnName="Artist_Artist" />
                 <ScalarProperty Name="FilePath_UUIDPath" ColumnName="FilePath_UUIDPath" />
+                <ScalarProperty Name="NrLenth" ColumnName="NrLenth" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

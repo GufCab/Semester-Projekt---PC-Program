@@ -21,6 +21,7 @@ namespace Database
     
         public string UUIDPath { get; set; }
         public string Device_UUIDDevise { get; set; }
+        public string FilePath1 { get; set; }
     
         public virtual device device { get; set; }
         public virtual ICollection<musicdata> musicdatas { get; set; }

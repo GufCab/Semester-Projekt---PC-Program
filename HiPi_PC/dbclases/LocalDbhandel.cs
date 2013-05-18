@@ -17,9 +17,9 @@ namespace dbclases
         {
             using (var musik = new pcindexEntities())
             {
-                List<string> GUIDDevice = (from p in musik.devices select p.UUIDDevise).ToList();
+                var GUIDDevice = (from p in musik.devices select p).ToList();
 
-                _GUIDDevice = GUIDDevice.ElementAt(0);
+                _GUIDDevice = GUIDDevice.ElementAt(0).UUIDDevise;
             }
         }
 
@@ -33,39 +33,26 @@ namespace dbclases
 
             using (var musik = new pcindexEntities())
             {
-                List<device> dd = (from p in musik.devices select p).ToList();
+                var dd = (from p in musik.devices select p).ToList();
+                
 
-                device mydevice = dd.ElementAt(0);
-                if (_GUIDDevice == mydevice.UUIDDevise)
+                var mydevice = dd.ElementAt(0);
+                if (_ip != mydevice.IP)
                 {
-                    Console.WriteLine("de er ikke ens");
+                    Console.WriteLine("de er ens");
+                    mydevice.IP = _ip;
+                    mydevice.Protocol = "rtsp://";
+                    mydevice.PCOwner = Environment.UserName;
+                    musik.devices.Remove(dd.ElementAt(0));
+                    musik.SaveChanges();
+                    musik.devices.Add(mydevice);
+                    musik.SaveChanges();
                 }
                 else
                 {
-                    Console.WriteLine("de er ikke ens");
+                    Console.WriteLine("de er ens");
                 }
-                
-
-                //bool check = false;
-                //foreach (var oldip in ips)
-                //{
-                //    if (oldip == myip)
-                //        check = true;
-
-                //}
-                //var mynewip = new device();
-                //mynewip.idIP = myip;
-                //mynewip.Owner = Environment.UserName;
-                //mynewip.Protocol = "rtsp://";
-                //mynewip.Catagory_idCatagory = 1;
-
-                //if (!check)
-                //{
-
-                //    musik.devices.Add(mynewip);
-                //    musik.SaveChanges();
-
-                //}
+               
 
             }
 
@@ -97,45 +84,54 @@ namespace dbclases
 
         }
 
-        //public void FillPath(List<string> PathOndevice)
-        //{
-        //    using (var musik = new pcindexEntities())
-        //    {
-        //        List<string> pathlist = (from p in musik.filepaths
-        //                                 //where p.IP_idIP == "192.168.001.090"
-        //                                 where p.Device_UUIDDevise == _ip
-        //                                 select p.idFilePath
+        public void FillPath(List<string> PathOndevice)
+        {
+            using (var musik = new pcindexEntities())
+            {
+                var pathlist = (from p in musik.filepaths
+                                         select p.FilePath1
 
-        //                                ).ToList();
+                                        ).ToList();
 
 
 
-        //        PathOndevice = listcompair(PathOndevice, pathlist);
+                PathOndevice = listcompair(PathOndevice, pathlist);
 
-                
 
-        //        if (PathOndevice.Count >= 1)
-        //        {
-                    
-        //            foreach (var onpath in PathOndevice)
-        //            {
-        //                var path = new filepath();
-        //                path.idFilePath = onpath;
-        //                path.IP_idIP = _ip;
 
-        //                musik.filepaths.Add(path);
-        //                musik.SaveChanges();
-                        
-        //            }
-                   
-                    
-        //        }
+                if (PathOndevice.Count >= 1)
+                {
 
-        //    }
-        //    //see if pathes is allready is assigned to ip
-        //    // if not add pathes
+                    foreach (var onpath in PathOndevice)
+                    {
+                        var path = new filepath();
+                        path.Device_UUIDDevise = _GUIDDevice;
+                        path.UUIDPath = Guid.NewGuid().ToString();
+                        path.FilePath1 = onpath;
+                        musik.filepaths.Add(path);
+                        musik.SaveChanges();
 
-        //}
+                    }
+
+
+                }
+
+            }
+            //see if pathes is allready is assigned to ip
+            // if not add pathes
+
+        }
+
+        public void selectallgenres()
+        {
+            using (var musik = new pcindexEntities())
+            {
+                var dd = (from p in musik.genres select p).ToList();
+
+                Console.WriteLine(dd.ElementAt(0).Genre1);
+            }
+
+        }
 
         private List<string> listcompair(List<string> list1, List<string> list2)
         {
