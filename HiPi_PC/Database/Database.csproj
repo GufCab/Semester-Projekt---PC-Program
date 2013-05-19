@@ -49,79 +49,79 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="album.cs">
-      <DependentUpon>PCDBmodel.tt</DependentUpon>
+      <DependentUpon>PCDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="artist.cs">
-      <DependentUpon>PCDBmodel.tt</DependentUpon>
+      <DependentUpon>PCDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="catagory.cs">
-      <DependentUpon>PIDBmodel.tt</DependentUpon>
+    <Compile Include="Catagory.cs">
+      <DependentUpon>PIDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="device.cs">
-      <DependentUpon>PCDBmodel.tt</DependentUpon>
+      <DependentUpon>PCDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="filepath.cs">
-      <DependentUpon>PCDBmodel.tt</DependentUpon>
+      <DependentUpon>PCDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="genre.cs">
-      <DependentUpon>PCDBmodel.tt</DependentUpon>
+      <DependentUpon>PCDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="musicdata.cs">
-      <DependentUpon>PCDBmodel.tt</DependentUpon>
+      <DependentUpon>PCDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="musik.cs">
-      <DependentUpon>PIDBmodel.tt</DependentUpon>
+    <Compile Include="Musik.cs">
+      <DependentUpon>PIDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="PCDBmodel.Context.cs">
+    <Compile Include="PCDBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PCDBmodel.Context.tt</DependentUpon>
+      <DependentUpon>PCDBModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="PCDBmodel.cs">
+    <Compile Include="PCDBModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PCDBmodel.tt</DependentUpon>
+      <DependentUpon>PCDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="PCDBmodel.Designer.cs">
+    <Compile Include="PCDBModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PCDBmodel.edmx</DependentUpon>
+      <DependentUpon>PCDBModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="pialbum.cs">
-      <DependentUpon>PIDBmodel.tt</DependentUpon>
+    <Compile Include="PIAlbum.cs">
+      <DependentUpon>PIDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="piartist.cs">
-      <DependentUpon>PIDBmodel.tt</DependentUpon>
+    <Compile Include="PIArtist.cs">
+      <DependentUpon>PIDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="PIDBmodel.Context.cs">
+    <Compile Include="PIDBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PIDBmodel.Context.tt</DependentUpon>
+      <DependentUpon>PIDBModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="PIDBmodel.cs">
+    <Compile Include="PIDBModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PIDBmodel.tt</DependentUpon>
+      <DependentUpon>PIDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="PIDBmodel.Designer.cs">
+    <Compile Include="PIDBModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PIDBmodel.edmx</DependentUpon>
+      <DependentUpon>PIDBModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="pidevice.cs">
-      <DependentUpon>PIDBmodel.tt</DependentUpon>
+    <Compile Include="PIDevice.cs">
+      <DependentUpon>PIDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="pifilepath.cs">
-      <DependentUpon>PIDBmodel.tt</DependentUpon>
+    <Compile Include="PIFilePath.cs">
+      <DependentUpon>PIDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="pigenre.cs">
-      <DependentUpon>PIDBmodel.tt</DependentUpon>
+    <Compile Include="PIGenre.cs">
+      <DependentUpon>PIDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="pimusikdata.cs">
-      <DependentUpon>PIDBmodel.tt</DependentUpon>
+    <Compile Include="PIMusikData.cs">
+      <DependentUpon>PIDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="piplayqueue.cs">
-      <DependentUpon>PIDBmodel.tt</DependentUpon>
+    <Compile Include="PIPlayQueue.cs">
+      <DependentUpon>PIDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -129,39 +129,39 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <EntityDeploy Include="PCDBmodel.edmx">
+    <EntityDeploy Include="PCDBModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PCDBmodel.Designer.cs</LastGenOutput>
+      <LastGenOutput>PCDBModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="PCDBmodel.Context.tt">
+    <None Include="PCDBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PCDBmodel.edmx</DependentUpon>
-      <LastGenOutput>PCDBmodel.Context.cs</LastGenOutput>
+      <DependentUpon>PCDBModel.edmx</DependentUpon>
+      <LastGenOutput>PCDBModel.Context.cs</LastGenOutput>
     </None>
-    <None Include="PCDBmodel.edmx.diagram">
-      <DependentUpon>PCDBmodel.edmx</DependentUpon>
+    <None Include="PCDBModel.edmx.diagram">
+      <DependentUpon>PCDBModel.edmx</DependentUpon>
     </None>
-    <None Include="PCDBmodel.tt">
+    <None Include="PCDBModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PCDBmodel.edmx</DependentUpon>
-      <LastGenOutput>PCDBmodel.cs</LastGenOutput>
+      <DependentUpon>PCDBModel.edmx</DependentUpon>
+      <LastGenOutput>PCDBModel.cs</LastGenOutput>
     </None>
-    <EntityDeploy Include="PIDBmodel.edmx">
+    <EntityDeploy Include="PIDBModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PIDBmodel.Designer.cs</LastGenOutput>
+      <LastGenOutput>PIDBModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="PIDBmodel.Context.tt">
+    <None Include="PIDBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PIDBmodel.edmx</DependentUpon>
-      <LastGenOutput>PIDBmodel.Context.cs</LastGenOutput>
+      <DependentUpon>PIDBModel.edmx</DependentUpon>
+      <LastGenOutput>PIDBModel.Context.cs</LastGenOutput>
     </None>
-    <None Include="PIDBmodel.edmx.diagram">
-      <DependentUpon>PIDBmodel.edmx</DependentUpon>
+    <None Include="PIDBModel.edmx.diagram">
+      <DependentUpon>PIDBModel.edmx</DependentUpon>
     </None>
-    <None Include="PIDBmodel.tt">
+    <None Include="PIDBModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PIDBmodel.edmx</DependentUpon>
-      <LastGenOutput>PIDBmodel.cs</LastGenOutput>
+      <DependentUpon>PIDBModel.edmx</DependentUpon>
+      <LastGenOutput>PIDBModel.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

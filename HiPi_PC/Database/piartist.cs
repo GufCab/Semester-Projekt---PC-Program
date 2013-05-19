@@ -12,17 +12,17 @@ namespace Database
     using System;
     using System.Collections.Generic;
     
-    public partial class piartist
+    public partial class PIArtist
     {
-        public piartist()
+        public PIArtist()
         {
-            this.pimusikdatas = new HashSet<pimusikdata>();
+            this.PIMusikDatas = new HashSet<PIMusikData>();
         }
     
         public string Artist { get; set; }
         public int Musik_Catagory_idCatagory { get; set; }
     
-        public virtual musik musik { get; set; }
-        public virtual ICollection<pimusikdata> pimusikdatas { get; set; }
+        public virtual Musik Musik { get; set; }
+        public virtual ICollection<PIMusikData> PIMusikDatas { get; set; }
     }
 }

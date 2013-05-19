@@ -12,6 +12,9 @@ namespace PiDbTester
         {
             var dbh = new dbclases.PiDbhandel();
 
+
+
+            dbh.Markasonline();
             dbh.SyncfromLocalToPI();
 
         }

@@ -19,7 +19,9 @@ namespace dbclases
             {
                 var GUIDDevice = (from p in musik.devices select p).ToList();
 
+                if (GUIDDevice.Count !=0)
                 _GUIDDevice = GUIDDevice.ElementAt(0).UUIDDevice;
+               
             }
         }
 

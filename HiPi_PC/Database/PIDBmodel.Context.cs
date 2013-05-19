@@ -13,10 +13,10 @@ namespace Database
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class piindexEntities : DbContext
+    public partial class PiindexEntities : DbContext
     {
-        public piindexEntities()
-            : base("name=piindexEntities")
+        public PiindexEntities()
+            : base("name=PiindexEntities")
         {
         }
     
@@ -25,14 +25,14 @@ namespace Database
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<catagory> catagories { get; set; }
-        public DbSet<musik> musiks { get; set; }
-        public DbSet<pidevice> pidevices { get; set; }
-        public DbSet<pifilepath> pifilepaths { get; set; }
-        public DbSet<pialbum> pialbums { get; set; }
-        public DbSet<piartist> piartists { get; set; }
-        public DbSet<pigenre> pigenres { get; set; }
-        public DbSet<pimusikdata> pimusikdatas { get; set; }
-        public DbSet<piplayqueue> piplayqueues { get; set; }
+        public DbSet<Catagory> Catagories { get; set; }
+        public DbSet<Musik> Musiks { get; set; }
+        public DbSet<PIAlbum> PIAlbums { get; set; }
+        public DbSet<PIArtist> PIArtists { get; set; }
+        public DbSet<PIDevice> PIDevices { get; set; }
+        public DbSet<PIFilePath> PIFilePaths { get; set; }
+        public DbSet<PIGenre> PIGenres { get; set; }
+        public DbSet<PIMusikData> PIMusikDatas { get; set; }
+        public DbSet<PIPlayQueue> PIPlayQueues { get; set; }
     }
 }

@@ -18,6 +18,8 @@ namespace TemplateSync
 
             sync.SyncLocalDb(ha);
 
+            sync.SyncPiDb();
+
         }
     }
 }

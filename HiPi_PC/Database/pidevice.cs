@@ -12,11 +12,11 @@ namespace Database
     using System;
     using System.Collections.Generic;
     
-    public partial class pidevice
+    public partial class PIDevice
     {
-        public pidevice()
+        public PIDevice()
         {
-            this.pifilepaths = new HashSet<pifilepath>();
+            this.PIFilePaths = new HashSet<PIFilePath>();
         }
     
         public string UUIDDevice { get; set; }
@@ -26,7 +26,7 @@ namespace Database
         public int Catagory_idCatagory { get; set; }
         public Nullable<bool> Online { get; set; }
     
-        public virtual catagory catagory { get; set; }
-        public virtual ICollection<pifilepath> pifilepaths { get; set; }
+        public virtual Catagory Catagory { get; set; }
+        public virtual ICollection<PIFilePath> PIFilePaths { get; set; }
     }
 }

@@ -16,12 +16,12 @@ namespace Database
     {
         public string UUIDMusikData { get; set; }
         public string Title { get; set; }
+        public Nullable<int> NrLenth { get; set; }
         public string FileName { get; set; }
         public string Genre_Genre { get; set; }
         public string Album_Album { get; set; }
         public string Artist_Artist { get; set; }
         public string FilePath_UUIDPath { get; set; }
-        public Nullable<int> NrLenth { get; set; }
     
         public virtual album album { get; set; }
         public virtual artist artist { get; set; }

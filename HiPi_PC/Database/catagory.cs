@@ -12,18 +12,18 @@ namespace Database
     using System;
     using System.Collections.Generic;
     
-    public partial class catagory
+    public partial class Catagory
     {
-        public catagory()
+        public Catagory()
         {
-            this.pidevices = new HashSet<pidevice>();
-            this.piplayqueues = new HashSet<piplayqueue>();
+            this.PIDevices = new HashSet<PIDevice>();
+            this.PIPlayQueues = new HashSet<PIPlayQueue>();
         }
     
         public int idCatagory { get; set; }
     
-        public virtual musik musik { get; set; }
-        public virtual ICollection<pidevice> pidevices { get; set; }
-        public virtual ICollection<piplayqueue> piplayqueues { get; set; }
+        public virtual ICollection<PIDevice> PIDevices { get; set; }
+        public virtual Musik Musik { get; set; }
+        public virtual ICollection<PIPlayQueue> PIPlayQueues { get; set; }
     }
 }

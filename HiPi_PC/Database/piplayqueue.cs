@@ -12,13 +12,13 @@ namespace Database
     using System;
     using System.Collections.Generic;
     
-    public partial class piplayqueue
+    public partial class PIPlayQueue
     {
         public int Catagory_idCatagory { get; set; }
         public int Idnummer { get; set; }
         public string MusikData_idMusikData { get; set; }
     
-        public virtual catagory catagory { get; set; }
-        public virtual pimusikdata pimusikdata { get; set; }
+        public virtual Catagory Catagory { get; set; }
+        public virtual PIMusikData PIMusikData { get; set; }
     }
 }

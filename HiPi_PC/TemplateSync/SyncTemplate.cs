@@ -39,7 +39,10 @@ namespace TemplateSync
         
        public override void SyncPiDb()
        {
-           throw new NotImplementedException();
+           var pidb = new PiDbhandel();
+
+           pidb.Markasonline();
+           pidb.SyncfromLocalToPI();
        }
 
         public override async void SyncLocalDb(List<string> pathlist )
