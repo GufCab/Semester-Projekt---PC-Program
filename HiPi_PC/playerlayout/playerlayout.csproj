@@ -141,7 +141,12 @@
   <ItemGroup>
     <Resource Include="Backward.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\TemplateSync\TemplateSync.csproj">
+      <Project>{db36984e-dc7b-4304-8e11-d875b7c8a121}</Project>
+      <Name>TemplateSync</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Billeder\Protoss.jpg" />
   </ItemGroup>

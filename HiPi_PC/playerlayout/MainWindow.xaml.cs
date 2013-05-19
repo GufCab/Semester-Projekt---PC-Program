@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using playerlayout.Properties;
+using TemplateSync;
 
 namespace playerlayout
 {
@@ -21,8 +22,6 @@ namespace playerlayout
     /// </summary>
     public partial class MainWindow : Window
     {
-
-
         bool play = new bool();
         private Settings settingsw;
         public MainWindow()

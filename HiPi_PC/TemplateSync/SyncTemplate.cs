@@ -13,7 +13,7 @@ using Live555;
 
 namespace TemplateSync
 {
-    class SyncTemplate : ISynchronizer
+    public class SyncTemplate : ISynchronizer
     {
         private LocalDbhandel db = new LocalDbhandel();
         // Pidatabasen skal også være her
@@ -41,7 +41,7 @@ namespace TemplateSync
        {
            var pidb = new PiDbhandel();
 
-          // pidb.Markasonline();
+           pidb.Markasonline();
            pidb.SyncfromLocalToPI();
        }
 
@@ -53,13 +53,7 @@ namespace TemplateSync
                 rellist.Add(MakeRelpathFromAbspath(s));                
             }
             db.FillPath(rellist);
-            if (rellist.Count == 0)
-            {
-                foreach (string s in pathlist)
-                {
-                    rellist.Add(MakeRelpathFromAbspath(s));
-                }
-            }
+            if (rellist.Count != 0)
             hs(pathlist);
             //her skal stå relpath begge steder men fileindexer kan ikke klare den
 
@@ -97,7 +91,7 @@ namespace TemplateSync
                 );
 
 
-            return relativePath;
+            return  @"../"+relativePath;
         }
         
     }
