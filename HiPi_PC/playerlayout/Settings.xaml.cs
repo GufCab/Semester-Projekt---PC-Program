@@ -51,7 +51,7 @@ namespace playerlayout
             get { return data.ReportFolder; }
             set { data.ReportFolder = value; }
         }
-        public SyncTemplate hans = new SyncTemplate();
+
         public Settings()
         {
             InitializeComponent();
@@ -158,17 +158,20 @@ namespace playerlayout
 
             //string prefix = "Open File Dialog: ";
         }
-
+        //public SyncTemplate hans = new SyncTemplate();
         private void SyncronizeButton_OnClick(object sender, RoutedEventArgs e)
         {
+            SyncTemplate hans = new SyncTemplate();
             List<string> pathes = new List<string>();
 
-            for(int i = 0 ; i <= PathFolderListBox.Items.Count)
+            for (int i = 0; i < PathFolderListBox.Items.Count; ++i)
             {
-                
-            }
+                pathes.Add(PathFolderListBox.Items.GetItemAt(i).ToString());
 
+            }
+            
             hans.SyncLocalDb(pathes);
+            hans.SyncPiDb();
         }
         
         /*

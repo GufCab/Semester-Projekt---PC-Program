@@ -32,35 +32,74 @@ namespace dbclases
                    {
                        pathuuid = (from p in musik.devices select p.UUIDDevice).ToList();
                    }
-                   
-                       List<device> jaja;
-                       using (var musik = new pcindexEntities())
-                       {
-                           jaja = (from p in musik.devices select p).ToList();
-                       }
 
-                       var nyed = jaja.ElementAt(0);
-                       var pid = new PIDevice();
-                       pid.UUIDDevice = nyed.UUIDDevice;
-                       pid.IP = nyed.IP + ":8554";
-                       pid.PCOwner = nyed.PCOwner;
-                       pid.Protocol = nyed.Protocol;
-                       pid.Catagory_idCatagory = 1;
-                       pid.Online = true;
+                   List<device> jaja;
+                   using (var musik = new pcindexEntities())
+                   {
+                       jaja = (from p in musik.devices select p).ToList();
+                   }
 
-                       using (var pimusik = new PiindexEntities())
-                       {
-                           pimusik.PIDevices.Add(pid);
-                           pimusik.SaveChanges();
+                   var nyed = jaja.ElementAt(0);
+                   var pid = new PIDevice();
+                   pid.UUIDDevice = nyed.UUIDDevice;
+                   pid.IP = nyed.IP + ":8554";
+                   pid.PCOwner = nyed.PCOwner;
+                   pid.Protocol = nyed.Protocol;
+                   pid.Catagory_idCatagory = 1;
+                   pid.Online = true;
 
-                       }
-                   
+                   using (var pimusik = new PiindexEntities())
+                   {
+                       pimusik.PIDevices.Add(pid);
+                       pimusik.SaveChanges();
+
+                   }
+
+               }
+               else
+               {
+                   CheckPIandfix();
                }
            }
 
        }
 
-        public void SyncfromLocalToPI()
+       private void CheckPIandfix()
+       {
+           List<device> jaja;
+           using (var musik = new pcindexEntities())
+           {
+               jaja = (from p in musik.devices select p).ToList();
+           }
+
+           var nyed = jaja.ElementAt(0);
+           using (var pimusik = new PiindexEntities())
+           {
+              var h = (from p in pimusik.PIDevices where p.UUIDDevice == nyed.UUIDDevice select p).ToList();
+                if (h.ElementAt(0).IP != nyed.IP+":8554")
+                {
+                    pimusik.PIDevices.Remove(h.ElementAt(0));
+                    pimusik.SaveChanges();
+
+                    
+                    var pid = new PIDevice();
+                    pid.UUIDDevice = nyed.UUIDDevice;
+                    pid.IP = nyed.IP + ":8554";
+                    pid.PCOwner = nyed.PCOwner;
+                    pid.Protocol = nyed.Protocol;
+                    pid.Catagory_idCatagory = 1;
+                    pid.Online = true;
+
+                    pimusik.PIDevices.Add(pid);
+                    pimusik.SaveChanges();
+
+
+                }
+
+           }
+       }
+
+       public void SyncfromLocalToPI()
         {
             fillpipath();
             FillAAG();
