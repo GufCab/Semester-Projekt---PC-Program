@@ -35,26 +35,9 @@ namespace dbclases
 
         public void SyncfromLocalToPI()
         {
-            List<filepath> pathtopi;
-
-            using (var musik = new pcindexEntities())
-            {
-                pathtopi = (from p in musik.filepaths select p).ToList();
-
-            }
-            using (var pimusik = new piindexEntities())
-            {
-                foreach (var ele in pathtopi)
-                {
-                    var fil = new filepath();
-                    fil.Device_UUIDDevice = ele.Device_UUIDDevice;
-                    fil.FilePath1 = ele.FilePath1;
-                    fil.UUIDPath = ele.UUIDPath;
-
-                    pimusik.filepaths.Add(fil);
-                    pimusik.SaveChanges();
-                }
-            }
+            fillpipath();
+            FillAAG();
+            FillMusikData();
 
         }
 
@@ -68,5 +51,223 @@ namespace dbclases
         {
             return true;
         }
+
+       private void fillpipath()
+       {
+           List<filepath> pathtopi;
+           List<pifilepath> pifilepaths;
+
+           using (var musik = new pcindexEntities())
+           {
+               pathtopi = (from p in musik.filepaths select p).ToList();
+
+           }
+
+           using (var pimusik = new piindexEntities())
+           {
+
+               pifilepaths = (from p in pimusik.pifilepaths select p).ToList();
+           }
+
+           pathtopi = listcompair(pathtopi, pifilepaths);
+
+           foreach (var ele in pathtopi)
+               {
+                   var fil = new pifilepath();
+                   fil.Device_UUIDDevice = ele.Device_UUIDDevice;
+                   fil.FilePath = ele.FilePath1;
+                   fil.UUIDPath = ele.UUIDPath;
+                   using (var pimusik = new piindexEntities())
+                   {
+                       pimusik.pifilepaths.Add(fil);
+                       pimusik.SaveChanges();
+                   }
+                  
+               }
+           
+       }
+       private List<filepath> listcompair(List<filepath> pcList, List<pifilepath> pilist)
+       {
+           List<filepath> afa = new List<filepath>();
+
+
+           foreach (var pcPath in pcList)
+           {
+               foreach (var pipath in pilist)
+               {
+                   if (pcPath.UUIDPath == pipath.UUIDPath)
+                       afa.Add(pcPath);
+               }
+           }
+
+           foreach (var faf in afa)
+           {
+               pcList.Remove(faf);
+           }
+
+           return pcList;
+       }
+       private List<string> listcompair(List<string> list1, List<string> list2)
+       {
+           List<string> afa = new List<string>();
+
+
+           foreach (var onPath in list1)
+           {
+               foreach (var dbpath in list2)
+               {
+                   if (onPath == dbpath)
+                       afa.Add(onPath);
+               }
+           }
+
+           foreach (var faf in afa)
+           {
+               list1.Remove(faf);
+           }
+
+           return list1;
+       }
+
+       private void FillAAG()
+       {
+           List<string> Artist;
+           List<string> Album;
+           List<string> Genre;
+
+           using (var musik = new pcindexEntities())
+           {
+                Artist = (from p in musik.artists select p.Artist1).ToList();
+                Album = (from p in musik.albums select p.Album1).ToList();
+                Genre = (from p in musik.genres select p.Genre1).ToList();
+           }
+
+           using (var pimusik = new piindexEntities())
+           {
+               Artist = listcompair(Artist,(from p in pimusik.piartists select p.Artist).ToList());
+               Album = listcompair(Album  ,(from p in pimusik.pialbums select p.Album).ToList());
+               Genre = listcompair(Genre  ,(from p in pimusik.pigenres select p.Genre).ToList());
+           }
+
+           if (Artist.Count > 0)
+               addArtist(Artist);
+           if (Album.Count > 0)
+               addAlbum(Album);
+           if (Genre.Count > 0)
+               addGenre(Genre);
+
+       }
+       private void addArtist(List<string> aList)
+       {
+           foreach (var onpath in aList)
+           {
+               var _item = new piartist();
+               _item.Artist = onpath;
+               _item.Musik_Catagory_idCatagory = 1;
+
+               using (var pimusik = new piindexEntities())
+               {
+                   pimusik.piartists.Add(_item);
+                   pimusik.SaveChanges();
+               }
+           }
+       }
+       private void addAlbum(List<string> aList)
+       {
+           foreach (var onpath in aList)
+           {
+               var _item = new pialbum();
+               _item.Album = onpath;
+               _item.Musik_Catagory_idCatagory = 2;
+
+               using (var pimusik = new piindexEntities())
+               {
+                   pimusik.pialbums.Add(_item);
+                   pimusik.SaveChanges();
+               }
+           }
+       }
+       private void addGenre(List<string> aList )
+       {
+           foreach (var onpath in aList)
+           {
+               var _item = new pigenre();
+               _item.Genre = onpath;
+               _item.Musik_Catagory_idCatagory = 3;
+
+               using (var pimusik = new piindexEntities())
+               {
+                   pimusik.pigenres.Add(_item);
+                   pimusik.SaveChanges();
+               }
+           }
+       }
+
+       private void FillMusikData()
+       {
+           List<musicdata> musicdatas;
+
+           // suger all alt musik på pcdb
+           using (var musik = new pcindexEntities())
+           {
+               musicdatas = (from p in musik.musicdatas select p).ToList();
+           }
+           
+           // suger alt og fjerner det som er der i forvejen
+           using (var pimusik = new piindexEntities())
+           {
+               musicdatas = listcompair(musicdatas, (from p in pimusik.pimusikdatas select p).ToList());               
+           }
+           // tilføjer de manglende til pidb
+           if(musicdatas.Count >0)
+           Addmusikdata(musicdatas);
+
+       }
+       private List<musicdata> listcompair(List<musicdata> pcList, List<pimusikdata> pilist)
+       {
+           List<musicdata> afa = new List<musicdata>();
+
+
+           foreach (var pcPath in pcList)
+           {
+               foreach (var pipath in pilist)
+               {
+                   if (pcPath.UUIDMusikData == pipath.UUIDMusikData)
+                       afa.Add(pcPath);
+               }
+           }
+
+           foreach (var faf in afa)
+           {
+               pcList.Remove(faf);
+           }
+
+           return pcList;
+       }
+       private void Addmusikdata(List<musicdata> aList)
+       {
+           foreach (var onpath in aList)
+           {
+               var _item = new pimusikdata();
+               _item.UUIDMusikData = onpath.UUIDMusikData;
+               _item.Title = onpath.Title;
+               _item.NrLenth = onpath.NrLenth;
+               _item.FileName = onpath.FileName;
+               _item.Artist_Artist = onpath.Artist_Artist;
+               _item.Album_Album = onpath.Album_Album;
+               _item.Genre_Genre = onpath.Genre_Genre;
+               _item.FilePath_UUIDPath = onpath.FilePath_UUIDPath;
+
+
+
+               using (var pimusik = new piindexEntities())
+               {
+                   pimusik.pimusikdatas.Add(_item);
+                   pimusik.SaveChanges();
+               }
+           }
+
+
+       }
     }
 }

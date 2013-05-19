@@ -4,87 +4,93 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="piindexModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="piindexModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="piindexModelStoreContainer">
-          <EntitySet Name="album" EntityType="piindexModel.Store.album" store:Type="Tables" Schema="piindex" />
-          <EntitySet Name="artist" EntityType="piindexModel.Store.artist" store:Type="Tables" Schema="piindex" />
           <EntitySet Name="catagory" EntityType="piindexModel.Store.catagory" store:Type="Tables" Schema="piindex" />
-          <EntitySet Name="device" EntityType="piindexModel.Store.device" store:Type="Tables" Schema="piindex" />
-          <EntitySet Name="filepath" EntityType="piindexModel.Store.filepath" store:Type="Tables" Schema="piindex" />
-          <EntitySet Name="genre" EntityType="piindexModel.Store.genre" store:Type="Tables" Schema="piindex" />
           <EntitySet Name="musik" EntityType="piindexModel.Store.musik" store:Type="Tables" Schema="piindex" />
-          <EntitySet Name="musikdata" EntityType="piindexModel.Store.musikdata" store:Type="Tables" Schema="piindex" />
-          <EntitySet Name="playqueue" EntityType="piindexModel.Store.playqueue" store:Type="Tables" Schema="piindex" />
+          <EntitySet Name="pialbum" EntityType="piindexModel.Store.pialbum" store:Type="Tables" Schema="piindex" />
+          <EntitySet Name="piartist" EntityType="piindexModel.Store.piartist" store:Type="Tables" Schema="piindex" />
+          <EntitySet Name="pidevice" EntityType="piindexModel.Store.pidevice" store:Type="Tables" Schema="piindex" />
+          <EntitySet Name="pifilepath" EntityType="piindexModel.Store.pifilepath" store:Type="Tables" Schema="piindex" />
+          <EntitySet Name="pigenre" EntityType="piindexModel.Store.pigenre" store:Type="Tables" Schema="piindex" />
+          <EntitySet Name="pimusikdata" EntityType="piindexModel.Store.pimusikdata" store:Type="Tables" Schema="piindex" />
+          <EntitySet Name="piplayqueue" EntityType="piindexModel.Store.piplayqueue" store:Type="Tables" Schema="piindex" />
           <AssociationSet Name="fk_Album_Musik1" Association="piindexModel.Store.fk_Album_Musik1">
             <End Role="musik" EntitySet="musik" />
-            <End Role="album" EntitySet="album" />
+            <End Role="pialbum" EntitySet="pialbum" />
           </AssociationSet>
           <AssociationSet Name="fk_Artist_Musik1" Association="piindexModel.Store.fk_Artist_Musik1">
             <End Role="musik" EntitySet="musik" />
-            <End Role="artist" EntitySet="artist" />
+            <End Role="piartist" EntitySet="piartist" />
           </AssociationSet>
           <AssociationSet Name="fk_Device_Catagory1" Association="piindexModel.Store.fk_Device_Catagory1">
             <End Role="catagory" EntitySet="catagory" />
-            <End Role="device" EntitySet="device" />
+            <End Role="pidevice" EntitySet="pidevice" />
           </AssociationSet>
           <AssociationSet Name="fk_FilePath_Device1" Association="piindexModel.Store.fk_FilePath_Device1">
-            <End Role="device" EntitySet="device" />
-            <End Role="filepath" EntitySet="filepath" />
+            <End Role="pidevice" EntitySet="pidevice" />
+            <End Role="pifilepath" EntitySet="pifilepath" />
           </AssociationSet>
           <AssociationSet Name="fk_Genre_Musik1" Association="piindexModel.Store.fk_Genre_Musik1">
             <End Role="musik" EntitySet="musik" />
-            <End Role="genre" EntitySet="genre" />
+            <End Role="pigenre" EntitySet="pigenre" />
           </AssociationSet>
           <AssociationSet Name="fk_Musik_Catagory1" Association="piindexModel.Store.fk_Musik_Catagory1">
             <End Role="catagory" EntitySet="catagory" />
             <End Role="musik" EntitySet="musik" />
           </AssociationSet>
           <AssociationSet Name="fk_MusikData_Album1" Association="piindexModel.Store.fk_MusikData_Album1">
-            <End Role="album" EntitySet="album" />
-            <End Role="musikdata" EntitySet="musikdata" />
+            <End Role="pialbum" EntitySet="pialbum" />
+            <End Role="pimusikdata" EntitySet="pimusikdata" />
           </AssociationSet>
           <AssociationSet Name="fk_MusikData_Artist1" Association="piindexModel.Store.fk_MusikData_Artist1">
-            <End Role="artist" EntitySet="artist" />
-            <End Role="musikdata" EntitySet="musikdata" />
+            <End Role="piartist" EntitySet="piartist" />
+            <End Role="pimusikdata" EntitySet="pimusikdata" />
           </AssociationSet>
           <AssociationSet Name="fk_MusikData_FilePath1" Association="piindexModel.Store.fk_MusikData_FilePath1">
-            <End Role="filepath" EntitySet="filepath" />
-            <End Role="musikdata" EntitySet="musikdata" />
+            <End Role="pifilepath" EntitySet="pifilepath" />
+            <End Role="pimusikdata" EntitySet="pimusikdata" />
           </AssociationSet>
           <AssociationSet Name="fk_MusikData_Genre1" Association="piindexModel.Store.fk_MusikData_Genre1">
-            <End Role="genre" EntitySet="genre" />
-            <End Role="musikdata" EntitySet="musikdata" />
+            <End Role="pigenre" EntitySet="pigenre" />
+            <End Role="pimusikdata" EntitySet="pimusikdata" />
           </AssociationSet>
           <AssociationSet Name="fk_PlayQueue_Catagory1" Association="piindexModel.Store.fk_PlayQueue_Catagory1">
             <End Role="catagory" EntitySet="catagory" />
-            <End Role="playqueue" EntitySet="playqueue" />
+            <End Role="piplayqueue" EntitySet="piplayqueue" />
           </AssociationSet>
           <AssociationSet Name="fk_PlayQueue_MusikData1" Association="piindexModel.Store.fk_PlayQueue_MusikData1">
-            <End Role="musikdata" EntitySet="musikdata" />
-            <End Role="playqueue" EntitySet="playqueue" />
+            <End Role="pimusikdata" EntitySet="pimusikdata" />
+            <End Role="piplayqueue" EntitySet="piplayqueue" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="album">
-          <Key>
-            <PropertyRef Name="Album" />
-          </Key>
-          <Property Name="Album" Type="varchar" Nullable="false" MaxLength="100" />
-          <Property Name="Musik_Catagory_idCatagory" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="artist">
-          <Key>
-            <PropertyRef Name="Artist" />
-          </Key>
-          <Property Name="Artist" Type="varchar" Nullable="false" MaxLength="100" />
-          <Property Name="Musik_Catagory_idCatagory" Type="int" Nullable="false" />
-        </EntityType>
         <EntityType Name="catagory">
           <Key>
             <PropertyRef Name="idCatagory" />
           </Key>
           <Property Name="idCatagory" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="device">
+        <EntityType Name="musik">
+          <Key>
+            <PropertyRef Name="Catagory_idCatagory" />
+          </Key>
+          <Property Name="Catagory_idCatagory" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="pialbum">
+          <Key>
+            <PropertyRef Name="Album" />
+          </Key>
+          <Property Name="Album" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Musik_Catagory_idCatagory" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="piartist">
+          <Key>
+            <PropertyRef Name="Artist" />
+          </Key>
+          <Property Name="Artist" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Musik_Catagory_idCatagory" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="pidevice">
           <Key>
             <PropertyRef Name="UUIDDevice" />
           </Key>
@@ -95,28 +101,22 @@
           <Property Name="Catagory_idCatagory" Type="int" Nullable="false" />
           <Property Name="Online" Type="bool" />
         </EntityType>
-        <EntityType Name="filepath">
+        <EntityType Name="pifilepath">
           <Key>
             <PropertyRef Name="UUIDPath" />
           </Key>
           <Property Name="UUIDPath" Type="varchar" Nullable="false" MaxLength="36" />
-          <Property Name="idFilePath" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="FilePath" Type="varchar" Nullable="false" MaxLength="100" />
           <Property Name="Device_UUIDDevice" Type="varchar" Nullable="false" MaxLength="36" />
         </EntityType>
-        <EntityType Name="genre">
+        <EntityType Name="pigenre">
           <Key>
             <PropertyRef Name="Genre" />
           </Key>
           <Property Name="Genre" Type="varchar" Nullable="false" MaxLength="45" />
           <Property Name="Musik_Catagory_idCatagory" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="musik">
-          <Key>
-            <PropertyRef Name="Catagory_idCatagory" />
-          </Key>
-          <Property Name="Catagory_idCatagory" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="musikdata">
+        <EntityType Name="pimusikdata">
           <Key>
             <PropertyRef Name="UUIDMusikData" />
           </Key>
@@ -129,7 +129,7 @@
           <Property Name="Genre_Genre" Type="varchar" MaxLength="45" />
           <Property Name="FilePath_UUIDPath" Type="varchar" Nullable="false" MaxLength="45" />
         </EntityType>
-        <EntityType Name="playqueue">
+        <EntityType Name="piplayqueue">
           <Key>
             <PropertyRef Name="Idnummer" />
           </Key>
@@ -139,60 +139,60 @@
         </EntityType>
         <Association Name="fk_Album_Musik1">
           <End Role="musik" Type="piindexModel.Store.musik" Multiplicity="1" />
-          <End Role="album" Type="piindexModel.Store.album" Multiplicity="*" />
+          <End Role="pialbum" Type="piindexModel.Store.pialbum" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="musik">
               <PropertyRef Name="Catagory_idCatagory" />
             </Principal>
-            <Dependent Role="album">
+            <Dependent Role="pialbum">
               <PropertyRef Name="Musik_Catagory_idCatagory" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_Artist_Musik1">
           <End Role="musik" Type="piindexModel.Store.musik" Multiplicity="1" />
-          <End Role="artist" Type="piindexModel.Store.artist" Multiplicity="*" />
+          <End Role="piartist" Type="piindexModel.Store.piartist" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="musik">
               <PropertyRef Name="Catagory_idCatagory" />
             </Principal>
-            <Dependent Role="artist">
+            <Dependent Role="piartist">
               <PropertyRef Name="Musik_Catagory_idCatagory" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_Device_Catagory1">
           <End Role="catagory" Type="piindexModel.Store.catagory" Multiplicity="1" />
-          <End Role="device" Type="piindexModel.Store.device" Multiplicity="*" />
+          <End Role="pidevice" Type="piindexModel.Store.pidevice" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="catagory">
               <PropertyRef Name="idCatagory" />
             </Principal>
-            <Dependent Role="device">
+            <Dependent Role="pidevice">
               <PropertyRef Name="Catagory_idCatagory" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_FilePath_Device1">
-          <End Role="device" Type="piindexModel.Store.device" Multiplicity="1" />
-          <End Role="filepath" Type="piindexModel.Store.filepath" Multiplicity="*" />
+          <End Role="pidevice" Type="piindexModel.Store.pidevice" Multiplicity="1" />
+          <End Role="pifilepath" Type="piindexModel.Store.pifilepath" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="device">
+            <Principal Role="pidevice">
               <PropertyRef Name="UUIDDevice" />
             </Principal>
-            <Dependent Role="filepath">
+            <Dependent Role="pifilepath">
               <PropertyRef Name="Device_UUIDDevice" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_Genre_Musik1">
           <End Role="musik" Type="piindexModel.Store.musik" Multiplicity="1" />
-          <End Role="genre" Type="piindexModel.Store.genre" Multiplicity="*" />
+          <End Role="pigenre" Type="piindexModel.Store.pigenre" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="musik">
               <PropertyRef Name="Catagory_idCatagory" />
             </Principal>
-            <Dependent Role="genre">
+            <Dependent Role="pigenre">
               <PropertyRef Name="Musik_Catagory_idCatagory" />
             </Dependent>
           </ReferentialConstraint>
@@ -210,298 +210,159 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_MusikData_Album1">
-          <End Role="album" Type="piindexModel.Store.album" Multiplicity="0..1" />
-          <End Role="musikdata" Type="piindexModel.Store.musikdata" Multiplicity="*" />
+          <End Role="pialbum" Type="piindexModel.Store.pialbum" Multiplicity="0..1" />
+          <End Role="pimusikdata" Type="piindexModel.Store.pimusikdata" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="album">
+            <Principal Role="pialbum">
               <PropertyRef Name="Album" />
             </Principal>
-            <Dependent Role="musikdata">
+            <Dependent Role="pimusikdata">
               <PropertyRef Name="Album_Album" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_MusikData_Artist1">
-          <End Role="artist" Type="piindexModel.Store.artist" Multiplicity="0..1" />
-          <End Role="musikdata" Type="piindexModel.Store.musikdata" Multiplicity="*" />
+          <End Role="piartist" Type="piindexModel.Store.piartist" Multiplicity="0..1" />
+          <End Role="pimusikdata" Type="piindexModel.Store.pimusikdata" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="artist">
+            <Principal Role="piartist">
               <PropertyRef Name="Artist" />
             </Principal>
-            <Dependent Role="musikdata">
+            <Dependent Role="pimusikdata">
               <PropertyRef Name="Artist_Artist" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_MusikData_FilePath1">
-          <End Role="filepath" Type="piindexModel.Store.filepath" Multiplicity="1" />
-          <End Role="musikdata" Type="piindexModel.Store.musikdata" Multiplicity="*" />
+          <End Role="pifilepath" Type="piindexModel.Store.pifilepath" Multiplicity="1" />
+          <End Role="pimusikdata" Type="piindexModel.Store.pimusikdata" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="filepath">
+            <Principal Role="pifilepath">
               <PropertyRef Name="UUIDPath" />
             </Principal>
-            <Dependent Role="musikdata">
+            <Dependent Role="pimusikdata">
               <PropertyRef Name="FilePath_UUIDPath" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_MusikData_Genre1">
-          <End Role="genre" Type="piindexModel.Store.genre" Multiplicity="0..1" />
-          <End Role="musikdata" Type="piindexModel.Store.musikdata" Multiplicity="*" />
+          <End Role="pigenre" Type="piindexModel.Store.pigenre" Multiplicity="0..1" />
+          <End Role="pimusikdata" Type="piindexModel.Store.pimusikdata" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="genre">
+            <Principal Role="pigenre">
               <PropertyRef Name="Genre" />
             </Principal>
-            <Dependent Role="musikdata">
+            <Dependent Role="pimusikdata">
               <PropertyRef Name="Genre_Genre" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_PlayQueue_Catagory1">
           <End Role="catagory" Type="piindexModel.Store.catagory" Multiplicity="1" />
-          <End Role="playqueue" Type="piindexModel.Store.playqueue" Multiplicity="*" />
+          <End Role="piplayqueue" Type="piindexModel.Store.piplayqueue" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="catagory">
               <PropertyRef Name="idCatagory" />
             </Principal>
-            <Dependent Role="playqueue">
+            <Dependent Role="piplayqueue">
               <PropertyRef Name="Catagory_idCatagory" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_PlayQueue_MusikData1">
-          <End Role="musikdata" Type="piindexModel.Store.musikdata" Multiplicity="1" />
-          <End Role="playqueue" Type="piindexModel.Store.playqueue" Multiplicity="*" />
+          <End Role="pimusikdata" Type="piindexModel.Store.pimusikdata" Multiplicity="1" />
+          <End Role="piplayqueue" Type="piindexModel.Store.piplayqueue" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="musikdata">
+            <Principal Role="pimusikdata">
               <PropertyRef Name="UUIDMusikData" />
             </Principal>
-            <Dependent Role="playqueue">
+            <Dependent Role="piplayqueue">
               <PropertyRef Name="MusikData_idMusikData" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="piindexModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="piindexEntities" p1:LazyLoadingEnabled="true">
-          <EntitySet Name="albums" EntityType="piindexModel.album" />
-          <EntitySet Name="artists" EntityType="piindexModel.artist" />
           <EntitySet Name="catagories" EntityType="piindexModel.catagory" />
-          <EntitySet Name="devices" EntityType="piindexModel.device" />
-          <EntitySet Name="filepaths" EntityType="piindexModel.filepath" />
-          <EntitySet Name="genres" EntityType="piindexModel.genre" />
           <EntitySet Name="musiks" EntityType="piindexModel.musik" />
-          <EntitySet Name="musikdatas" EntityType="piindexModel.musikdata" />
-          <EntitySet Name="playqueues" EntityType="piindexModel.playqueue" />
-          <AssociationSet Name="fk_Album_Musik1" Association="piindexModel.fk_Album_Musik1">
-            <End Role="musik" EntitySet="musiks" />
-            <End Role="album" EntitySet="albums" />
-          </AssociationSet>
-          <AssociationSet Name="fk_MusikData_Album1" Association="piindexModel.fk_MusikData_Album1">
-            <End Role="album" EntitySet="albums" />
-            <End Role="musikdata" EntitySet="musikdatas" />
-          </AssociationSet>
-          <AssociationSet Name="fk_Artist_Musik1" Association="piindexModel.fk_Artist_Musik1">
-            <End Role="musik" EntitySet="musiks" />
-            <End Role="artist" EntitySet="artists" />
-          </AssociationSet>
-          <AssociationSet Name="fk_MusikData_Artist1" Association="piindexModel.fk_MusikData_Artist1">
-            <End Role="artist" EntitySet="artists" />
-            <End Role="musikdata" EntitySet="musikdatas" />
-          </AssociationSet>
-          <AssociationSet Name="fk_Device_Catagory1" Association="piindexModel.fk_Device_Catagory1">
-            <End Role="catagory" EntitySet="catagories" />
-            <End Role="device" EntitySet="devices" />
-          </AssociationSet>
           <AssociationSet Name="fk_Musik_Catagory1" Association="piindexModel.fk_Musik_Catagory1">
             <End Role="catagory" EntitySet="catagories" />
             <End Role="musik" EntitySet="musiks" />
           </AssociationSet>
+          <EntitySet Name="pidevices" EntityType="piindexModel.pidevice" />
+          <EntitySet Name="pifilepaths" EntityType="piindexModel.pifilepath" />
+          <AssociationSet Name="fk_Device_Catagory11" Association="piindexModel.fk_Device_Catagory11">
+            <End Role="catagory" EntitySet="catagories" />
+            <End Role="pidevice" EntitySet="pidevices" />
+          </AssociationSet>
+          <AssociationSet Name="fk_FilePath_Device11" Association="piindexModel.fk_FilePath_Device11">
+            <End Role="pidevice" EntitySet="pidevices" />
+            <End Role="pifilepath" EntitySet="pifilepaths" />
+          </AssociationSet>
+          <EntitySet Name="pialbums" EntityType="piindexModel.pialbum" />
+          <EntitySet Name="piartists" EntityType="piindexModel.piartist" />
+          <EntitySet Name="pigenres" EntityType="piindexModel.pigenre" />
+          <EntitySet Name="pimusikdatas" EntityType="piindexModel.pimusikdata" />
+          <EntitySet Name="piplayqueues" EntityType="piindexModel.piplayqueue" />
           <AssociationSet Name="fk_PlayQueue_Catagory1" Association="piindexModel.fk_PlayQueue_Catagory1">
             <End Role="catagory" EntitySet="catagories" />
-            <End Role="playqueue" EntitySet="playqueues" />
+            <End Role="piplayqueue" EntitySet="piplayqueues" />
           </AssociationSet>
-          <AssociationSet Name="fk_FilePath_Device1" Association="piindexModel.fk_FilePath_Device1">
-            <End Role="device" EntitySet="devices" />
-            <End Role="filepath" EntitySet="filepaths" />
+          <AssociationSet Name="fk_Album_Musik1" Association="piindexModel.fk_Album_Musik1">
+            <End Role="musik" EntitySet="musiks" />
+            <End Role="pialbum" EntitySet="pialbums" />
           </AssociationSet>
-          <AssociationSet Name="fk_MusikData_FilePath1" Association="piindexModel.fk_MusikData_FilePath1">
-            <End Role="filepath" EntitySet="filepaths" />
-            <End Role="musikdata" EntitySet="musikdatas" />
+          <AssociationSet Name="fk_Artist_Musik1" Association="piindexModel.fk_Artist_Musik1">
+            <End Role="musik" EntitySet="musiks" />
+            <End Role="piartist" EntitySet="piartists" />
           </AssociationSet>
           <AssociationSet Name="fk_Genre_Musik1" Association="piindexModel.fk_Genre_Musik1">
             <End Role="musik" EntitySet="musiks" />
-            <End Role="genre" EntitySet="genres" />
+            <End Role="pigenre" EntitySet="pigenres" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MusikData_Album1" Association="piindexModel.fk_MusikData_Album1">
+            <End Role="pialbum" EntitySet="pialbums" />
+            <End Role="pimusikdata" EntitySet="pimusikdatas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MusikData_Artist1" Association="piindexModel.fk_MusikData_Artist1">
+            <End Role="piartist" EntitySet="piartists" />
+            <End Role="pimusikdata" EntitySet="pimusikdatas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MusikData_FilePath1" Association="piindexModel.fk_MusikData_FilePath1">
+            <End Role="pifilepath" EntitySet="pifilepaths" />
+            <End Role="pimusikdata" EntitySet="pimusikdatas" />
           </AssociationSet>
           <AssociationSet Name="fk_MusikData_Genre1" Association="piindexModel.fk_MusikData_Genre1">
-            <End Role="genre" EntitySet="genres" />
-            <End Role="musikdata" EntitySet="musikdatas" />
+            <End Role="pigenre" EntitySet="pigenres" />
+            <End Role="pimusikdata" EntitySet="pimusikdatas" />
           </AssociationSet>
           <AssociationSet Name="fk_PlayQueue_MusikData1" Association="piindexModel.fk_PlayQueue_MusikData1">
-            <End Role="musikdata" EntitySet="musikdatas" />
-            <End Role="playqueue" EntitySet="playqueues" />
+            <End Role="pimusikdata" EntitySet="pimusikdatas" />
+            <End Role="piplayqueue" EntitySet="piplayqueues" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="album">
-          <Key>
-            <PropertyRef Name="Album1" />
-          </Key>
-          <Property Name="Album1" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="Musik_Catagory_idCatagory" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="musik" Relationship="piindexModel.fk_Album_Musik1" FromRole="album" ToRole="musik" />
-          <NavigationProperty Name="musikdatas" Relationship="piindexModel.fk_MusikData_Album1" FromRole="album" ToRole="musikdata" />
-        </EntityType>
-        <EntityType Name="artist">
-          <Key>
-            <PropertyRef Name="Artist1" />
-          </Key>
-          <Property Name="Artist1" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="Musik_Catagory_idCatagory" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="musik" Relationship="piindexModel.fk_Artist_Musik1" FromRole="artist" ToRole="musik" />
-          <NavigationProperty Name="musikdatas" Relationship="piindexModel.fk_MusikData_Artist1" FromRole="artist" ToRole="musikdata" />
-        </EntityType>
         <EntityType Name="catagory">
           <Key>
             <PropertyRef Name="idCatagory" />
           </Key>
           <Property Name="idCatagory" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="devices" Relationship="piindexModel.fk_Device_Catagory1" FromRole="catagory" ToRole="device" />
           <NavigationProperty Name="musik" Relationship="piindexModel.fk_Musik_Catagory1" FromRole="catagory" ToRole="musik" />
-          <NavigationProperty Name="playqueues" Relationship="piindexModel.fk_PlayQueue_Catagory1" FromRole="catagory" ToRole="playqueue" />
-        </EntityType>
-        <EntityType Name="device">
-          <Key>
-            <PropertyRef Name="UUIDDevice" />
-          </Key>
-          <Property Name="UUIDDevice" Type="String" Nullable="false" MaxLength="36" Unicode="false" FixedLength="false" />
-          <Property Name="IP" Type="String" Nullable="false" MaxLength="19" Unicode="false" FixedLength="false" />
-          <Property Name="PCOwner" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="Protocol" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
-          <Property Name="Catagory_idCatagory" Type="Int32" Nullable="false" />
-          <Property Name="Online" Type="Boolean" />
-          <NavigationProperty Name="catagory" Relationship="piindexModel.fk_Device_Catagory1" FromRole="device" ToRole="catagory" />
-          <NavigationProperty Name="filepaths" Relationship="piindexModel.fk_FilePath_Device1" FromRole="device" ToRole="filepath" />
-        </EntityType>
-        <EntityType Name="filepath">
-          <Key>
-            <PropertyRef Name="UUIDPath" />
-          </Key>
-          <Property Name="UUIDPath" Type="String" Nullable="false" MaxLength="36" Unicode="false" FixedLength="false" />
-          <Property Name="idFilePath" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="Device_UUIDDevice" Type="String" Nullable="false" MaxLength="36" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="device" Relationship="piindexModel.fk_FilePath_Device1" FromRole="filepath" ToRole="device" />
-          <NavigationProperty Name="musikdatas" Relationship="piindexModel.fk_MusikData_FilePath1" FromRole="filepath" ToRole="musikdata" />
-        </EntityType>
-        <EntityType Name="genre">
-          <Key>
-            <PropertyRef Name="Genre1" />
-          </Key>
-          <Property Name="Genre1" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
-          <Property Name="Musik_Catagory_idCatagory" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="musik" Relationship="piindexModel.fk_Genre_Musik1" FromRole="genre" ToRole="musik" />
-          <NavigationProperty Name="musikdatas" Relationship="piindexModel.fk_MusikData_Genre1" FromRole="genre" ToRole="musikdata" />
+          <NavigationProperty Name="pidevices" Relationship="piindexModel.fk_Device_Catagory11" FromRole="catagory" ToRole="pidevice" />
+          <NavigationProperty Name="piplayqueues" Relationship="piindexModel.fk_PlayQueue_Catagory1" FromRole="catagory" ToRole="piplayqueue" />
         </EntityType>
         <EntityType Name="musik">
           <Key>
             <PropertyRef Name="Catagory_idCatagory" />
           </Key>
           <Property Name="Catagory_idCatagory" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="albums" Relationship="piindexModel.fk_Album_Musik1" FromRole="musik" ToRole="album" />
-          <NavigationProperty Name="artists" Relationship="piindexModel.fk_Artist_Musik1" FromRole="musik" ToRole="artist" />
           <NavigationProperty Name="catagory" Relationship="piindexModel.fk_Musik_Catagory1" FromRole="musik" ToRole="catagory" />
-          <NavigationProperty Name="genres" Relationship="piindexModel.fk_Genre_Musik1" FromRole="musik" ToRole="genre" />
+          <NavigationProperty Name="pialbums" Relationship="piindexModel.fk_Album_Musik1" FromRole="musik" ToRole="pialbum" />
+          <NavigationProperty Name="piartists" Relationship="piindexModel.fk_Artist_Musik1" FromRole="musik" ToRole="piartist" />
+          <NavigationProperty Name="pigenres" Relationship="piindexModel.fk_Genre_Musik1" FromRole="musik" ToRole="pigenre" />
         </EntityType>
-        <EntityType Name="musikdata">
-          <Key>
-            <PropertyRef Name="UUIDMusikData" />
-          </Key>
-          <Property Name="UUIDMusikData" Type="String" Nullable="false" MaxLength="36" Unicode="false" FixedLength="false" />
-          <Property Name="Title" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
-          <Property Name="NrLenth" Type="Int32" />
-          <Property Name="FileName" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
-          <Property Name="Artist_Artist" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="Album_Album" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="Genre_Genre" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
-          <Property Name="FilePath_UUIDPath" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="album" Relationship="piindexModel.fk_MusikData_Album1" FromRole="musikdata" ToRole="album" />
-          <NavigationProperty Name="artist" Relationship="piindexModel.fk_MusikData_Artist1" FromRole="musikdata" ToRole="artist" />
-          <NavigationProperty Name="filepath" Relationship="piindexModel.fk_MusikData_FilePath1" FromRole="musikdata" ToRole="filepath" />
-          <NavigationProperty Name="genre" Relationship="piindexModel.fk_MusikData_Genre1" FromRole="musikdata" ToRole="genre" />
-          <NavigationProperty Name="playqueues" Relationship="piindexModel.fk_PlayQueue_MusikData1" FromRole="musikdata" ToRole="playqueue" />
-        </EntityType>
-        <EntityType Name="playqueue">
-          <Key>
-            <PropertyRef Name="Idnummer" />
-          </Key>
-          <Property Name="Catagory_idCatagory" Type="Int32" Nullable="false" />
-          <Property Name="Idnummer" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="MusikData_idMusikData" Type="String" Nullable="false" MaxLength="36" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="catagory" Relationship="piindexModel.fk_PlayQueue_Catagory1" FromRole="playqueue" ToRole="catagory" />
-          <NavigationProperty Name="musikdata" Relationship="piindexModel.fk_PlayQueue_MusikData1" FromRole="playqueue" ToRole="musikdata" />
-        </EntityType>
-        <Association Name="fk_Album_Musik1">
-          <End Role="musik" Type="piindexModel.musik" Multiplicity="1" />
-          <End Role="album" Type="piindexModel.album" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="musik">
-              <PropertyRef Name="Catagory_idCatagory" />
-            </Principal>
-            <Dependent Role="album">
-              <PropertyRef Name="Musik_Catagory_idCatagory" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_MusikData_Album1">
-          <End Role="album" Type="piindexModel.album" Multiplicity="0..1" />
-          <End Role="musikdata" Type="piindexModel.musikdata" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="album">
-              <PropertyRef Name="Album1" />
-            </Principal>
-            <Dependent Role="musikdata">
-              <PropertyRef Name="Album_Album" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_Artist_Musik1">
-          <End Role="musik" Type="piindexModel.musik" Multiplicity="1" />
-          <End Role="artist" Type="piindexModel.artist" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="musik">
-              <PropertyRef Name="Catagory_idCatagory" />
-            </Principal>
-            <Dependent Role="artist">
-              <PropertyRef Name="Musik_Catagory_idCatagory" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_MusikData_Artist1">
-          <End Role="artist" Type="piindexModel.artist" Multiplicity="0..1" />
-          <End Role="musikdata" Type="piindexModel.musikdata" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="artist">
-              <PropertyRef Name="Artist1" />
-            </Principal>
-            <Dependent Role="musikdata">
-              <PropertyRef Name="Artist_Artist" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_Device_Catagory1">
-          <End Role="catagory" Type="piindexModel.catagory" Multiplicity="1" />
-          <End Role="device" Type="piindexModel.device" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="catagory">
-              <PropertyRef Name="idCatagory" />
-            </Principal>
-            <Dependent Role="device">
-              <PropertyRef Name="Catagory_idCatagory" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="fk_Musik_Catagory1">
           <End Role="catagory" Type="piindexModel.catagory" Multiplicity="1" />
           <End Role="musik" Type="piindexModel.musik" Multiplicity="0..1" />
@@ -514,74 +375,212 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_PlayQueue_Catagory1">
-          <End Role="catagory" Type="piindexModel.catagory" Multiplicity="1" />
-          <End Role="playqueue" Type="piindexModel.playqueue" Multiplicity="*" />
+        <EntityType Name="pidevice">
+          <Key>
+            <PropertyRef Name="UUIDDevice" />
+          </Key>
+          <Property Type="String" Name="UUIDDevice" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IP" Nullable="false" MaxLength="19" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PCOwner" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Protocol" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Catagory_idCatagory" Nullable="false" />
+          <Property Type="Boolean" Name="Online" />
+          <NavigationProperty Name="catagory" Relationship="piindexModel.fk_Device_Catagory11" FromRole="pidevice" ToRole="catagory" />
+          <NavigationProperty Name="pifilepaths" Relationship="piindexModel.fk_FilePath_Device11" FromRole="pidevice" ToRole="pifilepath" />
+        </EntityType>
+        <EntityType Name="pifilepath">
+          <Key>
+            <PropertyRef Name="UUIDPath" />
+          </Key>
+          <Property Type="String" Name="UUIDPath" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FilePath" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Device_UUIDDevice" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="pidevice" Relationship="piindexModel.fk_FilePath_Device11" FromRole="pifilepath" ToRole="pidevice" />
+          <NavigationProperty Name="pimusikdatas" Relationship="piindexModel.fk_MusikData_FilePath1" FromRole="pifilepath" ToRole="pimusikdata" />
+        </EntityType>
+        <Association Name="fk_Device_Catagory11">
+          <End Type="piindexModel.catagory" Role="catagory" Multiplicity="1" />
+          <End Type="piindexModel.pidevice" Role="pidevice" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="catagory">
               <PropertyRef Name="idCatagory" />
             </Principal>
-            <Dependent Role="playqueue">
+            <Dependent Role="pidevice">
               <PropertyRef Name="Catagory_idCatagory" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_FilePath_Device1">
-          <End Role="device" Type="piindexModel.device" Multiplicity="1" />
-          <End Role="filepath" Type="piindexModel.filepath" Multiplicity="*" />
+        <Association Name="fk_FilePath_Device11">
+          <End Type="piindexModel.pidevice" Role="pidevice" Multiplicity="1" />
+          <End Type="piindexModel.pifilepath" Role="pifilepath" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="device">
+            <Principal Role="pidevice">
               <PropertyRef Name="UUIDDevice" />
             </Principal>
-            <Dependent Role="filepath">
+            <Dependent Role="pifilepath">
               <PropertyRef Name="Device_UUIDDevice" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_MusikData_FilePath1">
-          <End Role="filepath" Type="piindexModel.filepath" Multiplicity="1" />
-          <End Role="musikdata" Type="piindexModel.musikdata" Multiplicity="*" />
+        <EntityType Name="pialbum">
+          <Key>
+            <PropertyRef Name="Album" />
+          </Key>
+          <Property Type="String" Name="Album" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Musik_Catagory_idCatagory" Nullable="false" />
+          <NavigationProperty Name="musik" Relationship="piindexModel.fk_Album_Musik1" FromRole="pialbum" ToRole="musik" />
+          <NavigationProperty Name="pimusikdatas" Relationship="piindexModel.fk_MusikData_Album1" FromRole="pialbum" ToRole="pimusikdata" />
+        </EntityType>
+        <EntityType Name="piartist">
+          <Key>
+            <PropertyRef Name="Artist" />
+          </Key>
+          <Property Type="String" Name="Artist" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Musik_Catagory_idCatagory" Nullable="false" />
+          <NavigationProperty Name="musik" Relationship="piindexModel.fk_Artist_Musik1" FromRole="piartist" ToRole="musik" />
+          <NavigationProperty Name="pimusikdatas" Relationship="piindexModel.fk_MusikData_Artist1" FromRole="piartist" ToRole="pimusikdata" />
+        </EntityType>
+        <EntityType Name="pigenre">
+          <Key>
+            <PropertyRef Name="Genre" />
+          </Key>
+          <Property Type="String" Name="Genre" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Musik_Catagory_idCatagory" Nullable="false" />
+          <NavigationProperty Name="musik" Relationship="piindexModel.fk_Genre_Musik1" FromRole="pigenre" ToRole="musik" />
+          <NavigationProperty Name="pimusikdatas" Relationship="piindexModel.fk_MusikData_Genre1" FromRole="pigenre" ToRole="pimusikdata" />
+        </EntityType>
+        <EntityType Name="pimusikdata">
+          <Key>
+            <PropertyRef Name="UUIDMusikData" />
+          </Key>
+          <Property Type="String" Name="UUIDMusikData" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Title" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="NrLenth" />
+          <Property Type="String" Name="FileName" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Artist_Artist" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Album_Album" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Genre_Genre" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FilePath_UUIDPath" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="pialbum" Relationship="piindexModel.fk_MusikData_Album1" FromRole="pimusikdata" ToRole="pialbum" />
+          <NavigationProperty Name="piartist" Relationship="piindexModel.fk_MusikData_Artist1" FromRole="pimusikdata" ToRole="piartist" />
+          <NavigationProperty Name="pifilepath" Relationship="piindexModel.fk_MusikData_FilePath1" FromRole="pimusikdata" ToRole="pifilepath" />
+          <NavigationProperty Name="pigenre" Relationship="piindexModel.fk_MusikData_Genre1" FromRole="pimusikdata" ToRole="pigenre" />
+          <NavigationProperty Name="piplayqueues" Relationship="piindexModel.fk_PlayQueue_MusikData1" FromRole="pimusikdata" ToRole="piplayqueue" />
+        </EntityType>
+        <EntityType Name="piplayqueue">
+          <Key>
+            <PropertyRef Name="Idnummer" />
+          </Key>
+          <Property Type="Int32" Name="Catagory_idCatagory" Nullable="false" />
+          <Property Type="Int32" Name="Idnummer" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="MusikData_idMusikData" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="catagory" Relationship="piindexModel.fk_PlayQueue_Catagory1" FromRole="piplayqueue" ToRole="catagory" />
+          <NavigationProperty Name="pimusikdata" Relationship="piindexModel.fk_PlayQueue_MusikData1" FromRole="piplayqueue" ToRole="pimusikdata" />
+        </EntityType>
+        <Association Name="fk_PlayQueue_Catagory1">
+          <End Type="piindexModel.catagory" Role="catagory" Multiplicity="1" />
+          <End Type="piindexModel.piplayqueue" Role="piplayqueue" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="filepath">
-              <PropertyRef Name="UUIDPath" />
+            <Principal Role="catagory">
+              <PropertyRef Name="idCatagory" />
             </Principal>
-            <Dependent Role="musikdata">
-              <PropertyRef Name="FilePath_UUIDPath" />
+            <Dependent Role="piplayqueue">
+              <PropertyRef Name="Catagory_idCatagory" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_Genre_Musik1">
-          <End Role="musik" Type="piindexModel.musik" Multiplicity="1" />
-          <End Role="genre" Type="piindexModel.genre" Multiplicity="*" />
+        <Association Name="fk_Album_Musik1">
+          <End Type="piindexModel.musik" Role="musik" Multiplicity="1" />
+          <End Type="piindexModel.pialbum" Role="pialbum" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="musik">
               <PropertyRef Name="Catagory_idCatagory" />
             </Principal>
-            <Dependent Role="genre">
+            <Dependent Role="pialbum">
               <PropertyRef Name="Musik_Catagory_idCatagory" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_MusikData_Genre1">
-          <End Role="genre" Type="piindexModel.genre" Multiplicity="0..1" />
-          <End Role="musikdata" Type="piindexModel.musikdata" Multiplicity="*" />
+        <Association Name="fk_Artist_Musik1">
+          <End Type="piindexModel.musik" Role="musik" Multiplicity="1" />
+          <End Type="piindexModel.piartist" Role="piartist" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="genre">
-              <PropertyRef Name="Genre1" />
+            <Principal Role="musik">
+              <PropertyRef Name="Catagory_idCatagory" />
             </Principal>
-            <Dependent Role="musikdata">
+            <Dependent Role="piartist">
+              <PropertyRef Name="Musik_Catagory_idCatagory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Genre_Musik1">
+          <End Type="piindexModel.musik" Role="musik" Multiplicity="1" />
+          <End Type="piindexModel.pigenre" Role="pigenre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="musik">
+              <PropertyRef Name="Catagory_idCatagory" />
+            </Principal>
+            <Dependent Role="pigenre">
+              <PropertyRef Name="Musik_Catagory_idCatagory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MusikData_Album1">
+          <End Type="piindexModel.pialbum" Role="pialbum" Multiplicity="0..1" />
+          <End Type="piindexModel.pimusikdata" Role="pimusikdata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pialbum">
+              <PropertyRef Name="Album" />
+            </Principal>
+            <Dependent Role="pimusikdata">
+              <PropertyRef Name="Album_Album" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MusikData_Artist1">
+          <End Type="piindexModel.piartist" Role="piartist" Multiplicity="0..1" />
+          <End Type="piindexModel.pimusikdata" Role="pimusikdata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="piartist">
+              <PropertyRef Name="Artist" />
+            </Principal>
+            <Dependent Role="pimusikdata">
+              <PropertyRef Name="Artist_Artist" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MusikData_FilePath1">
+          <End Type="piindexModel.pifilepath" Role="pifilepath" Multiplicity="1" />
+          <End Type="piindexModel.pimusikdata" Role="pimusikdata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pifilepath">
+              <PropertyRef Name="UUIDPath" />
+            </Principal>
+            <Dependent Role="pimusikdata">
+              <PropertyRef Name="FilePath_UUIDPath" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MusikData_Genre1">
+          <End Type="piindexModel.pigenre" Role="pigenre" Multiplicity="0..1" />
+          <End Type="piindexModel.pimusikdata" Role="pimusikdata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pigenre">
+              <PropertyRef Name="Genre" />
+            </Principal>
+            <Dependent Role="pimusikdata">
               <PropertyRef Name="Genre_Genre" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_PlayQueue_MusikData1">
-          <End Role="musikdata" Type="piindexModel.musikdata" Multiplicity="1" />
-          <End Role="playqueue" Type="piindexModel.playqueue" Multiplicity="*" />
+          <End Type="piindexModel.pimusikdata" Role="pimusikdata" Multiplicity="1" />
+          <End Type="piindexModel.piplayqueue" Role="piplayqueue" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="musikdata">
+            <Principal Role="pimusikdata">
               <PropertyRef Name="UUIDMusikData" />
             </Principal>
-            <Dependent Role="playqueue">
+            <Dependent Role="piplayqueue">
               <PropertyRef Name="MusikData_idMusikData" />
             </Dependent>
           </ReferentialConstraint>
@@ -592,55 +591,10 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="piindexModelStoreContainer" CdmEntityContainer="piindexEntities">
-          <EntitySetMapping Name="albums">
-            <EntityTypeMapping TypeName="piindexModel.album">
-              <MappingFragment StoreEntitySet="album">
-                <ScalarProperty Name="Album1" ColumnName="Album" />
-                <ScalarProperty Name="Musik_Catagory_idCatagory" ColumnName="Musik_Catagory_idCatagory" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="artists">
-            <EntityTypeMapping TypeName="piindexModel.artist">
-              <MappingFragment StoreEntitySet="artist">
-                <ScalarProperty Name="Artist1" ColumnName="Artist" />
-                <ScalarProperty Name="Musik_Catagory_idCatagory" ColumnName="Musik_Catagory_idCatagory" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="catagories">
             <EntityTypeMapping TypeName="piindexModel.catagory">
               <MappingFragment StoreEntitySet="catagory">
                 <ScalarProperty Name="idCatagory" ColumnName="idCatagory" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="devices">
-            <EntityTypeMapping TypeName="piindexModel.device">
-              <MappingFragment StoreEntitySet="device">
-                <ScalarProperty Name="UUIDDevice" ColumnName="UUIDDevice" />
-                <ScalarProperty Name="IP" ColumnName="IP" />
-                <ScalarProperty Name="PCOwner" ColumnName="PCOwner" />
-                <ScalarProperty Name="Protocol" ColumnName="Protocol" />
-                <ScalarProperty Name="Catagory_idCatagory" ColumnName="Catagory_idCatagory" />
-                <ScalarProperty Name="Online" ColumnName="Online" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="filepaths">
-            <EntityTypeMapping TypeName="piindexModel.filepath">
-              <MappingFragment StoreEntitySet="filepath">
-                <ScalarProperty Name="UUIDPath" ColumnName="UUIDPath" />
-                <ScalarProperty Name="idFilePath" ColumnName="idFilePath" />
-                <ScalarProperty Name="Device_UUIDDevice" ColumnName="Device_UUIDDevice" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="genres">
-            <EntityTypeMapping TypeName="piindexModel.genre">
-              <MappingFragment StoreEntitySet="genre">
-                <ScalarProperty Name="Genre1" ColumnName="Genre" />
-                <ScalarProperty Name="Musik_Catagory_idCatagory" ColumnName="Musik_Catagory_idCatagory" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -651,26 +605,71 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="musikdatas">
-            <EntityTypeMapping TypeName="piindexModel.musikdata">
-              <MappingFragment StoreEntitySet="musikdata">
-                <ScalarProperty Name="UUIDMusikData" ColumnName="UUIDMusikData" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="NrLenth" ColumnName="NrLenth" />
-                <ScalarProperty Name="FileName" ColumnName="FileName" />
-                <ScalarProperty Name="Artist_Artist" ColumnName="Artist_Artist" />
-                <ScalarProperty Name="Album_Album" ColumnName="Album_Album" />
-                <ScalarProperty Name="Genre_Genre" ColumnName="Genre_Genre" />
-                <ScalarProperty Name="FilePath_UUIDPath" ColumnName="FilePath_UUIDPath" />
+          <EntitySetMapping Name="pidevices">
+            <EntityTypeMapping TypeName="piindexModel.pidevice">
+              <MappingFragment StoreEntitySet="pidevice">
+                <ScalarProperty Name="Online" ColumnName="Online" />
+                <ScalarProperty Name="Catagory_idCatagory" ColumnName="Catagory_idCatagory" />
+                <ScalarProperty Name="Protocol" ColumnName="Protocol" />
+                <ScalarProperty Name="PCOwner" ColumnName="PCOwner" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="UUIDDevice" ColumnName="UUIDDevice" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="playqueues">
-            <EntityTypeMapping TypeName="piindexModel.playqueue">
-              <MappingFragment StoreEntitySet="playqueue">
-                <ScalarProperty Name="Catagory_idCatagory" ColumnName="Catagory_idCatagory" />
-                <ScalarProperty Name="Idnummer" ColumnName="Idnummer" />
+          <EntitySetMapping Name="pifilepaths">
+            <EntityTypeMapping TypeName="piindexModel.pifilepath">
+              <MappingFragment StoreEntitySet="pifilepath">
+                <ScalarProperty Name="Device_UUIDDevice" ColumnName="Device_UUIDDevice" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="UUIDPath" ColumnName="UUIDPath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pialbums">
+            <EntityTypeMapping TypeName="piindexModel.pialbum">
+              <MappingFragment StoreEntitySet="pialbum">
+                <ScalarProperty Name="Musik_Catagory_idCatagory" ColumnName="Musik_Catagory_idCatagory" />
+                <ScalarProperty Name="Album" ColumnName="Album" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="piartists">
+            <EntityTypeMapping TypeName="piindexModel.piartist">
+              <MappingFragment StoreEntitySet="piartist">
+                <ScalarProperty Name="Musik_Catagory_idCatagory" ColumnName="Musik_Catagory_idCatagory" />
+                <ScalarProperty Name="Artist" ColumnName="Artist" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pigenres">
+            <EntityTypeMapping TypeName="piindexModel.pigenre">
+              <MappingFragment StoreEntitySet="pigenre">
+                <ScalarProperty Name="Musik_Catagory_idCatagory" ColumnName="Musik_Catagory_idCatagory" />
+                <ScalarProperty Name="Genre" ColumnName="Genre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pimusikdatas">
+            <EntityTypeMapping TypeName="piindexModel.pimusikdata">
+              <MappingFragment StoreEntitySet="pimusikdata">
+                <ScalarProperty Name="FilePath_UUIDPath" ColumnName="FilePath_UUIDPath" />
+                <ScalarProperty Name="Genre_Genre" ColumnName="Genre_Genre" />
+                <ScalarProperty Name="Album_Album" ColumnName="Album_Album" />
+                <ScalarProperty Name="Artist_Artist" ColumnName="Artist_Artist" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="NrLenth" ColumnName="NrLenth" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="UUIDMusikData" ColumnName="UUIDMusikData" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="piplayqueues">
+            <EntityTypeMapping TypeName="piindexModel.piplayqueue">
+              <MappingFragment StoreEntitySet="piplayqueue">
                 <ScalarProperty Name="MusikData_idMusikData" ColumnName="MusikData_idMusikData" />
+                <ScalarProperty Name="Idnummer" ColumnName="Idnummer" />
+                <ScalarProperty Name="Catagory_idCatagory" ColumnName="Catagory_idCatagory" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

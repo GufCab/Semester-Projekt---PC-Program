@@ -12,11 +12,11 @@ namespace Database
     using System;
     using System.Collections.Generic;
     
-    public partial class musikdata
+    public partial class pimusikdata
     {
-        public musikdata()
+        public pimusikdata()
         {
-            this.playqueues = new HashSet<playqueue>();
+            this.piplayqueues = new HashSet<piplayqueue>();
         }
     
         public string UUIDMusikData { get; set; }
@@ -28,10 +28,10 @@ namespace Database
         public string Genre_Genre { get; set; }
         public string FilePath_UUIDPath { get; set; }
     
-        public virtual album album { get; set; }
-        public virtual artist artist { get; set; }
-        public virtual filepath filepath { get; set; }
-        public virtual genre genre { get; set; }
-        public virtual ICollection<playqueue> playqueues { get; set; }
+        public virtual pialbum pialbum { get; set; }
+        public virtual piartist piartist { get; set; }
+        public virtual pifilepath pifilepath { get; set; }
+        public virtual pigenre pigenre { get; set; }
+        public virtual ICollection<piplayqueue> piplayqueues { get; set; }
     }
 }

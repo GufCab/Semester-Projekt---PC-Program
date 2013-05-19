@@ -12,20 +12,18 @@ namespace Database
     using System;
     using System.Collections.Generic;
     
-    public partial class musik
+    public partial class pifilepath
     {
-        public musik()
+        public pifilepath()
         {
-            this.pialbums = new HashSet<pialbum>();
-            this.piartists = new HashSet<piartist>();
-            this.pigenres = new HashSet<pigenre>();
+            this.pimusikdatas = new HashSet<pimusikdata>();
         }
     
-        public int Catagory_idCatagory { get; set; }
+        public string UUIDPath { get; set; }
+        public string FilePath { get; set; }
+        public string Device_UUIDDevice { get; set; }
     
-        public virtual catagory catagory { get; set; }
-        public virtual ICollection<pialbum> pialbums { get; set; }
-        public virtual ICollection<piartist> piartists { get; set; }
-        public virtual ICollection<pigenre> pigenres { get; set; }
+        public virtual pidevice pidevice { get; set; }
+        public virtual ICollection<pimusikdata> pimusikdatas { get; set; }
     }
 }

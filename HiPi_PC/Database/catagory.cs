@@ -16,14 +16,14 @@ namespace Database
     {
         public catagory()
         {
-            this.devices = new HashSet<device>();
-            this.playqueues = new HashSet<playqueue>();
+            this.pidevices = new HashSet<pidevice>();
+            this.piplayqueues = new HashSet<piplayqueue>();
         }
     
         public int idCatagory { get; set; }
     
-        public virtual ICollection<device> devices { get; set; }
         public virtual musik musik { get; set; }
-        public virtual ICollection<playqueue> playqueues { get; set; }
+        public virtual ICollection<pidevice> pidevices { get; set; }
+        public virtual ICollection<piplayqueue> piplayqueues { get; set; }
     }
 }

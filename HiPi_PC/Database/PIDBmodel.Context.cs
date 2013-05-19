@@ -25,14 +25,14 @@ namespace Database
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<album> albums { get; set; }
-        public DbSet<artist> artists { get; set; }
         public DbSet<catagory> catagories { get; set; }
-        public DbSet<device> devices { get; set; }
-        public DbSet<filepath> filepaths { get; set; }
-        public DbSet<genre> genres { get; set; }
         public DbSet<musik> musiks { get; set; }
-        public DbSet<musikdata> musikdatas { get; set; }
-        public DbSet<playqueue> playqueues { get; set; }
+        public DbSet<pidevice> pidevices { get; set; }
+        public DbSet<pifilepath> pifilepaths { get; set; }
+        public DbSet<pialbum> pialbums { get; set; }
+        public DbSet<piartist> piartists { get; set; }
+        public DbSet<pigenre> pigenres { get; set; }
+        public DbSet<pimusikdata> pimusikdatas { get; set; }
+        public DbSet<piplayqueue> piplayqueues { get; set; }
     }
 }

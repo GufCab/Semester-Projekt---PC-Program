@@ -149,8 +149,6 @@ namespace dbclases
 
         public void fillMusicdata(List<IMetadataReader> datalist)
         {
-          
-
 
             using (var musik = new pcindexEntities())
             {

@@ -12,13 +12,17 @@ namespace Database
     using System;
     using System.Collections.Generic;
     
-    public partial class playqueue
+    public partial class pigenre
     {
-        public int Catagory_idCatagory { get; set; }
-        public int Idnummer { get; set; }
-        public string MusikData_idMusikData { get; set; }
+        public pigenre()
+        {
+            this.pimusikdatas = new HashSet<pimusikdata>();
+        }
     
-        public virtual catagory catagory { get; set; }
-        public virtual musikdata musikdata { get; set; }
+        public string Genre { get; set; }
+        public int Musik_Catagory_idCatagory { get; set; }
+    
+        public virtual musik musik { get; set; }
+        public virtual ICollection<pimusikdata> pimusikdatas { get; set; }
     }
 }

@@ -72,9 +72,6 @@
     <Compile Include="musik.cs">
       <DependentUpon>PIDBmodel.tt</DependentUpon>
     </Compile>
-    <Compile Include="musikdata.cs">
-      <DependentUpon>PIDBmodel.tt</DependentUpon>
-    </Compile>
     <Compile Include="PCDBmodel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -89,6 +86,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PCDBmodel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="pialbum.cs">
+      <DependentUpon>PIDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="piartist.cs">
+      <DependentUpon>PIDBmodel.tt</DependentUpon>
     </Compile>
     <Compile Include="PIDBmodel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -105,7 +108,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PIDBmodel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="playqueue.cs">
+    <Compile Include="pidevice.cs">
+      <DependentUpon>PIDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pifilepath.cs">
+      <DependentUpon>PIDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pigenre.cs">
+      <DependentUpon>PIDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pimusikdata.cs">
+      <DependentUpon>PIDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="piplayqueue.cs">
       <DependentUpon>PIDBmodel.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
