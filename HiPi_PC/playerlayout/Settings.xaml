@@ -37,15 +37,15 @@
                 <RowDefinition Height="Auto">
                     <RowDefinition.MinHeight>
                         <!--<x:Static Member="constant:Constants.Size" />-->
-                        5px
+                        0px
                     </RowDefinition.MinHeight>
                 </RowDefinition>
-                <RowDefinition Height="Auto" MinHeight="5px" />
-                <RowDefinition Height="Auto" MinHeight="5px" />
-                <RowDefinition Height="Auto" MinHeight="5px" />
-                <RowDefinition Height="Auto" MinHeight="5px" />
-                <RowDefinition Height="Auto" MinHeight="5px" />
-                <RowDefinition Height="Auto" MinHeight="5px" />
+                <RowDefinition Height="Auto" MinHeight="0px" />
+                <RowDefinition Height="Auto" MinHeight="0px" />
+                <RowDefinition Height="Auto" MinHeight="0px" />
+                <RowDefinition Height="Auto" MinHeight="0px" />
+                <RowDefinition Height="Auto" MinHeight="0px" />
+                <RowDefinition Height="Auto" MinHeight="0px" />
             </Grid.RowDefinitions>
             <Label Grid.Row="0" Background="SteelBlue" Opacity=".6" Content="Select Music Folder" Target="{Binding ElementName=pathfolderTextBox}"></Label>
              
