@@ -58,9 +58,19 @@ namespace playerlayout
             //AddButton.Click += new RoutedEventHandler(openFileDialogButton_Click);
 
             AddButton.Click += AddButton_Click;
+            RemoveButton.Click += RemoveButton_Click;
 
             skins_initialize();
         }
+
+        void RemoveButton_Click(object sender, RoutedEventArgs e)
+        {
+            int index = PathFolderListBox.SelectedIndex;
+            if (index >= 0)
+                {
+                PathFolderListBox.Items.RemoveAt(index);
+                }
+            }
 
         private void skins_initialize()
         {
@@ -135,6 +145,7 @@ namespace playerlayout
 
         void AddButton_Click(object sender, RoutedEventArgs e)
         {
+            //SHOULD CONTROL FOR DUPLICATED ITEMS IN THE FOLDER.
             System.Windows.Forms.FolderBrowserDialog dlg = new FolderBrowserDialog();
             dlg.SelectedPath = ReportFolder;
             if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
