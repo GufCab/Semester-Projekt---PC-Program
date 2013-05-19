@@ -24,18 +24,7 @@ namespace dbclases
 
         public void Markasonline()
         {
-            if (CheckIfDeviceExists())
             {
-               // her skal der kigges om deviceuuid og pi stemmer over ens
-               // hvis det ikke gør skal det rettes
-
-
-
-            }
-            else
-            {
-                // hent device og tilføj det
-
                 List<device> jaja;
                 using (var musik = new pcindexEntities())
                 {

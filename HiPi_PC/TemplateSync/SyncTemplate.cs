@@ -41,7 +41,7 @@ namespace TemplateSync
        {
            var pidb = new PiDbhandel();
 
-           pidb.Markasonline();
+          // pidb.Markasonline();
            pidb.SyncfromLocalToPI();
        }
 
@@ -52,10 +52,18 @@ namespace TemplateSync
             {
                 rellist.Add(MakeRelpathFromAbspath(s));                
             }
-            db.FillPath(pathlist);
-            if (pathlist.Count != 0)
-                hs(pathlist);
+            db.FillPath(rellist);
+            if (rellist.Count == 0)
+            {
+                foreach (string s in pathlist)
+                {
+                    rellist.Add(MakeRelpathFromAbspath(s));
+                }
+            }
+            hs(pathlist);
             //her skal stå relpath begge steder men fileindexer kan ikke klare den
+
+
         }
  
         private void hs(List<string> ha)

@@ -17,7 +17,7 @@ namespace LocalDbTester
             dbh.FillIP("12.2.12.12");
 
             var ha = new List<string>();
-            ha.Add(@"C:\Users\Public\Music\Sample Music");
+            ha.Add(@"..\..\..\..\..\..\..\Public\Music\Sample Music");
 
             dbh.FillPath(ha);
 

@@ -13,8 +13,7 @@ namespace TemplateSync
             var sync = new SyncTemplate();
 
             List<string> ha = new List<string>();
-            ha.Add(@"C:\Users\Public\Music\Sample Music");
-
+            ha.Add(@"C:\Users\Malmos\Documents\GitHub\Semester-Projekt---PC-Program\HiPi_PC\TemplateSync");
 
             sync.SyncLocalDb(ha);
 
