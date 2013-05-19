@@ -13,7 +13,7 @@ using Live555;
 
 namespace TemplateSync
 {
-    class SyncTemplate : ISynchronizer
+    public class SyncTemplate : ISynchronizer
     {
         private LocalDbhandel db = new LocalDbhandel();
         // Pidatabasen skal også være her
@@ -52,10 +52,12 @@ namespace TemplateSync
             {
                 rellist.Add(MakeRelpathFromAbspath(s));                
             }
-            db.FillPath(pathlist);
-            if (pathlist.Count != 0)
-                hs(pathlist);
+            db.FillPath(rellist);
+            if (rellist.Count != 0)
+            hs(pathlist);
             //her skal stå relpath begge steder men fileindexer kan ikke klare den
+
+
         }
  
         private void hs(List<string> ha)
@@ -89,7 +91,7 @@ namespace TemplateSync
                 );
 
 
-            return relativePath;
+            return  @"../"+relativePath;
         }
         
     }

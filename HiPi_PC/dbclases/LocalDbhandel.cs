@@ -183,8 +183,8 @@ namespace dbclases
 
             using (var musik = new pcindexEntities())
             {
-                var dd = (from p in musik.filepaths where p.FilePath1 == path select p).ToList();
-                return dd.ElementAt(0).UUIDPath;
+                var dd = (from p in musik.filepaths select p).ToList();
+                    return dd.ElementAt(0).UUIDPath;
             }
             
         }

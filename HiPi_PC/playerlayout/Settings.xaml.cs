@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Microsoft.Win32;
+using TemplateSync;
 using Application = System.Windows.Application;
 
 namespace constant
@@ -50,10 +51,11 @@ namespace playerlayout
             get { return data.ReportFolder; }
             set { data.ReportFolder = value; }
         }
-
+        public SyncTemplate hans = new SyncTemplate();
         public Settings()
         {
             InitializeComponent();
+
 
             //AddButton.Click += new RoutedEventHandler(openFileDialogButton_Click);
 
@@ -155,6 +157,18 @@ namespace playerlayout
             }
 
             //string prefix = "Open File Dialog: ";
+        }
+
+        private void SyncronizeButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            List<string> pathes = new List<string>();
+
+            for(int i = 0 ; i <= PathFolderListBox.Items.Count)
+            {
+                
+            }
+
+            hans.SyncLocalDb(pathes);
         }
         
         /*

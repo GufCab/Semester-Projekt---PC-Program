@@ -66,6 +66,7 @@
     <Compile Include="genre.cs">
       <DependentUpon>PCDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="main.cs" />
     <Compile Include="musicdata.cs">
       <DependentUpon>PCDBModel.tt</DependentUpon>
     </Compile>
@@ -123,11 +124,12 @@
     <Compile Include="PIPlayQueue.cs">
       <DependentUpon>PIDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <EntityDeploy Include="PCDBModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

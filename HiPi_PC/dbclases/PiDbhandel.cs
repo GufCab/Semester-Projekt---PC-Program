@@ -23,43 +23,42 @@ namespace dbclases
 
 
         public void Markasonline()
-        {
-            if (CheckIfDeviceExists())
-            {
-               // her skal der kigges om deviceuuid og pi stemmer over ens
-               // hvis det ikke gør skal det rettes
+       {
+           {
+               if (!CheckIfDeviceExists())
+               {
+                   List<string> pathuuid;
+                   using (var musik = new pcindexEntities())
+                   {
+                       pathuuid = (from p in musik.devices select p.UUIDDevice).ToList();
+                   }
+                   
+                       List<device> jaja;
+                       using (var musik = new pcindexEntities())
+                       {
+                           jaja = (from p in musik.devices select p).ToList();
+                       }
 
+                       var nyed = jaja.ElementAt(0);
+                       var pid = new PIDevice();
+                       pid.UUIDDevice = nyed.UUIDDevice;
+                       pid.IP = nyed.IP + ":8554";
+                       pid.PCOwner = nyed.PCOwner;
+                       pid.Protocol = nyed.Protocol;
+                       pid.Catagory_idCatagory = 1;
+                       pid.Online = true;
 
+                       using (var pimusik = new PiindexEntities())
+                       {
+                           pimusik.PIDevices.Add(pid);
+                           pimusik.SaveChanges();
 
-            }
-            else
-            {
-                // hent device og tilføj det
+                       }
+                   
+               }
+           }
 
-                List<device> jaja;
-                using (var musik = new pcindexEntities())
-                {
-                    jaja = (from p in musik.devices select p).ToList();
-                }
-
-                var nyed = jaja.ElementAt(0);
-                var pid = new PIDevice();
-                pid.UUIDDevice = nyed.UUIDDevice;
-                pid.IP = nyed.IP;
-                pid.PCOwner = nyed.PCOwner;
-                pid.Protocol = nyed.Protocol;
-                pid.Catagory_idCatagory = 1;
-                pid.Online = true;
-
-                using (var pimusik = new PiindexEntities())
-                {
-                    pimusik.PIDevices.Add(pid);
-                    pimusik.SaveChanges();
-
-                }
-            }
-
-        }
+       }
 
         public void SyncfromLocalToPI()
         {
