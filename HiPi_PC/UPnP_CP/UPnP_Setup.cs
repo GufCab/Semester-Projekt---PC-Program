@@ -45,12 +45,12 @@ namespace UPnP_CP
         private void AddSink(MediaRendererDiscovery sender, UPnPDevice d)
         {
             Console.WriteLine("Added Sink Device: " + d.FriendlyName);
-            if (d.FriendlyName == "HiPi")
+            if (d.FriendlyName == "HiPi - Sink")
             {
                 UPnP_SinkFunctions func = new UPnP_SinkFunctions(
-                    new SinkStack.CpAVTransport(d.GetServices(SinkStack.CpAVTransport.SERVICE_NAME)[0]), null, null);
+                    new SinkStack.CpAVTransport(d.GetServices(SinkStack.CpAVTransport.SERVICE_NAME)[0]), null,
                     //new SinkStack.CpConnectionManager(d.GetServices(SinkStack.CpConnectionManager.SERVICE_NAME)[0]),
-                    //new SinkStack.CpRenderingControl(d.GetServices(SinkStack.CpRenderingControl.SERVICE_NAME)[0]));
+                    new SinkStack.CpRenderingControl(d.GetServices(SinkStack.CpRenderingControl.SERVICE_NAME)[0]));
 
                 AddSinkEvent(func, null);
             }
@@ -67,10 +67,10 @@ namespace UPnP_CP
         {
             Console.WriteLine("Added Source Device: " + d.FriendlyName);
 
-            if (d.FriendlyName == "HiPi")
+            if (d.FriendlyName == "HiPi - Source")
             {
-                UPnP_SourceFunctions func = new UPnP_SourceFunctions(
-                    new SourceStack.CpConnectionManager(d.GetServices(SourceStack.CpConnectionManager.SERVICE_NAME)[0]),
+                UPnP_SourceFunctions func = new UPnP_SourceFunctions(null,
+                    //new SourceStack.CpConnectionManager(d.GetServices(SourceStack.CpConnectionManager.SERVICE_NAME)[0]),
                     new SourceStack.CpContentDirectory(d.GetServices(SourceStack.CpContentDirectory.SERVICE_NAME)[0]));
 
                 AddSourceEvent(func, null);

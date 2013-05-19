@@ -35,7 +35,7 @@
       <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\NUnit 2.6.2\bin\framework\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="Rhino.Mocks">
-      <HintPath>..\..\..\..\..\..\..\Dropbox\Selv\4. semester\I4SWT\Ovelser\Ex09 Door Control tested with RhinoMocks\DoorControlReal\Rhino.Mocks.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\SWT\Rhino.Mocks.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
