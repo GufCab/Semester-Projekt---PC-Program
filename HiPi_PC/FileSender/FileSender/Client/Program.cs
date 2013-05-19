@@ -17,32 +17,14 @@ namespace Client
                 {
                     using (var client = new Client("10.193.7.239"))
                     {
-                    using (var client = new Client())
-                    {
-                        Console.WriteLine("Client started...");
-                        client.SetUp();
-                        Console.Write("Set file to send: ");
-                        fileName = Console.ReadLine();
-                        client.SetFileName(@fileName);
-                        Console.WriteLine();
-                        client.SendFile(client._fileName, Convert.ToInt32(client._fileSize), client._serverStream);
-                        client.CloseSocket();
-                    }
-                } while (true);
-                        Console.WriteLine("Client started...");
->>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
-=======
-                    using (var client = new Client("10.193.7.239"))
-                    {
-                        Console.WriteLine("Client started...");
->>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
-                        client.SetUp();
-                        Console.Write("Set file to send: ");
-                        fileName = Console.ReadLine();
-                        client.SetFileName(@fileName);
-                        Console.WriteLine();
-                        client.SendFile(client._fileName, Convert.ToInt32(client._fileSize), client._serverStream);
-                        client.CloseSocket();
+                            Console.WriteLine("Client started...");
+                            client.SetUp();
+                            Console.Write("Set file to send: ");
+                            fileName = Console.ReadLine();
+                            client.SetFileName(@fileName);
+                            Console.WriteLine();
+                            client.SendFile(client._fileName, Convert.ToInt32(client._fileSize), client._serverStream);
+                            client.CloseSocket();
                     }
                 } while (true);
             }

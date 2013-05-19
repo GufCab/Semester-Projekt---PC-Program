@@ -36,7 +36,7 @@ namespace UPnP_CP_GUI
             setup.StartSinkDisco();
             setup.StartSourceDisco();
 
-            btnSubscribe.IsEnabled = false;
+            //btnSubscribe.IsEnabled = false;
         }
 
         public void subscribe()

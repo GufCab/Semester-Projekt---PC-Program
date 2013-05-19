@@ -7,30 +7,6 @@ using tcp;
 namespace Server
 {
     public class Server : IServer, IDisposable
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    public class Server : IDisposable
-=======
-    public class Server : IServer, IDisposable
->>>>>>> 1c53e626a0f85abbb20dc48e47e380b75bf29278
-=======
-    public class Server : IServer, IDisposable
->>>>>>> 095316f42b7332c79035998705605e2e130bec1f
-=======
-    public class Server : IServer, IDisposable
->>>>>>> 095316f42b7332c79035998705605e2e130bec1f
-=======
-    public class Server : IServer, IDisposable
->>>>>>> 095316f42b7332c79035998705605e2e130bec1f
-=======
-    public class Server : IServer, IDisposable
->>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
-=======
-    public class Server : IServer, IDisposable
->>>>>>> e55acdce42a7bcd42d9c2dd53de457e0db586ded
     {
         public IPAddress _IP { get; private set; }
         public TcpListener _serverSocket { get; private set; }
@@ -130,11 +106,6 @@ namespace Server
         public void CloseSocketConnection()
         {
             _clientSocket.Close();
-        }
-
-        public void Dispose()
-        {
-            _serverSocket.Stop();
         }
 
         public void Dispose()
