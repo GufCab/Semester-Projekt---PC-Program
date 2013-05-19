@@ -19,7 +19,7 @@ namespace Database
             this.filepaths = new HashSet<filepath>();
         }
     
-        public string UUIDDevise { get; set; }
+        public string UUIDDevice { get; set; }
         public string IP { get; set; }
         public string PCOwner { get; set; }
         public string Protocol { get; set; }

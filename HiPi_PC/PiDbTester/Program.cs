@@ -4,19 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TemplateSync
+namespace PiDbTester
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var sync = new SyncTemplate();
+            var dbh = new dbclases.PiDbhandel();
 
-            List<string> ha = new List<string>();
-            ha.Add(@"C:\Users\Public\Music\Sample Music");
-
-
-            sync.SyncLocalDb(ha);
+            dbh.SyncfromLocalToPI();
 
         }
     }

@@ -4,11 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1c11242027874b949998d1304bfa03f0" Name="Diagram1">
+      <Diagram DiagramId="ed84a6d7b6c042cb88f292029977480a" Name="Diagram1">
         <EntityTypeShape EntityType="pcindexModel.album" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="pcindexModel.artist" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="pcindexModel.device" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="pcindexModel.filepath" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pcindexModel.filepath" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="pcindexModel.genre" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
         <EntityTypeShape EntityType="pcindexModel.musicdata" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="pcindexModel.fk_MusicData_Album1" ManuallyRouted="false" />

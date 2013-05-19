@@ -19,7 +19,7 @@ namespace dbclases
             {
                 var GUIDDevice = (from p in musik.devices select p).ToList();
 
-                _GUIDDevice = GUIDDevice.ElementAt(0).UUIDDevise;
+                _GUIDDevice = GUIDDevice.ElementAt(0).UUIDDevice;
             }
         }
 
@@ -34,31 +34,34 @@ namespace dbclases
             using (var musik = new pcindexEntities())
             {
                 var dd = (from p in musik.devices select p).ToList();
-                
 
-                var mydevice = dd.ElementAt(0);
-                if (_ip != mydevice.IP)
+                if (dd.Count == 0)
                 {
-                    Console.WriteLine("de er ens");
+                    var mydevice = new device();
+
+                    mydevice.UUIDDevice = Guid.NewGuid().ToString();
                     mydevice.IP = _ip;
                     mydevice.Protocol = "rtsp://";
                     mydevice.PCOwner = Environment.UserName;
-                    musik.devices.Remove(dd.ElementAt(0));
-                    musik.SaveChanges();
                     musik.devices.Add(mydevice);
                     musik.SaveChanges();
                 }
                 else
                 {
-                    Console.WriteLine("de er ens");
+                    var mydevice = dd.ElementAt(0);
+                    if (_ip != mydevice.IP)
+                    {
+                        musik.devices.Remove(dd.ElementAt(0));
+                        musik.SaveChanges();
+                        Console.WriteLine("de er ens");
+                        mydevice.IP = _ip;
+                        mydevice.Protocol = "rtsp://";
+                        mydevice.PCOwner = Environment.UserName;
+                        musik.devices.Add(mydevice);
+                        musik.SaveChanges();
+                    }
                 }
-               
-
             }
-
-
-
-
         }
 
         private List<string> Albumlist = new List<string>();
@@ -75,12 +78,10 @@ namespace dbclases
                 Genrelist.Add(metadataReader.Genre);
             }
 
-            Parallel.Invoke(
-                () => addAlbum(Albumlist),
-                () => addArtist(Artistlist),
-                () => Addgenre(Genrelist)
+            addAlbum(Albumlist);
+            addArtist(Artistlist);
+            Addgenre(Genrelist);
                 
-                );
 
         }
 
@@ -105,7 +106,7 @@ namespace dbclases
                     foreach (var onpath in PathOndevice)
                     {
                         var path = new filepath();
-                        path.Device_UUIDDevise = _GUIDDevice;
+                        path.Device_UUIDDevice = _GUIDDevice;
                         path.UUIDPath = Guid.NewGuid().ToString();
                         path.FilePath1 = onpath;
                         musik.filepaths.Add(path);
@@ -122,16 +123,6 @@ namespace dbclases
 
         }
 
-        public void selectallgenres()
-        {
-            using (var musik = new pcindexEntities())
-            {
-                var dd = (from p in musik.genres select p).ToList();
-
-                Console.WriteLine(dd.ElementAt(0).Genre1);
-            }
-
-        }
 
         private List<string> listcompair(List<string> list1, List<string> list2)
         {
@@ -158,7 +149,7 @@ namespace dbclases
 
         public void fillMusicdata(List<IMetadataReader> datalist)
         {
-            var nummer = new musicdata();
+          
 
 
             using (var musik = new pcindexEntities())
@@ -167,14 +158,15 @@ namespace dbclases
 
                 foreach (var metadata in datalist)
                 {
+                    var nummer = new musicdata();
                     nummer.Title = metadata.Title;
                     nummer.Artist_Artist = metadata.Artist;
                     nummer.Album_Album = metadata.Album;
                     nummer.Genre_Genre = metadata.Genre;
                     nummer.NrLenth = metadata.LengthS;
                     nummer.FileName = metadata.ItemName;
-                    //der mangler noget med noget filepaht
-                    nummer.FilePath_UUIDPath = "112";
+                    nummer.FilePath_UUIDPath = UUIDONPath(metadata.Filepath);
+                    nummer.UUIDMusikData = Guid.NewGuid().ToString();
 
                     musik.musicdatas.Add(nummer);
 
@@ -184,6 +176,17 @@ namespace dbclases
 
             }
 
+        }
+        
+        private string UUIDONPath(string path)
+        {
+
+            using (var musik = new pcindexEntities())
+            {
+                var dd = (from p in musik.filepaths where p.FilePath1 == path select p).ToList();
+                return dd.ElementAt(0).UUIDPath;
+            }
+            
         }
 
         private void Addgenre( List<string> liste)

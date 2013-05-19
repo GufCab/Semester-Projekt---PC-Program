@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace TemplateSync
 {
-    public interface ISynchronizer
+    public abstract class ISynchronizer
     {
-        void Startup(); // denne skal kaldes ved opstart
-        // giver til kende at enheden er tændt og starter for Live555
-        void SyncLocalDb(List<string> pahts); // Kaldes når man gerne vil opdatere sin lokale musik til local db.
-        void SyncPiDb(); // kaldes når man ønsker at tilføje ny musik til pien.
+        public abstract void Startup();
+        public abstract void SyncLocalDb(List<string> pahts);
+        public abstract void SyncPiDb();
     }
 }

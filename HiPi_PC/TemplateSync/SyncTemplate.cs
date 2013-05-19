@@ -16,57 +16,46 @@ namespace TemplateSync
     class SyncTemplate : ISynchronizer
     {
         private LocalDbhandel db = new LocalDbhandel();
+        // Pidatabasen skal også være her
         private Live555Wrapper live555;
         //private int _index;
 
-
+        public SyncTemplate()
+        {
+            Startup();
+        }
       
-       public void Startup()
+       public override void Startup()
        {
-           //live555 = new Live555Wrapper();
-           //string ip = live555.GetIP();
+           live555 = new Live555Wrapper();
+           string ip = live555.GetIP();
 
-           db.FillIP("100.199.100.199");
-
-           // denne skal hentes fra live555
+           db.FillIP(ip);
           
+           // tell Pi device is online
+
        }
       
-        //jeg stener
-
-       public void SyncLocalDb(List<string> pahts)
+        
+       public override void SyncPiDb()
        {
            throw new NotImplementedException();
        }
 
-       public void SyncPiDb()
-       {
-           throw new NotImplementedException();
-       }
-
-        public async void Sync(List<string> pathlist )
+        public override async void SyncLocalDb(List<string> pathlist )
         {
             List<string> rellist = new List<string>();
             foreach (string s in pathlist)
             {
                 rellist.Add(MakeRelpathFromAbspath(s));                
             }
-
-            var slowtast = Task.Factory.StartNew(() => db.FillPath(rellist));
-            
-            await slowtast;
-            slowtast = Task.Factory.StartNew(() => hs(rellist));
-
-            await slowtast;
-            
-
-            // live555.addpathes(pathlist)
-
-            
-
-
+            db.FillPath(pathlist);
+            if (pathlist.Count != 0)
+                hs(pathlist);
+            //her skal stå relpath begge steder men fileindexer kan ikke klare den
         }
-        public void hs(List<string> ha)
+ 
+        private void hs(List<string> ha)
         {
 
             foreach (var path in ha)
@@ -99,15 +88,6 @@ namespace TemplateSync
 
             return relativePath;
         }
-
-
-        public void CreateStream()
-        {
-            //setup af live555 stream
-
-        }
-
-
         
     }
 }

@@ -12,18 +12,18 @@ namespace Database
     using System;
     using System.Collections.Generic;
     
-    public partial class filepath
+    public partial class catagory
     {
-        public filepath()
+        public catagory()
         {
-            this.musicdatas = new HashSet<musicdata>();
+            this.devices = new HashSet<device>();
+            this.playqueues = new HashSet<playqueue>();
         }
     
-        public string UUIDPath { get; set; }
-        public string FilePath1 { get; set; }
-        public string Device_UUIDDevice { get; set; }
+        public int idCatagory { get; set; }
     
-        public virtual device device { get; set; }
-        public virtual ICollection<musicdata> musicdatas { get; set; }
+        public virtual ICollection<device> devices { get; set; }
+        public virtual musik musik { get; set; }
+        public virtual ICollection<playqueue> playqueues { get; set; }
     }
 }
