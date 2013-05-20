@@ -178,7 +178,7 @@ namespace FileSender
                         var fileName = path;
                         SetFileName(@fileName);
                         Console.WriteLine();
-                        SendFile(_fileName, Convert.ToInt32(_fileSize), _serverStream);
+                        SendFile(fileName, Convert.ToInt32(_fileSize), _serverStream);
                         CloseSocket();
                 } while (true);
             }
