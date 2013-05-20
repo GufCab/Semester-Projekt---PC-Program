@@ -65,7 +65,7 @@
                 <Button Grid.Column="3" Margin="2" MinWidth="15" Background="Gold" Click="ButtonM_OnClick" Content="Open"/>
                 <Button Grid.Column="4" Margin="2" MinWidth="15" Background="Red" Click="ButtonX_OnClick " Content="Slet"/>
             </Grid>
-            <DataGrid Grid.Row="1" ItemsSource="{Binding Source=observerHandler.playQueue}"></DataGrid>
+            <DataGrid Grid.Row="1" ></DataGrid>
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"></ColumnDefinition>
