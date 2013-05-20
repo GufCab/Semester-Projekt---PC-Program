@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using UPnP_CP;
 using XMLReader;
 using Containers;
+using System.IO;
 
 namespace UPnP_CP_GUI
 {
@@ -38,6 +39,8 @@ namespace UPnP_CP_GUI
             setup.StartSinkDisco();
             setup.StartSourceDisco();
 
+            StreamReader sr = new StreamReader("item.xml");
+            string s  = sr.ReadToEnd();
             XMLReaderPC reader = new XMLReaderPC();
             reader.itemReader("");
 
