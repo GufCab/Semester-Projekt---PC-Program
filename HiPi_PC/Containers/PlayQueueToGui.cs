@@ -6,9 +6,9 @@ using System.Text;
 
 namespace Containers
 {
-    class PlayQueueToGui : ObservableCollection<ITrack>
+    public class PlayQueueToGui : ObservableCollection<ITrack>
     {
-        private void updateplayqeue(List<ITrack> listen)
+        public void updateplayqeue(List<ITrack> listen)
         {
             this.Clear();
 
