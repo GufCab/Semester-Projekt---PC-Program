@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 using Containers;
 using UPnP_CP;
 using XMLReader;
@@ -13,18 +14,18 @@ namespace XMLHandler
     public class ObervHandler
     {
         XMLReaderPC xmlr = new XMLReaderPC();
-        public MusicIndexToGui musicIndex = new MusicIndexToGui();
-        public PlayQueueToGui playQueue = new PlayQueueToGui();
+       public ObservableCollection<ITrack> musikindex = new ObservableCollection<ITrack>();
+       public ObservableCollection<ITrack> playqueue = new ObservableCollection<ITrack>();
 
         private UPnP_SinkFunctions _UPnPSink = null;
         private UPnP_SourceFunctions _UPnPSource = null;
-        private UPnP_Setup setup;
+        private UPnP_Setup setup = null;
 
         public ObervHandler()
         {
-            subscribe();
-            setup.StartSinkDisco();
-            setup.StartSourceDisco();
+           // subscribe();
+           // setup.StartSinkDisco();
+            //setup.StartSourceDisco();
         }
 
         public void subscribe()
@@ -58,10 +59,10 @@ namespace XMLHandler
             switch (list[0].ParentID)
             {
                 case "plauQueue":
-                playQueue.updateplayqeue(list);
+                updateplayqeue(list);
                     break;
                 case "All":
-                    musicIndex.UpdateMusicindex(list);
+                    UpdateMusicindex(list);
                     break;
                 default:
                 break;
@@ -103,5 +104,25 @@ namespace XMLHandler
                 _UPnPSink.Previous();
         }
 
+        public void UpdateMusicindex(List<ITrack> listen)
+        {
+            musikindex.Clear();
+
+
+            foreach (var track in listen)
+            {
+                musikindex.Add(track);
+            }
+        }
+        public void updateplayqeue(List<ITrack> listen)
+        {
+            playqueue.Clear();
+
+            foreach (var track in listen)
+            {
+                playqueue.Add(track);
+            }
+
+        }
     }
 }
