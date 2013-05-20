@@ -12,6 +12,7 @@ namespace LocalDbTester
     {
         static void Main(string[] args)
         {
+            /*
             var dbh = new dbclases.LocalDbhandel();
 
             dbh.FillIP("12.2.12.12");
@@ -27,6 +28,7 @@ namespace LocalDbTester
 
             dbh.Album_Artist_Genre_Adders(mdata);
             dbh.fillMusicdata(mdata);
+            */
         }
     }
 }

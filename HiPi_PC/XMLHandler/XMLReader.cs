@@ -15,8 +15,8 @@ namespace XMLReader
         public List<Container> containerReader(string xml)
         {
             var xmlDocument = new XmlDocument();
-            xmlDocument.Load("container.xml");
-            //xmlDocument.LoadXml(xml);
+            //xmlDocument.Load("container.xml");
+            xmlDocument.LoadXml(xml);
 
             var tmpList = new List<Container>();
             
@@ -44,8 +44,8 @@ namespace XMLReader
         public List<ITrack> itemReader(string xml)
         {
             var doc = new XmlDocument();
-            doc.Load("item.xml");
-            //doc.LoadXml(xml);
+            //doc.Load("item.xml");
+            doc.LoadXml(xml);
 
             var tracks = new List<ITrack>();
 
