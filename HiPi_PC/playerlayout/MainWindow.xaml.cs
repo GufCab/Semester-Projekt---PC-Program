@@ -7,17 +7,20 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FileSender;
 using UPnP_CP;
 using XMLHandler;
 using playerlayout.Properties;
 using TemplateSync;
 using Containers;
 using XMLReader;
+using MessageBox = System.Windows.MessageBox;
 
 namespace playerlayout
 {
@@ -103,6 +106,17 @@ namespace playerlayout
         private void BtnStop_OnClick(object sender, RoutedEventArgs e)
         {
             observerHandler.Stop();
+        }
+
+        private void SendFile_OnClick(object sender, RoutedEventArgs e)
+        {
+            var dlg = new OpenFileDialog();
+            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                IClient cli = new Client();
+                cli.Run(dlg.FileName);
+            }
+
         }
     }
 }

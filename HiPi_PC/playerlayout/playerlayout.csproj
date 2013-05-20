@@ -150,6 +150,10 @@
       <Project>{56b100a5-1455-431c-86c4-ef6be036bbf4}</Project>
       <Name>Database</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FileSender\FileSender\FileSender\FileSender.csproj">
+      <Project>{15b963d9-412b-4aa6-bf77-fa53f5cbc438}</Project>
+      <Name>FileSender</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TemplateSync\TemplateSync.csproj">
       <Project>{db36984e-dc7b-4304-8e11-d875b7c8a121}</Project>
       <Name>TemplateSync</Name>
