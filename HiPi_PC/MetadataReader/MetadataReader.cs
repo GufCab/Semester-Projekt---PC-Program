@@ -65,12 +65,18 @@ namespace MetaReader.MetadataReader
             Genre = ArrHeader(16);
             LengthS = ConvertLength(ArrHeader(27));
             Lengthstring = ArrHeader(27);
-            Filepath = _folder;
+            Filepath = flipBackslashes(_folder);
         }
 
         private string SetItemName()
         {
             return _item2.Name + Path.GetExtension(_objFolder.GetDetailsOf(_item2, 180));
+        }
+
+        private string flipBackslashes(string name)
+        {
+            var _name = name.Replace('\\', '/');
+            return _name;
         }
 
         private int ConvertLength(string lenght)
