@@ -53,9 +53,9 @@
     <Compile Include="Tests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Client\Client.csproj">
-      <Project>{1747fcea-b25a-4268-a8e6-b88c30f31400}</Project>
-      <Name>Client</Name>
+    <ProjectReference Include="..\FileSender\FileSender.csproj">
+      <Project>{15b963d9-412b-4aa6-bf77-fa53f5cbc438}</Project>
+      <Name>FileSender</Name>
     </ProjectReference>
     <ProjectReference Include="..\Server\Server.csproj">
       <Project>{36de28dd-341b-4f6d-a811-32683491615e}</Project>

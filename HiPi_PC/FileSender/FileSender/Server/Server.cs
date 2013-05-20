@@ -86,14 +86,14 @@ namespace Server
             FileStream writeFileStream = new FileStream(LIB.extractFileName(fileName), FileMode.Create);
             BinaryWriter bWrite = new BinaryWriter(writeFileStream);
 
-            int bytesRead = 0;
+            uint bytesRead = 0;
             long remainingSize = Convert.ToInt32(_fileSize);
 
             do
             {
                 Console.WriteLine("Remaining number of bytes: {0}", remainingSize);
-                bytesRead = io.Read(fileData, 0, BUFSIZE); // Read max 1000 bytes from server via socket (actual value is placed in "bytesRead"
-                bWrite.Write(fileData, 0, bytesRead); // write the received bytes into file. the number of received bytes is placed in "bytesRead"
+                bytesRead = (uint)io.Read(fileData, 0, BUFSIZE); // Read max 10000 bytes from server via socket (actual value is placed in "bytesRead"
+                bWrite.Write(fileData, 0, (int)bytesRead); // write the received bytes into file. the number of received bytes is placed in "bytesRead"
                 remainingSize -= bytesRead;
             }
             while (remainingSize > 0);

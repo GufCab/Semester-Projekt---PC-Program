@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using Rhino.Mocks;
-using Server;
-using Client;
+using FileSender;
 
 namespace FileSender.Tests
 {
@@ -15,147 +15,24 @@ namespace FileSender.Tests
     public class ClientTests
     {
         [Test]
-        public void Client_SetIp_SetIpIsCalled()
+        public void Client_Run_RunIsCalled()
         {
             //Arrange
             var client = MockRepository.GenerateMock<IClient>();
+            FileInfo expected = new FileInfo("D:\\PTC.Mathcad.Prime.v2.0.X64-Lz0.zip");
 
             //Act
-            client.SetIp(Arg<string>.Is.Anything);
+            client.Run("D:\\PTC.Mathcad.Prime.v2.0.X64-Lz0.zip");
+            FileInfo actual =
+                new FileInfo(
+                    "C:\\Users\\Michael O\\Documents\\GitHub\\Semester-Projekt---PC-Program\\HiPi_PC\\FileSender\\FileSender\\Server\\bin\\Debug\\PTC.Mathcad.Prime.v2.0.X64-Lz0.zip");
 
             //Assert
-            client.AssertWasCalled(x => x.SetIp("10.193.7.239"));
-        }
-
-        [Test]
-        public void Client_SetIp_IpIsSetTo_10_192_7_239()
-        {
-            //Arrange
-            var client = new Client.Client("10.193.7.239");
-            const string expected = "10.193.7.239";
-
-            //Act
-            client.SetIp("10.193.7.239");
-
-            //Assert
-            Assert.AreEqual(expected, client._ip);
-        }
-
-        [Test]
-        public void Client_SetPort_SetPortIsCalled()
-        {
-            //Arrange
-            var client = MockRepository.GenerateMock<IClient>();
-
-            //Act
-            client.SetPort(Arg<int>.Is.Anything);
-
-            //Assert
-            client.AssertWasCalled(x => x.SetPort(9000));
-        }
-
-        [Test]
-        public void Client_SetPort_PortIsSetTo9000()
-        {
-            //Arrange
-            var client = new Client.Client("10.193.7.239");
-            const int expected = 9000;
-
-            //Act
-            client.SetPort(9000);
-
-            //Assert
-            Assert.AreEqual(expected, client._port);
-        }
-
-        [Test]
-        public void Client_SetFileName_SetFileNameIsCalled()
-        {
-            //Arrange
-            var client = MockRepository.GenerateMock<IClient>();
-
-            //Act
-            client.SetFileName(Arg<string>.Is.Anything);
-
-            //Assert
-            client.AssertWasCalled(x => x.SetFileName("Jump.mp3"));
-        }
-
-        [Test]
-        public void Client_SetFileName_FileNameIsSetTo_Jump_mp3()
-        {
-            //Arrange
-            var client = new Client.Client("10.193.7.239");
-            const string expected = "Jump.mp3";
-
-            //Act
-            client.SetFileName("Jump.mp3");
-
-            //Assert
-            Assert.AreEqual(expected, client._fileName);
-        }
-
-        //Not tested as 'NetworkStream', 'string' and 'int' doesn't have an interface
-        [Test]
-        [Ignore]
-        public void Client_SendFile_SendFileIsCalled()
-        {
-            //Arrange
-            var client = MockRepository.GenerateMock<IClient>();
-            var networkStream = MockRepository.GenerateMock<NetworkStream>();
-            var fileName = MockRepository.GeneratePartialMock<string>();
-            var fileSize = MockRepository.GeneratePartialMock<int>();
-
-            //Act
-            client.SendFile(fileName, fileSize, networkStream);
-
-            //Assert
-            client.AssertWasCalled(x => x.SendFile(Arg<string>.Is.Anything, Arg<Int64>.Is.Anything, Arg<NetworkStream>.Is.Anything));
-        }
-
-        [Test]
-        public void Client_SetUp_SetUpIsCalled()
-        {
-            //Arrange
-            var client = MockRepository.GenerateMock<IClient>();
-            client.SetIp("10.193.7.239");
-            client.SetPort(9000);
-
-            //Act
-            client.SetUp();
-
-
-            //Assert
-            client.AssertWasCalled(x => x.SetUp());
-        }
-
-        [Test]
-        public void Client_Dispose_DisposeIsCalled()
-        {
-            //Arrange
-            var client = MockRepository.GenerateMock<IClient>();
-
-            //Act
-            client.Dispose();
-
-            //Assert
-            client.AssertWasCalled(x => x.Dispose());
-        }
-
-        [Test]
-        public void Client_CloseSocket_CloseSocketIsCalled()
-        {
-            //Arrange
-            var client = MockRepository.GenerateMock<IClient>();
-
-            //Act
-            client.CloseSocket();
-
-            //Assert
-            client.AssertWasCalled(x => x.CloseSocket());
+            FileAssert.AreEqual(expected, actual);
         }
     }
 
+    [Ignore]
     [TestFixture]
     public class ServerTests
     {
