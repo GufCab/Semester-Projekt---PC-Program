@@ -65,7 +65,9 @@ namespace TemplateSync
 
             foreach (var path in ha)
             {
-                var indexer = new FileIndexer(path);
+                IFileIndexer indexer = new FolderAndFileReader();
+                indexer.SetIndexPath(path);
+                //var indexer = new FileIndexer(path);
 
                 List<IMetadataReader> mdata = indexer.GetMetaData();
 
