@@ -82,14 +82,14 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" MaxHeight="30">
+                <Button Grid.Column="0" x:Name="btnPrevious" MaxHeight="30" Click="BtnPrevious_OnClick">
                     <Image Source="Backward.png"/>
                 </Button>
                 <Button Grid.Column="2" MaxHeight="30" Click="Playbutton_OnClick" x:Name="playpause">
                     <Image x:Name="pap" Source="play.png"/>
                 </Button>
-                <Button Grid.Column="1" MaxHeight="30"><Image Source="Stop.png"></Image></Button>
-                <Button Grid.Column="3" MaxHeight="30">
+                <Button Grid.Column="1" x:Name="btnStop" MaxHeight="30" Click="BtnStop_OnClick"><Image Source="Stop.png"></Image></Button>
+                <Button Grid.Column="3" x:Name="btnNext" MaxHeight="30" Click="BtnNext_OnClick">
                     <Image Source="Farward.png"/>
                 </Button>
             </Grid>

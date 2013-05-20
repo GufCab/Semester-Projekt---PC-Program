@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UPnP_CP;
 using playerlayout.Properties;
 using TemplateSync;
 
@@ -24,11 +25,34 @@ namespace playerlayout
     {
         bool play = new bool();
         private Settings settingsw;
+
+        private UPnP_SinkFunctions _UPnPSink = null;
+        private UPnP_SourceFunctions _UPnPSource = null;
+        private UPnP_Setup setup;
+
         public MainWindow()
         {
             InitializeComponent();
             settingsw = new Settings();
             
+        }
+
+        public void subscribe()
+        {
+            setup.AddSinkEvent += getUPnPSink;
+            setup.AddSourceEvent += getUPnPSource;
+        }
+
+        public void getUPnPSink(UPnP_SinkFunctions e, EventArgs s)
+        {
+            _UPnPSink = e;
+            MessageBox.Show("Sink added");
+        }
+
+        public void getUPnPSource(UPnP_SourceFunctions e, EventArgs s)
+        {
+            _UPnPSource = e;
+            MessageBox.Show("Source added");
         }
 
         private void ButtonX_OnClick(object sender, RoutedEventArgs e)
@@ -40,6 +64,7 @@ namespace playerlayout
         {
             MessageBox.Show("Full Skærm");
         }
+
         private void ButtonMini_OnClick(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("minimize window");
@@ -53,6 +78,9 @@ namespace playerlayout
             {
                 pap.Source = new BitmapImage(new Uri("play.png", UriKind.Relative));
                 play = false;
+
+                if (_UPnPSink != null)
+                    _UPnPSink.Play();
             }
 
 
@@ -60,6 +88,9 @@ namespace playerlayout
             {
                 pap.Source = new BitmapImage(new Uri("Pause.png", UriKind.Relative));
                 play = true;
+
+                if (_UPnPSink != null)
+                    _UPnPSink.Pause();
             }
             
             
@@ -70,6 +101,25 @@ namespace playerlayout
             settingsw = new Settings();
             settingsw.Show();
 
+        }
+
+        private void BtnNext_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (_UPnPSink != null)
+                _UPnPSink.Next();
+        }
+
+        private void BtnPrevious_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (_UPnPSink != null)
+                _UPnPSink.Previous();
+        }
+
+
+        private void BtnStop_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (_UPnPSink != null)
+                _UPnPSink.Stop();
         }
     }
 }
