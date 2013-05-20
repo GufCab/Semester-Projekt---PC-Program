@@ -142,6 +142,10 @@
     <Resource Include="Backward.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Containers\Containers.csproj">
+      <Project>{50fdc392-2ca9-4114-9789-2c1b2aaaf766}</Project>
+      <Name>Containers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Database\Database.csproj">
       <Project>{56b100a5-1455-431c-86c4-ef6be036bbf4}</Project>
       <Name>Database</Name>
@@ -153,6 +157,10 @@
     <ProjectReference Include="..\UPnP_CP\UPnP_CP.csproj">
       <Project>{c0553d6d-b801-4d88-81cb-786496bf5143}</Project>
       <Name>UPnP_CP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XMLHandler\XMLHandler.csproj">
+      <Project>{a203a151-1893-4c72-8d53-28962537605f}</Project>
+      <Name>XMLHandler</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

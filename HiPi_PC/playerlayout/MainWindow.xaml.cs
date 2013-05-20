@@ -13,8 +13,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using UPnP_CP;
+using XMLHandler;
 using playerlayout.Properties;
 using TemplateSync;
+using Containers;
+using XMLReader;
 
 namespace playerlayout
 {
@@ -26,34 +29,19 @@ namespace playerlayout
         bool play = new bool();
         private Settings settingsw;
 
-        private UPnP_SinkFunctions _UPnPSink = null;
-        private UPnP_SourceFunctions _UPnPSource = null;
-        private UPnP_Setup setup;
+        
+        private ObervHandler observerHandler;
 
         public MainWindow()
         {
             InitializeComponent();
             settingsw = new Settings();
+            //observerHandler = new ObervHandler();
+            
             
         }
 
-        public void subscribe()
-        {
-            setup.AddSinkEvent += getUPnPSink;
-            setup.AddSourceEvent += getUPnPSource;
-        }
-
-        public void getUPnPSink(UPnP_SinkFunctions e, EventArgs s)
-        {
-            _UPnPSink = e;
-            MessageBox.Show("Sink added");
-        }
-
-        public void getUPnPSource(UPnP_SourceFunctions e, EventArgs s)
-        {
-            _UPnPSource = e;
-            MessageBox.Show("Source added");
-        }
+        
 
         private void ButtonX_OnClick(object sender, RoutedEventArgs e)
         {
@@ -79,8 +67,7 @@ namespace playerlayout
                 pap.Source = new BitmapImage(new Uri("play.png", UriKind.Relative));
                 play = false;
 
-                if (_UPnPSink != null)
-                    _UPnPSink.Play();
+                observerHandler.Play();
             }
 
 
@@ -89,8 +76,7 @@ namespace playerlayout
                 pap.Source = new BitmapImage(new Uri("Pause.png", UriKind.Relative));
                 play = true;
 
-                if (_UPnPSink != null)
-                    _UPnPSink.Pause();
+               observerHandler.Pause();
             }
             
             
@@ -105,21 +91,18 @@ namespace playerlayout
 
         private void BtnNext_OnClick(object sender, RoutedEventArgs e)
         {
-            if (_UPnPSink != null)
-                _UPnPSink.Next();
+            observerHandler.Next();
         }
 
         private void BtnPrevious_OnClick(object sender, RoutedEventArgs e)
         {
-            if (_UPnPSink != null)
-                _UPnPSink.Previous();
+            observerHandler.Previous();
         }
 
 
         private void BtnStop_OnClick(object sender, RoutedEventArgs e)
         {
-            if (_UPnPSink != null)
-                _UPnPSink.Stop();
+            observerHandler.Stop();
         }
     }
 }
