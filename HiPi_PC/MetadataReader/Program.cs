@@ -12,14 +12,23 @@ namespace MetadataReader
     {
         static void Main(string[] args)
         {
-            var index = new FileIndexer(@"C:\Users\Public\Music\Sample Music");
+            var index = new FolderAndFileReader();
+            index.SetIndexPath(@"C:\Users\Public\Music\Sample Music");
 
             List<IMetadataReader> hans = index.GetMetaData();
 
-
+            Console.WriteLine("Testing ItemName");
             foreach (var metadataReader in hans)
             {
+                
+                Console.WriteLine(metadataReader.ItemName);
+            }
+            Console.WriteLine("Testing Title");
+            foreach (var metadataReader in hans)
+            {
+                
                 Console.WriteLine(metadataReader.Title); 
+               
             }
         }
     }

@@ -41,11 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FileIndexer.cs" />
-    <Compile Include="IFileIndexer.cs" />
-    <Compile Include="IMetadataReader.cs" />
-    <Compile Include="Metadata.cs" />
-    <Compile Include="MetadataReader.cs" />
+    <Compile Include="ExtentionVerifier.cs" />
+    <Compile Include="FilesFolders.cs" />
+    <Compile Include="FolderAndFileReader.cs" />
+    <Compile Include="IFileIndexer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IMetadataReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IOitem.cs" />
+    <Compile Include="MetadataReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
