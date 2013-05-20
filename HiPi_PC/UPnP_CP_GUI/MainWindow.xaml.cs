@@ -39,11 +39,6 @@ namespace UPnP_CP_GUI
             setup.StartSinkDisco();
             setup.StartSourceDisco();
 
-            StreamReader sr = new StreamReader("item.xml");
-            string s  = sr.ReadToEnd();
-            XMLReaderPC reader = new XMLReaderPC();
-            reader.itemReader("");
-
             //btnSubscribe.IsEnabled = false;
         }
 

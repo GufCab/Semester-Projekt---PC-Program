@@ -21,18 +21,23 @@ namespace XMLHandler
         private UPnP_SourceFunctions _UPnPSource = null;
         private UPnP_Setup setup = null;
 
+        private XMLWriter xmlWriter;
+
         public ObervHandler()
         {
-           // subscribe();
-           // setup.StartSinkDisco();
-            //setup.StartSourceDisco();
+            xmlWriter = new XMLWriter();
+            setup = new UPnP_Setup();
+
+            subscribe();
+            setup.StartSinkDisco();
+            setup.StartSourceDisco();
         }
 
         public void subscribe()
         {
             setup.AddSinkEvent += getUPnPSink;
             setup.AddSourceEvent += getUPnPSource;
-            _UPnPSource.BrowseResult += getResult;
+            
         }
 
         public void getUPnPSink(UPnP_SinkFunctions e, EventArgs s)
@@ -43,8 +48,8 @@ namespace XMLHandler
         public void getUPnPSource(UPnP_SourceFunctions e, EventArgs s)
         {
             _UPnPSource = e;
-
-            _UPnPSource.Browse("All");
+            _UPnPSource.BrowseResult += getResult;
+            _UPnPSource.Browse("all");
         }
 
         public void getResult(object e, EventArgs s)
@@ -61,7 +66,7 @@ namespace XMLHandler
                 case "plauQueue":
                 updateplayqeue(list);
                     break;
-                case "All":
+                case "all":
                     UpdateMusicindex(list);
                     break;
                 default:
@@ -102,6 +107,15 @@ namespace XMLHandler
         {
             if (_UPnPSink != null)
                 _UPnPSink.Previous();
+        }
+
+        public void SetAVTransportURI(ITrack track)
+        {
+            string Path = track.Protocol + track.DeviceIP + track.Path + track.FileName;
+            string metaData = xmlWriter.ConvertITrackToXML(new List<ITrack>(){track});
+
+            if(_UPnPSink != null)
+                _UPnPSink.SetTransportURI(Path, metaData);
         }
 
         public void UpdateMusicindex(List<ITrack> listen)

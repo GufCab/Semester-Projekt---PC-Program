@@ -32,11 +32,7 @@ namespace UPnP_CP
             _ConnectionManager = cm;
             _RenderingControl = rc;
         }
-        
-        /// <summary>
-        /// Invoke play on device. Always uses PlaySpeed '1'
-        /// </summary>
-        /// <param name="instanceID"></param>
+
         public void Play()
         {
             _AVTransport.Play(InstanceID, CpAVTransport.Enum_TransportPlaySpeed._1);   

@@ -41,8 +41,11 @@ namespace playerlayout
         {
             InitializeComponent();
             settingsw = new Settings();
-            //observerHandler = new ObervHandler();
-            //Musikindex.ItemsSource = observerHandler.musicIndex;
+            observerHandler = new ObervHandler();
+
+            //observerHandler.UpdateMusicindex(list);
+            
+            Musikindex.ItemsSource = observerHandler.musikindex;
 
 
         }
