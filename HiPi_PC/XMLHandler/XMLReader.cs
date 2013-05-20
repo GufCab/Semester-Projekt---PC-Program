@@ -55,6 +55,8 @@ namespace XMLReader
             {
                 ITrack track = new Track();
 
+                track.ParentID = elm.GetAttribute("parentID");
+
                 XmlNodeList titleList = elm.GetElementsByTagName("upnp:album");
                 track.Album = titleList[0].InnerText;
 
