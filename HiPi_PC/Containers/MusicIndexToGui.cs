@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Containers
 {
-    class MusicIndexToGui : ObservableCollection<ITrack>
+    public class MusicIndexToGui : ObservableCollection<ITrack>
     {
         public void UpdateMusicindex(List<ITrack> listen)
         {
