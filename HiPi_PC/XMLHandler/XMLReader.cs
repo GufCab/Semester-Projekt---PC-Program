@@ -45,7 +45,7 @@ namespace XMLReader
         {
             var doc = new XmlDocument();
             doc.Load("item.xml");
-            //xmlDocument.LoadXml(xml);
+            //doc.LoadXml(xml);
 
             var tracks = new List<ITrack>();
 
@@ -67,18 +67,24 @@ namespace XMLReader
                 titleList = elm.GetElementsByTagName("upnp:genre");
                 track.Genre = titleList[0].InnerText;
 
-                //ToDo string split path and ip
+                titleList = elm.GetElementsByTagName("res");
+
                 string[] s = titleList[0].InnerText.Split('/');
 
-                titleList = elm.GetElementsByTagName("res");
-                track.Path = titleList[0].InnerText;
+                track.Protocol = s[0] + "//";
+                track.DeviceIP = s[2];
 
-                //ToDo string split path and ip
-                track.DeviceIP = titleList[0].InnerText;
+                track.FileName = s.Last();
 
+                string tmpString = "/";
+
+                for (int i = 3; i < s.Count() - 1; i++)
+                {
+                    tmpString = tmpString + s[i] + "/";
+                }
+
+                track.Path = tmpString;
                 track.Duration = titleList[0].Attributes["duration"].Value;
-                track.Protocol = titleList[0].Attributes["protocolInfo"].Value;
-
                 tracks.Add(track);
             }
             return tracks;
