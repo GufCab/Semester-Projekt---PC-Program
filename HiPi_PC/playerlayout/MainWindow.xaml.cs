@@ -31,17 +31,20 @@ namespace playerlayout
     {
         bool play = new bool();
         private Settings settingsw;
-
         
         private ObervHandler observerHandler;
+
+
+       
 
         public MainWindow()
         {
             InitializeComponent();
             settingsw = new Settings();
             //observerHandler = new ObervHandler();
-            
-            
+            Musikindex.ItemsSource = observerHandler.musicIndex;
+
+
         }
 
         

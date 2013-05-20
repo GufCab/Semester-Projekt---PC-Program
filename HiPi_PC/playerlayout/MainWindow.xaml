@@ -40,7 +40,7 @@
                 <RowDefinition Height="Auto" MinHeight="20"/>
             </Grid.RowDefinitions>
             <Label Grid.Row="0" Content="Musikindex"/>
-            <DataGrid Grid.Row="1" x:Name="Musikindex" ItemsSource="{Binding path=observerHandler.musicIndex}">her skal være</DataGrid>
+            <DataGrid Grid.Row="1" x:Name="Musikindex">her skal være</DataGrid>
 
         </Grid>
         <GridSplitter Grid.Column="2" Width="5" HorizontalAlignment ="Center" Background="Gray" Opacity=".1"/>

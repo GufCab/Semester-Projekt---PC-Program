@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 
+
 namespace Containers
 {
     public class MusicIndexToGui : ObservableCollection<ITrack>
@@ -12,11 +13,15 @@ namespace Containers
         {
             this.Clear();
 
+            
             foreach (var track in listen)
             {
                 Add(track);
             }
 
         }
+    
+    
+    
     }
 }
