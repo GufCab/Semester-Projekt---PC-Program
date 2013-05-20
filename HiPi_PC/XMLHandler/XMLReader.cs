@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -30,7 +29,7 @@ namespace XMLReader
                 XmlNodeList titleList = elm.GetElementsByTagName("dc:title");
                 container.title = titleList[0].InnerText;
 
-                titleList = elm.GetElementsByTagName("dc:title");
+                titleList = elm.GetElementsByTagName("upnp:class");
                 container.upnpClass = titleList[0].InnerText;
 
                 container.id = elm.GetAttribute("id");
@@ -69,6 +68,8 @@ namespace XMLReader
                 track.Genre = titleList[0].InnerText;
 
                 //ToDo string split path and ip
+                string[] s = titleList[0].InnerText.Split('/');
+
                 titleList = elm.GetElementsByTagName("res");
                 track.Path = titleList[0].InnerText;
 
@@ -76,7 +77,7 @@ namespace XMLReader
                 track.DeviceIP = titleList[0].InnerText;
 
                 track.Duration = titleList[0].Attributes["duration"].Value;
-                track.Duration = titleList[0].Attributes["protocolInfo"].Value;
+                track.Protocol = titleList[0].Attributes["protocolInfo"].Value;
 
                 tracks.Add(track);
             }

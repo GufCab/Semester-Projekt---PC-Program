@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using UPnP_CP;
+using XMLReader;
+using Containers;
 
 namespace UPnP_CP_GUI
 {
@@ -35,6 +37,9 @@ namespace UPnP_CP_GUI
             subscribe();
             setup.StartSinkDisco();
             setup.StartSourceDisco();
+
+            XMLReaderPC reader = new XMLReaderPC();
+            reader.itemReader("");
 
             //btnSubscribe.IsEnabled = false;
         }
