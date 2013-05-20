@@ -8,7 +8,7 @@ using MetaReader.MetadataReader;
 
 namespace MetaReader.FileIndexer
 {
-    class FolderAndFileReader : IFileIndexer
+    public class FolderAndFileReader : IFileIndexer
     {
 
         //from FileIndexer

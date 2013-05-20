@@ -7,7 +7,7 @@ using MetaReader.MetadataReader;
 
 namespace MetaReader.FileIndexer
 {
-    interface IFileIndexer
+    public interface IFileIndexer
     {
         List<string> FolderItemList { get; }
         void SetIndexPath(string folderpath);
