@@ -22,7 +22,7 @@ namespace XMLHandler
         private UPnP_Setup setup = null;
 
         private XMLWriter xmlWriter;
-
+        
         public ObervHandler()
         {
             xmlWriter = new XMLWriter();
@@ -37,12 +37,12 @@ namespace XMLHandler
         {
             setup.AddSinkEvent += getUPnPSink;
             setup.AddSourceEvent += getUPnPSource;
-            
         }
 
         public void getUPnPSink(UPnP_SinkFunctions e, EventArgs s)
         {
             _UPnPSink = e;
+           // _UPnPSink.GetVolume();
         }
 
         public void getUPnPSource(UPnP_SourceFunctions e, EventArgs s)
@@ -50,33 +50,46 @@ namespace XMLHandler
             _UPnPSource = e;
             _UPnPSource.BrowseResult += getResult;
             _UPnPSource.Browse("all");
+            
         }
 
-        public void getResult(object e, EventArgs s)
+        public void getResult(object e, UPnP_SourceFunctions.UPnPEventArgs s)
         {
-            Handle((string) e);
-        }
+            Handle(s.Data);  
+        } 
 
         public void Handle(string xml)
         {
-            var list = xmlr.itemReader(xml);
+            List<ITrack> list = xmlr.itemReader(xml);
 
             switch (list[0].ParentID)
             {
-                case "plauQueue":
-                updateplayqeue(list);
+                case "playQueue":
+                updateplayqueue(list);
                     break;
                 case "all":
                     UpdateMusicindex(list);
                     break;
                 default:
                 break;
-
-                    
-
             }
-            list.Clear();
+        }
 
+        public void UpdateMusicindex(List<ITrack> listen)
+        {
+            foreach (var track in listen)
+            {
+                musikindex.Add(track);
+            }
+        }
+        public void updateplayqueue(List<ITrack> listen)
+        {
+            playqueue.Clear();
+
+            foreach (var track in listen)
+            {
+                playqueue.Add(track);
+            }
         }
 
         public void Play()
@@ -118,25 +131,10 @@ namespace XMLHandler
                 _UPnPSink.SetTransportURI(Path, metaData);
         }
 
-        public void UpdateMusicindex(List<ITrack> listen)
+        public void GetVolume()
         {
-            musikindex.Clear();
-
-
-            foreach (var track in listen)
-            {
-                musikindex.Add(track);
-            }
-        }
-        public void updateplayqeue(List<ITrack> listen)
-        {
-            playqueue.Clear();
-
-            foreach (var track in listen)
-            {
-                playqueue.Add(track);
-            }
-
+            if (_UPnPSink != null)
+                _UPnPSink.GetVolume();
         }
     }
 }

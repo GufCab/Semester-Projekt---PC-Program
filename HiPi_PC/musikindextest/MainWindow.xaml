@@ -2,9 +2,13 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <DataGrid x:Name="Grid" ></DataGrid>
-        
-        
+    <Grid DataContext="ObervHandler">
+        <DataGrid x:Name="Grid">
+            <DataGrid.Columns>
+                <DataGridTextColumn></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
     </Grid>
 </Window>
