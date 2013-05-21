@@ -46,7 +46,6 @@ namespace playerlayout
             observerHandler = new ObervHandler();
             observerHandler.musikUpdateEvent += HandOnMusikUpdateEvent;
 
-            //observerHandler.UpdateMusicindex(list);
             
             Musikindex.ItemsSource = musikindex;
 
@@ -136,6 +135,11 @@ namespace playerlayout
                 cli.Run(dlg.FileName);
             }
 
+        }
+
+        private void SyncButtonClick(object sender, RoutedEventArgs e)
+        {
+            //settingsw.Sync.SyncPiDb();
         }
     }
 }

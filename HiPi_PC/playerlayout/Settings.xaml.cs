@@ -33,6 +33,7 @@ namespace playerlayout
 
     public partial class Settings : Window
     {
+        public SyncTemplate Sync = new SyncTemplate();
         class DialogData
         {
             private string reportFolder;
@@ -158,10 +159,10 @@ namespace playerlayout
 
             //string prefix = "Open File Dialog: ";
         }
-        //public SyncTemplate hans = new SyncTemplate();
+        //public SyncTemplate Sync = new SyncTemplate();
         private void SyncronizeButton_OnClick(object sender, RoutedEventArgs e)
         {
-            SyncTemplate hans = new SyncTemplate();
+            
             List<string> pathes = new List<string>();
 
             for (int i = 0; i < PathFolderListBox.Items.Count; ++i)
@@ -170,28 +171,12 @@ namespace playerlayout
 
             }
             
-            hans.SyncLocalDb(pathes);
-            hans.SyncPiDb();
+            Sync.SyncLocalDb(pathes);
+
+            Sync.SyncPiDb();
         }
         
-        /*
-        void openFileDialogButton_Click(object sender, RoutedEventArgs e)
-        {
-            OpenFileDialog dlg = new OpenFileDialog();
-            string prefix = "Open File Dialog: ";
-            if (((string)AddButton.Content).Length > prefix.Length)
-            {
-                dlg.FileName = ((string)AddButton.Content).Substring(prefix.Length);
-            }
-
-            if (dlg.ShowDialog() == true)
-            {
-                AddButton.Content = prefix + dlg.FileName;
-                //PathFolderTextBox.Text = dlg.FileName;
-                PathFolderListBox.Items.Add(dlg.FileName);
-            }
-        }
-         */
+        
     }
 }
         
