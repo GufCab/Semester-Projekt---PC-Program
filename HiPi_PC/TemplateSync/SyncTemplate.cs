@@ -52,31 +52,13 @@ namespace TemplateSync
             {
                 rellist.Add(MakeRelpathFromAbspath(s));                
             }
-            db.FillPath(rellist);
-            if (rellist.Count != 0)
-            hs(pathlist);
-            //her skal stå relpath begge steder men fileindexer kan ikke klare den
+            db.Fillrest(rellist);
+            //if (rellist.Count != 0)
 
 
         }
  
-        private void hs(List<string> ha)
-        {
 
-            foreach (var path in ha)
-            {
-                IFileIndexer indexer = new FolderAndFileReader();
-                indexer.SetIndexPath(path);
-                //var indexer = new FileIndexer(path);
-
-                List<IMetadataReader> mdata = indexer.GetMetaData();
-
-                db.Album_Artist_Genre_Adders(mdata);
-
-                db.fillMusicdata(mdata);
-            }
-
-        }
             
         private string MakeRelpathFromAbspath(string a)
         {
@@ -93,7 +75,7 @@ namespace TemplateSync
                 );
 
 
-            return  @"../"+relativePath;
+            return  @"..\"+relativePath;
         }
         
     }

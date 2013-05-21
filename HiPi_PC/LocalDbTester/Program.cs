@@ -12,23 +12,18 @@ namespace LocalDbTester
     {
         static void Main(string[] args)
         {
-            /*
+            
             var dbh = new dbclases.LocalDbhandel();
 
-            dbh.FillIP("12.2.12.12");
+            dbh.FillIP("192.168.1.11");
 
             var ha = new List<string>();
-            ha.Add(@"..\..\..\..\..\..\..\Public\Music\Sample Music");
+            ha.Add(@"C:\Users\Malmos\Documents\GitHub\Semester-Projekt---PC-Program\musikmappe");
 
-            dbh.FillPath(ha);
+            dbh.Fillrest(ha);
 
-            var index = new FileIndexer(@"C:\Users\Public\Music\Sample Music");
-
-            List<IMetadataReader> mdata = index.GetMetaData();
-
-            dbh.Album_Artist_Genre_Adders(mdata);
-            dbh.fillMusicdata(mdata);
-            */
+            
+            
         }
     }
 }

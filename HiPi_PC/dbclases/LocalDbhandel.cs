@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Database;
+using MetaReader.FileIndexer;
 using MetaReader.MetadataReader;
 
 
@@ -13,57 +14,59 @@ namespace dbclases
     {
         private string _GUIDDevice;
         
-        private void GetGUID()
+        private bool makeguuidifnodevice()
         {
             using (var musik = new pcindexEntities())
             {
                 var GUIDDevice = (from p in musik.devices select p).ToList();
 
-                if (GUIDDevice.Count !=0)
-                _GUIDDevice = GUIDDevice.ElementAt(0).UUIDDevice;
-               
+                if (GUIDDevice.Count == 0)
+                    return false;
+
+                _GUIDDevice = GUIDDevice[0].UUIDDevice;
+                return true;
+
             }
         }
 
-        private string _ip;
-
         public void FillIP(String myip)
         {
-            GetGUID();
-            _ip = myip;
-            // Check if id exist
+            
 
-            using (var musik = new pcindexEntities())
-            {
-                var dd = (from p in musik.devices select p).ToList();
 
-                if (dd.Count == 0)
+                if (!makeguuidifnodevice())
                 {
                     var mydevice = new device();
 
                     mydevice.UUIDDevice = Guid.NewGuid().ToString();
-                    mydevice.IP = _ip;
+                    _GUIDDevice = mydevice.UUIDDevice;
+                    mydevice.IP = myip+":8554";
                     mydevice.Protocol = "rtsp://";
                     mydevice.PCOwner = Environment.UserName;
-                    musik.devices.Add(mydevice);
-                    musik.SaveChanges();
-                }
-                else
-                {
-                    var mydevice = dd.ElementAt(0);
-                    if (_ip != mydevice.IP)
+
+                    using (var musik = new pcindexEntities())
                     {
-                        musik.devices.Remove(dd.ElementAt(0));
-                        musik.SaveChanges();
-                        Console.WriteLine("de er ens");
-                        mydevice.IP = _ip;
-                        mydevice.Protocol = "rtsp://";
-                        mydevice.PCOwner = Environment.UserName;
                         musik.devices.Add(mydevice);
                         musik.SaveChanges();
                     }
+                   
                 }
-            }
+                else
+                {
+                    using (var musik = new pcindexEntities())
+                    {
+                        var olddevice = (from p in musik.devices select p).ToList();
+                        if (myip != olddevice[0].IP)
+                        {
+                            olddevice[0].IP = myip+":8554";
+
+                            musik.SaveChanges();
+
+                        }                      
+                    }
+                  
+                }
+            
         }
 
         private List<string> Albumlist = new List<string>();
@@ -87,7 +90,7 @@ namespace dbclases
 
         }
 
-        public void FillPath(List<string> PathOndevice)
+        public void Fillrest(List<string> PathOndevice)
         {
             using (var musik = new pcindexEntities())
             {
@@ -95,8 +98,6 @@ namespace dbclases
                                          select p.FilePath1
 
                                         ).ToList();
-
-
 
                 PathOndevice = listcompair(PathOndevice, pathlist);
 
@@ -114,6 +115,16 @@ namespace dbclases
                         musik.filepaths.Add(path);
                         musik.SaveChanges();
 
+                        IFileIndexer indexer = new FolderAndFileReader();
+                        indexer.SetIndexPath(onpath);
+
+                        List<IMetadataReader> mdata = indexer.GetMetaData();
+
+                        Album_Artist_Genre_Adders(mdata);
+                        fillMusicdata(mdata,path.UUIDPath);
+
+
+
                     }
 
 
@@ -128,28 +139,31 @@ namespace dbclases
 
         private List<string> listcompair(List<string> list1, List<string> list2)
         {
-            List<string> afa = new List<string>();
+            List<string> toremove = new List<string>();
+
+            list1 = list1.Distinct().ToList();
 
 
-            foreach (var onPath in list1)
+            foreach (var s1 in list1)
             {
-                foreach (var dbpath in list2)
+                foreach (var s2 in list2)
                 {
-                    if (onPath == dbpath)
-                        afa.Add(onPath);
+                    if (s1 == s2)
+                        toremove.Add(s1);
                 }
             }
 
-            foreach (var faf in afa)
+            foreach (var faf in toremove)
             {
                 list1.Remove(faf);
             }
+            toremove.Clear();
 
             return list1;
         }
         
 
-        public void fillMusicdata(List<IMetadataReader> datalist)
+        public void fillMusicdata(List<IMetadataReader> datalist,string uuid)
         {
 
             using (var musik = new pcindexEntities())
@@ -165,7 +179,7 @@ namespace dbclases
                     nummer.Genre_Genre = metadata.Genre;
                     nummer.NrLenth = metadata.LengthS;
                     nummer.FileName = metadata.ItemName;
-                    nummer.FilePath_UUIDPath = UUIDONPath(metadata.Filepath);
+                    nummer.FilePath_UUIDPath = uuid;
                     nummer.UUIDMusikData = Guid.NewGuid().ToString();
 
                     musik.musicdatas.Add(nummer);
@@ -178,17 +192,6 @@ namespace dbclases
 
         }
         
-        private string UUIDONPath(string path)
-        {
-
-            using (var musik = new pcindexEntities())
-            {
-                var dd = (from p in musik.filepaths select p).ToList();
-                    return dd.ElementAt(0).UUIDPath;
-            }
-            
-        }
-
         private void Addgenre( List<string> liste)
         {
             //se if Genre exists if not add genre
@@ -199,8 +202,7 @@ namespace dbclases
                                          select p.Genre1
 
                                         ).ToList();
-
-                liste = listcompair(liste, list2);
+                  liste = listcompair(liste, list2);
 
                
 
@@ -226,6 +228,9 @@ namespace dbclases
         private void addArtist(List<string> liste)
         {
             // make artist list
+            // remove duplets
+          
+
 
             using (var musik = new pcindexEntities())
             {
