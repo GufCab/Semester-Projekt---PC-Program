@@ -25,16 +25,18 @@ namespace musikindextest
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ObervHandler hand;
+        private ObervHandler _hand;
+        public ObservableCollection<ITrack> musikindex = new ObservableCollection<ITrack>();
+        public ObservableCollection<ITrack> playqueue = new ObservableCollection<ITrack>();
 
         public MainWindow()
         {
             InitializeComponent();
-
-            hand = new ObervHandler();
+            
+            _hand = new ObervHandler();
+            _hand.musikUpdateEvent += HandOnMusikUpdateEvent;
 
             var fly = new Track();
-
 
             fly.Album = "fdfd";
             fly.Artist = "haha";
@@ -43,11 +45,29 @@ namespace musikindextest
             var list = new List<ITrack>();
             list.Add(fly);
 
-            hand.UpdateMusicindex(list);
+            //_hand.UpdateMusicindex(list);
 
-            Grid.ItemsSource = hand.musikindex;
+            Grid.ItemsSource = musikindex;
 
+            trackEventArgs t = new trackEventArgs(list);
+
+            //HandOnMusikUpdateEvent(_hand, t);
+            
+            
+        }
+
+        private void HandOnMusikUpdateEvent(object o, trackEventArgs tracks)
+        {
+            Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    foreach (var track in tracks._tracks)
+                    {
+                        musikindex.Add(track);
+                    }
+                }));
 
         }
+
+
     }
 }

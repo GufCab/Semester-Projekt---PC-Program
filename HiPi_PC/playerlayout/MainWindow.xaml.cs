@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,7 +35,8 @@ namespace playerlayout
         
         private ObervHandler observerHandler;
 
-
+        public ObservableCollection<ITrack> musikindex = new ObservableCollection<ITrack>();
+        public ObservableCollection<ITrack> playqueue = new ObservableCollection<ITrack>();
        
 
         public MainWindow()
@@ -42,15 +44,26 @@ namespace playerlayout
             InitializeComponent();
             settingsw = new Settings();
             observerHandler = new ObervHandler();
+            observerHandler.musikUpdateEvent += HandOnMusikUpdateEvent;
 
             //observerHandler.UpdateMusicindex(list);
             
-            Musikindex.ItemsSource = observerHandler.musikindex;
+            Musikindex.ItemsSource = musikindex;
 
 
         }
 
-        
+        private void HandOnMusikUpdateEvent(object o, trackEventArgs tracks)
+        {
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                foreach (var track in tracks._tracks)
+                {
+                    musikindex.Add(track);
+                }
+            }));
+
+        }
 
         private void ButtonX_OnClick(object sender, RoutedEventArgs e)
         {
