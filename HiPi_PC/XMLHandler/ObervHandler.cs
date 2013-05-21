@@ -14,14 +14,19 @@ namespace XMLHandler
     public class ObervHandler
     {
         XMLReaderPC xmlr = new XMLReaderPC();
-       public ObservableCollection<ITrack> musikindex = new ObservableCollection<ITrack>();
-       public ObservableCollection<ITrack> playqueue = new ObservableCollection<ITrack>();
+        //public ObservableCollection<ITrack> musikindex = new ObservableCollection<ITrack>();
+        //public ObservableCollection<ITrack> playqueue = new ObservableCollection<ITrack>();
 
         private UPnP_SinkFunctions _UPnPSink = null;
         private UPnP_SourceFunctions _UPnPSource = null;
         private UPnP_Setup setup = null;
 
         private XMLWriter xmlWriter;
+
+        public delegate void musikUpdateDel(object s, trackEventArgs tracks);
+
+        public event musikUpdateDel musikUpdateEvent;
+
         
         public ObervHandler()
         {
@@ -68,7 +73,9 @@ namespace XMLHandler
                 updateplayqueue(list);
                     break;
                 case "all":
-                    UpdateMusicindex(list);
+                    //UpdateMusicindex(list);
+                    var args = new trackEventArgs(list);
+                    musikUpdateEvent(this, args);
                     break;
                 default:
                 break;
@@ -77,19 +84,18 @@ namespace XMLHandler
 
         public void UpdateMusicindex(List<ITrack> listen)
         {
-            foreach (var track in listen)
-            {
-                musikindex.Add(track);
-            }
+            
         }
         public void updateplayqueue(List<ITrack> listen)
         {
+            /*
             playqueue.Clear();
 
             foreach (var track in listen)
             {
                 playqueue.Add(track);
             }
+            */
         }
 
         public void Play()
@@ -135,6 +141,16 @@ namespace XMLHandler
         {
             if (_UPnPSink != null)
                 _UPnPSink.GetVolume();
+        }
+    }
+
+    public class trackEventArgs : EventArgs
+    {
+        public List<ITrack> _tracks = new List<ITrack>();
+ 
+        public trackEventArgs(List<ITrack> tracks)
+        {
+            _tracks = tracks;
         }
     }
 }
