@@ -28,14 +28,12 @@ namespace UPnP_CP
         {
             _ConnectionManager = CM;
             _ContentDirectory = CD;
+
+            _ContentDirectory.OnResult_Browse += ContentDirectoryOnOnResultBrowse;
         }
 
         public void Browse(string s)
         {
-            //SourceStack.CpContentDirectory.Delegate_OnResult_Browse myDel = OnBrowseResult;
-            
-            _ContentDirectory.OnResult_Browse += ContentDirectoryOnOnResultBrowse;
-
             _ContentDirectory.Browse(s, CpContentDirectory.Enum_A_ARG_TYPE_BrowseFlag.BROWSEDIRECTCHILDREN, "*", 0, 0, "");
         }
 

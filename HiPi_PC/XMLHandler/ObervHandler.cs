@@ -59,8 +59,7 @@ namespace XMLHandler
             _UPnPSource = e;
             _UPnPSource.BrowseResult += getResult;
             _UPnPSource.Browse("all");
-            _UPnPSource.Browse("playQueue");
-            
+            _UPnPSource.Browse("playqueue");
         }
 
         public void getResult(object e, UPnP_SourceFunctions.UPnPEventArgs s)
@@ -75,11 +74,12 @@ namespace XMLHandler
 
             switch (list[0].ParentID)
             {
-                case "playQueue":
+                case "playqueue":
                     playQueueUpdateEvent(this, args);
                     break;
                 case "all":
                     musikUpdateEvent(this, args);
+                    //_UPnPSource.Browse("playqueue");
                     break;
                 default:
                 break;
@@ -139,6 +139,15 @@ namespace XMLHandler
 
             if(_UPnPSink != null)
                 _UPnPSink.SetTransportURI(Path, metaData);
+        }
+
+        public void SetNextAVTransportURI(ITrack track)
+        {
+            string Path = track.Protocol + track.DeviceIP + track.Path + track.FileName;
+            string metaData = xmlWriter.ConvertITrackToXML(new List<ITrack>() { track });
+
+            if (_UPnPSink != null)
+                _UPnPSink.SetNextTransportURI(Path, metaData);
         }
 
         public void GetVolume()

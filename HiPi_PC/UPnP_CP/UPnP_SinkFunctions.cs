@@ -80,5 +80,10 @@ namespace UPnP_CP
             _AVTransport.SetAVTransportURI(0, path, metaData);
         }
 
+        public void SetNextTransportURI(string path, string metaData)
+        {
+            //_AVTransport.SetNextAVTransportURI(0, path, metaData);
+        }
+
     }
 }
