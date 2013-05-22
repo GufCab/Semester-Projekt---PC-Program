@@ -31,6 +31,10 @@ namespace XMLHandler
 
         public event playQueueUpdateDel playQueueUpdateEvent;
 
+        public delegate void volumeDel(object s, VolumeEventArgs vol);
+
+        public event volumeDel VolumeUpdateEvent;
+
         
         public ObervHandler()
         {
@@ -51,9 +55,10 @@ namespace XMLHandler
         public void getUPnPSink(UPnP_SinkFunctions e, EventArgs s)
         {
             _UPnPSink = e;
-           // _UPnPSink.GetVolume();
+            _UPnPSink.getVolEvent += getVolEvent;
+            _UPnPSink.GetVolume();
         }
-
+        
         public void getUPnPSource(UPnP_SourceFunctions e, EventArgs s)
         {
             _UPnPSource = e;
@@ -65,7 +70,14 @@ namespace XMLHandler
         public void getResult(object e, UPnP_SourceFunctions.UPnPEventArgs s)
         {
             Handle(s.Data);  
-        } 
+        }
+
+        private void getVolEvent(object sender, UPnPEventArgs volEventArgs)
+        {
+            var args = new VolumeEventArgs(volEventArgs.Data);
+
+            VolumeUpdateEvent(this, args);
+        }
 
         public void Handle(string xml)
         {
@@ -170,6 +182,16 @@ namespace XMLHandler
         public trackEventArgs(List<ITrack> tracks)
         {
             _tracks = tracks;
+        }
+    }
+
+    public class VolumeEventArgs : EventArgs
+    {
+        public ushort Data { get; private set; }
+
+        public VolumeEventArgs(ushort data)
+        {
+            Data = data;
         }
     }
 }

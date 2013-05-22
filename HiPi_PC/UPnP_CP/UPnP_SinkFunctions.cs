@@ -24,6 +24,9 @@ namespace UPnP_CP
         private SinkStack.CpConnectionManager _ConnectionManager;
         private SinkStack.CpRenderingControl _RenderingControl;
 
+        public delegate void getVolumeDel(object sender, UPnPEventArgs e);
+        public event getVolumeDel getVolEvent;
+
         public uint InstanceID { get; private set; }
 
         public UPnP_SinkFunctions(CpAVTransport av, CpConnectionManager cm, CpRenderingControl rc)
@@ -32,6 +35,8 @@ namespace UPnP_CP
             _AVTransport = av;
             _ConnectionManager = cm;
             _RenderingControl = rc;
+
+            _RenderingControl.OnResult_GetVolume += RenderingControlOnOnResultGetVolume;
         }
 
         public void Play()
@@ -66,13 +71,15 @@ namespace UPnP_CP
 
         public void GetVolume()
         {
-            _RenderingControl.OnResult_GetVolume += RenderingControlOnOnResultGetVolume;
+            
             _RenderingControl.GetVolume(0, CpRenderingControl.Enum_A_ARG_TYPE_Channel.MASTER);
         }
 
         private void RenderingControlOnOnResultGetVolume(CpRenderingControl sender, uint instanceId, CpRenderingControl.Enum_A_ARG_TYPE_Channel channel, ushort currentVolume, UPnPInvokeException upnPInvokeException, object tag)
         {
-            throw new NotImplementedException();
+            UPnPEventArgs args = new UPnPEventArgs(currentVolume);
+
+            getVolEvent(this, args);
         }
 
         public void SetTransportURI(string path, string metaData)
@@ -85,5 +92,15 @@ namespace UPnP_CP
             //_AVTransport.SetNextAVTransportURI(0, path, metaData);
         }
 
+    }
+
+    public class UPnPEventArgs : EventArgs
+    {
+        public ushort Data { get; private set; }
+
+        public UPnPEventArgs(ushort data)
+        {
+            Data = data;
+        }
     }
 }

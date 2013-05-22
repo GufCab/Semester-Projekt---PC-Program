@@ -23,6 +23,7 @@ using TemplateSync;
 using Containers;
 using XMLReader;
 using MessageBox = System.Windows.MessageBox;
+using MouseEventArgs = System.Windows.Input.MouseEventArgs;
 
 namespace playerlayout
 {
@@ -48,13 +49,20 @@ namespace playerlayout
 
             observerHandler.musikUpdateEvent += HandOnMusikUpdateEvent;
             observerHandler.playQueueUpdateEvent += ObserverHandlerOnPlayQueueUpdateEvent;
-
+            observerHandler.VolumeUpdateEvent += ObserverHandlerOnVolumeUpdateEvent;
             
             dgPlayQueue.ItemsSource = playqueue;
             dgMusikindex.ItemsSource = musikindex;
-            
+            dgPlayQueue.IsReadOnly = true;
+            dgMusikindex.IsReadOnly = true;
+        }
 
-
+        private void ObserverHandlerOnVolumeUpdateEvent(object o, VolumeEventArgs vol)
+        {
+            Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    sliderVol.Value = Convert.ToDouble(vol.Data);
+                }));
         }
 
         private void ObserverHandlerOnPlayQueueUpdateEvent(object o, trackEventArgs tracks)
@@ -83,6 +91,8 @@ namespace playerlayout
             }));
         }
 
+        
+
         private void ButtonX_OnClick(object sender, RoutedEventArgs e)
         {
             Close();
@@ -104,17 +114,15 @@ namespace playerlayout
             {
                 pap.Source = new BitmapImage(new Uri("play.png", UriKind.Relative));
                 play = false;
-
-                observerHandler.Play();
             }
 
             else
             {
                 pap.Source = new BitmapImage(new Uri("Pause.png", UriKind.Relative));
                 play = true;
-
-               observerHandler.Pause();
             }
+
+            observerHandler.Pause();
         }
 
         private void Settings_OnClick(object sender, RoutedEventArgs e)
@@ -179,14 +187,15 @@ namespace playerlayout
             observerHandler.SetAVTransportURI((ITrack)result);
         }
 
-        private void Slider_ValueChanged_1(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            observerHandler.SetVolume(Convert.ToUInt16(e.NewValue));
-        }
-
         private void BtnRescan_OnClick(object sender, RoutedEventArgs e)
         {
             observerHandler = new ObervHandler();
+        }
+
+
+        private void SliderVol_OnPreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            observerHandler.SetVolume(Convert.ToUInt16(sliderVol.Value));
         }
 
     }
