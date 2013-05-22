@@ -161,5 +161,10 @@ namespace playerlayout
         {
             //settingsw.Sync.SyncPiDb();
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Environment.Exit(1);
+        }
     }
 }
