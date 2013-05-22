@@ -148,8 +148,7 @@ namespace playerlayout
                 var dlg = new OpenFileDialog();
                 if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    IClient cli = new Client("192.168.1.104");
-                    cli.Run(dlg.FileName);
+                    IClient cli = new Client(dlg.FileName, null);
                 }
             });
             thread.SetApartmentState(ApartmentState.STA);

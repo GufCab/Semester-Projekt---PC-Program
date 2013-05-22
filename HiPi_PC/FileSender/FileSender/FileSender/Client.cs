@@ -61,15 +61,18 @@ namespace FileSender
 
         }
 
-        public Client()
+        //For test-purpose
+        public Client(string fileName)
         {
             SetPort(9003);
+            Run(fileName);
         }
 
-        public Client(string ip)
+        public Client(string fileName, string ip)
         {
             SetIp(ip);
             SetPort(9003);
+            Run(fileName);
         }
 
         private void SendFileNameToServer()
@@ -169,7 +172,7 @@ namespace FileSender
             }
         }
 
-        public void Run(string path)
+        private void Run(string path)
         {
             try
             {
