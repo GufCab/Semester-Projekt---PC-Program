@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e74432fe32094522b324d11aa1120432" Name="Diagram1">
+      <Diagram DiagramId="591a38d04f6040e99439c284c8c7b783" Name="Diagram1">
         <EntityTypeShape EntityType="PiindexModel.Catagory" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="PiindexModel.Musik" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="PiindexModel.PIAlbum" Width="1.5" PointX="5.25" PointY="1.875" IsExpanded="true" />
