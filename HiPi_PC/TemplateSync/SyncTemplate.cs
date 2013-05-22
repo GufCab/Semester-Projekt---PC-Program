@@ -32,7 +32,6 @@ namespace TemplateSync
            live555 = new Live555Wrapper();
            _ip = live555.GetIP();
            
-        // tell Pi device is online
 
        }
       
