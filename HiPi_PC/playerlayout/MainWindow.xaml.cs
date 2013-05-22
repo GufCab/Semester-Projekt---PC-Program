@@ -164,7 +164,7 @@ namespace playerlayout
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            Environment.Exit(1);
+            Environment.Exit(0);
         }
     }
 }
