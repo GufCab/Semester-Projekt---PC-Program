@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -142,13 +143,18 @@ namespace playerlayout
 
         private void SendFile_OnClick(object sender, RoutedEventArgs e)
         {
-            var dlg = new OpenFileDialog();
-            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            var thread = new Thread(() =>
             {
-                IClient cli = new Client();
-                cli.Run(dlg.FileName);
-            }
-
+                var dlg = new OpenFileDialog();
+                if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    IClient cli = new Client("192.168.1.104");
+                    cli.Run(dlg.FileName);
+                }
+            });
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
+            thread.Join();
         }
 
         private void SyncButtonClick(object sender, RoutedEventArgs e)
