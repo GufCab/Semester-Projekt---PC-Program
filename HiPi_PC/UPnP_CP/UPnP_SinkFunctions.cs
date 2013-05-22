@@ -71,7 +71,6 @@ namespace UPnP_CP
 
         public void GetVolume()
         {
-            
             _RenderingControl.GetVolume(0, CpRenderingControl.Enum_A_ARG_TYPE_Channel.MASTER);
         }
 

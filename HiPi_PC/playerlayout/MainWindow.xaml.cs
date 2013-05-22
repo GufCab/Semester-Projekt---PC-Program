@@ -91,8 +91,6 @@ namespace playerlayout
             }));
         }
 
-        
-
         private void ButtonX_OnClick(object sender, RoutedEventArgs e)
         {
             Close();
@@ -189,6 +187,7 @@ namespace playerlayout
 
         private void BtnRescan_OnClick(object sender, RoutedEventArgs e)
         {
+            observerHandler = null;
             observerHandler = new ObervHandler();
         }
 
