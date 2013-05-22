@@ -33,7 +33,7 @@ namespace playerlayout
 
     public partial class Settings : Window
     {
-        public SyncTemplate Sync = new SyncTemplate();
+        public SyncTemplate Sync;
         class DialogData
         {
             private string reportFolder;
@@ -80,13 +80,13 @@ namespace playerlayout
             EnsureSkins();
             ApplySkin(NormalSkin);
             ChooseNormalSkin.Click += SkinChanged;
-            ChooseZurgSkin.Click += SkinChanged;
+            ChooseZergSkin.Click += SkinChanged;
             ChooseTerranSkin.Click += SkinChanged;
             ChooseProtossSkin.Click += SkinChanged;
 
         }
 
-        private static ResourceDictionary ZurgSkin;
+        private static ResourceDictionary ZergSkin;
         private static ResourceDictionary NormalSkin;
         private static ResourceDictionary TerranSkin;
         private static ResourceDictionary ProtossSkin;
@@ -98,8 +98,8 @@ namespace playerlayout
             NormalSkin = new ResourceDictionary();
             NormalSkin.Source = new Uri("Styles/NormalSkin.xaml", UriKind.Relative);
 
-            ZurgSkin = new ResourceDictionary();
-            ZurgSkin.Source = new Uri("Styles/ZurgSkin.xaml", UriKind.Relative);
+            ZergSkin = new ResourceDictionary();
+            ZergSkin.Source = new Uri("Styles/ZergSkin.xaml", UriKind.Relative);
 
             TerranSkin = new ResourceDictionary();
             TerranSkin.Source = new Uri("Styles/TerranSkin.xaml", UriKind.Relative);
@@ -112,8 +112,8 @@ namespace playerlayout
         private void SkinChanged(object o, EventArgs e)
         {
 
-            if (ChooseZurgSkin.IsChecked.Value)
-                ApplySkin(ZurgSkin);     
+            if (ChooseZergSkin.IsChecked.Value)
+                ApplySkin(ZergSkin);     
             else
             {
                 if (ChooseTerranSkin.IsChecked.Value)
@@ -162,7 +162,8 @@ namespace playerlayout
         //public SyncTemplate Sync = new SyncTemplate();
         private void SyncronizeButton_OnClick(object sender, RoutedEventArgs e)
         {
-            
+            Sync =new SyncTemplate();
+
             List<string> pathes = new List<string>();
 
             for (int i = 0; i < PathFolderListBox.Items.Count; ++i)
