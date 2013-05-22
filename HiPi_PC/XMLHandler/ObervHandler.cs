@@ -27,6 +27,10 @@ namespace XMLHandler
 
         public event musikUpdateDel musikUpdateEvent;
 
+        public delegate void playQueueUpdateDel(object s, trackEventArgs tracks);
+
+        public event playQueueUpdateDel playQueueUpdateEvent;
+
         
         public ObervHandler()
         {
@@ -55,6 +59,7 @@ namespace XMLHandler
             _UPnPSource = e;
             _UPnPSource.BrowseResult += getResult;
             _UPnPSource.Browse("all");
+            _UPnPSource.Browse("playQueue");
             
         }
 
@@ -66,15 +71,14 @@ namespace XMLHandler
         public void Handle(string xml)
         {
             List<ITrack> list = xmlr.itemReader(xml);
+            var args = new trackEventArgs(list);
 
             switch (list[0].ParentID)
             {
                 case "playQueue":
-                updateplayqueue(list);
+                    playQueueUpdateEvent(this, args);
                     break;
                 case "all":
-                    //UpdateMusicindex(list);
-                    var args = new trackEventArgs(list);
                     musikUpdateEvent(this, args);
                     break;
                 default:

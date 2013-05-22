@@ -70,7 +70,7 @@ namespace playerlayout
 
         private void load()
         {
-            using (TextReader TR = new StreamReader("pathList.txt"))
+            using (TextReader TR = new StreamReader("../../MusicPath/pathList.txt"))
             {
                 while (TR.Peek() != -1)
                 {
@@ -127,7 +127,7 @@ namespace playerlayout
             NormalSkin.Source = new Uri("Styles/NormalSkin.xaml", UriKind.Relative);
 
             ZergSkin = new ResourceDictionary();
-            ZergSkin.Source = new Uri("Styles/ZergSkin.xaml", UriKind.Relative);
+            ZergSkin.Source = new Uri("Styles/ZurgSkin.xaml", UriKind.Relative);
 
             TerranSkin = new ResourceDictionary();
             TerranSkin.Source = new Uri("Styles/TerranSkin.xaml", UriKind.Relative);

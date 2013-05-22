@@ -44,12 +44,25 @@ namespace playerlayout
             InitializeComponent();
             settingsw = new Settings();
             observerHandler = new ObervHandler();
+
             observerHandler.musikUpdateEvent += HandOnMusikUpdateEvent;
+            observerHandler.playQueueUpdateEvent += ObserverHandlerOnPlayQueueUpdateEvent;
 
             
             Musikindex.ItemsSource = musikindex;
 
 
+        }
+
+        private void ObserverHandlerOnPlayQueueUpdateEvent(object o, trackEventArgs tracks)
+        {
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                foreach (var track in tracks._tracks)
+                {
+                    playqueue.Add(track);
+                }
+            }));
         }
 
         private void HandOnMusikUpdateEvent(object o, trackEventArgs tracks)
@@ -61,8 +74,9 @@ namespace playerlayout
                     musikindex.Add(track);
                 }
             }));
-
         }
+
+
 
         private void ButtonX_OnClick(object sender, RoutedEventArgs e)
         {
