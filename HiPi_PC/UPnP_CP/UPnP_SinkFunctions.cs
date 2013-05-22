@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using OpenSource.UPnP;
 using SinkStack;
 
 namespace UPnP_CP
@@ -61,6 +62,17 @@ namespace UPnP_CP
         public void SetVolume(ushort desiredVolume)
         {
             _RenderingControl.SetVolume(0, CpRenderingControl.Enum_A_ARG_TYPE_Channel.MASTER, desiredVolume);
+        }
+
+        public void GetVolume()
+        {
+            _RenderingControl.OnResult_GetVolume += RenderingControlOnOnResultGetVolume;
+            _RenderingControl.GetVolume(0, CpRenderingControl.Enum_A_ARG_TYPE_Channel.MASTER);
+        }
+
+        private void RenderingControlOnOnResultGetVolume(CpRenderingControl sender, uint instanceId, CpRenderingControl.Enum_A_ARG_TYPE_Channel channel, ushort currentVolume, UPnPInvokeException upnPInvokeException, object tag)
+        {
+            throw new NotImplementedException();
         }
 
         public void SetTransportURI(string path, string metaData)

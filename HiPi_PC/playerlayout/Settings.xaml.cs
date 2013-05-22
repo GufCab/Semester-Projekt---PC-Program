@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,6 +34,7 @@ namespace playerlayout
 
     public partial class Settings : Window
     {
+        public SyncTemplate Sync;
         class DialogData
         {
             private string reportFolder;
@@ -63,6 +65,33 @@ namespace playerlayout
             RemoveButton.Click += RemoveButton_Click;
 
             skins_initialize();
+            load();
+        }
+
+        private void load()
+        {
+            using (TextReader TR = new StreamReader("pathList.txt"))
+            {
+                while (TR.Peek() != -1)
+                {
+                    string fileText = TR.ReadLine();
+                    PathFolderListBox.Items.Add(fileText);
+                }
+            }
+        }
+
+        private void save()
+        {
+            if (PathFolderListBox.Items.Count > 0)
+            {
+                using (TextWriter TW = new StreamWriter("pathList.txt"))
+                {
+                    foreach (var item in PathFolderListBox.Items)
+                    {
+                        TW.WriteLine(item);
+                    }
+                }
+            }
         }
 
         void RemoveButton_Click(object sender, RoutedEventArgs e)
@@ -79,13 +108,13 @@ namespace playerlayout
             EnsureSkins();
             ApplySkin(NormalSkin);
             ChooseNormalSkin.Click += SkinChanged;
-            ChooseZurgSkin.Click += SkinChanged;
+            ChooseZergSkin.Click += SkinChanged;
             ChooseTerranSkin.Click += SkinChanged;
             ChooseProtossSkin.Click += SkinChanged;
 
         }
 
-        private static ResourceDictionary ZurgSkin;
+        private static ResourceDictionary ZergSkin;
         private static ResourceDictionary NormalSkin;
         private static ResourceDictionary TerranSkin;
         private static ResourceDictionary ProtossSkin;
@@ -97,8 +126,8 @@ namespace playerlayout
             NormalSkin = new ResourceDictionary();
             NormalSkin.Source = new Uri("Styles/NormalSkin.xaml", UriKind.Relative);
 
-            ZurgSkin = new ResourceDictionary();
-            ZurgSkin.Source = new Uri("Styles/ZurgSkin.xaml", UriKind.Relative);
+            ZergSkin = new ResourceDictionary();
+            ZergSkin.Source = new Uri("Styles/ZergSkin.xaml", UriKind.Relative);
 
             TerranSkin = new ResourceDictionary();
             TerranSkin.Source = new Uri("Styles/TerranSkin.xaml", UriKind.Relative);
@@ -111,8 +140,8 @@ namespace playerlayout
         private void SkinChanged(object o, EventArgs e)
         {
 
-            if (ChooseZurgSkin.IsChecked.Value)
-                ApplySkin(ZurgSkin);     
+            if (ChooseZergSkin.IsChecked.Value)
+                ApplySkin(ZergSkin);     
             else
             {
                 if (ChooseTerranSkin.IsChecked.Value)
@@ -158,10 +187,11 @@ namespace playerlayout
 
             //string prefix = "Open File Dialog: ";
         }
-        //public SyncTemplate hans = new SyncTemplate();
+        //public SyncTemplate Sync = new SyncTemplate();
         private void SyncronizeButton_OnClick(object sender, RoutedEventArgs e)
         {
-            SyncTemplate hans = new SyncTemplate();
+            Sync =new SyncTemplate();
+
             List<string> pathes = new List<string>();
 
             for (int i = 0; i < PathFolderListBox.Items.Count; ++i)
@@ -170,28 +200,17 @@ namespace playerlayout
 
             }
             
-            hans.SyncLocalDb(pathes);
-            hans.SyncPiDb();
+            Sync.SyncLocalDb(pathes);
+
+            Sync.SyncPiDb();
+        }
+
+        private void Window_Closed_1(object sender, EventArgs e)
+        {
+            save();
         }
         
-        /*
-        void openFileDialogButton_Click(object sender, RoutedEventArgs e)
-        {
-            OpenFileDialog dlg = new OpenFileDialog();
-            string prefix = "Open File Dialog: ";
-            if (((string)AddButton.Content).Length > prefix.Length)
-            {
-                dlg.FileName = ((string)AddButton.Content).Substring(prefix.Length);
-            }
-
-            if (dlg.ShowDialog() == true)
-            {
-                AddButton.Content = prefix + dlg.FileName;
-                //PathFolderTextBox.Text = dlg.FileName;
-                PathFolderListBox.Items.Add(dlg.FileName);
-            }
-        }
-         */
+        
     }
 }
         
