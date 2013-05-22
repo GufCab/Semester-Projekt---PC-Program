@@ -20,6 +20,8 @@ namespace TemplateSync
         private Live555Wrapper live555;
         //private int _index;
 
+        private string _ip;
+
         public SyncTemplate()
         {
             Startup();
@@ -28,11 +30,9 @@ namespace TemplateSync
        public override void Startup()
        {
            live555 = new Live555Wrapper();
-           string ip = live555.GetIP();
-
-           db.FillIP(ip);
-          
-           // tell Pi device is online
+           _ip = live555.GetIP();
+           
+        // tell Pi device is online
 
        }
       
@@ -47,19 +47,17 @@ namespace TemplateSync
 
         public override async void SyncLocalDb(List<string> pathlist )
         {
+
+            db.FillIP(_ip);
             List<string> rellist = new List<string>();
             foreach (string s in pathlist)
             {
                 rellist.Add(MakeRelpathFromAbspath(s));                
             }
             db.Fillrest(rellist);
-            //if (rellist.Count != 0)
-
 
         }
- 
 
-            
         private string MakeRelpathFromAbspath(string a)
         {
 

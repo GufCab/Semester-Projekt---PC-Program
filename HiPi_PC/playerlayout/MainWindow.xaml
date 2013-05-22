@@ -29,7 +29,7 @@
             <TextBox Grid.Row="1" Text="Søgefelt"/>
             <Button Grid.Row="3" Content="[PI] Send File" Click="SendFile_OnClick"/>
             <Button Grid.Row="4" Content="Settings" Click="Settings_OnClick"/>
-            <Button Grid.Row="5" Content="Sync"/>
+            <Button Grid.Row="5" Content="Sync" Click="SyncButtonClick"/>
         </Grid>
         
         <Grid Grid.Column="1">
@@ -40,7 +40,7 @@
                 <RowDefinition Height="Auto" MinHeight="20"/>
             </Grid.RowDefinitions>
             <Label Grid.Row="0" Content="Musikindex"/>
-            <DataGrid Grid.Row="1" x:Name="Musikindex"></DataGrid>
+            <DataGrid Grid.Row="1" x:Name="Musikindex" ></DataGrid>
 
         </Grid>
         <GridSplitter Grid.Column="2" Width="5" HorizontalAlignment ="Center" Background="Gray" Opacity=".1"/>

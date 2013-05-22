@@ -23,7 +23,7 @@
             
             <ListView Grid.Row="1">
                 <RadioButton Content="Normal" IsChecked="True" x:Name="ChooseNormalSkin"> </RadioButton>
-                <RadioButton Content="Zurg" x:Name="ChooseZurgSkin" ></RadioButton>
+                <RadioButton Content="Zerg" x:Name="ChooseZergSkin" ></RadioButton>
                 <RadioButton Content="Terran" x:Name="ChooseTerranSkin"></RadioButton>
                 <RadioButton Content="Protoss" x:Name="ChooseProtossSkin" ></RadioButton>
                 
