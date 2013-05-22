@@ -8,6 +8,6 @@ namespace FileSender
 {
     public interface IClient
     {
-        void Run(string path);
+        
     }
 }

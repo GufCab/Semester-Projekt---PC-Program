@@ -13,7 +13,7 @@ namespace FileSender
         /// <summary>
         /// The BUFSIZE.
         /// </summary>
-        const int BUFSIZE = 10000;
+        const int BUFSIZE = 1000;
 
         public TcpClient _clientSocket { get; private set; }
         public NetworkStream _serverStream { get; private set; }
@@ -42,7 +42,7 @@ namespace FileSender
         {
 
             _clientSocket = new TcpClient(); //Create and initialize TCPClient
-            
+
             try
             {
                 _clientSocket.Connect(_ip, _port); //Connect to server
@@ -57,19 +57,22 @@ namespace FileSender
             {
                 Console.WriteLine(" >> TCP client started - connected to {0} on port {1}...", _ip, _port);  //Tell user that client is started on chosen port
             }
-            
+
 
         }
 
-        public Client()
+        //For test-purpose
+        public Client(string fileName)
         {
             SetPort(9003);
+            Run(fileName);
         }
 
-        public Client(string ip)
+        public Client(string fileName, string ip)
         {
             SetIp(ip);
             SetPort(9003);
+            Run(fileName);
         }
 
         private void SendFileNameToServer()
@@ -124,20 +127,25 @@ namespace FileSender
 
                 Int32 remainingSize = Convert.ToInt32(_fileSize);
 
-
-                do
+                if (remainingSize > BUFSIZE)
                 {
-                    fileData = bReader.ReadBytes(BUFSIZE);
-                    io.Write(fileData, 0, BUFSIZE);
-                    remainingSize -= BUFSIZE;
-                } while (remainingSize > BUFSIZE);
+                    do
+                    {
+                        fileData = bReader.ReadBytes(BUFSIZE);
+                        io.Write(fileData, 0, BUFSIZE);
+                        remainingSize -= BUFSIZE;
+                    } while (remainingSize > BUFSIZE);
+                }
 
-                do
+                if (remainingSize < BUFSIZE)
                 {
-                    fileData = bReader.ReadBytes(remainingSize);
-                    io.Write(fileData, 0, remainingSize);
-                    remainingSize -= remainingSize;
-                } while (remainingSize > 0);
+                    do
+                    {
+                        fileData = bReader.ReadBytes(remainingSize);
+                        io.Write(fileData, 0, remainingSize);
+                        remainingSize -= remainingSize;
+                    } while (remainingSize > 0);
+                }
 
                 openFileStream.Flush();
                 bReader.Close();
@@ -164,23 +172,23 @@ namespace FileSender
             }
         }
 
-        public void Run(string path)
+        private void Run(string path)
         {
             try
             {
-                do
+                if (_ip == null)
                 {
-                        var clientIp = LocalIpAddress();
-                        SetIp(clientIp);
-                        Console.WriteLine("Client started...");
-                        SetUp();
-                        Console.Write("Set file to send: ");
-                        var fileName = path;
-                        SetFileName(@fileName);
-                        Console.WriteLine();
-                        SendFile(fileName, Convert.ToInt32(_fileSize), _serverStream);
-                        CloseSocket();
-                } while (true);
+                    var clientIp = LocalIpAddress(); //"10.193.12.93";
+                    SetIp(clientIp);
+                }
+                Console.WriteLine("Client started...");
+                SetUp();
+                Console.Write("Set file to send: ");
+                var fileName = path;
+                SetFileName(@fileName);
+                Console.WriteLine();
+                SendFile(fileName, Convert.ToInt32(_fileSize), _serverStream);
+                CloseSocket();
             }
             catch (Exception exception)
             {
