@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -64,6 +65,33 @@ namespace playerlayout
             RemoveButton.Click += RemoveButton_Click;
 
             skins_initialize();
+            load();
+        }
+
+        private void load()
+        {
+            using (TextReader TR = new StreamReader("pathList.txt"))
+            {
+                while (TR.Peek() != -1)
+                {
+                    string fileText = TR.ReadLine();
+                    PathFolderListBox.Items.Add(fileText);
+                }
+            }
+        }
+
+        private void save()
+        {
+            if (PathFolderListBox.Items.Count > 0)
+            {
+                using (TextWriter TW = new StreamWriter("pathList.txt"))
+                {
+                    foreach (var item in PathFolderListBox.Items)
+                    {
+                        TW.WriteLine(item);
+                    }
+                }
+            }
         }
 
         void RemoveButton_Click(object sender, RoutedEventArgs e)
@@ -175,6 +203,11 @@ namespace playerlayout
             Sync.SyncLocalDb(pathes);
 
             Sync.SyncPiDb();
+        }
+
+        private void Window_Closed_1(object sender, EventArgs e)
+        {
+            save();
         }
         
         
