@@ -155,6 +155,12 @@ namespace XMLHandler
             if (_UPnPSink != null)
                 _UPnPSink.GetVolume();
         }
+
+        public void SetVolume(uint vol)
+        {
+            if (_UPnPSink != null)
+                _UPnPSink.SetVolume((ushort) vol);
+        }
     }
 
     public class trackEventArgs : EventArgs

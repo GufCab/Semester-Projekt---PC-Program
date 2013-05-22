@@ -36,8 +36,8 @@ namespace playerlayout
         
         private ObervHandler observerHandler;
 
-        public ObservableCollection<ITrack> musikindex = new ObservableCollection<ITrack>();
-        public ObservableCollection<ITrack> playqueue = new ObservableCollection<ITrack>();
+        public MusicIndexToGui musikindex = new MusicIndexToGui();
+        public PlayQueueToGui playqueue = new PlayQueueToGui();
        
 
         public MainWindow()
@@ -50,7 +50,9 @@ namespace playerlayout
             observerHandler.playQueueUpdateEvent += ObserverHandlerOnPlayQueueUpdateEvent;
 
             
-            Musikindex.ItemsSource = musikindex;
+            dgPlayQueue.ItemsSource = playqueue;
+            dgMusikindex.ItemsSource = musikindex;
+            
 
 
         }
@@ -59,6 +61,8 @@ namespace playerlayout
         {
             Dispatcher.BeginInvoke(new Action(() =>
             {
+                playqueue.Clear();
+
                 foreach (var track in tracks._tracks)
                 {
                     playqueue.Add(track);
@@ -70,14 +74,14 @@ namespace playerlayout
         {
             Dispatcher.BeginInvoke(new Action(() =>
             {
+                musikindex.Clear();
+
                 foreach (var track in tracks._tracks)
                 {
                     musikindex.Add(track);
                 }
             }));
         }
-
-
 
         private void ButtonX_OnClick(object sender, RoutedEventArgs e)
         {
@@ -96,8 +100,6 @@ namespace playerlayout
 
         private void Playbutton_OnClick(object sender, RoutedEventArgs e)
         {
-            
-
             if (play)
             {
                 pap.Source = new BitmapImage(new Uri("play.png", UriKind.Relative));
@@ -106,7 +108,6 @@ namespace playerlayout
                 observerHandler.Play();
             }
 
-
             else
             {
                 pap.Source = new BitmapImage(new Uri("Pause.png", UriKind.Relative));
@@ -114,15 +115,12 @@ namespace playerlayout
 
                observerHandler.Pause();
             }
-            
-            
         }
 
         private void Settings_OnClick(object sender, RoutedEventArgs e)
         {
             settingsw = new Settings();
             settingsw.Show();
-
         }
 
         private void BtnNext_OnClick(object sender, RoutedEventArgs e)
@@ -165,5 +163,31 @@ namespace playerlayout
         {
             Environment.Exit(0);
         }
+
+        private void DgMusikindex_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var result = dgMusikindex.SelectedItem;
+
+            observerHandler.SetNextAVTransportURI((ITrack)result);
+            //observerHandler.SetAVTransportURI((ITrack)result);
+        }
+
+        private void DgPlayQueue_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var result = dgPlayQueue.SelectedItem;
+
+            observerHandler.SetAVTransportURI((ITrack)result);
+        }
+
+        private void Slider_ValueChanged_1(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            observerHandler.SetVolume(Convert.ToUInt16(e.NewValue));
+        }
+
+        private void BtnRescan_OnClick(object sender, RoutedEventArgs e)
+        {
+            observerHandler = new ObervHandler();
+        }
+
     }
 }

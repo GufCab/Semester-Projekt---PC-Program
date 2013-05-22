@@ -7,17 +7,17 @@ namespace Containers
 {
     public interface ITrack
     {
+        string Title { get; set; }
+        string Artist { get; set; }
+        string Album { get; set; }
+        string Genre { get; set; }
+        string Duration { get; set; }
+
         string Path { get; set; }       //mappestruktur ifht live555
         string DeviceIP { get; set; }
         string FileName { get; set; }   //ex Jump.mp3
         string Protocol { get; set; }   //ex rtsp://
         string ParentID { get; set; }
-
-        string Title { get; set; }
-        string Duration { get; set; }
-        string Artist { get; set; }
-        string Album { get; set; }
-        string Genre { get; set; }
     }
 
     public class Track: ITrack

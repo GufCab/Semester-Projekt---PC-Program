@@ -17,13 +17,16 @@
             <ColumnDefinition Width="Auto" MinWidth="75"/>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0" Background="SkyBlue">
             <Grid.RowDefinitions>
                 <RowDefinition MinHeight="25" Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -31,9 +34,13 @@
             </Grid.RowDefinitions>
             <Image Source="Hipiuden hvid.png"></Image>
             <TextBox Grid.Row="1" Text="Søgefelt"/>
-            <Button Grid.Row="3" Content="[PI] Send File" Click="SendFile_OnClick"/>
-            <Button Grid.Row="4" Content="Settings" Click="Settings_OnClick"/>
-            <Button Grid.Row="5" Content="Sync" Click="SyncButtonClick"/>
+            <Label Grid.Row="2" Content="Volume" Margin="0,0,0,-5"/>
+            <Slider Grid.Row="3" ValueChanged="Slider_ValueChanged_1" VerticalAlignment="Bottom" />
+            
+            <Button Grid.Row="5" Content="[PI] Send File" Click="SendFile_OnClick"/>
+            <Button Grid.Row="6" Content="Settings" Click="Settings_OnClick" Margin="0,0,0,0"/>
+            <Button Grid.Row="7" Content="Sync" Click="SyncButtonClick"/>
+            <Button Grid.Row="8" Content="Rescan" x:Name="btnRescan" Click="BtnRescan_OnClick"></Button>
         </Grid>
         
         <Grid Grid.Column="1">
@@ -44,13 +51,7 @@
                 <RowDefinition Height="Auto" MinHeight="20"/>
             </Grid.RowDefinitions>
             <Label Grid.Row="0" Content="Musikindex"/>
-            <DataGrid Grid.Row="1" ItemsSource= "{Binding }"
-                      IsSynchronizedWithCurrentItem="True"
-                     SelectedIndex="{Binding Path=CurrentIndex}">
-                
-            </DataGrid>
-        
-            
+            <DataGrid Grid.Row="1" x:Name="dgMusikindex" MouseDoubleClick="DgMusikindex_OnMouseDoubleClick"/>
         </Grid>
         <GridSplitter Grid.Column="2" Width="5" HorizontalAlignment ="Center" Background="Gray" Opacity=".1"/>
         <Grid Grid.Column="3">
@@ -74,7 +75,7 @@
                 <Button Grid.Column="3" Margin="2" MinWidth="15" Background="Gold" Click="ButtonM_OnClick" Content="Open"/>
                 <Button Grid.Column="4" Margin="2" MinWidth="15" Background="Red" Click="ButtonX_OnClick " Content="Slet"/>
             </Grid>
-            <DataGrid Grid.Row="1"  ></DataGrid>
+            <DataGrid Grid.Row="1" x:Name="dgPlayQueue" MouseDoubleClick="DgPlayQueue_OnMouseDoubleClick"></DataGrid>
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"></ColumnDefinition>
