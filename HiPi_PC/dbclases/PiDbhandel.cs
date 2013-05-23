@@ -27,12 +27,6 @@ namespace dbclases
            {
                if (!CheckIfDeviceExists())
                {
-                   List<string> pathuuid;
-                   using (var musik = new pcindexEntities())
-                   {
-                       pathuuid = (from p in musik.devices select p.UUIDDevice).ToList();
-                   }
-
                    List<device> jaja;
                    using (var musik = new pcindexEntities())
                    {
@@ -72,6 +66,14 @@ namespace dbclases
                jaja = (from p in musik.devices select p).ToList();
            }
 
+           var my = jaja[0];
+           using (var pimusik = new PiindexEntities())
+           {
+               var change = (from p in pimusik.PIDevices where p.UUIDDevice == my.UUIDDevice select p).ToList();
+               change[0].IP = my.IP;
+               pimusik.SaveChanges();
+
+           }
 
        }
 
