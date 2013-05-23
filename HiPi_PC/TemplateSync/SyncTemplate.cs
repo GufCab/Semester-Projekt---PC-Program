@@ -68,11 +68,10 @@ namespace TemplateSync
             Uri.UnescapeDataString(
                 from.MakeRelativeUri(to)
                     .ToString()
-                    .Replace('/', Path.DirectorySeparatorChar)
                 );
-
-
-            return  @"..\"+relativePath;
+            relativePath = "../" + relativePath;
+            relativePath = relativePath.Replace('/', Path.DirectorySeparatorChar);
+            return  relativePath;
         }
         
     }
