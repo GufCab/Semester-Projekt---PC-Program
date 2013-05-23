@@ -48,8 +48,8 @@ namespace UPnP_CP
             if (d.FriendlyName == "HiPi - Sink")
             {
                 UPnP_SinkFunctions func = new UPnP_SinkFunctions(
-                    new SinkStack.CpAVTransport(d.GetServices(SinkStack.CpAVTransport.SERVICE_NAME)[0]), null,
-                    //new SinkStack.CpConnectionManager(d.GetServices(SinkStack.CpConnectionManager.SERVICE_NAME)[0]),
+                    new SinkStack.CpAVTransport(d.GetServices(SinkStack.CpAVTransport.SERVICE_NAME)[0]), 
+                    new SinkStack.CpConnectionManager(d.GetServices(SinkStack.CpConnectionManager.SERVICE_NAME)[0]),
                     new SinkStack.CpRenderingControl(d.GetServices(SinkStack.CpRenderingControl.SERVICE_NAME)[0]));
 
                 AddSinkEvent(func, null);

@@ -23,17 +23,20 @@ namespace XMLHandler
 
         private XMLWriter xmlWriter;
 
-        public delegate void musikUpdateDel(object s, trackEventArgs tracks);
-
+        public delegate void musikUpdateDel(object s, MyEventArgs<List<ITrack>> tracks);
         public event musikUpdateDel musikUpdateEvent;
 
-        public delegate void playQueueUpdateDel(object s, trackEventArgs tracks);
-
+        public delegate void playQueueUpdateDel(object s, MyEventArgs<List<ITrack>> tracks);
         public event playQueueUpdateDel playQueueUpdateEvent;
 
-        public delegate void volumeDel(object s, VolumeEventArgs vol);
-
+        public delegate void volumeDel(object s, MyEventArgs<ushort> vol);
         public event volumeDel VolumeUpdateEvent;
+
+        public delegate void getPositionDel(object sender, MyEventArgs<List<ushort>> e);
+        public event getPositionDel getPositionEvent;
+
+        public delegate void getIPDel(object sender, MyEventArgs<string> e);
+        public event getIPDel getIPEvent1;
 
         
         public ObervHandler()
@@ -56,7 +59,9 @@ namespace XMLHandler
         {
             _UPnPSink = e;
             _UPnPSink.getVolEvent += getVolEvent;
+            _UPnPSink.getPositionEvent += getPosEvent;
             _UPnPSink.GetVolume();
+            _UPnPSink.GetPosition();
         }
         
         public void getUPnPSource(UPnP_SourceFunctions e, EventArgs s)
@@ -67,22 +72,47 @@ namespace XMLHandler
             _UPnPSource.Browse("playqueue");
         }
 
-        public void getResult(object e, UPnP_SourceFunctions.UPnPEventArgs s)
+        public void getResult(object e, UPnP_SourceFunctions.SourceEventArgs s)
         {
-            Handle(s.Data);  
+            Handle(s._data);  
         }
 
-        private void getVolEvent(object sender, UPnPEventArgs volEventArgs)
+        private void getVolEvent(object sender, SinkEventArgs<ushort> volEventArgs)
         {
-            var args = new VolumeEventArgs(volEventArgs.Data);
+            var args = new MyEventArgs<ushort>(volEventArgs._data);
 
             VolumeUpdateEvent(this, args);
+        }
+
+        private void getPosEvent(object sender, SinkEventArgs<List<ushort>> posEventArgs)
+        {
+            //var args = new MyEventArgs<ushort>(posEventArgs._data);
+
+            //getPositionEvent(this, args);
+
+            var list = new List<ushort> { posEventArgs._data[0], posEventArgs._data[1] };
+
+            MyEventArgs<List<ushort>> args = new MyEventArgs<List<ushort>>(list);
+
+            getPositionEvent(this, args);
+        }
+
+        private void getIPEvent(object sender, SinkEventArgs<string> ipEventArgs)
+        {
+            var args = new MyEventArgs<string>(ipEventArgs._data);
+
+            getIPEvent1(this, args);
+        }
+
+        public void getIP()
+        {
+            _UPnPSink.getIPEvent += getIPEvent;
         }
 
         public void Handle(string xml)
         {
             List<ITrack> list = xmlr.itemReader(xml);
-            var args = new trackEventArgs(list);
+            var args = new MyEventArgs<List<ITrack>>(list);
 
             switch (list[0].ParentID)
             {
@@ -96,22 +126,6 @@ namespace XMLHandler
                 default:
                 break;
             }
-        }
-
-        public void UpdateMusicindex(List<ITrack> listen)
-        {
-            
-        }
-        public void updateplayqueue(List<ITrack> listen)
-        {
-            /*
-            playqueue.Clear();
-
-            foreach (var track in listen)
-            {
-                playqueue.Add(track);
-            }
-            */
         }
 
         public void Play()
@@ -173,25 +187,33 @@ namespace XMLHandler
             if (_UPnPSink != null)
                 _UPnPSink.SetVolume((ushort) vol);
         }
-    }
 
-    public class trackEventArgs : EventArgs
-    {
-        public List<ITrack> _tracks = new List<ITrack>();
- 
-        public trackEventArgs(List<ITrack> tracks)
+        public void GetPosition()
         {
-            _tracks = tracks;
+            if (_UPnPSink != null)
+                _UPnPSink.GetPosition();
+        }
+
+        public void SetPosition(ushort pos)
+        {
+            if (_UPnPSink != null)
+                _UPnPSink.SetPosition(pos);
+        }
+
+        public void GetIPaddress()
+        {
+            if (_UPnPSink != null)
+                _UPnPSink.GetIpAddress();
         }
     }
 
-    public class VolumeEventArgs : EventArgs
+    public class MyEventArgs<T> : EventArgs
     {
-        public ushort Data { get; private set; }
+        public T _data { get; private set; }
 
-        public VolumeEventArgs(ushort data)
+        public MyEventArgs(T data)
         {
-            Data = data;
+            _data = data;
         }
     }
 }

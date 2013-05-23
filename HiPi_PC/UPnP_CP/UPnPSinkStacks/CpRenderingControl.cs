@@ -27,69 +27,37 @@ namespace SinkStack
            }
        }
 
-       public delegate void StateVariableModifiedHandler_LastChange(CpRenderingControl sender, System.String NewValue);
-       private WeakEvent OnStateVariable_LastChange_Event = new WeakEvent();
-       public event StateVariableModifiedHandler_LastChange OnStateVariable_LastChange
-       {
-			add{OnStateVariable_LastChange_Event.Register(value);}
-			remove{OnStateVariable_LastChange_Event.UnRegister(value);}
-       }
-       protected void LastChange_ModifiedSink(UPnPStateVariable Var, object NewValue)
-       {
-            OnStateVariable_LastChange_Event.Fire(this, LastChange);
-       }
        public delegate void SubscribeHandler(CpRenderingControl sender, bool Success);
        public event SubscribeHandler OnSubscribe;
-       public delegate void Delegate_OnResult_GetMute(CpRenderingControl sender, System.UInt32 InstanceID, Enum_A_ARG_TYPE_Channel Channel, System.Boolean CurrentMute, UPnPInvokeException e, object _Tag);
-       private WeakEvent OnResult_GetMute_Event = new WeakEvent();
-       public event Delegate_OnResult_GetMute OnResult_GetMute
+       public delegate void Delegate_OnResult_GetPosition(CpRenderingControl sender, System.UInt32 InstanceID, System.UInt16 CurrentPosition, System.UInt16 Duration, UPnPInvokeException e, object _Tag);
+       private WeakEvent OnResult_GetPosition_Event = new WeakEvent();
+       public event Delegate_OnResult_GetPosition OnResult_GetPosition
        {
-			add{OnResult_GetMute_Event.Register(value);}
-			remove{OnResult_GetMute_Event.UnRegister(value);}
+			add{OnResult_GetPosition_Event.Register(value);}
+			remove{OnResult_GetPosition_Event.UnRegister(value);}
        }
-       public delegate void Delegate_OnResult_GetVolume(CpRenderingControl sender, System.UInt32 InstanceID, Enum_A_ARG_TYPE_Channel Channel, System.UInt16 CurrentVolume, UPnPInvokeException e, object _Tag);
+       public delegate void Delegate_OnResult_GetVolume(CpRenderingControl sender, System.UInt32 InstanceID, System.String Channel, System.UInt16 CurrentVolume, UPnPInvokeException e, object _Tag);
        private WeakEvent OnResult_GetVolume_Event = new WeakEvent();
        public event Delegate_OnResult_GetVolume OnResult_GetVolume
        {
 			add{OnResult_GetVolume_Event.Register(value);}
 			remove{OnResult_GetVolume_Event.UnRegister(value);}
        }
-       public delegate void Delegate_OnResult_GetVolumeDB(CpRenderingControl sender, System.UInt32 InstanceID, Enum_A_ARG_TYPE_Channel Channel, System.Int16 CurrentVolume, UPnPInvokeException e, object _Tag);
-       private WeakEvent OnResult_GetVolumeDB_Event = new WeakEvent();
-       public event Delegate_OnResult_GetVolumeDB OnResult_GetVolumeDB
-       {
-			add{OnResult_GetVolumeDB_Event.Register(value);}
-			remove{OnResult_GetVolumeDB_Event.UnRegister(value);}
-       }
-       public delegate void Delegate_OnResult_GetVolumeDBRange(CpRenderingControl sender, System.UInt32 InstanceID, Enum_A_ARG_TYPE_Channel Channel, System.Int16 MinValue, System.Int16 MaxValue, UPnPInvokeException e, object _Tag);
-       private WeakEvent OnResult_GetVolumeDBRange_Event = new WeakEvent();
-       public event Delegate_OnResult_GetVolumeDBRange OnResult_GetVolumeDBRange
-       {
-			add{OnResult_GetVolumeDBRange_Event.Register(value);}
-			remove{OnResult_GetVolumeDBRange_Event.UnRegister(value);}
-       }
-       public delegate void Delegate_OnResult_ListPresets(CpRenderingControl sender, System.UInt32 InstanceID, Enum_PresetNameList CurrentPresetNameList, UPnPInvokeException e, object _Tag);
-       private WeakEvent OnResult_ListPresets_Event = new WeakEvent();
-       public event Delegate_OnResult_ListPresets OnResult_ListPresets
-       {
-			add{OnResult_ListPresets_Event.Register(value);}
-			remove{OnResult_ListPresets_Event.UnRegister(value);}
-       }
-       public delegate void Delegate_OnResult_SelectPreset(CpRenderingControl sender, System.UInt32 InstanceID, Enum_A_ARG_TYPE_PresetName PresetName, UPnPInvokeException e, object _Tag);
-       private WeakEvent OnResult_SelectPreset_Event = new WeakEvent();
-       public event Delegate_OnResult_SelectPreset OnResult_SelectPreset
-       {
-			add{OnResult_SelectPreset_Event.Register(value);}
-			remove{OnResult_SelectPreset_Event.UnRegister(value);}
-       }
-       public delegate void Delegate_OnResult_SetMute(CpRenderingControl sender, System.UInt32 InstanceID, Enum_A_ARG_TYPE_Channel Channel, System.Boolean DesiredMute, UPnPInvokeException e, object _Tag);
+       public delegate void Delegate_OnResult_SetMute(CpRenderingControl sender, System.UInt32 InstanceID, System.String Channel, UPnPInvokeException e, object _Tag);
        private WeakEvent OnResult_SetMute_Event = new WeakEvent();
        public event Delegate_OnResult_SetMute OnResult_SetMute
        {
 			add{OnResult_SetMute_Event.Register(value);}
 			remove{OnResult_SetMute_Event.UnRegister(value);}
        }
-       public delegate void Delegate_OnResult_SetVolume(CpRenderingControl sender, System.UInt32 InstanceID, Enum_A_ARG_TYPE_Channel Channel, System.UInt16 DesiredVolume, UPnPInvokeException e, object _Tag);
+       public delegate void Delegate_OnResult_SetPosition(CpRenderingControl sender, System.UInt32 InstanceID, System.UInt16 DesiredPosition, UPnPInvokeException e, object _Tag);
+       private WeakEvent OnResult_SetPosition_Event = new WeakEvent();
+       public event Delegate_OnResult_SetPosition OnResult_SetPosition
+       {
+			add{OnResult_SetPosition_Event.Register(value);}
+			remove{OnResult_SetPosition_Event.UnRegister(value);}
+       }
+       public delegate void Delegate_OnResult_SetVolume(CpRenderingControl sender, System.UInt32 InstanceID, System.String Channel, System.UInt16 DesiredVolume, UPnPInvokeException e, object _Tag);
        private WeakEvent OnResult_SetVolume_Event = new WeakEvent();
        public event Delegate_OnResult_SetVolume OnResult_SetVolume
        {
@@ -101,13 +69,11 @@ namespace SinkStack
         {
             _S = s;
             _S.OnSubscribe += new UPnPService.UPnPEventSubscribeHandler(_subscribe_sink);
-            if (HasStateVariable_LastChange) _S.GetStateVariableObject("LastChange").OnModified += new UPnPStateVariable.ModifiedHandler(LastChange_ModifiedSink);
         }
         public void Dispose()
         {
             _S.OnSubscribe -= new UPnPService.UPnPEventSubscribeHandler(_subscribe_sink);
             OnSubscribe = null;
-            if (HasStateVariable_LastChange) _S.GetStateVariableObject("LastChange").OnModified -= new UPnPStateVariable.ModifiedHandler(LastChange_ModifiedSink);
         }
         public void _subscribe(int Timeout)
         {
@@ -135,163 +101,25 @@ namespace SinkStack
             string RetVal = (string)UnspecifiedTable[hash];
             return(RetVal);
         }
-        public string[] Values_A_ARG_TYPE_Channel
+        public System.UInt16 Position
         {
             get
             {
-                UPnPStateVariable sv = _S.GetStateVariableObject("A_ARG_TYPE_Channel");
-                return(sv.AllowedStringValues);
+               return((System.UInt16)_S.GetStateVariable("Position"));
             }
         }
-        public string Enum_A_ARG_TYPE_Channel_ToString(Enum_A_ARG_TYPE_Channel en)
-        {
-            string RetVal = "";
-            switch(en)
-            {
-                case Enum_A_ARG_TYPE_Channel.MASTER:
-                    RetVal = "Master";
-                    break;
-                case Enum_A_ARG_TYPE_Channel._UNSPECIFIED_:
-                    RetVal = GetUnspecifiedValue("Enum_A_ARG_TYPE_Channel");
-                    break;
-            }
-            return(RetVal);
-        }
-        public enum Enum_A_ARG_TYPE_Channel
-        {
-            _UNSPECIFIED_,
-            MASTER,
-        }
-        public Enum_A_ARG_TYPE_Channel A_ARG_TYPE_Channel
+        public System.String A_ARG_TYPE_Channel
         {
             get
             {
-               Enum_A_ARG_TYPE_Channel RetVal = 0;
-               string v = (string)_S.GetStateVariable("A_ARG_TYPE_Channel");
-               switch(v)
-               {
-                  case "Master":
-                     RetVal = Enum_A_ARG_TYPE_Channel.MASTER;
-                     break;
-                  default:
-                     RetVal = Enum_A_ARG_TYPE_Channel._UNSPECIFIED_;
-                     SetUnspecifiedValue("Enum_A_ARG_TYPE_Channel", v);
-                     break;
-               }
-               return(RetVal);
-           }
-        }
-        public string[] Values_A_ARG_TYPE_PresetName
-        {
-            get
-            {
-                UPnPStateVariable sv = _S.GetStateVariableObject("A_ARG_TYPE_PresetName");
-                return(sv.AllowedStringValues);
+               return((System.String)_S.GetStateVariable("A_ARG_TYPE_Channel"));
             }
         }
-        public string Enum_A_ARG_TYPE_PresetName_ToString(Enum_A_ARG_TYPE_PresetName en)
-        {
-            string RetVal = "";
-            switch(en)
-            {
-                case Enum_A_ARG_TYPE_PresetName.FACTORYDEFAULTS:
-                    RetVal = "FactoryDefaults";
-                    break;
-                case Enum_A_ARG_TYPE_PresetName._UNSPECIFIED_:
-                    RetVal = GetUnspecifiedValue("Enum_A_ARG_TYPE_PresetName");
-                    break;
-            }
-            return(RetVal);
-        }
-        public enum Enum_A_ARG_TYPE_PresetName
-        {
-            _UNSPECIFIED_,
-            FACTORYDEFAULTS,
-        }
-        public Enum_A_ARG_TYPE_PresetName A_ARG_TYPE_PresetName
+        public System.UInt16 TrackDur
         {
             get
             {
-               Enum_A_ARG_TYPE_PresetName RetVal = 0;
-               string v = (string)_S.GetStateVariable("A_ARG_TYPE_PresetName");
-               switch(v)
-               {
-                  case "FactoryDefaults":
-                     RetVal = Enum_A_ARG_TYPE_PresetName.FACTORYDEFAULTS;
-                     break;
-                  default:
-                     RetVal = Enum_A_ARG_TYPE_PresetName._UNSPECIFIED_;
-                     SetUnspecifiedValue("Enum_A_ARG_TYPE_PresetName", v);
-                     break;
-               }
-               return(RetVal);
-           }
-        }
-        public string[] Values_PresetNameList
-        {
-            get
-            {
-                UPnPStateVariable sv = _S.GetStateVariableObject("PresetNameList");
-                return(sv.AllowedStringValues);
-            }
-        }
-        public string Enum_PresetNameList_ToString(Enum_PresetNameList en)
-        {
-            string RetVal = "";
-            switch(en)
-            {
-                case Enum_PresetNameList.FACTORYDEFAULTS:
-                    RetVal = "FactoryDefaults";
-                    break;
-                case Enum_PresetNameList._UNSPECIFIED_:
-                    RetVal = GetUnspecifiedValue("Enum_PresetNameList");
-                    break;
-            }
-            return(RetVal);
-        }
-        public enum Enum_PresetNameList
-        {
-            _UNSPECIFIED_,
-            FACTORYDEFAULTS,
-        }
-        public Enum_PresetNameList PresetNameList
-        {
-            get
-            {
-               Enum_PresetNameList RetVal = 0;
-               string v = (string)_S.GetStateVariable("PresetNameList");
-               switch(v)
-               {
-                  case "FactoryDefaults":
-                     RetVal = Enum_PresetNameList.FACTORYDEFAULTS;
-                     break;
-                  default:
-                     RetVal = Enum_PresetNameList._UNSPECIFIED_;
-                     SetUnspecifiedValue("Enum_PresetNameList", v);
-                     break;
-               }
-               return(RetVal);
-           }
-        }
-        public System.Boolean Mute
-        {
-            get
-            {
-               return((System.Boolean)_S.GetStateVariable("Mute"));
-            }
-        }
-        public System.UInt32 A_ARG_TYPE_InstanceID
-        {
-            get
-            {
-               return((System.UInt32)_S.GetStateVariable("A_ARG_TYPE_InstanceID"));
-            }
-        }
-        public System.Int16 VolumeDB
-        {
-            get
-            {
-               return((System.Int16)_S.GetStateVariable("VolumeDB"));
+               return((System.UInt16)_S.GetStateVariable("TrackDur"));
             }
         }
         public System.UInt16 Volume
@@ -301,158 +129,18 @@ namespace SinkStack
                return((System.UInt16)_S.GetStateVariable("Volume"));
             }
         }
-        public System.String LastChange
+        public System.UInt32 A_ARG_TYPE_InstanceID
         {
             get
             {
-               return((System.String)_S.GetStateVariable("LastChange"));
+               return((System.UInt32)_S.GetStateVariable("A_ARG_TYPE_InstanceID"));
             }
         }
-        public bool HasStateVariable_Mute
+        public bool HasStateVariable_Position
         {
             get
             {
-               if (_S.GetStateVariableObject("Mute")==null)
-               {
-                   return(false);
-               }
-               else
-               {
-                   return(true);
-               }
-            }
-        }
-        public bool HasStateVariable_A_ARG_TYPE_InstanceID
-        {
-            get
-            {
-               if (_S.GetStateVariableObject("A_ARG_TYPE_InstanceID")==null)
-               {
-                   return(false);
-               }
-               else
-               {
-                   return(true);
-               }
-            }
-        }
-        public bool HasMaximum_VolumeDB
-        {
-             get
-             {
-                 return(_S.GetStateVariableObject("VolumeDB").Maximum!=null);
-             }
-        }
-        public bool HasMinimum_VolumeDB
-        {
-             get
-             {
-                 return(_S.GetStateVariableObject("VolumeDB").Minimum!=null);
-             }
-        }
-        public System.Int16 Maximum_VolumeDB
-        {
-             get
-             {
-                 return((System.Int16)_S.GetStateVariableObject("VolumeDB").Maximum);
-             }
-        }
-        public System.Int16 Minimum_VolumeDB
-        {
-             get
-             {
-                 return((System.Int16)_S.GetStateVariableObject("VolumeDB").Minimum);
-             }
-        }
-        public bool HasStateVariable_VolumeDB
-        {
-            get
-            {
-               if (_S.GetStateVariableObject("VolumeDB")==null)
-               {
-                   return(false);
-               }
-               else
-               {
-                   return(true);
-               }
-            }
-        }
-        public bool HasMaximum_Volume
-        {
-             get
-             {
-                 return(_S.GetStateVariableObject("Volume").Maximum!=null);
-             }
-        }
-        public bool HasMinimum_Volume
-        {
-             get
-             {
-                 return(_S.GetStateVariableObject("Volume").Minimum!=null);
-             }
-        }
-        public System.UInt16 Maximum_Volume
-        {
-             get
-             {
-                 return((System.UInt16)_S.GetStateVariableObject("Volume").Maximum);
-             }
-        }
-        public System.UInt16 Minimum_Volume
-        {
-             get
-             {
-                 return((System.UInt16)_S.GetStateVariableObject("Volume").Minimum);
-             }
-        }
-        public bool HasStateVariable_Volume
-        {
-            get
-            {
-               if (_S.GetStateVariableObject("Volume")==null)
-               {
-                   return(false);
-               }
-               else
-               {
-                   return(true);
-               }
-            }
-        }
-        public bool HasStateVariable_A_ARG_TYPE_PresetName
-        {
-            get
-            {
-               if (_S.GetStateVariableObject("A_ARG_TYPE_PresetName")==null)
-               {
-                   return(false);
-               }
-               else
-               {
-                   return(true);
-               }
-            }
-        }
-        public bool HasStateVariable_PresetNameList
-        {
-            get
-            {
-               if (_S.GetStateVariableObject("PresetNameList")==null)
-               {
-                   return(false);
-               }
-               else
-               {
-                   return(true);
-               }
-            }
-        }
-        public bool HasStateVariable_LastChange
-        {
-            get
-            {
-               if (_S.GetStateVariableObject("LastChange")==null)
+               if (_S.GetStateVariableObject("Position")==null)
                {
                    return(false);
                }
@@ -476,11 +164,53 @@ namespace SinkStack
                }
             }
         }
-        public bool HasAction_GetMute
+        public bool HasStateVariable_TrackDur
         {
             get
             {
-               if (_S.GetAction("GetMute")==null)
+               if (_S.GetStateVariableObject("TrackDur")==null)
+               {
+                   return(false);
+               }
+               else
+               {
+                   return(true);
+               }
+            }
+        }
+        public bool HasStateVariable_Volume
+        {
+            get
+            {
+               if (_S.GetStateVariableObject("Volume")==null)
+               {
+                   return(false);
+               }
+               else
+               {
+                   return(true);
+               }
+            }
+        }
+        public bool HasStateVariable_A_ARG_TYPE_InstanceID
+        {
+            get
+            {
+               if (_S.GetStateVariableObject("A_ARG_TYPE_InstanceID")==null)
+               {
+                   return(false);
+               }
+               else
+               {
+                   return(true);
+               }
+            }
+        }
+        public bool HasAction_GetPosition
+        {
+            get
+            {
+               if (_S.GetAction("GetPosition")==null)
                {
                    return(false);
                }
@@ -504,67 +234,25 @@ namespace SinkStack
                }
             }
         }
-        public bool HasAction_GetVolumeDB
-        {
-            get
-            {
-               if (_S.GetAction("GetVolumeDB")==null)
-               {
-                   return(false);
-               }
-               else
-               {
-                   return(true);
-               }
-            }
-        }
-        public bool HasAction_GetVolumeDBRange
-        {
-            get
-            {
-               if (_S.GetAction("GetVolumeDBRange")==null)
-               {
-                   return(false);
-               }
-               else
-               {
-                   return(true);
-               }
-            }
-        }
-        public bool HasAction_ListPresets
-        {
-            get
-            {
-               if (_S.GetAction("ListPresets")==null)
-               {
-                   return(false);
-               }
-               else
-               {
-                   return(true);
-               }
-            }
-        }
-        public bool HasAction_SelectPreset
-        {
-            get
-            {
-               if (_S.GetAction("SelectPreset")==null)
-               {
-                   return(false);
-               }
-               else
-               {
-                   return(true);
-               }
-            }
-        }
         public bool HasAction_SetMute
         {
             get
             {
                if (_S.GetAction("SetMute")==null)
+               {
+                   return(false);
+               }
+               else
+               {
+                   return(true);
+               }
+            }
+        }
+        public bool HasAction_SetPosition
+        {
+            get
+            {
+               if (_S.GetAction("SetPosition")==null)
                {
                    return(false);
                }
@@ -588,883 +276,238 @@ namespace SinkStack
                }
             }
         }
-        public void Sync_GetMute(System.UInt32 InstanceID, Enum_A_ARG_TYPE_Channel Channel, out System.Boolean CurrentMute)
+        public void Sync_GetPosition(System.UInt32 InstanceID, out System.UInt16 CurrentPosition, out System.UInt16 Duration)
         {
            UPnPArgument[] args = new UPnPArgument[3];
            args[0] = new UPnPArgument("InstanceID", InstanceID);
-           switch(Channel)
-           {
-               case Enum_A_ARG_TYPE_Channel.MASTER:
-                   args[1] = new UPnPArgument("Channel", "Master");
-                   break;
-               default:
-                  args[1] = new UPnPArgument("Channel", GetUnspecifiedValue("Enum_A_ARG_TYPE_Channel"));
-                  break;
-           }
-           args[2] = new UPnPArgument("CurrentMute", "");
-            _S.InvokeSync("GetMute", args);
-            for(int i=0;i<args.Length;++i)
-            {
-                switch(args[i].Name)
-                {
-                    case "Channel":
-                        switch((string)args[i].DataValue)
-                        {
-                            case "Master":
-                                args[i].DataValue = Enum_A_ARG_TYPE_Channel.MASTER;
-                                break;
-                            default:
-                               SetUnspecifiedValue("Enum_A_ARG_TYPE_Channel", (string)args[i].DataValue);
-                               args[i].DataValue = Enum_A_ARG_TYPE_Channel._UNSPECIFIED_;
-                               break;
-                        }
-                        break;
-                }
-            }
+           args[1] = new UPnPArgument("CurrentPosition", "");
+           args[2] = new UPnPArgument("Duration", "");
+            _S.InvokeSync("GetPosition", args);
             InstanceID = (System.UInt32) args[0].DataValue;
-            Channel = (Enum_A_ARG_TYPE_Channel) args[1].DataValue;
-            CurrentMute = (System.Boolean) args[2].DataValue;
+            CurrentPosition = (System.UInt16) args[1].DataValue;
+            Duration = (System.UInt16) args[2].DataValue;
             return;
         }
-        public void GetMute(System.UInt32 InstanceID, Enum_A_ARG_TYPE_Channel Channel)
+        public void GetPosition(System.UInt32 InstanceID)
         {
-            GetMute(InstanceID, Channel, null, null);
+            GetPosition(InstanceID, null, null);
         }
-        public void GetMute(System.UInt32 InstanceID, Enum_A_ARG_TYPE_Channel Channel, object _Tag, Delegate_OnResult_GetMute _Callback)
+        public void GetPosition(System.UInt32 InstanceID, object _Tag, Delegate_OnResult_GetPosition _Callback)
         {
            UPnPArgument[] args = new UPnPArgument[3];
            args[0] = new UPnPArgument("InstanceID", InstanceID);
-           switch(Channel)
-           {
-               case Enum_A_ARG_TYPE_Channel.MASTER:
-                   args[1] = new UPnPArgument("Channel", "Master");
-                   break;
-               default:
-                  args[1] = new UPnPArgument("Channel", GetUnspecifiedValue("Enum_A_ARG_TYPE_Channel"));
-                  break;
-           }
-           args[2] = new UPnPArgument("CurrentMute", "");
-           _S.InvokeAsync("GetMute", args, new object[2]{_Tag,_Callback}, new UPnPService.UPnPServiceInvokeHandler(Sink_GetMute), new UPnPService.UPnPServiceInvokeErrorHandler(Error_Sink_GetMute));
+           args[1] = new UPnPArgument("CurrentPosition", "");
+           args[2] = new UPnPArgument("Duration", "");
+           _S.InvokeAsync("GetPosition", args, new object[2]{_Tag,_Callback}, new UPnPService.UPnPServiceInvokeHandler(Sink_GetPosition), new UPnPService.UPnPServiceInvokeErrorHandler(Error_Sink_GetPosition));
         }
-        private void Sink_GetMute(UPnPService sender, string MethodName, UPnPArgument[] Args, object RetVal, object _Tag)
+        private void Sink_GetPosition(UPnPService sender, string MethodName, UPnPArgument[] Args, object RetVal, object _Tag)
         {
-            for(int i=0;i<Args.Length;++i)
-            {
-                switch(Args[i].Name)
-                {
-                    case "Channel":
-                        switch((string)Args[i].DataValue)
-                        {
-                            case "Master":
-                                Args[i].DataValue = Enum_A_ARG_TYPE_Channel.MASTER;
-                                break;
-                            default:
-                               SetUnspecifiedValue("Enum_A_ARG_TYPE_Channel", (string)Args[i].DataValue);
-                               Args[i].DataValue = Enum_A_ARG_TYPE_Channel._UNSPECIFIED_;
-                               break;
-                        }
-                        break;
-                }
-            }
             object[] StateInfo = (object[])_Tag;
             if (StateInfo[1]!=null)
             {
-                ((Delegate_OnResult_GetMute)StateInfo[1])(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_Channel )Args[1].DataValue, (System.Boolean )Args[2].DataValue, null, StateInfo[0]);
+                ((Delegate_OnResult_GetPosition)StateInfo[1])(this, (System.UInt32 )Args[0].DataValue, (System.UInt16 )Args[1].DataValue, (System.UInt16 )Args[2].DataValue, null, StateInfo[0]);
             }
             else
             {
-                OnResult_GetMute_Event.Fire(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_Channel )Args[1].DataValue, (System.Boolean )Args[2].DataValue, null, StateInfo[0]);
+                OnResult_GetPosition_Event.Fire(this, (System.UInt32 )Args[0].DataValue, (System.UInt16 )Args[1].DataValue, (System.UInt16 )Args[2].DataValue, null, StateInfo[0]);
             }
         }
-        private void Error_Sink_GetMute(UPnPService sender, string MethodName, UPnPArgument[] Args, UPnPInvokeException e, object _Tag)
+        private void Error_Sink_GetPosition(UPnPService sender, string MethodName, UPnPArgument[] Args, UPnPInvokeException e, object _Tag)
         {
-            for(int i=0;i<Args.Length;++i)
-            {
-                switch(Args[i].Name)
-                {
-                    case "Channel":
-                        switch((string)Args[i].DataValue)
-                        {
-                            case "Master":
-                                Args[i].DataValue = Enum_A_ARG_TYPE_Channel.MASTER;
-                                break;
-                        }
-                        break;
-                }
-            }
             object[] StateInfo = (object[])_Tag;
             if (StateInfo[1]!=null)
             {
-                ((Delegate_OnResult_GetMute)StateInfo[1])(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_Channel )Args[1].DataValue, (System.Boolean)UPnPService.CreateObjectInstance(typeof(System.Boolean),null), e, StateInfo[0]);
+                ((Delegate_OnResult_GetPosition)StateInfo[1])(this, (System.UInt32 )Args[0].DataValue, (System.UInt16)UPnPService.CreateObjectInstance(typeof(System.UInt16),null), (System.UInt16)UPnPService.CreateObjectInstance(typeof(System.UInt16),null), e, StateInfo[0]);
             }
             else
             {
-                OnResult_GetMute_Event.Fire(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_Channel )Args[1].DataValue, (System.Boolean)UPnPService.CreateObjectInstance(typeof(System.Boolean),null), e, StateInfo[0]);
+                OnResult_GetPosition_Event.Fire(this, (System.UInt32 )Args[0].DataValue, (System.UInt16)UPnPService.CreateObjectInstance(typeof(System.UInt16),null), (System.UInt16)UPnPService.CreateObjectInstance(typeof(System.UInt16),null), e, StateInfo[0]);
             }
         }
-        public void Sync_GetVolume(System.UInt32 InstanceID, Enum_A_ARG_TYPE_Channel Channel, out System.UInt16 CurrentVolume)
+        public void Sync_GetVolume(System.UInt32 InstanceID, System.String Channel, out System.UInt16 CurrentVolume)
         {
            UPnPArgument[] args = new UPnPArgument[3];
            args[0] = new UPnPArgument("InstanceID", InstanceID);
-           switch(Channel)
-           {
-               case Enum_A_ARG_TYPE_Channel.MASTER:
-                   args[1] = new UPnPArgument("Channel", "Master");
-                   break;
-               default:
-                  args[1] = new UPnPArgument("Channel", GetUnspecifiedValue("Enum_A_ARG_TYPE_Channel"));
-                  break;
-           }
+           args[1] = new UPnPArgument("Channel", Channel);
            args[2] = new UPnPArgument("CurrentVolume", "");
             _S.InvokeSync("GetVolume", args);
-            for(int i=0;i<args.Length;++i)
-            {
-                switch(args[i].Name)
-                {
-                    case "Channel":
-                        switch((string)args[i].DataValue)
-                        {
-                            case "Master":
-                                args[i].DataValue = Enum_A_ARG_TYPE_Channel.MASTER;
-                                break;
-                            default:
-                               SetUnspecifiedValue("Enum_A_ARG_TYPE_Channel", (string)args[i].DataValue);
-                               args[i].DataValue = Enum_A_ARG_TYPE_Channel._UNSPECIFIED_;
-                               break;
-                        }
-                        break;
-                }
-            }
             InstanceID = (System.UInt32) args[0].DataValue;
-            Channel = (Enum_A_ARG_TYPE_Channel) args[1].DataValue;
+            Channel = (System.String) args[1].DataValue;
             CurrentVolume = (System.UInt16) args[2].DataValue;
             return;
         }
-        public void GetVolume(System.UInt32 InstanceID, Enum_A_ARG_TYPE_Channel Channel)
+        public void GetVolume(System.UInt32 InstanceID, System.String Channel)
         {
             GetVolume(InstanceID, Channel, null, null);
         }
-        public void GetVolume(System.UInt32 InstanceID, Enum_A_ARG_TYPE_Channel Channel, object _Tag, Delegate_OnResult_GetVolume _Callback)
+        public void GetVolume(System.UInt32 InstanceID, System.String Channel, object _Tag, Delegate_OnResult_GetVolume _Callback)
         {
            UPnPArgument[] args = new UPnPArgument[3];
            args[0] = new UPnPArgument("InstanceID", InstanceID);
-           switch(Channel)
-           {
-               case Enum_A_ARG_TYPE_Channel.MASTER:
-                   args[1] = new UPnPArgument("Channel", "Master");
-                   break;
-               default:
-                  args[1] = new UPnPArgument("Channel", GetUnspecifiedValue("Enum_A_ARG_TYPE_Channel"));
-                  break;
-           }
+           args[1] = new UPnPArgument("Channel", Channel);
            args[2] = new UPnPArgument("CurrentVolume", "");
            _S.InvokeAsync("GetVolume", args, new object[2]{_Tag,_Callback}, new UPnPService.UPnPServiceInvokeHandler(Sink_GetVolume), new UPnPService.UPnPServiceInvokeErrorHandler(Error_Sink_GetVolume));
         }
         private void Sink_GetVolume(UPnPService sender, string MethodName, UPnPArgument[] Args, object RetVal, object _Tag)
         {
-            for(int i=0;i<Args.Length;++i)
-            {
-                switch(Args[i].Name)
-                {
-                    case "Channel":
-                        switch((string)Args[i].DataValue)
-                        {
-                            case "Master":
-                                Args[i].DataValue = Enum_A_ARG_TYPE_Channel.MASTER;
-                                break;
-                            default:
-                               SetUnspecifiedValue("Enum_A_ARG_TYPE_Channel", (string)Args[i].DataValue);
-                               Args[i].DataValue = Enum_A_ARG_TYPE_Channel._UNSPECIFIED_;
-                               break;
-                        }
-                        break;
-                }
-            }
             object[] StateInfo = (object[])_Tag;
             if (StateInfo[1]!=null)
             {
-                ((Delegate_OnResult_GetVolume)StateInfo[1])(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_Channel )Args[1].DataValue, (System.UInt16 )Args[2].DataValue, null, StateInfo[0]);
+                ((Delegate_OnResult_GetVolume)StateInfo[1])(this, (System.UInt32 )Args[0].DataValue, (System.String )Args[1].DataValue, (System.UInt16 )Args[2].DataValue, null, StateInfo[0]);
             }
             else
             {
-                OnResult_GetVolume_Event.Fire(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_Channel )Args[1].DataValue, (System.UInt16 )Args[2].DataValue, null, StateInfo[0]);
+                OnResult_GetVolume_Event.Fire(this, (System.UInt32 )Args[0].DataValue, (System.String )Args[1].DataValue, (System.UInt16 )Args[2].DataValue, null, StateInfo[0]);
             }
         }
         private void Error_Sink_GetVolume(UPnPService sender, string MethodName, UPnPArgument[] Args, UPnPInvokeException e, object _Tag)
         {
-            for(int i=0;i<Args.Length;++i)
-            {
-                switch(Args[i].Name)
-                {
-                    case "Channel":
-                        switch((string)Args[i].DataValue)
-                        {
-                            case "Master":
-                                Args[i].DataValue = Enum_A_ARG_TYPE_Channel.MASTER;
-                                break;
-                        }
-                        break;
-                }
-            }
             object[] StateInfo = (object[])_Tag;
             if (StateInfo[1]!=null)
             {
-                ((Delegate_OnResult_GetVolume)StateInfo[1])(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_Channel )Args[1].DataValue, (System.UInt16)UPnPService.CreateObjectInstance(typeof(System.UInt16),null), e, StateInfo[0]);
+                ((Delegate_OnResult_GetVolume)StateInfo[1])(this, (System.UInt32 )Args[0].DataValue, (System.String )Args[1].DataValue, (System.UInt16)UPnPService.CreateObjectInstance(typeof(System.UInt16),null), e, StateInfo[0]);
             }
             else
             {
-                OnResult_GetVolume_Event.Fire(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_Channel )Args[1].DataValue, (System.UInt16)UPnPService.CreateObjectInstance(typeof(System.UInt16),null), e, StateInfo[0]);
+                OnResult_GetVolume_Event.Fire(this, (System.UInt32 )Args[0].DataValue, (System.String )Args[1].DataValue, (System.UInt16)UPnPService.CreateObjectInstance(typeof(System.UInt16),null), e, StateInfo[0]);
             }
         }
-        public void Sync_GetVolumeDB(System.UInt32 InstanceID, Enum_A_ARG_TYPE_Channel Channel, out System.Int16 CurrentVolume)
-        {
-           UPnPArgument[] args = new UPnPArgument[3];
-           args[0] = new UPnPArgument("InstanceID", InstanceID);
-           switch(Channel)
-           {
-               case Enum_A_ARG_TYPE_Channel.MASTER:
-                   args[1] = new UPnPArgument("Channel", "Master");
-                   break;
-               default:
-                  args[1] = new UPnPArgument("Channel", GetUnspecifiedValue("Enum_A_ARG_TYPE_Channel"));
-                  break;
-           }
-           args[2] = new UPnPArgument("CurrentVolume", "");
-            _S.InvokeSync("GetVolumeDB", args);
-            for(int i=0;i<args.Length;++i)
-            {
-                switch(args[i].Name)
-                {
-                    case "Channel":
-                        switch((string)args[i].DataValue)
-                        {
-                            case "Master":
-                                args[i].DataValue = Enum_A_ARG_TYPE_Channel.MASTER;
-                                break;
-                            default:
-                               SetUnspecifiedValue("Enum_A_ARG_TYPE_Channel", (string)args[i].DataValue);
-                               args[i].DataValue = Enum_A_ARG_TYPE_Channel._UNSPECIFIED_;
-                               break;
-                        }
-                        break;
-                }
-            }
-            InstanceID = (System.UInt32) args[0].DataValue;
-            Channel = (Enum_A_ARG_TYPE_Channel) args[1].DataValue;
-            CurrentVolume = (System.Int16) args[2].DataValue;
-            return;
-        }
-        public void GetVolumeDB(System.UInt32 InstanceID, Enum_A_ARG_TYPE_Channel Channel)
-        {
-            GetVolumeDB(InstanceID, Channel, null, null);
-        }
-        public void GetVolumeDB(System.UInt32 InstanceID, Enum_A_ARG_TYPE_Channel Channel, object _Tag, Delegate_OnResult_GetVolumeDB _Callback)
-        {
-           UPnPArgument[] args = new UPnPArgument[3];
-           args[0] = new UPnPArgument("InstanceID", InstanceID);
-           switch(Channel)
-           {
-               case Enum_A_ARG_TYPE_Channel.MASTER:
-                   args[1] = new UPnPArgument("Channel", "Master");
-                   break;
-               default:
-                  args[1] = new UPnPArgument("Channel", GetUnspecifiedValue("Enum_A_ARG_TYPE_Channel"));
-                  break;
-           }
-           args[2] = new UPnPArgument("CurrentVolume", "");
-           _S.InvokeAsync("GetVolumeDB", args, new object[2]{_Tag,_Callback}, new UPnPService.UPnPServiceInvokeHandler(Sink_GetVolumeDB), new UPnPService.UPnPServiceInvokeErrorHandler(Error_Sink_GetVolumeDB));
-        }
-        private void Sink_GetVolumeDB(UPnPService sender, string MethodName, UPnPArgument[] Args, object RetVal, object _Tag)
-        {
-            for(int i=0;i<Args.Length;++i)
-            {
-                switch(Args[i].Name)
-                {
-                    case "Channel":
-                        switch((string)Args[i].DataValue)
-                        {
-                            case "Master":
-                                Args[i].DataValue = Enum_A_ARG_TYPE_Channel.MASTER;
-                                break;
-                            default:
-                               SetUnspecifiedValue("Enum_A_ARG_TYPE_Channel", (string)Args[i].DataValue);
-                               Args[i].DataValue = Enum_A_ARG_TYPE_Channel._UNSPECIFIED_;
-                               break;
-                        }
-                        break;
-                }
-            }
-            object[] StateInfo = (object[])_Tag;
-            if (StateInfo[1]!=null)
-            {
-                ((Delegate_OnResult_GetVolumeDB)StateInfo[1])(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_Channel )Args[1].DataValue, (System.Int16 )Args[2].DataValue, null, StateInfo[0]);
-            }
-            else
-            {
-                OnResult_GetVolumeDB_Event.Fire(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_Channel )Args[1].DataValue, (System.Int16 )Args[2].DataValue, null, StateInfo[0]);
-            }
-        }
-        private void Error_Sink_GetVolumeDB(UPnPService sender, string MethodName, UPnPArgument[] Args, UPnPInvokeException e, object _Tag)
-        {
-            for(int i=0;i<Args.Length;++i)
-            {
-                switch(Args[i].Name)
-                {
-                    case "Channel":
-                        switch((string)Args[i].DataValue)
-                        {
-                            case "Master":
-                                Args[i].DataValue = Enum_A_ARG_TYPE_Channel.MASTER;
-                                break;
-                        }
-                        break;
-                }
-            }
-            object[] StateInfo = (object[])_Tag;
-            if (StateInfo[1]!=null)
-            {
-                ((Delegate_OnResult_GetVolumeDB)StateInfo[1])(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_Channel )Args[1].DataValue, (System.Int16)UPnPService.CreateObjectInstance(typeof(System.Int16),null), e, StateInfo[0]);
-            }
-            else
-            {
-                OnResult_GetVolumeDB_Event.Fire(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_Channel )Args[1].DataValue, (System.Int16)UPnPService.CreateObjectInstance(typeof(System.Int16),null), e, StateInfo[0]);
-            }
-        }
-        public void Sync_GetVolumeDBRange(System.UInt32 InstanceID, Enum_A_ARG_TYPE_Channel Channel, out System.Int16 MinValue, out System.Int16 MaxValue)
-        {
-           UPnPArgument[] args = new UPnPArgument[4];
-           args[0] = new UPnPArgument("InstanceID", InstanceID);
-           switch(Channel)
-           {
-               case Enum_A_ARG_TYPE_Channel.MASTER:
-                   args[1] = new UPnPArgument("Channel", "Master");
-                   break;
-               default:
-                  args[1] = new UPnPArgument("Channel", GetUnspecifiedValue("Enum_A_ARG_TYPE_Channel"));
-                  break;
-           }
-           args[2] = new UPnPArgument("MinValue", "");
-           args[3] = new UPnPArgument("MaxValue", "");
-            _S.InvokeSync("GetVolumeDBRange", args);
-            for(int i=0;i<args.Length;++i)
-            {
-                switch(args[i].Name)
-                {
-                    case "Channel":
-                        switch((string)args[i].DataValue)
-                        {
-                            case "Master":
-                                args[i].DataValue = Enum_A_ARG_TYPE_Channel.MASTER;
-                                break;
-                            default:
-                               SetUnspecifiedValue("Enum_A_ARG_TYPE_Channel", (string)args[i].DataValue);
-                               args[i].DataValue = Enum_A_ARG_TYPE_Channel._UNSPECIFIED_;
-                               break;
-                        }
-                        break;
-                }
-            }
-            InstanceID = (System.UInt32) args[0].DataValue;
-            Channel = (Enum_A_ARG_TYPE_Channel) args[1].DataValue;
-            MinValue = (System.Int16) args[2].DataValue;
-            MaxValue = (System.Int16) args[3].DataValue;
-            return;
-        }
-        public void GetVolumeDBRange(System.UInt32 InstanceID, Enum_A_ARG_TYPE_Channel Channel)
-        {
-            GetVolumeDBRange(InstanceID, Channel, null, null);
-        }
-        public void GetVolumeDBRange(System.UInt32 InstanceID, Enum_A_ARG_TYPE_Channel Channel, object _Tag, Delegate_OnResult_GetVolumeDBRange _Callback)
-        {
-           UPnPArgument[] args = new UPnPArgument[4];
-           args[0] = new UPnPArgument("InstanceID", InstanceID);
-           switch(Channel)
-           {
-               case Enum_A_ARG_TYPE_Channel.MASTER:
-                   args[1] = new UPnPArgument("Channel", "Master");
-                   break;
-               default:
-                  args[1] = new UPnPArgument("Channel", GetUnspecifiedValue("Enum_A_ARG_TYPE_Channel"));
-                  break;
-           }
-           args[2] = new UPnPArgument("MinValue", "");
-           args[3] = new UPnPArgument("MaxValue", "");
-           _S.InvokeAsync("GetVolumeDBRange", args, new object[2]{_Tag,_Callback}, new UPnPService.UPnPServiceInvokeHandler(Sink_GetVolumeDBRange), new UPnPService.UPnPServiceInvokeErrorHandler(Error_Sink_GetVolumeDBRange));
-        }
-        private void Sink_GetVolumeDBRange(UPnPService sender, string MethodName, UPnPArgument[] Args, object RetVal, object _Tag)
-        {
-            for(int i=0;i<Args.Length;++i)
-            {
-                switch(Args[i].Name)
-                {
-                    case "Channel":
-                        switch((string)Args[i].DataValue)
-                        {
-                            case "Master":
-                                Args[i].DataValue = Enum_A_ARG_TYPE_Channel.MASTER;
-                                break;
-                            default:
-                               SetUnspecifiedValue("Enum_A_ARG_TYPE_Channel", (string)Args[i].DataValue);
-                               Args[i].DataValue = Enum_A_ARG_TYPE_Channel._UNSPECIFIED_;
-                               break;
-                        }
-                        break;
-                }
-            }
-            object[] StateInfo = (object[])_Tag;
-            if (StateInfo[1]!=null)
-            {
-                ((Delegate_OnResult_GetVolumeDBRange)StateInfo[1])(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_Channel )Args[1].DataValue, (System.Int16 )Args[2].DataValue, (System.Int16 )Args[3].DataValue, null, StateInfo[0]);
-            }
-            else
-            {
-                OnResult_GetVolumeDBRange_Event.Fire(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_Channel )Args[1].DataValue, (System.Int16 )Args[2].DataValue, (System.Int16 )Args[3].DataValue, null, StateInfo[0]);
-            }
-        }
-        private void Error_Sink_GetVolumeDBRange(UPnPService sender, string MethodName, UPnPArgument[] Args, UPnPInvokeException e, object _Tag)
-        {
-            for(int i=0;i<Args.Length;++i)
-            {
-                switch(Args[i].Name)
-                {
-                    case "Channel":
-                        switch((string)Args[i].DataValue)
-                        {
-                            case "Master":
-                                Args[i].DataValue = Enum_A_ARG_TYPE_Channel.MASTER;
-                                break;
-                        }
-                        break;
-                }
-            }
-            object[] StateInfo = (object[])_Tag;
-            if (StateInfo[1]!=null)
-            {
-                ((Delegate_OnResult_GetVolumeDBRange)StateInfo[1])(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_Channel )Args[1].DataValue, (System.Int16)UPnPService.CreateObjectInstance(typeof(System.Int16),null), (System.Int16)UPnPService.CreateObjectInstance(typeof(System.Int16),null), e, StateInfo[0]);
-            }
-            else
-            {
-                OnResult_GetVolumeDBRange_Event.Fire(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_Channel )Args[1].DataValue, (System.Int16)UPnPService.CreateObjectInstance(typeof(System.Int16),null), (System.Int16)UPnPService.CreateObjectInstance(typeof(System.Int16),null), e, StateInfo[0]);
-            }
-        }
-        public void Sync_ListPresets(System.UInt32 InstanceID, out Enum_PresetNameList CurrentPresetNameList)
+        public void Sync_SetMute(System.UInt32 InstanceID, System.String Channel)
         {
            UPnPArgument[] args = new UPnPArgument[2];
            args[0] = new UPnPArgument("InstanceID", InstanceID);
-           args[1] = new UPnPArgument("CurrentPresetNameList", "");
-            _S.InvokeSync("ListPresets", args);
-            for(int i=0;i<args.Length;++i)
-            {
-                switch(args[i].Name)
-                {
-                    case "CurrentPresetNameList":
-                        switch((string)args[i].DataValue)
-                        {
-                            case "FactoryDefaults":
-                                args[i].DataValue = Enum_PresetNameList.FACTORYDEFAULTS;
-                                break;
-                            default:
-                               SetUnspecifiedValue("Enum_PresetNameList", (string)args[i].DataValue);
-                               args[i].DataValue = Enum_PresetNameList._UNSPECIFIED_;
-                               break;
-                        }
-                        break;
-                }
-            }
-            InstanceID = (System.UInt32) args[0].DataValue;
-            CurrentPresetNameList = (Enum_PresetNameList) args[1].DataValue;
-            return;
-        }
-        public void ListPresets(System.UInt32 InstanceID)
-        {
-            ListPresets(InstanceID, null, null);
-        }
-        public void ListPresets(System.UInt32 InstanceID, object _Tag, Delegate_OnResult_ListPresets _Callback)
-        {
-           UPnPArgument[] args = new UPnPArgument[2];
-           args[0] = new UPnPArgument("InstanceID", InstanceID);
-           args[1] = new UPnPArgument("CurrentPresetNameList", "");
-           _S.InvokeAsync("ListPresets", args, new object[2]{_Tag,_Callback}, new UPnPService.UPnPServiceInvokeHandler(Sink_ListPresets), new UPnPService.UPnPServiceInvokeErrorHandler(Error_Sink_ListPresets));
-        }
-        private void Sink_ListPresets(UPnPService sender, string MethodName, UPnPArgument[] Args, object RetVal, object _Tag)
-        {
-            for(int i=0;i<Args.Length;++i)
-            {
-                switch(Args[i].Name)
-                {
-                    case "CurrentPresetNameList":
-                        switch((string)Args[i].DataValue)
-                        {
-                            case "FactoryDefaults":
-                                Args[i].DataValue = Enum_PresetNameList.FACTORYDEFAULTS;
-                                break;
-                            default:
-                               SetUnspecifiedValue("Enum_PresetNameList", (string)Args[i].DataValue);
-                               Args[i].DataValue = Enum_PresetNameList._UNSPECIFIED_;
-                               break;
-                        }
-                        break;
-                }
-            }
-            object[] StateInfo = (object[])_Tag;
-            if (StateInfo[1]!=null)
-            {
-                ((Delegate_OnResult_ListPresets)StateInfo[1])(this, (System.UInt32 )Args[0].DataValue, (Enum_PresetNameList )Args[1].DataValue, null, StateInfo[0]);
-            }
-            else
-            {
-                OnResult_ListPresets_Event.Fire(this, (System.UInt32 )Args[0].DataValue, (Enum_PresetNameList )Args[1].DataValue, null, StateInfo[0]);
-            }
-        }
-        private void Error_Sink_ListPresets(UPnPService sender, string MethodName, UPnPArgument[] Args, UPnPInvokeException e, object _Tag)
-        {
-            object[] StateInfo = (object[])_Tag;
-            if (StateInfo[1]!=null)
-            {
-                ((Delegate_OnResult_ListPresets)StateInfo[1])(this, (System.UInt32 )Args[0].DataValue, (Enum_PresetNameList)0, e, StateInfo[0]);
-            }
-            else
-            {
-                OnResult_ListPresets_Event.Fire(this, (System.UInt32 )Args[0].DataValue, (Enum_PresetNameList)0, e, StateInfo[0]);
-            }
-        }
-        public void Sync_SelectPreset(System.UInt32 InstanceID, Enum_A_ARG_TYPE_PresetName PresetName)
-        {
-           UPnPArgument[] args = new UPnPArgument[2];
-           args[0] = new UPnPArgument("InstanceID", InstanceID);
-           switch(PresetName)
-           {
-               case Enum_A_ARG_TYPE_PresetName.FACTORYDEFAULTS:
-                   args[1] = new UPnPArgument("PresetName", "FactoryDefaults");
-                   break;
-               default:
-                  args[1] = new UPnPArgument("PresetName", GetUnspecifiedValue("Enum_A_ARG_TYPE_PresetName"));
-                  break;
-           }
-            _S.InvokeSync("SelectPreset", args);
-            for(int i=0;i<args.Length;++i)
-            {
-                switch(args[i].Name)
-                {
-                    case "PresetName":
-                        switch((string)args[i].DataValue)
-                        {
-                            case "FactoryDefaults":
-                                args[i].DataValue = Enum_A_ARG_TYPE_PresetName.FACTORYDEFAULTS;
-                                break;
-                            default:
-                               SetUnspecifiedValue("Enum_A_ARG_TYPE_PresetName", (string)args[i].DataValue);
-                               args[i].DataValue = Enum_A_ARG_TYPE_PresetName._UNSPECIFIED_;
-                               break;
-                        }
-                        break;
-                }
-            }
-            InstanceID = (System.UInt32) args[0].DataValue;
-            PresetName = (Enum_A_ARG_TYPE_PresetName) args[1].DataValue;
-            return;
-        }
-        public void SelectPreset(System.UInt32 InstanceID, Enum_A_ARG_TYPE_PresetName PresetName)
-        {
-            SelectPreset(InstanceID, PresetName, null, null);
-        }
-        public void SelectPreset(System.UInt32 InstanceID, Enum_A_ARG_TYPE_PresetName PresetName, object _Tag, Delegate_OnResult_SelectPreset _Callback)
-        {
-           UPnPArgument[] args = new UPnPArgument[2];
-           args[0] = new UPnPArgument("InstanceID", InstanceID);
-           switch(PresetName)
-           {
-               case Enum_A_ARG_TYPE_PresetName.FACTORYDEFAULTS:
-                   args[1] = new UPnPArgument("PresetName", "FactoryDefaults");
-                   break;
-               default:
-                  args[1] = new UPnPArgument("PresetName", GetUnspecifiedValue("Enum_A_ARG_TYPE_PresetName"));
-                  break;
-           }
-           _S.InvokeAsync("SelectPreset", args, new object[2]{_Tag,_Callback}, new UPnPService.UPnPServiceInvokeHandler(Sink_SelectPreset), new UPnPService.UPnPServiceInvokeErrorHandler(Error_Sink_SelectPreset));
-        }
-        private void Sink_SelectPreset(UPnPService sender, string MethodName, UPnPArgument[] Args, object RetVal, object _Tag)
-        {
-            for(int i=0;i<Args.Length;++i)
-            {
-                switch(Args[i].Name)
-                {
-                    case "PresetName":
-                        switch((string)Args[i].DataValue)
-                        {
-                            case "FactoryDefaults":
-                                Args[i].DataValue = Enum_A_ARG_TYPE_PresetName.FACTORYDEFAULTS;
-                                break;
-                            default:
-                               SetUnspecifiedValue("Enum_A_ARG_TYPE_PresetName", (string)Args[i].DataValue);
-                               Args[i].DataValue = Enum_A_ARG_TYPE_PresetName._UNSPECIFIED_;
-                               break;
-                        }
-                        break;
-                }
-            }
-            object[] StateInfo = (object[])_Tag;
-            if (StateInfo[1]!=null)
-            {
-                ((Delegate_OnResult_SelectPreset)StateInfo[1])(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_PresetName )Args[1].DataValue, null, StateInfo[0]);
-            }
-            else
-            {
-                OnResult_SelectPreset_Event.Fire(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_PresetName )Args[1].DataValue, null, StateInfo[0]);
-            }
-        }
-        private void Error_Sink_SelectPreset(UPnPService sender, string MethodName, UPnPArgument[] Args, UPnPInvokeException e, object _Tag)
-        {
-            for(int i=0;i<Args.Length;++i)
-            {
-                switch(Args[i].Name)
-                {
-                    case "PresetName":
-                        switch((string)Args[i].DataValue)
-                        {
-                            case "FactoryDefaults":
-                                Args[i].DataValue = Enum_A_ARG_TYPE_PresetName.FACTORYDEFAULTS;
-                                break;
-                        }
-                        break;
-                }
-            }
-            object[] StateInfo = (object[])_Tag;
-            if (StateInfo[1]!=null)
-            {
-                ((Delegate_OnResult_SelectPreset)StateInfo[1])(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_PresetName )Args[1].DataValue, e, StateInfo[0]);
-            }
-            else
-            {
-                OnResult_SelectPreset_Event.Fire(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_PresetName )Args[1].DataValue, e, StateInfo[0]);
-            }
-        }
-        public void Sync_SetMute(System.UInt32 InstanceID, Enum_A_ARG_TYPE_Channel Channel, System.Boolean DesiredMute)
-        {
-           UPnPArgument[] args = new UPnPArgument[3];
-           args[0] = new UPnPArgument("InstanceID", InstanceID);
-           switch(Channel)
-           {
-               case Enum_A_ARG_TYPE_Channel.MASTER:
-                   args[1] = new UPnPArgument("Channel", "Master");
-                   break;
-               default:
-                  args[1] = new UPnPArgument("Channel", GetUnspecifiedValue("Enum_A_ARG_TYPE_Channel"));
-                  break;
-           }
-           args[2] = new UPnPArgument("DesiredMute", DesiredMute);
+           args[1] = new UPnPArgument("Channel", Channel);
             _S.InvokeSync("SetMute", args);
-            for(int i=0;i<args.Length;++i)
-            {
-                switch(args[i].Name)
-                {
-                    case "Channel":
-                        switch((string)args[i].DataValue)
-                        {
-                            case "Master":
-                                args[i].DataValue = Enum_A_ARG_TYPE_Channel.MASTER;
-                                break;
-                            default:
-                               SetUnspecifiedValue("Enum_A_ARG_TYPE_Channel", (string)args[i].DataValue);
-                               args[i].DataValue = Enum_A_ARG_TYPE_Channel._UNSPECIFIED_;
-                               break;
-                        }
-                        break;
-                }
-            }
             InstanceID = (System.UInt32) args[0].DataValue;
-            Channel = (Enum_A_ARG_TYPE_Channel) args[1].DataValue;
-            DesiredMute = (System.Boolean) args[2].DataValue;
+            Channel = (System.String) args[1].DataValue;
             return;
         }
-        public void SetMute(System.UInt32 InstanceID, Enum_A_ARG_TYPE_Channel Channel, System.Boolean DesiredMute)
+        public void SetMute(System.UInt32 InstanceID, System.String Channel)
         {
-            SetMute(InstanceID, Channel, DesiredMute, null, null);
+            SetMute(InstanceID, Channel, null, null);
         }
-        public void SetMute(System.UInt32 InstanceID, Enum_A_ARG_TYPE_Channel Channel, System.Boolean DesiredMute, object _Tag, Delegate_OnResult_SetMute _Callback)
+        public void SetMute(System.UInt32 InstanceID, System.String Channel, object _Tag, Delegate_OnResult_SetMute _Callback)
         {
-           UPnPArgument[] args = new UPnPArgument[3];
+           UPnPArgument[] args = new UPnPArgument[2];
            args[0] = new UPnPArgument("InstanceID", InstanceID);
-           switch(Channel)
-           {
-               case Enum_A_ARG_TYPE_Channel.MASTER:
-                   args[1] = new UPnPArgument("Channel", "Master");
-                   break;
-               default:
-                  args[1] = new UPnPArgument("Channel", GetUnspecifiedValue("Enum_A_ARG_TYPE_Channel"));
-                  break;
-           }
-           args[2] = new UPnPArgument("DesiredMute", DesiredMute);
+           args[1] = new UPnPArgument("Channel", Channel);
            _S.InvokeAsync("SetMute", args, new object[2]{_Tag,_Callback}, new UPnPService.UPnPServiceInvokeHandler(Sink_SetMute), new UPnPService.UPnPServiceInvokeErrorHandler(Error_Sink_SetMute));
         }
         private void Sink_SetMute(UPnPService sender, string MethodName, UPnPArgument[] Args, object RetVal, object _Tag)
         {
-            for(int i=0;i<Args.Length;++i)
-            {
-                switch(Args[i].Name)
-                {
-                    case "Channel":
-                        switch((string)Args[i].DataValue)
-                        {
-                            case "Master":
-                                Args[i].DataValue = Enum_A_ARG_TYPE_Channel.MASTER;
-                                break;
-                            default:
-                               SetUnspecifiedValue("Enum_A_ARG_TYPE_Channel", (string)Args[i].DataValue);
-                               Args[i].DataValue = Enum_A_ARG_TYPE_Channel._UNSPECIFIED_;
-                               break;
-                        }
-                        break;
-                }
-            }
             object[] StateInfo = (object[])_Tag;
             if (StateInfo[1]!=null)
             {
-                ((Delegate_OnResult_SetMute)StateInfo[1])(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_Channel )Args[1].DataValue, (System.Boolean )Args[2].DataValue, null, StateInfo[0]);
+                ((Delegate_OnResult_SetMute)StateInfo[1])(this, (System.UInt32 )Args[0].DataValue, (System.String )Args[1].DataValue, null, StateInfo[0]);
             }
             else
             {
-                OnResult_SetMute_Event.Fire(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_Channel )Args[1].DataValue, (System.Boolean )Args[2].DataValue, null, StateInfo[0]);
+                OnResult_SetMute_Event.Fire(this, (System.UInt32 )Args[0].DataValue, (System.String )Args[1].DataValue, null, StateInfo[0]);
             }
         }
         private void Error_Sink_SetMute(UPnPService sender, string MethodName, UPnPArgument[] Args, UPnPInvokeException e, object _Tag)
         {
-            for(int i=0;i<Args.Length;++i)
-            {
-                switch(Args[i].Name)
-                {
-                    case "Channel":
-                        switch((string)Args[i].DataValue)
-                        {
-                            case "Master":
-                                Args[i].DataValue = Enum_A_ARG_TYPE_Channel.MASTER;
-                                break;
-                        }
-                        break;
-                }
-            }
             object[] StateInfo = (object[])_Tag;
             if (StateInfo[1]!=null)
             {
-                ((Delegate_OnResult_SetMute)StateInfo[1])(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_Channel )Args[1].DataValue, (System.Boolean )Args[2].DataValue, e, StateInfo[0]);
+                ((Delegate_OnResult_SetMute)StateInfo[1])(this, (System.UInt32 )Args[0].DataValue, (System.String )Args[1].DataValue, e, StateInfo[0]);
             }
             else
             {
-                OnResult_SetMute_Event.Fire(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_Channel )Args[1].DataValue, (System.Boolean )Args[2].DataValue, e, StateInfo[0]);
+                OnResult_SetMute_Event.Fire(this, (System.UInt32 )Args[0].DataValue, (System.String )Args[1].DataValue, e, StateInfo[0]);
             }
         }
-        public void Sync_SetVolume(System.UInt32 InstanceID, Enum_A_ARG_TYPE_Channel Channel, System.UInt16 DesiredVolume)
+        public void Sync_SetPosition(System.UInt32 InstanceID, System.UInt16 DesiredPosition)
+        {
+           UPnPArgument[] args = new UPnPArgument[2];
+           args[0] = new UPnPArgument("InstanceID", InstanceID);
+           args[1] = new UPnPArgument("DesiredPosition", DesiredPosition);
+            _S.InvokeSync("SetPosition", args);
+            InstanceID = (System.UInt32) args[0].DataValue;
+            DesiredPosition = (System.UInt16) args[1].DataValue;
+            return;
+        }
+        public void SetPosition(System.UInt32 InstanceID, System.UInt16 DesiredPosition)
+        {
+            SetPosition(InstanceID, DesiredPosition, null, null);
+        }
+        public void SetPosition(System.UInt32 InstanceID, System.UInt16 DesiredPosition, object _Tag, Delegate_OnResult_SetPosition _Callback)
+        {
+           UPnPArgument[] args = new UPnPArgument[2];
+           args[0] = new UPnPArgument("InstanceID", InstanceID);
+           args[1] = new UPnPArgument("DesiredPosition", DesiredPosition);
+           _S.InvokeAsync("SetPosition", args, new object[2]{_Tag,_Callback}, new UPnPService.UPnPServiceInvokeHandler(Sink_SetPosition), new UPnPService.UPnPServiceInvokeErrorHandler(Error_Sink_SetPosition));
+        }
+        private void Sink_SetPosition(UPnPService sender, string MethodName, UPnPArgument[] Args, object RetVal, object _Tag)
+        {
+            object[] StateInfo = (object[])_Tag;
+            if (StateInfo[1]!=null)
+            {
+                ((Delegate_OnResult_SetPosition)StateInfo[1])(this, (System.UInt32 )Args[0].DataValue, (System.UInt16 )Args[1].DataValue, null, StateInfo[0]);
+            }
+            else
+            {
+                OnResult_SetPosition_Event.Fire(this, (System.UInt32 )Args[0].DataValue, (System.UInt16 )Args[1].DataValue, null, StateInfo[0]);
+            }
+        }
+        private void Error_Sink_SetPosition(UPnPService sender, string MethodName, UPnPArgument[] Args, UPnPInvokeException e, object _Tag)
+        {
+            object[] StateInfo = (object[])_Tag;
+            if (StateInfo[1]!=null)
+            {
+                ((Delegate_OnResult_SetPosition)StateInfo[1])(this, (System.UInt32 )Args[0].DataValue, (System.UInt16 )Args[1].DataValue, e, StateInfo[0]);
+            }
+            else
+            {
+                OnResult_SetPosition_Event.Fire(this, (System.UInt32 )Args[0].DataValue, (System.UInt16 )Args[1].DataValue, e, StateInfo[0]);
+            }
+        }
+        public void Sync_SetVolume(System.UInt32 InstanceID, System.String Channel, System.UInt16 DesiredVolume)
         {
            UPnPArgument[] args = new UPnPArgument[3];
            args[0] = new UPnPArgument("InstanceID", InstanceID);
-           switch(Channel)
-           {
-               case Enum_A_ARG_TYPE_Channel.MASTER:
-                   args[1] = new UPnPArgument("Channel", "Master");
-                   break;
-               default:
-                  args[1] = new UPnPArgument("Channel", GetUnspecifiedValue("Enum_A_ARG_TYPE_Channel"));
-                  break;
-           }
+           args[1] = new UPnPArgument("Channel", Channel);
            args[2] = new UPnPArgument("DesiredVolume", DesiredVolume);
             _S.InvokeSync("SetVolume", args);
-            for(int i=0;i<args.Length;++i)
-            {
-                switch(args[i].Name)
-                {
-                    case "Channel":
-                        switch((string)args[i].DataValue)
-                        {
-                            case "Master":
-                                args[i].DataValue = Enum_A_ARG_TYPE_Channel.MASTER;
-                                break;
-                            default:
-                               SetUnspecifiedValue("Enum_A_ARG_TYPE_Channel", (string)args[i].DataValue);
-                               args[i].DataValue = Enum_A_ARG_TYPE_Channel._UNSPECIFIED_;
-                               break;
-                        }
-                        break;
-                }
-            }
             InstanceID = (System.UInt32) args[0].DataValue;
-            Channel = (Enum_A_ARG_TYPE_Channel) args[1].DataValue;
+            Channel = (System.String) args[1].DataValue;
             DesiredVolume = (System.UInt16) args[2].DataValue;
             return;
         }
-        public void SetVolume(System.UInt32 InstanceID, Enum_A_ARG_TYPE_Channel Channel, System.UInt16 DesiredVolume)
+        public void SetVolume(System.UInt32 InstanceID, System.String Channel, System.UInt16 DesiredVolume)
         {
             SetVolume(InstanceID, Channel, DesiredVolume, null, null);
         }
-        public void SetVolume(System.UInt32 InstanceID, Enum_A_ARG_TYPE_Channel Channel, System.UInt16 DesiredVolume, object _Tag, Delegate_OnResult_SetVolume _Callback)
+        public void SetVolume(System.UInt32 InstanceID, System.String Channel, System.UInt16 DesiredVolume, object _Tag, Delegate_OnResult_SetVolume _Callback)
         {
            UPnPArgument[] args = new UPnPArgument[3];
            args[0] = new UPnPArgument("InstanceID", InstanceID);
-           switch(Channel)
-           {
-               case Enum_A_ARG_TYPE_Channel.MASTER:
-                   args[1] = new UPnPArgument("Channel", "Master");
-                   break;
-               default:
-                  args[1] = new UPnPArgument("Channel", GetUnspecifiedValue("Enum_A_ARG_TYPE_Channel"));
-                  break;
-           }
+           args[1] = new UPnPArgument("Channel", Channel);
            args[2] = new UPnPArgument("DesiredVolume", DesiredVolume);
            _S.InvokeAsync("SetVolume", args, new object[2]{_Tag,_Callback}, new UPnPService.UPnPServiceInvokeHandler(Sink_SetVolume), new UPnPService.UPnPServiceInvokeErrorHandler(Error_Sink_SetVolume));
         }
         private void Sink_SetVolume(UPnPService sender, string MethodName, UPnPArgument[] Args, object RetVal, object _Tag)
         {
-            for(int i=0;i<Args.Length;++i)
-            {
-                switch(Args[i].Name)
-                {
-                    case "Channel":
-                        switch((string)Args[i].DataValue)
-                        {
-                            case "Master":
-                                Args[i].DataValue = Enum_A_ARG_TYPE_Channel.MASTER;
-                                break;
-                            default:
-                               SetUnspecifiedValue("Enum_A_ARG_TYPE_Channel", (string)Args[i].DataValue);
-                               Args[i].DataValue = Enum_A_ARG_TYPE_Channel._UNSPECIFIED_;
-                               break;
-                        }
-                        break;
-                }
-            }
             object[] StateInfo = (object[])_Tag;
             if (StateInfo[1]!=null)
             {
-                ((Delegate_OnResult_SetVolume)StateInfo[1])(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_Channel )Args[1].DataValue, (System.UInt16 )Args[2].DataValue, null, StateInfo[0]);
+                ((Delegate_OnResult_SetVolume)StateInfo[1])(this, (System.UInt32 )Args[0].DataValue, (System.String )Args[1].DataValue, (System.UInt16 )Args[2].DataValue, null, StateInfo[0]);
             }
             else
             {
-                OnResult_SetVolume_Event.Fire(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_Channel )Args[1].DataValue, (System.UInt16 )Args[2].DataValue, null, StateInfo[0]);
+                OnResult_SetVolume_Event.Fire(this, (System.UInt32 )Args[0].DataValue, (System.String )Args[1].DataValue, (System.UInt16 )Args[2].DataValue, null, StateInfo[0]);
             }
         }
         private void Error_Sink_SetVolume(UPnPService sender, string MethodName, UPnPArgument[] Args, UPnPInvokeException e, object _Tag)
         {
-            for(int i=0;i<Args.Length;++i)
-            {
-                switch(Args[i].Name)
-                {
-                    case "Channel":
-                        switch((string)Args[i].DataValue)
-                        {
-                            case "Master":
-                                Args[i].DataValue = Enum_A_ARG_TYPE_Channel.MASTER;
-                                break;
-                        }
-                        break;
-                }
-            }
             object[] StateInfo = (object[])_Tag;
             if (StateInfo[1]!=null)
             {
-                ((Delegate_OnResult_SetVolume)StateInfo[1])(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_Channel )Args[1].DataValue, (System.UInt16 )Args[2].DataValue, e, StateInfo[0]);
+                ((Delegate_OnResult_SetVolume)StateInfo[1])(this, (System.UInt32 )Args[0].DataValue, (System.String )Args[1].DataValue, (System.UInt16 )Args[2].DataValue, e, StateInfo[0]);
             }
             else
             {
-                OnResult_SetVolume_Event.Fire(this, (System.UInt32 )Args[0].DataValue, (Enum_A_ARG_TYPE_Channel )Args[1].DataValue, (System.UInt16 )Args[2].DataValue, e, StateInfo[0]);
+                OnResult_SetVolume_Event.Fire(this, (System.UInt32 )Args[0].DataValue, (System.String )Args[1].DataValue, (System.UInt16 )Args[2].DataValue, e, StateInfo[0]);
             }
         }
     }

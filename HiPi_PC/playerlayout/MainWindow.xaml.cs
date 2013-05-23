@@ -49,6 +49,8 @@ namespace playerlayout
             observerHandler.musikUpdateEvent += HandOnMusikUpdateEvent;
             observerHandler.playQueueUpdateEvent += ObserverHandlerOnPlayQueueUpdateEvent;
             observerHandler.VolumeUpdateEvent += ObserverHandlerOnVolumeUpdateEvent;
+            observerHandler.getIPEvent1 += ObserverHandlerOnGetIpEvent1;
+            observerHandler.getPositionEvent += ObserverHandlerOnGetPositionEvent;
             
             dgPlayQueue.ItemsSource = playqueue;
             dgMusikindex.ItemsSource = musikindex;
@@ -56,53 +58,63 @@ namespace playerlayout
             dgMusikindex.IsReadOnly = true;
         }
 
-        private void ObserverHandlerOnVolumeUpdateEvent(object o, VolumeEventArgs vol)
+        private void ObserverHandlerOnGetPositionEvent(object sender, MyEventArgs<List<ushort>> eventArgs)
         {
             Dispatcher.BeginInvoke(new Action(() =>
                 {
-                    sliderVol.Value = Convert.ToDouble(vol.Data);
+                    sliderTime.Value = eventArgs._data[0];
+                    sliderTime.Maximum = eventArgs._data[1];
+                    
                 }));
         }
 
-        private void ObserverHandlerOnPlayQueueUpdateEvent(object o, trackEventArgs tracks)
+        private void ObserverHandlerOnGetIpEvent1(object sender, MyEventArgs<string> eventArgs)
+        {
+            var thread = new Thread(() =>
+            {
+                var dlg = new OpenFileDialog();
+                if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    Client cli = new Client(dlg.FileName, eventArgs._data);
+                }
+            });
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
+            thread.Join();
+        }
+
+        private void ObserverHandlerOnVolumeUpdateEvent(object o, MyEventArgs<ushort> vol)
+        {
+            Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    sliderVol.Value = Convert.ToDouble(vol._data);
+                }));
+        }
+
+        private void ObserverHandlerOnPlayQueueUpdateEvent(object o, MyEventArgs<List<ITrack>> tracks)
         {
             Dispatcher.BeginInvoke(new Action(() =>
             {
                 playqueue.Clear();
 
-                foreach (var track in tracks._tracks)
+                foreach (var track in tracks._data)
                 {
                     playqueue.Add(track);
                 }
             }));
         }
 
-        private void HandOnMusikUpdateEvent(object o, trackEventArgs tracks)
+        private void HandOnMusikUpdateEvent(object o, XMLHandler.MyEventArgs<List<ITrack>> tracks)
         {
             Dispatcher.BeginInvoke(new Action(() =>
             {
                 musikindex.Clear();
 
-                foreach (var track in tracks._tracks)
+                foreach (var track in tracks._data)
                 {
                     musikindex.Add(track);
                 }
             }));
-        }
-
-        private void ButtonX_OnClick(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-
-        private void ButtonM_OnClick(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Full Skærm");
-        }
-
-        private void ButtonMini_OnClick(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("minimize window");
         }
 
         private void Playbutton_OnClick(object sender, RoutedEventArgs e)
@@ -146,17 +158,7 @@ namespace playerlayout
 
         private void SendFile_OnClick(object sender, RoutedEventArgs e)
         {
-            var thread = new Thread(() =>
-            {
-                var dlg = new OpenFileDialog();
-                if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    IClient cli = new Client(dlg.FileName, null);
-                }
-            });
-            thread.SetApartmentState(ApartmentState.STA);
-            thread.Start();
-            thread.Join();
+            observerHandler.GetIPaddress();
         }
 
         private void SyncButtonClick(object sender, RoutedEventArgs e)
@@ -174,7 +176,6 @@ namespace playerlayout
             var result = dgMusikindex.SelectedItem;
 
             observerHandler.SetNextAVTransportURI((ITrack)result);
-            //observerHandler.SetAVTransportURI((ITrack)result);
         }
 
         private void DgPlayQueue_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -196,5 +197,9 @@ namespace playerlayout
             observerHandler.SetVolume(Convert.ToUInt16(sliderVol.Value));
         }
 
+        private void SliderTime_OnPreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            observerHandler.SetPosition((ushort) Convert.ToInt16(sliderTime.Value));
+        }
     }
 }

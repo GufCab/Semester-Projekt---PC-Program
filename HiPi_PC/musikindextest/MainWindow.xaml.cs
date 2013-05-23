@@ -25,7 +25,7 @@ namespace musikindextest
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ObervHandler _hand;
+  /*      private ObervHandler _hand;
         public ObservableCollection<ITrack> musikindex = new ObservableCollection<ITrack>();
         public ObservableCollection<ITrack> playqueue = new ObservableCollection<ITrack>();
 
@@ -68,6 +68,6 @@ namespace musikindextest
 
         }
 
-
+*/
     }
 }

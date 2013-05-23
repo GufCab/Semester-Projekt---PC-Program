@@ -18,7 +18,7 @@ namespace UPnP_CP
         private SourceStack.CpContentDirectory _ContentDirectory;
         public string _result;
 
-        public delegate void ResultDelegate(object sender, UPnPEventArgs e);
+        public delegate void ResultDelegate(object sender, SourceEventArgs e);
         
         public event ResultDelegate BrowseResult;
 
@@ -39,18 +39,18 @@ namespace UPnP_CP
 
         private void ContentDirectoryOnOnResultBrowse(CpContentDirectory sender, string objectId, CpContentDirectory.Enum_A_ARG_TYPE_BrowseFlag browseFlag, string filter, uint startingIndex, uint requestedCount, string sortCriteria, string result, uint numberReturned, uint totalMatches, uint updateId, UPnPInvokeException upnPInvokeException, object tag)
         {
-            UPnPEventArgs args = new UPnPEventArgs(result);
+            SourceEventArgs args = new SourceEventArgs(result);
             
             BrowseResult(this, args);
         }
 
-        public class UPnPEventArgs : EventArgs
+        public class SourceEventArgs : EventArgs
         {
-            public string Data { get; private set; }
+            public string _data { get; private set; }
 
-            public UPnPEventArgs(string data)
+            public SourceEventArgs(string data)
             {
-                Data = data;
+                _data = data;
             }
         }
 
