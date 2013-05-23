@@ -70,7 +70,7 @@ namespace TemplateSync
                     .ToString()
                 );
             relativePath = "../" + relativePath;
-            relativePath = relativePath.Replace('/', Path.DirectorySeparatorChar);
+            relativePath = relativePath.Replace(Path.DirectorySeparatorChar, '/');
             return  relativePath;
         }
         
