@@ -7,7 +7,7 @@ using System.Security.AccessControl;
 namespace FileSender
 {
 
-    public class Client : IClient, IDisposable
+    public class Client : IDisposable
     {
         /// <summary>
         /// The BUFSIZE.

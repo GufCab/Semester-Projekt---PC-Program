@@ -45,7 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client.cs" />
-    <Compile Include="IClient.cs" />
     <Compile Include="LIB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
