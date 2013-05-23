@@ -100,7 +100,7 @@ namespace UPnP_CP
 
         public void SetNextTransportURI(string path, string metaData)
         {
-            _AVTransport.SetNextAVTransportURI(0, path, metaData);
+            _AVTransport.SetNextAVTransportURI(0, metaData, "");
         }
 
         public void GetPosition()
