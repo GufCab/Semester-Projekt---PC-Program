@@ -57,6 +57,10 @@
     <Compile Include="UPnP_SourceFunctions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Containers\Containers.csproj">
+      <Project>{50fdc392-2ca9-4114-9789-2c1b2aaaf766}</Project>
+      <Name>Containers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UPnP\UPnP.csproj">
       <Project>{584ed187-8f2a-4b58-a266-85f3f212b092}</Project>
       <Name>UPnP</Name>

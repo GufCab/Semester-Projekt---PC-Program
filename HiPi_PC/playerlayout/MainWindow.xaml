@@ -35,7 +35,7 @@
             <Image Source="Hipiuden hvid.png"></Image>
             <TextBox Grid.Row="1" Text="Søgefelt"/>
             <Label Grid.Row="2" Content="Volume" Margin="0,0,0,-5"/>
-            <Slider Grid.Row="3" x:Name="sliderVol" VerticalAlignment="Bottom" Maximum="100" Minimum="0" PreviewMouseLeftButtonUp="SliderVol_OnPreviewMouseLeftButtonUp"/>
+            <Slider Grid.Row="3" x:Name="sliderVol" VerticalAlignment="Bottom" Maximum="100" Minimum="70" PreviewMouseLeftButtonUp="SliderVol_OnPreviewMouseLeftButtonUp"/>
             
             <Button Grid.Row="5" Content="[PI] Send File" Click="SendFile_OnClick"/>
             <Button Grid.Row="6" Content="Settings" Click="Settings_OnClick" Margin="0,0,0,0"/>

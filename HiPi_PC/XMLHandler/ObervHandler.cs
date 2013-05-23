@@ -23,20 +23,23 @@ namespace XMLHandler
 
         private XMLWriter xmlWriter;
 
-        public delegate void musikUpdateDel(object s, MyEventArgs<List<ITrack>> tracks);
+        public delegate void musikUpdateDel(object s, EventArgsContainer<List<ITrack>> tracks);
         public event musikUpdateDel musikUpdateEvent;
 
-        public delegate void playQueueUpdateDel(object s, MyEventArgs<List<ITrack>> tracks);
+        public delegate void playQueueUpdateDel(object s, EventArgsContainer<List<ITrack>> tracks);
         public event playQueueUpdateDel playQueueUpdateEvent;
 
-        public delegate void volumeDel(object s, MyEventArgs<ushort> vol);
+        public delegate void volumeDel(object s, EventArgsContainer<ushort> vol);
         public event volumeDel VolumeUpdateEvent;
 
-        public delegate void getPositionDel(object sender, MyEventArgs<List<ushort>> e);
+        public delegate void getPositionDel(object sender, EventArgsContainer<List<ushort>> e);
         public event getPositionDel getPositionEvent;
 
-        public delegate void getIPDel(object sender, MyEventArgs<string> e);
+        public delegate void getIPDel(object sender, EventArgsContainer<string> e);
         public event getIPDel getIPEvent1;
+
+        public delegate void transportStateDel(object sender, EventArgsContainer<string> e);
+        public event transportStateDel transportStateEvent;
 
         
         public ObervHandler()
@@ -60,6 +63,7 @@ namespace XMLHandler
             _UPnPSink = e;
             _UPnPSink.getVolEvent += getVolEvent;
             _UPnPSink.getPositionEvent += getPosEvent;
+            _UPnPSink.transportStateEvent += UpnPSinkOnTransportStateEvent;
             _UPnPSink.GetVolume();
             _UPnPSink.GetPosition();
         }
@@ -72,34 +76,39 @@ namespace XMLHandler
             _UPnPSource.Browse("playqueue");
         }
 
-        public void getResult(object e, UPnP_SourceFunctions.SourceEventArgs s)
+        private void UpnPSinkOnTransportStateEvent(object sender, EventArgsContainer<string> eventArgsContainer)
+        {
+            this.transportStateEvent(this, eventArgsContainer);
+        }
+
+        public void getResult(object e, Containers.EventArgsContainer<string> s)
         {
             Handle(s._data);  
         }
 
-        private void getVolEvent(object sender, SinkEventArgs<ushort> volEventArgs)
+        private void getVolEvent(object sender, Containers.EventArgsContainer<ushort> volEventArgsContainer)
         {
-            var args = new MyEventArgs<ushort>(volEventArgs._data);
+            var args = new EventArgsContainer<ushort>(volEventArgsContainer._data);
 
             VolumeUpdateEvent(this, args);
         }
 
-        private void getPosEvent(object sender, SinkEventArgs<List<ushort>> posEventArgs)
+        private void getPosEvent(object sender, Containers.EventArgsContainer<List<ushort>> posEventArgsContainer)
         {
             //var args = new MyEventArgs<ushort>(posEventArgs._data);
 
             //getPositionEvent(this, args);
 
-            var list = new List<ushort> { posEventArgs._data[0], posEventArgs._data[1] };
+            var list = new List<ushort> { posEventArgsContainer._data[0], posEventArgsContainer._data[1] };
 
-            MyEventArgs<List<ushort>> args = new MyEventArgs<List<ushort>>(list);
+            EventArgsContainer<List<ushort>> argsContainer = new EventArgsContainer<List<ushort>>(list);
 
-            getPositionEvent(this, args);
+            getPositionEvent(this, argsContainer);
         }
 
-        private void getIPEvent(object sender, SinkEventArgs<string> ipEventArgs)
+        private void getIPEvent(object sender, Containers.EventArgsContainer<string> ipEventArgsContainer)
         {
-            var args = new MyEventArgs<string>(ipEventArgs._data);
+            var args = new EventArgsContainer<string>(ipEventArgsContainer._data);
 
             getIPEvent1(this, args);
         }
@@ -112,7 +121,7 @@ namespace XMLHandler
         public void Handle(string xml)
         {
             List<ITrack> list = xmlr.itemReader(xml);
-            var args = new MyEventArgs<List<ITrack>>(list);
+            var args = new EventArgsContainer<List<ITrack>>(list);
 
             switch (list[0].ParentID)
             {
@@ -204,16 +213,6 @@ namespace XMLHandler
         {
             if (_UPnPSink != null)
                 _UPnPSink.GetIpAddress();
-        }
-    }
-
-    public class MyEventArgs<T> : EventArgs
-    {
-        public T _data { get; private set; }
-
-        public MyEventArgs(T data)
-        {
-            _data = data;
         }
     }
 }

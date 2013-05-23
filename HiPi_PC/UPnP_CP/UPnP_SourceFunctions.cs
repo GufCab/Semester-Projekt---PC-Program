@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using OpenSource.UPnP;
 using SourceStack;
+using Containers;
 
 namespace UPnP_CP
 {
@@ -18,7 +19,7 @@ namespace UPnP_CP
         private SourceStack.CpContentDirectory _ContentDirectory;
         public string _result;
 
-        public delegate void ResultDelegate(object sender, SourceEventArgs e);
+        public delegate void ResultDelegate(object sender, EventArgsContainer<string> e);
         
         public event ResultDelegate BrowseResult;
 
@@ -39,21 +40,10 @@ namespace UPnP_CP
 
         private void ContentDirectoryOnOnResultBrowse(CpContentDirectory sender, string objectId, CpContentDirectory.Enum_A_ARG_TYPE_BrowseFlag browseFlag, string filter, uint startingIndex, uint requestedCount, string sortCriteria, string result, uint numberReturned, uint totalMatches, uint updateId, UPnPInvokeException upnPInvokeException, object tag)
         {
-            SourceEventArgs args = new SourceEventArgs(result);
+            EventArgsContainer<string> argsContainer = new EventArgsContainer<string>(result);
             
-            BrowseResult(this, args);
+            BrowseResult(this, argsContainer);
         }
-
-        public class SourceEventArgs : EventArgs
-        {
-            public string _data { get; private set; }
-
-            public SourceEventArgs(string data)
-            {
-                _data = data;
-            }
-        }
-
     }
 }
 

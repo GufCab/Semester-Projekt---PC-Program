@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using OpenSource.UPnP;
 using SinkStack;
+using Containers;
 
 namespace UPnP_CP
 {
@@ -24,18 +25,29 @@ namespace UPnP_CP
         private SinkStack.CpConnectionManager _ConnectionManager;
         private SinkStack.CpRenderingControl _RenderingControl;
 
-        public delegate void getVolumeDel(object sender, SinkEventArgs<ushort> e);
+        public delegate void getVolumeDel(object sender, EventArgsContainer<ushort> e);
         public event getVolumeDel getVolEvent;
 
-        public delegate void getPositionDel(object sender, SinkEventArgs<List<ushort>>  e);
+        public delegate void getPositionDel(object sender, EventArgsContainer<List<ushort>>  e);
         public event getPositionDel getPositionEvent;
 
-        public delegate void getIPDel(object sender, SinkEventArgs<string> e);
+        public delegate void getIPDel(object sender, EventArgsContainer<string> e);
         public event getIPDel getIPEvent;
 
+        public delegate void transportStateDel(object sender, EventArgsContainer<string> e);
+        public event transportStateDel transportStateEvent;
+        
         public uint InstanceID { get; private set; }
         private string _channel;
         private string _speed;
+        private State value;
+
+        private enum State
+        {
+            Playing,
+            Stopped,
+            Transitioning
+        };
 
         public UPnP_SinkFunctions(CpAVTransport av, CpConnectionManager cm, CpRenderingControl rc)
         {
@@ -49,8 +61,58 @@ namespace UPnP_CP
             _RenderingControl.OnResult_GetVolume += RenderingControlOnOnResultGetVolume;
             _ConnectionManager.OnResult_GetIPAddress += ConnectionManagerOnOnResultGetIpAddress;
             _RenderingControl.OnResult_GetPosition += RenderingControlOnOnResultGetPosition;
+            
+            _AVTransport.OnStateVariable_TransportState += AvTransportOnOnStateVariableTransportState;
+            _AVTransport._subscribe(30);
+
+            
+
+            //_AVTransport.OnSubscribe += AvTransportOnOnSubscribe;
         }
         
+        private void AvTransportOnOnStateVariableTransportState(CpAVTransport sender, string newValue)
+        {
+            switch (newValue)
+            {
+                case "PLAYING":
+                    if (value == State.Stopped)
+                    {
+                        transportStateEvent(this, new EventArgsContainer<string>("playing"));
+                    }
+                    else if(value == State.Transitioning)
+                    {
+                        //get current number
+                    }
+                    value = State.Playing; 
+                    break;
+
+                case "STOPPED":
+                    if (value == State.Playing)
+                    {
+                        transportStateEvent(this, new EventArgsContainer<string>("stopped"));
+                    }
+                    else if(value == State.Transitioning)
+                    {
+                        //?
+                    }
+                    value = State.Playing; 
+                    value = State.Stopped; 
+                    break;
+
+                case "TRANSITIONING":
+                    if (value == State.Playing)
+                    {
+                        //ready for new number
+                    }
+                    else if (value == State.Stopped)
+                    {
+                        //?
+                    }
+                    value = State.Playing; 
+                    break;
+            }
+        }
+
         public void Play()
         {
             _AVTransport.Play(InstanceID, _speed);   
@@ -88,9 +150,9 @@ namespace UPnP_CP
 
         private void RenderingControlOnOnResultGetVolume(CpRenderingControl sender, uint instanceId, string channel, ushort currentVolume, UPnPInvokeException upnPInvokeException, object tag)
         {
-            SinkEventArgs<ushort> args = new SinkEventArgs<ushort>(currentVolume);
+            EventArgsContainer<ushort> argsContainer = new EventArgsContainer<ushort>(currentVolume);
 
-            getVolEvent(this, args);
+            getVolEvent(this, argsContainer);
         }
 
         public void SetTransportURI(string path, string metaData)
@@ -112,7 +174,7 @@ namespace UPnP_CP
         {
             var list = new List<ushort>{currentPosition, duration};
 
-            SinkEventArgs<List<ushort>> args = new SinkEventArgs<List<ushort>>(list);
+            var args = new EventArgsContainer<List<ushort>>(list);
 
             getPositionEvent(this, args);
         }
@@ -129,19 +191,9 @@ namespace UPnP_CP
 
         private void ConnectionManagerOnOnResultGetIpAddress(CpConnectionManager sender, string ipAddress, UPnPInvokeException upnPInvokeException, object tag)
         {
-            SinkEventArgs<string> args = new SinkEventArgs<string>(ipAddress);
+            EventArgsContainer<string> argsContainer = new EventArgsContainer<string>(ipAddress);
 
-            getIPEvent(this, args);
-        }
-    }
-
-    public class SinkEventArgs<T> : EventArgs
-    {
-        public T _data { get; private set; }
-
-        public SinkEventArgs(T data)
-        {
-            _data = data;
+            getIPEvent(this, argsContainer);
         }
     }
 }

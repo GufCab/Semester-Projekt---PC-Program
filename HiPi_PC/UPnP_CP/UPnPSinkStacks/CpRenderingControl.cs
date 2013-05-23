@@ -115,11 +115,11 @@ namespace SinkStack
                return((System.String)_S.GetStateVariable("A_ARG_TYPE_Channel"));
             }
         }
-        public System.UInt16 TrackDur
+        public System.UInt16 CurrentTrackDuration
         {
             get
             {
-               return((System.UInt16)_S.GetStateVariable("TrackDur"));
+               return((System.UInt16)_S.GetStateVariable("CurrentTrackDuration"));
             }
         }
         public System.UInt16 Volume
@@ -164,11 +164,11 @@ namespace SinkStack
                }
             }
         }
-        public bool HasStateVariable_TrackDur
+        public bool HasStateVariable_CurrentTrackDuration
         {
             get
             {
-               if (_S.GetStateVariableObject("TrackDur")==null)
+               if (_S.GetStateVariableObject("CurrentTrackDuration")==null)
                {
                    return(false);
                }
