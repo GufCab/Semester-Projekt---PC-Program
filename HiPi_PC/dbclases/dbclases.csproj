@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LocalDbhandel.cs" />
-    <Compile Include="DBshow.cs" />
     <Compile Include="PiDbhandel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

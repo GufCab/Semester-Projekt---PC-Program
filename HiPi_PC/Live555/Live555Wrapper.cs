@@ -24,30 +24,37 @@ namespace Live555
 
         private void Live555Setup()
         {
-            IPHostEntry host;
-            string localIP = "?";
-            host = Dns.GetHostEntry(Dns.GetHostName());
-            foreach (IPAddress ip in host.AddressList)
+            try
             {
-                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                IPHostEntry host;
+                string localIP = "?";
+                host = Dns.GetHostEntry(Dns.GetHostName());
+                foreach (IPAddress ip in host.AddressList)
                 {
-                    localIP = ip.ToString();
-                    IP = localIP;
+                    if (ip.AddressFamily == AddressFamily.InterNetwork)
+                    {
+                        localIP = ip.ToString();
+                        IP = localIP;
+                    }
                 }
+
+                _liveServer = new Process
+                    {
+                        StartInfo = new ProcessStartInfo
+                            {
+                                FileName = "live555MediaServer",
+                                UseShellExecute = false,
+                                RedirectStandardOutput = true //,
+                                //CreateNoWindow = true
+                            }
+                    };
+
+                _liveServer.Start();
             }
-            
-            _liveServer = new Process
-                {
-                    StartInfo = new ProcessStartInfo
-                        {
-                            FileName = "live555MediaServer",
-                            UseShellExecute = false,
-                            RedirectStandardOutput = true//,
-                            //CreateNoWindow = true
-                        }
-                };
-            
-            _liveServer.Start();
+            catch (Exception)
+            {
+                throw new Exception();
+            }
         }
 
         public string GetIP()

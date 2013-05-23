@@ -21,7 +21,6 @@ using XMLHandler;
 using playerlayout.Properties;
 using TemplateSync;
 using Containers;
-using XMLReader;
 using MessageBox = System.Windows.MessageBox;
 using MouseEventArgs = System.Windows.Input.MouseEventArgs;
 

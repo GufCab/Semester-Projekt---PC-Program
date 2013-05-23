@@ -57,10 +57,6 @@
       <Project>{15b963d9-412b-4aa6-bf77-fa53f5cbc438}</Project>
       <Name>FileSender</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Server\Server.csproj">
-      <Project>{36de28dd-341b-4f6d-a811-32683491615e}</Project>
-      <Name>Server</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -3,7 +3,6 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Security.AccessControl;
-using tcp;
 
 namespace FileSender
 {
@@ -64,15 +63,29 @@ namespace FileSender
         //For test-purpose
         public Client(string fileName)
         {
-            SetPort(9003);
-            Run(fileName);
+            try
+            {
+                SetPort(9003);
+                Run(fileName);
+            }
+            catch (Exception)
+            {
+                throw new Exception();
+            }
         }
 
         public Client(string fileName, string ip)
         {
-            SetIp(ip);
-            SetPort(9003);
-            Run(fileName);
+            try
+            {
+                SetIp(ip);
+                SetPort(9003);
+                Run(fileName);
+            }
+            catch (Exception)
+            {
+                throw new Exception();
+            }
         }
 
         private void SendFileNameToServer()
@@ -169,6 +182,7 @@ namespace FileSender
             catch (Exception)
             {
                 Console.WriteLine("Cannot close connections as they do not exist!");
+                throw new Exception();
             }
         }
 
@@ -193,6 +207,7 @@ namespace FileSender
             catch (Exception exception)
             {
                 Console.WriteLine(exception);
+                throw new Exception();
             }
         }
     }
