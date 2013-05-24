@@ -15,8 +15,6 @@ namespace dbclases
         void FillIp(string ip);
 
         void FillMusicAndPath(List<string> Pathlist);
-
-
     }
 
     public class LocalDbhandel : ILocalDbhandel
@@ -39,10 +37,7 @@ namespace dbclases
         }
 
         public void FillIp(string myip)
-        {
-            
-
-
+        {            
                 if (!makeguuidifnodevice())
                 {
                     var mydevice = new device();
@@ -94,8 +89,7 @@ namespace dbclases
 
             addAlbum(Albumlist);
             addArtist(Artistlist);
-            Addgenre(Genrelist);
-                
+            Addgenre(Genrelist);                
 
         }
 
@@ -105,12 +99,9 @@ namespace dbclases
             {
                 var pathlist = (from p in musik.filepaths
                                          select p.FilePath1
-
                                         ).ToList();
 
                 PathOndevice = listcompair(PathOndevice, pathlist);
-
-
 
                 if (PathOndevice.Count >= 1)
                 {

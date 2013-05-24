@@ -27,13 +27,13 @@ namespace dbclases
            {
                if (!CheckIfDeviceExists())
                {
-                   List<device> jaja;
+                   List<device> pcdevices;
                    using (var musik = new pcindexEntities())
                    {
-                       jaja = (from p in musik.devices select p).ToList();
+                       pcdevices = (from p in musik.devices select p).ToList();
                    }
 
-                   var nyed = jaja.ElementAt(0);
+                   var nyed = pcdevices.ElementAt(0);
                    var pid = new PIDevice();
                    pid.UUIDDevice = nyed.UUIDDevice;
                    pid.IP = nyed.IP;
@@ -46,27 +46,26 @@ namespace dbclases
                    {
                        pimusik.PIDevices.Add(pid);
                        pimusik.SaveChanges();
-
                    }
 
                }
                else
                {
-                   CheckPIandfix();
+                   CheckPIandFixIp();
                }
            }
 
        }
 
-       private void CheckPIandfix()
+       private void CheckPIandFixIp()
        {
-           List<device> jaja;
+           List<device> PCdevices;
            using (var musik = new pcindexEntities())
            {
-               jaja = (from p in musik.devices select p).ToList();
+               PCdevices = (from p in musik.devices select p).ToList();
            }
 
-           var my = jaja[0];
+           var my = PCdevices[0];
            using (var pimusik = new PiindexEntities())
            {
                var change = (from p in pimusik.PIDevices where p.UUIDDevice == my.UUIDDevice select p).ToList();
@@ -79,7 +78,7 @@ namespace dbclases
 
        public void SyncfromLocalToPI()
         {
-            fillpipath();
+            FillPiPath();
             FillAAG();
             FillMusikData();
 
@@ -93,19 +92,19 @@ namespace dbclases
 
         private bool CheckIfDeviceExists()
         {
-            List<string> jaja;
+            List<string> pcdevices;
             using (var musik = new pcindexEntities())
             {
-              jaja = (from p in musik.devices select p.UUIDDevice).ToList();
+              pcdevices = (from p in musik.devices select p.UUIDDevice).ToList();
             }
             using (var pimusik = new PiindexEntities())
             {
-                jaja = listcompair(jaja, (from p in pimusik.PIDevices select p.UUIDDevice).ToList());
+                pcdevices = listcompair(pcdevices, (from p in pimusik.PIDevices select p.UUIDDevice).ToList());
             }
-            return jaja.Count == 0;
+            return pcdevices.Count == 0;
         }
 
-       private void fillpipath()
+       private void FillPiPath()
        {
            List<filepath> pathtopi;
            List<PIFilePath> pifilepaths;
@@ -256,22 +255,20 @@ namespace dbclases
            }
        }
 
+       // Takes all music from Pc an adds to the Pi what it doesn't have
        private void FillMusikData()
        {
            List<musicdata> musicdatas;
 
-           // suger all alt musik på pcdb
            using (var musik = new pcindexEntities())
            {
                musicdatas = (from p in musik.musicdatas select p).ToList();
            }
-           
-           // suger alt og fjerner det som er der i forvejen
            using (var pimusik = new PiindexEntities())
            {
                musicdatas = listcompair(musicdatas, (from p in pimusik.PIMusikDatas select p).ToList());               
            }
-           // tilføjer de manglende til pidb
+
            if(musicdatas.Count >0)
            Addmusikdata(musicdatas);
 

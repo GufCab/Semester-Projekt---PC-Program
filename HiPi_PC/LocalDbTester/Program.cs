@@ -15,12 +15,12 @@ namespace LocalDbTester
             
             var dbh = new dbclases.LocalDbhandel();
 
-            dbh.FillIP("192.168.1.11");
+            dbh.FillIp("192.168.1.11");
 
             var ha = new List<string>();
             ha.Add(@"C:\Users\Malmos\Documents\GitHub\Semester-Projekt---PC-Program\musikmappe");
 
-            dbh.Fillrest(ha);
+            dbh.FillMusicAndPath(ha);
 
             
             
