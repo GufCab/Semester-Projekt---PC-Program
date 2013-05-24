@@ -25,9 +25,9 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="28*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="5*"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition MinHeight="20" Height="Auto"/>
@@ -80,7 +80,7 @@
                     <ColumnDefinition Width="Auto"></ColumnDefinition>-->
                 </Grid.ColumnDefinitions>
                 <!--<TextBlock Grid.Column="0" VerticalAlignment="Center">00:00</TextBlock>-->
-                <Slider x:Name="sliderTime" HorizontalAlignment="Right" Width="200" PreviewMouseLeftButtonUp="SliderTime_OnPreviewMouseLeftButtonUp"></Slider>
+                <Slider x:Name="sliderTime" HorizontalContentAlignment="Center" PreviewMouseLeftButtonUp="SliderTime_OnPreviewMouseLeftButtonUp" Width="200"/>
                 <!--<TextBlock Grid.Column="2" VerticalAlignment="Center">00:00</TextBlock>-->
                 
             </Grid>

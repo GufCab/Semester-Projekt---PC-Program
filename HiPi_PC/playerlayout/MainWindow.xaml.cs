@@ -108,7 +108,7 @@ namespace playerlayout
         {
             Dispatcher.BeginInvoke(new Action(() =>
                 {
-                    if (vol._data <= 70)
+                    if (vol._data < 70)
                     {
                         sliderVol.Value = 70;
                     }
@@ -211,6 +211,8 @@ namespace playerlayout
             //todo: switch these two
             //observerHandler.SetNextAVTransportURI((ITrack)result);
             observerHandler.SetAVTransportURI((ITrack)result);
+
+            //Dispatcher()
         }
 
         private void DgPlayQueue_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -229,12 +231,22 @@ namespace playerlayout
 
         private void SliderVol_OnPreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            observerHandler.SetVolume(Convert.ToUInt16(sliderVol.Value));
+            if (sliderVol.Value == 70)
+            {
+                observerHandler.SetVolume(Convert.ToUInt16(0));    
+            }
+            else
+            {
+                observerHandler.SetVolume(Convert.ToUInt16(sliderVol.Value));    
+            }
+            
         }
 
         private void SliderTime_OnPreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             observerHandler.SetPosition((ushort) Convert.ToInt16(sliderTime.Value));
         }
+
+
     }
 }

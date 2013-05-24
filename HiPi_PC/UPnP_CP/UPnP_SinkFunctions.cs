@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Timers;
 using OpenSource.UPnP;
 using SinkStack;
 using Containers;
@@ -36,6 +37,9 @@ namespace UPnP_CP
 
         public delegate void transportStateDel(object sender, EventArgsContainer<string> e);
         public event transportStateDel transportStateEvent;
+
+        public delegate void timerEventDel(object sender, EventArgs e);
+        public event timerEventDel OnTimedEvent;
         
         public uint InstanceID { get; private set; }
         private string _channel;
@@ -63,11 +67,18 @@ namespace UPnP_CP
             _RenderingControl.OnResult_GetPosition += RenderingControlOnOnResultGetPosition;
             
             _AVTransport.OnStateVariable_TransportState += AvTransportOnOnStateVariableTransportState;
+            //_AVTransport.get
             _AVTransport._subscribe(30);
 
-            
+            Timer subscribeTimer = new Timer();
+            subscribeTimer.Elapsed += new ElapsedEventHandler(timerEventFunc);
+            subscribeTimer.Interval = 30000;
+            subscribeTimer.Enabled = true;
+        }
 
-            //_AVTransport.OnSubscribe += AvTransportOnOnSubscribe;
+        private void timerEventFunc(object sender, ElapsedEventArgs elapsedEventArgs)
+        {
+            _AVTransport._subscribe(30);
         }
         
         private void AvTransportOnOnStateVariableTransportState(CpAVTransport sender, string newValue)
@@ -95,7 +106,6 @@ namespace UPnP_CP
                     {
                         //?
                     }
-                    value = State.Playing; 
                     value = State.Stopped; 
                     break;
 
@@ -108,7 +118,7 @@ namespace UPnP_CP
                     {
                         //?
                     }
-                    value = State.Playing; 
+                    value = State.Transitioning; 
                     break;
             }
         }
