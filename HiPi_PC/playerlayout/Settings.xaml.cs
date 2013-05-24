@@ -34,7 +34,7 @@ namespace playerlayout
 
     public partial class Settings : Window
     {
-        public SyncTemplate Sync;
+        public Synchronizer Sync;
         class DialogData
         {
             private string reportFolder;
@@ -187,10 +187,10 @@ namespace playerlayout
 
             //string prefix = "Open File Dialog: ";
         }
-        //public SyncTemplate Sync = new SyncTemplate();
+        //public Synchronizer Sync = new Synchronizer();
         private void SyncronizeButton_OnClick(object sender, RoutedEventArgs e)
         {
-            Sync =new SyncTemplate();
+            Sync =new Synchronizer();
 
             List<string> pathes = new List<string>();
 

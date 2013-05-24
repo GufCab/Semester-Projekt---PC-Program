@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="82ef4cf5-79c0-4559-bfc5-a9d1273d3286"
+  name="TemplateSync"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="5a308acc-f213-411a-90f8-31cc0064bde4"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DTemplateSync"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="55214e49-30af-4c8e-b924-24db2054607a"
+        name="ISynchronizer"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="43286857-7934-4621-b032-a84c68fb38c4"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FTemplateSync%2Fbin%2FDebug%2FTemplateSync.dll Namespace%3DTemplateSync Type%3DISynchronizer"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="36931483-81c3-4970-81be-47f0b55d9b45"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e24133ff-f4ef-4c39-afc0-9865de0d43e1">
+                <propertyInstance
+                  Id="0c93673e-9f7c-4a36-a638-07cffc55bfdc"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1ce1fb53-a80a-48d6-906c-95fb960b768f">
+                <propertyInstance
+                  Id="61bb1c49-c73b-4c27-a571-1388f64e3268"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="abe22280-8a93-4117-a59e-61111300d4ba">
+                <propertyInstance
+                  Id="35e0e259-59de-485e-a9c4-455e6d83cab0"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c1f235d6-a5ce-48f1-b6dd-e6922743bc6c">
+                <propertyInstance
+                  Id="5c7f4db5-bca6-4662-a97b-d3b37fef37ff"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0990b91d-6852-48b9-bd03-e05c95bc090f">
+                <propertyInstance
+                  Id="d0ec4d12-0615-4923-9ea9-c3cb7c0175a9"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

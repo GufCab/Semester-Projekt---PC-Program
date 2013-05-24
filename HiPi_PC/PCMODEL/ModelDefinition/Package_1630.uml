@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="8478f101-61dc-444f-bbe2-88c41b5123fb"
+  name="SinkStack"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="9ec47752-0775-4dbc-a502-8b0363b979f2"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DSinkStack"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="057af6cf-1e49-4de4-839f-096fb3d137f9"
+        name="CpAVTransport"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="716af7fe-50bc-4c02-a469-dbdf4d97012b"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FUPnP_CP%2Fbin%2FDebug%2FUPnP_CP.dll Namespace%3DSinkStack Type%3DCpAVTransport"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="4310c776-a4aa-4446-8fb7-d56a98e1b471"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="00296d7d-1a4f-4a05-973a-ea273737f7f3">
+                <propertyInstance
+                  Id="b4a189d7-6c6f-4de9-85c9-87bd38873db6"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d946d5c1-d392-4d9a-8b38-38b30749a8b0">
+                <propertyInstance
+                  Id="ded62b84-6141-4b7a-b82d-4a470634c6e5"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="18a52c8b-557f-47c0-baae-324fdd379061">
+                <propertyInstance
+                  Id="abad2217-b4b6-448a-932b-da502c075a7d"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="351e22e6-0ba2-445f-b7e2-9f9ff94d552d">
+                <propertyInstance
+                  Id="1ff1821f-a172-43fa-bec2-9064a43bb875"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c4a5217d-2a50-47fa-935e-88fdc1d13bb5">
+                <propertyInstance
+                  Id="4e86d058-8395-4aa4-83ad-bc890f59c024"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="53a1c156-ea6c-4f48-a3af-599e43a8234e"
+        name="CpConnectionManager"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="e9eee642-a0e8-431f-8e3c-72f669f557fd"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FUPnP_CP%2Fbin%2FDebug%2FUPnP_CP.dll Namespace%3DSinkStack Type%3DCpConnectionManager"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="86feb9c6-4ab0-4370-bab1-f1af15b07a0e"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c941950f-45ce-424c-a9bd-a8186d6cde26">
+                <propertyInstance
+                  Id="aa5457e6-856f-4be7-8053-7482fde503e9"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ca9e2bef-fbb4-461a-9f41-45c0493f31ba">
+                <propertyInstance
+                  Id="e96656da-1de7-40e6-8284-6c9eebfeb569"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d696da93-ee6b-487a-8216-452ad43b5c55">
+                <propertyInstance
+                  Id="79602859-287f-431c-ab24-ec0019d469c2"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b5a43a87-fa98-4f78-ad7f-438b5b3040f3">
+                <propertyInstance
+                  Id="32db8b83-8571-4232-8a8b-79326d242e5c"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0f6b7030-6a3d-4799-ba8c-87a9153d9e60">
+                <propertyInstance
+                  Id="7e367493-2308-46d4-a266-7f9f08288d9f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f0362e4e-15b5-4287-be55-f62abf6fc22d"
+        name="CpRenderingControl"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="da3b9253-f411-4878-a6b9-ad7f88977e81"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FUPnP_CP%2Fbin%2FDebug%2FUPnP_CP.dll Namespace%3DSinkStack Type%3DCpRenderingControl"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="072f6cda-a79d-4b7a-9eef-c1adbb586c2a"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0f5cc748-7247-4b83-9123-7807156126ed">
+                <propertyInstance
+                  Id="cef956b0-7a30-4de0-b8ce-77b3a4a1e906"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f08e190b-bc94-480b-a029-d0e95f40a84a">
+                <propertyInstance
+                  Id="60dd117e-3ceb-46d9-b63e-8cf9188350fb"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="80328df7-abd2-4706-896d-0748cc7aac4e">
+                <propertyInstance
+                  Id="2f21d2aa-32ad-4d78-a7b8-35109bb6336c"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="df7caa6b-aba5-4dbc-a5fa-8d8702a3a2dd">
+                <propertyInstance
+                  Id="3de7165d-c600-4488-8d77-6564bb67a0ec"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ea14c329-9d0f-413c-9bd4-361d6a0500f0">
+                <propertyInstance
+                  Id="e44b0c33-5cde-4f4f-9e5b-5636166a68fe"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

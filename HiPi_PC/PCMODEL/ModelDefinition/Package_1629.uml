@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="51fecc85-c637-48f4-b62b-d1dd4bb041b2"
+  name="OpenSource"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="08a57552-0ba0-4edf-9f89-18e31a5d4e21"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DOpenSource"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="e01eb48a-5502-4cc3-b51f-ef1abf7b17d4"
+        LastKnownName="DeviceBuilder"
+        LastKnownLocation="Package1_1629.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="8a491548-371c-4c91-81da-164f47be270d"
+        LastKnownName="UPnP"
+        LastKnownLocation="Package2_1629.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

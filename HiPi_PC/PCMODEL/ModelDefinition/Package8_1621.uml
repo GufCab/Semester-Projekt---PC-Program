@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="b9d51ea2-7976-45b2-8a9f-37537c794129"
+  name="XMLHandler"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="4c63a389-a190-4217-9a03-da584fd48a5f"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DXMLHandler"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="09bfac10-dd43-44c1-a88e-01f0b599d43f"
+        name="musikUpdateDel"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="f8ecc0ad-4368-47cc-9242-68e52aa690f2"
+            handle="viewcode://./CodeSchema_Delegate?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FXMLHandler%2Fbin%2FDebug%2FXMLHandler.dll Namespace%3DXMLHandler Type%3D(Name%3DmusikUpdateDel ParentType%3DObervHandler)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="2a5becb7-feef-4b79-8870-89ddbf757137"
+            name="delegate"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5f7d5bbb-24e8-4da6-90c5-0de2e894dda2">
+                <propertyInstance
+                  Id="fae3a98d-d35a-4f7c-afda-e8b7a854a5ae"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c3c7c83b-393f-45ba-95d9-d9dcb3cfba78">
+                <propertyInstance
+                  Id="4b912f72-037f-4fd8-b8d7-6fdca3ba1102"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c70a924f-0deb-422f-9f10-f7f49222ab20">
+                <propertyInstance
+                  Id="475f5606-8273-48f4-abfa-3fdf0b91be38"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d6fa5f93-fe6a-4235-bc9e-e485a47a064d"
+        name="playQueueUpdateDel"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="dc8fb49c-04b8-43b6-829b-b365825b3fa1"
+            handle="viewcode://./CodeSchema_Delegate?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FXMLHandler%2Fbin%2FDebug%2FXMLHandler.dll Namespace%3DXMLHandler Type%3D(Name%3DplayQueueUpdateDel ParentType%3DObervHandler)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="8b6e82c0-3735-4b27-9211-af80c024089f"
+            name="delegate"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="70256ab5-90df-4221-86ae-41bc1249c120">
+                <propertyInstance
+                  Id="99bd4f7f-790c-414e-95f8-e3bb62a34546"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1e8d8e1c-2dfa-464c-b423-2690757b22e6">
+                <propertyInstance
+                  Id="896a9b6e-386f-465b-ba03-502d0376e36b"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="31d97a10-2591-4cfc-826b-bdd4348601b0">
+                <propertyInstance
+                  Id="c7dc94f6-9008-4c97-a20b-9e5309d1a078"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ff0d3b21-f556-4b90-9364-bb42a0666f17"
+        name="volumeDel"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="fc215286-5305-4f1b-a464-22693e924cc8"
+            handle="viewcode://./CodeSchema_Delegate?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FXMLHandler%2Fbin%2FDebug%2FXMLHandler.dll Namespace%3DXMLHandler Type%3D(Name%3DvolumeDel ParentType%3DObervHandler)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="628c0292-12de-4f92-a645-70d57aadbf6f"
+            name="delegate"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ca0d7a49-973a-4823-9082-1aa82af8b671">
+                <propertyInstance
+                  Id="98c10934-4ba1-4e20-a266-7a833a32612a"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8ba911a7-8fa4-438c-b188-8115a18b23eb">
+                <propertyInstance
+                  Id="57b7a515-c11d-40ab-86f9-c4bb3001870f"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3c782499-05b1-4bb7-968d-42b1ae7193fb">
+                <propertyInstance
+                  Id="f9688d25-228e-486b-b463-7bc5c27b2c7f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="698f065f-376c-454c-a865-9efc91c8c8f0"
+        name="getPositionDel"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="e83e2fdc-29c0-46a5-875b-19da6a42795b"
+            handle="viewcode://./CodeSchema_Delegate?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FXMLHandler%2Fbin%2FDebug%2FXMLHandler.dll Namespace%3DXMLHandler Type%3D(Name%3DgetPositionDel ParentType%3DObervHandler)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="b9efd0a1-cdb7-49fe-8bde-aed9175dd324"
+            name="delegate"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="da81845d-fa82-4f44-976d-209d92b58417">
+                <propertyInstance
+                  Id="8e0ef774-fcf7-4d72-bb1e-1e30c8052392"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7ebc8581-be08-43b0-a3cf-4917e974064e">
+                <propertyInstance
+                  Id="467857ef-fc24-4277-ad90-6452e3205b1d"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c7342236-db8b-4f3a-aff5-e6fc3a2ca747">
+                <propertyInstance
+                  Id="e8cae4af-cd4a-474a-9275-d7b4d701eac0"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="02adcaba-5f4c-4afc-98a4-1007e4ea2054"
+        name="getIPDel"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="6163d878-6593-41fd-8d6a-142be4fb1939"
+            handle="viewcode://./CodeSchema_Delegate?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FXMLHandler%2Fbin%2FDebug%2FXMLHandler.dll Namespace%3DXMLHandler Type%3D(Name%3DgetIPDel ParentType%3DObervHandler)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="b0d98271-d34e-471f-8b77-bf2ea820baf4"
+            name="delegate"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f6513673-35ac-454a-918f-12cde27e66ba">
+                <propertyInstance
+                  Id="273e6577-dfb1-495a-8f45-9732dc51728f"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7cc223c6-e7b5-4e73-a37d-84f2e0eb0b6a">
+                <propertyInstance
+                  Id="9191960e-cf9e-4467-90b8-ff11e4f518cd"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="327e1417-99d8-4eef-a771-ef137fe6b242">
+                <propertyInstance
+                  Id="ee143d2b-83ec-4ced-8919-1e53f617cab4"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="49f1cddc-9575-477b-a5d0-a76f5a60de39"
+        name="transportStateDel"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="bb03ee53-765a-4e0c-95d3-5ed70b545343"
+            handle="viewcode://./CodeSchema_Delegate?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FXMLHandler%2Fbin%2FDebug%2FXMLHandler.dll Namespace%3DXMLHandler Type%3D(Name%3DtransportStateDel ParentType%3DObervHandler)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="e08d9587-cd36-48cf-9f40-4ef9605c4a54"
+            name="delegate"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="24f33667-8706-47fd-aeaf-a358855d7da4">
+                <propertyInstance
+                  Id="be5291f8-3f92-472e-8fd4-4a1a57f19b12"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="018e6fb8-8d0f-4944-8b53-ab0f34e6c340">
+                <propertyInstance
+                  Id="98e2f9d4-c2db-4d3d-a616-9aabee993a41"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="17c1e673-f8ab-49ed-9545-8c7629f5d353">
+                <propertyInstance
+                  Id="b5efbf9b-3782-49ce-8902-6a49a6b2b6c4"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

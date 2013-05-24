@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="efa6e6f5-9f6f-43b2-82de-50bebf1c5383"
+  name="dbclases"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="3173fd59-608f-45ca-9709-c71801d14852"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3Ddbclases"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="2c198816-694b-43fb-b811-5f9b0273bce9"
+        name="ILocalDbhandel"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="995d9330-cdb7-4ada-bd09-49347f94babf"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2Fdbclases%2Fbin%2FDebug%2Fdbclases.dll Namespace%3Ddbclases Type%3DILocalDbhandel"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="33bf5370-de3e-4035-a327-9f0c384b1739"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7a642881-4f10-42cf-89a9-3601ad928041">
+                <propertyInstance
+                  Id="20df960d-6fab-4dbc-80f3-a9d588ef3686"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1a5d79f9-4c7b-47fd-97b2-28ce0675783a">
+                <propertyInstance
+                  Id="1bc82c25-cb66-4fbb-905f-49c628132a76"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6086ea0f-6028-4979-8d96-51b1ae9b098b">
+                <propertyInstance
+                  Id="08574a8c-b7f2-4828-8665-f2b9e5448da9"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="68f1397d-d376-4e97-a285-f9188778b9a8">
+                <propertyInstance
+                  Id="96644f4c-f2aa-4a50-8acc-63e342dafcc5"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="15ade4df-aefd-4130-8fae-18b291e8aef4"
+        name="IPidbhandel"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="67f3d9a4-5081-4796-bdc0-5621e7fa2ad8"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2Fdbclases%2Fbin%2FDebug%2Fdbclases.dll Namespace%3Ddbclases Type%3DIPidbhandel"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="1af8fd88-511e-47de-8c16-77a5fdde76f4"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="12b69128-26ca-4eec-8772-7159967b8f92">
+                <propertyInstance
+                  Id="c9a323ec-f66b-40c3-afd1-88e68a5a90f1"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="38153900-fa90-485c-9d6c-d4377a676a65">
+                <propertyInstance
+                  Id="55ec5738-dbaa-4073-80d6-adc0c2ed782b"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3899455d-a729-4c95-8e1e-72a0f28fed64">
+                <propertyInstance
+                  Id="19bab04a-f6e1-44ba-8903-564844fc5dbb"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="48b8ade5-e5f4-456b-a763-e3b0afd6e1cd">
+                <propertyInstance
+                  Id="6a42af30-71bc-498a-95f0-24646aa286e5"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

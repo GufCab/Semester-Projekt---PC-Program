@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="cf166897-1ea6-4176-a7a8-5daaf739c417"
+  name="SourceStack"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="847d181c-de89-4185-afa6-bb7a1bbe9c9c"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DSourceStack"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="be4d0bd2-8b8d-48f9-b28d-11d47fac1418"
+        name="CpConnectionManager"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="7477d298-2e03-4797-922d-1b28716f5e78"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FUPnP_CP%2Fbin%2FDebug%2FUPnP_CP.dll Namespace%3DSourceStack Type%3DCpConnectionManager"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="096f70c1-d8fd-4f0e-bda5-e82b142b6fbd"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6bc6e966-04ce-4edc-93eb-75bf7149f2b6">
+                <propertyInstance
+                  Id="5e935670-75df-42d3-95da-2c2f6918d13b"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0afb1fbb-950a-48bc-94ae-46cc9434a32f">
+                <propertyInstance
+                  Id="992cf919-04d1-4a1d-b8cb-5d375a5cd8c2"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3e130420-ba66-47a2-9844-aea5c35dc579">
+                <propertyInstance
+                  Id="ff0ed9c9-31b5-4bdc-b7ec-dac5fa4c9489"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d47cd022-6a4e-4573-9bb0-08fb69cb374e">
+                <propertyInstance
+                  Id="8b7de24f-14e0-4e36-9a0c-4548d67e995a"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5c267b97-2bf2-416a-9d26-28a6c1160461">
+                <propertyInstance
+                  Id="ee1ef072-6cd1-4b3b-ba5d-0e4a15a8ce53"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="09a9711d-1c2e-437a-b636-86a29ab76229"
+        name="CpContentDirectory"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="e7453ce7-7796-4d8d-917a-cc7a99d3dc9e"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FUPnP_CP%2Fbin%2FDebug%2FUPnP_CP.dll Namespace%3DSourceStack Type%3DCpContentDirectory"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="2117f7aa-06e1-4eda-a3a6-54875001a921"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="41def4bb-8558-4a1b-bbf8-a3683c46404d">
+                <propertyInstance
+                  Id="7a9becc4-8645-497b-bac5-d8ca7e4f3010"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="654fd373-2ebe-44f6-85a2-516a51c78a7b">
+                <propertyInstance
+                  Id="401b0970-9202-4f18-ac75-a4670ce7dd4d"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c4c6e5c5-1bb2-44be-9e69-749bd7d49d47">
+                <propertyInstance
+                  Id="c7296072-c2c2-4c25-b78f-c052497b655d"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="623031e0-c664-4b78-b707-0dff840857cc">
+                <propertyInstance
+                  Id="60867b3e-be69-4482-9efb-d536080c8852"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8d007253-efa2-4ad9-a528-32d1b2c60b77">
+                <propertyInstance
+                  Id="18f05465-76fb-42af-b45d-ac7fb9972262"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="10f3c3a5-bb8b-42d8-8803-727cc5599a49"
+        name="Enum_A_ARG_TYPE_BrowseFlag"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="fca191cb-f7ca-4823-bd49-21c7e1672ff8"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FUPnP_CP%2Fbin%2FDebug%2FUPnP_CP.dll Namespace%3DSourceStack Type%3D(Name%3DEnum_A_ARG_TYPE_BrowseFlag ParentType%3DCpContentDirectory)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="26842ddf-4ac6-4161-b932-fdf8ae868aad"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4723c3b5-32ac-4c87-b6f8-04873d39cb49">
+                <propertyInstance
+                  Id="445fa45d-bcee-421e-a8a8-5e0d8beb1eda"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9daf6103-7a5f-413e-9ddc-b3a7f6107f76">
+                <propertyInstance
+                  Id="2ad8215f-23fe-44f0-be45-6e0b78251fe9"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="08b18a99-45d0-4127-9cfd-3e6bf63a3be7">
+                <propertyInstance
+                  Id="571fe4a8-00ed-408c-a0ac-72fbcf3881b8"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

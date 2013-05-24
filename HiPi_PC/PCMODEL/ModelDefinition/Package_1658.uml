@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="c410398c-0c04-4e3f-88ce-998437fd42af"
+  name="MetaReader"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="621070db-8585-4857-b29f-695f526376de"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DMetaReader"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="533f09bc-e52b-4c0b-b188-664f95a048a6"
+        LastKnownName="MetadataReader"
+        LastKnownLocation="Package1_1658.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="f47306bd-8108-4a14-ae2e-f76c0f2d3e30"
+        LastKnownName="FileIndexer"
+        LastKnownLocation="Package_2022.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

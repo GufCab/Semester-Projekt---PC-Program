@@ -13,21 +13,21 @@ using Live555;
 
 namespace TemplateSync
 {
-    public class SyncTemplate : ISynchronizer
+    public class Synchronizer : ISynchronizer
     {
-        private LocalDbhandel db = new LocalDbhandel();
+        private ILocalDbhandel db = new LocalDbhandel();
         // Pidatabasen skal også være her
         private Live555Wrapper live555;
         //private int _index;
 
         private string _ip;
 
-        public SyncTemplate()
+        public Synchronizer()
         {
             Startup();
         }
       
-       public override void Startup()
+       public void Startup()
        {
            live555 = new Live555Wrapper();
            _ip = live555.GetIP();
@@ -36,24 +36,24 @@ namespace TemplateSync
        }
       
         
-       public override void SyncPiDb()
+       public void SyncPiDb()
        {
-           var pidb = new PiDbhandel();
+           IPidbhandel pidb = new PiDbhandel();
 
            pidb.Markasonline();
            pidb.SyncfromLocalToPI();
        }
 
-        public override async void SyncLocalDb(List<string> pathlist )
+        public void SyncLocalDb(List<string> pathlist )
+        
         {
-
-            db.FillIP(_ip);
+            db.FillIp(_ip);
             List<string> rellist = new List<string>();
             foreach (string s in pathlist)
             {
                 rellist.Add(MakeRelpathFromAbspath(s));                
             }
-            db.Fillrest(rellist);
+            db.FillMusicAndPath(rellist);
 
         }
 

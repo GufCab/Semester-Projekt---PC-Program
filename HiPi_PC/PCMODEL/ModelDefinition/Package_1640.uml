@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="aa5a82f3-b0c4-43c2-a50d-0e8ee364799b"
+  name="Live555"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="a4b2c330-bc77-4b64-9841-78dfaeda444a"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DLive555"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="b47a5343-49ff-4ae7-85e9-5767ea3448a1"
+        name="Live555Wrapper"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="565f067b-a73d-494d-b0bd-e92f80434fc3"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FLive555%2Fbin%2FDebug%2FLive555.dll Namespace%3DLive555 Type%3DLive555Wrapper"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="87dc6f9d-2454-479c-90e5-bcb502db9bd1"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e9902618-c462-4559-9819-1fe0dcd05b07">
+                <propertyInstance
+                  Id="f0071781-dfd8-4d81-8186-9dab8265503c"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="10e630c1-4f8c-4822-96fb-787233f7bfbf">
+                <propertyInstance
+                  Id="4117e90b-bdb5-4ad1-b076-cb53ac57911a"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f21ac1ff-6c86-4d7a-b54f-a9f6e5066ca5">
+                <propertyInstance
+                  Id="14cac2c9-f800-4772-b891-f6e08df1c4eb"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a793f4ba-d99e-40b3-9d1f-bbb55d19b973">
+                <propertyInstance
+                  Id="4e2c864e-25c0-435d-a808-806d19383999"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f491112c-fdff-473d-a52b-b0d57bf37d3d">
+                <propertyInstance
+                  Id="77749128-0aa6-4a60-a392-1855af6eaf22"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

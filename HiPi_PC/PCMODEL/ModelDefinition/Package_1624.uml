@@ -1,0 +1,555 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="a37e8c9f-1327-42e3-b2a6-7e9134419936"
+  name="UPnP_CP"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="7c92b1a8-cdcb-4adf-b55e-ddd82e6f9ec4"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DUPnP_CP"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="378fb62a-c5a6-4c6c-be57-6a1f2c337f22"
+        name="AddSinkHandler"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="de0eef2f-6b26-4e96-8691-5a2b684524da"
+            handle="viewcode://./CodeSchema_Delegate?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FUPnP_CP%2Fbin%2FDebug%2FUPnP_CP.dll Namespace%3DUPnP_CP Type%3D(Name%3DAddSinkHandler ParentType%3DUPnP_Setup)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="86f991e7-b5eb-4528-abdc-7401004912c9"
+            name="delegate"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0348fc56-2c7e-4c66-9d07-188d8339746e">
+                <propertyInstance
+                  Id="fed69f09-236e-4f68-b148-62f855efecce"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="03f3b465-25c5-4759-bccc-061399c78c80">
+                <propertyInstance
+                  Id="ee38bbe0-eb4e-48ce-9153-b2fe3423b061"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="49f23446-4f14-4f19-b397-bd218607d8f3">
+                <propertyInstance
+                  Id="841b586f-8e6e-4a88-a8f6-468db00f9aa8"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="aa34efb2-f4d8-41e5-be9b-8bf7bb85b496"
+        name="AddSourceHandler"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="7a0ea596-b640-4dff-b1cb-f262eaf97e68"
+            handle="viewcode://./CodeSchema_Delegate?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FUPnP_CP%2Fbin%2FDebug%2FUPnP_CP.dll Namespace%3DUPnP_CP Type%3D(Name%3DAddSourceHandler ParentType%3DUPnP_Setup)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="603bb92d-e807-4398-b67c-31fd7bb12495"
+            name="delegate"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="cd4352ad-d91b-46ad-9dd3-a1eefbdb1e4a">
+                <propertyInstance
+                  Id="45771a88-c61a-4ad8-8607-810ff8b1a04e"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="63a15f06-d0d7-4152-9f0b-696786867d91">
+                <propertyInstance
+                  Id="5821a5f3-b9ee-4f06-94d6-95ef8f6a348c"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="28d5b45d-730c-44f3-8861-256e950b359a">
+                <propertyInstance
+                  Id="bcabca4e-cda7-4d7c-8aed-cadb1eaca785"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="301549ef-a267-4163-b54b-067aed14257e"
+        name="RemoveSourceHandler"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="2343aca0-0914-4267-9d8e-658f109a2aa6"
+            handle="viewcode://./CodeSchema_Delegate?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FUPnP_CP%2Fbin%2FDebug%2FUPnP_CP.dll Namespace%3DUPnP_CP Type%3D(Name%3DRemoveSourceHandler ParentType%3DUPnP_Setup)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="72ec705b-aca2-4e8e-b112-d601d8a4ec3b"
+            name="delegate"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="dc4132e9-db74-48b1-996f-e5ec0ec90f97">
+                <propertyInstance
+                  Id="493db3a6-840c-4d20-a224-1e36f7f4582c"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5179b3d5-9e10-4a80-8ff6-794f8420bd0a">
+                <propertyInstance
+                  Id="039ced0e-5c0b-44ab-91b1-9da62827d482"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="24c405cd-7bf9-4412-83a5-387ab284761f">
+                <propertyInstance
+                  Id="7c0c59bc-014b-45e9-a362-e26b931781f8"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="616ade9b-628b-4f39-b4f2-22b4342a5389"
+        name="getVolumeDel"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="703443d5-0392-40ba-ae56-b6eacce01e9d"
+            handle="viewcode://./CodeSchema_Delegate?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FUPnP_CP%2Fbin%2FDebug%2FUPnP_CP.dll Namespace%3DUPnP_CP Type%3D(Name%3DgetVolumeDel ParentType%3DUPnP_SinkFunctions)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="2645c0b9-a681-45e8-8dc9-e1974a799b37"
+            name="delegate"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="59a58cb9-93a4-4432-811d-76321259fe32">
+                <propertyInstance
+                  Id="dbd440a5-ada6-460f-a840-20170206e70e"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="74e79c3d-b84b-4fb7-886b-97c62d0914a4">
+                <propertyInstance
+                  Id="67ac3c54-5244-44d7-bb49-ee446808a5fd"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1a45e3ee-8911-472d-9018-13f0a3bd0945">
+                <propertyInstance
+                  Id="09908103-3226-4a46-81e6-a6cec3f3129e"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7380afbf-1825-4705-8ba2-bf989ce6a2fa"
+        name="getPositionDel"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="5e08d768-2e67-4044-9ecb-16c452ffba48"
+            handle="viewcode://./CodeSchema_Delegate?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FUPnP_CP%2Fbin%2FDebug%2FUPnP_CP.dll Namespace%3DUPnP_CP Type%3D(Name%3DgetPositionDel ParentType%3DUPnP_SinkFunctions)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="5bdf39e1-a285-4209-99cd-cb192c8107eb"
+            name="delegate"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4aa9bbe2-f9f1-496c-9354-97e7452ba077">
+                <propertyInstance
+                  Id="7d5f5956-c5e3-4817-8edd-0f60b9fdf174"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e5e485d8-78fd-4ec3-8937-5fbd51904458">
+                <propertyInstance
+                  Id="a6d3cb94-7ebb-4954-b89d-f05b865eb5df"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c0e2c2a5-f5fc-407d-9356-6fa5bd5ceba6">
+                <propertyInstance
+                  Id="1827ee1c-fd2c-4b80-b2fd-a1d5fd34850d"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="67aacc4f-8210-4e50-bf2f-850cd483d7c2"
+        name="getIPDel"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="b69a9a12-8e0a-4f80-943c-7601dc8576bb"
+            handle="viewcode://./CodeSchema_Delegate?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FUPnP_CP%2Fbin%2FDebug%2FUPnP_CP.dll Namespace%3DUPnP_CP Type%3D(Name%3DgetIPDel ParentType%3DUPnP_SinkFunctions)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="21bcd5be-ffdb-43e5-9996-29098dee475a"
+            name="delegate"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a2a68eb8-0f98-4361-a19f-edfd6933994f">
+                <propertyInstance
+                  Id="376a351f-c2aa-430c-8781-1ca0202ed674"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="db8b5424-ddd3-4dc8-b3c0-69ff7e69d9c4">
+                <propertyInstance
+                  Id="3936f860-7b12-4578-973e-d15c92b678b9"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="29767a86-ac00-438e-95b9-269de0d26d02">
+                <propertyInstance
+                  Id="b4d08c38-d675-4d08-8758-74feaf360a6e"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="1a64a742-90cf-4cf0-88b0-8072416ba620"
+        name="transportStateDel"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="79c7295e-c0e3-4689-9e6b-4240b6bf9553"
+            handle="viewcode://./CodeSchema_Delegate?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FUPnP_CP%2Fbin%2FDebug%2FUPnP_CP.dll Namespace%3DUPnP_CP Type%3D(Name%3DtransportStateDel ParentType%3DUPnP_SinkFunctions)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="d297cbdf-c35f-46a1-9ca0-40993de30fba"
+            name="delegate"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d69816b6-d6b0-4a29-804c-06d03abfb989">
+                <propertyInstance
+                  Id="17198752-e349-4f4d-be70-89b237cc38f8"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1fc66147-6060-4973-959b-274758aaf4ef">
+                <propertyInstance
+                  Id="244f58cb-16bf-4199-990c-ee2af0a388a8"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5245ab19-23fb-49ed-a63a-86663b8f0aca">
+                <propertyInstance
+                  Id="663afbbe-6fed-4db1-bd1c-e91ca04f2f11"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d1c46f29-8ce5-482f-86ba-1bbcf5b21f4c"
+        name="timerEventDel"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="96be025f-0b74-4289-a0ab-4b0079e200ce"
+            handle="viewcode://./CodeSchema_Delegate?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FUPnP_CP%2Fbin%2FDebug%2FUPnP_CP.dll Namespace%3DUPnP_CP Type%3D(Name%3DtimerEventDel ParentType%3DUPnP_SinkFunctions)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="823a68e3-d490-464d-b3c1-6ac79e2095c6"
+            name="delegate"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="72410b8b-b706-42a4-8a23-ab8a655b6ad7">
+                <propertyInstance
+                  Id="1f4ab01c-ed13-4d00-9cd9-0d105f1e5bce"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a8c03916-2e2f-4c25-8eab-eddfe310673f">
+                <propertyInstance
+                  Id="7efd9a9b-aa88-42a1-9203-fa4dc5e19929"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="52ddad8c-ed8b-435c-9578-4d5c3a9091e6">
+                <propertyInstance
+                  Id="4dbd17b9-ce9f-4e1d-8a81-2dbf826d742e"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="272dd61c-9e47-4320-9878-acb2a924abd6"
+        name="State"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="a9c16a62-deb5-4c64-91f0-d1ec3df71d8d"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FUPnP_CP%2Fbin%2FDebug%2FUPnP_CP.dll Namespace%3DUPnP_CP Type%3D(Name%3DState ParentType%3DUPnP_SinkFunctions)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="aedbe276-ae32-420a-a2ac-1e7922908800"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="fd4106ba-7684-4818-80ac-a068593efac0">
+                <propertyInstance
+                  Id="6e65ca47-980f-41a1-8ff5-1a15f32eca39"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9e5c5bc2-1aad-41dd-b9d0-71e7b2d26454">
+                <propertyInstance
+                  Id="82dd41c5-76a1-4ccd-a2b3-e56cb65645e3"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="08e7ef5c-29fb-4993-9c92-c732d8e94898">
+                <propertyInstance
+                  Id="53ca709a-eb5a-4cfa-8d7a-7d749e78fb38"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="e7fd2eb1-d9e6-4017-be62-16dd9ef99080"
+        name="ISinkFunctions"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="d0f237fe-b716-4ee7-abe3-2cae143649d7"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FUPnP_CP%2Fbin%2FDebug%2FUPnP_CP.dll Namespace%3DUPnP_CP Type%3DISinkFunctions"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="c8ed9381-d427-40b1-a91b-9dcd1d6bff1b"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="70a7c1a0-e6a1-420b-bf3f-384cd40e87a4">
+                <propertyInstance
+                  Id="0208284b-42a6-4fa5-9ac9-50bac83e6c78"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="acee0b28-fc68-4c89-9e42-594e8d0cba05">
+                <propertyInstance
+                  Id="613ece9e-9708-4b3d-9b85-7ea064fcb988"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a9429ea1-4455-4624-a1e5-6e525c595062">
+                <propertyInstance
+                  Id="de57b62f-e6e5-437e-90e3-c46b5d4dee42"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6d69df67-7621-40c0-8491-08d7bad5d943">
+                <propertyInstance
+                  Id="4ae33f7d-57ba-40fd-ab56-0487efeb1597"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="3b93ba81-5ce0-4cf6-831e-bef888b5b886"
+        name="ResultDelegate"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="076ff890-dc9c-485e-89dc-fffddba8fbab"
+            handle="viewcode://./CodeSchema_Delegate?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FUPnP_CP%2Fbin%2FDebug%2FUPnP_CP.dll Namespace%3DUPnP_CP Type%3D(Name%3DResultDelegate ParentType%3DUPnP_SourceFunctions)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="d72338e3-d21c-4438-bb61-43862312a9b7"
+            name="delegate"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6be7a6d0-9869-4b30-9d94-5a55c7d0a7a0">
+                <propertyInstance
+                  Id="dde459c5-82c4-4f4d-b531-f03149e538c0"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4bbcbf5e-7e94-4459-b81f-b567ef5aa2f9">
+                <propertyInstance
+                  Id="398e76e5-ceed-4684-a38a-4426967b2040"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="54397188-538c-461e-b05e-d8af9525f034">
+                <propertyInstance
+                  Id="b26e7c58-eacb-4601-a4bf-787cc4dac93c"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="9ac146ff-759c-4126-aba8-e5f3ad65f9e7"
+        name="ISourceFunctions"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="1c4faa5e-5ac2-42a2-a2ed-e36458c47cb3"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FUPnP_CP%2Fbin%2FDebug%2FUPnP_CP.dll Namespace%3DUPnP_CP Type%3DISourceFunctions"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="00ec13a1-3248-4b94-96a6-45b6418d658f"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8eceb9c4-5949-4efa-947f-9c75d8980157">
+                <propertyInstance
+                  Id="aef9ea1d-86e2-4f5d-b60d-595cf75bfb6c"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8bb95897-aff0-4404-bce6-3a9ea38c2354">
+                <propertyInstance
+                  Id="d07ca83a-188d-40ca-a2f1-e610afa466f0"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="170d2ca8-2ecd-4943-ab40-c2cd927cb6e0">
+                <propertyInstance
+                  Id="4ed72935-a1ce-4a46-871a-1ba234c82685"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="498aa265-fbc9-4ab6-8d57-1caeeb2b8c1e">
+                <propertyInstance
+                  Id="205cada1-a037-4067-a4ca-d79408d598be"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

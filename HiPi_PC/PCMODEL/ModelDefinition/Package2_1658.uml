@@ -1,0 +1,885 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="94747a8d-e46c-441d-ac7a-ffe8210a025c"
+  name="Database"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="d1c61028-fcea-4f52-89eb-7f25c36ee5f1"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DDatabase"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="9a3e4c15-1f5a-40be-a406-0af70b44f9e9"
+        name="filepath"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="db1cc00f-9d0e-42ba-8918-c4ab5d961ec6"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FDatabase%2Fbin%2FDebug%2FDatabase.dll Namespace%3DDatabase Type%3Dfilepath"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="b941d162-0c38-40d4-a057-da653394554b"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0eb1e35d-70dc-4cfb-8ef8-f255fa36d658">
+                <propertyInstance
+                  Id="c18f18f3-f165-4a47-9064-a822e72282b6"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3c9e6fdf-8ea5-4b5e-b080-20c77fb09808">
+                <propertyInstance
+                  Id="8457753f-0491-4f13-8fd7-afe6b7475740"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="86d1c1d3-16e1-4658-947a-fb2c9347b22b">
+                <propertyInstance
+                  Id="16126351-de8f-4b6b-beb0-6a5131c93f06"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f6b25cad-31e7-4d9f-9078-04358a5f1986">
+                <propertyInstance
+                  Id="1f7b7083-a3a4-45b1-a365-1f026f727951"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1f688732-d06d-45a7-a8d8-7e011b17b99a">
+                <propertyInstance
+                  Id="7990b123-83f2-4d57-8bc0-2aae2a31fe97"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="0ef08fdc-d248-43b7-adcc-b352769e4756"
+        name="PIFilePath"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="02356a19-86d4-496d-bafe-35a11316c4b4"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FDatabase%2Fbin%2FDebug%2FDatabase.dll Namespace%3DDatabase Type%3DPIFilePath"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="342635f0-8ff1-445b-98df-135ab46a817a"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3aa48a93-26c9-41b2-846e-c8868e3a038b">
+                <propertyInstance
+                  Id="b4eb365b-8b74-4b96-b58e-46e8f829d9a1"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6c79f94a-2dda-465f-9d6b-d7595f24e8a2">
+                <propertyInstance
+                  Id="868e0e20-934b-404d-a8b2-bd6767bef302"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="98b648a5-beb8-4a42-a0db-0d26978cd7f7">
+                <propertyInstance
+                  Id="87c8b6f0-6704-436a-bbbb-1819ef9dd50e"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="180fad2b-4f68-4ac8-a74c-9173c2fd4b98">
+                <propertyInstance
+                  Id="534501dc-61cb-4a50-b853-0567a929de9d"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2ea5250c-3d61-46a1-8010-0f6db68180ad">
+                <propertyInstance
+                  Id="32f789a4-0e4b-41fa-93e4-fad85fe2c794"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="47aa6197-303f-4b38-8d9c-b460e42a1d26"
+        name="musicdata"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="fbe0b51c-60e5-4019-9766-9bff5a7a5884"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FDatabase%2Fbin%2FDebug%2FDatabase.dll Namespace%3DDatabase Type%3Dmusicdata"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="7471cb7c-19cd-48f6-a4d3-e7b830a7292a"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4b5623e1-787b-46b2-9c6c-5e0e4d2b25a9">
+                <propertyInstance
+                  Id="e1dd007a-93fc-4755-bce6-527071b23a7b"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a5a98468-3d5d-45f0-aac4-160c50b7e2b5">
+                <propertyInstance
+                  Id="eec89aea-61d4-4998-a876-4da9d742e690"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="68aa3bf7-613b-4a1a-af8d-674da591960c">
+                <propertyInstance
+                  Id="f37f1c46-0876-4cd9-bb02-9c1f8f76f344"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9bcd5fa2-062f-47b8-b95a-0b346f1c9b8d">
+                <propertyInstance
+                  Id="f07615cf-5424-4644-9add-da6c563afb6e"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="371dd30a-70b2-4da1-808e-f6bb893f8c4c">
+                <propertyInstance
+                  Id="6d7a318b-9806-4f85-b42c-e56c0d5fae46"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f71a8d66-ef17-4a11-b650-1093444ee8d8"
+        name="PIMusikData"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="f62362da-243b-48ff-8409-56b95ad166d5"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FDatabase%2Fbin%2FDebug%2FDatabase.dll Namespace%3DDatabase Type%3DPIMusikData"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="76780274-aebc-4aea-9453-cbf05853f9d8"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e983cc10-c8d8-48c7-9e1c-2fdb698a5cd3">
+                <propertyInstance
+                  Id="1e9d7487-a363-4604-8b56-b3c3529a6a4b"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e0123b07-0279-4514-810e-bfc6ca998efe">
+                <propertyInstance
+                  Id="fe851494-70de-4711-aeca-3684aa8d3c39"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="88fb4800-4f2e-48e1-810a-5da3db12ad48">
+                <propertyInstance
+                  Id="dd7b6e07-408e-4321-86f0-f01f3f9d5ee4"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="243db81c-274f-478d-9a58-8af0da81b702">
+                <propertyInstance
+                  Id="73657a37-fcbc-474f-be16-5487c0fde57e"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="50909460-8593-4e9b-95cf-38c01f692b84">
+                <propertyInstance
+                  Id="a297f0fd-3d86-40a2-9960-72b726600c8a"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="77d637e2-d251-4dbb-8306-e77e1e372477"
+        name="album"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="a8d9bcb8-2000-4f30-b6ee-449e69fc6034"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FDatabase%2Fbin%2FDebug%2FDatabase.dll Namespace%3DDatabase Type%3Dalbum"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="f243e7a0-b261-44db-aa2d-a149b277b76b"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4bdf6fd5-d8fe-47c3-83a4-08b8be3d15d0">
+                <propertyInstance
+                  Id="7143ce11-9f1a-4c4c-897a-cb9ac2e62279"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="94f8c446-f4a7-41b2-a5c4-71c75b965122">
+                <propertyInstance
+                  Id="6d0363af-8a36-4a06-892e-e4967b260686"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8eb13c48-4718-4f56-8ba6-95b3db27e593">
+                <propertyInstance
+                  Id="c865b732-5a34-4729-b233-601e5bf0b525"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0ee8e31f-0501-417c-b254-db53c9cb67b6">
+                <propertyInstance
+                  Id="ab5bd0f6-837b-4b6d-b5c4-d4f3d53d28c4"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c730f2e7-b970-4bfa-857a-c429d024431a">
+                <propertyInstance
+                  Id="e36b2d7d-253c-46ce-8c3a-2084fb3e2039"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="29efb070-7337-47d7-a0bd-bbe3bd257fb3"
+        name="artist"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="fd2a275d-0350-45b5-960e-a894005c67a4"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FDatabase%2Fbin%2FDebug%2FDatabase.dll Namespace%3DDatabase Type%3Dartist"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="a9ca83a9-1848-4963-b574-87ff96430473"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="55c6c523-56dd-4f0d-a4b6-f40ec1b652ca">
+                <propertyInstance
+                  Id="fa1b0798-9a54-4245-bfd7-9bd21f9c6c01"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e34c1dd7-f2ec-43eb-acb0-c62e59021cf0">
+                <propertyInstance
+                  Id="6b386152-06d6-453f-b162-c7a170590251"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f4e7fec9-e5ad-428a-9bb8-92649f5301ca">
+                <propertyInstance
+                  Id="44eb6fc0-8392-4d65-984f-cb6994d94151"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c491cdc2-9d2a-4d20-bebb-23be22f7aac4">
+                <propertyInstance
+                  Id="166b81f7-edfc-457f-9719-9878f4539a51"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a2515f3a-e646-41b8-9fc5-06fdb72dfb94">
+                <propertyInstance
+                  Id="457f8c3b-7636-411a-8c2d-dd206f2ef1c5"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ea05e70a-6a71-40e8-b236-36901dd998e2"
+        name="device"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="fd8b4b2e-f6ab-435e-9ebb-f7aa04c7bd43"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FDatabase%2Fbin%2FDebug%2FDatabase.dll Namespace%3DDatabase Type%3Ddevice"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="e13d0063-6e37-4b49-83d4-4e7035ec7223"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="44e02d2c-ded7-44e0-a4a0-6de127d394c7">
+                <propertyInstance
+                  Id="804e69b7-cac6-4796-894b-227c1883c45b"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8448672f-757f-4e45-96f5-80ceb86381ab">
+                <propertyInstance
+                  Id="16620702-608d-45d1-9fce-7d3394202c6d"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ea105fb1-eecf-4a4f-b22c-5ae47354c757">
+                <propertyInstance
+                  Id="24f588aa-5ebe-4300-bdcc-de9ce4d32631"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5e990262-72d8-44e7-9655-507de8e7a30d">
+                <propertyInstance
+                  Id="1a58e28a-b04a-4e51-903e-07749ef42dee"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2aaccc08-1e6a-44d7-9b17-a4ee8ddf035a">
+                <propertyInstance
+                  Id="8f605ab5-2a3f-41dd-84ef-b524a3fce50d"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a3e59d73-0998-4705-9d64-1ed48985f066"
+        name="genre"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="c584a5f4-2f37-48c3-9efa-1e98be3b4879"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FDatabase%2Fbin%2FDebug%2FDatabase.dll Namespace%3DDatabase Type%3Dgenre"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="d658e447-6b07-4c38-865b-43a3cd085685"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="12969e21-7bd0-4703-83eb-44f4400d437e">
+                <propertyInstance
+                  Id="1eac8f12-2620-48f8-b380-825bb46a3f4f"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="be0aa45a-4b5b-44c6-b26e-c9bf2e23475e">
+                <propertyInstance
+                  Id="a6d74e42-a277-45be-a3cb-d774958a871f"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d867ef25-2824-44ff-a3e4-35f7486f4a6e">
+                <propertyInstance
+                  Id="7537e2da-928d-4083-a907-fdd36c2df9c2"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7a75129d-639c-4b24-bb7d-9c9e611f78dc">
+                <propertyInstance
+                  Id="be4d10d7-31eb-4bc9-9cea-6bd5bd38b1b7"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e5520076-3dc5-44fa-b24e-3795706a44dd">
+                <propertyInstance
+                  Id="ef0a1b80-3baf-4a11-96e1-82da281f40db"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="dc04a0b9-4f21-4f9f-9262-4fb6b10cb1f6"
+        name="Catagory"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="281c6263-5e3f-47a4-8226-8b74597fab9b"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FDatabase%2Fbin%2FDebug%2FDatabase.dll Namespace%3DDatabase Type%3DCatagory"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="6f1fc1c9-4f62-4767-9209-5fc99dde4f4f"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4a632688-a2f7-47d2-9d5d-74cdbc919a74">
+                <propertyInstance
+                  Id="27417430-e04d-425e-aa1d-143ca30e051f"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a35b1a92-06c8-447f-8795-cddf42110dfb">
+                <propertyInstance
+                  Id="fcf24360-fc13-4217-a1ae-7c3da74a6c89"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2387da7b-af30-4d50-9a41-4ce422d4844c">
+                <propertyInstance
+                  Id="28ee657d-0daf-4f47-ae4a-84e36d880b09"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="02a0c855-9076-4165-b5b3-63c25a6d683f">
+                <propertyInstance
+                  Id="bcc4a7fc-b901-4da5-a2aa-5169db414d42"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="517c7129-262d-440b-8805-916c508574af">
+                <propertyInstance
+                  Id="43dbc653-22ca-4b1e-a06d-a6ebccf99116"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7f6e6943-8569-42c8-96a1-57943a891ce3"
+        name="Musik"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="41d3b865-2b16-4a1e-8e67-a534b9bbe49a"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FDatabase%2Fbin%2FDebug%2FDatabase.dll Namespace%3DDatabase Type%3DMusik"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="826b5ad4-e4e1-4916-b5cb-9f7183fc4559"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="250c2503-f044-4f8d-9233-7365003c29db">
+                <propertyInstance
+                  Id="48226fc3-4794-41e2-9bad-e9286853e38e"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6383c222-1621-46bb-8000-293043d10fc6">
+                <propertyInstance
+                  Id="43854654-f677-4b7e-b7d9-51bc979fc1ad"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f87e0be9-e912-4c6a-ab33-43bbdeb1c389">
+                <propertyInstance
+                  Id="c2e7a662-a7d0-421c-bf42-f8ecdcbc09bb"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e8974642-f0d3-4fd8-bfab-c7f4a7a70a37">
+                <propertyInstance
+                  Id="5716f8bc-c547-4172-8109-8ac1410b76ad"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b9f905a4-997e-462e-8db1-17e59ba25f46">
+                <propertyInstance
+                  Id="0a0b016d-b45f-424d-89f5-900430d414c0"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="3baf2537-2522-4a02-8f4d-f03b172d2e24"
+        name="PIAlbum"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="b746d219-374b-44d9-abb2-1375dc4043db"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FDatabase%2Fbin%2FDebug%2FDatabase.dll Namespace%3DDatabase Type%3DPIAlbum"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="544a2428-9f52-4a4a-b94d-e71f2249cfe4"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2465d632-cc0c-4bd3-8f16-affc394f6c6a">
+                <propertyInstance
+                  Id="f3869eb7-f0fd-40f5-9804-3dfec4fc1c97"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9f505bdb-5035-4dce-8194-13aa0d8b9324">
+                <propertyInstance
+                  Id="0f8d5ba9-333c-4774-9ff2-f96d8be863ee"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="afa4af9c-6aa2-4597-a178-41dfe556211d">
+                <propertyInstance
+                  Id="68bcc36e-e5ac-4807-a1b6-923be6adbdc5"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="594acbde-6870-4f83-a3ad-bafdab4977e1">
+                <propertyInstance
+                  Id="9d229254-eba9-4042-b174-72629b5308e9"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ea0fdef8-3c33-4eb8-9b56-0f994900d175">
+                <propertyInstance
+                  Id="f874ebf3-3bda-4bcd-8236-e46c18b79f89"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="8c4aecf4-bca2-4eaa-8ca5-4b158ea343a5"
+        name="PIArtist"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="52d74179-30d0-498f-961f-1f5779eea614"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FDatabase%2Fbin%2FDebug%2FDatabase.dll Namespace%3DDatabase Type%3DPIArtist"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="8468c23d-3c1b-446f-b914-f7b861e9900a"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c087098c-a5c2-4c37-a68f-41f0f086ab23">
+                <propertyInstance
+                  Id="f6e1efaf-9da8-4511-8383-16a9dabc6196"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2c1e76f2-d1d2-4f5a-b9c5-9d73e64cca6d">
+                <propertyInstance
+                  Id="d64ae0b8-4e19-467f-9a70-d3726a30dd2c"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4009cf95-8596-42b2-8dea-b9efbd35fdb2">
+                <propertyInstance
+                  Id="7ff5505f-66c3-4db7-8c00-cfa66dafd19b"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c02b59f6-1322-469f-82b9-fe1c0596bd53">
+                <propertyInstance
+                  Id="3f6a9672-c039-4235-95e7-a294a9f4e461"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d0683cc6-1916-4116-b5d2-ae5c88c2caa3">
+                <propertyInstance
+                  Id="b3ad7bd3-b8d8-4836-bde7-92962e39aad1"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="0e22307c-b881-4f1e-a754-b3783fb78d03"
+        name="PIDevice"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="27b6a2fb-da20-4ae7-a096-ca736221ac8d"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FDatabase%2Fbin%2FDebug%2FDatabase.dll Namespace%3DDatabase Type%3DPIDevice"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="1934d8fd-c8dd-4eb5-bbda-18ed7199e09e"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f7c85659-2bf3-4921-96cd-f02d9ccd96bf">
+                <propertyInstance
+                  Id="11617d2c-7cf6-40a0-8691-f08496414a0c"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4aa7f1ff-98f9-46b4-b3b5-78528401538b">
+                <propertyInstance
+                  Id="0e802245-17ca-4981-a84b-79cc0e962159"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="784b6efd-7864-435a-b385-021113340073">
+                <propertyInstance
+                  Id="33e22a5b-719b-47a6-b618-dc994389423e"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5c261ec0-dd5c-4101-a081-faf982dc7b47">
+                <propertyInstance
+                  Id="c8f9ddfb-3373-4a1d-8a85-a2fbe962726c"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d4ed6775-0ad8-412d-9010-24956c7d0d3a">
+                <propertyInstance
+                  Id="1fdb483e-1f34-4aa9-b0bf-49f7dc60f9e3"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c13e0d1e-a1d1-46a5-afee-dbf5396e6b34"
+        name="PIGenre"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="9f72119b-7831-4bf4-8aa1-476a5e269706"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FDatabase%2Fbin%2FDebug%2FDatabase.dll Namespace%3DDatabase Type%3DPIGenre"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="72e4362e-7360-44ea-8145-f7663a6cc50b"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5cc917cf-7a8b-4dba-95c7-7485ed92e496">
+                <propertyInstance
+                  Id="7579306b-7bf3-477b-b55c-fc9840360189"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c7b748d7-9900-4c47-8181-6a9dfa00b58f">
+                <propertyInstance
+                  Id="8c7da3cf-6016-4d2f-8982-fe262a27105c"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b5de7446-bd5a-4867-afcc-0549bf5097ca">
+                <propertyInstance
+                  Id="bea27c9e-9e1e-49ad-af0c-bd3a2a2b7b7d"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3a8c57db-acee-4a6a-a1ec-f26142c5b946">
+                <propertyInstance
+                  Id="b9d31e51-2d45-43cb-ae1c-99ee9423727a"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4fb21c7c-df6c-4029-889f-0c306b1e74cc">
+                <propertyInstance
+                  Id="4f2acff7-1211-487d-b7b1-6056dbddd193"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="fb75b215-7ab2-4297-9a10-6ad1d2ddbb46"
+        name="PIPlayQueue"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="d9c6158a-840e-44b9-bf62-e2c6565d4bd0"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FDatabase%2Fbin%2FDebug%2FDatabase.dll Namespace%3DDatabase Type%3DPIPlayQueue"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="9d62ad86-9311-4b87-b375-bb096619fbd8"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3a44cc47-8748-4ba3-aa3f-0838d45970b2">
+                <propertyInstance
+                  Id="8534060a-4ccd-4a1d-bba9-1b9b50b17c0d"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4b7dd81d-e4b1-4e9f-b319-7679be1773a4">
+                <propertyInstance
+                  Id="2322e180-a0f4-415d-8113-3191c21acc92"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3bb4c2aa-700d-4afc-8330-7c944b723cd2">
+                <propertyInstance
+                  Id="700a3d9d-8017-4cb3-817d-b64b32720f22"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f08d2d01-3cd2-4db9-8e40-d32307604988">
+                <propertyInstance
+                  Id="941ee889-cad6-4d8e-8eac-0d894a7e11c2"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d65c2651-0342-4ae7-85af-3fa8604d0bd8">
+                <propertyInstance
+                  Id="4097eec8-a8d7-42e4-9650-7d0a58f0b310"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

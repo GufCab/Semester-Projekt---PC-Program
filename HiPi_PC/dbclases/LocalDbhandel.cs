@@ -10,7 +10,16 @@ using MetaReader.MetadataReader;
 
 namespace dbclases
 {
-    public class LocalDbhandel
+    public interface ILocalDbhandel
+    {
+        void FillIp(string ip);
+
+        void FillMusicAndPath(List<string> Pathlist);
+
+
+    }
+
+    public class LocalDbhandel : ILocalDbhandel
     {
         private string _GUIDDevice;
         
@@ -29,7 +38,7 @@ namespace dbclases
             }
         }
 
-        public void FillIP(String myip)
+        public void FillIp(string myip)
         {
             
 
@@ -73,7 +82,7 @@ namespace dbclases
         private List<string> Artistlist = new List<string>();
         private List<string> Genrelist = new List<string>(); 
 
-        public void Album_Artist_Genre_Adders(List<IMetadataReader> metadataReaders)
+        public void FillAAG(List<IMetadataReader> metadataReaders)
         {
             foreach (var metadataReader in metadataReaders)
             {
@@ -90,7 +99,7 @@ namespace dbclases
 
         }
 
-        public void Fillrest(List<string> PathOndevice)
+        public void FillMusicAndPath(List<string> PathOndevice)
         {
             using (var musik = new pcindexEntities())
             {
@@ -120,7 +129,7 @@ namespace dbclases
 
                         List<IMetadataReader> mdata = indexer.GetMetaData();
 
-                        Album_Artist_Genre_Adders(mdata);
+                        FillAAG(mdata);
                         fillMusicdata(mdata,path.UUIDPath);
 
 
