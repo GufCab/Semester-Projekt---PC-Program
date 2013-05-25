@@ -5,8 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using MetaReader.FileIndexer;
-using MetaReader.MetadataReader;
+using MetadataReader.Metadata;
 using dbclases;
 using Live555;
 

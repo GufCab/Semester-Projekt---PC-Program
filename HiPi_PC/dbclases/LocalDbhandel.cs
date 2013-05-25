@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Database;
-using MetaReader.FileIndexer;
-using MetaReader.MetadataReader;
+using MetadataReader.FileIndexer;
+using MetadataReader.Metadata;
 
 
 namespace dbclases
