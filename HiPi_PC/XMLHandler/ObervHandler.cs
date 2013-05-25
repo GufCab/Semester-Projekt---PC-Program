@@ -121,7 +121,7 @@ namespace XMLHandler
             List<ITrack> list = xmlr.itemReader(xml);
             var args = new EventArgsContainer<List<ITrack>>(list);
 
-            if (list.Count < 0)
+            if (list.Count > 0)
             {
                 switch (list[0].ParentID)
                 {
