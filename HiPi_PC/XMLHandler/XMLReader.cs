@@ -45,49 +45,55 @@ namespace XMLReader
         {
             var doc = new XmlDocument();
             //doc.Load("item.xml");
-            doc.LoadXml(xml);
 
-            var tracks = new List<ITrack>();
+            List<ITrack> tracks = null;
 
-            XmlNodeList nodeList = doc.GetElementsByTagName("item");
-
-            foreach (XmlElement elm in nodeList)
+            if (xml != "")
             {
-                ITrack track = new Track();
+                doc.LoadXml(xml);
 
-                track.ParentID = elm.GetAttribute("parentID");
+                tracks = new List<ITrack>();
 
-                XmlNodeList titleList = elm.GetElementsByTagName("upnp:album");
-                track.Album = titleList[0].InnerText;
+                XmlNodeList nodeList = doc.GetElementsByTagName("item");
 
-                titleList = elm.GetElementsByTagName("dc:title");
-                track.Title = titleList[0].InnerText;
-
-                titleList = elm.GetElementsByTagName("upnp:artist");
-                track.Artist = titleList[0].InnerText;
-
-                titleList = elm.GetElementsByTagName("upnp:genre");
-                track.Genre = titleList[0].InnerText;
-
-                titleList = elm.GetElementsByTagName("res");
-
-                string[] s = titleList[0].InnerText.Split('/');
-
-                track.Protocol = s[0] + "//";
-                track.DeviceIP = s[2];
-
-                track.FileName = s.Last();
-
-                string tmpString = "/";
-
-                for (int i = 3; i < s.Count() - 1; i++)
+                foreach (XmlElement elm in nodeList)
                 {
-                    tmpString = tmpString + s[i] + "/";
-                }
+                    ITrack track = new Track();
 
-                track.Path = tmpString;
-                track.Duration = titleList[0].Attributes["duration"].Value;
-                tracks.Add(track);
+                    track.ParentID = elm.GetAttribute("parentID");
+
+                    XmlNodeList titleList = elm.GetElementsByTagName("upnp:album");
+                    track.Album = titleList[0].InnerText;
+
+                    titleList = elm.GetElementsByTagName("dc:title");
+                    track.Title = titleList[0].InnerText;
+
+                    titleList = elm.GetElementsByTagName("upnp:artist");
+                    track.Artist = titleList[0].InnerText;
+
+                    titleList = elm.GetElementsByTagName("upnp:genre");
+                    track.Genre = titleList[0].InnerText;
+
+                    titleList = elm.GetElementsByTagName("res");
+
+                    string[] s = titleList[0].InnerText.Split('/');
+
+                    track.Protocol = s[0] + "//";
+                    track.DeviceIP = s[2];
+
+                    track.FileName = s.Last();
+
+                    string tmpString = "/";
+
+                    for (int i = 3; i < s.Count() - 1; i++)
+                    {
+                        tmpString = tmpString + s[i] + "/";
+                    }
+
+                    track.Path = tmpString;
+                    track.Duration = titleList[0].Attributes["duration"].Value;
+                    tracks.Add(track);
+                }
             }
             return tracks;
         }

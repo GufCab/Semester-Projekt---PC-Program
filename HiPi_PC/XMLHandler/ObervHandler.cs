@@ -123,17 +123,20 @@ namespace XMLHandler
             List<ITrack> list = xmlr.itemReader(xml);
             var args = new EventArgsContainer<List<ITrack>>(list);
 
-            switch (list[0].ParentID)
+            if (list.Count < 0)
             {
-                case "playqueue":
-                    playQueueUpdateEvent(this, args);
-                    break;
-                case "all":
-                    musikUpdateEvent(this, args);
-                    //_UPnPSource.Browse("playqueue");
-                    break;
-                default:
-                break;
+                switch (list[0].ParentID)
+                {
+                    case "playqueue":
+                        playQueueUpdateEvent(this, args);
+                        break;
+                    case "all":
+                        musikUpdateEvent(this, args);
+                        //_UPnPSource.Browse("playqueue");
+                        break;
+                    default:
+                        break;
+                }
             }
         }
 
