@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MetaReader.FileIndexer
+namespace MetadataReader.FileIndexer
 {
     class FilesFolders
     {
@@ -25,8 +25,10 @@ namespace MetaReader.FileIndexer
 
         private void SetupDirectoryPath()
         {
+            if (_path == null)
+                throw new Exception("path in FilesFolders is null/n");
+ 
             _directory = new DirectoryInfo(_path);
-            
         }
 
         private void IndexFilesAndFolders()

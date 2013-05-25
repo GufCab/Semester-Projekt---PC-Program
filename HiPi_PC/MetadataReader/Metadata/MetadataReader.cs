@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Shell32;
 
-namespace MetaReader.MetadataReader
+namespace MetadataReader.Metadata
 {
     class MetadataReader : IMetadataReader
     {
@@ -47,9 +47,13 @@ namespace MetaReader.MetadataReader
         {
             foreach (Shell32.FolderItem2 folderItem2 in _objFolder.Items())
             {
-                string tempItemName = folderItem2.Name + Path.GetExtension(_objFolder.GetDetailsOf(folderItem2, 180)); //_objFolder.GetDetailsOf(folderItem2, 180); 180: file with path and extension
+                string tempItemName = folderItem2.Name;
+                    // + Path.GetExtension(_objFolder.GetDetailsOf(folderItem2, 180)); //_objFolder.GetDetailsOf(folderItem2, 180); 180: file with path and extension
                 if (tempItemName == _musikNumber)
+                {
                     _item2 = folderItem2;
+                    break;
+                }
             }
 
         }
@@ -68,24 +72,51 @@ namespace MetaReader.MetadataReader
             Filepath = flipBackslashes(_folder);
         }
 
+        /// <summary>
+        /// Sets the the items name, with file extention.
+        /// </summary>
+        /// <returns></returns>
         private string SetItemName()
         {
-            return _item2.Name + Path.GetExtension(_objFolder.GetDetailsOf(_item2, 180));
+            //item2.name creates a null reference
+            if (_item2 == null)
+            {
+                return "ERROR in SetItemName";
+            }
+            return _item2.Name;// +Path.GetExtension(_objFolder.GetDetailsOf(_item2, 180));
         }
 
+        /// <summary>
+        /// Becourse of linux, this ensures that all slashes, are forwardslashes
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         private string flipBackslashes(string name)
         {
             var _name = name.Replace('\\', '/');
             return _name;
         }
 
+        /// <summary>
+        /// Changes the time to int from string
+        /// </summary>
+        /// <param name="lenght"></param>
+        /// <returns></returns>
         private int ConvertLength(string lenght)
         {
+            if (lenght == null) throw new ArgumentNullException("lenght");
+
             double tempTime = TimeSpan.Parse(lenght).TotalSeconds;
 
             return Convert.ToInt32(tempTime);
         }
 
+        /// <summary>
+        /// Takes the collumn number of obj, and returns the value in the collumn as a string.
+        /// Collumns contain the different metadata as songtitle, file type or many others 
+        /// </summary>
+        /// <param name="Column"></param>
+        /// <returns></returns>
         private string ArrHeader(int Column)
         {
             return _objFolder.GetDetailsOf(_item2, Column);

@@ -44,17 +44,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExtentionVerifier.cs" />
-    <Compile Include="FilesFolders.cs" />
-    <Compile Include="FolderAndFileReader.cs" />
-    <Compile Include="IFileIndexer.cs">
+    <Compile Include="FileIndexer\ExtentionVerifier.cs" />
+    <Compile Include="FileIndexer\FilesFolders.cs" />
+    <Compile Include="FileIndexer\FolderAndFileReader.cs" />
+    <Compile Include="FileIndexer\IFileIndexer.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="IMetadataReader.cs">
+    <Compile Include="Metadata\IMetadataReader.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="IOitem.cs" />
-    <Compile Include="MetadataReader.cs">
+    <Compile Include="FileIndexer\IOitem.cs" />
+    <Compile Include="Metadata\MetadataReader.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

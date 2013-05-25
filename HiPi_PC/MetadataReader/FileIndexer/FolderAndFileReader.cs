@@ -4,9 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MetaReader.MetadataReader;
+using MetadataReader.Metadata;
 
-namespace MetaReader.FileIndexer
+namespace MetadataReader.FileIndexer
 {
     public class FolderAndFileReader : IFileIndexer
     {
@@ -151,7 +151,7 @@ namespace MetaReader.FileIndexer
 
         private void GetFileMetaData(string folderPath, string musiknumber)
         {
-            metadata = new MetadataReader.MetadataReader(folderPath, musiknumber);
+            metadata = new Metadata.MetadataReader(folderPath, musiknumber);
             _metaList.Add(metadata);
         }
 

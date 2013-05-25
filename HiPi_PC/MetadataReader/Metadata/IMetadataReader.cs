@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MetaReader.MetadataReader
+namespace MetadataReader.Metadata
 {
     public interface IMetadataReader
     {

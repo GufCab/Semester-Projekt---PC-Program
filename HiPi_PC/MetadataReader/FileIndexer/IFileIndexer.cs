@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MetaReader.MetadataReader;
+using MetadataReader.Metadata;
 
-namespace MetaReader.FileIndexer
+namespace MetadataReader.FileIndexer
 {
     public interface IFileIndexer
     {

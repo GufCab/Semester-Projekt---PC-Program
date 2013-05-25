@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MetaReader.FileIndexer;
-using MetaReader.MetadataReader;
+using MetadataReader.FileIndexer;
+using MetadataReader.Metadata;
 
 namespace MetadataReader
 {
@@ -13,7 +13,7 @@ namespace MetadataReader
         static void Main(string[] args)
         {
             var index = new FolderAndFileReader();
-            index.SetIndexPath(@"C:/Users/Public/Music/Sample Music");
+            index.SetIndexPath(@"D:\Musik");
 
             List<IMetadataReader> hans = index.GetMetaData();
 

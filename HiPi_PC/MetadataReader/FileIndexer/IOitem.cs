@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MetaReader.FileIndexer
+namespace MetadataReader.FileIndexer
 {
     class IOitem
     {
