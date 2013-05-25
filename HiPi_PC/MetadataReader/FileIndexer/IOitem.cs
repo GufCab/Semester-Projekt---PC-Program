@@ -15,6 +15,10 @@ namespace MetadataReader.FileIndexer
         public string Extention { get; private set; }
         public string FilePath { get; private set; }
 
+        /// <summary>
+        /// An overloaded constructor which looks up the informations from a folder given in the type System.IO.FileInfo
+        /// </summary>
+        /// <param name="fileInfo"></param>
         public IOitem(System.IO.FileInfo fileInfo)
         {
             Name = fileInfo.Name;
@@ -24,6 +28,10 @@ namespace MetadataReader.FileIndexer
             FilePath = fileInfo.DirectoryName;
         }
 
+        /// <summary>
+        /// An overloaded constructor which looks up the informations from a file given in the type System.IO.DirectoryInfo
+        /// </summary>
+        /// <param name="directoryInfo"></param>
         public IOitem(System.IO.DirectoryInfo directoryInfo)
         {
             Name = directoryInfo.Name;

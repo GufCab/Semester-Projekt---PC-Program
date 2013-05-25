@@ -34,6 +34,11 @@ namespace MetadataReader.Metadata
 
         private string _musikNumber;
 
+        /// <summary>
+        /// Constuctor that sets the private variables, and calls the findItem and Setter function
+        /// </summary>
+        /// <param name="folderpath"></param>
+        /// <param name="musikNumber"></param>
         public MetadataReader(string folderpath, string musikNumber)
         {
             _musikNumber = musikNumber;
@@ -43,6 +48,9 @@ namespace MetadataReader.Metadata
             Setter();
         }
 
+        /// <summary>
+        /// Finds the Shell32.FolderItem2, that is similiar to the musicNumber, that is given in the constructor
+        /// </summary>
         private void findItem()
         {
             foreach (Shell32.FolderItem2 folderItem2 in _objFolder.Items())

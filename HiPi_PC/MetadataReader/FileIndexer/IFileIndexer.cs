@@ -7,6 +7,9 @@ using MetadataReader.Metadata;
 
 namespace MetadataReader.FileIndexer
 {
+    /// <summary>
+    /// The interface IFileIndexer gives the user an easy way to collect data about files in a folder
+    /// </summary>
     public interface IFileIndexer
     {
         List<string> FolderItemList { get; }
