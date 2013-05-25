@@ -101,7 +101,7 @@ namespace UPnP_CP
         }
 
         /// <summary>
-        /// NOT IMPLEMENTED. Should remove the sink from the controlpoint. 
+        /// NOT IMPLEMENTED. Should remove the source from the controlpoint. 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="d"></param>

@@ -14,11 +14,9 @@ namespace XMLHandler
     public class ObervHandler
     {
         XMLReaderPC xmlr = new XMLReaderPC();
-        //public ObservableCollection<ITrack> musikindex = new ObservableCollection<ITrack>();
-        //public ObservableCollection<ITrack> playqueue = new ObservableCollection<ITrack>();
 
-        private UPnP_SinkFunctions _UPnPSink = null;
-        private UPnP_SourceFunctions _UPnPSource = null;
+        private ISinkFunctions _UPnPSink = null;
+        private ISourceFunctions _UPnPSource = null;
         private UPnP_Setup setup = null;
 
         private XMLWriter xmlWriter;

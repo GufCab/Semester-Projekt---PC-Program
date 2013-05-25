@@ -10,7 +10,11 @@ namespace UPnP_CP
 {
     public interface ISourceFunctions
     {
+        //UPnP functions
         void Browse(string id);
+
+        //Events
+        event UPnP_SourceFunctions.ResultDelegate BrowseResult;
     }
 
     public class UPnP_SourceFunctions : ISourceFunctions

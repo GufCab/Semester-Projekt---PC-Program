@@ -9,15 +9,30 @@ using Containers;
 
 namespace UPnP_CP
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public interface ISinkFunctions
     {
+        //UPnP functions
         void Play();
         void Pause();
         void Stop();
         void Next();
         void Previous();
         void SetTransportURI(string path, string metaData);
+        void SetNextTransportURI(string path, string metaData);
+        void GetVolume();
         void SetVolume(ushort desiredVolume);
+        void GetPosition();
+        void SetPosition(ushort pos);
+        void GetIpAddress();
+
+        //Events
+        event UPnP_SinkFunctions.getVolumeDel getVolEvent;
+        event UPnP_SinkFunctions.getPositionDel getPositionEvent;
+        event UPnP_SinkFunctions.getIPDel getIPEvent;
+        event UPnP_SinkFunctions.transportStateDel transportStateEvent;
     }
 
     public class UPnP_SinkFunctions : ISinkFunctions
@@ -37,9 +52,6 @@ namespace UPnP_CP
 
         public delegate void transportStateDel(object sender, EventArgsContainer<string> e);
         public event transportStateDel transportStateEvent;
-
-        public delegate void timerEventDel(object sender, EventArgs e);
-        public event timerEventDel OnTimedEvent;
         
         public uint InstanceID { get; private set; }
         private string _channel;
@@ -67,7 +79,6 @@ namespace UPnP_CP
             _RenderingControl.OnResult_GetPosition += RenderingControlOnOnResultGetPosition;
             
             _AVTransport.OnStateVariable_TransportState += AvTransportOnOnStateVariableTransportState;
-            //_AVTransport.get
             _AVTransport._subscribe(30);
 
             Timer subscribeTimer = new Timer();
