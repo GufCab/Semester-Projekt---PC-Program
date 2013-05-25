@@ -9,8 +9,16 @@ using Containers;
 
 namespace XMLHandler
 {
+    /// <summary>
+    /// Creates XML strings
+    /// </summary>
     public class XMLWriter
     {
+        /// <summary>
+        /// Converts a list of ITrack objects to a valid UPnP xml string
+        /// </summary>
+        /// <param name="tracks"></param>
+        /// <returns></returns>
         public string ConvertITrackToXML(List<ITrack> tracks)
         {
             XmlDocument doc = new XmlDocument();

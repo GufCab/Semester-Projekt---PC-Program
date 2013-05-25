@@ -10,8 +10,16 @@ using Containers;
 
 namespace XMLReader
 {
+    /// <summary>
+    /// Extracts the useful information from a XML string
+    /// </summary>
     public class XMLReaderPC
     {
+        /// <summary>
+        /// Converts an XML string to a list of Container objects
+        /// </summary>
+        /// <param name="xml">XML string to be converted</param>
+        /// <returns>A list of container objects</returns>
         public List<Container> containerReader(string xml)
         {
             var xmlDocument = new XmlDocument();
@@ -41,6 +49,11 @@ namespace XMLReader
             return tmpList;
         }
 
+        /// <summary>
+        /// Converts an XML string to a list of ITrack objects
+        /// </summary>
+        /// <param name="xml">xml string to be converted</param>
+        /// <returns>A list of ITrack objects</returns>
         public List<ITrack> itemReader(string xml)
         {
             var doc = new XmlDocument();

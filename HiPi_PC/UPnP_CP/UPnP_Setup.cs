@@ -8,6 +8,9 @@ using OpenSource.UPnP;
 
 namespace UPnP_CP
 {
+    /// <summary>
+    /// Detects UPnP devices and delegates the necessary information to the appropriate objects
+    /// </summary>
     public class UPnP_Setup
     {
         private static MediaRendererDiscovery _SinkDisco;
@@ -24,7 +27,9 @@ namespace UPnP_CP
         public delegate void RemoveSourceHandler(object e, EventArgs s);
         public event RemoveSourceHandler RemoveSourceEvent;
 
-        
+        /// <summary>
+        /// Creates a MediaServerDiscovery, subscribes to add and remove events and runs the start command
+        /// </summary>
         public void StartSourceDisco()
         {
             _SourceDisco = new MediaServerDiscovery();
@@ -33,6 +38,9 @@ namespace UPnP_CP
             _SourceDisco.Start();
         }
 
+        /// <summary>
+        /// Creates a MediaRendererDiscovery, subscribes to add and remove events and runs the start command
+        /// </summary>
         public void StartSinkDisco()
         {
             _SinkDisco = new MediaRendererDiscovery();
@@ -40,8 +48,13 @@ namespace UPnP_CP
             _SinkDisco.OnRemovedDevice += new MediaRendererDiscovery.DiscoveryHandler(RemoveSink);
             _SinkDisco.Start();
         }
-
-        //removed "static"
+        
+        /// <summary>
+        /// Eventfunction that is run when an UPnP sink is detected on the network. Only accepts sinks with the friendly name: "HiPi - Sink". 
+        /// If it has the right name then it creates three stacks (AVTransport, ConnectionManager and RenderingControl)
+        /// </summary>
+        /// <param name="sender">The object that send the event</param>
+        /// <param name="d">The discovered sink device</param>
         private void AddSink(MediaRendererDiscovery sender, UPnPDevice d)
         {
             Console.WriteLine("Added Sink Device: " + d.FriendlyName);
@@ -56,13 +69,23 @@ namespace UPnP_CP
             }
         }
 
+        /// <summary>
+        /// NOT IMPLEMENTED. Should remove the sink from the controlpoint. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="d"></param>
         private static void RemoveSink(MediaRendererDiscovery sender, UPnPDevice d)
         {
             Console.WriteLine("Removed Device: " + d.FriendlyName);
             //Todo: Remove device somehow
         }
 
-        //removed "static"
+        /// <summary>
+        /// Eventfunction that is run when an UPnP source is detected on the network. Only accepts sources with the friendly name: "HiPi - Source". 
+        /// If it has the right name then it creates one stacks (ContentDirectory)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="d"></param>
         private void AddSource(MediaServerDiscovery sender, UPnPDevice d)
         {
             Console.WriteLine("Added Source Device: " + d.FriendlyName);
@@ -77,6 +100,11 @@ namespace UPnP_CP
             }
         }
 
+        /// <summary>
+        /// NOT IMPLEMENTED. Should remove the sink from the controlpoint. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="d"></param>
         private void RemoveSource(MediaServerDiscovery sender, UPnPDevice d)
         {
             Console.WriteLine("Device removed");
