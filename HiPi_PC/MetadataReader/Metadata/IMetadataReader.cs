@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MetadataReader.Metadata
 {
+    /// <summary>
+    /// This interface ensures the user has access to a certain range of metadata, about the called object.
+    /// </summary>
     public interface IMetadataReader
     {
         string ItemName { get; }
