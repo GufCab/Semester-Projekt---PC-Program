@@ -7590,7 +7590,7 @@
             </package>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <package Id="00914cbc-98df-4d31-b275-2b16d0241ebd" name="UPNP Package">
+            <package Id="00914cbc-98df-4d31-b275-2b16d0241ebd" name="UPnP Package">
               <elementDefinition Id="cf6be721-c24b-457f-969f-467b02085874" />
               <packagedElements>
                 <packageHasNamedElement>
@@ -7638,17 +7638,23 @@
                       </stereotypeInstance>
                     </appliedStereotypesInternal>
                     <elementDefinition Id="901f69dc-8bdb-4dc4-b3a6-ecc201909547" />
+                    <suppliersInternal>
+                      <dependency Id="8f9a5554-794c-46bb-b502-f63753673676">
+                        <packageMoniker Id="a1fb6770-5f71-4522-9e05-360a5805fa69" LastKnownName="UPnP.dll" />
+                        <elementDefinition Id="c054eb39-964c-4e8d-9595-bcb5beb2c5a2" />
+                      </dependency>
+                    </suppliersInternal>
                     <targetEnds>
-                      <association Id="435aba62-39bb-439b-9509-9b661099f0e7" isDerived="false" sourceEndRoleName="UPnP_Setup" targetEndRoleName="UPnP_SourceFunctions" isLeaf="false" isAbstract="false">
+                      <association Id="435aba62-39bb-439b-9509-9b661099f0e7" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
                         <classMoniker Id="fc867c9f-07e7-4b5f-b537-576ccd4ba9df" LastKnownName="UPnP_SourceFunctions" />
                         <relationshipOwnedElementsInternal>
                           <associationHasOwnedEnds>
-                            <memberEnd Id="141373df-0461-4f7e-afd0-eee5f7ba4b4f" name="UPnP_Setup" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                            <memberEnd Id="141373df-0461-4f7e-afd0-eee5f7ba4b4f" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
                               <elementDefinition Id="7bd86cf4-2cec-4a4d-8117-def67ef40bd6" />
                             </memberEnd>
                           </associationHasOwnedEnds>
                           <associationHasOwnedEnds>
-                            <memberEnd Id="28f03aa3-4c54-405a-bd24-c5a050a44660" name="UPnP_SourceFunctions" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                            <memberEnd Id="28f03aa3-4c54-405a-bd24-c5a050a44660" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                               <elementDefinition Id="5beba96a-a565-459b-8474-ad33a7a6104b" />
                             </memberEnd>
                           </associationHasOwnedEnds>
@@ -11550,6 +11556,11 @@
                       </operation>
                     </ownedOperationsInternal>
                   </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <package Id="a1fb6770-5f71-4522-9e05-360a5805fa69" name="UPnP.dll">
+                    <elementDefinition Id="c903791f-1655-42bb-97cf-0f7f9edaaf3c" />
+                  </package>
                 </packageHasNamedElement>
               </packagedElements>
             </package>
