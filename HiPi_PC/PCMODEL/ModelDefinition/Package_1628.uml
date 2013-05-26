@@ -4464,7 +4464,7 @@
             isAbstract="false">
             <classMoniker
               Id="d9e340a9-56b9-4037-98d2-400b63789603"
-              LastKnownName="XMLReaderPC"
+              LastKnownName="XMLReader"
               LastKnownLocation="Package_1612.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -5426,6 +5426,232 @@
                       LastKnownName="Object"
                       LastKnownLocation="Package1_1621.uml" />
                   </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="3f799364-8ee9-4a2d-9eda-b5f650ba22bf"
+        name="EventArgsContainer"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="82ab6235-8056-44be-b04e-13a679a6fe30"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FContainers%2Fbin%2FDebug%2FContainers.dll Namespace%3DContainers Type%3D(Name%3DEventArgsContainer GenericParameterCount%3D1)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="94e4a762-9170-47b7-afb6-9f75b5806525"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6e745000-ec3e-4427-b3c4-5c67171d5a2e">
+                <propertyInstance
+                  Id="022de3e9-00e9-447c-8511-2b1d3c685f4a"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8fd6c97a-bd18-420e-b73b-16f58201367a">
+                <propertyInstance
+                  Id="558dec50-1e2f-40d9-9250-65f87df12d81"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="34944825-9f81-47b4-8eb7-4e5c676d9fdf">
+                <propertyInstance
+                  Id="41a7ab40-c4ef-4d89-abb8-8c8e54d1c5d0"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="442c4343-2848-4c87-a31c-9f9eb4f130fe">
+                <propertyInstance
+                  Id="32cb4830-2e53-4afa-b630-e7f528f0879c"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5162fbc4-c08c-42e0-9e5f-bb21907a2e3a">
+                <propertyInstance
+                  Id="790ba2ba-7b79-4681-be36-ed6d99b65d99"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="3fe75094-4d5d-42dd-ad9c-0415bdfa9b53"
+            isSubstitutable="false">
+            <classMoniker
+              Id="392a10bd-f666-4cd2-a2e3-64e6c23e40cc"
+              LastKnownName="EventArgs"
+              LastKnownLocation="Package1_1621.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="38a29b87-4128-4644-9ebc-b22602fdad26"
+            name="_data"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="32956e00-d0dc-4e8c-8942-52d609fb878e"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FContainers%2Fbin%2FDebug%2FContainers.dll Namespace%3DContainers Type%3D(Name%3DEventArgsContainer GenericParameterCount%3D1) Member%3D_data"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="4707e407-a428-4365-b0e4-95331c528529"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5cfa2d8c-32bb-486c-864c-0d3a86bd91fd">
+                    <propertyInstance
+                      Id="7b393ee5-8573-476d-991e-f03976c8351d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ddb5a757-33d9-4583-a1cc-c8f16e409163">
+                    <propertyInstance
+                      Id="f4d34931-b7ae-44a8-92fd-c3c3b43535d6"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4a60ed97-9414-4ea9-a3fb-141e53564bdb">
+                    <propertyInstance
+                      Id="d7e9a7aa-fd95-4804-8894-cdab71fd753a"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7403df22-6ef0-4448-9bd5-6880c78130a6">
+                    <propertyInstance
+                      Id="1c3288af-175b-4d05-901c-0bed4458da46"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0f97b46f-2e68-4d97-a731-fd3bf173e441">
+                    <propertyInstance
+                      Id="4b7f68e4-7d91-481d-9cff-9b74ca73f5e6"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="530fdcf4-42cc-4469-96f9-b979480775a7">
+                    <propertyInstance
+                      Id="ca45da76-28ff-492c-889e-ba3a2eebf0ab"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9909f668-1906-4f90-82ea-1be3b9ef3130">
+                    <propertyInstance
+                      Id="a0e0b78f-e256-42ee-9309-5144e4717f6a"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="cd4f34cb-c42b-479b-9b8c-d1d337bd61cf"
+            name="EventArgsContainer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="73e6d629-8212-4492-9a8f-bd309e1b8b91"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FContainers%2Fbin%2FDebug%2FContainers.dll Namespace%3DContainers Type%3D(Name%3DEventArgsContainer GenericParameterCount%3D1) Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FContainers%2Fbin%2FDebug%2FContainers.dll Namespace%3DContainers Type%3D(Name%3DEventArgsContainer GenericParameterCount%3D1) ParameterIdentifier%3D0)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="9abb4de7-d423-454e-9eb8-933e8894fd3d"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="68d83c10-1e62-4f27-8bb1-e3e391b56e44">
+                    <propertyInstance
+                      Id="9b429bf5-1aee-4d1e-857f-07a00cf1463a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7356c052-0538-4e55-aa49-87e84638d8b6">
+                    <propertyInstance
+                      Id="6e5d9f3f-f04e-4fef-8977-9130850ec660"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="deb8a905-3cde-45eb-9211-6eef42823472">
+                    <propertyInstance
+                      Id="5d1f4e48-1fd0-4b7e-b042-9fbc9abcc9d0"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="716571ad-fd90-4e98-9956-592cd665dd24">
+                    <propertyInstance
+                      Id="f299d0e9-92a4-41f3-9ff6-06482a76573a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7b97f3ca-5474-4a95-8d3b-c3b9101c8bb9">
+                    <propertyInstance
+                      Id="f300d092-9362-490d-99c3-97f1248e2802"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="99e646c0-84ba-4f13-8688-fd74c5a57a19">
+                    <propertyInstance
+                      Id="01716aec-b765-4c1e-86f7-42fc832f1030"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="455a6640-521c-4fa3-813e-fb59bc92f0d8"
+                  name="data"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="02c87d0c-28a8-4590-8215-f6fff2709025"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FContainers%2Fbin%2FDebug%2FContainers.dll Namespace%3DContainers Type%3D(Name%3DEventArgsContainer GenericParameterCount%3D1) Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FD:%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FContainers%2Fbin%2FDebug%2FContainers.dll Namespace%3DContainers Type%3D(Name%3DEventArgsContainer GenericParameterCount%3D1) ParameterIdentifier%3D0)]) ParameterIdentifier%3Ddata"
+                      tag="ViewCode" />
+                  </referencesInternal>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>

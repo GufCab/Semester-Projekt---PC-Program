@@ -10,94 +10,104 @@
     <Window.DataContext>
         <containers:MusicIndexToGui/>
     </Window.DataContext>
+    <UserControl>
+        <UserControl.Resources>
+            <Style x:Key="ImageEnabled" TargetType="Image">
+                <Style.Triggers>
+                    <Trigger Property="IsEnabled" Value="False">
+                        <Setter Property="Opacity" Value="0.25"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </UserControl.Resources>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" MinWidth="75"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Background="SkyBlue">
+                <Grid.RowDefinitions>
+                    <RowDefinition MinHeight="25" Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition MinHeight="20" Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Image Source="Hipiuden hvid.png"></Image>
+                <!--<TextBox Grid.Row="1" Text="Søgefelt"/>-->
+                <Label Grid.Row="2" Content="Volume" Margin="0,0,0,-5"/>
+                <Slider Grid.Row="3" x:Name="sliderVol" VerticalAlignment="Bottom" Maximum="100" Minimum="70" PreviewMouseLeftButtonUp="SliderVol_OnPreviewMouseLeftButtonUp"/>
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" MinWidth="75"/>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0" Background="SkyBlue">
-            <Grid.RowDefinitions>
-                <RowDefinition MinHeight="25" Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition MinHeight="20" Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Image Source="Hipiuden hvid.png"></Image>
-            <!--<TextBox Grid.Row="1" Text="Søgefelt"/>-->
-            <Label Grid.Row="2" Content="Volume" Margin="0,0,0,-5"/>
-            <Slider Grid.Row="3" x:Name="sliderVol" VerticalAlignment="Bottom" Maximum="100" Minimum="70" PreviewMouseLeftButtonUp="SliderVol_OnPreviewMouseLeftButtonUp"/>
-
-            <Button Grid.Row="5" Content="[PI] Send File" Click="SendFile_OnClick"/>
-            <Button Grid.Row="6" Content="Settings" Click="Settings_OnClick" Margin="0,0,0,0"/>
-            <Button Grid.Row="7" Content="Sync" Name="btnSync" Click="SyncButtonClick"/>
-            <Button Grid.Row="8" Content="Rescan" x:Name="btnRescan" Click="BtnRescan_OnClick" Height="20" VerticalAlignment="Bottom"></Button>
-        </Grid>
-
-        <Grid Grid.Column="1">
-
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*" MinHeight="220"/>
-                <RowDefinition Height="Auto" MinHeight="0"/>
-            </Grid.RowDefinitions>
-            <Label Grid.Row="0" Content="Musikindex"/>
-            <DataGrid Grid.Row="1" x:Name="dgMusikindex" MouseDoubleClick="DgMusikindex_OnMouseDoubleClick"/>
-        </Grid>
-        <GridSplitter Grid.Column="2" Width="5" HorizontalAlignment ="Center" Background="Gray" Opacity=".1"/>
-        <Grid Grid.Column="3">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto" MinHeight="0"/>
-            </Grid.RowDefinitions>
-            <Grid Grid.Row="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <Label Grid.Column="0" Grid.ColumnSpan="2" Content="Afspilningsliste"/>
-            </Grid>
-            <DataGrid Grid.Row="1" x:Name="dgPlayQueue" MouseDoubleClick="DgPlayQueue_OnMouseDoubleClick"></DataGrid>
-            <Grid Grid.Row="2">
-                <Slider x:Name="sliderTime" PreviewMouseLeftButtonUp="SliderTime_OnPreviewMouseLeftButtonUp"/>
-            </Grid>
-            <Grid Grid.Row="3">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="55*"/>
-                    <ColumnDefinition Width="11*"/>
-                    <ColumnDefinition Width="44*"/>
-                    <ColumnDefinition Width="54*"/>
-                    <ColumnDefinition Width="55*"/>
-                </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" x:Name="btnPrevious" MaxHeight="30" Click="BtnPrevious_OnClick">
-                    <Image Source="Icons\Previous.ico" Margin="0,2"/>
-                </Button>
-                <Button Grid.Column="3" MaxHeight="30" Click="Playbutton_OnClick" x:Name="btnPlayPause">
-                    <Image x:Name="pap" Source="Icons\Play.ico" Margin="0,2"/>
-                </Button>
-                <Button Grid.Column="1" x:Name="btnStop" MaxHeight="30" Click="BtnStop_OnClick" Grid.ColumnSpan="2">
-                    <Image Source="Icons\Stop.ico"  Margin="0,3" ></Image>
-                </Button>
-                <Button Grid.Column="4" x:Name="btnNext" MaxHeight="30" Click="BtnNext_OnClick">
-                    <Image Source="Icons\Next.ico" Margin="0,2"/>
-                </Button>
+                <Button Grid.Row="5" Content="[PI] Send File" Click="SendFile_OnClick"/>
+                <Button Grid.Row="6" Content="Settings" Click="Settings_OnClick" Margin="0,0,0,0"/>
+                <Button Grid.Row="7" Content="Sync" Name="btnSync" Click="SyncButtonClick"/>
+                <Button Grid.Row="8" Content="Rescan" x:Name="btnRescan" Click="BtnRescan_OnClick" Height="20" VerticalAlignment="Bottom"></Button>
             </Grid>
 
-        </Grid>
+            <Grid Grid.Column="1">
 
-    </Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*" MinHeight="220"/>
+                    <RowDefinition Height="Auto" MinHeight="0"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="Musikindex"/>
+                <DataGrid Grid.Row="1" x:Name="dgMusikindex" MouseDoubleClick="DgMusikindex_OnMouseDoubleClick"/>
+            </Grid>
+            <GridSplitter Grid.Column="2" Width="5" HorizontalAlignment ="Center" Background="Gray" Opacity=".1"/>
+            <Grid Grid.Column="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto" MinHeight="0"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Grid.ColumnSpan="2" Content="Afspilningsliste"/>
+                </Grid>
+                <DataGrid Grid.Row="1" x:Name="dgPlayQueue" MouseDoubleClick="DgPlayQueue_OnMouseDoubleClick"></DataGrid>
+                <Grid Grid.Row="2">
+                    <Slider x:Name="sliderTime" PreviewMouseLeftButtonUp="SliderTime_OnPreviewMouseLeftButtonUp"/>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="55*"/>
+                        <ColumnDefinition Width="11*"/>
+                        <ColumnDefinition Width="44*"/>
+                        <ColumnDefinition Width="54*"/>
+                        <ColumnDefinition Width="55*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" x:Name="btnPrevious" MaxHeight="30" Click="BtnPrevious_OnClick">
+                        <Image Source="Icons\Previous.ico" Margin="0,2" Style="{StaticResource ImageEnabled}"/>
+                    </Button>
+                    <Button Grid.Column="3" MaxHeight="30" Click="Playbutton_OnClick" x:Name="btnPlayPause">
+                        <Image x:Name="pap" Source="Icons\Play.ico" Margin="0,2" Style="{StaticResource ImageEnabled}"/>
+                    </Button>
+                    <Button Grid.Column="1" x:Name="btnStop" MaxHeight="30" Click="BtnStop_OnClick" Grid.ColumnSpan="2">
+                        <Image Source="Icons\Stop.ico"  Margin="0,3" Style="{StaticResource ImageEnabled}"></Image>
+                    </Button>
+                    <Button Grid.Column="4" x:Name="btnNext" MaxHeight="30" Click="BtnNext_OnClick">
+                        <Image x:Name="ImgNext" Source="Icons\Next.ico" Margin="0,2" Style="{StaticResource ImageEnabled}"/>
+                    </Button>
+                </Grid>
+
+            </Grid>
+
+        </Grid>
+    </UserControl>
 </Window>

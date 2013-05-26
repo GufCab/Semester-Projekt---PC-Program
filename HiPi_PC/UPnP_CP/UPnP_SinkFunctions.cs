@@ -45,16 +45,16 @@ namespace UPnP_CP
         private SinkStack.CpConnectionManager _ConnectionManager;
         private SinkStack.CpRenderingControl _RenderingControl;
 
-        public delegate void getVolumeDel(object sender, EventArgsContainer<ushort> e);
+        public delegate void getVolumeDel(object sender, ushort e);
         public event getVolumeDel getVolEvent;
 
-        public delegate void getPositionDel(object sender, EventArgsContainer<List<ushort>>  e);
+        public delegate void getPositionDel(object sender, List<ushort>  e);
         public event getPositionDel getPositionEvent;
 
-        public delegate void getIPDel(object sender, EventArgsContainer<string> e);
+        public delegate void getIPDel(object sender, string e);
         public event getIPDel getIPEvent;
 
-        public delegate void transportStateDel(object sender, EventArgsContainer<string> e);
+        public delegate void transportStateDel(object sender, string e);
         public event transportStateDel transportStateEvent;
         
         private XMLWriter _xmlWriter = new XMLWriter();
@@ -131,11 +131,11 @@ namespace UPnP_CP
                 case "PLAYING":
                     if (value == State.Stopped)
                     {
-                        transportStateEvent(this, new EventArgsContainer<string>(newValue));
+                        transportStateEvent(this, newValue);
                     }
                     else if(value == State.Transitioning)
                     {
-                        transportStateEvent(this, new EventArgsContainer<string>("BROWSE"));
+                        transportStateEvent(this, "BROWSE");
                     }
                     value = State.Playing; 
                     break;
@@ -143,7 +143,7 @@ namespace UPnP_CP
                 case "STOPPED":
                     if (value == State.Playing)
                     {
-                        transportStateEvent(this, new EventArgsContainer<string>(newValue));
+                        transportStateEvent(this, newValue);
                     }
                     else if(value == State.Transitioning)
                     {
@@ -224,9 +224,9 @@ namespace UPnP_CP
 
         private void RenderingControlOnOnResultGetVolume(CpRenderingControl sender, uint instanceId, string channel, ushort currentVolume, UPnPInvokeException upnPInvokeException, object tag)
         {
-            EventArgsContainer<ushort> argsContainer = new EventArgsContainer<ushort>(currentVolume);
+            //EventArgsContainer<ushort> argsContainer = new EventArgsContainer<ushort>(currentVolume);
 
-            getVolEvent(this, argsContainer);
+            getVolEvent(this, currentVolume);
         }
 
         public void SetTransportURI(ITrack track)
@@ -263,9 +263,9 @@ namespace UPnP_CP
         {
             var list = new List<ushort>{currentPosition, duration};
 
-            var args = new EventArgsContainer<List<ushort>>(list);
+            //var args = List<ushort>(list);
 
-            getPositionEvent(this, args);
+            getPositionEvent(this, list);
         }
         
         public void SetPosition(ushort pos)
@@ -286,9 +286,9 @@ namespace UPnP_CP
 
         private void ConnectionManagerOnOnResultGetIpAddress(CpConnectionManager sender, string ipAddress, UPnPInvokeException upnPInvokeException, object tag)
         {
-            EventArgsContainer<string> argsContainer = new EventArgsContainer<string>(ipAddress);
+            //EventArgsContainer<string> argsContainer = new EventArgsContainer<string>(ipAddress);
 
-            getIPEvent(this, argsContainer);
+            getIPEvent(this, ipAddress);
         }
     }
 }

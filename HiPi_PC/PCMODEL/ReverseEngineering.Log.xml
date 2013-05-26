@@ -6,56 +6,15 @@
   <MessageClass Name="Error" Label="Error" Option="Show errors" />
   <MessageClass Name="Property" Label="Property" Option="Show metadata" />
   <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
-  <Message Timestamp="2013-05-26T16:06:11" Importance="High" Text="Reverse Engineering Started." />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Integer' -  (PrimitiveType)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender' -  (Package)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Medium" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client' -  (Class)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::_clientSocket' -  (Property)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::_fileName' -  (Property)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::_fileSize' -  (Property)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::_ip' -  (Property)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::_port' -  (Property)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::_serverStream' -  (Property)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::BUFSIZE' -  (Property)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::Client' -  (Operation)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::Client::fileName' -  (Parameter)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::Client::ip' -  (Parameter)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::CloseSocket' -  (Operation)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::Dispose' -  (Operation)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::fileInfo' -  (Property)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::LocalIpAddress' -  (Operation)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::Run' -  (Operation)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::Run::path' -  (Parameter)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::SendFile' -  (Operation)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::SendFile::fileName' -  (Parameter)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::SendFile::fileSize' -  (Parameter)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::SendFile::io' -  (Parameter)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::SendFileNameToServer' -  (Operation)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::SendFileSizeToServer' -  (Operation)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::serverFileName' -  (Property)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::SetFileName' -  (Operation)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::SetFileName::fileName' -  (Parameter)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::SetIp' -  (Operation)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::SetIp::ip' -  (Parameter)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::SetPort' -  (Operation)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::SetPort::port' -  (Parameter)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::FileSender::Client::SetUp' -  (Operation)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::System' -  (Package)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::System::IDisposable' -  (Interface)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::System::Int64' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::System::IO' -  (Package)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::System::IO::FileInfo' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::System::Net' -  (Package)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::System::Net::Sockets' -  (Package)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::System::Net::Sockets::NetworkStream' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::System::Net::Sockets::TcpClient' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'String' -  (PrimitiveType)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: PCMODEL::FileSender::Client to PCMODEL::System::Net::Sockets::TcpClient (Association)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: PCMODEL::FileSender::Client to PCMODEL::System::Net::Sockets::NetworkStream (Association)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: PCMODEL::FileSender::Client to PCMODEL::System::Int64 (Association)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: PCMODEL::FileSender::Client to PCMODEL::System::IDisposable (InterfaceRealization)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: PCMODEL::System::Net::Sockets::TcpClient to PCMODEL::System::IDisposable (InterfaceRealization)" />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="High" Text="(1) type(s) fully reverse engineered." />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="High" Text="(5) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
-  <Message Timestamp="2013-05-26T16:06:15" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
+  <Message Timestamp="2013-05-26T21:46:10" Importance="High" Text="Reverse Engineering Started." />
+  <Message Timestamp="2013-05-26T21:46:11" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::Containers' -  (Package)" />
+  <Message Timestamp="2013-05-26T21:46:11" Importance="Medium" Text="Element reverse engineered into the UML model: 'PCMODEL::Containers::Container' -  (Class)" />
+  <Message Timestamp="2013-05-26T21:46:11" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::Containers::Container::Container' -  (Operation)" />
+  <Message Timestamp="2013-05-26T21:46:11" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::Containers::Container::id' -  (Property)" />
+  <Message Timestamp="2013-05-26T21:46:11" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::Containers::Container::parentID' -  (Property)" />
+  <Message Timestamp="2013-05-26T21:46:11" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::Containers::Container::title' -  (Property)" />
+  <Message Timestamp="2013-05-26T21:46:11" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::Containers::Container::upnpClass' -  (Property)" />
+  <Message Timestamp="2013-05-26T21:46:11" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'String' -  (PrimitiveType)" />
+  <Message Timestamp="2013-05-26T21:46:11" Importance="High" Text="(1) type(s) fully reverse engineered." />
+  <Message Timestamp="2013-05-26T21:46:11" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
 </Log>

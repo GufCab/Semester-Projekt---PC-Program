@@ -58,8 +58,10 @@ namespace playerlayout
             dgMusikindex.ItemsSource = musikindex;
             dgPlayQueue.IsReadOnly = true;
             dgMusikindex.IsReadOnly = true;
+        }
 
-            
+        public void GreyoutButtons()
+        {
             btnNext.IsEnabled = false;
             btnPrevious.IsEnabled = false;
             btnStop.IsEnabled = false;
@@ -102,8 +104,6 @@ namespace playerlayout
             _UPnPSource = e;
 
             _UPnPSource.BrowseResult += UpnPSourceOnBrowseResult;
-
-            //todo: degrey buttons
         }
 
         private void UpnPSourceOnBrowseResult(object sender, List<ITrack> tracks)
@@ -131,20 +131,20 @@ namespace playerlayout
             }));
         }
 
-        private void UpnPSinkOnTransportStateEvent(object sender, EventArgsContainer<string> eventArgsContainer)
+        private void UpnPSinkOnTransportStateEvent(object sender, string eventArgsContainer)
         {
             Dispatcher.BeginInvoke(new Action(() =>
             {
-                switch (eventArgsContainer._data)
+                switch (eventArgsContainer)
                 {
                     case "PLAYING":
-                        togglePlayButton();
+                        TogglePlayButton();
                         break;
                     case "STOPPED":
-                        togglePlayButton();
+                        TogglePlayButton();
                         break;
                     case "BROWSE":
-
+                        _UPnPSource.Browse("playqueue");
                         break;
                     default:
                         break;
@@ -152,39 +152,39 @@ namespace playerlayout
             }));
         }
 
-        private void UpnPSinkOnGetVolEvent(object sender, EventArgsContainer<ushort> eventArgsContainer)
+        private void UpnPSinkOnGetVolEvent(object sender, ushort eventArgsContainer)
         {
             Dispatcher.BeginInvoke(new Action(() =>
             {
-                if (eventArgsContainer._data < 70)
+                if (eventArgsContainer < 70)
                 {
                     sliderVol.Value = 70;
                 }
                 else
                 {
-                    sliderVol.Value = Convert.ToDouble(eventArgsContainer._data);
+                    sliderVol.Value = Convert.ToDouble(eventArgsContainer);
                 }
             }));
         }
 
-        private void UpnPSinkOnGetPositionEvent(object sender, EventArgsContainer<List<ushort>> eventArgsContainer)
+        private void UpnPSinkOnGetPositionEvent(object sender, List<ushort> eventArgsContainer)
         {
             Dispatcher.BeginInvoke(new Action(() =>
             {
-                sliderTime.Value = eventArgsContainer._data[0];
-                sliderTime.Maximum = eventArgsContainer._data[1];
+                sliderTime.Value = eventArgsContainer[0];
+                sliderTime.Maximum = eventArgsContainer[1];
 
             }));
         }
 
-        private void UpnPSinkOnGetIpEvent(object sender, EventArgsContainer<string> eventArgsContainer)
+        private void UpnPSinkOnGetIpEvent(object sender, string eventArgsContainer)
         {
             var thread = new Thread(() =>
             {
                 var dlg = new OpenFileDialog();
                 if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    var cli = new FileSenderClient(dlg.FileName, eventArgsContainer._data);
+                    var cli = new FileSenderClient(dlg.FileName, eventArgsContainer);
                 }
             });
             thread.SetApartmentState(ApartmentState.STA);
@@ -201,7 +201,7 @@ namespace playerlayout
             _UPnPSink.Pause();
         }
 
-        private void togglePlayButton()
+        private void TogglePlayButton()
         {
             if (play)
             {
@@ -272,7 +272,11 @@ namespace playerlayout
         private void BtnRescan_OnClick(object sender, RoutedEventArgs e)
         {
             _UPnPSetup = null;
+            _UPnPSink = null;
+            _UPnPSource = null;
+            GreyoutButtons();
             _UPnPSetup = new UPnP_Setup();
+            _UPnPSetup.StartServices();
         }
 
 
