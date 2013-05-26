@@ -60,6 +60,84 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="5338efd9-620c-4955-a803-b0d6725ae4b8"
+            isDerived="false"
+            sourceEndRoleName="UPnP_Setup"
+            targetEndRoleName="UPnP_SourceFunctions"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="6d3b065d-afd4-4957-be84-c2506c9dd7cc"
+              LastKnownName="UPnP_SourceFunctions"
+              LastKnownLocation="Package_1628.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7bd86cf4-2cec-4a4d-8117-def67ef40bd6"
+                  name="UPnP_Setup"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5beba96a-a565-459b-8474-ad33a7a6104b"
+                  name="UPnP_SourceFunctions"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="5b502483-c360-492d-aa2c-39296bc7cb99"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="d2f008a7-2521-4016-947a-d84a7afdbb3d"
+              LastKnownName="UPnP_SinkFunctions"
+              LastKnownLocation="Package_1628.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1e41649a-d367-4993-a1dc-ada343097000"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d70abb4f-e7c1-4f5c-bf7a-d36add46969f"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="49d6f4ed-612d-444d-b1f0-c27e644041be"
@@ -1065,6 +1143,45 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="9fe402d5-ed35-4c21-8c68-ee1f845f48ea"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="ea3b17d1-2066-417b-93b9-715ec1b3c5b4"
+              LastKnownName="XMLWriter"
+              LastKnownLocation="Package_1612.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e49707c1-8fdc-4c7e-a9dc-ecf01781ffc3"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="161b20f9-ea4b-4946-9cda-c6c726b0680f"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedOperations>
           <operation
             Id="b112b8ea-6d69-443a-b57d-48d5a0890600"
@@ -4337,6 +4454,45 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="1c34460c-af6e-4a9f-b707-81e358de126c"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="d9e340a9-56b9-4037-98d2-400b63789603"
+              LastKnownName="XMLReaderPC"
+              LastKnownLocation="Package_1612.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d4b25927-0353-4871-9080-17f1864b21ed"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="293b58b5-dc56-4b6e-a730-f2a3a4fa5596"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedOperations>
           <operation
             Id="f78618ef-b9e8-46fe-96d2-aee2758c8136"

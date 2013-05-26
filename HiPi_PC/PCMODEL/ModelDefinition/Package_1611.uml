@@ -83,8 +83,8 @@
           <association
             Id="d6bbf9af-8b8c-442c-a137-dc3126bf93a2"
             isDerived="false"
-            sourceEndRoleName="MainWindow"
-            targetEndRoleName="Settings"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -95,7 +95,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="129db16b-c974-4f27-a178-fdac2131a9f9"
-                  name="MainWindow"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -108,7 +107,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="947f0456-f80b-42e6-830f-66e22a656a66"
-                  name="Settings"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -161,8 +159,8 @@
           <association
             Id="a8c81fb1-4737-4a73-9b54-818823e2572d"
             isDerived="false"
-            sourceEndRoleName="MainWindow"
-            targetEndRoleName="PlayQueueToGui"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -173,7 +171,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="19e0ea58-7158-44fc-8857-95bdaf68d801"
-                  name="MainWindow"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -186,7 +183,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="e9fce8eb-a1cb-454a-b127-b485ccbb8548"
-                  name="PlayQueueToGui"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -200,8 +196,8 @@
           <association
             Id="416e16c1-dccb-4d26-8529-d067c2930d17"
             isDerived="false"
-            sourceEndRoleName="MainWindow"
-            targetEndRoleName="MusicIndexToGui"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -212,7 +208,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="ccf98285-74e7-4a43-aa6f-512fc4c622fa"
-                  name="MainWindow"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -225,7 +220,43 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="8b6c582a-4887-40b1-8748-b4322c1bff2b"
-                  name="MusicIndexToGui"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="60ee1214-7866-4b52-8237-1ea72d429e8c"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="901f69dc-8bdb-4dc4-b3a6-ecc201909547"
+              LastKnownName="UPnP_Setup"
+              LastKnownLocation="Package_1628.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="71b124dc-8f81-4f4c-91f2-cb8c4b23d1f2"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5476080a-75ff-41a3-819e-1dd9c5dd6a59"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -3708,8 +3739,8 @@
           <association
             Id="1a655e7c-b4b8-4fd6-a45e-e35d9a7f6831"
             isDerived="false"
-            sourceEndRoleName="Settings"
-            targetEndRoleName="ISynchronizer"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <interfaceMoniker
@@ -3720,7 +3751,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="bb0200ff-cbb5-4341-921d-a6a53a37b720"
-                  name="Settings"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -3733,7 +3763,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="ae51af52-0181-44cc-ad78-0aceac49f353"
-                  name="ISynchronizer"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"

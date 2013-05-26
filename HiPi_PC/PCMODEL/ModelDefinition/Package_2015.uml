@@ -80,8 +80,8 @@
           <association
             Id="5ba89f4b-7b27-4dce-902d-9b49cd3ab796"
             isDerived="false"
-            sourceEndRoleName="PiDbhandel"
-            targetEndRoleName="pcindexEntities"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -92,7 +92,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="9ecbaacc-cab1-4550-b162-edd476d3bd33"
-                  name="PiDbhandel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -105,7 +104,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="46dcfcaf-8f7f-4d28-beb4-9f7f120a2900"
-                  name="pcindexEntities"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -119,8 +117,8 @@
           <association
             Id="cdaaa1bc-4a72-4a1b-b669-4414a20ff9e4"
             isDerived="false"
-            sourceEndRoleName="PiDbhandel"
-            targetEndRoleName="PiindexEntities"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -131,7 +129,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="9d30c500-ecee-48e9-a12e-ae627751ab6f"
-                  name="PiDbhandel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -144,7 +141,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="ecc8cd4f-0b58-4f62-a4d1-1b4f7ea4468e"
-                  name="PiindexEntities"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -1542,8 +1538,8 @@
           <association
             Id="646b8f4c-42b0-4df8-bd8f-fa3b467a8821"
             isDerived="false"
-            sourceEndRoleName="LocalDbhandel"
-            targetEndRoleName="IFileIndexer"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <interfaceMoniker
@@ -1554,7 +1550,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="dc5c1226-51e6-4e3f-808d-eb4fad0a18dc"
-                  name="LocalDbhandel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -1567,7 +1562,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="c2ae04fb-a656-42e4-b304-000c18468b0c"
-                  name="IFileIndexer"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -1581,8 +1575,8 @@
           <association
             Id="4e5b903e-f27f-4294-a6c1-5ee0c4af0579"
             isDerived="false"
-            sourceEndRoleName="LocalDbhandel"
-            targetEndRoleName="pcindexEntities"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -1593,7 +1587,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="6bf91819-d259-435b-ab9b-d6b75543e2c3"
-                  name="LocalDbhandel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -1606,7 +1599,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="72b2029d-1441-4224-aff9-11d0335efd27"
-                  name="pcindexEntities"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"

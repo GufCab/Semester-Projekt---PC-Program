@@ -2,7 +2,7 @@
 <package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="b46c2858-d513-4005-bea6-4f95b9d4d1ee"
-  name="XAML Package" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  name="XML Handling Package" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
   <packagedElements>
     <packageHasNamedElement>
       <class
@@ -2938,8 +2938,8 @@
           <association
             Id="04425f12-5f46-44d7-b594-0c3421f17b00"
             isDerived="false"
-            sourceEndRoleName="XMLReaderPC"
-            targetEndRoleName="ITrack"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <interfaceMoniker
@@ -2950,7 +2950,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="8422de2a-b8e4-4596-893a-286077d85413"
-                  name="XMLReaderPC"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -2963,7 +2962,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="48ba4840-7e49-4f40-a535-ee0b1cdb1e5d"
-                  name="ITrack"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -3237,6 +3235,30 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
           </operation>
+          <operation
+            Id="40aaa6dd-8acd-463f-a0a2-1dd34e6f1944"
+            name="Browse"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f108328f-9e64-4ded-9e88-590818f938e5"
+                  name="id"
+                  direction="In">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="PCMODEL.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -3300,8 +3322,8 @@
           <association
             Id="3ca0915d-44ef-4dd2-864f-66d73facd633"
             isDerived="false"
-            sourceEndRoleName="XMLWriter"
-            targetEndRoleName="ITrack"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <interfaceMoniker
@@ -3312,7 +3334,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="9640108c-fbb7-49d1-a5d5-bc3d95a72008"
-                  name="XMLWriter"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -3325,7 +3346,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="f6a2958c-c4a8-4cc1-80d6-f7e09b6be44b"
-                  name="ITrack"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -3500,6 +3520,107 @@
                 </propertyInstances>
               </stereotypeInstance>
             </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="15ed2a55-8af7-4434-b5b3-d6d3ab626ad2"
+            name="Play"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="0bcd086d-750c-4382-a156-a4bdaf196368"
+            name="Pause"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="029f0801-727e-4db5-b5e3-d3946c2404f4"
+            name="Stop"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="ee21a0de-50ec-497a-9e2b-444528f4436d"
+            name="Next"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="e59fa2b8-8479-4572-a4a1-5f3dfc40a430"
+            name="Previous"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="20ff2b87-0971-4209-916c-291621c55f6a"
+            name="SetTransportURI"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="25b7c4a0-3322-4784-802b-2bd2f716b4ef"
+                  name="path"
+                  direction="In">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="PCMODEL.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f0818490-4cde-4289-b9a7-7b152f79f09a"
+                  name="metaData"
+                  direction="In">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="PCMODEL.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="fe80c0d9-35cd-4e57-8543-5c60c8a3c28b"
+            name="SetVolume"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="56997ebd-7e67-4885-97ef-b1fef258f4c7"
+                  name="desiredVolume"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="056c4c6f-fb8b-4f47-91fa-0f035b0e7480"
+                      LastKnownName="UInt16"
+                      LastKnownLocation="Package1_1621.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>

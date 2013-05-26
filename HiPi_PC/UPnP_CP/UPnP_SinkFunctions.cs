@@ -56,8 +56,7 @@ namespace UPnP_CP
 
         public delegate void transportStateDel(object sender, EventArgsContainer<string> e);
         public event transportStateDel transportStateEvent;
-
-        private XMLReader _xmlReader = new XMLReader();
+        
         private XMLWriter _xmlWriter = new XMLWriter();
 
         private const uint _instanceID = 0;

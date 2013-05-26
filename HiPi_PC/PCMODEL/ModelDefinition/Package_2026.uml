@@ -579,8 +579,8 @@
           <association
             Id="ff1aaacc-c023-44e8-87c2-25540f6961f3"
             isDerived="false"
-            sourceEndRoleName="FolderAndFileReader"
-            targetEndRoleName="FilesFolders"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -591,7 +591,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="a33163eb-8da9-4b9b-a4b9-12f5fa7eb32c"
-                  name="FolderAndFileReader"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -604,7 +603,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="d143473b-92fb-43d1-b78a-479fe3c0bd46"
-                  name="FilesFolders"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"

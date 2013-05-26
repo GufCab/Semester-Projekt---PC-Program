@@ -1077,8 +1077,8 @@
           <association
             Id="123ca1e7-4e1b-4312-afa9-170404be04eb"
             isDerived="false"
-            sourceEndRoleName="Synchronizer"
-            targetEndRoleName="ILocalDbhandel"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <interfaceMoniker
@@ -1089,7 +1089,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="8f9b4b5f-a4f1-4c3d-8e1b-d3a3b84cb801"
-                  name="Synchronizer"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -1102,7 +1101,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="46d46e08-ea03-4c47-9f84-3d12a0687c90"
-                  name="ILocalDbhandel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -1116,8 +1114,8 @@
           <association
             Id="63afe13e-9f7f-4162-85db-7d28e0d3362c"
             isDerived="false"
-            sourceEndRoleName="Synchronizer"
-            targetEndRoleName="IPidbhandel"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <interfaceMoniker
@@ -1128,7 +1126,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="8c69f908-c366-4f0f-8b58-5827f1f87fd9"
-                  name="Synchronizer"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -1141,7 +1138,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="8bbbf8f4-8136-4637-a171-cbc43bd445ce"
-                  name="IPidbhandel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -1155,8 +1151,8 @@
           <association
             Id="b8a1f390-6aca-42ca-b261-3754e1881663"
             isDerived="false"
-            sourceEndRoleName="Synchronizer"
-            targetEndRoleName="Live555Wrapper"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -1167,7 +1163,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="5fa9130d-e3b5-4acc-80b4-a62c51633809"
-                  name="Synchronizer"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -1180,7 +1175,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="e5fcd9f4-0999-4a65-bc51-3d419c979c28"
-                  name="Live555Wrapper"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
