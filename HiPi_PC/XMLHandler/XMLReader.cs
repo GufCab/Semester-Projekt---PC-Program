@@ -8,12 +8,12 @@ using System.Xml.Linq;
 using System.Xml;
 using Containers;
 
-namespace XMLReader
+namespace XMLHandler
 {
     /// <summary>
     /// Extracts the useful information from a XML string
     /// </summary>
-    public class XMLReaderPC
+    public class XMLReader
     {
         /// <summary>
         /// Converts an XML string to a list of Container objects

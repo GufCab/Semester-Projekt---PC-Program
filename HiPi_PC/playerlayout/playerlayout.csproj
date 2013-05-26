@@ -128,22 +128,7 @@
     <Resource Include="Terran.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Stop.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="play.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Pause.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Hipiuden hvid.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Farward.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Backward.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Containers\Containers.csproj">
@@ -166,13 +151,16 @@
       <Project>{c0553d6d-b801-4d88-81cb-786496bf5143}</Project>
       <Name>UPnP_CP</Name>
     </ProjectReference>
-    <ProjectReference Include="..\XMLHandler\XMLHandler.csproj">
-      <Project>{a203a151-1893-4c72-8d53-28962537605f}</Project>
-      <Name>XMLHandler</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Billeder\Protoss.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Next.ico" />
+    <Resource Include="Icons\Pause.ico" />
+    <Resource Include="Icons\Play.ico" />
+    <Resource Include="Icons\Previous.ico" />
+    <Resource Include="Icons\Stop.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

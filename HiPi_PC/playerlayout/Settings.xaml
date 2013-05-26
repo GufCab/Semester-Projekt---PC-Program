@@ -21,7 +21,7 @@
             </Grid.RowDefinitions>
             <Label Grid.Row="0" Content="Styles" Background="SteelBlue" Opacity="0.6"/>
             
-            <ListView Grid.Row="1">
+            <ListView Grid.Row="1" >
                 <RadioButton Content="Normal" IsChecked="True" x:Name="ChooseNormalSkin"> </RadioButton>
                 <RadioButton Content="Zerg" x:Name="ChooseZergSkin" ></RadioButton>
                 <RadioButton Content="Terran" x:Name="ChooseTerranSkin"></RadioButton>

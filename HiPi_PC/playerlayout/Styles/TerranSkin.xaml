@@ -3,8 +3,8 @@
 
 
     <Style TargetType="{x:Type RadioButton}">
-        <Setter Property="FontSize" Value="12"></Setter>
-        <Setter Property="BorderThickness" Value="4"></Setter>
+        <!--<Setter Property="FontSize" Value="12"></Setter>-->
+        <!--<Setter Property="BorderThickness" Value="4"></Setter>-->
         <Setter Property="BorderBrush" Value="Maroon"></Setter>
     </Style>
 

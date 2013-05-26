@@ -3,7 +3,7 @@
 
 
     <Style TargetType="{x:Type RadioButton}">
-        <Setter Property="FontSize" Value="18"></Setter>
+        <!--<Setter Property="FontSize" Value="18"></Setter>-->
         <Setter Property="Foreground" Value="#FFD8D82D"></Setter>
     </Style>
     

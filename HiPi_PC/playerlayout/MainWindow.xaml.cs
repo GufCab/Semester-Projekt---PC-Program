@@ -17,13 +17,11 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using FileSender;
 using UPnP_CP;
-using XMLHandler;
 using playerlayout.Properties;
 using TemplateSync;
 using Containers;
 using MessageBox = System.Windows.MessageBox;
 using MouseEventArgs = System.Windows.Input.MouseEventArgs;
-using Containers;
 
 namespace playerlayout
 {
@@ -35,61 +33,153 @@ namespace playerlayout
         bool play = new bool();
         private Settings settingsw;
         
-        private ObervHandler observerHandler;
+        //private UPnPHandler _UPnPHandler = new UPnPHandler();
 
         public MusicIndexToGui musikindex = new MusicIndexToGui();
         public PlayQueueToGui playqueue = new PlayQueueToGui();
-       
 
+        private UPnP_Setup _UPnPSetup;
+        private ISinkFunctions _UPnPSink = null;
+        private ISourceFunctions _UPnPSource = null;
+
+        
         public MainWindow()
         {
             InitializeComponent();
             settingsw = new Settings();
-            observerHandler = new ObervHandler();
 
-            observerHandler.musikUpdateEvent += HandOnMusikUpdateEvent;
-            observerHandler.playQueueUpdateEvent += ObserverHandlerOnPlayQueueUpdateEvent;
-            observerHandler.VolumeUpdateEvent += ObserverHandlerOnVolumeUpdateEvent;
-            observerHandler.getIPEvent1 += ObserverHandlerOnGetIpEvent1;
-            observerHandler.getPositionEvent += ObserverHandlerOnGetPositionEvent;
-            observerHandler.transportStateEvent += ObserverHandlerOnTransportStateEvent;
+            _UPnPSetup = new UPnP_Setup();
+
+            subscribe();
+
+            _UPnPSetup.StartServices();
             
             dgPlayQueue.ItemsSource = playqueue;
             dgMusikindex.ItemsSource = musikindex;
             dgPlayQueue.IsReadOnly = true;
             dgMusikindex.IsReadOnly = true;
+
+            //todo: greyout buttons
+            btnNext.IsEnabled = false;
+            //btnNext.IsEnabled = true;
+            btnPrevious.IsEnabled = false;
+            btnStop.IsEnabled = false;
+            btnPlayPause.IsEnabled = false;
+            sliderTime.IsEnabled = false;
+            sliderVol.IsEnabled = false;
+            btnSync.IsEnabled = false;
         }
 
-        private void ObserverHandlerOnTransportStateEvent(object sender, EventArgsContainer<string> eventArgsContainer)
+        public void subscribe()
         {
+            _UPnPSetup.AddSinkEvent += getUPnPSink;
+            _UPnPSetup.AddSourceEvent += getUPnPSource;
+        }
+
+        public void getUPnPSink(UPnP_SinkFunctions e, EventArgs s)
+        {
+            _UPnPSink = e;
+
+            _UPnPSink.getIPEvent += UpnPSinkOnGetIpEvent;
+            _UPnPSink.getPositionEvent += UpnPSinkOnGetPositionEvent;
+            _UPnPSink.getVolEvent += UpnPSinkOnGetVolEvent;
+            _UPnPSink.transportStateEvent += UpnPSinkOnTransportStateEvent;
+
+            //todo: degrey buttons
             Dispatcher.BeginInvoke(new Action(() =>
                 {
-                    switch (eventArgsContainer._data)
-                    {
-                        case "playing":
-                            togglePlayButton();
-                            break;
-                        case "stopped":
-                            togglePlayButton();
-                            break;
-                        default:
-                            break;
-                    }
+                    btnNext.IsEnabled = true;
+                    btnPrevious.IsEnabled = true;
+                    btnStop.IsEnabled = true;
+                    btnPlayPause.IsEnabled = true;
+                    sliderTime.IsEnabled = true;
+                    sliderVol.IsEnabled = true;
+                    btnSync.IsEnabled = true;
                 }));
             
         }
 
-        private void ObserverHandlerOnGetPositionEvent(object sender, EventArgsContainer<List<ushort>> eventArgsContainer)
+        public void getUPnPSource(UPnP_SourceFunctions e, EventArgs s)
         {
-            Dispatcher.BeginInvoke(new Action(() =>
-                {
-                    sliderTime.Value = eventArgsContainer._data[0];
-                    sliderTime.Maximum = eventArgsContainer._data[1];
-                    
-                }));
+            _UPnPSource = e;
+
+            _UPnPSource.BrowseResult += UpnPSourceOnBrowseResult;
+
+            //todo: degrey buttons
         }
 
-        private void ObserverHandlerOnGetIpEvent1(object sender, EventArgsContainer<string> eventArgsContainer)
+        private void UpnPSourceOnBrowseResult(object sender, List<ITrack> tracks)
+        {
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                if (tracks[0].ParentID == "all")
+                {
+                    playqueue.Clear();
+
+                    foreach (var track in tracks)
+                    {
+                        playqueue.Add(track);
+                    }   
+                }
+                else if (tracks[0].ParentID == "playqueue")
+                {
+                    musikindex.Clear();
+
+                    foreach (var track in tracks)
+                    {
+                        musikindex.Add(track);
+                    }
+                }
+            }));
+        }
+
+        private void UpnPSinkOnTransportStateEvent(object sender, EventArgsContainer<string> eventArgsContainer)
+        {
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                switch (eventArgsContainer._data)
+                {
+                    case "PLAYING":
+                        togglePlayButton();
+                        break;
+                    case "STOPPED":
+                        togglePlayButton();
+                        break;
+                    case "BROWSE":
+
+                        break;
+                    default:
+                        break;
+                }
+            }));
+        }
+
+        private void UpnPSinkOnGetVolEvent(object sender, EventArgsContainer<ushort> eventArgsContainer)
+        {
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                if (eventArgsContainer._data < 70)
+                {
+                    sliderVol.Value = 70;
+                }
+                else
+                {
+                    sliderVol.Value = Convert.ToDouble(eventArgsContainer._data);
+                }
+            }));
+        }
+
+        private void UpnPSinkOnGetPositionEvent(object sender, EventArgsContainer<List<ushort>> eventArgsContainer)
+        {
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                sliderTime.Value = eventArgsContainer._data[0];
+                sliderTime.Maximum = eventArgsContainer._data[1];
+
+            }));
+        }
+
+        private void UpnPSinkOnGetIpEvent(object sender, EventArgsContainer<string> eventArgsContainer)
         {
             var thread = new Thread(() =>
             {
@@ -104,65 +194,26 @@ namespace playerlayout
             thread.Join();
         }
 
-        private void ObserverHandlerOnVolumeUpdateEvent(object o, EventArgsContainer<ushort> vol)
-        {
-            Dispatcher.BeginInvoke(new Action(() =>
-                {
-                    if (vol._data < 70)
-                    {
-                        sliderVol.Value = 70;
-                    }
-                    else
-                    {
-                        sliderVol.Value = Convert.ToDouble(vol._data);
-                    }
-                }));
-        }
-
-        private void ObserverHandlerOnPlayQueueUpdateEvent(object o, EventArgsContainer<List<ITrack>> tracks)
-        {
-            Dispatcher.BeginInvoke(new Action(() =>
-            {
-                playqueue.Clear();
-
-                foreach (var track in tracks._data)
-                {
-                    playqueue.Add(track);
-                }
-            }));
-        }
-
-        private void HandOnMusikUpdateEvent(object o, EventArgsContainer<List<ITrack>> tracks)
-        {
-            Dispatcher.BeginInvoke(new Action(() =>
-            {
-                musikindex.Clear();
-
-                foreach (var track in tracks._data)
-                {
-                    musikindex.Add(track);
-                }
-            }));
-        }
+        
 
         private void Playbutton_OnClick(object sender, RoutedEventArgs e)
         {
-            togglePlayButton();
+            //togglePlayButton();
 
-            observerHandler.Pause();
+            _UPnPSink.Pause();
         }
 
         private void togglePlayButton()
         {
             if (play)
             {
-                pap.Source = new BitmapImage(new Uri("play.png", UriKind.Relative));
+                pap.Source = new BitmapImage(new Uri("Icons/Play.ico", UriKind.Relative));
                 play = false;
             }
 
             else
             {
-                pap.Source = new BitmapImage(new Uri("Pause.png", UriKind.Relative));
+                pap.Source = new BitmapImage(new Uri("Icons/Pause.ico", UriKind.Relative));
                 play = true;
             }
         }
@@ -175,23 +226,23 @@ namespace playerlayout
 
         private void BtnNext_OnClick(object sender, RoutedEventArgs e)
         {
-            observerHandler.Next();
+            _UPnPSink.Next();
         }
 
         private void BtnPrevious_OnClick(object sender, RoutedEventArgs e)
         {
-            observerHandler.Previous();
+            _UPnPSink.Previous();
         }
 
 
         private void BtnStop_OnClick(object sender, RoutedEventArgs e)
         {
-            observerHandler.Stop();
+            _UPnPSink.Stop();
         }
 
         private void SendFile_OnClick(object sender, RoutedEventArgs e)
         {
-            observerHandler.GetIPaddress();
+            _UPnPSink.GetIpAddress();
         }
 
         private void SyncButtonClick(object sender, RoutedEventArgs e)
@@ -210,22 +261,20 @@ namespace playerlayout
 
             //todo: switch these two
             //observerHandler.SetNextAVTransportURI((ITrack)result);
-            observerHandler.SetAVTransportURI((ITrack)result);
-
-            //Dispatcher()
+            _UPnPSink.SetTransportURI((ITrack)result);
         }
 
         private void DgPlayQueue_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             var result = dgPlayQueue.SelectedItem;
 
-            observerHandler.SetAVTransportURI((ITrack)result);
+            _UPnPSink.SetTransportURI((ITrack)result);
         }
 
         private void BtnRescan_OnClick(object sender, RoutedEventArgs e)
         {
-            observerHandler = null;
-            observerHandler = new ObervHandler();
+            _UPnPSetup = null;
+            _UPnPSetup = new UPnP_Setup();
         }
 
 
@@ -233,20 +282,18 @@ namespace playerlayout
         {
             if (sliderVol.Value == 70)
             {
-                observerHandler.SetVolume(Convert.ToUInt16(0));    
+                _UPnPSink.SetVolume(Convert.ToUInt16(0));    
             }
             else
             {
-                observerHandler.SetVolume(Convert.ToUInt16(sliderVol.Value));    
+                _UPnPSink.SetVolume(Convert.ToUInt16(sliderVol.Value));    
             }
             
         }
 
         private void SliderTime_OnPreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            observerHandler.SetPosition((ushort) Convert.ToInt16(sliderTime.Value));
+            _UPnPSink.SetPosition((ushort) Convert.ToInt16(sliderTime.Value));
         }
-
-
     }
 }

@@ -6,11 +6,12 @@ using System.Timers;
 using OpenSource.UPnP;
 using SinkStack;
 using Containers;
+using XMLHandler;
 
 namespace UPnP_CP
 {
     /// <summary>
-    /// 
+    /// Interface for UPnP functions and events
     /// </summary>
     public interface ISinkFunctions
     {
@@ -20,8 +21,8 @@ namespace UPnP_CP
         void Stop();
         void Next();
         void Previous();
-        void SetTransportURI(string path, string metaData);
-        void SetNextTransportURI(string path, string metaData);
+        void SetTransportURI(ITrack track);
+        void SetNextTransportURI(ITrack track);
         void GetVolume();
         void SetVolume(ushort desiredVolume);
         void GetPosition();
@@ -35,6 +36,9 @@ namespace UPnP_CP
         event UPnP_SinkFunctions.transportStateDel transportStateEvent;
     }
 
+    /// <summary>
+    /// Handles the connection to the Intel generated UPnP sink functions
+    /// </summary>
     public class UPnP_SinkFunctions : ISinkFunctions
     {
         private SinkStack.CpAVTransport _AVTransport;
@@ -52,11 +56,16 @@ namespace UPnP_CP
 
         public delegate void transportStateDel(object sender, EventArgsContainer<string> e);
         public event transportStateDel transportStateEvent;
-        
-        public uint InstanceID { get; private set; }
-        private string _channel;
-        private string _speed;
+
+        private XMLReader _xmlReader = new XMLReader();
+        private XMLWriter _xmlWriter = new XMLWriter();
+
+        private const uint _instanceID = 0;
+        private const string _channel = "1";
+        private const string _speed = "1";
         private State value;
+
+        Timer subscribeTimer = new Timer();
 
         private enum State
         {
@@ -65,14 +74,17 @@ namespace UPnP_CP
             Transitioning
         };
 
+        /// <summary>
+        /// Sets the connection to the sink stacks and subscribs to events
+        /// </summary>
+        /// <param name="av">AVTransport stack</param>
+        /// <param name="cm">ConnectionManager stack</param>
+        /// <param name="rc">RenderingControl stack</param>
         public UPnP_SinkFunctions(CpAVTransport av, CpConnectionManager cm, CpRenderingControl rc)
         {
-            InstanceID = 0;
             _AVTransport = av;
             _ConnectionManager = cm;
             _RenderingControl = rc;
-            _channel = "1";
-            _speed = "1";
 
             _RenderingControl.OnResult_GetVolume += RenderingControlOnOnResultGetVolume;
             _ConnectionManager.OnResult_GetIPAddress += ConnectionManagerOnOnResultGetIpAddress;
@@ -80,18 +92,39 @@ namespace UPnP_CP
             
             _AVTransport.OnStateVariable_TransportState += AvTransportOnOnStateVariableTransportState;
             _AVTransport._subscribe(30);
-
-            Timer subscribeTimer = new Timer();
+            
             subscribeTimer.Elapsed += new ElapsedEventHandler(timerEventFunc);
             subscribeTimer.Interval = 30000;
             subscribeTimer.Enabled = true;
+
+            Startup();
         }
 
+        /// <summary>
+        /// Runs the UPnP functions needed at startup
+        /// </summary>
+        private void Startup()
+        {
+            GetPosition();
+            GetVolume();
+            //GetIpAddress();
+        }
+
+        /// <summary>
+        /// Event that is fired every 30 second so the controlpoint can resubscribe to events from the upnp device
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="elapsedEventArgs"></param>
         private void timerEventFunc(object sender, ElapsedEventArgs elapsedEventArgs)
         {
             _AVTransport._subscribe(30);
         }
         
+        /// <summary>
+        /// Event that is fired when a transportstate is changed on the upnp device
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="newValue">New state</param>
         private void AvTransportOnOnStateVariableTransportState(CpAVTransport sender, string newValue)
         {
             switch (newValue)
@@ -99,11 +132,11 @@ namespace UPnP_CP
                 case "PLAYING":
                     if (value == State.Stopped)
                     {
-                        transportStateEvent(this, new EventArgsContainer<string>("playing"));
+                        transportStateEvent(this, new EventArgsContainer<string>(newValue));
                     }
                     else if(value == State.Transitioning)
                     {
-                        //get current number
+                        transportStateEvent(this, new EventArgsContainer<string>("BROWSE"));
                     }
                     value = State.Playing; 
                     break;
@@ -111,7 +144,7 @@ namespace UPnP_CP
                 case "STOPPED":
                     if (value == State.Playing)
                     {
-                        transportStateEvent(this, new EventArgsContainer<string>("stopped"));
+                        transportStateEvent(this, new EventArgsContainer<string>(newValue));
                     }
                     else if(value == State.Transitioning)
                     {
@@ -136,37 +169,58 @@ namespace UPnP_CP
 
         public void Play()
         {
-            _AVTransport.Play(InstanceID, _speed);   
+            if (_AVTransport != null)
+            {
+                _AVTransport.Play(_instanceID, _speed);   
+            }
         }
 
         public void Pause()
         {
-            _AVTransport.Pause(InstanceID);
+            if (_AVTransport != null)
+            {
+                _AVTransport.Pause(_instanceID);
+            }
         }
 
         public void Stop()
         {
-            _AVTransport.Stop(InstanceID);
+            if (_AVTransport != null)
+            {
+                _AVTransport.Stop(_instanceID);
+            }
         }
 
         public void Next()
         {
-            _AVTransport.Next(InstanceID);
+            if (_AVTransport != null)
+            {
+                _AVTransport.Next(_instanceID);
+            }
         }
 
         public void Previous()
         {
-            _AVTransport.Previous(0);
+            if (_AVTransport != null)
+            {
+                _AVTransport.Previous(0);
+            }
         }
 
         public void SetVolume(ushort desiredVolume)
         {
-            _RenderingControl.SetVolume(0, _channel, desiredVolume);
+            if (_RenderingControl != null)
+            {
+                _RenderingControl.SetVolume(0, _channel, desiredVolume);
+            }
         }
 
         public void GetVolume()
         {
-            _RenderingControl.GetVolume(0, _channel);
+            if (_RenderingControl != null)
+            {
+                _RenderingControl.GetVolume(0, _channel);
+            }
         }
 
         private void RenderingControlOnOnResultGetVolume(CpRenderingControl sender, uint instanceId, string channel, ushort currentVolume, UPnPInvokeException upnPInvokeException, object tag)
@@ -176,19 +230,34 @@ namespace UPnP_CP
             getVolEvent(this, argsContainer);
         }
 
-        public void SetTransportURI(string path, string metaData)
+        public void SetTransportURI(ITrack track)
         {
-            _AVTransport.SetAVTransportURI(0, path, metaData);
+            if (_AVTransport != null)
+            {
+                string Path = track.Protocol + track.DeviceIP + track.Path + track.FileName;
+                string metaData = _xmlWriter.ConvertITrackToXML(new List<ITrack> { track });
+
+                _AVTransport.SetAVTransportURI(0, Path, metaData);
+            }
         }
 
-        public void SetNextTransportURI(string path, string metaData)
+        public void SetNextTransportURI(ITrack track)
         {
-            _AVTransport.SetNextAVTransportURI(0, metaData, "");
+            if (_AVTransport != null)
+            {
+                string Path = track.Protocol + track.DeviceIP + track.Path + track.FileName;
+                string metaData = _xmlWriter.ConvertITrackToXML(new List<ITrack> { track });
+
+                _AVTransport.SetNextAVTransportURI(0, metaData, "");
+            }
         }
 
         public void GetPosition()
         {
-            _RenderingControl.GetPosition(0);
+            if (_RenderingControl != null)
+            {
+                _RenderingControl.GetPosition(0);
+            }
         }
 
         private void RenderingControlOnOnResultGetPosition(CpRenderingControl sender, uint instanceId, ushort currentPosition, ushort duration, UPnPInvokeException upnPInvokeException, object tag)
@@ -202,12 +271,18 @@ namespace UPnP_CP
         
         public void SetPosition(ushort pos)
         {
-            _RenderingControl.SetPosition(0, pos);
+            if (_RenderingControl != null)
+            {
+                _RenderingControl.SetPosition(0, pos);    
+            }
         }
 
         public void GetIpAddress()
         {
-            _ConnectionManager.GetIPAddress();
+            if (_ConnectionManager != null)
+            {
+                _ConnectionManager.GetIPAddress();   
+            }
         }
 
         private void ConnectionManagerOnOnResultGetIpAddress(CpConnectionManager sender, string ipAddress, UPnPInvokeException upnPInvokeException, object tag)

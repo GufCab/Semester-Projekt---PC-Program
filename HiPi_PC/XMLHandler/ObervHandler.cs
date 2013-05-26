@@ -5,15 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using Containers;
-using UPnP_CP;
-using XMLReader;
+//using UPnP_CP;
+using XMLHandler;
 
 
 namespace XMLHandler
-{
+{/*
+    /// <summary>
+    /// 
+    /// </summary>
     public class ObervHandler
     {
-        XMLReaderPC xmlr = new XMLReaderPC();
+        XMLHandler.XMLReader xmlr = new XMLHandler.XMLReader();
 
         private ISinkFunctions _UPnPSink = null;
         private ISourceFunctions _UPnPSource = null;
@@ -215,5 +218,5 @@ namespace XMLHandler
             if (_UPnPSink != null)
                 _UPnPSink.GetIpAddress();
         }
-    }
+    }*/
 }

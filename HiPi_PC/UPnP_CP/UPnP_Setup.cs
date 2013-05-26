@@ -28,9 +28,18 @@ namespace UPnP_CP
         public event RemoveSourceHandler RemoveSourceEvent;
 
         /// <summary>
+        /// Start looking for source and sink
+        /// </summary>
+        public void StartServices()
+        {
+            StartSinkDisco();
+            StartSourceDisco();
+        }
+
+        /// <summary>
         /// Creates a MediaServerDiscovery, subscribes to add and remove events and runs the start command
         /// </summary>
-        public void StartSourceDisco()
+        private void StartSourceDisco()
         {
             _SourceDisco = new MediaServerDiscovery();
             _SourceDisco.OnAddedDevice += new MediaServerDiscovery.DiscoveryHandler(AddSource);
@@ -41,7 +50,7 @@ namespace UPnP_CP
         /// <summary>
         /// Creates a MediaRendererDiscovery, subscribes to add and remove events and runs the start command
         /// </summary>
-        public void StartSinkDisco()
+        private void StartSinkDisco()
         {
             _SinkDisco = new MediaRendererDiscovery();
             _SinkDisco.OnAddedDevice += new MediaRendererDiscovery.DiscoveryHandler(AddSink);
@@ -64,7 +73,7 @@ namespace UPnP_CP
                     new SinkStack.CpAVTransport(d.GetServices(SinkStack.CpAVTransport.SERVICE_NAME)[0]), 
                     new SinkStack.CpConnectionManager(d.GetServices(SinkStack.CpConnectionManager.SERVICE_NAME)[0]),
                     new SinkStack.CpRenderingControl(d.GetServices(SinkStack.CpRenderingControl.SERVICE_NAME)[0]));
-
+                
                 AddSinkEvent(func, null);
             }
         }

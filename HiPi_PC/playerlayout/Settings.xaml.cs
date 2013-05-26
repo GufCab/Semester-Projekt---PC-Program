@@ -155,7 +155,6 @@ namespace playerlayout
                     else
                     ApplySkin(NormalSkin);  
                 }
-                
             }
         }
 
