@@ -59,9 +59,8 @@ namespace playerlayout
             dgPlayQueue.IsReadOnly = true;
             dgMusikindex.IsReadOnly = true;
 
-            //todo: greyout buttons
+            
             btnNext.IsEnabled = false;
-            //btnNext.IsEnabled = true;
             btnPrevious.IsEnabled = false;
             btnStop.IsEnabled = false;
             btnPlayPause.IsEnabled = false;
@@ -85,7 +84,6 @@ namespace playerlayout
             _UPnPSink.getVolEvent += UpnPSinkOnGetVolEvent;
             _UPnPSink.transportStateEvent += UpnPSinkOnTransportStateEvent;
 
-            //todo: degrey buttons
             Dispatcher.BeginInvoke(new Action(() =>
                 {
                     btnNext.IsEnabled = true;
@@ -186,7 +184,7 @@ namespace playerlayout
                 var dlg = new OpenFileDialog();
                 if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    Client cli = new Client(dlg.FileName, eventArgsContainer._data);
+                    var cli = new FileSenderClient(dlg.FileName, eventArgsContainer._data);
                 }
             });
             thread.SetApartmentState(ApartmentState.STA);
