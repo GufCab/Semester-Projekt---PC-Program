@@ -37,11 +37,11 @@ namespace MetadataReader.Metadata
         /// <summary>
         /// Constuctor that sets the private variables, and calls the findItem and Setter function
         /// </summary>
-        /// <param name="folderpath"></param>
-        /// <param name="musikNumber"></param>
-        public MetadataReader(string folderpath, string musikNumber)
+        /// <param name="folderpath">The path with the musicnumber</param>
+        /// <param name="musicNumber">The musicnumber the metadataReader needs to find metadata about</param>
+        public MetadataReader(string folderpath, string musicNumber)
         {
-            _musikNumber = musikNumber;
+            _musikNumber = musicNumber;
             _folder = folderpath;
             _objFolder = _shell.NameSpace(_folder);
             findItem();
@@ -66,6 +66,9 @@ namespace MetadataReader.Metadata
 
         }
 
+        /// <summary>
+        /// Sets the puplic variables that exists in the interface
+        /// </summary>
         private void Setter()
         {
             //ItemName = ArrHeader(0);
@@ -83,7 +86,7 @@ namespace MetadataReader.Metadata
         /// <summary>
         /// Sets the the items name, with file extention.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>returns the filename with extentions</returns>
         private string SetItemName()
         {
             //item2.name creates a null reference
@@ -97,8 +100,8 @@ namespace MetadataReader.Metadata
         /// <summary>
         /// Becourse of linux, this ensures that all slashes, are forwardslashes
         /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
+        /// <param name="name">A string that has backslashes that needs flipping</param>
+        /// <returns>The string with forwardslashes</returns>
         private string flipBackslashes(string name)
         {
             var _name = name.Replace('\\', '/');
@@ -108,8 +111,8 @@ namespace MetadataReader.Metadata
         /// <summary>
         /// Changes the time to int from string
         /// </summary>
-        /// <param name="lenght"></param>
-        /// <returns></returns>
+        /// <param name="lenght">A length in a string of format hh:mm:ss</param>
+        /// <returns>the size in an int</returns>
         private int ConvertLength(string lenght)
         {
             if (lenght == null) throw new ArgumentNullException("lenght");
@@ -123,8 +126,8 @@ namespace MetadataReader.Metadata
         /// Takes the collumn number of obj, and returns the value in the collumn as a string.
         /// Collumns contain the different metadata as songtitle, file type or many others 
         /// </summary>
-        /// <param name="Column"></param>
-        /// <returns></returns>
+        /// <param name="Column">The place of the needed metadata</param>
+        /// <returns>The metadata from the requested metadata</returns>
         private string ArrHeader(int Column)
         {
             return _objFolder.GetDetailsOf(_item2, Column);

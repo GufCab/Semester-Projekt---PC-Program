@@ -16,9 +16,9 @@ namespace MetadataReader.FileIndexer
         public string FilePath { get; private set; }
 
         /// <summary>
-        /// An overloaded constructor which looks up the informations from a folder given in the type System.IO.FileInfo
+        /// An overloaded constructor which looks up the informations from a file given in the type System.IO.FileInfo
         /// </summary>
-        /// <param name="fileInfo"></param>
+        /// <param name="fileInfo">The file that needs to be looked up</param>
         public IOitem(System.IO.FileInfo fileInfo)
         {
             Name = fileInfo.Name;
@@ -29,9 +29,9 @@ namespace MetadataReader.FileIndexer
         }
 
         /// <summary>
-        /// An overloaded constructor which looks up the informations from a file given in the type System.IO.DirectoryInfo
+        /// An overloaded constructor which looks up the informations from a folder given in the type System.IO.DirectoryInfo
         /// </summary>
-        /// <param name="directoryInfo"></param>
+        /// <param name="directoryInfo">The folder that need's to be looked up</param>
         public IOitem(System.IO.DirectoryInfo directoryInfo)
         {
             Name = directoryInfo.Name;

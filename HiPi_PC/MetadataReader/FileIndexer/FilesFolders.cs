@@ -22,7 +22,7 @@ namespace MetadataReader.FileIndexer
         /// Constructor taking a path as parameter, runs, and then sets the IndexContainer list as result
         /// which contains all elements in the path
         /// </summary>
-        /// <param name="path"></param>
+        /// <param name="path">A folderpath, that are to be indexed</param>
         public FilesFolders(string path)
         {
             _path = path;

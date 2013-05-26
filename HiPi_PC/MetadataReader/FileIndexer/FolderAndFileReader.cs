@@ -50,7 +50,7 @@ namespace MetadataReader.FileIndexer
         /// <summary>
         /// Sets the folderpath, and starts the runner
         /// </summary>
-        /// <param name="folderpath"></param>
+        /// <param name="folderpath">The folder that are to indexed</param>
         public void SetIndexPath(string folderpath)
         {
             Folderpath = folderpath;
@@ -106,7 +106,7 @@ namespace MetadataReader.FileIndexer
         /// To ensure that it doesn't make a endless recursive call, it check the foldername, to see that it is not the same as the last
         /// uses the extentionVerifier to ensure, that only musiknumbers are added to the List MusicList
         /// </summary>
-        /// <param name="folderpath"></param>
+        /// <param name="folderpath">The folder that are to be indexed.</param>
         private void SubFoldersLookup(string folderpath)
         {
             if (folderpath == null) throw new ArgumentNullException("folderpath");
@@ -142,14 +142,14 @@ namespace MetadataReader.FileIndexer
         /// <summary>
         /// runs a foreach, and calls GetFileMetaData for each element in the list musicList
         /// </summary>
-        /// <param name="musikList"></param>
+        /// <param name="musikList">A list of musiknumbers, of type IOitems</param>
         private void GetAllMetaData(IEnumerable<IOitem> musikList)
         {
             if (musikList == null) throw new ArgumentNullException("musikList");
 
-            foreach (IOitem musiknumber in musikList)
+            foreach (IOitem musicnumber in musikList)
             {
-                GetFileMetaData(musiknumber.FilePath, musiknumber.Name);
+                GetFileMetaData(musicnumber.FilePath, musicnumber.Name);
             }
         }
 
@@ -157,11 +157,11 @@ namespace MetadataReader.FileIndexer
         /// Calls the Metadata.MetadataReader with the passed parameters, and places the returned data to 
         /// the list _metaList
         /// </summary>
-        /// <param name="folderPath"></param>
-        /// <param name="musiknumber"></param>
-        private void GetFileMetaData(string folderPath, string musiknumber)
+        /// <param name="folderPath">A path to the musicnumber</param>
+        /// <param name="musicnumber">The musicnumber that are to be pased on to the metadataReader</param>
+        private void GetFileMetaData(string folderPath, string musicnumber)
         {
-            metadata = new Metadata.MetadataReader(folderPath, musiknumber);
+            metadata = new Metadata.MetadataReader(folderPath, musicnumber);
             _metaList.Add(metadata);
         }
 
@@ -172,7 +172,7 @@ namespace MetadataReader.FileIndexer
         /// <summary>
         /// A public function to return the private list _metaList.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>returns a list of object with metadata</returns>
         public List<IMetadataReader> GetMetaData()
         {
             return _metaList;
