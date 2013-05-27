@@ -275,7 +275,7 @@ namespace playerlayout
         }
 
         /// <summary>
-        /// 
+        /// Sends a UPnP next command when a user pushes the button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -284,17 +284,31 @@ namespace playerlayout
             _UPnPSink.Next();
         }
 
+        /// <summary>
+        /// Sends a UPnP previous command when a user pushes the button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnPrevious_OnClick(object sender, RoutedEventArgs e)
         {
             _UPnPSink.Previous();
         }
 
-
+        /// <summary>
+        /// Sends a UPnP stop command when a user pushes the button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnStop_OnClick(object sender, RoutedEventArgs e)
         {
             _UPnPSink.Stop();
         }
 
+        /// <summary>
+        /// Sends a UPnP GetIPAddress command when a user pushes the button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SendFile_OnClick(object sender, RoutedEventArgs e)
         {
             _UPnPSink.GetIpAddress();
@@ -305,11 +319,21 @@ namespace playerlayout
             //settingsw.Sync.SyncPiDb();
         }
 
+        /// <summary>
+        /// Closes the threads and stuff to make a clean exit
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Environment.Exit(0);
         }
 
+        /// <summary>
+        /// Adds a track to the musicindex on the UPnP device
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DgMusikindex_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             var result = dgMusikindex.SelectedItem;
@@ -319,6 +343,11 @@ namespace playerlayout
             _UPnPSink.SetTransportURI((ITrack)result);
         }
 
+        /// <summary>
+        /// Adds a track to the playQueue on the UPnP device
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DgPlayQueue_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             var result = dgPlayQueue.SelectedItem;
@@ -326,6 +355,11 @@ namespace playerlayout
             _UPnPSink.SetTransportURI((ITrack)result);
         }
 
+        /// <summary>
+        /// Terminates the UPnP connection and tries to make a new one
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnRescan_OnClick(object sender, RoutedEventArgs e)
         {
             _UPnPSetup = null;
@@ -336,7 +370,11 @@ namespace playerlayout
             _UPnPSetup.StartServices();
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SliderVol_OnPreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             if (sliderVol.Value == 70)
