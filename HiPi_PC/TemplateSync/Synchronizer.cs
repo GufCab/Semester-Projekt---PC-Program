@@ -52,11 +52,10 @@ namespace TemplateSync
        }
 
         /// <summary>
-       /// Adds all Music From the Pathlist to the LocalDB
+        /// Adds all Music From the Pathlist to the LocalDB
         /// </summary>
         /// <param name="pathlist"></param>
-        public void SyncLocalDb(List<string> pathlist )
-        
+        public void SyncLocalDb(List<string> pathlist )       
         {
             db.FillIp(_ip);
             List<string> rellist = new List<string>();
