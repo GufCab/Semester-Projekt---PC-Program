@@ -129,27 +129,30 @@ namespace playerlayout
         /// <param name="tracks">The list of tracks that is returned from the UPnP device</param>
         private void UpnPSourceOnBrowseResult(object sender, List<ITrack> tracks)
         {
-            Dispatcher.BeginInvoke(new Action(() =>
+            if (tracks != null)
             {
-                if (tracks[0].ParentID == "all")
-                {
-                    playqueue.Clear();
-
-                    foreach (var track in tracks)
+                Dispatcher.BeginInvoke(new Action(() =>
                     {
-                        playqueue.Add(track);
-                    }   
-                }
-                else if (tracks[0].ParentID == "playqueue")
-                {
-                    musikindex.Clear();
+                        if (tracks[0].ParentID == "all")
+                        {
+                            playqueue.Clear();
 
-                    foreach (var track in tracks)
-                    {
-                        musikindex.Add(track);
-                    }
-                }
-            }));
+                            foreach (var track in tracks)
+                            {
+                                playqueue.Add(track);
+                            }
+                        }
+                        else if (tracks[0].ParentID == "playqueue")
+                        {
+                            musikindex.Clear();
+
+                            foreach (var track in tracks)
+                            {
+                                musikindex.Add(track);
+                            }
+                        }
+                    }));
+            }
         }
 
         /// <summary>
@@ -367,6 +370,7 @@ namespace playerlayout
             _UPnPSource = null;
             GreyoutButtons();
             _UPnPSetup = new UPnP_Setup();
+            subscribe();
             _UPnPSetup.StartServices();
         }
 

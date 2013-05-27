@@ -66,9 +66,11 @@ namespace UPnP_CP
         /// <param name="d">The discovered sink device</param>
         private void AddSink(MediaRendererDiscovery sender, UPnPDevice d)
         {
-            Console.WriteLine("Added Sink Device: " + d.FriendlyName);
+            Console.WriteLine("Discovered Sink Device: " + d.FriendlyName);
             if (d.FriendlyName == "HiPi - Sink")
             {
+                Console.WriteLine("Added Sink Device: " + d.FriendlyName);
+
                 UPnP_SinkFunctions func = new UPnP_SinkFunctions(
                     new SinkStack.CpAVTransport(d.GetServices(SinkStack.CpAVTransport.SERVICE_NAME)[0]), 
                     new SinkStack.CpConnectionManager(d.GetServices(SinkStack.CpConnectionManager.SERVICE_NAME)[0]),
@@ -97,10 +99,12 @@ namespace UPnP_CP
         /// <param name="d"></param>
         private void AddSource(MediaServerDiscovery sender, UPnPDevice d)
         {
-            Console.WriteLine("Added Source Device: " + d.FriendlyName);
+            Console.WriteLine("Discovered Source Device: " + d.FriendlyName);
 
             if (d.FriendlyName == "HiPi - Source")
             {
+                Console.WriteLine("Added Source Device: " + d.FriendlyName);
+
                 UPnP_SourceFunctions func = new UPnP_SourceFunctions(null,
                     //new SourceStack.CpConnectionManager(d.GetServices(SourceStack.CpConnectionManager.SERVICE_NAME)[0]),
                     new SourceStack.CpContentDirectory(d.GetServices(SourceStack.CpContentDirectory.SERVICE_NAME)[0]));
