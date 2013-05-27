@@ -10,7 +10,7 @@ namespace FileSender
     /// Author: Michael Thy Oksen, 11492@iha.dk.
     /// Description: This class is responsible for handling the task of sending files from the Client (The PC) to the Server (The Raspberry Pi).
     /// </summary>
-    public class FileSenderClient : IDisposable
+    public class FileSenderClient : AbstractFileSenderClient, IDisposable
     {
         /// <summary>
         /// The BUFSIZE.
@@ -32,7 +32,7 @@ namespace FileSender
         /// <returns>
         /// A string containing an IP.
         /// </returns>
-        private string LocalIpAddress()
+        protected override string LocalIpAddress()
         {
             string localIp = "";
             var host = Dns.GetHostEntry(Dns.GetHostName());
@@ -49,7 +49,7 @@ namespace FileSender
         /// <summary>
         /// This method is responsible for setting up the required variables and external classes.
         /// </summary>
-        private void SetUp()
+        protected override void SetUp()
         {
 
             _clientSocket = new TcpClient(); //Create and initialize TCPClient
@@ -112,7 +112,7 @@ namespace FileSender
         /// <summary>
         /// Sends the file name to the receiver.
         /// </summary>
-        private void SendFileNameToServer()
+        protected override void SendFileNameToServer()
         {
             fileInfo = new FileInfo(_fileName);
             LIB.writeTextTCP(_serverStream, serverFileName ?? "Given file not found!");                //Write file name to server
@@ -122,7 +122,7 @@ namespace FileSender
         /// Sets the IP of the receiver.
         /// </summary>
         /// <param name="ip">IP of the receiver.</param>
-        private void SetIp(string ip)
+        protected override void SetIp(string ip)
         {
             _ip = ip;
         }
@@ -131,7 +131,7 @@ namespace FileSender
         /// Sets the port that the system uses.
         /// </summary>
         /// <param name="port">Port to use.</param>
-        private void SetPort(int port)
+        protected override void SetPort(int port)
         {
             _port = port;
         }
@@ -140,7 +140,7 @@ namespace FileSender
         /// Sets the name of the file-to-send.
         /// </summary>
         /// <param name="fileName">Name of the file-to-send.</param>
-        private void SetFileName(string fileName)
+        protected override void SetFileName(string fileName)
         {
             _fileName = fileName;
             serverFileName = Path.GetFileName(_fileName);
@@ -149,7 +149,7 @@ namespace FileSender
         /// <summary>
         /// Sends the file size to the receiver.
         /// </summary>
-        private void SendFileSizeToServer()
+        protected override void SendFileSizeToServer()
         {
             _fileSize = fileInfo.Length;
             LIB.writeTextTCP(_serverStream, _fileSize.ToString());                              //Write file size to server
@@ -158,7 +158,7 @@ namespace FileSender
         /// <summary>
         /// Closes the connection socket of the client.
         /// </summary>
-        private void CloseSocket()
+        protected override void CloseSocket()
         {
             _clientSocket.Close();
         }
@@ -169,7 +169,7 @@ namespace FileSender
         /// <param name="fileName">Name of the file</param>
         /// <param name="fileSize">Size of the file</param>
         /// <param name="io"></param>
-        private void SendFile(String fileName, long fileSize, NetworkStream io)
+        protected override void SendFile(String fileName, long fileSize, NetworkStream io)
         {
             SetFileName(fileName);
             SendFileNameToServer();
@@ -223,7 +223,7 @@ namespace FileSender
         /// <summary>
         /// Implemented so usage of "using(xxxxxx)" is possible. 
         /// </summary>
-        public void Dispose()
+        public override void Dispose()
         {
             try
             {
@@ -241,7 +241,7 @@ namespace FileSender
         /// Runs Sequentially through the process of sending the file as bytes.
         /// </summary>
         /// <param name="path">The path to the file, including the file name.</param>
-        private void Run(string path)
+        protected override void Run(string path)
         {
             try
             {

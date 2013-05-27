@@ -225,7 +225,7 @@ namespace playerlayout
                 var dlg = new OpenFileDialog();
                 if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    var cli = new FileSenderClient(dlg.FileName, eventArgsContainer);
+                    AbstractFileSenderClient cli = new FileSenderClient(dlg.FileName, eventArgsContainer);
                 }
             });
             thread.SetApartmentState(ApartmentState.STA);
