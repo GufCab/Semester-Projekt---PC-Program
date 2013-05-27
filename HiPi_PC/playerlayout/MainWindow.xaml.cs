@@ -33,8 +33,6 @@ namespace playerlayout
         bool play = new bool();
         private Settings settingsw;
         
-        //private UPnPHandler _UPnPHandler = new UPnPHandler();
-
         public MusicIndexToGui musikindex = new MusicIndexToGui();
         public PlayQueueToGui playqueue = new PlayQueueToGui();
 
@@ -42,7 +40,9 @@ namespace playerlayout
         private ISinkFunctions _UPnPSink = null;
         private ISourceFunctions _UPnPSource = null;
 
-        
+        /// <summary>
+        /// MainWindow Codebehind
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
@@ -60,6 +60,9 @@ namespace playerlayout
             dgMusikindex.IsReadOnly = true;
         }
 
+        /// <summary>
+        /// Function to greyout buttons when a device isn't detected
+        /// </summary>
         public void GreyoutButtons()
         {
             btnNext.IsEnabled = false;
@@ -71,12 +74,20 @@ namespace playerlayout
             btnSync.IsEnabled = false;
         }
 
+        /// <summary>
+        /// Subscribe to device-detection events
+        /// </summary>
         public void subscribe()
         {
             _UPnPSetup.AddSinkEvent += getUPnPSink;
             _UPnPSetup.AddSourceEvent += getUPnPSource;
         }
 
+        /// <summary>
+        /// EventFunction that adds upnp sink and subscribes to sink events
+        /// </summary>
+        /// <param name="e">The sink device that is discovered</param>
+        /// <param name="s"></param>
         public void getUPnPSink(UPnP_SinkFunctions e, EventArgs s)
         {
             _UPnPSink = e;
@@ -99,6 +110,11 @@ namespace playerlayout
             
         }
 
+        /// <summary>
+        /// EventFunction that adds upnp source and subscribes to source events
+        /// </summary>
+        /// <param name="e">The source device that is discovered</param>
+        /// <param name="s"></param>
         public void getUPnPSource(UPnP_SourceFunctions e, EventArgs s)
         {
             _UPnPSource = e;
@@ -106,6 +122,11 @@ namespace playerlayout
             _UPnPSource.BrowseResult += UpnPSourceOnBrowseResult;
         }
 
+        /// <summary>
+        /// Eventfunction that is fired when the browse command returns
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="tracks">The list of tracks that is returned from the UPnP device</param>
         private void UpnPSourceOnBrowseResult(object sender, List<ITrack> tracks)
         {
             Dispatcher.BeginInvoke(new Action(() =>
@@ -131,6 +152,11 @@ namespace playerlayout
             }));
         }
 
+        /// <summary>
+        /// Event that is fired when someone presses play/pause/next/previous or the song changes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="eventArgsContainer">event parameter</param>
         private void UpnPSinkOnTransportStateEvent(object sender, string eventArgsContainer)
         {
             Dispatcher.BeginInvoke(new Action(() =>
@@ -152,6 +178,11 @@ namespace playerlayout
             }));
         }
 
+        /// <summary>
+        /// Event that is fired when the GetVolume event returns
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="eventArgsContainer">The volume of the player</param>
         private void UpnPSinkOnGetVolEvent(object sender, ushort eventArgsContainer)
         {
             Dispatcher.BeginInvoke(new Action(() =>
@@ -167,6 +198,11 @@ namespace playerlayout
             }));
         }
 
+        /// <summary>
+        /// Event that is fired when GetPosition returns.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="eventArgsContainer">List with the current position and the duration of the song</param>
         private void UpnPSinkOnGetPositionEvent(object sender, List<ushort> eventArgsContainer)
         {
             Dispatcher.BeginInvoke(new Action(() =>
@@ -177,6 +213,11 @@ namespace playerlayout
             }));
         }
 
+        /// <summary>
+        /// Event that is fired when GetIPAddress returns
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="eventArgsContainer">IPAddress of the UPnP sink</param>
         private void UpnPSinkOnGetIpEvent(object sender, string eventArgsContainer)
         {
             var thread = new Thread(() =>
@@ -191,9 +232,12 @@ namespace playerlayout
             thread.Start();
             thread.Join();
         }
-
         
-
+        /// <summary>
+        /// Sends a pause command when someone pressed the play button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Playbutton_OnClick(object sender, RoutedEventArgs e)
         {
             //togglePlayButton();
@@ -201,6 +245,9 @@ namespace playerlayout
             _UPnPSink.Pause();
         }
 
+        /// <summary>
+        /// Toggles the image on the paly button between play and pause icon
+        /// </summary>
         private void TogglePlayButton()
         {
             if (play)
@@ -216,12 +263,22 @@ namespace playerlayout
             }
         }
 
+        /// <summary>
+        /// Shows settings window when "settings" button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Settings_OnClick(object sender, RoutedEventArgs e)
         {
             settingsw = new Settings();
             settingsw.Show();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnNext_OnClick(object sender, RoutedEventArgs e)
         {
             _UPnPSink.Next();

@@ -20,7 +20,7 @@ namespace UPnP_CP
         void Pause();
         void Stop();
         void Next();
-        void Previous();
+        void Previous();    
         void SetTransportURI(ITrack track);
         void SetNextTransportURI(ITrack track);
         void GetVolume();
@@ -106,7 +106,6 @@ namespace UPnP_CP
         {
             GetPosition();
             GetVolume();
-            //GetIpAddress();
         }
 
         /// <summary>
@@ -166,6 +165,9 @@ namespace UPnP_CP
             }
         }
 
+        /// <summary>
+        /// Calls the UPnP play command with a simpler prototype
+        /// </summary>
         public void Play()
         {
             if (_AVTransport != null)
@@ -174,6 +176,9 @@ namespace UPnP_CP
             }
         }
 
+        /// <summary>
+        /// Calls the UPnP pause command with a simpler prototype
+        /// </summary>
         public void Pause()
         {
             if (_AVTransport != null)
@@ -182,6 +187,9 @@ namespace UPnP_CP
             }
         }
 
+        /// <summary>
+        /// Calls the UPnP stop command with a simpler prototype
+        /// </summary>
         public void Stop()
         {
             if (_AVTransport != null)
@@ -190,6 +198,9 @@ namespace UPnP_CP
             }
         }
 
+        /// <summary>
+        /// Calls the UPnP next command with a simpler prototype
+        /// </summary>
         public void Next()
         {
             if (_AVTransport != null)
@@ -198,6 +209,9 @@ namespace UPnP_CP
             }
         }
 
+        /// <summary>
+        /// Calls the UPnP Previous command with a simpler prototype
+        /// </summary>
         public void Previous()
         {
             if (_AVTransport != null)
@@ -206,6 +220,10 @@ namespace UPnP_CP
             }
         }
 
+        /// <summary>
+        /// Calls the UPnP SetVolume command with a simpler prototype
+        /// </summary>
+        /// <param name="desiredVolume">The desired volume, should be between 0 and 100</param>
         public void SetVolume(ushort desiredVolume)
         {
             if (_RenderingControl != null)
@@ -214,6 +232,9 @@ namespace UPnP_CP
             }
         }
 
+        /// <summary>
+        /// Calls the UPnP GetVolume command with a simpler prototype
+        /// </summary>
         public void GetVolume()
         {
             if (_RenderingControl != null)
@@ -222,13 +243,24 @@ namespace UPnP_CP
             }
         }
 
+        /// <summary>
+        /// Event that is called when there is a result from a GetVolume call
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="instanceId"></param>
+        /// <param name="channel"></param>
+        /// <param name="currentVolume">The current volume on the device</param>
+        /// <param name="upnPInvokeException"></param>
+        /// <param name="tag"></param>
         private void RenderingControlOnOnResultGetVolume(CpRenderingControl sender, uint instanceId, string channel, ushort currentVolume, UPnPInvokeException upnPInvokeException, object tag)
         {
-            //EventArgsContainer<ushort> argsContainer = new EventArgsContainer<ushort>(currentVolume);
-
             getVolEvent(this, currentVolume);
         }
 
+        /// <summary>
+        /// Calls the UPnP SetAVTransportURI command with a simpler prototype.
+        /// </summary>
+        /// <param name="track">The track that should play on the device</param>
         public void SetTransportURI(ITrack track)
         {
             if (_AVTransport != null)
@@ -240,6 +272,10 @@ namespace UPnP_CP
             }
         }
 
+        /// <summary>
+        /// Calls the UPnP SetNextAVTransportURI command with a simpler prototype.
+        /// </summary>
+        /// <param name="track">The track htat should be added to the playqueue</param>
         public void SetNextTransportURI(ITrack track)
         {
             if (_AVTransport != null)
@@ -251,6 +287,9 @@ namespace UPnP_CP
             }
         }
 
+        /// <summary>
+        /// Calls the UPnP GetPosition command with a simpler prototype.
+        /// </summary>
         public void GetPosition()
         {
             if (_RenderingControl != null)
@@ -259,15 +298,26 @@ namespace UPnP_CP
             }
         }
 
+        /// <summary>
+        /// Event that is called when there is a result from a GetVolume call
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="instanceId"></param>
+        /// <param name="currentPosition">The current position in the paying song on the device</param>
+        /// <param name="duration"></param>
+        /// <param name="upnPInvokeException"></param>
+        /// <param name="tag"></param>
         private void RenderingControlOnOnResultGetPosition(CpRenderingControl sender, uint instanceId, ushort currentPosition, ushort duration, UPnPInvokeException upnPInvokeException, object tag)
         {
             var list = new List<ushort>{currentPosition, duration};
-
-            //var args = List<ushort>(list);
-
+            
             getPositionEvent(this, list);
         }
         
+        /// <summary>
+        /// Sets the position in the current song
+        /// </summary>
+        /// <param name="pos"></param>
         public void SetPosition(ushort pos)
         {
             if (_RenderingControl != null)
@@ -276,6 +326,9 @@ namespace UPnP_CP
             }
         }
 
+        /// <summary>
+        /// Gets the IPAddress of the UPnP sink
+        /// </summary>
         public void GetIpAddress()
         {
             if (_ConnectionManager != null)
@@ -284,10 +337,15 @@ namespace UPnP_CP
             }
         }
 
+        /// <summary>
+        /// Event that is fired when the IPAddress is returned from the upnp sink after a GetIPAddress call
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="ipAddress"></param>
+        /// <param name="upnPInvokeException"></param>
+        /// <param name="tag"></param>
         private void ConnectionManagerOnOnResultGetIpAddress(CpConnectionManager sender, string ipAddress, UPnPInvokeException upnPInvokeException, object tag)
         {
-            //EventArgsContainer<string> argsContainer = new EventArgsContainer<string>(ipAddress);
-
             getIPEvent(this, ipAddress);
         }
     }

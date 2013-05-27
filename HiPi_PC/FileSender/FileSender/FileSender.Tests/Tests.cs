@@ -20,7 +20,7 @@ namespace FileSender.Tests
         public void Client_Constructor_RunIsCalled()
         {
             //Arrange
-            var client = new Client("D:\\PTC.Mathcad.Prime.v2.0.X64-Lz0.zip");
+            var client = new FileSenderClient("D:\\PTC.Mathcad.Prime.v2.0.X64-Lz0.zip");
 
             //Assert
             

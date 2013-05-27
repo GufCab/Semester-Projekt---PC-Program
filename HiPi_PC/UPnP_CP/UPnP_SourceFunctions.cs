@@ -84,8 +84,6 @@ namespace UPnP_CP
         {
             List<ITrack> tracks = _xmlReader.itemReader(result);
             
-            //EventArgsContainer<string> argsContainer = new EventArgsContainer<string>(result);
-            
             BrowseResult(this, tracks);
         }
     }

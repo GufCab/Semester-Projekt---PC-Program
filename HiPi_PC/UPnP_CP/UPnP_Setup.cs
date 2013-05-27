@@ -48,7 +48,7 @@ namespace UPnP_CP
         }
 
         /// <summary>
-        /// Creates a MediaRendererDiscovery, subscribes to add and remove events and runs the start command
+        /// Creates a MediaRendererDiscovery, subscribes to add- and remove-events and then runs the start command
         /// </summary>
         private void StartSinkDisco()
         {
@@ -119,7 +119,5 @@ namespace UPnP_CP
             Console.WriteLine("Device removed");
             RemoveSourceEvent(null, null);
         }
-
-
     }
 }
