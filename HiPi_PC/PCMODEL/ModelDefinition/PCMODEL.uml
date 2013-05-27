@@ -114,6 +114,12 @@
         LastKnownName="Database"
         LastKnownLocation="Package2_1658.uml" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="853909ab-e05a-4edd-b817-5092e235077a"
+        LastKnownName="PC Package1"
+        LastKnownLocation="Package_1656.uml" />
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"
