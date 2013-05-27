@@ -1,0 +1,2667 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="93bdc2a8-94a5-469c-82b6-1d7da0045b13"
+  name="Package1" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="aea7f197-4ee4-44a9-bec2-e05c51dcf700"
+        name="FileSenderClient"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="0893766b-e73c-4c2f-b672-4cb121e03c85"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="45c2917f-7fdb-41c1-8be1-222b0cbac2b1"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c8ea56d3-35f4-4b8b-866d-b9d99042b622">
+                <propertyInstance
+                  Id="b0be889f-5bf3-444b-8bc5-fdbfac7eabce"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2a0438d8-19b3-413e-9c4f-8d1024c2d7e4">
+                <propertyInstance
+                  Id="a8d8056e-2bdb-40d6-980f-9f038c6b3a64"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6f04b194-719b-4607-9be9-878cf1a5a0ea">
+                <propertyInstance
+                  Id="7f2da515-5a13-4020-b8d8-2569c43efafa"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="dc750733-eea9-476d-8972-cf35c2a806d4">
+                <propertyInstance
+                  Id="e3379944-0ccc-478d-ad85-a86b5febc336"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5e430700-b99d-4ba1-a723-9a3594ce6ede">
+                <propertyInstance
+                  Id="520823c4-8ea8-4aeb-a067-bf41ca85e06a"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="957f3e4f-d63d-46a9-86a1-1915a3cd0406">
+            <interfaceMoniker
+              Id="22154e00-0208-43ee-8f98-6cf973a392cd"
+              LastKnownName="IDisposable"
+              LastKnownLocation="Package1_1653.uml" />
+          </interfaceRealization>
+          <dependency
+            Id="1c7ed700-f445-447c-8a44-d2ccfeb8356e">
+            <classMoniker
+              Id="cc9f9559-8084-4318-8399-aed4749534bd"
+              LastKnownName="LIB"
+              LastKnownLocation="Package5_1653.uml" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="80fbd73f-a6f1-437a-9603-579e0c44562f"
+            isSubstitutable="false">
+            <classMoniker
+              Id="bdae0185-7a3f-4672-a159-94bb18d04c90"
+              LastKnownName="AbstractFileSenderClient"
+              LastKnownLocation="Package_1653.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="653d4db5-b7b3-427c-b5e9-3b5fa1fecab5"
+            isDerived="false"
+            sourceEndRoleName="FileSenderClient"
+            targetEndRoleName="_clientSocket"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="b6809615-11a2-4e36-8d43-1095b5b591fb"
+              LastKnownName="TcpClient"
+              LastKnownLocation="Package3_1653.uml" />
+            <description>Property _clientSocket references type TcpClient.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7f934213-3cba-4174-abb4-1d7bda11a813"
+                  name="FileSenderClient"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="87b23040-42d4-44e0-b8c9-370204cff1a2"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="b5ba42b8-6b31-4927-93ca-09ded260fe91"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="895d3a48-41a1-4875-a2b9-5f950fd359d5"
+                  name="_clientSocket"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="08ccbd5c-15b6-4d7f-8d19-bfc9fed8307b"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="4d7f6f49-79c2-4b67-9c11-d5ab25663cf2"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="a0020be9-dada-4696-9061-01a8c6579443"
+            isDerived="false"
+            sourceEndRoleName="FileSenderClient"
+            targetEndRoleName="_serverStream"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="7c097172-7a76-4f90-b8da-1e925ccaaffb"
+              LastKnownName="NetworkStream"
+              LastKnownLocation="Package3_1653.uml" />
+            <description>Property _serverStream references type NetworkStream.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8a5b9088-b7b5-488f-b168-1456a900bd2d"
+                  name="FileSenderClient"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="e9b31a99-df02-41d0-825e-75ab08c20de5"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="7d263fde-024f-43d2-a671-d08cdee8f9f8"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0b7c84a1-f0f6-493f-8677-3592a1104b0c"
+                  name="_serverStream"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="fc0760dd-e0ad-4273-b377-3265ffb7e9a3"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="0096a1ca-77d0-47b8-8f83-8d39f22ffff6"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="39b72057-e384-48a7-b6fe-2413d5c87dda"
+            isDerived="false"
+            sourceEndRoleName="FileSenderClient"
+            targetEndRoleName="_fileSize"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="891383c6-217c-48c6-a053-82b57c50f9cb"
+              LastKnownName="Int64"
+              LastKnownLocation="Package1_1653.uml" />
+            <description>Property _fileSize references type Int64.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="dab3a76a-0c2b-41f0-8b82-dc0c9fe294dd"
+                  name="FileSenderClient"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="705543e5-08e3-40f6-ab83-f2281ff63505"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="d45b3a14-99da-4458-a10c-cecddaa952c6"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="26c994f2-fd7c-44f1-9025-3e485a38a38c"
+                  name="_fileSize"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="4d2c76a2-3527-4f3f-8f82-3795c94911e0"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="39b58227-0771-43a8-a60a-4b5e7892024e"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="e3899ac7-c393-43be-bb79-6763c60c2c8a"
+            name="_clientSocket"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="8553e6a3-89fb-469a-a74f-caa89462166d"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3D_clientSocket"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="3f4abf67-e95f-46aa-9479-608ec77293fe"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7ff239f1-4595-4701-8531-2271cc71c179">
+                    <propertyInstance
+                      Id="b05d96a0-b514-40a8-b23f-aca94661d4c2"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3ed6ce49-c129-4787-8e5e-5442701ad23e">
+                    <propertyInstance
+                      Id="a158e5e3-48b2-4493-a381-1306e3ce637d"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="415badd5-0fa3-432a-a17b-ec593db17395">
+                    <propertyInstance
+                      Id="37e00974-06ca-4962-a040-014e6f1e2128"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="04decf41-985f-4d0b-975f-a3c4b19d7dfa">
+                    <propertyInstance
+                      Id="410e4763-abf1-4283-a249-1bb7d2a2954e"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0efe17de-044d-456f-8e21-67d367da34fb">
+                    <propertyInstance
+                      Id="e56d8df3-36a7-4bf7-b0cd-6af77915e07c"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4942d082-3f51-433d-a903-9b461da0da7a">
+                    <propertyInstance
+                      Id="161802a8-3cee-45f8-aa98-3d6249a1db43"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dd05dcc3-6537-4dc5-b8b7-a42b2970f4d2">
+                    <propertyInstance
+                      Id="019bd34d-2c2e-4b16-a480-4c2a5198f54a"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="b6809615-11a2-4e36-8d43-1095b5b591fb"
+                LastKnownName="TcpClient"
+                LastKnownLocation="Package3_1653.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="15d0ff4e-d1b3-4550-8863-61b015be4da8"
+            name="_serverStream"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="5c0dd046-072b-4a8f-8dcc-7724d82c7d15"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3D_serverStream"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="416fcffb-1f36-415c-b5b6-b7c8b5854350"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d9d7a947-50db-4718-ae71-d9dd3d6da1c9">
+                    <propertyInstance
+                      Id="4ae5d95c-670d-4c3f-b90a-09914033e90f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ca11dfd8-44a2-4720-bcf0-4fbedd81b3e5">
+                    <propertyInstance
+                      Id="bbd2a73b-4a41-40db-8052-6a6b933f0842"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0ac016d9-1d0e-42ed-aed9-52a409d56150">
+                    <propertyInstance
+                      Id="4ae55cc1-94cf-45cf-a784-22cd4c9a7ca1"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3227dfdb-c043-4ad0-887d-c8e255ea223e">
+                    <propertyInstance
+                      Id="515a2280-5e63-429b-959a-a1ce2eb054f6"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a0d08d70-13ef-4c67-9f8f-f4d39723143f">
+                    <propertyInstance
+                      Id="0d3ad01c-b1a2-4f74-8bff-7d5fb43cce9f"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="59b3e2b7-ef72-4a19-b6e8-78f0076e964a">
+                    <propertyInstance
+                      Id="f2689637-076c-4a81-ab29-e1b181977a79"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7005818c-dda7-4fe4-8198-97d56d5fedeb">
+                    <propertyInstance
+                      Id="a5ddc4ec-7fa6-4865-8432-89bc5cf1dab9"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="7c097172-7a76-4f90-b8da-1e925ccaaffb"
+                LastKnownName="NetworkStream"
+                LastKnownLocation="Package3_1653.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ea18cfb1-6959-4abb-9bb6-e31bc959e003"
+            name="_fileSize"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="406e385a-ad35-40dc-ab37-83973e9b4074"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3D_fileSize"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e98062cc-0fa2-4c9a-b9bc-be23b4d0d104"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8982d970-d49c-4818-b03e-a31aadcf5453">
+                    <propertyInstance
+                      Id="3928baa1-2b92-4b3d-ab0b-f37680c4b3fc"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="52fbcbbf-702c-4ba2-825d-933d8f2cc4bd">
+                    <propertyInstance
+                      Id="eebdc514-870a-4550-990f-a9c2a46fa750"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="12a79fba-6733-4414-800a-11324dc1e1d1">
+                    <propertyInstance
+                      Id="ad55cb55-bef6-417a-ae53-2dac183287c7"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="485e3039-8645-493a-87d6-3cd57d8e0fe7">
+                    <propertyInstance
+                      Id="3d262a02-2fda-4ec3-85bd-1f6bf8bc412a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f6ffb9e1-82f2-4d60-b9bc-77d1d45ce496">
+                    <propertyInstance
+                      Id="fc74595c-c19c-4288-9085-c71a577125e0"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fd3e2b05-7abf-48bf-af3e-3f73047560ec">
+                    <propertyInstance
+                      Id="37d458b5-9d98-4601-aa01-41ec426e966c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bb540e92-87b0-4de2-a5ad-f9f77437925f">
+                    <propertyInstance
+                      Id="238a9d7e-014f-4570-99a1-49e30e89141c"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="891383c6-217c-48c6-a053-82b57c50f9cb"
+                LastKnownName="Int64"
+                LastKnownLocation="Package1_1653.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="3b33e5ac-ef79-406d-aa28-225d68572cd9"
+            name="_fileName"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="67e94e8a-3164-45c1-a66a-3c954f7d5a04"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3D_fileName"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="9d1f76fe-8076-419e-9ad7-4b468ba0c717"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="77496573-aed4-45cb-9acd-73a084d765e3">
+                    <propertyInstance
+                      Id="63a5781d-8c77-44f6-b65d-4d044e1c6bd3"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="98c96294-5af6-4984-983b-ba3f7b53515e">
+                    <propertyInstance
+                      Id="24ca931b-3208-417a-a0ca-0819a98968d7"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c6348b1f-f389-4a5d-9f63-12a53e35e22e">
+                    <propertyInstance
+                      Id="4b49ea88-5def-4d8a-a29d-0c489bd90af5"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="504b0b65-568b-4bbb-9952-1cff996aa77a">
+                    <propertyInstance
+                      Id="dd002aa4-c497-4f1b-ba25-bccd1b877d1a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3ce21f8a-7dfb-493b-9e5c-5cdae04bd3fb">
+                    <propertyInstance
+                      Id="84c9edfb-0f77-4a26-aab8-e4f61e91fd94"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ed6a4d09-852c-47f5-9078-f41a652ba51f">
+                    <propertyInstance
+                      Id="9f16d5d6-cfe9-411c-a999-5a37f36d137a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d5399a60-51bd-4b16-b4e9-62ed73c5445d">
+                    <propertyInstance
+                      Id="2fcc6260-9abe-4134-85e2-911abb6a7ce0"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="FileSenderClient.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="eca8c6c1-0f13-4372-b050-93584bc007c7"
+            name="_ip"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="31b90e4e-091f-4b98-8af9-779a3f60e688"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3D_ip"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f9c99feb-14ca-44b6-b94c-33fc1335c5ac"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="39d2965f-e625-44c5-96c6-50b290807f63">
+                    <propertyInstance
+                      Id="6d296f6f-da80-4f28-9125-a47d11774856"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4ea118be-5a78-460d-a57d-2e4adb9b1b28">
+                    <propertyInstance
+                      Id="257cef57-a7dd-44b3-9a41-8ef697609a9e"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e63923ff-790f-4148-965e-8a0d4342e028">
+                    <propertyInstance
+                      Id="1c613028-b089-4ac2-bd9c-ea34542d0af5"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ccafbae5-6fe5-4f4b-9de2-51b1e78f70eb">
+                    <propertyInstance
+                      Id="ea45692e-391b-46cb-86c4-a15a3a48ca1a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="725a3d08-1a8b-4eb5-ab03-9fdb7a8db90a">
+                    <propertyInstance
+                      Id="118214a5-4808-40a0-a389-a6e696bfbe8a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5f8fdbae-446b-462f-97be-b0eb8898c5cf">
+                    <propertyInstance
+                      Id="0652d1ee-e73c-4061-b4e6-d0c449b2ba9e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cb888a06-68de-4f75-9308-3cfaecfd623c">
+                    <propertyInstance
+                      Id="a5f9b18e-ea13-4a8d-8b53-0e744572ed0e"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="FileSenderClient.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="dd51689a-11b2-4e3c-95aa-f1679c034230"
+            name="_port"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="0fed25e2-a61f-4a23-8c65-2f998ed98e06"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3D_port"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="787132fb-ed12-48fd-b7a0-a0920c7599b9"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5a44a702-436c-4981-b0da-dfc8d5ef6f6b">
+                    <propertyInstance
+                      Id="9525226a-2e94-4fbd-b6e1-e2fd77521c33"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="352a7813-3844-4ca1-8ec3-5eb586e33b51">
+                    <propertyInstance
+                      Id="91418d7e-3bd2-412f-b431-0de36a028bb6"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7d62bdd7-68b1-4cb8-b030-89b0ad49921a">
+                    <propertyInstance
+                      Id="d56894f3-4500-4c7e-a1e9-c15318c7bb9d"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="848f1eaa-c8c3-40fe-a705-de5d18f8fdc4">
+                    <propertyInstance
+                      Id="3be803a4-af33-427f-bf29-e9cfefad431f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b0810fa1-1e20-4e7f-8857-03f49507abf8">
+                    <propertyInstance
+                      Id="cb7c98a5-b0f1-4953-b081-9dafb3ffecac"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f58230bc-5039-4505-b3b6-d7acd08d9621">
+                    <propertyInstance
+                      Id="aefa8c8d-9011-41ea-a53a-f7f664a80b98"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d9de460d-ca16-419a-9779-546d368420c5">
+                    <propertyInstance
+                      Id="7ec4e08b-38b6-405c-b9ce-db4a1925441a"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="FileSenderClient.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="d6e8f73f-e591-4b93-b0c6-be4ae25836a4"
+            name="BUFSIZE"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="27e61c0c-616f-48d8-b493-6d1deebfa2b4"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3DBUFSIZE"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="81164957-ece6-4316-9050-0210f5404f93"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="03c0d3e0-d743-438b-87a9-7c55bb99cc1e">
+                    <propertyInstance
+                      Id="6bfeaaba-1eb5-48f4-85a3-cd52821076f1"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="06042a5c-d800-4a9a-908e-cc7094dfc027">
+                    <propertyInstance
+                      Id="3875b249-d024-462d-af08-011ce958394b"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bce197d3-b9e1-4ebf-988a-b23389cf1166">
+                    <propertyInstance
+                      Id="a9d4d6f4-a0a3-4593-b4a9-46f6a7c3beb7"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3924cbf5-d9fc-4ec6-ac1b-cdcbf744b3c6">
+                    <propertyInstance
+                      Id="20463c47-6495-45d1-8e76-73c27ed09874"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d5973e7c-06f4-4ecd-99b9-a90b8e569f54">
+                    <propertyInstance
+                      Id="3f3401d7-46a3-4258-9ffd-6d783e5e32ce"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </property>
+          <property
+            Id="a671b905-1011-4b8e-941a-fdc22dc40837"
+            name="fileInfo"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="7b18b968-fbda-4356-a89f-f44389995eeb"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3DfileInfo"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="0a81baf4-b55f-4d04-8e11-acfb8c5dcfc8"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f3664a37-49d9-42e3-abaf-c344e150e25c">
+                    <propertyInstance
+                      Id="c9158019-d2c0-4204-988c-5dc60c106850"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aa244da4-20e6-4efd-a94e-2a42de41e9f7">
+                    <propertyInstance
+                      Id="332b3c4e-7528-4de2-b828-793293743a16"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c0169e88-1c12-4cef-a7cd-5bfb6905b00e">
+                    <propertyInstance
+                      Id="cebb3663-5ef4-4b01-8978-31af8c1a7725"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7ae294a3-8fd3-4e42-9cc3-c9da44a63a11">
+                    <propertyInstance
+                      Id="3d15f21c-4b00-48d1-b407-0252883088e8"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0ab65d7a-1d9a-45b4-a5a4-a91d39106e18">
+                    <propertyInstance
+                      Id="fc4d365d-9acb-42ec-99f5-c83167b5682a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="11e8435d-8e25-4de4-81ce-9d7b402b87c0"
+                LastKnownName="FileInfo"
+                LastKnownLocation="Package4_1653.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="dfb0c803-56ae-458d-8201-a415b337d27b"
+            name="serverFileName"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="dcc56cee-6fba-4bb0-9a70-51aabe40f346"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3DserverFileName"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a5b69e0e-b21e-4021-af59-1a7e2b4be074"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0e03cd5b-2af0-4fdb-a7bb-4bc89085139b">
+                    <propertyInstance
+                      Id="b7331d26-682d-4132-883a-1f7ba433ae44"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="80c28f45-9b4f-4075-a8b1-fa64bf263ae5">
+                    <propertyInstance
+                      Id="3b9089e1-4f7c-4115-9d26-aac1cc4e0388"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ae5cd076-a572-48d9-b7da-53ea81b9f38a">
+                    <propertyInstance
+                      Id="9391da2e-16eb-43ca-be4a-b1ebab1bee50"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="469f7821-9b7f-4bce-aa40-cdf3026180a1">
+                    <propertyInstance
+                      Id="84878ed7-0a8e-4fca-ab57-537dceca76a3"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="faa1b5b2-b5ab-45df-b7ec-67f8c5d65e47">
+                    <propertyInstance
+                      Id="d07f7976-04bb-4dc1-89e7-f654b00eb8b0"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="FileSenderClient.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="409dcbe1-9472-4644-9e10-386402ab0ebe"
+            name="LocalIpAddress"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="f9ee8727-14e3-49cd-80dd-d78e90eabbe3"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3DLocalIpAddress"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="8528c506-2878-41e7-bf4b-2471ff024d45"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6a57dd27-3e39-4609-90e9-89ec4c3397a3">
+                    <propertyInstance
+                      Id="cba3849a-dd53-4fd3-adac-bd81fe431cf8"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9773f02b-c3d9-4c0a-95ad-70d5dab4e0cc">
+                    <propertyInstance
+                      Id="ef1a5cbc-38b0-4450-b0db-9f9cee2093ae"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f00cef58-c10c-4828-ab8b-61464259acc6">
+                    <propertyInstance
+                      Id="c07748f6-042e-409f-a0c9-1dac08fdeebe"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1638dae3-fc48-498d-9b9a-ddbdbd8903b7">
+                    <propertyInstance
+                      Id="1b267d57-9052-4b33-85eb-8f7e4451826a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2f8083ac-9df6-4cf7-a266-9515f4f55a0b">
+                    <propertyInstance
+                      Id="7b718de3-0f1a-4057-b60f-40fe04aa9b50"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c9bc2b8e-29d6-4582-9a83-7316194f57ea">
+                    <propertyInstance
+                      Id="99169471-6791-45aa-8bbe-2b9b223ec14d"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e8d767e2-8c85-4de2-9d6b-99f58b8d896a"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="FileSenderClient.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="408a925e-e22e-444d-b3ef-c655434420ef"
+            name="SetUp"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="bdc32c67-fb4b-4615-b58a-0a21ed98ed2e"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3DSetUp"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="fad39de5-ff11-4b56-a9e9-1f96ecf17973"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a49e5150-b30e-42d7-80a4-c7294fdafaca">
+                    <propertyInstance
+                      Id="ee6695ff-2ecd-4682-9188-226518c598e3"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="529302b2-334d-4ac5-9ab3-505325799ceb">
+                    <propertyInstance
+                      Id="779102cf-ed9d-4857-b368-a2d5aeb45ed5"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c6b19900-0647-4fb6-a615-db0c2596116c">
+                    <propertyInstance
+                      Id="83f64b94-bb2c-43b5-9f77-aceb58adad9b"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b8e7b75f-7e68-4c0f-a256-3401a43dbc4d">
+                    <propertyInstance
+                      Id="fc44f2ed-2511-4003-8dda-6c13bf1ac24f"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d82895bb-77fa-47b5-9cd4-52a61cd6e248">
+                    <propertyInstance
+                      Id="37a0bff1-43a5-4ba8-b118-b70622662ab2"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bbb3c93d-8769-4b84-a57a-80184889ec53">
+                    <propertyInstance
+                      Id="19929f1c-2109-4c74-aebe-bd2e467a3965"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="b8cbcabf-8fe3-42d8-9246-bf106ed62cf3"
+            name="FileSenderClient"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="8337dc37-2d96-46b4-ada9-3b795076110e"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="71f6af39-dcd6-41ec-8727-2b9eaed2a796"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ead20f38-de94-4fd2-ae21-ac11c6f3afff">
+                    <propertyInstance
+                      Id="81f93f4f-f708-475c-8f92-258ea0c99cdb"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3813ed25-94e0-410b-95d4-92fd069cccdd">
+                    <propertyInstance
+                      Id="da212d3b-1e9b-4d9b-a60f-c597612d712d"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4759fa4f-1a72-4933-a9d8-40fcd6c72f39">
+                    <propertyInstance
+                      Id="5200e473-73b6-431d-8d11-649a3a7de038"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="65c00849-6ad2-4716-aa7e-d97f47aed969">
+                    <propertyInstance
+                      Id="1bb442c7-3708-443b-8a9c-f04f3c2ab4ff"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0d29217e-c1e9-47df-b148-b6dd5f689c04">
+                    <propertyInstance
+                      Id="1efff06e-5dbd-4b2c-87a9-e0d9a7f6a5ef"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5128145c-f78e-46f4-bd67-b1e2ee287e35">
+                    <propertyInstance
+                      Id="b31ec8f5-305b-4acf-9951-c83ada12f8fa"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="62ea5e1d-4167-4e60-b462-a7234c2fbe0e"
+                  name="fileName"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="ce79249e-fbbf-42b9-a376-84d691b1a051"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DfileName"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="FileSenderClient.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="bb406766-047e-493f-aac1-5fda1a161a96"
+            name="FileSenderClient"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="4d6d99a6-a1e1-47eb-849d-ed0dc35650b2"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="0f3800cc-583c-4177-88fc-76bda2180561"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="11a9d10b-4191-491c-863e-2cab680dfee8">
+                    <propertyInstance
+                      Id="0b8fb0a6-b57e-4be9-b8b8-fb071038b6c6"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e2fba0f5-6db8-4f75-b432-72af9690576e">
+                    <propertyInstance
+                      Id="dd0d31a7-6ea5-4257-a0e9-8ee7151f97a1"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1d3fe70e-8dde-4a70-9d4b-31eb7863d22b">
+                    <propertyInstance
+                      Id="b24bff2a-5f53-4a08-9183-96e7ebb1f3af"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d2a71f2f-5f5c-4390-a525-f46fd1db9bab">
+                    <propertyInstance
+                      Id="1878f1cb-ec1f-414b-bbad-670615887285"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ad1974e2-1044-41dd-acf8-d99b3e47fb06">
+                    <propertyInstance
+                      Id="a2aeef48-c98a-445e-ac4a-e998f488347d"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1cdbf850-6d47-4838-834c-95350440a7f4">
+                    <propertyInstance
+                      Id="c6ba2b6b-2543-441a-82e2-7e239078a1fd"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="624fdd66-ad79-45a4-aeef-b447ac27f98b"
+                  name="fileName"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="d4b45ebb-cd01-4dcf-bb59-f879cc4c50d0"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DfileName"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="FileSenderClient.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2901095a-2692-4b57-962d-4b1de6b4b154"
+                  name="ip"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="6f8ecba1-76c0-44fd-b54b-b07a68d9fe71"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dip"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="FileSenderClient.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="bf541591-60a5-4b7c-9d9e-c5e907c06a1d"
+            name="SendFileNameToServer"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="b7c875ba-9cf5-439d-9559-264223c5b196"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3DSendFileNameToServer"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="867d7be7-0748-4846-8595-a947f8bee1cf"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e9c1b67b-98bd-4d91-9a56-12dadd4223ea">
+                    <propertyInstance
+                      Id="03cbae1c-4711-4bc3-a36d-094fa8bc5841"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="192d48e9-c1d7-4693-88df-d2d0bc89b31d">
+                    <propertyInstance
+                      Id="b5f48ecf-baa4-4709-aefc-c54c0fbd5a9c"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a800b033-9015-4e27-80df-7f7d45c7a85a">
+                    <propertyInstance
+                      Id="42af9a34-2307-44ce-89dc-a989e2be4935"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="16a3fe05-53c6-4d03-a850-b62245cd2c9e">
+                    <propertyInstance
+                      Id="8ced24a6-800a-4504-9b0d-c2f79164df85"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6afb5d2f-99b3-4f93-8b2d-08c656df9233">
+                    <propertyInstance
+                      Id="7d6f1310-9b71-4944-922f-a0295721dafb"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="54a0396f-7873-4262-8f71-1d9991f93d25">
+                    <propertyInstance
+                      Id="5811a35a-51f5-4b96-87fe-dbfa4a623bd7"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="2616d2c8-c4a9-4271-8858-35e83b1b2139"
+            name="SetIp"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="2f089b5e-ff6b-4c4d-b68f-41168eca1c92"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3D(Name%3DSetIp OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b7caff3d-956c-4e68-923a-962bc6a59f69"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f6120eff-0f83-4db7-b509-74100b063b41">
+                    <propertyInstance
+                      Id="0942df19-f4b4-496b-8f6f-622fc9b2c479"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dcd6a751-6808-4573-b4b6-7789bbe088df">
+                    <propertyInstance
+                      Id="aac0d661-a0d9-4848-9d96-69b0f91e0ab9"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b7260f5d-4c23-47cd-8683-6d35492dea98">
+                    <propertyInstance
+                      Id="7d7f24cd-660b-4166-99a8-3e02dbc384c2"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e5b53463-91b1-4c15-8f32-b0a0d5a6cd04">
+                    <propertyInstance
+                      Id="578bb7ab-904f-4a5b-b443-7d937927c3b4"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a82ee8ea-4f5b-484e-b25c-f403c278f131">
+                    <propertyInstance
+                      Id="af8b28d7-64f7-418a-870c-d96398b09f6c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e8f778e1-9b55-44cb-b2b2-2950abb7e6dd">
+                    <propertyInstance
+                      Id="b61bc539-fb47-4b4b-a216-d5f6641dd98d"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4c53548e-8540-4bd6-b0a1-838fb6aa9a9e"
+                  name="ip"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="7e8495fa-d9fe-4075-8446-ad4f3fce0e44"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3D(Name%3DSetIp OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dip"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="FileSenderClient.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="5070a745-fcc2-4b68-9fb2-dc92d4af7711"
+            name="SetPort"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="b419cf95-0d23-415e-a613-870702774ebb"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3D(Name%3DSetPort OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="0e704250-9ee6-4436-97f3-d3ad105382f1"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9ffb5ec2-d90a-4f75-8422-17ff52b112c1">
+                    <propertyInstance
+                      Id="aeb02a4f-b35b-4513-ac90-c1e222ff9f9f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6b419a87-9ef6-47e5-8c4e-6c18fdf298f6">
+                    <propertyInstance
+                      Id="5ad25257-4667-467e-91bd-ece52a66432d"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9ecb0652-c542-44e6-8f59-39090e0a29ca">
+                    <propertyInstance
+                      Id="3860084c-ba66-450e-96cf-345e6c197c12"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3937bcd7-a939-4b64-a8c4-4a0c090327ce">
+                    <propertyInstance
+                      Id="3c4ba526-d20b-40f6-82ce-3e26cb79c025"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b9103be4-4d4e-4d15-b60f-fe45ee172a97">
+                    <propertyInstance
+                      Id="f7bbc03c-13c5-4aeb-9003-47794bd905db"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="feeb5aa9-865a-49eb-9dde-14c8806d8c61">
+                    <propertyInstance
+                      Id="a3dbd876-643c-40c4-bcde-151ebb4e1be0"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f952b486-6b85-4609-960f-624913d0707f"
+                  name="port"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="4848cd28-afc3-4b74-bad2-90ebe7228fd7"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3D(Name%3DSetPort OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3Dport"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="FileSenderClient.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="63ae40b4-c56d-45ec-845e-d4335f885768"
+            name="SetFileName"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="a88e4a7b-c9ae-4b32-8528-4bba2f3d7e34"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3D(Name%3DSetFileName OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b5c42b9a-7229-4796-a87f-7da12652b616"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8d0cfd70-2772-4d6a-85fe-3df7e3135da8">
+                    <propertyInstance
+                      Id="fd00acc1-6c3d-4386-87e4-992bb7cab7a3"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d2727c5f-cb8c-40dc-b36e-ade8de4941a9">
+                    <propertyInstance
+                      Id="6166630e-d129-4b21-b227-c215634f7e2f"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8ddd810e-e40d-4117-820b-73b6e1cd279a">
+                    <propertyInstance
+                      Id="c00d915e-945c-49bf-bacb-f0f76cc3e751"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c08eeba1-0ddb-4a7c-84bd-35b46dc16900">
+                    <propertyInstance
+                      Id="f8432978-599f-41d7-b9e9-4ee27845fb81"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5cc2e62f-e9d9-4332-a487-5bcb7c9fb8bc">
+                    <propertyInstance
+                      Id="795e8f5b-97d2-42b4-952e-bbeee880844e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f5c815ad-3015-48a3-90e0-f26bdde09a47">
+                    <propertyInstance
+                      Id="d53af2cd-3cbe-4897-be2d-8a6373e0e33d"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7f94eb96-8d7e-4c0a-8d47-6cbc2112c75a"
+                  name="fileName"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="c137a3f0-e394-418e-8438-b016898ca489"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3D(Name%3DSetFileName OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DfileName"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="FileSenderClient.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="0b823441-c5bf-46c8-8e83-5553c940031a"
+            name="SendFileSizeToServer"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="7d855fcb-1848-4fcd-92c4-ae67cdc90500"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3DSendFileSizeToServer"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="05743153-8c73-4372-92e4-c07a12ccaae7"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d47ec810-6f69-4c47-b8ba-8bfdcd21da0e">
+                    <propertyInstance
+                      Id="f88da7a5-e6c7-4ba4-99d3-d6e6fbc71117"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3a556254-a120-45cc-81bd-903897595c4b">
+                    <propertyInstance
+                      Id="d2b55450-113d-464a-9dcf-5451e0388297"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5dbf4da2-674b-4893-80fd-06454613f5a7">
+                    <propertyInstance
+                      Id="15ddc508-34b0-46bf-b28b-99043a481300"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5be03800-542b-4361-ae6e-ed40efadb97c">
+                    <propertyInstance
+                      Id="b38ee07d-5fab-41fe-ab5f-d3469d8f0b02"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1c0abffe-b9a3-4ff6-b356-af8add28e955">
+                    <propertyInstance
+                      Id="4c20b065-d85b-4940-8081-859a9cb25db1"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="78402892-7373-49f5-aaaf-9d9afbe0179b">
+                    <propertyInstance
+                      Id="f9fd887a-0d10-4d59-9dc4-470da0625857"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="fcb5583e-00a8-4641-b6cf-f8ee1661f3a3"
+            name="CloseSocket"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="bcc0d6eb-5c8d-4cd5-9d48-6131971f32e3"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3DCloseSocket"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="960cf7c6-8d49-409c-9089-7ed05e9e1b4b"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="763fd09a-506d-424d-8909-de7acaa2ad6e">
+                    <propertyInstance
+                      Id="ec8c63e6-8ed0-43da-af99-2d1672129086"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="97309a27-4f72-4375-8bc4-b2fefd7b8985">
+                    <propertyInstance
+                      Id="eee7cce1-654f-4d83-a012-fbfd66c0be08"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d3face21-f986-41dd-a97d-617e72bc5659">
+                    <propertyInstance
+                      Id="a05fea80-bc12-4a00-8b91-c50de6848698"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aae53142-5a58-41ef-8696-24116d78c6a2">
+                    <propertyInstance
+                      Id="301eaf63-d20d-46ad-9856-3c863583fac7"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0293091c-3798-43b0-b24c-e1c009025e8c">
+                    <propertyInstance
+                      Id="ade7c33e-b234-4d7b-b9fb-b7c20e5066e2"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="32300d52-90bb-426e-a2dc-827b3d4261a4">
+                    <propertyInstance
+                      Id="1aff03a6-7f07-40a5-984e-f26073114b2e"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="a83ff1c7-d24f-4af1-87ca-48a2dd429f48"
+            name="SendFile"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="879a0e07-cb12-4cd4-be69-8fb597f6762a"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3D(Name%3DSendFile OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt64)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.dll&quot; Namespace%3DSystem.Net.Sockets Type%3DNetworkStream)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="bff1025d-8035-4d04-9011-4856c19041a6"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="94f0043a-4482-4210-acab-045585bcd3aa">
+                    <propertyInstance
+                      Id="424f0cc6-9039-408a-a7d1-e6db2b045d5c"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="81450bff-8603-4171-926b-bd4cdaa7ab79">
+                    <propertyInstance
+                      Id="d40cb1a2-b089-43ce-a9fe-4cfb57307251"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0c4f1085-fda3-4bcb-8f01-d4b58ba94271">
+                    <propertyInstance
+                      Id="ad1c3935-8566-48f3-a280-0a4ac02730d9"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b93039b9-ba37-463f-ad87-78e1c2123d1f">
+                    <propertyInstance
+                      Id="8588b5ec-5461-4188-9946-cea32203168d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="94722167-a972-4c77-9de2-e35284707939">
+                    <propertyInstance
+                      Id="ccb6dc58-3ce2-4a69-b1d4-a831ee75284d"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="06b5dfaf-c038-41f7-9fd8-6182510076fd">
+                    <propertyInstance
+                      Id="4a0130da-f60a-4d93-b905-1e86eb491633"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="610b8d43-c3de-4e62-bca1-86ea08a122c4"
+                  name="fileName"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="c7d867cc-c66d-4af6-8bfb-4cb36f99e7b9"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3D(Name%3DSendFile OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt64)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.dll&quot; Namespace%3DSystem.Net.Sockets Type%3DNetworkStream)]) ParameterIdentifier%3DfileName"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="FileSenderClient.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="21d365b7-082d-4274-9660-c78bc1d79e7b"
+                  name="fileSize"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="d673783f-9280-4d43-8a2e-bc7971a7c432"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3D(Name%3DSendFile OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt64)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.dll&quot; Namespace%3DSystem.Net.Sockets Type%3DNetworkStream)]) ParameterIdentifier%3DfileSize"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="891383c6-217c-48c6-a053-82b57c50f9cb"
+                      LastKnownName="Int64"
+                      LastKnownLocation="Package1_1653.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="324546f5-7ede-443e-9cb4-f0784bb8f5fe"
+                  name="io"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="5a130c06-f5bb-4c89-9ba0-7e4234c07732"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3D(Name%3DSendFile OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt64)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.dll&quot; Namespace%3DSystem.Net.Sockets Type%3DNetworkStream)]) ParameterIdentifier%3Dio"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="7c097172-7a76-4f90-b8da-1e925ccaaffb"
+                      LastKnownName="NetworkStream"
+                      LastKnownLocation="Package3_1653.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="57d7ab18-fd76-44b0-9437-a06011bcb94f"
+            name="Dispose"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="12797ca8-48c9-4315-906d-1a9bbedeb1e6"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3DDispose"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="afde186a-99a0-44cb-9fe1-f96926caf0ca"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a16910ff-15ee-4edb-838f-67817dfdf896">
+                    <propertyInstance
+                      Id="03ffac51-8484-49ff-849b-42c283e8be57"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="34d63957-f001-4a94-afcd-4b91a55a5270">
+                    <propertyInstance
+                      Id="3faf2884-ae29-4adc-9f88-2b049bf0e372"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c67ed1f0-e22a-46c6-b994-f03874103f6d">
+                    <propertyInstance
+                      Id="ab599423-cd73-4425-8ad8-a3d4fbe41218"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1e746014-7367-4663-add9-2a35a03add91">
+                    <propertyInstance
+                      Id="62c80e61-333c-4f82-8aef-df51aaa95715"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="37ab11d1-f6da-48f2-bdd1-14d334239c8c">
+                    <propertyInstance
+                      Id="6a393e0d-88c9-4038-99cf-d170aa019de8"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="99a22b23-3f6d-466d-9df6-df6849fb22e1">
+                    <propertyInstance
+                      Id="e699c1bd-849c-4e2b-86a0-0d8dcb86a38d"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="2bf6e44a-7bda-41bd-9065-0026697d7e51"
+            name="Run"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="3247b76e-e515-4602-bfd4-aac41eaa93a1"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3D(Name%3DRun OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="0d612764-197e-4366-a038-1b4246267139"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="25f81937-31b0-4fae-8c21-ac621ea3ec2d">
+                    <propertyInstance
+                      Id="275be189-ce33-4102-bd07-32ca4eab8725"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ae1f52a3-11b9-4c05-9839-09e4a7e8bfd9">
+                    <propertyInstance
+                      Id="9435190b-02c4-4bea-ac29-455924ac6e0f"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4e75428d-fd61-423b-92b8-dddc9cca50c7">
+                    <propertyInstance
+                      Id="8be5e5d2-98ca-48c2-a225-280ee9f21307"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="31ca590b-ebf8-45c4-9203-91452b058b2d">
+                    <propertyInstance
+                      Id="2fa5106e-b554-415d-815f-22e42c4626d0"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a44bcde4-703c-49de-9248-16011c6f16bb">
+                    <propertyInstance
+                      Id="bcb007d5-8797-44cd-b167-5a9d6491a71b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bb180b67-9089-47c5-ba5e-acdbaf5d59eb">
+                    <propertyInstance
+                      Id="bee6fe38-5ed5-4618-8223-f1ffedd1a81d"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="096167d1-a8df-44de-98a4-77a302e90907"
+                  name="path"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="384a3cce-b6ce-4f47-8e42-9008c8d3f6e1"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DFileSenderClient Member%3D(Name%3DRun OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dpath"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="FileSenderClient.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="cc9f9559-8084-4318-8399-aed4749534bd"
+        name="LIB"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="f6de3044-61be-4c29-ab6a-243594ceff00"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DLIB"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="20190a55-1b13-4843-a49c-bc2f2d090ee7"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d5a6fde3-2ec1-4d8f-9342-28c81d7f5a85">
+                <propertyInstance
+                  Id="367b00ac-fa61-4e19-8fee-12ebf43d57e5"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6beba2e3-2a0e-444e-b2d0-5774056560fb">
+                <propertyInstance
+                  Id="8e64ecc1-ddf3-4377-87f9-a151829617a7"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="451e1684-b244-4476-8c7d-12ea73a67664">
+                <propertyInstance
+                  Id="119026a8-247d-4d9b-be17-7e6dea1a4d42"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d2bb70fa-86e9-4683-8365-acf3dd1c1206">
+                <propertyInstance
+                  Id="2c82b9fd-d051-4863-8d40-a5e07877cd63"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ad1c2c93-1770-41f0-a127-38428e883b4f">
+                <propertyInstance
+                  Id="f6775def-7a75-4bd3-b556-fda211deae84"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="e4206e5a-7e99-48a0-ba12-b0f92468bb3e"
+            name="LIB"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="52d5cf94-bc8a-4bfc-ba29-7681d058ceb3"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DLIB Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7b9f98ca-d03d-4e0e-a8bb-50ffe9eef208"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7bb6296a-fa51-4785-9d64-eafbe823c4c2">
+                    <propertyInstance
+                      Id="3d32b84c-bb8b-4525-a82e-e3bcd0ac1399"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a8aa53e6-0a15-45e2-835f-d115d394028b">
+                    <propertyInstance
+                      Id="c77fc58d-0f2c-4110-9a05-1e40d6513f2d"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0a04f00c-4916-4966-ba55-dfe64e12330a">
+                    <propertyInstance
+                      Id="097ea928-e33a-43ad-a84e-63b8b2ef0ba1"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ac0f7422-57f3-458f-8668-8109c003980b">
+                    <propertyInstance
+                      Id="88a6b20a-0d14-4835-b87c-ebaf9aefb285"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="28b65e01-95f0-463f-afba-1a79321c3591">
+                    <propertyInstance
+                      Id="bb50eb58-dbc4-45d7-8a15-8ba148df2f94"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="36036013-ca04-451f-a248-7ec974b73d74">
+                    <propertyInstance
+                      Id="ad35fc60-feef-4911-92a7-bbf61b108183"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="1b811cf2-6bd7-4e7e-810c-b1273985d9f1"
+            name="extractFileName"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="21fbda1c-829c-414b-878a-5c239e1030ca"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DLIB Member%3D(Name%3DextractFileName OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="3fa99bfd-b84e-400c-a610-da79b05941ad"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="65a1e4d1-bd9d-49ad-b6b7-aefaf63df632">
+                    <propertyInstance
+                      Id="69bc0ecd-5f47-4869-8d92-ce66e061015e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b8cc6091-7a61-4fd2-b546-cc29b911369a">
+                    <propertyInstance
+                      Id="f3c0eadc-b0ca-4559-837a-d60f3def8749"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7c0f4297-3178-4c5f-a8c0-e780db45d90a">
+                    <propertyInstance
+                      Id="d5a2eb9d-4707-4875-bb82-0539eb6a1fa5"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8ae99dcf-5dfb-435b-8e94-3f6c2489d6fd">
+                    <propertyInstance
+                      Id="609cc8aa-8c63-4b07-ae42-3a8c5cfc1a7b"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b6cad435-dc24-45d4-9b59-cfc77ce17eda">
+                    <propertyInstance
+                      Id="62a86d39-1152-417f-96e9-f0e830ba2315"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="33a868f2-5e3f-4c41-bf76-4270e556a1a3">
+                    <propertyInstance
+                      Id="1a9bbafc-f779-4fcf-b899-2e72827e2551"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0a30e6d8-1c70-4318-9e45-d29db97e8aeb"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="FileSenderClient.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f8e32334-95e9-4f69-9b08-3c08516eee1f"
+                  name="fileName"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="bcd8d635-fbfe-4766-a2b6-d299cdbb6584"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DLIB Member%3D(Name%3DextractFileName OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DfileName"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="FileSenderClient.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="dd641fa7-dd41-43df-adab-f95db62a9510"
+            name="readTextTCP"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="f260d6c5-1b5d-4aee-9a4e-a8ff8fc844af"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DLIB Member%3D(Name%3DreadTextTCP OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.dll&quot; Namespace%3DSystem.Net.Sockets Type%3DNetworkStream)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="690d13f2-f116-412e-ab85-37314f60b656"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="052f919d-368a-4e2c-bbe9-cc6a37db6641">
+                    <propertyInstance
+                      Id="ed6060eb-d4fa-4dde-a634-13560c9bdea1"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e1a69523-7cb7-41fa-bf9d-170a36cd90e5">
+                    <propertyInstance
+                      Id="10b51bf6-dbf5-4817-b687-9d8df2749d25"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="651b118e-8d6b-48f8-a0f5-163152d694e9">
+                    <propertyInstance
+                      Id="6422e0b7-30ee-4be0-8743-7e4767fd461b"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="307268f5-d213-42d2-a271-74cbeb44dc98">
+                    <propertyInstance
+                      Id="64b49755-5438-48ec-a6ae-dd839a074034"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="71521113-584a-48eb-bc3c-8c6ac8ca1750">
+                    <propertyInstance
+                      Id="264cc263-f298-4f74-a923-d187e75e594f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="38557f8a-7876-430e-8af0-370964e8be91">
+                    <propertyInstance
+                      Id="7a25a90c-8fe4-43b9-88dd-390360d968ea"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="08fe2e89-f713-4194-907a-67443115c7ab"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="FileSenderClient.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b0699b66-7c40-448d-ae23-212d3f188a2d"
+                  name="io"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="91f0676f-331b-4788-92c9-0f7fdf7a3d00"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DLIB Member%3D(Name%3DreadTextTCP OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.dll&quot; Namespace%3DSystem.Net.Sockets Type%3DNetworkStream)]) ParameterIdentifier%3Dio"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="7c097172-7a76-4f90-b8da-1e925ccaaffb"
+                      LastKnownName="NetworkStream"
+                      LastKnownLocation="Package3_1653.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="cc70ec08-cceb-439b-9a28-b3393d0033c4"
+            name="writeTextTCP"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="e5ae33bd-22ca-4bc3-b55e-d67d493bcb47"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DLIB Member%3D(Name%3DwriteTextTCP OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.dll&quot; Namespace%3DSystem.Net.Sockets Type%3DNetworkStream)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7f5a073f-7600-4e04-ba4d-4f4f0978b630"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5082a37a-86d9-4df2-883b-3068a45b6e57">
+                    <propertyInstance
+                      Id="6964fce1-a198-4f2a-9bf6-71697582796a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aeee0b8c-af1a-434e-88ea-d72d37d8e194">
+                    <propertyInstance
+                      Id="5ac0fd34-cad2-4a29-8439-21a608a9a1f7"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a024cd59-c431-4a00-b916-9b0074003510">
+                    <propertyInstance
+                      Id="7d15dc8c-8da2-4481-890a-ea2c2adacb32"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="776a0828-c356-4615-a046-c0bf5c0667a9">
+                    <propertyInstance
+                      Id="b2f5f4b7-151a-4eb9-9de8-bba64e6cbc14"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f5c753af-8499-4905-a050-15f3bfb15225">
+                    <propertyInstance
+                      Id="ff529f9d-f00a-49b3-9db8-87d9466c8dd7"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ef1ace1c-17d5-43f1-9a61-06b05ae29db5">
+                    <propertyInstance
+                      Id="ae55fc2d-1dda-469c-8b32-902fda983ef4"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="641d24a3-08ef-4caf-a3f7-8f698c2ea757"
+                  name="outToServer"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="83bf47fb-5792-4b90-a45e-9a2ff818d81a"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DLIB Member%3D(Name%3DwriteTextTCP OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.dll&quot; Namespace%3DSystem.Net.Sockets Type%3DNetworkStream)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DoutToServer"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="7c097172-7a76-4f90-b8da-1e925ccaaffb"
+                      LastKnownName="NetworkStream"
+                      LastKnownLocation="Package3_1653.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5c582297-ecf3-4e5f-86ee-720298000681"
+                  name="line"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="2e7c2e55-0db4-41c3-9eef-02c997861f60"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DLIB Member%3D(Name%3DwriteTextTCP OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.dll&quot; Namespace%3DSystem.Net.Sockets Type%3DNetworkStream)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dline"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="FileSenderClient.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="bb36f970-b2fb-425d-b806-22b736cfc7de"
+            name="getFileSizeTCP"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="68608b64-e9ca-494f-81f0-05dce0ea75af"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DLIB Member%3D(Name%3DgetFileSizeTCP OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.dll&quot; Namespace%3DSystem.Net.Sockets Type%3DNetworkStream)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="591ffd3c-84ef-4f35-a687-effc07fab25e"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1c1f2f83-bbeb-4d44-b008-4bed56a9b131">
+                    <propertyInstance
+                      Id="783026b3-5cef-482c-8614-1c371ebea611"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7fd7b8af-f067-4ab7-aa61-75d8b9080e51">
+                    <propertyInstance
+                      Id="58b23140-f903-4665-b7a0-6232daff7feb"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2e017e1b-ed95-45c0-b6a8-36cb308084fa">
+                    <propertyInstance
+                      Id="74513688-b6b7-4c94-94c4-7a10ae6f3b48"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ef8c2aa9-f593-4416-9dd5-ce4f8707b925">
+                    <propertyInstance
+                      Id="1f5b3ee0-816a-4686-b86c-e7c6d5b242eb"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="54668cf8-175c-4f7b-91e8-cba10dc41be0">
+                    <propertyInstance
+                      Id="47dbf2c5-07e1-4ad7-ae39-d192cbba8de8"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="717859ab-8dd9-4363-a708-d9685527e4aa">
+                    <propertyInstance
+                      Id="265c057a-5f98-43ce-bcf4-e60f2fc35cc1"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8e692f79-9c95-4804-a605-53f0a13f2cd3"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="891383c6-217c-48c6-a053-82b57c50f9cb"
+                      LastKnownName="Int64"
+                      LastKnownLocation="Package1_1653.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0a5a9d09-7fb2-4ef6-a5ad-eb7fe22d05d2"
+                  name="inFromServer"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="7c2f427b-ef58-4971-ac78-844b5501e001"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DLIB Member%3D(Name%3DgetFileSizeTCP OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.dll&quot; Namespace%3DSystem.Net.Sockets Type%3DNetworkStream)]) ParameterIdentifier%3DinFromServer"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="7c097172-7a76-4f90-b8da-1e925ccaaffb"
+                      LastKnownName="NetworkStream"
+                      LastKnownLocation="Package3_1653.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="6c576ed6-3bd3-4e0b-bc07-5951d17c3db9"
+            name="check_File_Exists"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="cf4236e8-8f88-4443-97b0-c4a4273ed04d"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DLIB Member%3D(Name%3Dcheck_File_Exists OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="acdadb3a-9870-4808-87b8-5dcc6f5db0ad"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ffa4dedc-7fe2-40de-afae-6ccada6b368a">
+                    <propertyInstance
+                      Id="d4669d10-dc7b-45ad-9278-c4046a70c202"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="558d333b-9208-49f4-8ee9-9a67649b8146">
+                    <propertyInstance
+                      Id="f735aadb-c4c5-49ed-ae3a-8007dda9b4c6"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1dd9daec-4f82-4630-a8a8-ae303e42e3e4">
+                    <propertyInstance
+                      Id="a22e098b-d01c-47a8-9d46-35a34092f9b7"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f0f2973a-15d8-4144-a64e-5d9f67d2aa9e">
+                    <propertyInstance
+                      Id="5fd78a20-2715-4883-9403-6cf71e6896b4"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3517692e-edff-4277-912d-bf60876a2ba8">
+                    <propertyInstance
+                      Id="88b3e41c-5c06-458e-a4c3-4ad63cdd9fe5"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1369b514-8a76-48e0-bfcb-926300f19811">
+                    <propertyInstance
+                      Id="e19ddeac-2ae7-40a0-8064-11596fb4b86d"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e2f2166b-a8ad-48e5-8e14-4718e12572c5"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="891383c6-217c-48c6-a053-82b57c50f9cb"
+                      LastKnownName="Int64"
+                      LastKnownLocation="Package1_1653.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d582a116-e90f-45bc-8dfa-15923bb28f8f"
+                  name="fileName"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="02eedb83-d828-45aa-8e06-60950ea1991e"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FFileSender%2FFileSender%2FFileSender%2Fbin%2FDebug%2FFileSender.dll&quot; Namespace%3DFileSender Type%3DLIB Member%3D(Name%3Dcheck_File_Exists OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DfileName"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="FileSenderClient.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
