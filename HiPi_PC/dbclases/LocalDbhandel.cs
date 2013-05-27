@@ -16,11 +16,20 @@ namespace dbclases
 
         void FillMusicAndPath(List<string> Pathlist);
     }
-
+    /// <summary>
+    /// This class Handles all data input to the Local Database
+    /// </summary>
     public class LocalDbhandel : ILocalDbhandel
     {
+        /// <summary>
+        /// This device GUID (There can be only one)
+        /// </summary>
         private string _GUIDDevice;
         
+        /// <summary>
+        /// sees if if the local DB allready has a Device
+        /// </summary>
+        /// <returns>returns false if No decice on Localdb else sets GUIDDevice and returns true </returns>
         private bool makeguuidifnodevice()
         {
             using (var musik = new pcindexEntities())
@@ -36,6 +45,10 @@ namespace dbclases
             }
         }
 
+        /// <summary>
+        /// Fills the Device/IP in local database 
+        /// </summary>
+        /// <param name="myip">The IP on this device</param>
         public void FillIp(string myip)
         {            
                 if (!makeguuidifnodevice())
@@ -63,36 +76,37 @@ namespace dbclases
                         if (myip != olddevice[0].IP)
                         {
                             olddevice[0].IP = myip+":8554";
-
                             musik.SaveChanges();
-
                         }                      
                     }
-                  
-                }
-            
+                }  
         }
 
         private List<string> Albumlist = new List<string>();
         private List<string> Artistlist = new List<string>();
         private List<string> Genrelist = new List<string>(); 
 
+        /// <summary>
+        /// Adds to the local Database Artists, Albums, Genres
+        /// </summary>
+        /// <param name="metadataReaders">All the Information from the musik files</param>
         public void FillAAG(List<IMetadataReader> metadataReaders)
         {
             foreach (var metadataReader in metadataReaders)
-            {
-              
+            {             
                 Albumlist.Add(metadataReader.Album);
                 Artistlist.Add(metadataReader.Artist);
                 Genrelist.Add(metadataReader.Genre);
             }
-
             addAlbum(Albumlist);
             addArtist(Artistlist);
             Addgenre(Genrelist);                
-
         }
 
+        /// <summary>
+        /// Takes in the list gets fills Pathes, then runs FillAAG() and FillMusicdata()
+        /// </summary>
+        /// <param name="PathOndevice">The Pathes to add to database</param>
         public void FillMusicAndPath(List<string> PathOndevice)
         {
             using (var musik = new pcindexEntities())
@@ -101,7 +115,7 @@ namespace dbclases
                                          select p.FilePath1
                                         ).ToList();
 
-                PathOndevice = listcompair(PathOndevice, pathlist);
+                PathOndevice = ListCompare(PathOndevice, pathlist);
 
                 if (PathOndevice.Count >= 1)
                 {
@@ -122,27 +136,22 @@ namespace dbclases
 
                         FillAAG(mdata);
                         fillMusicdata(mdata,path.UUIDPath);
-
-
-
                     }
-
-
                 }
-
             }
-            //see if pathes is allready is assigned to ip
-            // if not add pathes
-
         }
 
-
-        private List<string> listcompair(List<string> list1, List<string> list2)
+        /// <summary>
+        /// Compares 2 lists of strings  
+        /// </summary>
+        /// <param name="list1">the list to change</param>
+        /// <param name="list2">List from Database</param>
+        /// <returns>list1</returns>
+        private List<string> ListCompare(List<string> list1, List<string> list2)
         {
             List<string> toremove = new List<string>();
 
             list1 = list1.Distinct().ToList();
-
 
             foreach (var s1 in list1)
             {
@@ -162,14 +171,11 @@ namespace dbclases
             return list1;
         }
         
-
         public void fillMusicdata(List<IMetadataReader> datalist,string uuid)
         {
 
             using (var musik = new pcindexEntities())
             {
-
-
                 foreach (var metadata in datalist)
                 {
                     var nummer = new musicdata();
@@ -183,15 +189,15 @@ namespace dbclases
                     nummer.UUIDMusikData = Guid.NewGuid().ToString();
 
                     musik.musicdatas.Add(nummer);
-
                     musik.SaveChanges();
                 }
-
-
             }
-
         }
-        
+
+        /// <summary>
+        /// Addes List of Genres to LocalDB
+        /// </summary>
+        /// <param name="liste"></param>
         private void Addgenre( List<string> liste)
         {
             //se if Genre exists if not add genre
@@ -202,36 +208,29 @@ namespace dbclases
                                          select p.Genre1
 
                                         ).ToList();
-                  liste = listcompair(liste, list2);
 
-               
+                liste = ListCompare(liste, list2);            
 
                 if (liste.Count >= 1)
-                {
-                    
+                {    
                     foreach (var onpath in liste)
                     {
                         var _genre = new genre();
                         _genre.Genre1 = onpath;
                         
-
                         musik.genres.Add(_genre);
                         musik.SaveChanges();
-                       
                     }
-
-                    
                 }
             }
         }
 
+        /// <summary>
+        /// Adds List of Artist to LocalDB
+        /// </summary>
+        /// <param name="liste"></param>
         private void addArtist(List<string> liste)
         {
-            // make artist list
-            // remove duplets
-          
-
-
             using (var musik = new pcindexEntities())
             {
                 List<string> list2 = (from p in musik.artists
@@ -240,33 +239,24 @@ namespace dbclases
 
                                         ).ToList();
 
-                liste = listcompair(liste, list2);
-
-
-
+                liste = ListCompare(liste, list2);
                 if (liste.Count >= 1)
                 {
-
                     foreach (var onpath in liste)
                     {
                         var entity = new artist();
                         entity.Artist1 = onpath;
 
-
                         musik.artists.Add(entity);
                         musik.SaveChanges();
-
                     }
-
-
                 }
             }
-  
-
-
-
         }
-
+        /// <summary>
+        /// Adds List of Albums to LocalDB
+        /// </summary>
+        /// <param name="liste"></param>
         private void addAlbum(List<string> liste)
         {
             using (var musik = new pcindexEntities())
@@ -277,31 +267,20 @@ namespace dbclases
 
                                         ).ToList();
 
-                liste = listcompair(liste, list2);
-
-
+                liste = ListCompare(liste, list2);
 
                 if (liste.Count >= 1)
                 {
-
                     foreach (var onpath in liste)
                     {
                         var entity = new album();
                         entity.Album1 = onpath;
 
-
                         musik.albums.Add(entity);
                         musik.SaveChanges();
-
                     }
-
-
                 }
             }
-
         }
-
-       
-       
     }
 }

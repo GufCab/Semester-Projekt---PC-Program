@@ -99,7 +99,7 @@ namespace dbclases
             }
             using (var pimusik = new PiindexEntities())
             {
-                pcdevices = listcompair(pcdevices, (from p in pimusik.PIDevices select p.UUIDDevice).ToList());
+                pcdevices = ListCompare(pcdevices, (from p in pimusik.PIDevices select p.UUIDDevice).ToList());
             }
             return pcdevices.Count == 0;
         }
@@ -121,7 +121,7 @@ namespace dbclases
                pifilepaths = (from p in pimusik.PIFilePaths select p).ToList();
            }
 
-           pathtopi = listcompair(pathtopi, pifilepaths);
+           pathtopi = ListCompare(pathtopi, pifilepaths);
 
            foreach (var ele in pathtopi)
                {
@@ -138,7 +138,13 @@ namespace dbclases
                }
            
        }
-       private List<filepath> listcompair(List<filepath> pcList, List<PIFilePath> pilist)
+       /// <summary>
+       /// Compares the pathlist on Pc to pathlist
+       /// </summary>
+       /// <param name="pcList"></param>
+       /// <param name="pilist"></param>
+       /// <returns></returns>
+       private List<filepath> ListCompare(List<filepath> pcList, List<PIFilePath> pilist)
        {
            List<filepath> afa = new List<filepath>();
 
@@ -159,10 +165,15 @@ namespace dbclases
 
            return pcList;
        }
-       private List<string> listcompair(List<string> list1, List<string> list2)
+       /// <summary>
+       /// Compares 2 lists of strings  
+       /// </summary>
+       /// <param name="list1">the list to change</param>
+       /// <param name="list2">List from piDatabase</param>
+       /// <returns>list1</returns>
+       private List<string> ListCompare(List<string> list1, List<string> list2)
        {
            List<string> afa = new List<string>();
-
 
            foreach (var onPath in list1)
            {
@@ -180,7 +191,9 @@ namespace dbclases
 
            return list1;
        }
-
+       /// <summary>
+       /// Fills Artist,Album, Genre from local to pi Database
+       /// </summary>
        private void FillAAG()
        {
            List<string> Artist;
@@ -196,9 +209,9 @@ namespace dbclases
 
            using (var pimusik = new PiindexEntities())
            {
-               Artist = listcompair(Artist,(from p in pimusik.PIArtists select p.Artist).ToList());
-               Album = listcompair(Album  ,(from p in pimusik.PIAlbums select p.Album).ToList());
-               Genre = listcompair(Genre  ,(from p in pimusik.PIGenres select p.Genre).ToList());
+               Artist = ListCompare(Artist,(from p in pimusik.PIArtists select p.Artist).ToList());
+               Album = ListCompare(Album  ,(from p in pimusik.PIAlbums select p.Album).ToList());
+               Genre = ListCompare(Genre  ,(from p in pimusik.PIGenres select p.Genre).ToList());
            }
 
            if (Artist.Count > 0)
@@ -209,6 +222,10 @@ namespace dbclases
                addGenre(Genre);
 
        }
+       /// <summary>
+       /// Adds Artist to PiDatabase
+       /// </summary>
+       /// <param name="aList">List of Artist</param>
        private void addArtist(List<string> aList)
        {
            foreach (var onpath in aList)
@@ -224,6 +241,10 @@ namespace dbclases
                }
            }
        }
+       /// <summary>
+       /// Adds Albumlist to Database.
+       /// </summary>
+       /// <param name="aList">list of Albums</param>
        private void addAlbum(List<string> aList)
        {
            foreach (var onpath in aList)
@@ -239,6 +260,10 @@ namespace dbclases
                }
            }
        }
+       /// <summary>
+       /// Adds Genrelist to Database.
+       /// </summary>
+       /// <param name="aList">list of Genres</param>
        private void addGenre(List<string> aList )
        {
            foreach (var onpath in aList)
@@ -254,8 +279,11 @@ namespace dbclases
                }
            }
        }
-
        // Takes all music from Pc an adds to the Pi what it doesn't have
+
+       /// <summary>
+       /// Fills Music data from LocalDB to PIDB.
+       /// </summary>
        private void FillMusikData()
        {
            List<musicdata> musicdatas;
@@ -266,14 +294,20 @@ namespace dbclases
            }
            using (var pimusik = new PiindexEntities())
            {
-               musicdatas = listcompair(musicdatas, (from p in pimusik.PIMusikDatas select p).ToList());               
+               musicdatas = ListCompare(musicdatas, (from p in pimusik.PIMusikDatas select p).ToList());               
            }
 
            if(musicdatas.Count >0)
            Addmusikdata(musicdatas);
 
        }
-       private List<musicdata> listcompair(List<musicdata> pcList, List<PIMusikData> pilist)
+       /// <summary>
+       /// Compares 2 lists of Metadata  
+       /// </summary>
+       /// <param name="list1">the list to change</param>
+       /// <param name="list2">List from piDatabase</param>
+       /// <returns>list1</returns>
+       private List<musicdata> ListCompare(List<musicdata> pcList, List<PIMusikData> pilist)
        {
            List<musicdata> afa = new List<musicdata>();
 
@@ -286,14 +320,17 @@ namespace dbclases
                        afa.Add(pcPath);
                }
            }
-
            foreach (var faf in afa)
            {
                pcList.Remove(faf);
            }
-
            return pcList;
        }
+
+       /// <summary>
+       /// Adds A list of musicdata to PIDB
+       /// </summary>
+       /// <param name="aList">list of musicdata</param>
        private void Addmusikdata(List<musicdata> aList)
        {
            foreach (var onpath in aList)
@@ -308,16 +345,12 @@ namespace dbclases
                _item.Genre_Genre = onpath.Genre_Genre;
                _item.FilePath_UUIDPath = onpath.FilePath_UUIDPath;
 
-
-
                using (var pimusik = new PiindexEntities())
                {
                    pimusik.PIMusikDatas.Add(_item);
                    pimusik.SaveChanges();
                }
            }
-
-
        }
     }
 }

@@ -12,6 +12,9 @@ using Live555;
 
 namespace TemplateSync
 {
+    /// <summary>
+    /// Synchronizes files from Computer to Local Database and then from Local Database to Pi Database.
+    /// </summary>
     public class Synchronizer : ISynchronizer
     {
         private ILocalDbhandel db = new LocalDbhandel();
@@ -20,21 +23,26 @@ namespace TemplateSync
         //private int _index;
 
         private string _ip;
-
+        /// <summary>
+        /// Inittialize synchronizer and runs the Setup() 
+        /// </summary>
         public Synchronizer()
         {
             Startup();
         }
       
+        /// <summary>
+        /// Starts live555 and gets Device own IP
+        /// </summary>
        public void Startup()
        {
            live555 = new Live555Wrapper();
            _ip = live555.GetIP();
-           
-
        }
       
-        
+        /// <summary>
+        /// Creates PIDbHandel runs MarkAsOnline() And SyncFromLocalToPi()
+        /// </summary>
        public void SyncPiDb()
        {
            IPidbhandel pidb = new PiDbhandel();
@@ -43,6 +51,10 @@ namespace TemplateSync
            pidb.SyncfromLocalToPI();
        }
 
+        /// <summary>
+       /// Adds all Music From the Pathlist to the LocalDB
+        /// </summary>
+        /// <param name="pathlist"></param>
         public void SyncLocalDb(List<string> pathlist )
         
         {
@@ -56,10 +68,13 @@ namespace TemplateSync
 
         }
 
+        /// <summary>
+        /// Makes absolute Path to relative path from where the program is run from
+        /// </summary>
+        /// <param name="a">AbsolutePath</param>
+        /// <returns>RelativePath</returns>
         private string MakeRelpathFromAbspath(string a)
         {
-
-
             Uri to = new Uri(a);
             // Must end in a slash to indicate folder
             Uri from = new Uri(Environment.CurrentDirectory);
@@ -67,11 +82,10 @@ namespace TemplateSync
             Uri.UnescapeDataString(
                 from.MakeRelativeUri(to)
                     .ToString()
-                );
+                        );
             relativePath = "../" + relativePath;
             relativePath = relativePath.Replace(Path.DirectorySeparatorChar, '/');
             return  relativePath;
         }
-        
     }
 }
