@@ -88,7 +88,7 @@ namespace playerlayout
         /// </summary>
         /// <param name="e">The sink device that is discovered</param>
         /// <param name="s"></param>
-        public void getUPnPSink(UPnP_SinkFunctions e, EventArgs s)
+        public void getUPnPSink(ISinkFunctions e, EventArgs s)
         {
             _UPnPSink = e;
 
@@ -115,7 +115,7 @@ namespace playerlayout
         /// </summary>
         /// <param name="e">The source device that is discovered</param>
         /// <param name="s"></param>
-        public void getUPnPSource(UPnP_SourceFunctions e, EventArgs s)
+        public void getUPnPSource(ISourceFunctions e, EventArgs s)
         {
             _UPnPSource = e;
 

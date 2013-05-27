@@ -18,10 +18,10 @@ namespace UPnP_CP
 
         //private UPnP_SinkFunctions Sink;
 
-        public delegate void AddSinkHandler(UPnP_SinkFunctions e, EventArgs s);
+        public delegate void AddSinkHandler(ISinkFunctions e, EventArgs s);
         public event AddSinkHandler AddSinkEvent;
 
-        public delegate void AddSourceHandler(UPnP_SourceFunctions e, EventArgs s);
+        public delegate void AddSourceHandler(ISourceFunctions e, EventArgs s);
         public event AddSourceHandler AddSourceEvent;
 
         public delegate void RemoveSourceHandler(object e, EventArgs s);
@@ -71,7 +71,7 @@ namespace UPnP_CP
             {
                 Console.WriteLine("Added Sink Device: " + d.FriendlyName);
 
-                UPnP_SinkFunctions func = new UPnP_SinkFunctions(
+                ISinkFunctions func = new UPnP_SinkFunctions(
                     new SinkStack.CpAVTransport(d.GetServices(SinkStack.CpAVTransport.SERVICE_NAME)[0]), 
                     new SinkStack.CpConnectionManager(d.GetServices(SinkStack.CpConnectionManager.SERVICE_NAME)[0]),
                     new SinkStack.CpRenderingControl(d.GetServices(SinkStack.CpRenderingControl.SERVICE_NAME)[0]));
@@ -105,7 +105,7 @@ namespace UPnP_CP
             {
                 Console.WriteLine("Added Source Device: " + d.FriendlyName);
 
-                UPnP_SourceFunctions func = new UPnP_SourceFunctions(null,
+                ISourceFunctions func = new UPnP_SourceFunctions(null,
                     //new SourceStack.CpConnectionManager(d.GetServices(SourceStack.CpConnectionManager.SERVICE_NAME)[0]),
                     new SourceStack.CpContentDirectory(d.GetServices(SourceStack.CpContentDirectory.SERVICE_NAME)[0]));
 
