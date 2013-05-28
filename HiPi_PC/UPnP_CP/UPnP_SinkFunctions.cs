@@ -18,7 +18,6 @@ namespace UPnP_CP
         //UPnP functions
         void Play();
         void Pause();
-        void Stop();
         void Next();
         void Previous();    
         void SetTransportURI(ITrack track);
@@ -188,17 +187,6 @@ namespace UPnP_CP
         }
 
         /// <summary>
-        /// Calls the UPnP stop command with a simpler prototype
-        /// </summary>
-        public void Stop()
-        {
-            if (_AVTransport != null)
-            {
-                _AVTransport.Stop(_instanceID);
-            }
-        }
-
-        /// <summary>
         /// Calls the UPnP next command with a simpler prototype
         /// </summary>
         public void Next()
@@ -263,12 +251,15 @@ namespace UPnP_CP
         /// <param name="track">The track that should play on the device</param>
         public void SetTransportURI(ITrack track)
         {
-            if (_AVTransport != null)
+            //if (track != null)
             {
-                string Path = track.Protocol + track.DeviceIP + track.Path + track.FileName;
-                string metaData = _xmlWriter.ConvertITrackToXML(new List<ITrack> { track });
+                if (_AVTransport != null & track != null)
+                {
+                    string Path = track.Protocol + track.DeviceIP + track.Path + track.FileName;
+                    string metaData = _xmlWriter.ConvertITrackToXML(new List<ITrack> {track});
 
-                _AVTransport.SetAVTransportURI(0, Path, metaData);
+                    _AVTransport.SetAVTransportURI(0, Path, metaData);
+                }
             }
         }
 
@@ -278,12 +269,15 @@ namespace UPnP_CP
         /// <param name="track">The track htat should be added to the playqueue</param>
         public void SetNextTransportURI(ITrack track)
         {
-            if (_AVTransport != null)
+            if (track != null)
             {
-                string Path = track.Protocol + track.DeviceIP + track.Path + track.FileName;
-                string metaData = _xmlWriter.ConvertITrackToXML(new List<ITrack> { track });
+                if (_AVTransport != null)
+                {
+                    string Path = track.Protocol + track.DeviceIP + track.Path + track.FileName;
+                    string metaData = _xmlWriter.ConvertITrackToXML(new List<ITrack> {track});
 
-                _AVTransport.SetNextAVTransportURI(0, metaData, "");
+                    _AVTransport.SetNextAVTransportURI(0, metaData, "");
+                }
             }
         }
 

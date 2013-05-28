@@ -67,7 +67,6 @@ namespace playerlayout
         {
             btnNext.IsEnabled = false;
             btnPrevious.IsEnabled = false;
-            btnStop.IsEnabled = false;
             btnPlayPause.IsEnabled = false;
             sliderTime.IsEnabled = false;
             sliderVol.IsEnabled = false;
@@ -101,7 +100,6 @@ namespace playerlayout
                 {
                     btnNext.IsEnabled = true;
                     btnPrevious.IsEnabled = true;
-                    btnStop.IsEnabled = true;
                     btnPlayPause.IsEnabled = true;
                     sliderTime.IsEnabled = true;
                     sliderVol.IsEnabled = true;
@@ -129,7 +127,7 @@ namespace playerlayout
         /// <param name="tracks">The list of tracks that is returned from the UPnP device</param>
         private void UpnPSourceOnBrowseResult(object sender, List<ITrack> tracks)
         {
-            if (tracks != null)
+            if (tracks.Count < 0)
             {
                 Dispatcher.BeginInvoke(new Action(() =>
                     {
@@ -298,16 +296,6 @@ namespace playerlayout
         }
 
         /// <summary>
-        /// Sends a UPnP stop command when a user pushes the button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BtnStop_OnClick(object sender, RoutedEventArgs e)
-        {
-            _UPnPSink.Stop();
-        }
-
-        /// <summary>
         /// Sends a UPnP GetIPAddress command when a user pushes the button
         /// </summary>
         /// <param name="sender"></param>
@@ -342,8 +330,11 @@ namespace playerlayout
             var result = dgMusikindex.SelectedItem;
 
             //todo: switch these two
-            //observerHandler.SetNextAVTransportURI((ITrack)result);
-            _UPnPSink.SetTransportURI((ITrack)result);
+            if (result != null)
+            {
+                _UPnPSink.SetTransportURI((ITrack)result);
+                //observerHandler.SetNextAVTransportURI((ITrack)result);
+            }
         }
 
         /// <summary>
@@ -355,7 +346,10 @@ namespace playerlayout
         {
             var result = dgPlayQueue.SelectedItem;
 
-            _UPnPSink.SetTransportURI((ITrack)result);
+            if (result != null)
+            {
+                _UPnPSink.SetTransportURI((ITrack)result);   
+            }
         }
 
         /// <summary>
