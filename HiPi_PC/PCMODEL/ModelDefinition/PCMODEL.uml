@@ -120,6 +120,18 @@
         LastKnownName="HiPi-PC"
         LastKnownLocation="Package_1656.uml" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="99d19b1f-e389-4285-b05d-eaa13695769f"
+        LastKnownName="Stream package"
+        LastKnownLocation="Package_1549.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="003431ae-1547-4037-90cf-192e594552e8"
+        LastKnownName="Synchronizer package"
+        LastKnownLocation="Package_1551.uml" />
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"

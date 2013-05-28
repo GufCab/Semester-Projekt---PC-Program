@@ -69,5 +69,55 @@
         </appliedStereotypesInternal>
       </class>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="d39632df-3e57-49a3-b6f3-f227eec0e2f7"
+        name="ISynchronizer"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="cf635f57-ec81-477f-b267-198da92afdfb"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAik%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FTemplateSync%2Fbin%2FDebug%2FTemplateSync.dll Namespace%3DTemplateSync Type%3DISynchronizer"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="e0ca4b04-15de-4322-8c47-ca2bd953ed82"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a7734281-923a-43ac-99d7-9947658247ea">
+                <propertyInstance
+                  Id="45fb6f8f-93fb-4dbf-8590-ef612b54006d"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a20df847-c704-417a-9316-037782fb1821">
+                <propertyInstance
+                  Id="709f97bb-a5e8-4213-b63a-8c79953ee390"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="69d00956-4607-453d-91b8-0c5783405eb9">
+                <propertyInstance
+                  Id="7eb3a880-745c-418d-8bfa-6187acbaa3d0"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e21711a7-ed07-43b2-81d0-ae06d21ec5a9">
+                <propertyInstance
+                  Id="8bc231d7-7e45-437b-a80c-527d071c5778"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
   </packagedElements>
 </package>
