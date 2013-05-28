@@ -42,7 +42,7 @@ namespace Live555
                     {
                         StartInfo = new ProcessStartInfo
                             {
-                                FileName = "../MediaServer/live555MediaServer",
+                                FileName = "../../MediaServer/live555MediaServer",
                                 UseShellExecute = false,
                                 RedirectStandardOutput = true //,
                                 //CreateNoWindow = true
