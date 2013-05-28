@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="2a5f484d-aa76-4e38-89b7-b6aba48a37be"
+  name="playerlayout"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="c1492e59-5959-4d8d-b4f5-ecaece5034a3"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3Dplayerlayout"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="263c514e-e3d3-4d43-bdf9-cd6e899381ba"
+        name="Settings"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="7d40159f-62a9-4974-9546-d9a53c217013"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMichael O%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2Fplayerlayout%2Fbin%2FDebug%2Fplayerlayout.exe&quot; Namespace%3Dplayerlayout Type%3DSettings"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="a47870bc-a822-4e8a-8010-2dad0ba780cf"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="37747d2d-080e-4f27-a0ef-8fc1f0e1bb16">
+                <propertyInstance
+                  Id="cf5f05a6-e699-4329-9737-1ba0fc903da8"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="181d6a12-074d-4082-b636-bb16fc1a17a1">
+                <propertyInstance
+                  Id="ff11ddaa-2935-487e-9928-452d7f0ae538"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c498e8ec-200c-4987-bb65-73a9e13acf8e">
+                <propertyInstance
+                  Id="c4aa3d42-6197-4b43-9299-ed7a0c822da8"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ca7e8fcf-80ef-459a-9da3-7f0882eb1056">
+                <propertyInstance
+                  Id="833ab0e7-bb64-4493-a5f0-cf45ba16e9fc"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="741495c6-ad02-4882-a52c-e59cc100181a">
+                <propertyInstance
+                  Id="660eb6bf-c257-4ef3-8cdb-288ee7b6814e"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="01cea921-e09b-4077-b6eb-7cfae509fd5c">
+            <interfaceMoniker
+              Id="f5c44917-8a5a-4c74-8246-d49bea075c99"
+              LastKnownName="IComponentConnector"
+              LastKnownLocation="Package9_1820.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="28d0484a-e40c-4704-be2f-e96f2a7592b9"
+            isSubstitutable="false">
+            <classMoniker
+              Id="739fe23d-25b8-4c3e-9468-7580ba90d53b"
+              LastKnownName="Window"
+              LastKnownLocation="Package5_1820.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

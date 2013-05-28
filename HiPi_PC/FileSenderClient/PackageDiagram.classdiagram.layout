@@ -3,7 +3,7 @@
   <logicalClassDesignerModelMoniker Id="1235903a-a45f-414c-b5d2-e0909f40f966" />
   <nestedChildShapes>
     <packageShape Id="6c54080d-cced-4845-b41f-15a3e32edb9f" absoluteBounds="1.875, 1, 5, 5" customColor="255, 249, 230" hideQualifiedName="false">
-      <packageMoniker Id="c6b9575c-23b2-4720-bc48-9e3d1d67f163" LastKnownName="Package1" />
+      <packageMoniker Id="c6b9575c-23b2-4720-bc48-9e3d1d67f163" LastKnownName="FileSenderClient" />
       <nestedChildShapes>
         <classShape Id="aedb18c8-3cf6-4d40-a91e-3da9adb5b386" absoluteBounds="5.125, 2.875, 1.5, 1.9886168446143469" hideQualifiedName="false" increaseHeight="0.18800345897674561" customColor="181, 193, 223">
           <classMoniker Id="cc3abf95-923c-4d1b-9ebc-833a70045a55" LastKnownName="LIB" />
@@ -21,7 +21,7 @@
         </classShape>
       </nestedChildShapes>
     </packageShape>
-    <dependencyConnector edgePoints="[(3.5 : 3.86930842230717); (5.125 : 3.86930842230717)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+    <dependencyConnector edgePoints="[(3.5 : 3.86930842230717); (5.125 : 3.86930842230717)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black">
       <dependencyMoniker Id="d73702d0-d8fd-4aa8-8788-a78b0a9fb282" />
       <relativeChildShapes />
       <nodes>

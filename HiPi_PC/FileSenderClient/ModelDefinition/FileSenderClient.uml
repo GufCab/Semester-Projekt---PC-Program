@@ -39,8 +39,44 @@
     <packageHasNamedElement>
       <packageMoniker
         Id="93bdc2a8-94a5-469c-82b6-1d7da0045b13"
-        LastKnownName="Package1"
+        LastKnownName="FileSenderClient"
         LastKnownLocation="Package5_1653.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="d562edd9-0bcd-43c9-a7c2-b48084d61ac7"
+        LastKnownName="Package2"
+        LastKnownLocation="Package_1801.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="89a7474c-18c1-4a5c-9a59-07d0ab17f9aa"
+        LastKnownName="FileSenderClient1"
+        LastKnownLocation="Package_1819.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="ae58108d-3b72-4b13-a451-fc0900918572"
+        LastKnownName="GUI"
+        LastKnownLocation="Package1_1819.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="2a5f484d-aa76-4e38-89b7-b6aba48a37be"
+        LastKnownName="playerlayout"
+        LastKnownLocation="Package_1820.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="c651f294-a61b-436a-865d-504b378b14ad"
+        LastKnownName="UPnP_CP"
+        LastKnownLocation="Package1_1820.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="106b9dc6-d095-4d47-a94b-fad877f6ebf5"
+        LastKnownName="Containers"
+        LastKnownLocation="Package4_1820.uml" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
