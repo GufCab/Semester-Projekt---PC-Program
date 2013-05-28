@@ -65,7 +65,7 @@ namespace XMLHandler
                 XmlElement res = doc.CreateElement("res");
                 item.AppendChild(res);
                 res.SetAttribute("duration", track.Duration);
-                res.InnerText = track.Protocol + track.DeviceIP + "/" + track.Path + "/" + track.FileName;
+                res.InnerText = track.Protocol + track.DeviceIP + track.Path + track.FileName;
             }
 
             //for debug

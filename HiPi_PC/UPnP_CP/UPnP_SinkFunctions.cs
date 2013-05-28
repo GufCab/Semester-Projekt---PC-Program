@@ -89,7 +89,7 @@ namespace UPnP_CP
             _RenderingControl.OnResult_GetPosition += RenderingControlOnOnResultGetPosition;
             
             _AVTransport.OnStateVariable_TransportState += AvTransportOnOnStateVariableTransportState;
-            _AVTransport._subscribe(30);
+            //_AVTransport._subscribe(30);
             
             subscribeTimer.Elapsed += new ElapsedEventHandler(timerEventFunc);
             subscribeTimer.Interval = 30000;
@@ -114,7 +114,7 @@ namespace UPnP_CP
         /// <param name="elapsedEventArgs"></param>
         private void timerEventFunc(object sender, ElapsedEventArgs elapsedEventArgs)
         {
-            _AVTransport._subscribe(30);
+            //_AVTransport._subscribe(30);
         }
         
         /// <summary>
