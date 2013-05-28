@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -40,6 +41,8 @@ namespace playerlayout
         private ISinkFunctions _UPnPSink = null;
         private ISourceFunctions _UPnPSource = null;
 
+        private System.Timers.Timer _sliderTimer = new System.Timers.Timer();
+
         /// <summary>
         /// MainWindow Codebehind
         /// </summary>
@@ -58,6 +61,14 @@ namespace playerlayout
             dgMusikindex.ItemsSource = musikindex;
             dgPlayQueue.IsReadOnly = true;
             dgMusikindex.IsReadOnly = true;
+
+            _sliderTimer.Interval = 1000;
+            _sliderTimer.Elapsed += new ElapsedEventHandler(timerEventFunc);
+        }
+
+        private void timerEventFunc(object sender, ElapsedEventArgs elapsedEventArgs)
+        {
+            ++sliderTime.Value;
         }
 
         /// <summary>
@@ -127,26 +138,26 @@ namespace playerlayout
         /// <param name="tracks">The list of tracks that is returned from the UPnP device</param>
         private void UpnPSourceOnBrowseResult(object sender, List<ITrack> tracks)
         {
-            if (tracks.Count < 0)
+            if (tracks.Count > 0)
             {
                 Dispatcher.BeginInvoke(new Action(() =>
                     {
                         if (tracks[0].ParentID == "all")
-                        {
-                            playqueue.Clear();
-
-                            foreach (var track in tracks)
-                            {
-                                playqueue.Add(track);
-                            }
-                        }
-                        else if (tracks[0].ParentID == "playqueue")
                         {
                             musikindex.Clear();
 
                             foreach (var track in tracks)
                             {
                                 musikindex.Add(track);
+                            }
+                        }
+                        else if (tracks[0].ParentID == "playqueue")
+                        {
+                            playqueue.Clear();
+
+                            foreach (var track in tracks)
+                            {
+                                playqueue.Add(track);
                             }
                         }
                     }));
@@ -208,9 +219,11 @@ namespace playerlayout
         {
             Dispatcher.BeginInvoke(new Action(() =>
             {
-                sliderTime.Value = eventArgsContainer[0];
                 sliderTime.Maximum = eventArgsContainer[1];
+                sliderTime.Value = eventArgsContainer[0];
 
+                //_sliderTimer.Interval = eventArgsContainer[1]*1000;
+                //_sliderTimer.Start();
             }));
         }
 
@@ -307,7 +320,7 @@ namespace playerlayout
 
         private void SyncButtonClick(object sender, RoutedEventArgs e)
         {
-            //settingsw.Sync.SyncPiDb();
+            settingsw.Sync.SyncPiDb();
         }
 
         /// <summary>
@@ -332,8 +345,9 @@ namespace playerlayout
             //todo: switch these two
             if (result != null)
             {
-                _UPnPSink.SetTransportURI((ITrack)result);
-                //observerHandler.SetNextAVTransportURI((ITrack)result);
+                //_UPnPSink.SetTransportURI((ITrack)result);
+                _UPnPSink.SetNextTransportURI((ITrack)result);
+                _UPnPSource.Browse("playqueue");
             }
         }
 
@@ -388,7 +402,9 @@ namespace playerlayout
 
         private void SliderTime_OnPreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            _UPnPSink.SetPosition((ushort) Convert.ToInt16(sliderTime.Value));
+            var time = sliderTime.Value;
+
+            _UPnPSink.SetPosition((ushort) Convert.ToInt16(time));
         }
     }
 }

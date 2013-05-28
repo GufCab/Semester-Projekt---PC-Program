@@ -47,6 +47,8 @@ namespace UPnP_CP
             _ContentDirectory = CD;
 
             _ContentDirectory.OnResult_Browse += ContentDirectoryOnOnResultBrowse;
+
+            Startup();
         }
 
         public void Startup()
