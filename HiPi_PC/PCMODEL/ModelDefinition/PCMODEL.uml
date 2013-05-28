@@ -117,7 +117,7 @@
     <packageHasNamedElement>
       <packageMoniker
         Id="853909ab-e05a-4edd-b817-5092e235077a"
-        LastKnownName="PC Package1"
+        LastKnownName="HiPi-PC"
         LastKnownLocation="Package_1656.uml" />
     </packageHasNamedElement>
   </packagedElements>

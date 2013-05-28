@@ -21,6 +21,14 @@
         LastKnownName="DB Package"
         LastKnownLocation="Package5_1656.uml" />
     </packageImport>
+    <packageImport
+      Id="16b22739-43a5-4232-8e17-e558ff173d4f"
+      visibility="Public">
+      <packageMoniker
+        Id="488ae258-6bfe-4e1f-81e9-0f32dbecdf21"
+        LastKnownName="Live555Wrapper"
+        LastKnownLocation="Package_1703.uml" />
+    </packageImport>
   </importedPackagesInternal>
   <packagedElements>
     <packageHasNamedElement>

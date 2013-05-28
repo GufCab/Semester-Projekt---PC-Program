@@ -2,7 +2,7 @@
 <package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="853909ab-e05a-4edd-b817-5092e235077a"
-  name="PC Package1" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  name="HiPi-PC" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
   <packagedElements>
     <packageHasNamedElement>
       <packageMoniker
@@ -658,6 +658,12 @@
         Id="ec7401a3-4806-44bb-90e4-10ceb4666aea"
         LastKnownName="Fileindex Package"
         LastKnownLocation="Package6_1656.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="488ae258-6bfe-4e1f-81e9-0f32dbecdf21"
+        LastKnownName="Live555Wrapper"
+        LastKnownLocation="Package_1703.uml" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

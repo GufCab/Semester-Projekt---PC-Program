@@ -3033,5 +3033,11 @@
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="1b484235-988c-44da-a3f0-e21bb1dd76cc"
+        LastKnownName="Package1"
+        LastKnownLocation="Package_1705.uml" />
+    </packageHasNamedElement>
   </packagedElements>
 </package>
