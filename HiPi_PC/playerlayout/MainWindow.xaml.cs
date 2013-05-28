@@ -347,6 +347,7 @@ namespace playerlayout
             {
                 //_UPnPSink.SetTransportURI((ITrack)result);
                 _UPnPSink.SetNextTransportURI((ITrack)result);
+                Thread.Sleep(500);
                 _UPnPSource.Browse("playqueue");
             }
         }
