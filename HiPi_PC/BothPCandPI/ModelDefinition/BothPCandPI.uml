@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="c62a75f1-af1b-4083-b017-afc1bf2ab3cd"
+  name="BothPCandPI" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="818401cd-59f2-451d-aabf-4970169732c5">
+      <body>
+UPnP runs an an (for us) unknown amount of threads</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="6d186566-b694-4b9b-89c7-65dee0fc11d4"
+        name="Threading"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="d3cf4d2f-82e8-4535-a6b1-74cb12e7c784"
+            isSubstitutable="false">
+            <classMoniker
+              Id="afde366d-196e-41a6-98a6-d0151a8b4089"
+              LastKnownName="Live555"
+              LastKnownLocation="BothPCandPI.uml" />
+          </generalization>
+          <generalization
+            Id="e0f3b540-f721-46b2-b560-cd2c68a59a47"
+            isSubstitutable="false">
+            <classMoniker
+              Id="1254df80-a263-4e24-89e7-0df2e12383ab"
+              LastKnownName="MySQL database"
+              LastKnownLocation="BothPCandPI.uml" />
+          </generalization>
+          <generalization
+            Id="c1d1b964-c2a3-4275-af65-60f00429fbd2"
+            isSubstitutable="false">
+            <classMoniker
+              Id="08996b31-f9c6-47ee-a97b-ef9254e82059"
+              LastKnownName="GUI"
+              LastKnownLocation="BothPCandPI.uml" />
+          </generalization>
+          <generalization
+            Id="1a9aaa67-7c04-4523-9dd6-c37ad6a95644"
+            isSubstitutable="false">
+            <classMoniker
+              Id="3f9bcdf3-45cd-458e-a780-4eb366dd8a34"
+              LastKnownName="FileSenderClient"
+              LastKnownLocation="BothPCandPI.uml" />
+          </generalization>
+          <generalization
+            Id="c6abff56-bd31-4c67-b914-1cddd885499c"
+            isSubstitutable="false">
+            <classMoniker
+              Id="f96a29ea-ba56-485a-a6c5-cc22cd45f03e"
+              LastKnownName="UPnP"
+              LastKnownLocation="BothPCandPI.uml" />
+          </generalization>
+          <generalization
+            Id="2460d309-5c72-4e7a-8d3c-b2ce18dcd046"
+            isSubstitutable="false">
+            <classMoniker
+              Id="4951ea30-4ba1-44b5-bdab-27397f8bd064"
+              LastKnownName="Intel UPnP tools"
+              LastKnownLocation="BothPCandPI.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="afde366d-196e-41a6-98a6-d0151a8b4089"
+        name="Live555"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="1254df80-a263-4e24-89e7-0df2e12383ab"
+        name="MySQL database"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="08996b31-f9c6-47ee-a97b-ef9254e82059"
+        name="GUI"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="3f9bcdf3-45cd-458e-a780-4eb366dd8a34"
+        name="FileSenderClient"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f96a29ea-ba56-485a-a6c5-cc22cd45f03e"
+        name="UPnP"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4951ea30-4ba1-44b5-bdab-27397f8bd064"
+        name="Intel UPnP tools"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

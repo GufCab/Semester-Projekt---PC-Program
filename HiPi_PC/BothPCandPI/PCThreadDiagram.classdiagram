@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="1518230f-88fb-44c9-b4d6-7f9b483118ab" name="ThreadDiagram" linkedPackageId="c85a02d9-ba99-4721-8259-978a70cc5e0c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="00f17e37-01d5-426b-be3a-912fccaf0ba6">
+      <elementDefinition Id="818401cd-59f2-451d-aabf-4970169732c5" />
+      <body>
+UPnP runs an an (for us) unknown amount of threads</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="2bd77df2-1a70-4591-b148-6da5ae99855d">
+      <profileInstance Id="19359082-ec2b-4263-937d-715d2b4f1eb9" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="a69a6182-e91c-46e8-ab24-a420dcc3bcf0">
+      <profileInstance Id="28b77c9c-ac09-40a1-b7b9-bca9624608f9" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="866c7c55-09c5-41b6-918e-9ac458296f2d" name="Threading" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6d186566-b694-4b9b-89c7-65dee0fc11d4" />
+        <generalsInternal>
+          <generalization Id="3b9d265d-bf8a-4c24-810b-995c6d67bcb1" isSubstitutable="false">
+            <classMoniker Id="39700a72-a569-43fe-91e2-2c46e2d327a5" LastKnownName="Live555" />
+            <elementDefinition Id="d3cf4d2f-82e8-4535-a6b1-74cb12e7c784" />
+          </generalization>
+          <generalization Id="f38ca573-42c0-4184-941e-e761d770cac7" isSubstitutable="false">
+            <classMoniker Id="09046885-d844-4e8a-8ce6-1ca403afd416" LastKnownName="GUI" />
+            <elementDefinition Id="c1d1b964-c2a3-4275-af65-60f00429fbd2" />
+          </generalization>
+          <generalization Id="14285345-e034-4084-a6b3-27f7aa84c4df" isSubstitutable="false">
+            <classMoniker Id="956b89f3-6037-4d9e-aaef-1ecffa149fa3" LastKnownName="FileSenderClient" />
+            <elementDefinition Id="1a9aaa67-7c04-4523-9dd6-c37ad6a95644" />
+          </generalization>
+          <generalization Id="843539fe-5e13-4b29-9176-e69ff0f53483" isSubstitutable="false">
+            <classMoniker Id="dff51c06-ccd8-4984-88a8-8600bfc10bd9" LastKnownName="UPnP" />
+            <elementDefinition Id="c6abff56-bd31-4c67-b914-1cddd885499c" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="39700a72-a569-43fe-91e2-2c46e2d327a5" name="Live555" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="afde366d-196e-41a6-98a6-d0151a8b4089" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="09046885-d844-4e8a-8ce6-1ca403afd416" name="GUI" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="08996b31-f9c6-47ee-a97b-ef9254e82059" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="956b89f3-6037-4d9e-aaef-1ecffa149fa3" name="FileSenderClient" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3f9bcdf3-45cd-458e-a780-4eb366dd8a34" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="dff51c06-ccd8-4984-88a8-8600bfc10bd9" name="UPnP" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f96a29ea-ba56-485a-a6c5-cc22cd45f03e" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="c85a02d9-ba99-4721-8259-978a70cc5e0c" name="BothPCandPI">
+    <elementDefinition Id="c62a75f1-af1b-4083-b017-afc1bf2ab3cd" />
+  </package>
+</logicalClassDesignerModel>
