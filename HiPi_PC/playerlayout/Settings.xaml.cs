@@ -204,7 +204,7 @@ namespace playerlayout
             Sync.SyncPiDb();
         }
 
-        private void Window_Closed_1(object sender, EventArgs e)
+        private void Window_Closed_2(object sender, EventArgs e)
         {
             save();
         }

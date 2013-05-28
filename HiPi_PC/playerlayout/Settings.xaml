@@ -6,7 +6,7 @@
         Background="{DynamicResource appBackground}"
         
         xmlns:c="CodeMapNS" 
-        xmlns:constant="clr-namespace:constant">
+        xmlns:constant="clr-namespace:constant" Closed="Window_Closed_2">
     <Grid>
         
         <Grid.ColumnDefinitions>
