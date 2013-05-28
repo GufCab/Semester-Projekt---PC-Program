@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="59d01c41-7ddf-4366-88d1-0f0f4b0ae98b" name="ThreadingDiagram" linkedPackageId="d3251531-13df-4f1e-971d-14d2ee0da8c7" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="6b1bd99c-948c-4b43-896e-f66b14832b5f">
+      <profileInstance Id="97f729be-5eb8-482b-b122-b06f88c3b10d" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="4e59536c-f402-4634-9454-ce4878cb4250">
+      <profileInstance Id="1cd24405-8715-48b8-be85-15e473252c7a" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d2519d11-fc07-4d61-8a32-2ceeb06d7127" name="Threading" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="19895c0f-c817-4c11-a562-64f378efe944" />
+        <generalsInternal>
+          <generalization Id="fb7a5f04-e17a-4cca-bfc3-6f9bf46bcfb3" isSubstitutable="false">
+            <classMoniker Id="df9633f1-6e86-47c4-8758-db0ea4eb176d" LastKnownName="Live555" />
+            <elementDefinition Id="e7756e87-9d43-4fde-92b8-2f0b56d0a20c" />
+          </generalization>
+          <generalization Id="91439d96-feb8-4382-b490-2fb290affc0a" isSubstitutable="false">
+            <classMoniker Id="dd852af3-5578-4455-a693-55cf0c43d3c4" LastKnownName="GUI" />
+            <elementDefinition Id="0b6357a7-5f6c-405f-9f3b-7d785ad0a7d4" />
+          </generalization>
+          <generalization Id="41bb7f27-518b-4037-aa6d-b7d3cf58c988" isSubstitutable="false">
+            <classMoniker Id="7e633368-3f9a-4d5a-ab69-702e42977c4d" LastKnownName="FileSenderClient" />
+            <elementDefinition Id="8c9520c4-a0cd-4b32-9e82-8646b2572941" />
+          </generalization>
+          <generalization Id="47bc0024-a109-459a-8c8a-3fb5df2f1164" isSubstitutable="false">
+            <classMoniker Id="4c9fb330-efb0-41b9-9ba7-c27358c58722" LastKnownName="UPnP" />
+            <elementDefinition Id="28e2154e-fa1d-4199-9445-99b4566c7234" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="df9633f1-6e86-47c4-8758-db0ea4eb176d" name="Live555" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7820b3df-18a4-4ab2-a32b-d33ea9674b52" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="dd852af3-5578-4455-a693-55cf0c43d3c4" name="GUI" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d3389621-3457-4420-88e8-65b2d07ebc12" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="7e633368-3f9a-4d5a-ab69-702e42977c4d" name="FileSenderClient" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c48ad487-e150-4a86-9de6-5a3fd5e2d828" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4c9fb330-efb0-41b9-9ba7-c27358c58722" name="UPnP" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a804b381-0438-4a2d-af38-1f4a1aea968b" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="d3251531-13df-4f1e-971d-14d2ee0da8c7" name="BothPCandPI">
+    <elementDefinition Id="c62a75f1-af1b-4083-b017-afc1bf2ab3cd" />
+  </package>
+</logicalClassDesignerModel>

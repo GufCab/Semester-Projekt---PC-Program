@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="07a22884-9743-48bb-886a-ddbd87ddd875" name="Threading" linkedPackageId="84682dbc-361b-4fec-bd43-28f2367435b6" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="d9a1b8b8-6824-4bc4-b04e-02b1a2b134d9">
+      <elementDefinition Id="5305dd48-de25-441e-aff2-ce9feaa0cf52" />
+      <body>
+Main starts MPlayer as another process</body>
+      <annotatedElements>
+        <classMoniker Id="f5708fa8-6bcc-4030-b556-10aa46cd750b" LastKnownName="Main" />
+        <classMoniker Id="98b0375e-7a7e-45ee-a6fb-0522ae5b8a14" LastKnownName="MPlayer" />
+      </annotatedElements>
+    </comment>
+    <comment Id="7cf43024-def4-4bee-a2ee-7d7fd958e509">
+      <elementDefinition Id="960404f9-1712-409d-989f-285fa178c092" />
+      <body>
+GUI is main thread</body>
+      <annotatedElements>
+        <classMoniker Id="f166b0bb-44f2-4622-a90b-ffe78419299c" LastKnownName="GUI" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="905975e2-1121-42d9-86a7-f8a48caa13a8">
+      <profileInstance Id="8d6bee36-daa3-462a-b7aa-72a9c9b53a22" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="273487fe-9e2e-42bf-a2f8-65014a35fe57">
+      <profileInstance Id="148317d1-7c03-4683-83fc-4d58436c5b4a" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4daad64d-e4a4-4338-aa89-5c904a60592d" name="Live555" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5410eee9-64bf-4f5b-9a25-24379778b1b1" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f166b0bb-44f2-4622-a90b-ffe78419299c" name="GUI" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="93c4a695-03df-4152-8137-3fbc40322454" />
+        <targetEnds>
+          <association Id="a34bc8bf-7e81-4139-baff-33a2fd0519a8" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="4daad64d-e4a4-4338-aa89-5c904a60592d" LastKnownName="Live555" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f7b17e37-df39-44c3-9aca-ccb21e82fbb6" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3a37747e-bc0a-4e66-9f26-f69bdbcf543c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="75a7be06-8511-4e4c-ac6b-76b1f7b00f8d" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="691e0b3c-bb33-48c4-bfd7-cbe2bd79e355" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3a18cda5-22b4-4238-a420-76314f188cb8" />
+          </association>
+          <association Id="4c5337a3-0fbc-494b-acb5-0413d06eeeee" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="108f38d1-0e44-4f67-bb69-27b54543aca8" LastKnownName="FileSenderClient" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="392b5ee7-5882-4fc3-9eba-0de115161a82" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b3256cf3-57f0-4b61-9525-216846079621" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="98f1a1e7-b6a2-453f-8b35-8761be710ac2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="33c50c3d-a908-4614-b2f0-d2676ff42d0e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2d12dbc0-f8d8-44d0-8ad0-fd5dce87b455" />
+          </association>
+          <association Id="37d5b48c-0fab-403e-8346-98e8bb2f5198" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="94fce2e0-d85f-4600-977b-87da77b53368" LastKnownName="UPnP" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6d30f910-bf71-4b7f-a4bb-6a94d0dd16e1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="6c3bc1cf-a202-4b5d-9cb7-e6ebc7064581" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a6da00c8-5790-4dd4-97b1-0c190dfb1a41" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1b6588fe-f342-4fc1-96bf-876fe5b8caab" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1f31f32c-2a84-4ae6-9938-fa7aa14a1e98" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="108f38d1-0e44-4f67-bb69-27b54543aca8" name="FileSenderClient" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d4a1af31-d8fe-4b18-a19a-65418f005b49" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="94fce2e0-d85f-4600-977b-87da77b53368" name="UPnP" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e93ee48f-df70-4958-a127-89e259609dd6" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="525fd536-ecf8-48f9-8925-5415b5f7efb3" name="PC Threading" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7cd47930-532a-424a-951b-5dc093cdaf11" />
+        <suppliersInternal>
+          <dependency Id="ca0a3cff-b900-46a8-9454-63db46fe7c1b">
+            <classMoniker Id="f166b0bb-44f2-4622-a90b-ffe78419299c" LastKnownName="GUI" />
+            <elementDefinition Id="9563a43d-2bfd-403c-a8d5-a6d9e9b882e5" />
+          </dependency>
+        </suppliersInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9bce8cc1-f734-45eb-8fa9-d3b003464f7f" name="TCP server" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b8125330-1ddd-49a1-b75f-0cef45778072" />
+        <targetEnds>
+          <association Id="cd23dc0d-2454-4af2-9623-7eb0de6eabb9" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="9f890c1f-b038-4eb1-b65e-fa2f26335ed2" LastKnownName="TCP connection #*" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c9d0cccc-497a-4964-b99f-5bd28ffe22a9" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="63f019c2-e983-400f-b408-7ed0b9800a7a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7b8c7c3c-2caf-4d85-ab77-8bc8d4be8894" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="9a3c4850-3b99-43e2-b0ad-eb3742a7e4a2" name="Lower" value="0">
+                      <elementDefinition Id="21312e79-268b-4658-93cd-0a49e58233e4" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="d4ac2769-8888-4227-9823-7776abfd3b9c" name="Upper" value="*">
+                      <elementDefinition Id="5994f8a5-c2eb-4174-a0dc-b8e8313504cd" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="c6ae9278-15d0-45ce-8151-832e14c1d65c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9d32d523-f440-40ee-92ca-3060f229a41d" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f2e9d15b-884e-414f-b97b-36a2f6c52217" name="UDP server" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="670db761-837d-4fd7-9616-61e7364a8c77" />
+        <targetEnds>
+          <association Id="f36ca12a-5eec-4ef9-bc19-dbfa90875f69" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="1985a919-8dd6-4ef8-b31a-d8d0b5da85fe" LastKnownName="UDP connection #*" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="87a272d8-3c52-484f-8b19-31e4679705c6" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="db87b399-e58e-4385-8f3a-cf20e057f037" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="90c0446e-5381-4c84-a7d8-9eaa7797b751" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="a8086ae1-f7ad-475d-ac7c-a4dd1f133c9e" name="Lower" value="0">
+                      <elementDefinition Id="2d96aecc-3a54-4058-aca1-b87b738ba754" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="7f589ba4-add2-4f54-b743-316334f0d64c" name="Upper" value="*">
+                      <elementDefinition Id="4c113cfc-8fb8-4c25-9684-e50feea1160f" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="1a345a6a-630a-4f52-951e-3fe35ff8c4b8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="13f5cc9e-4f7b-498c-8d9e-746f0b676317" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="34d4586d-4936-4933-bb47-5703333ad0f7" name="FileSenderServer" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5f8a2c9e-d58d-485d-b120-a52fe17cc56f" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9f890c1f-b038-4eb1-b65e-fa2f26335ed2" name="TCP connection #*" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="dcb23e4a-f4bb-4e91-9e64-0fae934a8d1d" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1985a919-8dd6-4ef8-b31a-d8d0b5da85fe" name="UDP connection #*" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4d4b0470-735c-4887-9de1-e4040fb824e2" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="23cfd3a8-2b36-4531-81bb-4c24469d4955" name="NotifyThread" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ec0ddbc0-1c68-4434-85ef-3992eaf6f183" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f5708fa8-6bcc-4030-b556-10aa46cd750b" name="Main" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="878418bb-0846-44bf-ad1d-f871f538ecc2" />
+        <suppliersInternal>
+          <dependency Id="a693054d-49d7-40e7-8178-f2aad24a256c">
+            <classMoniker Id="98b0375e-7a7e-45ee-a6fb-0522ae5b8a14" LastKnownName="MPlayer" />
+            <elementDefinition Id="a51f32bd-5d93-4631-8087-c75531e019c7" />
+          </dependency>
+        </suppliersInternal>
+        <targetEnds>
+          <association Id="ac41a363-3362-429a-a4b2-b14e9f844adc" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="9bce8cc1-f734-45eb-8fa9-d3b003464f7f" LastKnownName="TCP server" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7a011200-ce96-4383-94de-ec73146c8796" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c4a6f1a2-26e9-4cc1-ada3-1e46d383cd0d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c23869a4-d0a1-4bb6-ab70-e07c74998f27" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="15670772-98fd-4012-8447-0e8770e46f0e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="5bf493df-d603-45f8-9f75-4a7b053d88c5" />
+          </association>
+          <association Id="6e1da74d-cb35-492e-9bc9-eda6101a1885" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="f2e9d15b-884e-414f-b97b-36a2f6c52217" LastKnownName="UDP server" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8d687097-033d-48e2-84cb-138a38dde394" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="98b149bd-84b3-4a20-8eb5-457715510710" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="13a5d92b-8538-43d3-bfa1-8d845742dfbf" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f2bbfaf6-dc1a-4eab-b433-d15bafe520a4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1127db8b-709b-4f52-8494-c3958cbf9448" />
+          </association>
+          <association Id="30168037-9154-40e5-b2a4-364fa9658ca6" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="34d4586d-4936-4933-bb47-5703333ad0f7" LastKnownName="FileSenderServer" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="98580759-a9d2-457c-99e7-fccc74281a98" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c3f8a4d9-7f17-4bd5-bc96-cb02ba209ce1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e030f4ad-d488-4c07-ad2c-53ff1d9582ae" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4602d8f0-9633-47cc-8d89-0c83b314f6a2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="fce31467-c36b-4cfd-b984-71f459dda34e" />
+          </association>
+          <association Id="1b7dafa1-6863-4fb4-9f0d-15faaeeed6cb" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="23cfd3a8-2b36-4531-81bb-4c24469d4955" LastKnownName="NotifyThread" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d61600f4-fb05-44c1-bb52-345be0d8a11a" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0b63d578-98e8-43bf-a3e2-a4d612e6485d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="88844a89-708f-4e1f-b70e-c51ef62fd8f1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="45ae5c45-83b2-4872-9526-dcc154d83050" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9f67989d-d067-4ec9-a611-3893825e4c9d" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="98b0375e-7a7e-45ee-a6fb-0522ae5b8a14" name="MPlayer" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b3fdfa94-989e-424e-a80f-c02f5091a645" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c63d6c04-a606-4c41-9077-a9228d59695e" name="Pi Threading" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="660dfd04-5737-47c7-9fc0-eb594708a528" />
+        <suppliersInternal>
+          <dependency Id="26447e06-1cf4-477a-b603-4fd2eea736ea">
+            <classMoniker Id="f5708fa8-6bcc-4030-b556-10aa46cd750b" LastKnownName="Main" />
+            <elementDefinition Id="4e1993e5-bdf6-4d69-b8c4-3891af88a8eb" />
+          </dependency>
+        </suppliersInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="84682dbc-361b-4fec-bd43-28f2367435b6" name="ThreadingDiagram">
+    <elementDefinition Id="641de230-218b-4a68-b5bb-0afdc30fd4f2" />
+  </package>
+</logicalClassDesignerModel>

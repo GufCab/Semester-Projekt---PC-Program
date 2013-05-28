@@ -132,6 +132,81 @@ UPnP runs an an (for us) unknown amount of threads</body>
         isLeaf="false"
         isActiveClass="false" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="19895c0f-c817-4c11-a562-64f378efe944"
+        name="Threading"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="e7756e87-9d43-4fde-92b8-2f0b56d0a20c"
+            isSubstitutable="false">
+            <classMoniker
+              Id="7820b3df-18a4-4ab2-a32b-d33ea9674b52"
+              LastKnownName="Live555"
+              LastKnownLocation="BothPCandPI.uml" />
+          </generalization>
+          <generalization
+            Id="0b6357a7-5f6c-405f-9f3b-7d785ad0a7d4"
+            isSubstitutable="false">
+            <classMoniker
+              Id="d3389621-3457-4420-88e8-65b2d07ebc12"
+              LastKnownName="GUI"
+              LastKnownLocation="BothPCandPI.uml" />
+          </generalization>
+          <generalization
+            Id="8c9520c4-a0cd-4b32-9e82-8646b2572941"
+            isSubstitutable="false">
+            <classMoniker
+              Id="c48ad487-e150-4a86-9de6-5a3fd5e2d828"
+              LastKnownName="FileSenderClient"
+              LastKnownLocation="BothPCandPI.uml" />
+          </generalization>
+          <generalization
+            Id="28e2154e-fa1d-4199-9445-99b4566c7234"
+            isSubstitutable="false">
+            <classMoniker
+              Id="a804b381-0438-4a2d-af38-1f4a1aea968b"
+              LastKnownName="UPnP"
+              LastKnownLocation="BothPCandPI.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7820b3df-18a4-4ab2-a32b-d33ea9674b52"
+        name="Live555"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d3389621-3457-4420-88e8-65b2d07ebc12"
+        name="GUI"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c48ad487-e150-4a86-9de6-5a3fd5e2d828"
+        name="FileSenderClient"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a804b381-0438-4a2d-af38-1f4a1aea968b"
+        name="UPnP"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"
