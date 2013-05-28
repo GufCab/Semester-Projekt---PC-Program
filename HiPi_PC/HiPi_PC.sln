@@ -37,6 +37,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Diagrams", "Diagrams", "{50
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "FileSenderClient", "FileSenderClient\FileSenderClient.modelproj", "{57775F37-3657-4F8C-A23F-5F9A46430FEE}"
 EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "5.3UseCaseRealiseringger", "5.3UseCaseRealiseringger\5.3UseCaseRealiseringger.modelproj", "{83DF3847-352A-48E8-B7FA-15C76BD732E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -149,6 +151,12 @@ Global
 		{57775F37-3657-4F8C-A23F-5F9A46430FEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57775F37-3657-4F8C-A23F-5F9A46430FEE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{57775F37-3657-4F8C-A23F-5F9A46430FEE}.Release|x64.ActiveCfg = Release|Any CPU
+		{83DF3847-352A-48E8-B7FA-15C76BD732E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83DF3847-352A-48E8-B7FA-15C76BD732E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83DF3847-352A-48E8-B7FA-15C76BD732E5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{83DF3847-352A-48E8-B7FA-15C76BD732E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83DF3847-352A-48E8-B7FA-15C76BD732E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83DF3847-352A-48E8-B7FA-15C76BD732E5}.Release|x64.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -156,5 +164,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E8652035-C0B4-4A3D-9777-C34FCE13DCBC} = {50CA2F72-6C90-412E-9970-B4CA23F93148}
 		{57775F37-3657-4F8C-A23F-5F9A46430FEE} = {50CA2F72-6C90-412E-9970-B4CA23F93148}
+		{83DF3847-352A-48E8-B7FA-15C76BD732E5} = {50CA2F72-6C90-412E-9970-B4CA23F93148}
 	EndGlobalSection
 EndGlobal
