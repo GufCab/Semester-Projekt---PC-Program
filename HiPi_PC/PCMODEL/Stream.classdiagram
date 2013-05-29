@@ -1,25 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="f70733af-76ef-4a34-bcf0-4208deb3f50b" name="Stream" linkedPackageId="d1778c93-f430-4a81-942b-4ac3831af330" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="781cdd06-35a1-43af-8165-6425f0d90ede">
-      <profileInstance Id="af801e58-db31-483c-9df4-9545c1f9d3c1" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="ac2daac6-1687-4d67-b33a-aebb7a99e084">
-      <profileInstance Id="85c01658-9bac-4248-b4b8-4eeced6f89cf" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="8e1d6255-bdcd-4ede-bd0f-f0ce7bd6e63a">
-      <profileInstance Id="e49a7d1a-c775-4b8c-83a3-0ed35690047f" name="CSharpProfile">
-        <elementDefinition Id="c605196a-dd5b-4853-a663-3287513a1e74" />
-      </profileInstance>
-      <elementDefinition Id="136f395b-c1fc-4d8e-a84b-c4d15bd08a6d" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <packageHasNamedElement>
       <referencedType Id="fe7b4424-9931-495b-965f-cdfe6ffe1cb2" name="Process" isAbstract="false" isLeaf="false" cachedFullName="PCMODEL::System::Diagnostics::Process">
@@ -1066,5 +1046,25 @@
   </packagedElements>
   <package Id="d1778c93-f430-4a81-942b-4ac3831af330" name="PCMODEL">
     <elementDefinition Id="a2ce75b7-6716-4031-b2a2-11e1a15293b5" />
+    <profileInstances>
+      <packageHasProfileInstances Id="781cdd06-35a1-43af-8165-6425f0d90ede">
+        <profileInstance Id="af801e58-db31-483c-9df4-9545c1f9d3c1" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="ac2daac6-1687-4d67-b33a-aebb7a99e084">
+        <profileInstance Id="85c01658-9bac-4248-b4b8-4eeced6f89cf" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="8e1d6255-bdcd-4ede-bd0f-f0ce7bd6e63a">
+        <profileInstance Id="e49a7d1a-c775-4b8c-83a3-0ed35690047f" name="CSharpProfile">
+          <elementDefinition Id="c605196a-dd5b-4853-a663-3287513a1e74" />
+        </profileInstance>
+        <elementDefinition Id="136f395b-c1fc-4d8e-a84b-c4d15bd08a6d" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

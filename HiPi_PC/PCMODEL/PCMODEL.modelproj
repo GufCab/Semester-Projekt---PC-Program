@@ -32,6 +32,12 @@
     <Content Include="ModelDefinition\Package10_1621.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package1_1207.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_1307.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package1_1621.uml">
       <SubType>Content</SubType>
     </Content>
@@ -56,6 +62,9 @@
     <Content Include="ModelDefinition\Package1_2030.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package2_1307.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package2_1621.uml">
       <SubType>Content</SubType>
     </Content>
@@ -71,6 +80,9 @@
     <Content Include="ModelDefinition\Package2_1658.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package3_1307.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package3_1621.uml">
       <SubType>Content</SubType>
     </Content>
@@ -80,6 +92,9 @@
     <Content Include="ModelDefinition\Package3_1658.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package4_1307.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package4_1621.uml">
       <SubType>Content</SubType>
     </Content>
@@ -87,6 +102,9 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package4_1658.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package5_1307.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package5_1621.uml">
@@ -114,6 +132,24 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package_0019.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1206.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1207.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1209.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1306.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1307.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1309.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package_1549.uml">
@@ -198,12 +234,26 @@
       <SubType>Content</SubType>
       <DependentUpon>PC.classdiagram</DependentUpon>
     </Content>
+    <Content Include="play.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="play.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>play.classdiagram</DependentUpon>
+    </Content>
     <Content Include="Stream.classdiagram">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Stream.classdiagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>Stream.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="SuncDiagram.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="SuncDiagram.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>SuncDiagram.classdiagram</DependentUpon>
     </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\PCMODEL.uml">

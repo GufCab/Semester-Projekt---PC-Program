@@ -1,13 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
-  Id="aa5a82f3-b0c4-43c2-a50d-0e8ee364799b"
-  name="Live555"
-  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
-  <referencesInternal>
-    <reference
-      Id="a4b2c330-bc77-4b64-9841-78dfaeda444a"
-      handle="viewcode://./CodeSchema_Namespace?Namespace%3DLive555"
-      tag="ViewCode" />
-  </referencesInternal>
+  Id="89dc2f01-7b4f-4381-87bf-6260a3767015"
+  name="Intel" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="5c1e9d6b-8ba6-4ee8-be8b-84f218b6a1ec"
+        name="UPnP.dll"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+  </packagedElements>
 </package>

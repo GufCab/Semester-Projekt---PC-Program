@@ -26,7 +26,7 @@
         </classShape>
       </nestedChildShapes>
     </packageShape>
-    <associationConnector edgePoints="[(4.375 : 2.59196466734012); (3.5 : 2.59196466734012)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+    <associationConnector edgePoints="[(4.375 : 2.59196466734012); (3.5 : 2.59196466734012)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
       <associationMoniker Id="8488fc1b-0bca-4bc6-af0c-4f374dd695f9" />
       <relativeChildShapes />
       <nodes>
