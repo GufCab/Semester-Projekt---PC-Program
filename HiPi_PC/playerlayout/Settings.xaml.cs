@@ -189,6 +189,7 @@ namespace playerlayout
         //public Synchronizer Sync = new Synchronizer();
         private void SyncronizeButton_OnClick(object sender, RoutedEventArgs e)
         {
+            //Todo: put into string.
             Sync =new Synchronizer();
 
             List<string> pathes = new List<string>();
