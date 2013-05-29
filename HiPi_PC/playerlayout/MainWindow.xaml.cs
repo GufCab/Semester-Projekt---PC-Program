@@ -345,8 +345,9 @@ namespace playerlayout
             //todo: switch these two
             if (result != null)
             {
-                //_UPnPSink.SetTransportURI((ITrack)result);
                 _UPnPSink.SetNextTransportURI((ITrack)result);
+
+                //hack to ensure SetNextAVTransportURI is done and so you cant add tracks to fast
                 Thread.Sleep(500);
                 _UPnPSource.Browse("playqueue");
             }
