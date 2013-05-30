@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace TemplateSync
 {
+    /// <summary>
+    /// this is the interface used to synchronize
+    /// </summary>
     public interface ISynchronizer
     {
         void Startup();

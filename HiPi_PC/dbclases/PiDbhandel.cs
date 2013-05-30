@@ -7,6 +7,9 @@ using Database;
 
 namespace dbclases
 {
+    /// <summary>
+    /// this is the interface used to manipulate the PIdb.
+    /// </summary>
     public interface IPidbhandel
     {
         void Markasonline();

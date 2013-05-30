@@ -10,6 +10,9 @@ using MetadataReader.Metadata;
 
 namespace dbclases
 {
+    /// <summary>
+    /// this interface us used to manipulate the Localdb.
+    /// </summary>
     public interface ILocalDbhandel
     {
         void FillIp(string ip);
