@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="56c91b8d-e38f-4f4d-a1fc-75ae2aecf0e1"
+  name="Metadata"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="707dfeca-e8d6-492c-abcf-30182fd9e476"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DMetadataReader.Metadata"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="08f9dc96-6914-4cf4-9b07-35ed8d790094"
+        name="IMetadataReader"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="8dd76f02-17a6-42b6-9da9-40bd0cb6da56"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.Metadata Type%3DIMetadataReader"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="7776f1ff-215f-49b8-a413-0f1249a769a8"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ad72a15a-00c1-4a8e-835a-c51a9d795e56">
+                <propertyInstance
+                  Id="ac3b6368-d75d-40c1-9f76-22865874095e"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b643f6e9-165e-43bf-aaa8-301ac6855c2c">
+                <propertyInstance
+                  Id="3c2513e0-7342-43da-b130-3750775b4509"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3172ebd3-dc3c-4927-a062-50769e01e144">
+                <propertyInstance
+                  Id="96498453-71b2-40d6-b5cb-ead91b6a4298"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7c564d9c-6709-4955-98b4-f99d938bb90f">
+                <propertyInstance
+                  Id="e82d2402-25b1-43ed-84c0-18995ac96314"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

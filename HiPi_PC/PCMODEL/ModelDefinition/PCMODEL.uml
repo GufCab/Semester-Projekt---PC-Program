@@ -186,6 +186,36 @@
         LastKnownName="Intel"
         LastKnownLocation="Package_1309.uml" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="28db54b2-36d7-4c59-92ae-0001159e8822"
+        LastKnownName="GUI Package"
+        LastKnownLocation="Package_1111.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="9fc3c09f-ecd5-43d7-b1fe-829602abdf33"
+        LastKnownName="Sync Package"
+        LastKnownLocation="Package_1112.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="ef523252-07a2-4b93-8037-0fd98294c6cb"
+        LastKnownName="DB Package"
+        LastKnownLocation="Package_1114.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="60727cf7-0ff3-47d3-bbd6-59ab8d9fee3f"
+        LastKnownName="Fileindex Package"
+        LastKnownLocation="Package_1123.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="4c0133fa-59d1-413f-99a0-c223673c54aa"
+        LastKnownName="MetadataReader"
+        LastKnownLocation="Package_1133.uml" />
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"

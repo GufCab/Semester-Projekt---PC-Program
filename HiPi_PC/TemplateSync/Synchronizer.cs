@@ -17,7 +17,6 @@ namespace TemplateSync
     /// </summary>
     public class Synchronizer : ISynchronizer
     {
-        private ILocalDbhandel db = new LocalDbhandel();
         // Pidatabasen skal også være her
         private Live555Wrapper live555;
         //private int _index;
@@ -45,6 +44,7 @@ namespace TemplateSync
         /// </summary>
        public void SyncPiDb()
        {
+        
            IPidbhandel pidb = new PiDbhandel();
 
            pidb.Markasonline();
@@ -57,6 +57,7 @@ namespace TemplateSync
         /// <param name="pathlist"></param>
         public void SyncLocalDb(List<string> pathlist )       
         {
+            ILocalDbhandel db = new LocalDbhandel();
             db.FillIp(_ip);
             List<string> rellist = new List<string>();
             foreach (string s in pathlist)

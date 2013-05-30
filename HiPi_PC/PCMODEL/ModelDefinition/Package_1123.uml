@@ -1,0 +1,3909 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="60727cf7-0ff3-47d3-bbd6-59ab8d9fee3f"
+  name="Fileindex Package" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="5ff65179-c069-4cb9-8b63-952bce558200"
+        name="IFileIndexer"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="12962214-ee93-41b3-86b1-837bca13a1e2"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetaReader.FileIndexer Type%3DIFileIndexer"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="057b1019-996b-4f15-8710-86a6e48d07eb"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b55d0c70-0a3f-44ff-a160-75256e4e579c">
+                <propertyInstance
+                  Id="c9e4c6a6-4540-4e01-8128-87ccf9c8323e"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1d1f3a78-e4fb-4374-aae2-4f0e676cc7e3">
+                <propertyInstance
+                  Id="b5b55158-756f-4268-8568-25c11579f899"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="61b2ae5e-a61a-4ab6-ac27-962c9a565f18">
+                <propertyInstance
+                  Id="24ba588c-52bb-4172-99bb-f113377b3779"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="06686b5f-0f70-433d-977d-a0d3f5bfcf3d">
+                <propertyInstance
+                  Id="45f5e06a-16c5-43f5-8634-86c042019d31"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributes>
+          <property
+            Id="9418dddf-91e7-4b59-92d6-50e1b963b7da"
+            name="FolderItemList"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="8dbbd53d-f6e7-4bdf-9de9-c9a36e2ba1b3"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetaReader.FileIndexer Type%3DIFileIndexer Member%3DFolderItemList"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="661704e5-e2d1-4a3b-899b-61ec728519b2"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2259c136-9b11-405c-8ccc-39564ebb072f">
+                    <propertyInstance
+                      Id="95eece20-be12-40e6-b670-64be45d3fa07"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="44b10d9d-a428-48f7-93c4-33b534e736b9">
+                    <propertyInstance
+                      Id="9ac412e1-4a32-41a1-bbdd-cb08b984b6dc"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="612c4ec1-fe50-4e24-aac6-ed7b694faab8">
+                    <propertyInstance
+                      Id="20a241d1-3e7e-48fd-8c49-3f957a727d09"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0e74e2cd-00b9-47e1-ae9d-07a52a81a0b1">
+                    <propertyInstance
+                      Id="9f5670be-eb92-4a32-8dc8-c7b68245265e"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3ba919cb-6862-4816-9aad-9f380b69c987">
+                    <propertyInstance
+                      Id="4faaa4bc-6b5f-47e6-a86a-77ee6ba13dfb"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="33e9a81f-6fb9-4457-b881-f43178b5b47e">
+                    <propertyInstance
+                      Id="478f2c2e-3c42-4e8b-8f33-74ef7d5de6a6"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="da74d359-b20d-4f65-947e-5db8ae71942f">
+                    <propertyInstance
+                      Id="030eefe3-19c9-408b-9de8-f79ea178464e"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="de3d5c5b-288a-4916-8f0b-38c2e0a0d168"
+                LastKnownName="List&lt;String‎&gt;"
+                LastKnownLocation="Package4_1621.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributes>
+        <ownedOperations>
+          <operation
+            Id="01e5163b-83f8-41cb-b932-e7bbc825dba3"
+            name="SetIndexPath"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="24ebc89f-548d-4caf-825d-a0a104175e67"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetaReader.FileIndexer Type%3DIFileIndexer Member%3D(Name%3DSetIndexPath OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e63055c6-288d-42ce-8317-762004d04ea7"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7407dc67-f173-4388-bfc2-9fe92e71b097">
+                    <propertyInstance
+                      Id="7736e750-5334-4d70-854e-a85aac331cfa"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="433cae97-3cf5-4dc6-b647-e9f71f04a757">
+                    <propertyInstance
+                      Id="b1447f75-1a0e-4a63-80c8-d010ca658399"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="126611ff-64af-4f7e-9438-8c3d180288fd">
+                    <propertyInstance
+                      Id="44bd9f2f-abc2-4b61-9f68-6776cd63cf1b"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="abaf41f7-74e9-493d-b692-9788927bc7be">
+                    <propertyInstance
+                      Id="fdcfe742-c498-4dbe-ab50-42cf80aef717"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d273c841-dd66-4a2e-8716-4de9f0f0421f">
+                    <propertyInstance
+                      Id="8ef1271c-a92c-43b6-ba52-982aeb9f260f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cf666ab5-77ec-4214-a390-504d850bf8c7">
+                    <propertyInstance
+                      Id="996e5fce-53d3-4fff-98b3-a610bc7452a7"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1fc05bc1-78a4-452b-bf95-2110ef3572c1"
+                  name="folderpath"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="0b8a7986-95a2-4a8b-b456-78ccddbfe712"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetaReader.FileIndexer Type%3DIFileIndexer Member%3D(Name%3DSetIndexPath OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dfolderpath"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="PCMODEL.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="2619abbf-9466-4d58-9679-1c274fadb881"
+            name="GetMetaData"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="13db4bac-6923-4526-8389-652b375fe82a"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetaReader.FileIndexer Type%3DIFileIndexer Member%3DGetMetaData"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d363eb46-59cd-4aad-ae0a-5c4037bf424b"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7ee6c6f4-214d-41db-822b-cd1f86d90d81">
+                    <propertyInstance
+                      Id="e409f572-8186-4569-9f95-325aeb93e17a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="690ab178-d8cb-4548-bdac-61cefa5338d0">
+                    <propertyInstance
+                      Id="39e428fd-7437-4c16-bcbe-329e1fec62d1"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="57aff250-54aa-4ad7-ab6d-82aab2aee4ae">
+                    <propertyInstance
+                      Id="4f1fd75c-fee3-4ee9-ae57-bc21c60f9059"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aab349a8-baa0-4be0-a089-d474fad1aea0">
+                    <propertyInstance
+                      Id="b2964a0e-bed6-4663-a7a6-4396d1738d31"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e5e62c0e-4454-4578-9680-7041503d4e24">
+                    <propertyInstance
+                      Id="1f6da84c-afd1-4006-a961-b375a5ef7573"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b3d6a638-6d3f-4035-a8d8-60473ccc8357">
+                    <propertyInstance
+                      Id="90ae1f1d-e37d-4b1e-8b67-c9813549ef92"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="83c6226f-a00d-469d-b10e-ef85ceef5961"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="1cea18db-1ef3-48bb-873f-c2b644b3eaf7"
+                      LastKnownName="List&lt;IMetadataReader‎&gt;"
+                      LastKnownLocation="Package4_1621.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d1156aad-24c2-4872-8d44-151897bb45b9"
+        name="IOitem"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="1b6ad869-8ab7-460c-9a86-d4843418d4f7"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DIOitem"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="0a4a3a2e-ddb1-456c-a18f-7413f0fd04b0"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="261c760e-9f2b-449e-83d4-65bc562f46a3">
+                <propertyInstance
+                  Id="9d6eedbd-1ea1-458c-8761-4c55ff93c46a"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="216fe030-280b-4402-bcf6-00079ac66d9a">
+                <propertyInstance
+                  Id="e5e48e94-2c1f-4839-be49-4519303e723c"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9a183369-1e91-4886-8376-a7f8a1af3922">
+                <propertyInstance
+                  Id="e4ddded9-383f-4963-9892-7a4ef0ab637f"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6f3a439a-7152-40f9-a3f9-89edf67730f8">
+                <propertyInstance
+                  Id="7dcb22f7-1eae-47a3-aab6-87a46bc32f6f"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7b705dcd-6be0-44bb-b6fd-851d56803221">
+                <propertyInstance
+                  Id="844ae0cb-6133-4f01-9c67-1ba073ce9f19"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="8c09860f-f324-4e40-86d0-ad1b4fa1e5b9"
+            name="Tag"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="1006ffd7-f780-4056-8a6d-4e70c7a23e86"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DIOitem Member%3DTag"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="43aaf682-9fd3-4e37-a4ce-f575a9dcf0a5"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="21a43d9f-97af-4148-b4a8-01f40a38ff70">
+                    <propertyInstance
+                      Id="12823c1d-d9ab-4489-9f2b-2e193027d21a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f90b00f3-e909-4c7f-a8e3-57a7da63ada8">
+                    <propertyInstance
+                      Id="541bed50-43b2-4f1f-9301-372277827c0e"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bc38ccaa-d13e-40b0-80a5-a8e2123a1ca7">
+                    <propertyInstance
+                      Id="1bc91e5e-f42d-4d57-83c4-4efab1806156"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ae90bfb8-6c25-4425-97f6-d76e55704734">
+                    <propertyInstance
+                      Id="7fed2b16-62e4-43c2-a47d-980a228da233"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="71c32576-3674-46d0-8455-c4cfd0ea5668">
+                    <propertyInstance
+                      Id="081789ab-a28e-436c-8336-c18e1119b541"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7ed49c72-cd96-401a-a199-cddedc1667b3">
+                    <propertyInstance
+                      Id="1aaf2943-51c3-4953-b63d-ffe9d787543f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2f4126ad-34d1-4661-a596-26d8cba495f1">
+                    <propertyInstance
+                      Id="9aa30ac4-95a0-41af-98ec-8e3cff49e564"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="PCMODEL.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="c9e4f3fe-4293-4dc1-be90-67bf91a64089"
+            name="Name"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="8abc1fe0-fbc9-4fbb-96db-3acc684bb929"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DIOitem Member%3DName"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="9191fb9b-107b-41ac-9158-9d00d1b80466"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cfa0e6b1-a117-4273-9bc6-f1cddb83152c">
+                    <propertyInstance
+                      Id="444f9563-075e-44c7-bc0c-1b80082cfaa9"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="973c2350-ead3-4de4-9ae4-78b7c47d6e82">
+                    <propertyInstance
+                      Id="2372315f-1df6-4673-9494-f2bc7b741676"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a0d4ebf1-8f43-4277-bbcf-11e4013820d3">
+                    <propertyInstance
+                      Id="f6e9f39b-45ed-43c0-ba61-d067a4d46b49"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5ad231b1-5819-4a37-bfe7-3baaf98d4222">
+                    <propertyInstance
+                      Id="40672302-f97e-4042-93da-7d26001bf489"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="278a9c0f-68f3-4f21-9b76-3a884ceb90e6">
+                    <propertyInstance
+                      Id="6c084c1e-c9c0-417f-8d93-3b15766d52b2"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0a48ea66-f55c-4c9a-88cc-cf982d785cd9">
+                    <propertyInstance
+                      Id="453ea58d-9ba2-4dbc-9f52-1bb61ed42ca5"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f8130a73-34b1-43a3-a456-a0f2b5f71940">
+                    <propertyInstance
+                      Id="47c23c0e-6d84-437a-83d1-90e669959f04"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="PCMODEL.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="8c3799b2-cf47-431a-9b32-4f32df47803a"
+            name="FullName"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="be8e0360-026f-40d8-8f61-229fb6e5ea6b"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DIOitem Member%3DFullName"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ac34d673-edb2-4047-89ba-77e05a4f8a3d"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="929953c2-ab3e-42ff-9fa1-b45cc1461e49">
+                    <propertyInstance
+                      Id="fe980b17-e32a-4189-a4ec-4d28a238faee"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4a62dbec-1ac0-4b73-a02f-628705135c6c">
+                    <propertyInstance
+                      Id="1d02b2bb-5269-4b55-8c8d-65ca15bf6a3e"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="686ce4a2-afa7-47f6-8253-ee3318017df2">
+                    <propertyInstance
+                      Id="f73b1795-cb3a-4ff9-9bb0-f7355e35c5b6"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f457cce7-97c0-431d-a013-3647f4ccdceb">
+                    <propertyInstance
+                      Id="3568b9ef-6ea3-4606-a929-5a7939bef8b5"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5d8e1616-df48-4fb0-9f65-088997fbe72c">
+                    <propertyInstance
+                      Id="bce7f18f-3c91-491e-a8e9-9497a2824586"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d0d5c57a-ea6f-40d6-94b1-a90e766d4ebf">
+                    <propertyInstance
+                      Id="778102de-0672-4a9f-b130-fed777e058f3"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="23882c68-31c1-4570-a796-48498f26899b">
+                    <propertyInstance
+                      Id="c98772c5-5a92-4ff9-b32f-670661e76592"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="PCMODEL.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="7fd5850d-5cd9-498e-a679-f192db4d450e"
+            name="Extention"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="07aea632-fb01-46e6-a432-6505c5c64463"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DIOitem Member%3DExtention"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="59c93b27-a5d7-47d4-9eee-b7447e91f71f"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="69465596-e408-46bd-9263-88e0d4c417b1">
+                    <propertyInstance
+                      Id="3819344b-414c-471d-9225-a5250c39bae5"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4aae3892-9c3f-4d92-979b-7791a12a7b9e">
+                    <propertyInstance
+                      Id="3c8e7b92-27f2-42af-ae13-f2fa3b2fa4f2"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4f949898-e230-41cc-9cbb-fa36283c6320">
+                    <propertyInstance
+                      Id="8923667a-d751-41a9-9fff-a9d324d98c7e"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="742aa1cd-e45e-43cf-9745-423cb384039f">
+                    <propertyInstance
+                      Id="5404e14d-0a53-45fe-a53a-d4ff25fe216a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b83a09ae-a75d-40a9-8ee3-38304bd1a216">
+                    <propertyInstance
+                      Id="4f8ad405-0f23-4af4-9370-3fbc76bebadd"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="42f7a18e-f7fd-49cf-a9fc-6cafb36c748f">
+                    <propertyInstance
+                      Id="e75b04fc-4e81-4aa3-b94e-badbab673c7c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="75f37292-1729-452c-973d-1fa2770a4acc">
+                    <propertyInstance
+                      Id="1f75560a-e89b-4df4-85e4-1ca23b891aca"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="PCMODEL.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="92cc16bb-7df9-4aad-a1e6-50939222ce1b"
+            name="FilePath"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="86308ce5-59a0-4821-87d9-11f43886612e"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DIOitem Member%3DFilePath"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="adea6dbc-f792-4a01-851c-97d0a383b220"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3180aa85-14e9-4bc4-9a94-9b75f91d3334">
+                    <propertyInstance
+                      Id="710dc700-74b7-48ad-be26-5bc3e833f93a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1bf98f29-dad4-4137-9000-0f789909beb4">
+                    <propertyInstance
+                      Id="41ebb0f8-8306-458a-92e1-a0ccdef6f788"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c63118fe-9b56-4d67-a909-1b4d4dac8a4b">
+                    <propertyInstance
+                      Id="26af4054-aa0a-476b-9b3b-7aa07d7ba14b"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ed663415-559b-4a49-9e24-b77aeb52d684">
+                    <propertyInstance
+                      Id="174b63a3-036d-4763-a2b3-1873ca2649df"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bc3f62ff-4ffe-44f7-a237-fef87d1d0f19">
+                    <propertyInstance
+                      Id="0ae72f3e-d991-4f7d-9c61-b04e41f8d3e6"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="167bcd9b-3cc1-4ab1-9992-3b3c0517ef64">
+                    <propertyInstance
+                      Id="ae42cf61-501e-420d-8a0e-852703a384a3"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5706a100-08f6-4afa-b670-6744431c393e">
+                    <propertyInstance
+                      Id="6abe21af-00d2-48f6-9782-d5acfcde5c3d"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="PCMODEL.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="6c79b97e-7fd9-44fa-b52d-b2cf65750b10"
+            name="IOitem"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="425dc287-e3e3-4a0a-8d5d-a2fab2d27c0d"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DIOitem Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem.IO Type%3DFileInfo)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7058bd58-1eb4-4ca3-9504-448461e09e46"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f826b3cb-a79e-4910-ac84-d0e43373615a">
+                    <propertyInstance
+                      Id="22077308-15e1-420b-a485-8cde9ccf840e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9893207e-7a02-4fad-9167-f430f1c811a1">
+                    <propertyInstance
+                      Id="ad26e302-b5f4-41b4-85f3-adfb85090e64"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e3ab3ad7-38c9-433f-aac8-12c4d629e57e">
+                    <propertyInstance
+                      Id="72573a00-8963-48bd-be80-7faef8401e5b"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="64cce59b-41b5-448c-9068-1159b4c84d7d">
+                    <propertyInstance
+                      Id="46587b4c-d3c9-4313-8b7e-651bbafdbca0"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5276ea4e-255e-437c-ac41-1e345d35dd07">
+                    <propertyInstance
+                      Id="855a4929-0c6b-4e62-b80b-07d62d184726"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2dafbab3-1360-4073-a990-163254d13cfa">
+                    <propertyInstance
+                      Id="d6342a39-3707-4f45-af12-f10b16b44205"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2bec7135-40f1-4b23-ab23-8ee96183af23"
+                  name="fileInfo"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="5a638811-848b-43ff-bded-59210ec1049e"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DIOitem Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem.IO Type%3DFileInfo)]) ParameterIdentifier%3DfileInfo"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="65afa10a-1df7-4fe3-b76e-1d982c08506b"
+                      LastKnownName="FileInfo"
+                      LastKnownLocation="Package2_1640.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="968748d7-2109-4b4b-ad13-ce80f18d0b9b"
+            name="IOitem"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="4366a099-2bac-4ebe-9dae-25e7f9bff21f"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DIOitem Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem.IO Type%3DDirectoryInfo)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="8a0fdf7a-759a-4974-b284-96c4ec51986e"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4cbfb9e2-54cc-4b72-84fb-171febf674ec">
+                    <propertyInstance
+                      Id="200a59be-2c26-46e0-b361-98e4b5b80496"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="76c6949b-1bc6-4a1c-85bc-4c3dc5c33944">
+                    <propertyInstance
+                      Id="4aa6f8b4-2ac5-4fa1-aeef-20355f190d85"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="452942f7-ad06-4c2d-b473-04e2a3143d0a">
+                    <propertyInstance
+                      Id="5d78a4ac-3bf7-4a1e-be96-52746509fdb4"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="45fbf800-4cc4-4054-8acd-d8fdeee440f5">
+                    <propertyInstance
+                      Id="3bc701c3-209e-4d38-b964-1258cc65e528"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0fb2df54-ea19-41c7-ae75-486fb86177a1">
+                    <propertyInstance
+                      Id="ae13f101-c5f1-4985-8154-3ec14efb8062"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="59546af7-9968-45b6-9f6c-25aeb28e3ac1">
+                    <propertyInstance
+                      Id="d634e1b0-c8fc-48a0-8269-7bd4326a8e74"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="eee3eacd-caa9-4295-b0a7-bc90f064bace"
+                  name="directoryInfo"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="5cb0dff2-187e-4883-87a4-f94fb0fdcfe5"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DIOitem Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem.IO Type%3DDirectoryInfo)]) ParameterIdentifier%3DdirectoryInfo"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="4c668b21-09f3-49e5-a53a-8c3e26ac3893"
+                      LastKnownName="DirectoryInfo"
+                      LastKnownLocation="Package2_1640.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="418c9c7a-cce7-4598-a8dc-7f904ab1278c"
+        name="FolderAndFileReader"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="4fb0480d-f589-40f6-95bf-1e859f0d9654"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFolderAndFileReader"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="1eac6589-c271-42ec-acc2-a0fa3b998e98"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="aae9a329-2eb8-4b1e-b98a-acd82a485b63">
+                <propertyInstance
+                  Id="20aa02ae-7727-4507-a751-19a1cd06ffc5"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9bb6e925-e4e3-4e37-aa38-62bbd3f21183">
+                <propertyInstance
+                  Id="76bb92b8-ae18-4528-bb78-9a81542fd097"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="08097d77-997f-4faa-9436-e047042c013d">
+                <propertyInstance
+                  Id="dc1a021c-5e81-4329-b95a-70f4a003cc16"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="dcaa4cc6-0deb-47a9-a507-dc0e1f6c105d">
+                <propertyInstance
+                  Id="41175983-23b9-41f1-9baf-c77b64d81ab4"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6ef57884-cd5b-434a-bfc3-f08ab322e1b4">
+                <propertyInstance
+                  Id="1dc60daf-f2b3-4f4b-a264-ebca48ae847c"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="bec55935-a5f1-49db-b29e-3258e3bd7086">
+            <interfaceMoniker
+              Id="afe961b7-c8bb-42b2-bf75-ca71a422a3ec"
+              LastKnownName="IFileIndexer"
+              LastKnownLocation="Package1_1133.uml" />
+          </interfaceRealization>
+          <interfaceRealization
+            Id="c9b151da-1159-49d9-90b8-f3faa2090358">
+            <interfaceMoniker
+              Id="5ff65179-c069-4cb9-8b63-952bce558200"
+              LastKnownName="IFileIndexer"
+              LastKnownLocation="Package_1123.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="0460595e-08eb-4fd5-b9f2-0aac5e44942e"
+            isDerived="false"
+            sourceEndRoleName="FolderAndFileReader"
+            targetEndRoleName="FoldersAndFiles"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="de3d5c5b-288a-4916-8f0b-38c2e0a0d168"
+              LastKnownName="List&lt;String‎&gt;"
+              LastKnownLocation="Package4_1621.uml" />
+            <description>Property FoldersAndFiles references type List&lt;String‎&gt;.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="28faf6a9-6434-42ef-abc2-cd42ebe56391"
+                  name="FolderAndFileReader"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="a6e775bc-1063-4fc0-b2e1-20421f5a95a5"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="ff3bb9fc-8cf2-4708-a818-f0768906afd0"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e2f26c5a-4631-4d59-a65b-bd154f04fdf2"
+                  name="FoldersAndFiles"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="fc77e821-e135-4480-9492-97b3a0e5552d"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="034cca44-fbfe-4b23-bf4a-8743f620018a"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="a7249905-dd4e-406b-8d51-c30ad19b4074"
+            isDerived="false"
+            sourceEndRoleName="FolderAndFileReader"
+            targetEndRoleName="FolderItemList"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="de3d5c5b-288a-4916-8f0b-38c2e0a0d168"
+              LastKnownName="List&lt;String‎&gt;"
+              LastKnownLocation="Package4_1621.uml" />
+            <description>Property FolderItemList references type List&lt;String‎&gt;.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bc825c80-ad62-40e4-8f90-3947375928f4"
+                  name="FolderAndFileReader"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="cf34e99f-3d4c-4310-b109-6f039eb31082"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="3c7b2f8b-0358-4ff4-a939-ec97905f57ea"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bfc40451-b033-4ac9-9041-edaf5e189b58"
+                  name="FolderItemList"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="c0d3107f-9dfd-47d8-85a5-2bf16524a74c"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="e40ee55f-475c-4183-9604-25c46072282f"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="13f7f34c-53ae-4a50-8fcd-d1d266185dc8"
+            isDerived="false"
+            sourceEndRoleName=" "
+            targetEndRoleName=" "
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="3c1fbe70-c67e-4e84-b422-6dc43a110e88"
+              LastKnownName="ExtentionVerifier"
+              LastKnownLocation="Package_1123.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="741be7b7-9d24-4bed-948a-ebb12650b8a7"
+                  name=" "
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="1a0fcda9-aa30-4581-a761-61c73065b972"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="fbefe809-dd3a-4ef0-87e2-694572eb7b1b"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d399b2d0-8ed0-4d32-a47c-15db710da1f5"
+                  name=" "
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="91477c58-c96d-40ed-aa18-96841b26230f"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="cf3d8bbe-36e9-4afd-b50c-31c23d7a9f5c"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="9b87abae-a2a5-4789-829d-d7f13dfb0f7c"
+            isDerived="false"
+            sourceEndRoleName=" "
+            targetEndRoleName=" "
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="52f587c9-6f7d-46f6-90bb-12e1705f3db4"
+              LastKnownName="FilesFolders"
+              LastKnownLocation="Package_1123.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7f9a326a-21b2-444b-bfc7-f22839e4dcd3"
+                  name=" "
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="268b4b8d-e398-4c56-8156-fd47235c025b"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="f9c933af-53d1-4af7-a8ad-e998d29b1bfd"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8c3eb482-a538-465c-bab2-0ffa29ee5b40"
+                  name=" "
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="9629f5ba-1172-48e0-b2c0-363940387e06"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="b57d7b11-73a2-4829-921e-6964ea771dc3"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="cec225bd-9dde-44f9-8f4e-b27314f7f083"
+            name="FoldersAndFiles"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="0a76bd97-1a8e-4930-abc0-fb6ee6d4abff"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFolderAndFileReader Member%3DFoldersAndFiles"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="6b009075-7523-4aec-a3af-61d6b4bf2840"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="58b94fb8-9e17-4ff1-8bc1-c71c1023a627">
+                    <propertyInstance
+                      Id="c3df8b0d-4202-4a4c-b172-baeed87620d2"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f50f4d14-f64c-4e50-b80c-e4ee91d35740">
+                    <propertyInstance
+                      Id="3164695f-d185-4d9c-b32c-ad91d5a25135"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e27ffa09-b6f7-4f55-a0bc-3bbb9c1c5ae7">
+                    <propertyInstance
+                      Id="072492b8-1c10-406e-aa6d-5ae1dd666ca3"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="551d9e5f-42b0-48d5-a4a6-173315614c58">
+                    <propertyInstance
+                      Id="91f35279-1e38-46dc-ba44-df027fb8d787"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fc692ce4-d1c9-45d8-b1bf-716c2a366652">
+                    <propertyInstance
+                      Id="fd000914-ef69-4c36-a2ba-d83d1f644f8f"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="17e308dc-dd3b-4494-a324-b21cb84c4fa9">
+                    <propertyInstance
+                      Id="017a2ccd-99a1-49cd-b4c8-b5f135ce152a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d62d0ad6-298a-4531-9e40-33ca783b8617">
+                    <propertyInstance
+                      Id="f6cdf437-8ef9-4229-b2a7-28d2da861609"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="de3d5c5b-288a-4916-8f0b-38c2e0a0d168"
+                LastKnownName="List&lt;String‎&gt;"
+                LastKnownLocation="Package4_1621.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="d17cb658-8f5f-425d-89a1-2e3ee891c142"
+            name="FolderItemList"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="f8339deb-c3f0-4d8b-b3fa-aa9fbe0daaf0"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFolderAndFileReader Member%3DFolderItemList"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="eb34ecb7-5cd2-4a7c-a76c-38336587e0f2"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="555ab9ff-aa84-402c-a333-1b675768d8a0">
+                    <propertyInstance
+                      Id="49085087-fd65-4614-a67c-69c08a84125b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5d86d42e-a309-49da-bab5-bc9b78309581">
+                    <propertyInstance
+                      Id="9911fca5-1a9e-4f75-98a9-c1ab7e67e5fa"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7580cdfe-625a-41e6-8025-617dbf92e347">
+                    <propertyInstance
+                      Id="934ba044-bd0a-407e-9a12-de773b99cc94"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="db71e3d9-08ea-43e9-86b2-ad600995b16b">
+                    <propertyInstance
+                      Id="7f03e5b9-00cd-45fa-b9c2-5e8281c1cc77"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5e5eca25-1749-4a6d-81cf-84758f5531b1">
+                    <propertyInstance
+                      Id="42beb07c-6745-4868-9459-4045e2bae74d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a97ad56d-09da-4ff2-b529-88faad13b29e">
+                    <propertyInstance
+                      Id="9198ed74-2e47-43cc-8b26-7b159dfbb8d5"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4172c0aa-e59c-407a-9e90-1e12338644be">
+                    <propertyInstance
+                      Id="a4c659c0-6b18-491d-8138-54b57c6fef38"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="de3d5c5b-288a-4916-8f0b-38c2e0a0d168"
+                LastKnownName="List&lt;String‎&gt;"
+                LastKnownLocation="Package4_1621.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="4610cbba-dcef-4922-8499-6f5740655e18"
+            name="Folderpath"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="6df1c82c-6f11-4fc8-969a-074f989e1fcc"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFolderAndFileReader Member%3DFolderpath"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b8b2083d-6f18-4bde-a1d2-a341f0bb8da5"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="05c8ed93-bd16-423f-890a-cbfbbc35451f">
+                    <propertyInstance
+                      Id="68157764-fd4b-49d0-b977-fd23bc23d257"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="65b90e53-6eb6-49a3-b15e-0d0ec22d20a9">
+                    <propertyInstance
+                      Id="4d134795-0500-4cee-b9c2-c1e3d54bdad3"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="14a56735-ffcd-4e0e-9aaf-c7f3e17dfe02">
+                    <propertyInstance
+                      Id="af7872d5-9d42-4edb-a4ab-5d0c84daef46"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ec247f7a-e989-48ed-a185-28876de7833c">
+                    <propertyInstance
+                      Id="96377e7c-c417-4392-9efb-87cc91f82eb4"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b922dd30-f510-432f-8779-58ae0526ffc3">
+                    <propertyInstance
+                      Id="bd000ee8-35b7-4192-93d1-83238086c5db"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d7a6abe2-bb2b-41f0-b441-8d5fcafffb3c">
+                    <propertyInstance
+                      Id="9b3760de-c628-49de-8c39-84579cc963f1"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="df58d01b-9571-4427-939f-3b1db7638d04">
+                    <propertyInstance
+                      Id="ffa83cf3-749c-4f79-9508-86f620000aa7"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="PCMODEL.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="8e7f93f9-cfe5-4c72-a41f-1685693baafd"
+            name="extentionVerifier"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="816e6b52-203c-403f-96b4-fd5f5564416e"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFolderAndFileReader Member%3DextentionVerifier"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ab00e24b-4a17-4c5a-8609-b3f9c95b64fc"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4c777ed0-8f82-42e3-876a-6df39a9ab80b">
+                    <propertyInstance
+                      Id="df2ba288-0e9f-4319-9022-6743d8dda50e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aa720096-5e8e-4743-8a44-1fe0a0557f86">
+                    <propertyInstance
+                      Id="7fe0cf1f-8403-47ab-9cfa-af7e1b586999"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6b8266ee-a8a7-4a87-a87f-596a4060f1db">
+                    <propertyInstance
+                      Id="531594d4-809c-40db-ad03-4ba43fe0d228"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f908ad1a-e0ce-4ab5-ac05-c34d10694ac7">
+                    <propertyInstance
+                      Id="6396ad95-d889-4f41-8d69-5607f6ec0a2b"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b878d119-50f0-4fe4-8ceb-854014bfe6b7">
+                    <propertyInstance
+                      Id="7ae0e051-3a97-4922-a2a0-c8ff796542b5"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="3c1fbe70-c67e-4e84-b422-6dc43a110e88"
+                LastKnownName="ExtentionVerifier"
+                LastKnownLocation="Package_1123.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ad6f8ce8-cdb1-4d93-84f0-933c0da29c9d"
+            name="_folder"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="e6a66392-f405-4e50-bd0c-f626acb4ac83"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFolderAndFileReader Member%3D_folder"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="dbdcb0df-a5a6-448d-9dda-edc2ec98365b"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6cd8cde7-d4d0-4fe1-aa25-5a620013c43c">
+                    <propertyInstance
+                      Id="7ff83e6e-8a75-4c8e-8b34-1129647920e9"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="652ee308-e949-4063-903f-4a5482a64f47">
+                    <propertyInstance
+                      Id="8d25ee8c-c3e1-4bbc-b99a-1818a2119d60"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="12476dfc-e712-4f50-9d3b-a71e7127a10d">
+                    <propertyInstance
+                      Id="e85d78c5-565d-496e-884b-5768d2b61250"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="703b330a-7542-49b4-8d89-73740393d149">
+                    <propertyInstance
+                      Id="ef68c9cb-fe4f-4a83-8681-08d7c61d3373"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5729b7f9-fc17-4fdf-9f54-8e08db6f6f8b">
+                    <propertyInstance
+                      Id="4eb38e53-dcd6-4b99-bde8-e41c41260c18"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="52f587c9-6f7d-46f6-90bb-12e1705f3db4"
+                LastKnownName="FilesFolders"
+                LastKnownLocation="Package_1123.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="9d4cd621-b903-4b59-a6e0-2c71e3c23436"
+            name="MusikList"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="f346e85f-51bb-4bfd-a6d0-7717eb450e7d"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFolderAndFileReader Member%3DMusikList"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7270352e-172f-4aa7-bfbd-c1428cb3d7df"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="47e7dc9c-97fa-4281-b5f3-dd5d39c3c76d">
+                    <propertyInstance
+                      Id="ff17b4cd-394a-4fe2-83c6-d1d5c5bc3ddd"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5ce71db6-2b32-435f-90ab-8447f637f075">
+                    <propertyInstance
+                      Id="07740a74-1124-4da7-a777-a86af36377ba"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7302b97a-7bce-42b8-81a2-c4673b69210f">
+                    <propertyInstance
+                      Id="16df1ee6-ef90-45a9-9f7c-50d52a977fb1"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2a6ef3de-4ef4-480f-814b-95f7453f7865">
+                    <propertyInstance
+                      Id="f8e4dbcf-ca32-4cf1-aba9-7b886451cfe6"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="462499b0-1035-48df-81e4-7a49873754c0">
+                    <propertyInstance
+                      Id="004547a9-9333-44c6-a2b8-f64eab280918"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="208bd5bf-cd45-4baf-8cd9-45cb3c536147"
+                LastKnownName="List&lt;IOitem‎&gt;"
+                LastKnownLocation="Package4_1621.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="bf465574-12bc-42bd-98e7-ab30105d4814"
+            name="Container"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="2cbb7f0b-6dfc-439c-9847-ff04ad45dd3c"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFolderAndFileReader Member%3DContainer"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="4cae3dae-745a-425f-862d-c91c27d1ed57"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fa264bde-1b63-4735-8e98-b2481f5a9a53">
+                    <propertyInstance
+                      Id="627260ff-ab10-4ad2-a799-149e1860f899"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="57cfa486-851b-4b3a-b1bb-007245591875">
+                    <propertyInstance
+                      Id="a60f6735-6055-4954-b0c8-c6c4ea8094ff"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ab43131d-fb07-4c24-83a0-e9ff1667a5e4">
+                    <propertyInstance
+                      Id="fbb4a724-d362-4e87-b4d3-c9010b7365e3"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="98d48598-c26c-4371-8176-6a4b3cc3bb0f">
+                    <propertyInstance
+                      Id="e57fe67e-cbc1-4e67-9270-3135d2d76afc"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e15c55c4-3567-48b2-a11f-ca601e20b55f">
+                    <propertyInstance
+                      Id="5bdc03e4-46f8-4cae-a08c-9c4fdbb0c58b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="52f587c9-6f7d-46f6-90bb-12e1705f3db4"
+                LastKnownName="FilesFolders"
+                LastKnownLocation="Package_1123.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="f0fb3a3e-b54e-4557-b2ca-e88001f7fcd6"
+            name="testsubfolder"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="3c71c13c-a813-4b1f-bb53-3a1dc2e5294b"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFolderAndFileReader Member%3Dtestsubfolder"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="efcc721f-8f07-4a46-a853-6dc560e2e1bb"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5da8de68-031d-42fb-becf-7cdc99102c92">
+                    <propertyInstance
+                      Id="c872bd1c-6114-4814-b98e-ab00cda1220c"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="91e95a33-56c9-4624-a924-2820314cd319">
+                    <propertyInstance
+                      Id="507573bd-17d1-4088-81e8-b145b74a5821"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="64bb9df1-396d-497a-8992-35d0fc940f62">
+                    <propertyInstance
+                      Id="f8fd472e-6a41-4187-b8b7-26a1d70476f0"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9f8fc090-e5d4-43ad-a50c-735c7465a8be">
+                    <propertyInstance
+                      Id="784a2992-16ac-485f-9bdc-61aa97fbc3b2"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b0f9ba2a-2f71-4da3-ae50-1a2422d49ea0">
+                    <propertyInstance
+                      Id="0901bc35-4bf1-4a75-a115-a10987f66902"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="PCMODEL.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="adff370c-9140-4929-ac79-14138653c2df"
+            name="metadata"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="ce4cc7b5-59c3-4f3c-9a58-93184beec193"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFolderAndFileReader Member%3Dmetadata"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="cf094519-7480-4272-bc22-262383d930d1"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="95cfcfab-c116-48b3-ac54-268b974e1a1d">
+                    <propertyInstance
+                      Id="1e99bc6f-14b6-4734-8062-ce04bec4f26d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f784154d-f150-44d0-ab48-9866bba54e05">
+                    <propertyInstance
+                      Id="a082d0a5-8497-4f71-8273-dfb6d4c0cb31"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5d91f49b-c3e5-4830-812f-c9b52ba5b7b9">
+                    <propertyInstance
+                      Id="21f963f8-4627-437d-9fb9-134cbfe15d87"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e271fc29-1186-42e7-b859-4fb350978d6a">
+                    <propertyInstance
+                      Id="c9b414a5-a59b-4006-a87b-c25ed57fcd28"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9d12edbc-4d83-483f-b84a-c0abf7097528">
+                    <propertyInstance
+                      Id="5dcc55b0-741f-4b09-b220-81b655b9c4cc"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="08f9dc96-6914-4cf4-9b07-35ed8d790094"
+                LastKnownName="IMetadataReader"
+                LastKnownLocation="Package_1134.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="cff7d50d-5190-47a1-b8f5-c4c3d5dc11a3"
+            name="_metaList"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="deb1426a-20dd-428f-8937-8c54ba21b446"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFolderAndFileReader Member%3D_metaList"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="35776f12-8b53-4403-9d07-8be89d415dc1"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f91da11c-3a75-43ca-9c67-c5d8d16d922b">
+                    <propertyInstance
+                      Id="9a480bf0-ea1d-4ec5-bf3b-ff995162f13c"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="450a0e71-8a14-4971-a908-a23db28d8669">
+                    <propertyInstance
+                      Id="c3d9f536-5ad0-4878-bb65-edae03f75d03"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b7ce69b0-c5fb-4e04-a4b0-151c176aab5a">
+                    <propertyInstance
+                      Id="a2ee3d22-3527-4ebd-a41e-8fe5877d750c"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="82743ddd-fb3b-49f2-8ff0-6e0c26c6a734">
+                    <propertyInstance
+                      Id="b5ae0131-8745-413b-b75d-081e4a201f2d"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="02d4bce2-5d77-4896-898c-77756a7d2b05">
+                    <propertyInstance
+                      Id="4d0b073d-32db-46bd-8dfd-73adb23d53c9"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="1cea18db-1ef3-48bb-873f-c2b644b3eaf7"
+                LastKnownName="List&lt;IMetadataReader‎&gt;"
+                LastKnownLocation="Package4_1621.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="2b1453b0-395b-4c52-85da-1239eafb0bb1"
+            name="FolderAndFileReader"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="1bc104e6-e705-4f39-bcc5-b78cad5ab8c9"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFolderAndFileReader Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="55f32eec-577e-43be-b985-106441be0b5e"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a3de9add-5d6e-4084-a422-b7123da442e5">
+                    <propertyInstance
+                      Id="44002f86-5a89-4de2-8a6a-5ec05ba52cfc"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cedba2ec-8593-49d4-9850-4811b2ccf399">
+                    <propertyInstance
+                      Id="0517a808-25d5-4be2-86ee-bae1a6bfe858"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c2db493e-0a95-4770-bb68-88a1ab44c5cf">
+                    <propertyInstance
+                      Id="5fd005ef-eaad-4ac9-be0b-aacfb620d146"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fc7ad821-f13f-422b-a37c-2fc6b9e2a080">
+                    <propertyInstance
+                      Id="5571ffb1-32a4-4f64-bc14-6cada28b22d1"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="595594bb-861e-4fbc-bbc7-9786f29b65df">
+                    <propertyInstance
+                      Id="f85b03d2-4889-444f-afde-b4efacf257d3"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c8c52c57-4e72-422d-8d30-2e7b003dfb3c">
+                    <propertyInstance
+                      Id="624689e1-3e40-477f-8207-4e9cbd350762"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="e6648ac0-d46f-4284-ae94-402d2b43abe4"
+            name="SetIndexPath"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="977a1d74-0376-4457-99db-7d21ed95a11f"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFolderAndFileReader Member%3D(Name%3DSetIndexPath OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="1fa87848-2f63-4180-865d-c81a72e5ab35"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7db97726-5c72-46ae-b2eb-05b1aa8f221c">
+                    <propertyInstance
+                      Id="0272f442-c619-47d1-936b-be540b3b68c6"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="648cc1fd-3647-47e3-9f13-f840e7bf8227">
+                    <propertyInstance
+                      Id="545a78f3-8627-4b46-840b-4cd2b128cb9c"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aed0d9d1-f9f0-4311-a80b-e3302ffcf6f0">
+                    <propertyInstance
+                      Id="fd2a45d3-4019-4e6a-a2d1-4e79edba1ffe"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2a8fc150-1a7e-40c1-afcd-3d0937412a43">
+                    <propertyInstance
+                      Id="ada3336e-6a1d-4fa1-9be9-4ca9acd29c1b"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="07e29481-5db1-4322-9fce-f484f05ee406">
+                    <propertyInstance
+                      Id="95f437f7-e813-43ee-926e-2a309d565934"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0dcb4f4a-0f85-428f-8e36-19578227fdcb">
+                    <propertyInstance
+                      Id="bef1894e-637f-4cba-8ad0-126a5e5f3608"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="38b29f2a-1eb4-423a-a27a-f540c1d7286d"
+                  name="folderpath"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="db0cec5d-4d71-4e16-a487-e631428aa2cf"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFolderAndFileReader Member%3D(Name%3DSetIndexPath OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dfolderpath"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="PCMODEL.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="6b72fc47-1a01-4cb7-a4b8-7d360b7f6ccb"
+            name="Runner"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="82df27d6-cd1a-4836-923b-5e5d8ecd460d"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFolderAndFileReader Member%3DRunner"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="8be39fc6-34fd-4763-8f60-93c16d9ad955"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dc970f13-84e9-4b3a-93c2-13fca1db1591">
+                    <propertyInstance
+                      Id="463a45fa-be11-424a-980e-2c65a742337a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6e74ca66-6ef4-43d3-a6b2-f51fc918fde1">
+                    <propertyInstance
+                      Id="ef2c6044-a129-4782-841d-655701b04738"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="54f67f5b-c209-4888-81b6-022d1647ff21">
+                    <propertyInstance
+                      Id="b9c7f74a-96be-4ba3-8084-ee22a6709a84"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="afc6ab1c-7eb0-445d-8938-934d652dd22c">
+                    <propertyInstance
+                      Id="030d7671-b421-4f8e-bf90-da64edb83de0"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="60931f44-b3eb-4482-bc3a-075b4c00f567">
+                    <propertyInstance
+                      Id="4931e971-cb0d-4377-9760-4963181e0fa0"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="363b89a0-f24b-4632-bdd5-17a0add1d138">
+                    <propertyInstance
+                      Id="e5198a78-7187-4037-86f4-ffe8ac3c8dd7"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="8ec79297-b206-4bcb-9842-7b2850c4fcb3"
+            name="foldersVers_One"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="2693dcfc-e1ad-43f7-8aea-3e9873b4ab4e"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFolderAndFileReader Member%3DfoldersVers_One"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e5cfdd00-e846-42d8-ac28-beee462b3378"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="01e1691f-512d-4994-bd05-23d710f6daba">
+                    <propertyInstance
+                      Id="18306feb-55b4-48e0-8f3a-440d98994c64"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6774dd9d-0e1f-48ae-bd04-2559f6e00df3">
+                    <propertyInstance
+                      Id="cb34ead8-5c5a-4e17-82f5-eab905e7f1ae"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0689798a-8310-4c20-af35-a7d5e95e086a">
+                    <propertyInstance
+                      Id="d80b20e1-e113-45cc-b24e-291f13b2af55"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="827b26bc-b37f-48a4-a94a-c786541c4a2a">
+                    <propertyInstance
+                      Id="f4e7b42b-eca5-48a5-8912-108f5ded60c2"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="22607f81-d96b-42cb-9532-f8457bd4eec0">
+                    <propertyInstance
+                      Id="f98040c8-1be8-4cd9-8889-5dfbd3d25a8a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fa714bb5-b9e2-4988-bdc4-e33efe557384">
+                    <propertyInstance
+                      Id="c84439d8-1609-47eb-826d-2baa49936fcb"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="be78f62a-9dda-4783-8452-689ba6dfa325"
+            name="SubFoldersLookup"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="b6f5b545-c748-42a2-ac23-c4ee5d3a0aac"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFolderAndFileReader Member%3D(Name%3DSubFoldersLookup OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="bc4c0da2-7d5a-4044-8171-43993b9b5887"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0ca184db-b0dd-4816-9b2d-cd00eaf4f613">
+                    <propertyInstance
+                      Id="acbf3d88-2268-44da-a5f4-adb5dbbb1943"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7e32704d-065a-4b0b-9231-a2f71319a428">
+                    <propertyInstance
+                      Id="efe9aa83-5b72-4e54-9ad5-ca294242a624"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a07e641a-9753-4f52-9c25-2325c8c7ca05">
+                    <propertyInstance
+                      Id="dd9ac8ff-8331-4272-9657-438ea22ff258"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e732eff1-0d3d-49f7-87a4-7d8434031f3f">
+                    <propertyInstance
+                      Id="39184326-93d8-4022-9b16-0ef5ce98af8a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cabff215-b44d-46d0-be6c-7177c31aaae0">
+                    <propertyInstance
+                      Id="4f404bb4-947d-42c6-b79b-081b74ab5bbb"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cf7a860f-1969-45bc-92e1-4e08e2e485ab">
+                    <propertyInstance
+                      Id="c00d28ea-2a84-4e3f-9885-d00b522a8772"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="693e9402-3a4f-4e5d-9486-6b9b31054643"
+                  name="folderpath"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="7f031e52-6699-4857-a27b-a690b188bbe0"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFolderAndFileReader Member%3D(Name%3DSubFoldersLookup OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dfolderpath"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="PCMODEL.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="9cf4872d-cc04-4d8e-a6a4-4f2827296d65"
+            name="GetAllMetaData"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="d6d5a61c-028e-48f4-87a1-c200cb4db6d3"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFolderAndFileReader Member%3D(Name%3DGetAllMetaData OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections.Generic Type%3D(Name%3DIEnumerable GenericParameterCount%3D1 GenericArguments%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DIOitem)]))])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="8d99896e-8b47-4cbe-914d-39a76a4920ca"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="000f659d-ce65-46ca-a9b1-cd4eff8e7fd6">
+                    <propertyInstance
+                      Id="4dc29b6a-0566-4338-82d1-99029d8a67ea"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="52130f40-38ae-4b89-8a82-68786a214f8b">
+                    <propertyInstance
+                      Id="cc187aa7-74b6-49b5-99d8-1d989f24efcc"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a24ac791-b42f-4fdc-85fa-a7cc03891c79">
+                    <propertyInstance
+                      Id="458a2ef0-87a8-49a2-8a02-07282b5607b3"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="93b937cc-d320-4fa4-93cc-c0950311077b">
+                    <propertyInstance
+                      Id="7719a437-a8d1-45ed-805d-dad5bbb2fcf6"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="096754fb-6693-4889-8aae-7b86153834e8">
+                    <propertyInstance
+                      Id="f749fda8-21dc-48ad-82a5-4cc7304461a3"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="513e43cd-9f0e-4359-bfbd-2068a4ea90ee">
+                    <propertyInstance
+                      Id="f66f11bd-1560-42bf-806c-b7cb712c47eb"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ef7804ec-63f3-4378-9ac1-25e9cecf6f80"
+                  name="musikList"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="7324c4ca-8cd6-44a6-9b81-674ed42d2d41"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFolderAndFileReader Member%3D(Name%3DGetAllMetaData OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections.Generic Type%3D(Name%3DIEnumerable GenericParameterCount%3D1 GenericArguments%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DIOitem)]))]) ParameterIdentifier%3DmusikList"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="5df382ef-2003-461f-9587-3e38009f1c39"
+                      LastKnownName="IEnumerable&lt;IOitem‎&gt;"
+                      LastKnownLocation="Package4_1621.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="b6b694f7-7e19-4844-8c69-2e72300dc789"
+            name="GetFileMetaData"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="f18d1322-4c46-4811-b664-0869ad828e80"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFolderAndFileReader Member%3D(Name%3DGetFileMetaData OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ea826b5c-78a3-4541-bf7e-f22804f69fe5"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a912a006-ca0b-4da9-8f47-9fd5e7aca877">
+                    <propertyInstance
+                      Id="fa792e20-3448-4309-a8d9-7ad1c3b2c72d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="05485173-2feb-4536-a6f4-ceee1bd2a1af">
+                    <propertyInstance
+                      Id="1510f9dc-d95a-4657-8dbe-fd8b57759f64"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c282147b-0e29-40a8-a69e-1da3a6511713">
+                    <propertyInstance
+                      Id="f4611522-8e0c-41ae-98eb-dbb225ccd01e"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1e0fab87-044c-487b-8804-0be82f7249e1">
+                    <propertyInstance
+                      Id="3b0c1353-38ef-455f-ab5a-a6af63e10a27"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2dd58f60-0f23-4610-a633-092887875757">
+                    <propertyInstance
+                      Id="4ab456bd-52cf-4cd9-964d-a02cf985dac8"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3ee25375-7379-469a-be9d-d59a13f9301a">
+                    <propertyInstance
+                      Id="0c83e17e-3c65-4d14-bc1d-7b0565d780b3"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b9f8fa55-38ca-435e-8300-ca191707ee30"
+                  name="folderPath"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="045904d7-4f75-4f2b-b0e9-21b48c7ff4ef"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFolderAndFileReader Member%3D(Name%3DGetFileMetaData OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DfolderPath"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="PCMODEL.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="547c59e3-3b81-437c-bf39-c3794e2d4a28"
+                  name="musicnumber"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="e5b7ca36-7999-47ee-b701-d285da8f6e69"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFolderAndFileReader Member%3D(Name%3DGetFileMetaData OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dmusicnumber"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="PCMODEL.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="438f38dc-276e-4900-854c-3cc6e41f41d6"
+            name="GetMetaData"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="60972192-0348-4c27-af15-bd504e454b78"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFolderAndFileReader Member%3DGetMetaData"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="df4f7ff0-5e21-4576-9113-f9892fc0ffeb"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5b145557-6eba-4c14-a4a3-9789fb95bf1b">
+                    <propertyInstance
+                      Id="3a95d0f5-74ea-4367-b227-df60953e32c2"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b13a0d23-8e1c-4e81-8568-890c4dd7ce2b">
+                    <propertyInstance
+                      Id="191a310d-ec93-42c7-b6ab-d58548ebb4db"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0f926b39-2ae2-4fad-93e0-f2c53765e2de">
+                    <propertyInstance
+                      Id="5f8ff7d6-ecc4-4885-b953-34a05ee67c11"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cdd67852-e0b2-47d7-a100-e7e8a3d760e0">
+                    <propertyInstance
+                      Id="48d77df7-0bea-4495-a8ab-0a6cbd6507a3"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1b3eff22-9803-41e9-baad-7d192db5d9e7">
+                    <propertyInstance
+                      Id="676264ab-27a8-4002-ab2b-50243702a5ec"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e220da38-02b9-4b13-bee6-8e47ad207522">
+                    <propertyInstance
+                      Id="c3ed852a-2a8c-42bf-a8d7-62742565d3d7"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ee5f448f-d671-4df6-a0d1-984191761d53"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="1cea18db-1ef3-48bb-873f-c2b644b3eaf7"
+                      LastKnownName="List&lt;IMetadataReader‎&gt;"
+                      LastKnownLocation="Package4_1621.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="52f587c9-6f7d-46f6-90bb-12e1705f3db4"
+        name="FilesFolders"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="dbfac55e-78b7-4d66-b7f0-a1edf834b4fe"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFilesFolders"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="e3453845-d207-42d2-b51d-9903bb3e1b0d"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b95c3943-736d-446c-9158-6ec25c62248d">
+                <propertyInstance
+                  Id="60de13b2-d83e-415e-a158-498783a31031"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9db51354-0f9f-4570-8371-559664be77fd">
+                <propertyInstance
+                  Id="52dfb946-f38f-4bf0-8d4d-8fe4d97b4fd1"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b9bac118-a927-41ae-a701-2d2ccd029fb4">
+                <propertyInstance
+                  Id="d7e41545-c4cc-409f-a977-1f02ab917f46"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c70beb83-244e-45c5-9861-e31bc68dba99">
+                <propertyInstance
+                  Id="13898f41-d70d-4312-bc03-f16c920271b3"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d7b99a5c-0c48-4630-aa0a-fbcb68c8f4ea">
+                <propertyInstance
+                  Id="dd6cf20d-93e0-456c-b4ed-dc7070eee443"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="497aee9f-984f-4363-b23a-23e4726c1935"
+            isDerived="false"
+            sourceEndRoleName="FilesFolders"
+            targetEndRoleName="IndexContainer"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="208bd5bf-cd45-4baf-8cd9-45cb3c536147"
+              LastKnownName="List&lt;IOitem‎&gt;"
+              LastKnownLocation="Package4_1621.uml" />
+            <description>Property IndexContainer references type List&lt;IOitem‎&gt;.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="13768b9a-01ba-4456-93b6-93a1a7b3040b"
+                  name="FilesFolders"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="62b92550-efd4-4905-a43f-c62aca54e887"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="72c62fe1-f8ce-4cfd-a5c2-85e6f05d4be9"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fb8d4c72-4f0b-4ab6-a7b5-73b73d89bcdd"
+                  name="IndexContainer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="a7953e1d-e21e-4e58-89ce-036b102a6408"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="d695b9ad-a0ff-4889-8271-c9c7d1236ebf"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="ea97fceb-6780-42ab-b90d-1e0835c07432"
+            isDerived="false"
+            sourceEndRoleName=" "
+            targetEndRoleName=" "
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="d1156aad-24c2-4872-8d44-151897bb45b9"
+              LastKnownName="IOitem"
+              LastKnownLocation="Package_1123.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="78a19bab-cace-4ded-bb90-bc2585428c33"
+                  name=" "
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="e0ae59a0-c0e0-4907-8241-9f2525cc5ce8"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="10f614ac-3d92-4e5c-9ed4-b3df225cde3d"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7b392312-271e-4951-ab64-fa8871355fc2"
+                  name=" "
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="5ee6355b-da73-473c-92ca-1ad576fd1c5f"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="874fa92c-d19d-4c85-966d-a87e4f335567"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="2d91217b-1bf4-4a3b-a4af-fb74ec0a9d23"
+            name="IndexContainer"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="31b7d07d-8b50-4501-9344-08b110866572"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFilesFolders Member%3DIndexContainer"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="328d43d0-9e7d-46a7-8580-f87f08ad3423"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6017ff57-ce14-4a41-accb-e700e5f1b556">
+                    <propertyInstance
+                      Id="bcb9917d-6478-4a74-88b5-a781a7378ec8"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5b999cf4-c048-4ad5-bd04-b81ed151da92">
+                    <propertyInstance
+                      Id="e27d9ca3-e4b0-4697-a43b-13dd0bc66270"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cb5ffa00-7a44-43b6-bc12-7cf6bec10a6b">
+                    <propertyInstance
+                      Id="0b6161d3-9ec8-49cf-804c-c50039519f88"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="97155d69-c718-4424-b4dc-0bc27de5ca7a">
+                    <propertyInstance
+                      Id="108765f5-1b70-4bee-8c62-77d343ebe9e8"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="33ef13f8-eb14-47bc-8da4-a2f0f6db83ce">
+                    <propertyInstance
+                      Id="23a03302-3a2f-4b97-8951-6dfc30c6010b"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a39fadc2-9e6b-4aa2-a074-b32e1866a329">
+                    <propertyInstance
+                      Id="f03f5c0c-a27c-4d3a-8d35-fbf798ded6b0"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e53776c9-30c2-40a2-8465-3d163a58762e">
+                    <propertyInstance
+                      Id="70415fde-0c31-4b8d-a501-c6f06591897f"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="208bd5bf-cd45-4baf-8cd9-45cb3c536147"
+                LastKnownName="List&lt;IOitem‎&gt;"
+                LastKnownLocation="Package4_1621.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="4efb49a4-9785-47c3-8c42-0b5253e1cd04"
+            name="_path"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="18802065-f630-4947-8ca9-4ab08b941384"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFilesFolders Member%3D_path"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="721d6d08-c20a-402e-bd2b-253f48a06eaa"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0819bad4-4c4c-48fa-8555-7490dc9a0ad3">
+                    <propertyInstance
+                      Id="3984d634-2404-4e98-8c35-d2186d798337"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="02e4ee60-e0bf-4094-984e-6633b4166807">
+                    <propertyInstance
+                      Id="a828bc9b-5efa-4614-83b8-5853533ecb20"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2dd27a49-4cc6-4232-bd73-c8ba58070099">
+                    <propertyInstance
+                      Id="f51c5720-51bf-4f65-8ab1-ff55016b2645"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="35df0922-3a92-4e30-93ba-f8d927e52e51">
+                    <propertyInstance
+                      Id="b8492f15-687f-4bc3-b6ec-4aa94fabce7a"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="12c9f0dd-5015-48b7-a7a1-a01a3371e53a">
+                    <propertyInstance
+                      Id="5195f881-b69a-461a-ad68-c5b3135c0772"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="PCMODEL.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="4d32d1aa-d669-4c5b-a523-e624f6e59ae9"
+            name="_directory"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="01fd4952-92c9-4a49-8281-9b1c0795cd48"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFilesFolders Member%3D_directory"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="1e557d94-3d14-4436-b72a-bd9d33d4a82a"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5e9a8da2-1ce6-4c1d-875c-be451465880d">
+                    <propertyInstance
+                      Id="8d1a0af9-1fb8-45fc-8409-f540ec0624b7"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a532e548-4314-4a06-8fe5-daf7020e9776">
+                    <propertyInstance
+                      Id="434711f2-1631-4a6a-8302-3bbf6e1d1a81"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7bf0bba7-d6c5-464f-a3f7-2184e7c40803">
+                    <propertyInstance
+                      Id="ae10124e-97d8-45a6-a3f1-7302467eb1e9"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="27cf96c8-ee22-44bf-9971-4fa769d61c84">
+                    <propertyInstance
+                      Id="7a7b5595-0c05-4887-8141-c881cc13a91c"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ccf67720-2dcd-4fd4-8fe4-ec09ebf1102e">
+                    <propertyInstance
+                      Id="c0f7e93c-7ed8-4918-89e7-6c4fa7801d28"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="4c668b21-09f3-49e5-a53a-8c3e26ac3893"
+                LastKnownName="DirectoryInfo"
+                LastKnownLocation="Package2_1640.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="f7b01bf6-0852-4aaf-a769-dea9def72448"
+            name="FilesFolders"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="58d4e401-e751-4cd0-85a8-dd56f08dead6"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFilesFolders Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="071b00e0-e18e-46d1-bf4c-b5bb55269308"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="af308092-c62c-4a44-bbb8-3eb7fbb6c8c2">
+                    <propertyInstance
+                      Id="d1fa1134-6a3a-4af5-8f86-b189aedee1dd"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="33a22ffd-52f5-4a24-924d-d9952ac940a4">
+                    <propertyInstance
+                      Id="10feb831-6a0d-4730-8086-741c06ef136c"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="02889959-d3b2-42c1-aefc-61c1733b1f14">
+                    <propertyInstance
+                      Id="a647ddbb-0fe9-42a3-8053-f8bd50045512"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b42cd9bf-5a5d-4e90-99b6-5579c491e66e">
+                    <propertyInstance
+                      Id="392f4755-9f53-4d9a-b2a1-cd2d5094897d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1ccf948b-8dc4-4369-9257-a68f0b7018c2">
+                    <propertyInstance
+                      Id="fcf5b4d3-b0ac-40a8-96ac-078298c4d11d"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f70ce659-72ad-4c6b-8555-3d469a51afab">
+                    <propertyInstance
+                      Id="43c7424f-d0df-4b3a-a49f-8afcdd6ce892"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ac4f4f0c-7a65-40d7-bd36-b8e38c79362b"
+                  name="path"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="7eb1cb7c-49eb-4cb1-b676-bbb1a27bfaea"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFilesFolders Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dpath"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="PCMODEL.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="b91ea2dc-1162-4128-a41a-e2f27f0e402d"
+            name="SetupDirectoryPath"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="08eb36a7-1b68-481f-b6ff-fc802fd0fd88"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFilesFolders Member%3DSetupDirectoryPath"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="3d2b0a70-d2d6-4714-939e-98c9dbbad496"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2e99243c-80bc-4280-919e-c403757cf165">
+                    <propertyInstance
+                      Id="ad38a8ce-60ae-4989-8a79-15c05f47d552"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="68763dec-1022-490e-a320-3af5f4daae84">
+                    <propertyInstance
+                      Id="9ea5cba8-a61e-418b-aa3b-6fed2f3df280"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="63a88153-63df-4fd0-b6b9-c4ca1aebb201">
+                    <propertyInstance
+                      Id="308f9c50-bc8c-4410-98ce-99a083693cae"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7ebc2f5f-e05c-4c26-b9d6-7d0176ee1cbc">
+                    <propertyInstance
+                      Id="87cd75b0-f3d7-4446-afd7-3c2cfc00a046"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="098c2640-110e-415e-8a7c-d586ec783776">
+                    <propertyInstance
+                      Id="22a33240-e336-40af-9584-22ba80606194"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="45fa5eeb-5f3a-49b9-b2e8-2d9bf1980c12">
+                    <propertyInstance
+                      Id="3bda8806-2153-403c-bd28-a11980994edc"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="8825ee8c-cfd0-4673-b764-582d62c1550c"
+            name="IndexFilesAndFolders"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="8eeb88d1-03a8-4303-b123-2a4444602f89"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFilesFolders Member%3DIndexFilesAndFolders"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7fa10c0d-2d22-45d4-b711-8717cf5d5978"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="df1db16e-96d3-463f-a31b-cf92144d4082">
+                    <propertyInstance
+                      Id="d9413ad3-12b3-4bc7-a213-64e5b5d06e0f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="61577714-9f0f-4484-b7c6-f7b792812650">
+                    <propertyInstance
+                      Id="7a7ff496-0f23-4dbc-b9a4-a226a8ebadf6"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="161268bd-ac70-481d-8d50-2e845e331c29">
+                    <propertyInstance
+                      Id="df64210c-edd0-4882-b2be-1488e1492ec7"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="37ab6911-af81-45a6-af8f-5f841f7d4232">
+                    <propertyInstance
+                      Id="2ae0afe9-b42d-41c1-83c6-419f904dbfdb"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c8a78c9e-b470-4404-90de-5fcba5d7b7b4">
+                    <propertyInstance
+                      Id="dbedff2f-88c4-4892-bab2-29e96171fd7e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3f486c8d-de2f-4650-975a-b842559fddb3">
+                    <propertyInstance
+                      Id="ef71087d-2ce1-4e2c-83d2-973ca6a0e09e"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="59dbed7d-c3fd-4472-9c1e-446f7611e89b"
+            name="SetFolders"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="5f06e41c-15a3-417b-a0bc-74eae3096d2b"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFilesFolders Member%3DSetFolders"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="961c725a-14fa-4458-8d85-61dac5f99359"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2903365f-8a7d-4bd4-9e74-e5cc97dde976">
+                    <propertyInstance
+                      Id="403430b5-3d36-4710-9d63-8746352fd9fd"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="38243925-5373-4cb0-a646-1c0258479599">
+                    <propertyInstance
+                      Id="4b737e3a-9653-464c-8f83-5927ff6f78bd"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="927631d7-821b-48fc-84c6-2c8c1f6d5834">
+                    <propertyInstance
+                      Id="4d27dc8b-5548-4924-9946-eeef78405b89"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d2ca7f08-2b5b-4c04-a01b-e7833ac727c7">
+                    <propertyInstance
+                      Id="80eb147c-8b5a-450d-8a43-29232fd6b1dc"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7868af46-da1b-48db-add9-ba8929c5d807">
+                    <propertyInstance
+                      Id="e7e1133d-3c53-446c-bbbc-cd295027aee0"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="24b8b590-095b-4273-8773-4e5e034e431e">
+                    <propertyInstance
+                      Id="4dd88540-29d4-4997-be42-07ca8a0678c4"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="b8f6fd39-5860-4d95-b528-415199895bd1"
+            name="SetFiles"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="730e20b0-a52c-429e-9392-5990a78c6398"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DFilesFolders Member%3DSetFiles"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="4c091ca9-b159-42f2-82ba-41993b8adc23"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="837acba1-ad34-4b57-b90b-04b722bef036">
+                    <propertyInstance
+                      Id="34799f84-a2e6-48c2-8589-68f5a380067d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="06aafff0-c29d-4c52-b752-4dbc5aed1c29">
+                    <propertyInstance
+                      Id="7a623895-233e-4cf2-baa6-7cc8ff922db5"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="28e49508-245f-4de8-b9f4-30d6a36d56f3">
+                    <propertyInstance
+                      Id="bb6974bb-8f54-4f92-8258-59806cb787ea"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b56aae49-1d4e-4b21-8737-374ffa887c5c">
+                    <propertyInstance
+                      Id="fa40fe49-c1d8-4fbb-a254-cdf2bc7a210a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6dfa68e4-a6e1-4fdb-8abd-586bde188d99">
+                    <propertyInstance
+                      Id="69e32a9e-816b-4444-8a5a-c95a93fc593d"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6d4d4a0a-bcf6-4fe7-966d-94fb1a165764">
+                    <propertyInstance
+                      Id="0bd5d149-323a-4d2d-b0fd-7a5bfda37213"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="3c1fbe70-c67e-4e84-b422-6dc43a110e88"
+        name="ExtentionVerifier"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="5097b9c8-ff5c-418b-81ac-0ee16ce2dcf7"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DExtentionVerifier"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="643e73ac-d9c6-43a9-a1e8-81059dbc9126"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5ed3e664-d4e5-4866-88bb-c6526f18f74a">
+                <propertyInstance
+                  Id="5d128b92-94ac-4e51-99c6-d24a740c1eeb"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="fadad366-ef7a-4be7-9372-4155dccc38b2">
+                <propertyInstance
+                  Id="ba833996-499d-4248-8493-fc7923ac1d74"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c361cde8-b43d-4b3e-b385-e36180f57888">
+                <propertyInstance
+                  Id="b86dcaf1-a61a-4f31-9d64-cde299d40441"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7f566a41-64fd-46e0-a642-5cc3053952ca">
+                <propertyInstance
+                  Id="e54621af-22f5-418b-baba-73784de58b30"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="20f9cf97-4a57-448b-91dc-794332d8795d">
+                <propertyInstance
+                  Id="dc14025d-3c02-4d4e-9f51-5d687b3efbc6"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="f7e0638b-e573-47d2-9b08-ed1a32ef8938"
+            isDerived="false"
+            sourceEndRoleName="ExtentionVerifier"
+            targetEndRoleName="ExtentionList"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="de3d5c5b-288a-4916-8f0b-38c2e0a0d168"
+              LastKnownName="List&lt;String‎&gt;"
+              LastKnownLocation="Package4_1621.uml" />
+            <description>Property ExtentionList references type List&lt;String‎&gt;.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f79030a4-9f80-40d9-ac42-815785cb4d22"
+                  name="ExtentionVerifier"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="d4845771-6c6e-4f2e-b7a5-30adf28298cb"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="6e3e9bc6-9dc2-4a58-93f4-2a6ad410e5d7"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4b7a62ee-8d75-45e3-bbe4-369453ea18be"
+                  name="ExtentionList"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="772d7ff0-5df0-45bf-a180-1a1bc3e20671"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="e3512abc-59f8-43ab-b02e-319053ff07d1"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="4ef0824c-b77a-4dfa-8d29-f83c4d9909f3"
+            name="ExtentionList"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="a041dc78-fbae-499c-a996-5929425069ea"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DExtentionVerifier Member%3DExtentionList"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="66b8e3ae-e91c-4242-910c-a46fbfc94efb"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="db282ab9-fcb7-493c-ad4a-1afa060c03a5">
+                    <propertyInstance
+                      Id="111e83d1-4ea0-4cee-a717-bf9ab397d4b3"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7eafef6b-0051-4933-aba9-2c14c4807b35">
+                    <propertyInstance
+                      Id="36e0350c-38f7-472c-9e5b-f9b435077e45"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9822f6e5-e3c0-4481-bbe2-96d6ddb8bb3f">
+                    <propertyInstance
+                      Id="7f3e0dd5-d9a4-424e-bcf6-6cac4ccd1cac"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="881cc8fe-6328-458d-a229-4ed30056b27b">
+                    <propertyInstance
+                      Id="07bafde8-bfdd-4644-93f0-8400df02af66"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="57df0c2e-ad77-479e-91ec-f9c364f3ad60">
+                    <propertyInstance
+                      Id="d34bc3e1-5294-4f4a-a349-f502467fd101"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ce870732-26e8-4434-9a7a-c3c55c4dee22">
+                    <propertyInstance
+                      Id="2d3bbbd2-4ddc-47ed-aaa9-b3559087a748"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8a466409-57d3-4b21-abb2-8146045f5f6a">
+                    <propertyInstance
+                      Id="4b6dd56c-8e57-45c9-85a2-a409aae78ed6"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="de3d5c5b-288a-4916-8f0b-38c2e0a0d168"
+                LastKnownName="List&lt;String‎&gt;"
+                LastKnownLocation="Package4_1621.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="1f95cc1c-6cbd-4ab1-a8e2-fe2bcf9252dd"
+            name="ExtentionVerifier"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="e8576045-d468-46d4-b720-7481734ceffb"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DExtentionVerifier Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="901ad091-849b-4005-978d-c7e6c4ddef9b"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="17b4e87d-4e2b-4b87-a330-8580996c4cad">
+                    <propertyInstance
+                      Id="0a03bf93-ff2c-49d5-b8ff-2c712433c187"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6a38c42c-bdcf-46a4-b709-b5062a927209">
+                    <propertyInstance
+                      Id="14f4eb09-8f8b-4516-bf0a-bc619e80233e"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="92b1d436-8eb7-465b-b519-dba4f204fa20">
+                    <propertyInstance
+                      Id="b3677c04-89eb-4996-bf92-1c6bb212838b"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0d2a4105-9993-4ae0-aa74-7263a25e4b48">
+                    <propertyInstance
+                      Id="08354152-4d69-4760-929f-9eda3bf613fe"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9778723d-0e9f-4407-90e2-19f1ee784ce2">
+                    <propertyInstance
+                      Id="112b163a-a40b-45dd-99b0-5257517ad0f0"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="182529f3-763d-42d3-b60f-374994546d7e">
+                    <propertyInstance
+                      Id="9ecf1512-d08b-4819-a2f4-8d0346129472"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="da33bd26-a100-42a5-90c8-f886e96a1832"
+            name="LoadExtentionList"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="12ab797a-1ad5-4a51-b3ac-4b6f91cb8434"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DExtentionVerifier Member%3DLoadExtentionList"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="56aa19cd-60fe-4cfa-9d61-524ed8b1d2fa"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6968355b-2bd0-48fb-a856-67d98c0aedcc">
+                    <propertyInstance
+                      Id="4f127597-29c5-4351-8c42-f93d718e1c78"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a7b8df3e-3976-459f-a348-ad96b5a91484">
+                    <propertyInstance
+                      Id="8be583c8-c381-4934-83f4-a702446eb152"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="643c4fb7-e25b-40ef-8112-79ba1dabc747">
+                    <propertyInstance
+                      Id="59d2b4f2-e4aa-4ca7-8b6b-c90f87432e96"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="125abdfb-fc46-4b6e-9ce1-7d05f7724bb0">
+                    <propertyInstance
+                      Id="4bf4b603-e456-4a45-89f1-c738ab758e0c"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aa399466-401d-4328-bc44-4111b948e594">
+                    <propertyInstance
+                      Id="8a637970-5b5f-430f-aa18-e13beb5ebaec"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a8d353a5-f42a-44fd-818e-904326218c2e">
+                    <propertyInstance
+                      Id="a0b18c31-be1b-450d-b060-4685a7e28f4a"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="e9f3d8af-01f9-42e3-8f14-15b24df2a347"
+            name="AddExtension"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="efdeea92-6f13-4c0a-b027-f7f9b333c7c5"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DExtentionVerifier Member%3D(Name%3DAddExtension OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f6d549a5-a864-4c3f-b4e9-ebbde34aac1d"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a827951f-4896-47dc-922e-450c6516a38d">
+                    <propertyInstance
+                      Id="341d72fc-0d74-4482-abc3-23353bc35d75"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3266518d-4b81-405e-8e11-a0666148eac1">
+                    <propertyInstance
+                      Id="876df78d-6d65-4c60-9ad8-b43c98b94efd"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="768e0525-42ac-43d9-9b5c-69d1c635af0d">
+                    <propertyInstance
+                      Id="6c9cef91-51c8-4266-a9e3-438ffe028fb3"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4b229aea-0ef1-4775-91d8-90100e9c5294">
+                    <propertyInstance
+                      Id="525e0780-ad21-466b-bda9-12a23b761105"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="657dc798-9f7f-4ffa-b292-b110dc4caee5">
+                    <propertyInstance
+                      Id="dd224ce4-4e60-44b5-9ccc-9f34df1feafd"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="531acbd2-3714-479a-ab89-b195696faf5c">
+                    <propertyInstance
+                      Id="71e5cd2e-7957-4e62-ba3b-74bdf4063c38"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4ecea9b7-26f7-44fe-a0d0-4f5a1d5f41cd"
+                  name="dotExtention"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="7f63d82c-2a2c-4e01-9447-cb797ae190ca"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DExtentionVerifier Member%3D(Name%3DAddExtension OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DdotExtention"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="PCMODEL.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="27d5642b-a435-4b11-8767-7150d20dc2cd"
+            name="TestExtention"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="8c0a1208-9062-481d-bced-3eb487ec69a4"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DExtentionVerifier Member%3D(Name%3DTestExtention OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="50e27768-d085-4793-9575-ccd0f9b259e2"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b313acfa-2445-47da-b982-8f05267f2057">
+                    <propertyInstance
+                      Id="dac6940b-808c-42f5-b387-a88130bf54cb"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="04524774-bd81-49b3-9afc-a108c2f6e2a0">
+                    <propertyInstance
+                      Id="f61afd88-57ad-43d4-8fc8-f2e2f993c07e"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cddb7b2c-182d-4814-a47e-f1b7055dcd25">
+                    <propertyInstance
+                      Id="5fe75bad-e503-4898-adfd-b9a1779269de"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="53422b59-9db3-4d3b-8f90-9236e92d1d18">
+                    <propertyInstance
+                      Id="7655909d-0469-41b4-b011-2ef67645995b"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="217d8a21-507d-41d8-8f67-6f3d10d907bb">
+                    <propertyInstance
+                      Id="a5fa9d89-62c3-4251-8ba4-627634b899cb"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a56039aa-30c8-4f11-8205-2fc5acaf0c7d">
+                    <propertyInstance
+                      Id="e6a708a2-0ba1-41d5-a784-79d43a714fac"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2fcca56c-888c-480c-aa12-aaa42658022a"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="PCMODEL.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4f3a7bc8-6b6b-42c8-a5e1-5e88bf11567d"
+                  name="dotExtention"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="4c746ede-bd2a-4a63-a289-aba453e6797d"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DExtentionVerifier Member%3D(Name%3DTestExtention OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DdotExtention"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="PCMODEL.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
