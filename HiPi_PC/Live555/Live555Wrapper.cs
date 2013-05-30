@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace Live555
 {
+   /// <summary>
+   /// This class starts the live555MediaServer in a separate process and saves the IP and Port to stream from, which can be returned with the GetIP() and GetIPandPort() funtions.
+   /// </summary>
    public class Live555Wrapper
     {
         private Process _liveServer;
@@ -17,11 +20,17 @@ namespace Live555
         private StreamWriter _inStream;
         private string IP= "If you're reading this, something went wrong";
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public Live555Wrapper()
         {
             Live555Setup();
         }
 
+        /// <summary>
+        /// Starts the live555MediaServer in a new process and saves the IP and Port to stream from.
+        /// </summary>
         private void Live555Setup()
         {
             try
@@ -42,11 +51,9 @@ namespace Live555
                     {
                         StartInfo = new ProcessStartInfo
                             {
-                                //FileName = "../../MediaServer/live555MediaServer",
                                 FileName = "live555MediaServer",
                                 UseShellExecute = false,
-                                RedirectStandardOutput = true //,
-                                //CreateNoWindow = true
+                                RedirectStandardOutput = true
                             }
                     };
 
@@ -58,10 +65,19 @@ namespace Live555
             }
         }
 
+        /// <summary>
+        /// Returns IP of host device.
+        /// </summary>
+        /// <returns>IP of host device</returns>
         public string GetIP()
         {
             return IP;
         }
+
+        /// <summary>
+        /// Returns IP of host device and Port used for streaming.
+        /// </summary>
+        /// <returns> IP and Port to stream from</returns>
         public string GetIPandPort()
         {
             string tempIP = IP + ":8554";
