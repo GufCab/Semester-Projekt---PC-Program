@@ -7,8 +7,7 @@ using System.Security.AccessControl;
 namespace FileSender
 {
     /// <summary>
-    /// Author: Michael Thy Oksen, 11492@iha.dk.
-    /// Description: This class is responsible for handling the task of sending files from the Client (The PC) to the Server (The Raspberry Pi).
+    /// This class is responsible for handling the task of sending files from the Client (The PC) to the Server (The Raspberry Pi).
     /// </summary>
     public class FileSenderClient : AbstractFileSenderClient, IDisposable
     {
