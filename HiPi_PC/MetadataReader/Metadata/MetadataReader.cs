@@ -8,6 +8,9 @@ using Shell32;
 
 namespace MetadataReader.Metadata
 {
+    /// <summary>
+    /// The MetadataReader class contains information about the metadata, that a file contains. 
+    /// </summary>
     class MetadataReader : IMetadataReader
     {
         //other variables
