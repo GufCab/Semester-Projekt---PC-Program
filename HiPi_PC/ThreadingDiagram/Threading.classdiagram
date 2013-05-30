@@ -18,6 +18,15 @@ GUI is main thread</body>
         <classMoniker Id="f166b0bb-44f2-4622-a90b-ffe78419299c" LastKnownName="GUI" />
       </annotatedElements>
     </comment>
+    <comment Id="a9326f97-62b8-47b3-8151-533b44480607">
+      <elementDefinition Id="2f919362-c56c-4b37-a366-a2649a7a552b" />
+      <body>
+GUI starts Live555 as another process</body>
+      <annotatedElements>
+        <classMoniker Id="4daad64d-e4a4-4338-aa89-5c904a60592d" LastKnownName="Live555" />
+        <classMoniker Id="f166b0bb-44f2-4622-a90b-ffe78419299c" LastKnownName="GUI" />
+      </annotatedElements>
+    </comment>
   </ownedCommentsInternal>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>

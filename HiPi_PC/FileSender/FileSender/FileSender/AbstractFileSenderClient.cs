@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace FileSender
 {
+    /// <summary>
+    /// Abstract "interface" for FileSenderClient
+    /// </summary>
     public abstract class AbstractFileSenderClient
     {
         protected abstract string LocalIpAddress();

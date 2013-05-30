@@ -30,6 +30,21 @@ GUI is main thread</body>
           LastKnownLocation="ThreadingDiagram.uml" />
       </annotatedElements>
     </comment>
+    <comment
+      Id="2f919362-c56c-4b37-a366-a2649a7a552b">
+      <body>
+GUI starts Live555 as another process</body>
+      <annotatedElements>
+        <classMoniker
+          Id="5410eee9-64bf-4f5b-9a25-24379778b1b1"
+          LastKnownName="Live555"
+          LastKnownLocation="ThreadingDiagram.uml" />
+        <classMoniker
+          Id="93c4a695-03df-4152-8137-3fbc40322454"
+          LastKnownName="GUI"
+          LastKnownLocation="ThreadingDiagram.uml" />
+      </annotatedElements>
+    </comment>
   </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
