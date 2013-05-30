@@ -18,14 +18,7 @@ using Microsoft.Win32;
 using TemplateSync;
 using Application = System.Windows.Application;
 
-namespace constant
-{
-    public static class Constants
-    {
-        public const double Size = 5;
-    }
 
-}
 namespace playerlayout
 {
     /// <summary>
