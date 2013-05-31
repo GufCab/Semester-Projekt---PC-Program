@@ -23,7 +23,9 @@ using TemplateSync;
 using Containers;
 using MessageBox = System.Windows.MessageBox;
 using MouseEventArgs = System.Windows.Input.MouseEventArgs;
-
+/// <summary>
+/// this Namespace contains UI.
+/// </summary>
 namespace playerlayout
 {
     /// <summary>
