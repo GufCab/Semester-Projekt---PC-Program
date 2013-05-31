@@ -6,6 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Shell32;
 
+/// <summary>
+/// The MetadataReader.Metadata namespace offers functionality to retriving the Metadata from files
+/// </summary>
 namespace MetadataReader.Metadata
 {
     /// <summary>
