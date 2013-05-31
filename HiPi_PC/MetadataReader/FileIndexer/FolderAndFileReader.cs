@@ -7,6 +7,12 @@ using System.Threading.Tasks;
 using MetadataReader.Metadata;
 
 /// <summary>
+/// Metadata clases in subnamespaces
+/// </summary>
+namespace MetadataReader
+{}
+
+/// <summary>
 /// The MetadataReader.FileIndexer namespace offers functionality about indexing folders.
 /// </summary>
 namespace MetadataReader.FileIndexer
