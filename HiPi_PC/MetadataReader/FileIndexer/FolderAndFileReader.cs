@@ -6,6 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using MetadataReader.Metadata;
 
+/// <summary>
+/// The MetadataReader.FileIndexer namespace offers functionality about indexing folders.
+/// </summary>
 namespace MetadataReader.FileIndexer
 {
     /// <summary>

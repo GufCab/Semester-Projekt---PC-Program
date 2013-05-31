@@ -8,6 +8,9 @@ using System.Xml.Linq;
 using System.Xml;
 using Containers;
 
+/// <summary>
+/// Classes that interprets XML strings and creates XML strings
+/// </summary>
 namespace XMLHandler
 {
     /// <summary>

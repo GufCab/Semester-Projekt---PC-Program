@@ -18,21 +18,16 @@ GUI is main thread</body>
         <classMoniker Id="f166b0bb-44f2-4622-a90b-ffe78419299c" LastKnownName="GUI" />
       </annotatedElements>
     </comment>
+    <comment Id="a9326f97-62b8-47b3-8151-533b44480607">
+      <elementDefinition Id="2f919362-c56c-4b37-a366-a2649a7a552b" />
+      <body>
+GUI starts Live555 as another process</body>
+      <annotatedElements>
+        <classMoniker Id="4daad64d-e4a4-4338-aa89-5c904a60592d" LastKnownName="Live555" />
+        <classMoniker Id="f166b0bb-44f2-4622-a90b-ffe78419299c" LastKnownName="GUI" />
+      </annotatedElements>
+    </comment>
   </ownedCommentsInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="905975e2-1121-42d9-86a7-f8a48caa13a8">
-      <profileInstance Id="8d6bee36-daa3-462a-b7aa-72a9c9b53a22" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="273487fe-9e2e-42bf-a2f8-65014a35fe57">
-      <profileInstance Id="148317d1-7c03-4683-83fc-4d58436c5b4a" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="4daad64d-e4a4-4338-aa89-5c904a60592d" name="Live555" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -42,23 +37,13 @@ GUI is main thread</body>
     <logicalClassDesignerModelHasTypes>
       <class Id="f166b0bb-44f2-4622-a90b-ffe78419299c" name="GUI" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="93c4a695-03df-4152-8137-3fbc40322454" />
-        <targetEnds>
-          <association Id="a34bc8bf-7e81-4139-baff-33a2fd0519a8" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+        <suppliersInternal>
+          <dependency Id="1c70cff1-2fc4-43a1-8b1a-9a0c491d4331">
             <classMoniker Id="4daad64d-e4a4-4338-aa89-5c904a60592d" LastKnownName="Live555" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="f7b17e37-df39-44c3-9aca-ccb21e82fbb6" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="3a37747e-bc0a-4e66-9f26-f69bdbcf543c" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="75a7be06-8511-4e4c-ac6b-76b1f7b00f8d" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="691e0b3c-bb33-48c4-bfd7-cbe2bd79e355" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="3a18cda5-22b4-4238-a420-76314f188cb8" />
-          </association>
+            <elementDefinition Id="6dec4258-485c-4146-bf33-70bd0cd497c9" />
+          </dependency>
+        </suppliersInternal>
+        <targetEnds>
           <association Id="4c5337a3-0fbc-494b-acb5-0413d06eeeee" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
             <classMoniker Id="108f38d1-0e44-4f67-bb69-27b54543aca8" LastKnownName="FileSenderClient" />
             <relationshipOwnedElementsInternal>
@@ -297,5 +282,19 @@ GUI is main thread</body>
   </packagedElements>
   <package Id="84682dbc-361b-4fec-bd43-28f2367435b6" name="ThreadingDiagram">
     <elementDefinition Id="641de230-218b-4a68-b5bb-0afdc30fd4f2" />
+    <profileInstances>
+      <packageHasProfileInstances Id="905975e2-1121-42d9-86a7-f8a48caa13a8">
+        <profileInstance Id="8d6bee36-daa3-462a-b7aa-72a9c9b53a22" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="273487fe-9e2e-42bf-a2f8-65014a35fe57">
+        <profileInstance Id="148317d1-7c03-4683-83fc-4d58436c5b4a" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

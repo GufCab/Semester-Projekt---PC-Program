@@ -5,6 +5,9 @@ using System.Net.Sockets;
 
 namespace FileSender
 {
+    /// <summary>
+    /// Library for handling TCP text
+    /// </summary>
 	public class LIB
 	{
 		private LIB ()

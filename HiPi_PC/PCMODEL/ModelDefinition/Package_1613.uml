@@ -543,7 +543,7 @@
               <classMoniker
                 Id="b47a5343-49ff-4ae7-85e9-5767ea3448a1"
                 LastKnownName="Live555Wrapper"
-                LastKnownLocation="Package_1640.uml" />
+                LastKnownLocation="Package_1549.uml" />
             </type_NamedElement>
           </property>
           <property
@@ -1054,15 +1054,6 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
-        <suppliersInternal>
-          <interfaceRealization
-            Id="482e0fb7-f806-482e-b7be-352466d92811">
-            <interfaceMoniker
-              Id="493b6cf8-2b28-44c3-a5cc-83da3cf850ea"
-              LastKnownName="ISynchronizer"
-              LastKnownLocation="Package_1613.uml" />
-          </interfaceRealization>
-        </suppliersInternal>
         <generalsInternal>
           <generalization
             Id="c0ea864d-8bba-44e5-8fc1-e697461eaa7c"
@@ -1138,43 +1129,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="8bbbf8f4-8136-4637-a171-cbc43bd445ce"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="b8a1f390-6aca-42ca-b261-3754e1881663"
-            isDerived="false"
-            sourceEndRoleName=""
-            targetEndRoleName=""
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="18186ff6-74d6-472d-87d9-649f2e7aafb0"
-              LastKnownName="Live555Wrapper"
-              LastKnownLocation="Package_1608.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="5fa9130d-e3b5-4acc-80b4-a62c51633809"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="e5fcd9f4-0999-4a65-bc51-3d419c979c28"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -1318,7 +1272,7 @@
               <classMoniker
                 Id="b47a5343-49ff-4ae7-85e9-5767ea3448a1"
                 LastKnownName="Live555Wrapper"
-                LastKnownLocation="Package_1640.uml" />
+                LastKnownLocation="Package_1549.uml" />
             </type_NamedElement>
           </property>
           <property
@@ -1454,222 +1408,6 @@
                 </propertyInstances>
               </stereotypeInstance>
             </appliedStereotypesInternal>
-          </operation>
-          <operation
-            Id="d2704dba-4f61-4c1e-aa1e-d02fb57413f9"
-            name="Startup"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <referencesInternal>
-              <reference
-                Id="79a0813c-d6c4-47c5-859b-67e265fc49ec"
-                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FTemplateSync%2Fbin%2FDebug%2FTemplateSync.dll Namespace%3DTemplateSync Type%3DSynchronizer Member%3DStartup"
-                tag="ViewCode" />
-            </referencesInternal>
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="062d3d8d-7a41-4f89-8f42-8e03be97ce62"
-                name="method"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="01a5fae0-175b-4c7f-9c0a-6ab6d3ae565f">
-                    <propertyInstance
-                      Id="3bbd0e0d-ea52-4520-a351-67c8fe51c781"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="4621bd3f-369c-4c72-b4b6-21f0e5c0b78c">
-                    <propertyInstance
-                      Id="641821d8-f178-4a55-8df6-97cf863f1b2c"
-                      name="IsPartial"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="d414874c-90cc-447b-8f18-bf00d27275d5">
-                    <propertyInstance
-                      Id="b8168ef6-fd9c-4d86-be78-740ef7e3a7b1"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="4b08a08f-5255-48e2-8d14-a67ea5100d4f">
-                    <propertyInstance
-                      Id="bf1f2090-ea8e-4ffa-907a-1204e41fd8ad"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="0eb681f6-f900-43f7-9629-934e32e33a4f">
-                    <propertyInstance
-                      Id="d7b9b06a-1c0a-4058-bfc9-1972bd7a755d"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="561747a4-a053-4c61-a33d-25cd4a4f36ec">
-                    <propertyInstance
-                      Id="3d5a92b3-c680-4c0e-9007-f1c71b6ebc67"
-                      name="params"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-          </operation>
-          <operation
-            Id="25ae8922-9038-45fc-a21a-ed5646eb8469"
-            name="SyncPiDb"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <referencesInternal>
-              <reference
-                Id="8304f109-f6b7-4bbc-9dcd-7c184441bbf6"
-                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FTemplateSync%2Fbin%2FDebug%2FTemplateSync.dll Namespace%3DTemplateSync Type%3DSynchronizer Member%3DSyncPiDb"
-                tag="ViewCode" />
-            </referencesInternal>
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="308c5511-d86a-4b79-924c-a7db8e1f3ec2"
-                name="method"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="9677d9d6-3173-4d31-aa25-cae7882431da">
-                    <propertyInstance
-                      Id="6c504d79-c4b8-4cbc-b6b7-d0d5165cb55f"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="c14f0ffe-e513-4893-9791-5a7ebe388c8d">
-                    <propertyInstance
-                      Id="68df60f2-e784-40d5-b24a-e3b88ab26ec8"
-                      name="IsPartial"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="036a5e61-0001-4bf5-82be-ce434a6968b9">
-                    <propertyInstance
-                      Id="46655573-ba91-4320-8f98-df2d529db5fc"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="edb86b91-799f-4d4d-b4fc-351f707ce080">
-                    <propertyInstance
-                      Id="b76843bd-b999-45b9-a9e1-923ea1fffbd6"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="11c9524d-13c8-4556-a07f-5cbf664c0036">
-                    <propertyInstance
-                      Id="e854bdb9-1e3f-4d37-a271-9548d0f3a613"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="d13c1c33-1ab4-45e9-9e47-54598ff8ed14">
-                    <propertyInstance
-                      Id="eeb72af2-8849-4b95-aa65-9e127e100939"
-                      name="params"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-          </operation>
-          <operation
-            Id="695f7919-a377-49c8-8313-94568a460141"
-            name="SyncLocalDb"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <referencesInternal>
-              <reference
-                Id="bae368b8-0c30-4f41-a510-27eba5db68d9"
-                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FTemplateSync%2Fbin%2FDebug%2FTemplateSync.dll Namespace%3DTemplateSync Type%3DSynchronizer Member%3D(Name%3DSyncLocalDb OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections.Generic Type%3D(Name%3DList GenericParameterCount%3D1 GenericArguments%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]))])"
-                tag="ViewCode" />
-            </referencesInternal>
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="83caa808-7f4d-44b4-afeb-290a5a634fd3"
-                name="method"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="6d84d387-83e2-4288-ba12-abef7959b1bb">
-                    <propertyInstance
-                      Id="c94fc641-bd48-4ba5-8e59-aca85a59036f"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="1ea83909-2717-4d16-a35b-7a5cf28e09e9">
-                    <propertyInstance
-                      Id="f3728a27-d720-470b-869a-fc250c680a17"
-                      name="IsPartial"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="1d926edf-4413-4eab-a540-6940613428a3">
-                    <propertyInstance
-                      Id="153adae0-b39b-494f-91fe-1a89742fc32d"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="cd971c9e-8155-4596-bc0f-056c0e9228b0">
-                    <propertyInstance
-                      Id="fe4e5e7f-4262-47ee-b42b-58c47ca85ab8"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="dd84e00e-6fa5-422f-bcb4-df2530f4d751">
-                    <propertyInstance
-                      Id="2da41871-aede-475b-8b7f-d1549fc52cac"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="64ab3ab3-9546-4290-8e5a-0437dc81a13c">
-                    <propertyInstance
-                      Id="2a55dadc-2520-470c-9af3-06932e82fd3c"
-                      name="params"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="a0f23e76-6513-4dde-994f-c395aa28c457"
-                  name="pathlist"
-                  direction="In">
-                  <referencesInternal>
-                    <reference
-                      Id="d7766a60-f2d8-4380-8533-e229adcd28e1"
-                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FTemplateSync%2Fbin%2FDebug%2FTemplateSync.dll Namespace%3DTemplateSync Type%3DSynchronizer Member%3D(Name%3DSyncLocalDb OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections.Generic Type%3D(Name%3DList GenericParameterCount%3D1 GenericArguments%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]))]) ParameterIdentifier%3Dpathlist"
-                      tag="ViewCode" />
-                  </referencesInternal>
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="de3d5c5b-288a-4916-8f0b-38c2e0a0d168"
-                      LastKnownName="List&lt;String‎&gt;"
-                      LastKnownLocation="Package4_1621.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
           </operation>
           <operation
             Id="aa92d748-71a5-45b3-8bc0-6b17eb21cd86"

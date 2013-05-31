@@ -23,7 +23,9 @@ using TemplateSync;
 using Containers;
 using MessageBox = System.Windows.MessageBox;
 using MouseEventArgs = System.Windows.Input.MouseEventArgs;
-
+/// <summary>
+/// this Namespace contains UI.
+/// </summary>
 namespace playerlayout
 {
     /// <summary>
@@ -33,16 +35,16 @@ namespace playerlayout
     {
         bool play = new bool();
         private Settings settingsw;
-        
-        public MusicIndexToGui musikindex = new MusicIndexToGui();
-        public PlayQueueToGui playqueue = new PlayQueueToGui();
+
+        public ObservableCollection<ITrack> musikindex = new ObservableCollection<ITrack>();
+        public ObservableCollection<ITrack> playqueue = new ObservableCollection<ITrack>();
 
         private UPnP_Setup _UPnPSetup;
         private ISinkFunctions _UPnPSink = null;
         private ISourceFunctions _UPnPSource = null;
 
         private System.Timers.Timer _sliderTimer = new System.Timers.Timer();
-
+        
         /// <summary>
         /// MainWindow Codebehind
         /// </summary>
@@ -62,13 +64,15 @@ namespace playerlayout
             dgPlayQueue.IsReadOnly = true;
             dgMusikindex.IsReadOnly = true;
 
-            _sliderTimer.Interval = 1000;
+            
             _sliderTimer.Elapsed += new ElapsedEventHandler(timerEventFunc);
+            _sliderTimer.Interval = 4000;
+            _sliderTimer.Enabled = true;
         }
 
         private void timerEventFunc(object sender, ElapsedEventArgs elapsedEventArgs)
         {
-            ++sliderTime.Value;
+            _UPnPSink.GetPosition();
         }
 
         /// <summary>
@@ -221,9 +225,6 @@ namespace playerlayout
             {
                 sliderTime.Maximum = eventArgsContainer[1];
                 sliderTime.Value = eventArgsContainer[0];
-
-                //_sliderTimer.Interval = eventArgsContainer[1]*1000;
-                //_sliderTimer.Start();
             }));
         }
 
@@ -254,8 +255,6 @@ namespace playerlayout
         /// <param name="e"></param>
         private void Playbutton_OnClick(object sender, RoutedEventArgs e)
         {
-            //togglePlayButton();
-
             _UPnPSink.Pause();
         }
 

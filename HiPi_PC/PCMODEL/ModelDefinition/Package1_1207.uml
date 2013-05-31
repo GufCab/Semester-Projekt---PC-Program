@@ -1,0 +1,627 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="6317b520-e79b-4f9a-bbc2-dde86a84d9bf"
+  name="Live555 Wrapper Package" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="833e4599-93cf-4b40-a8ef-dc0df383d5b8"
+        name="Live555Wrapper"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="2717d97f-3aa1-4e71-bbbd-1657d19a01d5"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FLive555%2Fbin%2FDebug%2FLive555.dll Namespace%3DLive555 Type%3DLive555Wrapper"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="bc900419-5eb2-434c-95e9-607af16d420b"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3a6402bb-d661-48b3-8287-bd95be36e192">
+                <propertyInstance
+                  Id="d90d112f-4631-480f-b198-ec520ba86d9f"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c1763a47-34bd-4ad2-b503-fa71c278ee76">
+                <propertyInstance
+                  Id="8c713ec5-1f75-458a-a394-41e2d0763754"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0cc9bd54-2b83-4bf5-bdd6-bea5e0eb48a7">
+                <propertyInstance
+                  Id="99eb3187-7ad7-4dd1-afc8-ea5fc3f3274b"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0c734ae2-37ca-4c3c-ae09-d43354e4a5fc">
+                <propertyInstance
+                  Id="77edbff3-ba28-433b-bbdb-b6411eaf72a3"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d7f8ffa8-2235-4ecf-8dd6-6c27865ed7aa">
+                <propertyInstance
+                  Id="6d0afb0f-2db6-4a81-a958-6f360e70615e"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="d30a45ee-7499-46f5-b588-135a409c3282"
+            name="_liveServer"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="442edfc4-acff-4422-98ae-091ebe47bd81"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FLive555%2Fbin%2FDebug%2FLive555.dll Namespace%3DLive555 Type%3DLive555Wrapper Member%3D_liveServer"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="2b1e794d-dc88-43d1-9ddf-f4f008d5d765"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="28f219e2-1d34-4bbf-8fc0-0e93319afcfd">
+                    <propertyInstance
+                      Id="6e91b1f3-998b-4e6c-b0d7-b39fdbdb6a1a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="41cb3989-ec27-429d-98c5-5c15bf298f0a">
+                    <propertyInstance
+                      Id="6742a6ec-4048-4e54-9810-9ca78123c486"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e8bd899b-bcc9-4fbf-a256-282f2b5bd223">
+                    <propertyInstance
+                      Id="19fff3b9-517e-4442-b1a1-af056f1c4892"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f12659f3-6b85-4b36-8e32-8269eefc7ff7">
+                    <propertyInstance
+                      Id="188164cb-7d6f-4877-8777-fa4c80f1d8dd"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="730389d1-fc18-463b-ae8e-c39e0a429622">
+                    <propertyInstance
+                      Id="69db341c-480f-4d16-944e-7be37b6f3fa4"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="22710ed2-e179-46c7-b8f6-946ad696b16a"
+                LastKnownName="Process"
+                LastKnownLocation="Package1_1640.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="2f138530-ab18-4692-93fd-c7eee43f6cc3"
+            name="_outStream"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="9dede091-53f9-418c-945e-913d5e1020f7"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FLive555%2Fbin%2FDebug%2FLive555.dll Namespace%3DLive555 Type%3DLive555Wrapper Member%3D_outStream"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="4fce6469-67b1-47f6-b355-4e1f1197000e"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e9a1af29-906f-4f59-a9a9-d381a2f24bdf">
+                    <propertyInstance
+                      Id="2577db04-504d-4b3b-a8fd-d92cc9c1cb84"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="28334313-c535-45ec-996d-2a2b1624f9a2">
+                    <propertyInstance
+                      Id="214b9de0-b1bb-41a1-a62a-242cbd0376bb"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="54737f34-920a-4153-bf22-17e3c9e6abf4">
+                    <propertyInstance
+                      Id="515f9565-f7cd-46a7-856d-3c66c72d0011"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9b892899-947d-44c1-8145-7907b15d98da">
+                    <propertyInstance
+                      Id="1cc0ca46-8959-486f-90ac-a20748c90a1e"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="37786483-5135-4df1-b67e-003e461a8289">
+                    <propertyInstance
+                      Id="876ff0aa-5200-48ff-aa0f-13c9966ddcda"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="12749fd6-c2b1-4824-a7bc-46c2760b1e17"
+                LastKnownName="StreamReader"
+                LastKnownLocation="Package2_1640.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="25d04c75-36d7-4e95-917c-68ca0fbce6f3"
+            name="_inStream"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="9bd62be0-6c3e-4fc4-8edb-cd44a07ce321"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FLive555%2Fbin%2FDebug%2FLive555.dll Namespace%3DLive555 Type%3DLive555Wrapper Member%3D_inStream"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ff5c2fb0-ee88-4b49-8174-7edec8e76d71"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="76511ac7-ffe3-4efb-8666-44fc26802289">
+                    <propertyInstance
+                      Id="37e55d1b-caa8-42a3-8e33-b4a1b17da211"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a09e101c-a55f-460e-b267-228483211bdf">
+                    <propertyInstance
+                      Id="a8bbe094-3590-4658-9e1b-d16d6793beb8"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="87526362-2cef-47ff-a9d0-d19cf333fab8">
+                    <propertyInstance
+                      Id="fd4ecd9b-98a3-4dc0-b591-2d8ebf4a3002"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="23fc7aed-a56b-44d5-9ef7-daec0fc5887f">
+                    <propertyInstance
+                      Id="3172e559-1ee5-4b98-ad87-776ce95cc0e5"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3f8089f5-2f4b-4657-b6a6-37ad992f56cc">
+                    <propertyInstance
+                      Id="0789041f-4eba-4cc2-b012-445ccd586dc5"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="7c0929eb-ec87-4d0f-962b-8458fb4b4d16"
+                LastKnownName="StreamWriter"
+                LastKnownLocation="Package2_1640.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="5481caa4-79cf-41c4-a3ff-47067a4e405a"
+            name="IP"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="036eea1a-8de8-41c0-9d97-af99c836d75f"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FLive555%2Fbin%2FDebug%2FLive555.dll Namespace%3DLive555 Type%3DLive555Wrapper Member%3DIP"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="406fa748-5b6b-4bf4-9cd2-5a1928f65bca"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1611d741-7b42-4830-9e24-1e2c133d677d">
+                    <propertyInstance
+                      Id="d97d2a27-04f5-4754-8d86-d95dd780ae26"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3fdad0a2-8524-4a9d-89de-17f438856aa6">
+                    <propertyInstance
+                      Id="94e0554a-ff02-4741-9bcb-f78d64f2f72b"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="884601fc-c264-4ddd-bd07-f70b97a8a837">
+                    <propertyInstance
+                      Id="6fe8bd7c-b67e-4d82-aaf3-e658402eb83e"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="26894907-ca37-4a3a-b18b-88d092ab81f4">
+                    <propertyInstance
+                      Id="68cd881f-51f4-4634-a778-ad411dd748ba"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9e8712af-4930-4d25-8cb1-74df9ec8fe59">
+                    <propertyInstance
+                      Id="f22ea2b6-0ef7-4f35-a731-0d0d6d1824d8"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="PCMODEL.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="a83bccdf-e41b-4ea9-ad34-ec8b601a761c"
+            name="Live555Wrapper"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="cc7f5733-bbb9-4678-8c62-8463a14fdefc"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FLive555%2Fbin%2FDebug%2FLive555.dll Namespace%3DLive555 Type%3DLive555Wrapper Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="1b0012e2-27e8-4e94-9e83-bc898382f8c0"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a9d536ad-9ce6-411f-9a7c-dd3dd3f4bb5c">
+                    <propertyInstance
+                      Id="960d8702-efda-4812-b7e9-d9068721d93b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4241c1ab-5ea2-4408-8738-57af88adaa22">
+                    <propertyInstance
+                      Id="83f135c3-72b1-4a29-9aa4-3c939933136f"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9895381c-586b-4a96-ac34-7a7ecfda7cf7">
+                    <propertyInstance
+                      Id="5278ef91-5426-42c9-be1f-2529e6921a4f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="62244128-ae19-4aa7-93fc-1c93eba7a48b">
+                    <propertyInstance
+                      Id="429b4210-3ee9-4a9e-a128-c7f696eb4fa2"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0a898666-a18c-4ea8-ab54-7f99ec2bc1af">
+                    <propertyInstance
+                      Id="a5803ab2-b08d-43f0-82f2-514da57f4d8e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dab58517-323e-4200-a0e1-3664c2c8117a">
+                    <propertyInstance
+                      Id="6c6e1925-5790-4170-ade9-f3637d8fb5af"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="807dd19a-d365-4327-92ba-1d1a1a03dd30"
+            name="Live555Setup"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="34294ba5-5676-4aaf-a7f3-642b7d343337"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FLive555%2Fbin%2FDebug%2FLive555.dll Namespace%3DLive555 Type%3DLive555Wrapper Member%3DLive555Setup"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b6cb61bc-d6f6-4afe-b1f4-29a1fe16a1ee"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="db6e03c3-0dea-43d1-910d-c453ddf604ae">
+                    <propertyInstance
+                      Id="45cb54ea-e8b0-4498-b78c-9be7b3229a32"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="98560b18-a0a5-485e-92da-19ea2a345721">
+                    <propertyInstance
+                      Id="ca0049b7-aae5-4b6c-ac77-1bd674ff828f"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bbaf7ceb-501c-465f-9340-02f320b10ea2">
+                    <propertyInstance
+                      Id="d205268a-5156-4392-afe3-0210f24047db"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5c7a3200-e3c6-4ff4-a5d5-e0e12ca59fed">
+                    <propertyInstance
+                      Id="e58dadbe-c080-4da2-a00d-eb30497eddbd"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b287f1dc-8488-4281-9892-20e62531dcd7">
+                    <propertyInstance
+                      Id="6b3af34b-21c4-4b41-834a-ea75cd2a00f4"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="374778c2-ec4a-4aad-a1fa-5e264b801122">
+                    <propertyInstance
+                      Id="019cce41-1310-45a8-8624-3ab6e0d8b0b1"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="3a4f2101-62a3-4e51-b27c-f5501a8fe6ef"
+            name="GetIP"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="c2325e38-e8ef-4165-a92c-581a69275f9a"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FLive555%2Fbin%2FDebug%2FLive555.dll Namespace%3DLive555 Type%3DLive555Wrapper Member%3DGetIP"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e95735bd-0138-434d-bda3-837dc71da126"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6cdb117c-9713-44c3-b4cc-f06f4e975c75">
+                    <propertyInstance
+                      Id="a304893e-708e-4a39-9cbb-fce1b8ed290f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5f7a799c-858c-4a76-bea6-09df1b6b5937">
+                    <propertyInstance
+                      Id="c8020702-8a84-40a8-bf8a-b4eb5273d79b"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f2f442d1-4319-4bc0-9fff-c5861325038e">
+                    <propertyInstance
+                      Id="ddf89b3c-4e50-4e86-b011-3dbf4a7c555c"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a30904f4-85b7-410d-9cea-0d4ab77d4de0">
+                    <propertyInstance
+                      Id="cf1d1cb6-8225-4c0a-89e6-c6764dc53c5c"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6a9e76bb-0619-444c-a87c-d58c69967c5d">
+                    <propertyInstance
+                      Id="a3615d3c-8a14-424e-9548-fcf56551b30a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a7ac7418-6cf2-4a5f-8d29-5011804f6efd">
+                    <propertyInstance
+                      Id="f2a65643-34ac-4ee1-a937-ea0f0ff568bf"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="df8f3c68-34d8-41a2-a570-95b7ffd507fa"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="PCMODEL.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="9526e599-ffba-418a-be05-8dce50beb0fa"
+            name="GetIPandPort"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="9d5295eb-acd9-43cb-8775-ccb7e13fc4dc"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FLive555%2Fbin%2FDebug%2FLive555.dll Namespace%3DLive555 Type%3DLive555Wrapper Member%3DGetIPandPort"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a15ce186-f84e-4645-8582-67cc58308df5"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="655d4d6b-f698-4eb5-becb-3358a35af251">
+                    <propertyInstance
+                      Id="fbf5f13c-1c1b-4287-8cd0-dc126b9453ae"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2b9df1b2-3a64-45ca-b4d0-6ef873527558">
+                    <propertyInstance
+                      Id="d6d0e2d4-db1e-489d-8123-f3766b11fe61"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="857c4442-2ed8-4d6a-9333-3e03e0069325">
+                    <propertyInstance
+                      Id="13815f86-6729-4a70-948a-96cca17d13ea"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="40081146-d504-4c7a-b085-807d6506e817">
+                    <propertyInstance
+                      Id="73e3209e-da09-4277-ad16-2e31871fbd41"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8733896d-693e-44a8-8efd-11e38d63253c">
+                    <propertyInstance
+                      Id="10ef86cc-ddb5-49f8-9fd0-b30b50d9a03b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a107ee60-54c8-4fa4-9623-898f005371d7">
+                    <propertyInstance
+                      Id="cd570746-df48-4470-8fc0-b108c0497e5f"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8f172afb-bc13-4ca3-be39-6975cce66b80"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="PCMODEL.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

@@ -18,14 +18,9 @@ using Microsoft.Win32;
 using TemplateSync;
 using Application = System.Windows.Application;
 
-namespace constant
-{
-    public static class Constants
-    {
-        public const double Size = 5;
-    }
-
-}
+/// <summary>
+/// Namespace for settings window
+/// </summary>
 namespace playerlayout
 {
     /// <summary>
@@ -183,12 +178,12 @@ namespace playerlayout
                 ReportFolder = dlg.SelectedPath;
                 PathFolderListBox.Items.Add(ReportFolder);
             }
-
-            //string prefix = "Open File Dialog: ";
         }
+
         //public Synchronizer Sync = new Synchronizer();
         private void SyncronizeButton_OnClick(object sender, RoutedEventArgs e)
         {
+            //Todo: put into string.
             Sync =new Synchronizer();
 
             List<string> pathes = new List<string>();
@@ -200,7 +195,6 @@ namespace playerlayout
             }
             
             Sync.SyncLocalDb(pathes);
-
             Sync.SyncPiDb();
         }
 

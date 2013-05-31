@@ -7,6 +7,9 @@ using Database;
 
 namespace dbclases
 {
+    /// <summary>
+    /// this is the interface used to manipulate the PIdb.
+    /// </summary>
     public interface IPidbhandel
     {
         void Markasonline();
@@ -16,12 +19,14 @@ namespace dbclases
         void Markasofline();
     }
 
-
+    /// <summary>
+    /// This class takes the tables from the Local and adds their content to the Pi database.
+    /// </summary>
    public class PiDbhandel : IPidbhandel
     {
-
-
-
+       /// <summary>
+       /// this function marks a device as online, or makes a new device and marks it as online.
+       /// </summary>
         public void Markasonline()
        {
            {
@@ -51,13 +56,16 @@ namespace dbclases
                }
                else
                {
-                   CheckPIandFixIp();
+                   FixIpSetAsOnline();
                }
            }
 
        }
 
-       private void CheckPIandFixIp()
+       /// <summary>
+       /// this funcktion fixes the ip the Pi database, and marks this device as online.
+       /// </summary>
+       private void FixIpSetAsOnline()
        {
            List<device> PCdevices;
            using (var musik = new pcindexEntities())
@@ -70,12 +78,14 @@ namespace dbclases
            {
                var change = (from p in pimusik.PIDevices where p.UUIDDevice == my.UUIDDevice select p).ToList();
                change[0].IP = my.IP;
+               change[0].Online = true;
                pimusik.SaveChanges();
-
            }
 
        }
-
+       /// <summary>
+       /// this function synchronizes the Pidatabase with Pc database
+       /// </summary>
        public void SyncfromLocalToPI()
         {
             FillPiPath();
@@ -83,13 +93,18 @@ namespace dbclases
             FillMusikData();
 
         }
-
+       /// <summary>
+       /// this function marks a device as ofline in the Pi database
+       /// </summary>
         public void Markasofline()
         {
             throw new NotImplementedException();
         }
 
-
+       /// <summary>
+       /// returns true if the device is in the pi database
+       /// </summary>
+       /// <returns></returns>
         private bool CheckIfDeviceExists()
         {
             List<string> pcdevices;
@@ -104,6 +119,9 @@ namespace dbclases
             return pcdevices.Count == 0;
         }
 
+       /// <summary>
+       /// Takes the Pathes from the pc database and adds the new to the Pi database. 
+       /// </summary>
        private void FillPiPath()
        {
            List<filepath> pathtopi;
@@ -112,12 +130,10 @@ namespace dbclases
            using (var musik = new pcindexEntities())
            {
                pathtopi = (from p in musik.filepaths select p).ToList();
-
            }
 
            using (var pimusik = new PiindexEntities())
            {
-
                pifilepaths = (from p in pimusik.PIFilePaths select p).ToList();
            }
 

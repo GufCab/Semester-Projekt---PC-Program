@@ -7,9 +7,6 @@
         Background="{DynamicResource appBackground}"
         WindowStyle="ThreeDBorderWindow"
         BorderBrush="SteelBlue" Closing="Window_Closing">
-    <Window.DataContext>
-        <containers:MusicIndexToGui/>
-    </Window.DataContext>
     <UserControl>
         <UserControl.Resources>
             <Style x:Key="ImageEnabled" TargetType="Image">
@@ -41,18 +38,14 @@
                     <RowDefinition MinHeight="20" Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Image Source="Hipiuden hvid.png"></Image>
-                <!--<TextBox Grid.Row="1" Text="Søgefelt"/>-->
                 <Label Grid.Row="2" Content="Volume" Margin="0,0,0,-5"/>
                 <Slider Grid.Row="3" x:Name="sliderVol" VerticalAlignment="Bottom" Maximum="100" Minimum="70" PreviewMouseLeftButtonUp="SliderVol_OnPreviewMouseLeftButtonUp"/>
-
                 <Button Grid.Row="5" Content="[PI] Send File" Click="SendFile_OnClick"/>
                 <Button Grid.Row="6" Content="Settings" Click="Settings_OnClick" Margin="0,0,0,0"/>
                 <Button Grid.Row="7" Content="Sync" Name="btnSync" Click="SyncButtonClick"/>
                 <Button Grid.Row="8" Content="Rescan" x:Name="btnRescan" Click="BtnRescan_OnClick" Height="20" VerticalAlignment="Bottom"></Button>
             </Grid>
-
             <Grid Grid.Column="1">
-
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*" MinHeight="220"/>
@@ -89,8 +82,6 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
-                        <!--<ColumnDefinition Width="54*"/>
-                        <ColumnDefinition Width="55*"/>-->
                     </Grid.ColumnDefinitions>
                     <Button Grid.Column="0" x:Name="btnPrevious" MaxHeight="30" Click="BtnPrevious_OnClick">
                         <Image Source="Icons\Previous.ico" Margin="0,2" Style="{StaticResource ImageEnabled}"/>
@@ -98,16 +89,11 @@
                     <Button Grid.Column="1" MaxHeight="30" Click="Playbutton_OnClick" x:Name="btnPlayPause">
                         <Image x:Name="pap" Source="Icons\Play.ico" Margin="0,2" Style="{StaticResource ImageEnabled}"/>
                     </Button>
-                    <!--<Button Grid.Column="5" x:Name="btnStop" MaxHeight="30" Click="BtnStop_OnClick" Grid.ColumnSpan="2">
-                        <Image Source="Icons\Stop.ico"  Margin="0,3" Style="{StaticResource ImageEnabled}"></Image>
-                    </Button>-->
                     <Button Grid.Column="2" x:Name="btnNext" MaxHeight="30" Click="BtnNext_OnClick">
                         <Image x:Name="ImgNext" Source="Icons\Next.ico" Margin="0,2" Style="{StaticResource ImageEnabled}"/>
                     </Button>
                 </Grid>
-
             </Grid>
-
         </Grid>
     </UserControl>
 </Window>

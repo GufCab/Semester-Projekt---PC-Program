@@ -7,7 +7,7 @@ using OpenSource.UPnP;
 namespace SinkStack
 {
     /// <summary>
-    /// Transparent ClientSide UPnP Service
+    /// Transparent ClientSide UPnP Service 
     /// </summary>
     public class CpConnectionManager
     {

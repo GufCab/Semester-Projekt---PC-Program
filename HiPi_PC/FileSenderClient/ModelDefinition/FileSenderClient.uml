@@ -1,8 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="12609d39-bf0c-43a9-8286-5ea8b2b7219b"
   name="FileSenderClient" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="551ac988-9caa-4fe2-bc17-b53d53a0622f">
+      <body>FileSenderClient sends data to Pi</body>
+      <annotatedElements>
+        <packageMoniker
+          Id="1bb46b4e-d70f-47e9-b9df-f018333a35ae"
+          LastKnownName="Pi"
+          LastKnownLocation="Package_0844.uml" />
+        <classMoniker
+          Id="aea7f197-4ee4-44a9-bec2-e05c51dcf700"
+          LastKnownName="FileSenderClient"
+          LastKnownLocation="Package5_1653.uml" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
       Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
@@ -77,6 +93,12 @@
         Id="106b9dc6-d095-4d47-a94b-fad877f6ebf5"
         LastKnownName="Containers"
         LastKnownLocation="Package4_1820.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="1bb46b4e-d70f-47e9-b9df-f018333a35ae"
+        LastKnownName="Pi"
+        LastKnownLocation="Package_0844.uml" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

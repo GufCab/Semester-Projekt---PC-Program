@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="a98fcc2f-a923-4832-acf6-9de0465036c6"
+  name="FileIndexer"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="24cb01ea-9e57-4243-ab18-c946a0f55d39"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DMetadataReader.FileIndexer"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="4290e0a2-a99b-4b21-850d-d94730e0161a"
+        name="IOitem"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="f18b53aa-33c0-49d9-a951-154fc0dd45da"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DIOitem"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="cc7bc264-68d8-4b8a-b22e-a1978f8bf842"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ff29cf8d-4f12-4bff-9a07-7cfb80c1ae88">
+                <propertyInstance
+                  Id="28f5ce95-78d0-4d66-ab97-5e8d4595557d"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e4e03c4f-bf4e-41df-b476-144805c99b34">
+                <propertyInstance
+                  Id="81908962-51a3-40d6-b8d3-20d15b5399f9"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ab1c1238-15fc-40f0-8a0e-3160ad36b560">
+                <propertyInstance
+                  Id="77039d12-9827-41b0-b891-9cf2966c2539"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c9c967b4-d72e-4217-bda6-64e22ce5a8b3">
+                <propertyInstance
+                  Id="f6d3813a-f550-4233-8f4e-6b3ef6d6e29b"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="38cbaf32-9288-4259-bd0c-a51ab6cb3bb5">
+                <propertyInstance
+                  Id="6bb6da71-d679-4378-9a24-351afdee5438"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="afe961b7-c8bb-42b2-bf75-ca71a422a3ec"
+        name="IFileIndexer"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="3c1eee3c-f783-4480-9379-b887560a0f3e"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FMetadataReader%2Fbin%2FDebug%2FMetadataReader.dll Namespace%3DMetadataReader.FileIndexer Type%3DIFileIndexer"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="f89c88bf-142a-44ce-99dd-eadf1028cb22"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4d94b230-3bf4-4def-a6ca-6c131dc6a2a2">
+                <propertyInstance
+                  Id="5bdea216-b377-4305-a8ae-b19a8139aa84"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="00af343a-ec9d-4eb7-bb25-5083b32dada0">
+                <propertyInstance
+                  Id="c78ed4fe-0182-4079-b8c5-935671b8550d"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="958a9444-b39f-4ec3-b3dd-5aa2bd0f888e">
+                <propertyInstance
+                  Id="5aaaf28f-5083-449e-8701-2fb3ac9e98fd"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="88703523-39d4-48bb-8f4d-fa2727ef0873">
+                <propertyInstance
+                  Id="20389d3d-080e-4fa8-bbae-ce138ff2f408"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

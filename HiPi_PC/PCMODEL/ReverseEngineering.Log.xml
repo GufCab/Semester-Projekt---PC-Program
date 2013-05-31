@@ -6,33 +6,27 @@
   <MessageClass Name="Error" Label="Error" Option="Show errors" />
   <MessageClass Name="Property" Label="Property" Option="Show metadata" />
   <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
-  <Message Timestamp="2013-05-28T15:51:30" Importance="High" Text="Reverse Engineering Started." />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="Diagnostic" Text="Element reverse engineered into the UML model: '584cdc82-ab72-4d94-b36a-347d7dd3933a' -  (ClassifierTemplateParameter)" />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::dbclases' -  (Package)" />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::dbclases::ILocalDbhandel' -  (Interface)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::Live555' -  (Package)" />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::Live555::Live555Wrapper' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::System' -  (Package)" />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::System::Collections' -  (Package)" />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::System::Collections::Generic' -  (Package)" />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::System::Collections::Generic::List' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::System::Collections::Generic::List&lt;String‎&gt;' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::TemplateSync' -  (Package)" />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::TemplateSync::ISynchronizer' -  (Interface)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="Medium" Text="Element reverse engineered into the UML model: 'PCMODEL::TemplateSync::Synchronizer' -  (Class)" />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::TemplateSync::Synchronizer::_ip' -  (Property)" />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::TemplateSync::Synchronizer::db' -  (Property)" />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::TemplateSync::Synchronizer::live555' -  (Property)" />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::TemplateSync::Synchronizer::MakeRelpathFromAbspath' -  (Operation)" />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::TemplateSync::Synchronizer::MakeRelpathFromAbspath::a' -  (Parameter)" />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::TemplateSync::Synchronizer::Startup' -  (Operation)" />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::TemplateSync::Synchronizer::Synchronizer' -  (Operation)" />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::TemplateSync::Synchronizer::SyncLocalDb' -  (Operation)" />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::TemplateSync::Synchronizer::SyncLocalDb::pathlist' -  (Parameter)" />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::TemplateSync::Synchronizer::SyncPiDb' -  (Operation)" />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'String' -  (PrimitiveType)" />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: PCMODEL::TemplateSync::Synchronizer to PCMODEL::TemplateSync::ISynchronizer (InterfaceRealization)" />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="High" Text="(1) type(s) fully reverse engineered." />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="High" Text="(5) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
-  <Message Timestamp="2013-05-28T15:51:31" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
+  <Message Timestamp="2013-05-30T11:35:01" Importance="High" Text="Reverse Engineering Started." />
+  <Message Timestamp="2013-05-30T11:35:02" Importance="Diagnostic" Text="Element reverse engineered into the UML model: '584cdc82-ab72-4d94-b36a-347d7dd3933a' -  (ClassifierTemplateParameter)" />
+  <Message Timestamp="2013-05-30T11:35:02" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Boolean' -  (PrimitiveType)" />
+  <Message Timestamp="2013-05-30T11:35:02" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::MetadataReader' -  (Package)" />
+  <Message Timestamp="2013-05-30T11:35:02" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::MetadataReader::FileIndexer' -  (Package)" />
+  <Message Timestamp="2013-05-30T11:35:02" Importance="Medium" Text="Element reverse engineered into the UML model: 'PCMODEL::MetadataReader::FileIndexer::ExtentionVerifier' -  (Class)" />
+  <Message Timestamp="2013-05-30T11:35:02" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::MetadataReader::FileIndexer::ExtentionVerifier::AddExtension' -  (Operation)" />
+  <Message Timestamp="2013-05-30T11:35:02" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::MetadataReader::FileIndexer::ExtentionVerifier::AddExtension::dotExtention' -  (Parameter)" />
+  <Message Timestamp="2013-05-30T11:35:02" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::MetadataReader::FileIndexer::ExtentionVerifier::ExtentionList' -  (Property)" />
+  <Message Timestamp="2013-05-30T11:35:02" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::MetadataReader::FileIndexer::ExtentionVerifier::ExtentionVerifier' -  (Operation)" />
+  <Message Timestamp="2013-05-30T11:35:02" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::MetadataReader::FileIndexer::ExtentionVerifier::LoadExtentionList' -  (Operation)" />
+  <Message Timestamp="2013-05-30T11:35:02" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::MetadataReader::FileIndexer::ExtentionVerifier::TestExtention' -  (Operation)" />
+  <Message Timestamp="2013-05-30T11:35:02" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::MetadataReader::FileIndexer::ExtentionVerifier::TestExtention::dotExtention' -  (Parameter)" />
+  <Message Timestamp="2013-05-30T11:35:02" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::System' -  (Package)" />
+  <Message Timestamp="2013-05-30T11:35:02" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::System::Collections' -  (Package)" />
+  <Message Timestamp="2013-05-30T11:35:02" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::System::Collections::Generic' -  (Package)" />
+  <Message Timestamp="2013-05-30T11:35:02" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::System::Collections::Generic::List' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2013-05-30T11:35:02" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'PCMODEL::System::Collections::Generic::List&lt;String‎&gt;' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2013-05-30T11:35:02" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'String' -  (PrimitiveType)" />
+  <Message Timestamp="2013-05-30T11:35:02" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: PCMODEL::MetadataReader::FileIndexer::ExtentionVerifier to PCMODEL::System::Collections::Generic::List&lt;String‎&gt; (Association)" />
+  <Message Timestamp="2013-05-30T11:35:02" Importance="High" Text="(1) type(s) fully reverse engineered." />
+  <Message Timestamp="2013-05-30T11:35:02" Importance="High" Text="(2) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
+  <Message Timestamp="2013-05-30T11:35:02" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
 </Log>

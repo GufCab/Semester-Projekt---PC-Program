@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace MetadataReader.FileIndexer
 {
+    /// <summary>
+    /// This class contains the information about each IO item.
+    /// </summary>
     class IOitem
     {
         public string Tag { get; private set; }

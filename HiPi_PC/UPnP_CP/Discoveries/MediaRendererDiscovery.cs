@@ -7,6 +7,9 @@ using OpenSource.UPnP;
 using OpenSource.Utilities;
 using OpenSource.DeviceBuilder;
 
+/// <summary>
+/// Classes that is created by "Developer tools for UPnP"
+/// </summary>
 namespace OpenSource.DeviceBuilder
 {
 	/// <summary>

@@ -30,6 +30,21 @@ GUI is main thread</body>
           LastKnownLocation="ThreadingDiagram.uml" />
       </annotatedElements>
     </comment>
+    <comment
+      Id="2f919362-c56c-4b37-a366-a2649a7a552b">
+      <body>
+GUI starts Live555 as another process</body>
+      <annotatedElements>
+        <classMoniker
+          Id="5410eee9-64bf-4f5b-9a25-24379778b1b1"
+          LastKnownName="Live555"
+          LastKnownLocation="ThreadingDiagram.uml" />
+        <classMoniker
+          Id="93c4a695-03df-4152-8137-3fbc40322454"
+          LastKnownName="GUI"
+          LastKnownLocation="ThreadingDiagram.uml" />
+      </annotatedElements>
+    </comment>
   </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
@@ -69,44 +84,16 @@ GUI is main thread</body>
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
-        <targetEnds>
-          <association
-            Id="3a18cda5-22b4-4238-a420-76314f188cb8"
-            isDerived="false"
-            sourceEndRoleName=""
-            targetEndRoleName=""
-            isLeaf="false"
-            isAbstract="false">
+        <suppliersInternal>
+          <dependency
+            Id="6dec4258-485c-4146-bf33-70bd0cd497c9">
             <classMoniker
               Id="5410eee9-64bf-4f5b-9a25-24379778b1b1"
               LastKnownName="Live555"
               LastKnownLocation="ThreadingDiagram.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="3a37747e-bc0a-4e66-9f26-f69bdbcf543c"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="691e0b3c-bb33-48c4-bfd7-cbe2bd79e355"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
+          </dependency>
+        </suppliersInternal>
+        <targetEnds>
           <association
             Id="2d12dbc0-f8d8-44d0-8ad0-fd5dce87b455"
             isDerived="false"

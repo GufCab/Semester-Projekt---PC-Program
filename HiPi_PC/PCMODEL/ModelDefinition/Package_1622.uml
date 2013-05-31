@@ -71,46 +71,46 @@
     </packageHasNamedElement>
     <packageHasNamedElement>
       <Interface
-        Id="d39632df-3e57-49a3-b6f3-f227eec0e2f7"
+        Id="d71d839c-659d-4087-921e-8153f0d756f9"
         name="ISynchronizer"
         isAbstract="false"
         isLeaf="false">
         <referencesInternal>
           <reference
-            Id="cf635f57-ec81-477f-b267-198da92afdfb"
-            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAik%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FTemplateSync%2Fbin%2FDebug%2FTemplateSync.dll Namespace%3DTemplateSync Type%3DISynchronizer"
+            Id="edc6fd86-5745-4c83-9484-f43b90a62745"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FTemplateSync%2Fbin%2FDebug%2FTemplateSync.dll Namespace%3DTemplateSync Type%3DISynchronizer"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
           <stereotypeInstance
-            Id="e0ca4b04-15de-4322-8c47-ca2bd953ed82"
+            Id="3923cd47-fdc4-4715-b7e9-1a74baef0fcb"
             name="interface"
             profile="CSharpProfile">
             <propertyInstances>
               <stereotypeInstanceHasPropertyInstances
-                Id="a7734281-923a-43ac-99d7-9947658247ea">
+                Id="2ac61ec6-a6f7-4939-a8e8-e6686dc0affc">
                 <propertyInstance
-                  Id="45fb6f8f-93fb-4dbf-8590-ef612b54006d"
+                  Id="9c1d2db3-e5e2-413c-ab47-773f401b733e"
                   name="ClrAttributes" />
               </stereotypeInstanceHasPropertyInstances>
               <stereotypeInstanceHasPropertyInstances
-                Id="a20df847-c704-417a-9316-037782fb1821">
+                Id="6c27931d-bb53-4361-b413-385f2bef56d5">
                 <propertyInstance
-                  Id="709f97bb-a5e8-4213-b63a-8c79953ee390"
+                  Id="f2bd7732-36ad-403c-8a5d-f5b58c60938e"
                   name="IsPartial"
                   value="false" />
               </stereotypeInstanceHasPropertyInstances>
               <stereotypeInstanceHasPropertyInstances
-                Id="69d00956-4607-453d-91b8-0c5783405eb9">
+                Id="4aff8157-b4f7-479c-91a0-c51430f4680a">
                 <propertyInstance
-                  Id="7eb3a880-745c-418d-8bfa-6187acbaa3d0"
+                  Id="3f9ffb15-15fd-43f1-9935-d88d9681c5fd"
                   name="IsUnsafe"
                   value="false" />
               </stereotypeInstanceHasPropertyInstances>
               <stereotypeInstanceHasPropertyInstances
-                Id="e21711a7-ed07-43b2-81d0-ae06d21ec5a9">
+                Id="36eca4a9-692c-4209-a327-d22a9d311ccf">
                 <propertyInstance
-                  Id="8bc231d7-7e45-437b-a80c-527d071c5778"
+                  Id="b528679d-dbd5-4fa4-929e-b08d969d97a0"
                   name="PackageVisibility"
                   value="internal" />
               </stereotypeInstanceHasPropertyInstances>
@@ -118,6 +118,73 @@
           </stereotypeInstance>
         </appliedStereotypesInternal>
       </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="e757d14c-4d05-4304-8e84-e057754315f1"
+        name="Synchronizer"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="63f38915-309a-48f6-b5fa-8ec14070a1f5"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMalmos%2FDocuments%2FGitHub%2FSemester-Projekt---PC-Program%2FHiPi_PC%2FTemplateSync%2Fbin%2FDebug%2FTemplateSync.dll Namespace%3DTemplateSync Type%3DSynchronizer"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="86a71627-911c-4979-b1d9-38d27c91e857"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5a67080a-5f60-4c3c-8690-ad06796d81a2">
+                <propertyInstance
+                  Id="59130ed6-81f0-4a75-bda4-29fbad21c149"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7e2f8490-2a4d-4e60-9b0c-3913783a8ab7">
+                <propertyInstance
+                  Id="581118b4-20a1-43e2-8ed1-94480eaf493e"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4b96d23f-0572-4955-98b6-6c91548d0525">
+                <propertyInstance
+                  Id="7b5952d8-7d7a-4821-b8c0-b213346eb966"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5a8dc644-aae3-472a-9c2d-abcefdf164f5">
+                <propertyInstance
+                  Id="f633f9c8-3872-42b2-a01a-64ea008b6805"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2ab95140-600a-4770-9f1b-f5b26d61a97b">
+                <propertyInstance
+                  Id="2677878c-4b99-4fa7-bdbc-8fb1504e554c"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="c8933f2a-56b2-4076-b6d3-8d669ed133cf">
+            <interfaceMoniker
+              Id="d71d839c-659d-4087-921e-8153f0d756f9"
+              LastKnownName="ISynchronizer"
+              LastKnownLocation="Package_1622.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
 </package>

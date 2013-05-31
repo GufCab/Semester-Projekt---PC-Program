@@ -4,8 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/// <summary>
+/// This namespace contains the Ado.Net Entity Fremework Models.
+/// </summary>
 namespace Database
 {
+    
     class main
     {
         private static void Main(string[] args)

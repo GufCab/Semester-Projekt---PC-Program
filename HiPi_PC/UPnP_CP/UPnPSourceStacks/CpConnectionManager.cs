@@ -4,6 +4,9 @@ using System.Threading;
 using OpenSource.Utilities;
 using OpenSource.UPnP;
 
+/// <summary>
+/// Classes that make up the SourceStack that is generated from the Raspberry Pi UPnP device
+/// </summary>
 namespace SourceStack
 {
     /// <summary>
