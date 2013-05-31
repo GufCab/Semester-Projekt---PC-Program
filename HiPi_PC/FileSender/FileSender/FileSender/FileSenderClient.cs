@@ -4,6 +4,9 @@ using System.Net;
 using System.Net.Sockets;
 using System.Security.AccessControl;
 
+/// <summary>
+/// Namespace for FileSenderClient.
+/// </summary>
 namespace FileSender
 {
     /// <summary>
