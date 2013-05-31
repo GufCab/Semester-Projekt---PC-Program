@@ -19,7 +19,9 @@ namespace dbclases
         void Markasofline();
     }
 
-
+    /// <summary>
+    /// This class takes the tables from the Local and adds their content and adds it to the Pi database.
+    /// </summary>
    public class PiDbhandel : IPidbhandel
     {
        /// <summary>
