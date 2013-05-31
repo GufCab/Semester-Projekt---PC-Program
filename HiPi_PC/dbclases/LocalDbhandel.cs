@@ -7,7 +7,9 @@ using Database;
 using MetadataReader.FileIndexer;
 using MetadataReader.Metadata;
 
-
+/// <summary>
+/// This namespace contains all the classes to handle the database, they can bee seen on as an reposetory pattern, just nearly.
+/// </summary>
 namespace dbclases
 {
     /// <summary>

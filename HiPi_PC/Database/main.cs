@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 /// <summary>
-/// This namespas contains the Ado.Net Entity Fremework Models.
+/// This namespace contains the Ado.Net Entity Fremework Models.
 /// </summary>
 namespace Database
 {

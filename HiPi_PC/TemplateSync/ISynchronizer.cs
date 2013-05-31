@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/// <summary>
+/// this is the namespace used to synchronize
+/// </summary>
 namespace TemplateSync
 {
     /// <summary>
