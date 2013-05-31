@@ -10,6 +10,9 @@ using MetadataReader.Metadata;
 
 namespace dbclases
 {
+    /// <summary>
+    /// this interface us used to manipulate the Localdb.
+    /// </summary>
     public interface ILocalDbhandel
     {
         void FillIp(string ip);
@@ -171,6 +174,11 @@ namespace dbclases
             return list1;
         }
         
+        /// <summary>
+        /// this function fills the musicdata to the local db, the Musicdata has a referance to the table FilePath with the given GUID.
+        /// </summary>
+        /// <param name="datalist"> list of metadatareader </param>
+        /// <param name="uuid"> foreign key til en Tuble i FilePath tabellen</param>
         public void fillMusicdata(List<IMetadataReader> datalist,string uuid)
         {
 
