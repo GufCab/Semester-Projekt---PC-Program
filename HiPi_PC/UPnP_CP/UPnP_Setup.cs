@@ -6,6 +6,9 @@ using System.Text;
 using OpenSource.DeviceBuilder;
 using OpenSource.UPnP;
 
+/// <summary>
+/// Wrapper classes for UPnP functions and discovery
+/// </summary>
 namespace UPnP_CP
 {
     /// <summary>
