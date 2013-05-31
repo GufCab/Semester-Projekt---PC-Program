@@ -8,6 +8,9 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
+/// <summary>
+/// This class starts the live555MediaServer in a separate process and saves the IP and Port to stream from, which can be returned with the GetIP() and GetIPandPort() funtions.
+/// </summary>
 namespace Live555
 {
    /// <summary>
