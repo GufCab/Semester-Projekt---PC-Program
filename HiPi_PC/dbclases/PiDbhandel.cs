@@ -20,7 +20,7 @@ namespace dbclases
     }
 
     /// <summary>
-    /// This class takes the tables from the Local and adds their content and adds it to the Pi database.
+    /// This class takes the tables from the Local and adds their content to the Pi database.
     /// </summary>
    public class PiDbhandel : IPidbhandel
     {
