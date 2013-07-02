@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using FileSender;
 using UPnP_CP;
 using playerlayout.Properties;
@@ -43,7 +44,8 @@ namespace playerlayout
         private ISinkFunctions _UPnPSink = null;
         private ISourceFunctions _UPnPSource = null;
 
-        private System.Timers.Timer _sliderTimer = new System.Timers.Timer();
+        //private System.Timers.Timer _sliderTimer = new System.Timers.Timer();
+        private DispatcherTimer _sliderTimer = new DispatcherTimer();
         
         /// <summary>
         /// MainWindow Codebehind
@@ -64,10 +66,11 @@ namespace playerlayout
             dgPlayQueue.IsReadOnly = true;
             dgMusikindex.IsReadOnly = true;
 
+           // _sliderTimer
             
-            _sliderTimer.Elapsed += new ElapsedEventHandler(timerEventFunc);
-            _sliderTimer.Interval = 4000;
-            _sliderTimer.Enabled = true;
+            //_sliderTimer.Elapsed += new ElapsedEventHandler(timerEventFunc);
+            //_sliderTimer.Interval = 4000;
+            //_sliderTimer.Enabled = true;
         }
 
         private void timerEventFunc(object sender, ElapsedEventArgs elapsedEventArgs)

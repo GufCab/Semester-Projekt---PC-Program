@@ -62,9 +62,9 @@ namespace Live555
 
                 _liveServer.Start();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw new Exception();
+                throw e;
             }
         }
 
