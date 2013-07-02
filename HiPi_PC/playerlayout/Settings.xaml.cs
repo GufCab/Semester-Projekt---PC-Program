@@ -40,8 +40,8 @@ namespace playerlayout
 
     public partial class Settings : Window
     {
-        //private Thread SyncPiThread;
-        //private Thread SyncLocalThread;
+        private Thread SyncPiThread;
+        private Thread SyncLocalThread;
 
         public Synchronizer Sync;
         class DialogData

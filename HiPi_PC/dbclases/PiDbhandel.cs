@@ -34,7 +34,9 @@ namespace dbclases
                {
                    List<device> pcdevices;
                    using (var musik = new pcindexEntities())
+                   
                    {
+                       
                        pcdevices = (from p in musik.devices select p).ToList();
                    }
 

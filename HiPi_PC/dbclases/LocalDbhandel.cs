@@ -62,7 +62,7 @@ namespace dbclases
 
                     mydevice.UUIDDevice = Guid.NewGuid().ToString();
                     _GUIDDevice = mydevice.UUIDDevice;
-                    mydevice.IP = myip+":8554";
+                    mydevice.IP = myip;// +":8554";
                     mydevice.Protocol = "rtsp://";
                     mydevice.PCOwner = Environment.UserName;
 
@@ -80,7 +80,7 @@ namespace dbclases
                         var olddevice = (from p in musik.devices select p).ToList();
                         if (myip != olddevice[0].IP)
                         {
-                            olddevice[0].IP = myip+":8554";
+                            olddevice[0].IP = myip;//+":8554";
                             musik.SaveChanges();
                         }                      
                     }
