@@ -62,9 +62,9 @@ namespace Live555
 
                 _liveServer.Start();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw new Exception();
+                throw e;
             }
         }
 
@@ -83,7 +83,7 @@ namespace Live555
         /// <returns> IP and Port to stream from</returns>
         public string GetIPandPort()
         {
-            string tempIP = IP + ":8554";
+            string tempIP = IP;// +":8554";
             return tempIP;
         }
     }

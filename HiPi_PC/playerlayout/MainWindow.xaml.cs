@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,24 +18,28 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using FileSender;
 using UPnP_CP;
+using playerlayout.Annotations;
 using playerlayout.Properties;
 using TemplateSync;
 using Containers;
 using MessageBox = System.Windows.MessageBox;
 using MouseEventArgs = System.Windows.Input.MouseEventArgs;
+
 /// <summary>
 /// this Namespace contains UI.
 /// </summary>
+
 namespace playerlayout
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, INotifyPropertyChanged
     {
-        bool play = new bool();
+        private bool play = new bool();
         private Settings settingsw;
 
         public ObservableCollection<ITrack> musikindex = new ObservableCollection<ITrack>();
@@ -43,8 +49,21 @@ namespace playerlayout
         private ISinkFunctions _UPnPSink = null;
         private ISourceFunctions _UPnPSource = null;
 
-        private System.Timers.Timer _sliderTimer = new System.Timers.Timer();
-        
+        //private System.Timers.Timer _sliderTimer = new System.Timers.Timer();
+        private DispatcherTimer _sliderTimer = new DispatcherTimer();
+
+        private double _time;
+
+        public double Time
+        {
+            get { return _time; }
+            set
+            {
+                _time = value;
+                OnPropertyChanged("Time");
+            }
+        }
+
         /// <summary>
         /// MainWindow Codebehind
         /// </summary>
@@ -58,21 +77,41 @@ namespace playerlayout
             subscribe();
 
             _UPnPSetup.StartServices();
-            
+
             dgPlayQueue.ItemsSource = playqueue;
             dgMusikindex.ItemsSource = musikindex;
             dgPlayQueue.IsReadOnly = true;
             dgMusikindex.IsReadOnly = true;
 
-            
-            _sliderTimer.Elapsed += new ElapsedEventHandler(timerEventFunc);
-            _sliderTimer.Interval = 4000;
-            _sliderTimer.Enabled = true;
+            sliderTime.DataContext = this;
+            _sliderTimer.Interval = TimeSpan.FromSeconds(1);
+            _sliderTimer.Tick += new EventHandler(timerEventFunc);
+            _sliderTimer.Start();
+
+
+            //_sliderTimer.Elapsed += new ElapsedEventHandler(timerEventFunc);
+            //_sliderTimer.Interval = 4000;
+            //_sliderTimer.Enabled = true;
         }
 
-        private void timerEventFunc(object sender, ElapsedEventArgs elapsedEventArgs)
+        private int t;
+
+        private void timerEventFunc(object sender, EventArgs elapsedEventArgs)
         {
-            _UPnPSink.GetPosition();
+            Time++;
+            t++;
+
+            if (Time >= (int)sliderTime.Maximum)
+            {
+                Time = 0;
+                _UPnPSink.GetPosition();
+            }
+
+            if (t > 9)
+            {
+                t = 0;
+                _UPnPSink.GetPosition();
+            }
         }
 
         /// <summary>
@@ -120,7 +159,6 @@ namespace playerlayout
                     sliderVol.IsEnabled = true;
                     btnSync.IsEnabled = true;
                 }));
-            
         }
 
         /// <summary>
@@ -176,22 +214,22 @@ namespace playerlayout
         private void UpnPSinkOnTransportStateEvent(object sender, string eventArgsContainer)
         {
             Dispatcher.BeginInvoke(new Action(() =>
-            {
-                switch (eventArgsContainer)
                 {
-                    case "PLAYING":
-                        TogglePlayButton();
-                        break;
-                    case "STOPPED":
-                        TogglePlayButton();
-                        break;
-                    case "BROWSE":
-                        _UPnPSource.Browse("playqueue");
-                        break;
-                    default:
-                        break;
-                }
-            }));
+                    switch (eventArgsContainer)
+                    {
+                        case "PLAYING":
+                            TogglePlayButton();
+                            break;
+                        case "STOPPED":
+                            TogglePlayButton();
+                            break;
+                        case "BROWSE":
+                            _UPnPSource.Browse("playqueue");
+                            break;
+                        default:
+                            break;
+                    }
+                }));
         }
 
         /// <summary>
@@ -202,16 +240,16 @@ namespace playerlayout
         private void UpnPSinkOnGetVolEvent(object sender, ushort eventArgsContainer)
         {
             Dispatcher.BeginInvoke(new Action(() =>
-            {
-                if (eventArgsContainer < 70)
                 {
-                    sliderVol.Value = 70;
-                }
-                else
-                {
-                    sliderVol.Value = Convert.ToDouble(eventArgsContainer);
-                }
-            }));
+                    if (eventArgsContainer < 70)
+                    {
+                        sliderVol.Value = 70;
+                    }
+                    else
+                    {
+                        sliderVol.Value = Convert.ToDouble(eventArgsContainer);
+                    }
+                }));
         }
 
         /// <summary>
@@ -222,10 +260,11 @@ namespace playerlayout
         private void UpnPSinkOnGetPositionEvent(object sender, List<ushort> eventArgsContainer)
         {
             Dispatcher.BeginInvoke(new Action(() =>
-            {
-                sliderTime.Maximum = eventArgsContainer[1];
-                sliderTime.Value = eventArgsContainer[0];
-            }));
+                {
+                    sliderTime.Maximum = eventArgsContainer[1];
+                    //sliderTime.Value = eventArgsContainer[0];
+                    _time = (double) eventArgsContainer[0];
+                }));
         }
 
         /// <summary>
@@ -236,18 +275,18 @@ namespace playerlayout
         private void UpnPSinkOnGetIpEvent(object sender, string eventArgsContainer)
         {
             var thread = new Thread(() =>
-            {
-                var dlg = new OpenFileDialog();
-                if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    AbstractFileSenderClient cli = new FileSenderClient(dlg.FileName, eventArgsContainer);
-                }
-            });
+                    var dlg = new OpenFileDialog();
+                    if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        AbstractFileSenderClient cli = new FileSenderClient(dlg.FileName, eventArgsContainer);
+                    }
+                });
             thread.SetApartmentState(ApartmentState.STA);
             thread.Start();
             thread.Join();
         }
-        
+
         /// <summary>
         /// Sends a pause command when someone pressed the play button
         /// </summary>
@@ -344,7 +383,7 @@ namespace playerlayout
             //todo: switch these two
             if (result != null)
             {
-                _UPnPSink.SetNextTransportURI((ITrack)result);
+                _UPnPSink.SetNextTransportURI((ITrack) result);
 
                 //hack to ensure SetNextAVTransportURI is done and so you cant add tracks to fast
                 Thread.Sleep(500);
@@ -363,7 +402,7 @@ namespace playerlayout
 
             if (result != null)
             {
-                _UPnPSink.SetTransportURI((ITrack)result);   
+                _UPnPSink.SetTransportURI((ITrack) result);
             }
         }
 
@@ -392,13 +431,12 @@ namespace playerlayout
         {
             if (sliderVol.Value == 70)
             {
-                _UPnPSink.SetVolume(Convert.ToUInt16(0));    
+                _UPnPSink.SetVolume(Convert.ToUInt16(0));
             }
             else
             {
-                _UPnPSink.SetVolume(Convert.ToUInt16(sliderVol.Value));    
+                _UPnPSink.SetVolume(Convert.ToUInt16(sliderVol.Value));
             }
-            
         }
 
         private void SliderTime_OnPreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -406,6 +444,15 @@ namespace playerlayout
             var time = sliderTime.Value;
 
             _UPnPSink.SetPosition((ushort) Convert.ToInt16(time));
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

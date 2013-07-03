@@ -16,11 +16,22 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Microsoft.Win32;
 using TemplateSync;
+using System.Threading;
 using Application = System.Windows.Application;
 
 /// <summary>
 /// Namespace for settings window
 /// </summary>
+
+namespace constant
+{
+    public static class Constants
+    {
+        public const double Size = 5;
+    }
+
+}
+
 namespace playerlayout
 {
     /// <summary>
@@ -29,6 +40,9 @@ namespace playerlayout
 
     public partial class Settings : Window
     {
+        private Thread SyncPiThread;
+        private Thread SyncLocalThread;
+
         public Synchronizer Sync;
         class DialogData
         {
@@ -184,7 +198,7 @@ namespace playerlayout
         private void SyncronizeButton_OnClick(object sender, RoutedEventArgs e)
         {
             //Todo: put into string.
-            Sync =new Synchronizer();
+            Sync = new Synchronizer();
 
             List<string> pathes = new List<string>();
 
@@ -193,7 +207,14 @@ namespace playerlayout
                 pathes.Add(PathFolderListBox.Items.GetItemAt(i).ToString());
 
             }
-            
+
+            //SyncLocalThread = new Thread( () => Sync.SyncLocalDb(pathes));
+
+            //SyncPiThread = new Thread( () => Sync.SyncPiDb());
+
+            //SyncLocalThread.Start();
+            //SyncPiThread.Start();
+                
             Sync.SyncLocalDb(pathes);
             Sync.SyncPiDb();
         }
