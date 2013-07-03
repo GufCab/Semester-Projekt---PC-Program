@@ -86,7 +86,8 @@ namespace playerlayout
             sliderTime.DataContext = this;
             _sliderTimer.Interval = TimeSpan.FromSeconds(1);
             _sliderTimer.Tick += new EventHandler(timerEventFunc);
-            _sliderTimer.Start();
+            //_sliderTimer.Start();
+            sliderTime.Maximum = 0;
 
 
             //_sliderTimer.Elapsed += new ElapsedEventHandler(timerEventFunc);
@@ -144,6 +145,7 @@ namespace playerlayout
         public void getUPnPSink(ISinkFunctions e, EventArgs s)
         {
             _UPnPSink = e;
+            _sliderTimer.Start();
 
             _UPnPSink.getIPEvent += UpnPSinkOnGetIpEvent;
             _UPnPSink.getPositionEvent += UpnPSinkOnGetPositionEvent;
@@ -443,7 +445,7 @@ namespace playerlayout
         {
             var time = sliderTime.Value;
 
-            _UPnPSink.SetPosition((ushort) Convert.ToInt16(time));
+            //_UPnPSink.SetPosition((ushort) Convert.ToInt16(time));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

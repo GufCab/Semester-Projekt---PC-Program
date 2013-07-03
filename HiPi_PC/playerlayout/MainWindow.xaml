@@ -75,7 +75,7 @@
                 </Grid>
                 <DataGrid Grid.Row="1" x:Name="dgPlayQueue" MouseDoubleClick="DgPlayQueue_OnMouseDoubleClick"></DataGrid>
                 <Grid Grid.Row="2">
-                    <Slider x:Name="sliderTime" PreviewMouseLeftButtonUp="SliderTime_OnPreviewMouseLeftButtonUp" Value="{Binding Time}"/>
+                    <Slider x:Name="sliderTime" IsMoveToPointEnabled="False" PreviewMouseLeftButtonUp="SliderTime_OnPreviewMouseLeftButtonUp" Value="{Binding Time}"/>
                 </Grid>
                 <Grid Grid.Row="3">
                     <Grid.ColumnDefinitions>
