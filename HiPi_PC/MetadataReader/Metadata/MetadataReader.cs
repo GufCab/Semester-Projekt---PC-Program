@@ -61,15 +61,22 @@ namespace MetadataReader.Metadata
         {
             foreach (Shell32.FolderItem2 folderItem2 in _objFolder.Items())
             {
-                string tempItemName = folderItem2.Name;
-                    // + Path.GetExtension(_objFolder.GetDetailsOf(folderItem2, 180)); //_objFolder.GetDetailsOf(folderItem2, 180); 180: file with path and extension
+                string tempItemName = folderItem2.Name + Path.GetExtension(_objFolder.GetDetailsOf(folderItem2, 180)); //_objFolder.GetDetailsOf(folderItem2, 180); 180: file with path and extension
                 if (tempItemName == _musikNumber)
                 {
                     _item2 = folderItem2;
                     break;
                 }
+                else
+                {
+                    string tempItemName2 = folderItem2.Name;
+                    if (tempItemName2 == _musikNumber)
+                    {
+                        _item2 = folderItem2;
+                        break;
+                    }
+                }
             }
-
         }
 
         /// <summary>
@@ -123,7 +130,10 @@ namespace MetadataReader.Metadata
         {
             if (lenght == null) throw new ArgumentNullException("lenght");
 
-            double tempTime = TimeSpan.Parse(lenght).TotalSeconds;
+            double tempTime = 0;
+
+            if(lenght != "")
+                tempTime = TimeSpan.Parse(lenght).TotalSeconds;
 
             return Convert.ToInt32(tempTime);
         }
