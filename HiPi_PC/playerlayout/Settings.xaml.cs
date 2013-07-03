@@ -77,9 +77,10 @@ namespace playerlayout
             load();
         }
 
+        private string folderpath = "../../MusicPath/pathList.txt";
         private void load()
         {
-            using (TextReader TR = new StreamReader("../../MusicPath/pathList.txt"))
+            using (TextReader TR = new StreamReader(folderpath))
             {
                 while (TR.Peek() != -1)
                 {
@@ -93,7 +94,7 @@ namespace playerlayout
         {
             if (PathFolderListBox.Items.Count > 0)
             {
-                using (TextWriter TW = new StreamWriter("pathList.txt"))
+                using (TextWriter TW = new StreamWriter(folderpath))
                 {
                     foreach (var item in PathFolderListBox.Items)
                     {
