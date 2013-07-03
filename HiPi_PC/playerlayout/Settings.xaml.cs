@@ -18,6 +18,7 @@ using Microsoft.Win32;
 using TemplateSync;
 using System.Threading;
 using Application = System.Windows.Application;
+using MessageBox = System.Windows.MessageBox;
 
 /// <summary>
 /// Namespace for settings window
@@ -215,9 +216,21 @@ namespace playerlayout
 
             //SyncLocalThread.Start();
             //SyncPiThread.Start();
-                
-            Sync.SyncLocalDb(pathes);
-            Sync.SyncPiDb();
+
+            Thread SyncThread = new Thread( () => SyncingThread(pathes));
+
+            SyncThread.Start();
+
+            //SyncThread.Join();
+            
+        }
+
+        private void SyncingThread(List<string> pathes)
+        {
+                Sync.SyncLocalDb(pathes);
+                Sync.SyncPiDb();
+
+                MessageBox.Show("Done syncronizing index!");
         }
 
         private void Window_Closed_2(object sender, EventArgs e)
