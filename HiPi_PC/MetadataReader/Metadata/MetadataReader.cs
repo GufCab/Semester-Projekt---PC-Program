@@ -62,19 +62,12 @@ namespace MetadataReader.Metadata
             foreach (Shell32.FolderItem2 folderItem2 in _objFolder.Items())
             {
                 string tempItemName = folderItem2.Name + Path.GetExtension(_objFolder.GetDetailsOf(folderItem2, 180)); //_objFolder.GetDetailsOf(folderItem2, 180); 180: file with path and extension
-                if (tempItemName == _musikNumber)
+                string tempItemName2 = folderItem2.Name;
+                
+                if (tempItemName == _musikNumber || tempItemName2 == _musikNumber)
                 {
                     _item2 = folderItem2;
                     break;
-                }
-                else
-                {
-                    string tempItemName2 = folderItem2.Name;
-                    if (tempItemName2 == _musikNumber)
-                    {
-                        _item2 = folderItem2;
-                        break;
-                    }
                 }
             }
         }
