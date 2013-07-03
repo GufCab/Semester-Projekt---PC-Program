@@ -52,7 +52,7 @@
                     <RowDefinition Height="Auto" MinHeight="0"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Content="Musikindex"/>
-                <DataGrid Grid.Row="1" x:Name="dgMusikindex" MouseDoubleClick="DgMusikindex_OnMouseDoubleClick"/>
+                <DataGrid Grid.Row="1" x:Name="dgMusikindex"  MouseDoubleClick="DgMusikindex_OnMouseDoubleClick" PreviewKeyDown="DgMusikindex_OnPreviewKeyDown"/>
             </Grid>
             <GridSplitter Grid.Column="2" Width="5" HorizontalAlignment ="Center" Background="Gray" Opacity=".1"/>
             <Grid Grid.Column="3">
@@ -73,9 +73,9 @@
                     </Grid.ColumnDefinitions>
                     <Label Grid.Column="0" Grid.ColumnSpan="2" Content="Afspilningsliste"/>
                 </Grid>
-                <DataGrid Grid.Row="1" x:Name="dgPlayQueue" MouseDoubleClick="DgPlayQueue_OnMouseDoubleClick"></DataGrid>
+                <DataGrid Grid.Row="1" x:Name="dgPlayQueue" MouseDoubleClick="DgPlayQueue_OnMouseDoubleClick" PreviewKeyDown="DgPlayQueue_OnPreviewKeyDown"/>
                 <Grid Grid.Row="2">
-                    <Slider x:Name="sliderTime" IsMoveToPointEnabled="False" PreviewMouseLeftButtonUp="SliderTime_OnPreviewMouseLeftButtonUp" Value="{Binding Time}"/>
+                    <Slider x:Name="sliderTime" PreviewMouseLeftButtonUp="SliderTime_OnPreviewMouseLeftButtonUp" Value="{Binding Time}"/>
                 </Grid>
                 <Grid Grid.Row="3">
                     <Grid.ColumnDefinitions>
