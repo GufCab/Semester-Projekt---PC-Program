@@ -25,6 +25,7 @@ using playerlayout.Annotations;
 using playerlayout.Properties;
 using TemplateSync;
 using Containers;
+using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 using MessageBox = System.Windows.MessageBox;
 using MouseEventArgs = System.Windows.Input.MouseEventArgs;
 
@@ -84,34 +85,31 @@ namespace playerlayout
             dgMusikindex.IsReadOnly = true;
 
             sliderTime.DataContext = this;
-            _sliderTimer.Interval = TimeSpan.FromSeconds(1);
+            _sliderTimer.Interval = TimeSpan.FromMilliseconds(500);
             _sliderTimer.Tick += new EventHandler(timerEventFunc);
-            //_sliderTimer.Start();
             sliderTime.Maximum = 0;
-
-
-            //_sliderTimer.Elapsed += new ElapsedEventHandler(timerEventFunc);
-            //_sliderTimer.Interval = 4000;
-            //_sliderTimer.Enabled = true;
         }
 
-        private int t;
+        private double t;
 
         private void timerEventFunc(object sender, EventArgs elapsedEventArgs)
         {
-            Time++;
-            t++;
+            Time += 0.5;
+            t += 0.5;
 
-            if (Time >= (int)sliderTime.Maximum)
+            if (Time >= sliderTime.Maximum)
             {
                 Time = 0;
                 _UPnPSink.GetPosition();
             }
 
-            if (t > 9)
+            if (t > 5)
             {
                 t = 0;
                 _UPnPSink.GetPosition();
+                _UPnPSource.Browse("playqueue");
+                _UPnPSource.Browse("all");
+                _UPnPSink.GetVolume();
             }
         }
 
@@ -455,6 +453,37 @@ namespace playerlayout
         {
             PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void DgMusikindex_OnPreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            var result = dgMusikindex.SelectedItem;
+
+            if (e.Key == Key.Return)
+            {
+                if (result != null)
+                {
+                    _UPnPSink.SetNextTransportURI((ITrack)result);
+
+                    //hack to ensure SetNextAVTransportURI is done and so you cant add tracks to fast
+                    Thread.Sleep(500);
+                    _UPnPSource.Browse("playqueue");
+                }
+            }
+        }
+
+
+        private void DgPlayQueue_OnPreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            var result = dgPlayQueue.SelectedItem;
+
+            if (e.Key == Key.Return)
+            {
+                if (result != null)
+                {
+                    _UPnPSink.SetTransportURI((ITrack)result);
+                }
+            }
         }
     }
 }
