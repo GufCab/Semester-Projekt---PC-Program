@@ -285,6 +285,8 @@ namespace playerlayout
             thread.SetApartmentState(ApartmentState.STA);
             thread.Start();
             thread.Join();
+
+            MessageBox.Show("File transfer done!");
         }
 
         /// <summary>
@@ -353,7 +355,8 @@ namespace playerlayout
         /// <param name="e"></param>
         private void SendFile_OnClick(object sender, RoutedEventArgs e)
         {
-            _UPnPSink.GetIpAddress();
+            if(_UPnPSink != null)
+                _UPnPSink.GetIpAddress();
         }
 
         private void SyncButtonClick(object sender, RoutedEventArgs e)
